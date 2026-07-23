@@ -14,8 +14,320 @@
 
 MatterGen is a generative model for inorganic materials design across the periodic table that can be fine-tuned to steer the generation towards a wide range of property constraints.
 
+## 新服务器重建与研究进度
+
+> [!IMPORTANT]
+> 本节记录 `gpu-h200-1` 上的实际重建和实验状态。最后核验时间为
+> **2026-07-23 19:04 CST**。官方 MatterGen 使用说明保留在本节之后。
+>
+> 本 GitHub 仓库是无权重源码快照。模型 checkpoint、MatterSim 权重、训练数据、
+> 生成结果和日志均不在 Git 中；这些大型资产只保存在服务器 Ceph 目录。
+
+### 项目定位与固定路径
+
+| 项目 | 当前值 |
+|---|---|
+| 官方上游 | `https://github.com/microsoft/mattergen.git` |
+| 上游基准 commit | `ac9ddd406171138c3f037d06b9b53fedbbb1c536` |
+| 服务器运行源码 | `/home/xjzn_user/dxl/mattergen_v1` |
+| 运行源码分支 | `feature/stage-adaptive-guidance` |
+| GitHub 无权重快照 | `https://github.com/du17183/mattergen_v1`，分支 `main` |
+| Python 环境 | `/mnt/mycephfs/dxl/envs/mattergen_py310` |
+| 资产根目录 | `/mnt/mycephfs/dxl` |
+| 数据 | `/mnt/mycephfs/dxl/data` |
+| checkpoint | `/mnt/mycephfs/dxl/checkpoints` |
+| MatterSim 权重 | `/mnt/mycephfs/dxl/mattersim_weights` |
+| 结果、日志、报告 | `/mnt/mycephfs/dxl/results`、`logs`、`reports` |
+
+服务器运行源码中的 guidance 修改目前仍是有意保留的未提交工作区修改；本仓库
+`main` 已包含这些修改的无权重快照。Microsoft 官方 `origin` 没有被改写。
+
+### 环境状态
+
+- 主机：`gpu-h200-1`，8×NVIDIA H200。
+- Python：3.10.20。
+- MatterGen：1.0.3，editable install 已验证。
+- PyTorch：2.2.1+cu118。
+- 单卡和 8 卡 CUDA/NCCL smoke test 均已通过。
+- 所有大型环境、缓存、数据、模型和结果均定向至 `/mnt/mycephfs/dxl`。
+- `/home` 仅保存源码；项目内没有 `.venv`，也没有模型权重。
+
+进入环境：
+
+```bash
+source /mnt/mycephfs/dxl/env.sh
+source /home/xjzn_user/miniconda3/etc/profile.d/conda.sh
+conda activate "$MATTERGEN_ENV"
+cd "$PROJECT_ROOT"
+```
+
+### 已完成阶段
+
+| 阶段 | 状态 | 已完成内容 |
+|---|---|---|
+| Stage 1：环境与代码审查 | 完成 | 克隆官方仓库；核验 8×H200、Git、CUDA、Conda、磁盘、Slurm/容器信息；审查训练、微调、生成、评估和 CFG 入口。 |
+| Stage 2：可复现环境 | 完成 | 在 Ceph 创建 Python 3.10 环境；安装 MatterGen 1.0.3；缓存全部重定向至 Ceph；完成 import、PyG 和 8 卡 CUDA smoke。 |
+| Stage 3：数据和官方模型 | 完成 | 仅下载并预处理 MP-20；下载 `mattergen_base` 和 `dft_mag_density`；仅记录 `dft_band_gap` 元数据；完成 SHA256、CPU load 和属性分布分析。 |
+| Stage 4：单卡微调 smoke | 完成 | H200 单卡 Run A 训练至 step 3，Run B 从真实 checkpoint 恢复至 step 5；loss/梯度/adapter 更新和冻结主干均通过；本地模型严格离线加载成功。 |
+| Stage 5：8×H200 DDP smoke | 完成 | 8 rank 映射、DistributedSampler、梯度同步、Run A step 3、Run B resume step 5、checkpoint 和本地模型加载全部通过。 |
+| Stage 6：创新点一 | 完成 | 实现 `constant`、`piecewise`、`adaptive`、`stage_adaptive`；加入 guidance trace、seed 和严格确定性；16/16 四方法 smoke 成功。 |
+| Stage 7：64-seed 开发实验 | 进行中但处于安全等待 | 已有 3/256 generation 成功；253 pending；Pilot 尚未通过；relax 256 pending；metrics 4 pending。 |
+
+### 数据、模型与目标值
+
+MP-20：
+
+- 原始行数：train 27,136；val 9,047；test 9,046。
+- 有效 `dft_mag_density`：train 26,117。
+- 有效 `dft_band_gap`：train 27,136。
+- 联合有效标签：train 26,117。
+- 预处理 cache：`/mnt/mycephfs/dxl/data/cache/mp_20`。
+
+固定实验目标：
+
+| 用途 | 目标 | 训练集支持度 |
+|---|---|---:|
+| 单属性容易目标 | `dft_mag_density=0.05` | ±0.01：1,156 |
+| 单属性主目标 | `dft_mag_density=0.10` | ±0.01：499；±0.02：1,011 |
+| 单属性困难目标 | `dft_mag_density=0.20` | ±0.01：16；±0.02：43 |
+| 双属性 Dense | `mag=0.05, gap=1.0 eV` | mag±0.02、gap±0.50：298 |
+| 双属性 Challenge | `mag=0.10, gap=0.5 eV` | mag±0.02、gap±0.25：56 |
+
+训练始终使用全部有效标签；这些目标值只用于生成和评估，不用于筛选训练集。
+生成 CLI 接收原始物理标签值，属性 embedding 内部执行标准化。`dft_band_gap`
+单位为 eV；仓库尚未确认 `dft_mag_density` 的单位和 DFT 定义。
+
+服务器已有但未上传到 GitHub 的模型：
+
+| 模型 | 状态 | SHA256 |
+|---|---|---|
+| `mattergen_base` | 已下载、CPU load 成功 | `81668ee12afc1ee1b037f362420730de3460bfd2d36e547585fdcb911a3dfdef` |
+| `dft_mag_density` | 已下载、CPU load 成功 | `01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e` |
+| `dft_band_gap` | 未下载，仅记录远程元数据 | 远程 SHA256 `864ebbfd360e0a8287287d290a552da6b6bd92d67418a6a40be419ed3acd5e7e` |
+| MatterSim 1M | 仅用于单结构流程 smoke | `28b0b0b0f13efefee06b47ea4c9105a26bd3e2c8396da193430da96b3b49a8be` |
+| MatterSim 5M | Stage 7 正式 relax/metrics 固定权重 | `e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5` |
+
+### 微调验证结果
+
+单卡 adapter smoke：
+
+- 总参数 48,760,443；可训练参数 4,198,400（8.610258%）。
+- `adapter.full_finetuning=false`；意外可训练主干参数为 0。
+- Run A：global step 0→3；Run B：通过 `Trainer.fit(..., ckpt_path=...)`
+  真实恢复 3→5。
+- 梯度 finite/nonzero；adapter 更新；冻结 backbone 未变化。
+- 最终模型：
+  `/mnt/mycephfs/dxl/checkpoints/smoke_tests/dft_mag_density_smoke`。
+
+8 卡 DDP smoke：
+
+- world size 8，rank 0–7 分别映射物理 GPU 0–7，NCCL 成功。
+- 每 rank 3,265 个 DistributedSampler 样本，分片不相同。
+- Probe step 0→1；Run A step 0→3；Run B 真实恢复 step 3→5。
+- 所有 rank 梯度 finite/nonzero，更新后 adapter 参数一致，冻结主干未变化。
+- 最终模型：
+  `/mnt/mycephfs/dxl/checkpoints/smoke_tests/dft_mag_density_ddp_smoke`。
+- `READY_FOR_FORMAL_FINETUNE=True`，但尚未启动正式长时间微调。
+
+### Guidance 与 seed 可复现性
+
+已实现的 CLI/Hydra 能力：
+
+- `guidance_schedule=constant|piecewise|adaptive|stage_adaptive`
+- piecewise warmup/decay/min/max
+- adaptive alpha/EMA/epsilon
+- guidance trace
+- `seed`
+- 可选严格确定性模式
+
+核心实现位置：
+
+- `mattergen/diffusion/sampling/classifier_free_guidance.py`
+- `mattergen/diffusion/sampling/guidance_schedule.py`
+- `mattergen/diffusion/sampling/pc_sampler.py`
+- `mattergen/generator.py`
+- `mattergen/scripts/generate.py`
+- `sampling_conf/default.yaml`
+
+已验证：
+
+- constant 与修改前官方输出 bitwise identical。
+- 四方法同 seed 的 RNG 和初始 corrupted state hash 一致。
+- trace 开关不改变 RNG 或最终结构。
+- 严格模式下同 seed、跨 H200 均为 Level 1。
+- 普通 CUDA 模式不是 bitwise deterministic。
+- batch size 不具首样本不变性，因此配对实验必须 `batch_size=1`、每 seed
+  独立进程。
+- 16 个不同 seed 的初始 hash、最终 hash、公式和化学体系均为 16/16 唯一。
+- guidance trace 每个完整样本约 2,000 行（1,000 corrector + 1,000 predictor）。
+
+冻结的开发实验协议：
+
+```text
+model=dft_mag_density official checkpoint
+target dft_mag_density=0.10
+methods=constant,piecewise,adaptive,stage_adaptive
+development seeds=10000..10063
+batch_size=1
+sampling_steps=1000
+strict_deterministic=true
+one seed per process
+same seed-to-GPU mapping across methods
+guidance_trace=true
+```
+
+### Stage 7 当前真实状态
+
+截至 2026-07-23 19:04 CST：
+
+```text
+tmux session: mattergen_stage7（存活）
+launcher PID: 4163436（存活）
+runner mode: --resume
+runner state: waiting_service_safety
+current worker: 无
+Pilot passed: False
+generation: success=3, pending=253, failed=0
+relax: pending=256
+metrics: pending=4
+```
+
+已完成并保留：
+
+```text
+constant seed 10001
+constant seed 10003
+constant seed 10006
+```
+
+旧的 GPU utilization 失败 seed `10000,10002,10004,10005,10007` 已恢复为
+`pending` 且 `attempt=0`。GPU utilization 和 free memory 现在只记录为 telemetry，
+不会阻止启动、消耗 attempt 或影响 Pilot。
+
+当前安全等待原因不是 utilization：runner 要求新任务启动前
+`scheduler_U0..U7` 为 8/8 存活，而当前检测为 0/8。runner 和 tmux 仍在，
+不会在该条件满足前启动新的 generation worker。不得把这段等待误报为实验失败。
+
+Stage 7 入口：
+
+```bash
+# 状态
+/mnt/mycephfs/dxl/reports/guidance_stage7/status_stage7.sh
+
+# 日志
+tail -f /mnt/mycephfs/dxl/logs/guidance_stage7/stage7_background.log
+
+# 查看 tmux；Ctrl+B、D 退出查看但保持运行
+tmux attach -t mattergen_stage7
+
+# 安全停止 launcher
+tmux send-keys -t mattergen_stage7 C-c
+```
+
+进度文件：
+
+```text
+/mnt/mycephfs/dxl/results/guidance_stage7_64/progress/progress.json
+/mnt/mycephfs/dxl/results/guidance_stage7_64/progress/progress.csv
+```
+
+### 后续工作清单
+
+#### A. 立即处理 Stage 7 阻塞
+
+- [ ] 确认 `scheduler_U0..U7` 的消失是否为管理员有意停止服务。
+- [ ] 若服务会恢复，保持现有 tmux 等待并在恢复 8/8 后自动 resume。
+- [ ] 若服务已永久停止，必须先由用户明确授权调整
+  `scheduler_U0..U7 == 8/8` 安全前置条件；不能自行绕过。
+- [ ] 恢复运行后重新核验只有一个 launcher、每张 GPU 最多一个 Stage 7 worker。
+
+#### B. 完成 64-seed 开发实验
+
+- [ ] 补齐 constant Pilot 的 8 seeds。
+- [ ] 完成 piecewise、adaptive、stage_adaptive 各 8-seed Pilot。
+- [ ] 对 32 个 Pilot 任务执行 extxyz、ASE、trace、RNG、hash 完整性检查。
+- [ ] 验证四方法同 seed 的 initial-state hash 完全一致。
+- [ ] Pilot 通过后完成四方法 × 64 seeds，共 256 次独立 generation。
+- [ ] 合并每种方法的 64 个结构和 guidance trace。
+- [ ] 保留所有 seed、GPU、初始/最终 hash 和配置 manifest。
+
+#### C. MatterSim 与开发集指标
+
+- [ ] 用 MatterSim 1M 完成单结构 load/relax 流程 smoke。
+- [ ] 所有正式开发集 relax 统一使用 MatterSim 5M；不得混用 1M/5M。
+- [ ] 按 method × seed 独立 relax，支持断点续跑。
+- [ ] 合并每种方法的 relaxed structures。
+- [ ] 统一计算有效率、稳定性、novelty、uniqueness、S.U.N. 和属性命中指标。
+- [ ] 完成 paired seed 统计、置信区间、效应量及失败案例分析。
+- [ ] 输出 Stage 7 最终 JSON/Markdown、表格和图。
+
+#### D. 正式 256-seed 对比
+
+- [ ] 仅在 64-seed 开发实验和参数冻结完成后启动。
+- [ ] 使用与开发 seeds 不重叠的正式 manifest：`20000..20255`。
+- [ ] 四方法共享完全相同 seed manifest、checkpoint、采样步数和目标值。
+- [ ] 重复 generation → MatterSim 5M relax → metrics → paired analysis 全流程。
+- [ ] 正式阶段不得根据结果继续调 guidance 参数。
+
+#### E. 创新点二：收敛感知 CFG 加速
+
+- [ ] 实现 conditional/unconditional residual 缓存。
+- [ ] 定义 residual 收敛判据、复用/外推策略和周期性完整校准。
+- [ ] 误差增大时回退完整 CFG。
+- [ ] 分别统计 conditional NFE、unconditional NFE、wall time 和显存。
+- [ ] 验证加速开关不改变初始随机状态与 seed 配对。
+- [ ] 与四种 Guidance 分开做消融：质量、属性命中率、NFE 和速度。
+
+#### F. 正式微调与双属性实验
+
+- [ ] 在正式训练前再执行一次 8 GPU × 2–5 step DDP preflight。
+- [ ] 使用全部有效 `dft_mag_density` 标签正式微调，不能筛选 0.10 邻域样本。
+- [ ] 固定 checkpoint/validation 周期、全局 batch、学习率和 resume 策略。
+- [ ] 从 `mattergen_base` 联合微调
+  `dft_mag_density + dft_band_gap`，不能拼接两个单属性 checkpoint。
+- [ ] 先验证 Dense 目标 `(0.05, 1.0 eV)`，再验证 Challenge 目标
+  `(0.10, 0.5 eV)`。
+- [ ] 对官方单属性模型、自训单属性模型和双属性模型使用统一评估协议。
+
+#### G. 最终研究交付
+
+- [ ] 冻结代码 commit、Hydra config、checkpoint SHA256、seed manifest 和环境清单。
+- [ ] 完成 constant/piecewise/adaptive/stage-adaptive/CFG acceleration 消融。
+- [ ] 汇总属性达成、结构有效性、稳定性、多样性、速度和 NFE。
+- [ ] 对候选结构执行必要的高精度验证；MatterSim 结果不能表述为 DFT 结论。
+- [ ] 整理论文图表、方法说明、失败案例、复现实验脚本和最终报告。
+- [ ] 经权重与敏感信息审计后再同步新的源码快照到 GitHub。
+
+### 当前风险与约束
+
+- Stage 7 当前被 scheduler 服务存活安全条件阻塞，不是 GPU utilization 阻塞。
+- H200 正与服务器其他任务共享；不得终止、暂停或修改其他用户/root 进程。
+- Ceph 并行读取 checkpoint 会使短 DDP 启动增加约五分钟延迟。
+- NCCL 缺少 `libnccl-net.so`，已回退内部网络实现；smoke 可用，但正式训练需监控。
+- Guidance 代码已通过 smoke，但运行源码工作区尚未形成正式 commit。
+- 创新点二 CFG acceleration 尚未实现。
+- `dft_band_gap` checkpoint、Alex-MP-20 和正式训练 checkpoint 均未下载/生成。
+- 所有模型权重、数据和实验结果必须继续留在 Ceph，禁止提交到此仓库。
+
+### 关键报告
+
+服务器上的完整证据位于：
+
+```text
+/mnt/mycephfs/dxl/reports/environment/
+/mnt/mycephfs/dxl/reports/assets/
+/mnt/mycephfs/dxl/reports/finetune_smoke/
+/mnt/mycephfs/dxl/reports/ddp_smoke/
+/mnt/mycephfs/dxl/reports/guidance_stage6/
+/mnt/mycephfs/dxl/reports/guidance_stage7/
+```
+
+本节是便于协作的进度摘要；任何动态任务状态都应以
+`progress.json`、状态脚本和实际进程检查为准。
+
 
 ## Table of Contents
+- [新服务器重建与研究进度](#新服务器重建与研究进度)
 - [Installation](#installation)
 - [Get started with a pre-trained model](#get-started-with-a-pre-trained-model)
 - [Generating materials](#generating-materials)
