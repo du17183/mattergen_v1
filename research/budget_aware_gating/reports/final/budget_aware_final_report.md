@@ -32,9 +32,19 @@ G1 delivered its intended conservative speed/compute reduction and improved mean
 
 The old G3 formal reference is displayed separately and is never mixed into the new paired statistics.
 
+## Frozen G3 formal reference (seeds 20000–20255, n=256)
+
+- Speed multiplier: 1.506072×
+- Fixed-concurrency throughput gain: 44.7641%
+- Physical forward reduction: 35.3682%
+- E-hull change: +0.022423 eV/atom
+- Stable change: -9.7656 pp
+- NUS change: -9.3750 pp
+- FORMAL_INNOVATION2_CONFIRMED=False
+- This formal reference is shown separately and is not mixed into the new 32-seed paired statistics.
+
 ## GitHub archive
 
 - Branch: `feature/budget-aware-corrector-gating`
-- Archive commit: `f8ceae2`
 - Draft PR: https://github.com/du17183/mattergen_v1/pull/2
 - Complete non-weight data Release: https://github.com/du17183/mattergen_v1/releases/tag/budget-aware-gating-data-20260724
