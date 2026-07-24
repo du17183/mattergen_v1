@@ -232,6 +232,15 @@ class CrystalGenerator:
     corrector_max_consecutive_skips: int = 8
     corrector_fallback_threshold: float = 0.20
     corrector_rescue_enabled: bool = True
+    corrector_budget_aware_enabled: bool = False
+    corrector_max_skip_ratio: float = 1.0
+    corrector_atomic_veto_enabled: bool = False
+    corrector_atomic_stability_threshold: float = 0.05
+    corrector_atomic_min_stable_steps: int = 1
+    corrector_adaptive_calibration_enabled: bool = False
+    corrector_calibration_interval_min: int = 4
+    corrector_calibration_interval_max: int = 16
+    corrector_field_aggregation: str = "all_fields"
     corrector_trace_path: str | None = None
     corrector_summary_path: str | None = None
 
@@ -380,6 +389,15 @@ class CrystalGenerator:
                 f"sampler_partial.corrector_max_consecutive_skips={self.corrector_max_consecutive_skips}",
                 f"sampler_partial.corrector_fallback_threshold={self.corrector_fallback_threshold}",
                 f"sampler_partial.corrector_rescue_enabled={self.corrector_rescue_enabled}",
+                f"sampler_partial.corrector_budget_aware_enabled={self.corrector_budget_aware_enabled}",
+                f"sampler_partial.corrector_max_skip_ratio={self.corrector_max_skip_ratio}",
+                f"sampler_partial.corrector_atomic_veto_enabled={self.corrector_atomic_veto_enabled}",
+                f"sampler_partial.corrector_atomic_stability_threshold={self.corrector_atomic_stability_threshold}",
+                f"sampler_partial.corrector_atomic_min_stable_steps={self.corrector_atomic_min_stable_steps}",
+                f"sampler_partial.corrector_adaptive_calibration_enabled={self.corrector_adaptive_calibration_enabled}",
+                f"sampler_partial.corrector_calibration_interval_min={self.corrector_calibration_interval_min}",
+                f"sampler_partial.corrector_calibration_interval_max={self.corrector_calibration_interval_max}",
+                f"sampler_partial.corrector_field_aggregation={self.corrector_field_aggregation}",
             ]
             if self.seed is not None:
                 sampling_config_overrides.append(f"sampler_partial.sample_seed={self.seed}")
