@@ -2,9 +2,9 @@
   "schema_version": 1,
   "experiment": "Budget-Aware Convergence-Guided Corrector Scheduling",
   "created_at": "2026-07-24T17:13:47+08:00",
-  "updated_at": "2026-07-24T18:11:13+08:00",
-  "current_stage": "github_archive",
-  "overall_status": "running",
+  "updated_at": "2026-07-24T18:14:58+08:00",
+  "current_stage": "stop_for_review",
+  "overall_status": "success",
   "development_seed_range": [
     14000,
     14063
@@ -147,17 +147,17 @@
     },
     {
       "stage": "github_archive",
-      "status": "running",
+      "status": "success",
       "started_at": "2026-07-24T18:11:13+08:00",
-      "finished_at": null,
-      "message": "Preparing refined branch archive and complete non-weight data release."
+      "finished_at": "2026-07-24T18:14:58+08:00",
+      "message": "Branch pushed, Draft PR #2 created, and complete non-weight data Release uploaded."
     },
     {
       "stage": "stop_for_review",
-      "status": "pending",
+      "status": "success",
       "started_at": null,
-      "finished_at": null,
-      "message": ""
+      "finished_at": "2026-07-24T18:14:58+08:00",
+      "message": "Terminal 32-seed No-Go archived; stopped for user review without 64/formal seeds."
     }
   ],
   "git_branch": "feature/budget-aware-corrector-gating",
@@ -168,5 +168,9 @@
   "eight_seed_completed": true,
   "budget_aware_gating_development_validated": false,
   "budget_aware_gating_completed": true,
-  "formal_14032_14063_started": false
+  "formal_14032_14063_started": false,
+  "github_branch": "feature/budget-aware-corrector-gating",
+  "github_archive_commit": "f8ceae2",
+  "draft_pr": "https://github.com/du17183/mattergen_v1/pull/2",
+  "data_release": "https://github.com/du17183/mattergen_v1/releases/tag/budget-aware-gating-data-20260724"
 }

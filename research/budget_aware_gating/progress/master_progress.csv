@@ -16,5 +16,5 @@ sixty_four_relax,not_applicable,,2026-07-24T18:11:13+08:00,No candidate passed f
 sixty_four_metrics,not_applicable,,2026-07-24T18:11:13+08:00,No candidate passed frozen 32-seed gates; 64-seed metrics not started.
 paired_analysis,success,,2026-07-24T18:11:13+08:00,32-seed A0/G1/G2 paired analysis complete; G3 kept separate.
 pareto_report,success,,2026-07-24T18:11:13+08:00,32-seed terminal No-Go report and 10 figures complete.
-github_archive,running,2026-07-24T18:11:13+08:00,,Preparing refined branch archive and complete non-weight data release.
-stop_for_review,pending,,,
+github_archive,success,2026-07-24T18:11:13+08:00,2026-07-24T18:14:58+08:00,"Branch pushed, Draft PR #2 created, and complete non-weight data Release uploaded."
+stop_for_review,success,,2026-07-24T18:14:58+08:00,Terminal 32-seed No-Go archived; stopped for user review without 64/formal seeds.

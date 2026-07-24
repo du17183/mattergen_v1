@@ -267,5 +267,17 @@
     "MatterSim-5M stability is a surrogate and is not DFT verification.",
     "Old G3 formal results use a different seed set and are not included in new paired tests.",
     "Observed percentage-point differences at n=32 are quantized in 3.125 pp increments."
-  ]
+  ],
+  "GITHUB_BRANCH": "feature/budget-aware-corrector-gating",
+  "SOURCE_IMPLEMENTATION_COMMIT": "f59ebad248c85c7699ee850810cd152607fb5229",
+  "GITHUB_ARCHIVE_COMMIT": "f8ceae2",
+  "DRAFT_PR": "https://github.com/du17183/mattergen_v1/pull/2",
+  "DATA_RELEASE": "https://github.com/du17183/mattergen_v1/releases/tag/budget-aware-gating-data-20260724",
+  "FINAL_REPORT": "/data/dxl/reports/budget_aware_gating/final/budget_aware_final_report.json",
+  "FIGURES_DIRECTORY": "/data/dxl/reports/budget_aware_gating/final/figures",
+  "TMUX_STATUS": "idle shell; no project workers",
+  "GPU_WORKERS": 0,
+  "OTHER_PROCESSES_TERMINATED": false,
+  "SIGKILL_USED": false,
+  "NEXT_ACTION": "Await user review; do not start 64-seed or formal validation because no candidate passed the frozen 32-seed gates."
 }

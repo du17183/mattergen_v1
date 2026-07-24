@@ -14,4 +14,4 @@ Both G1 and G2 passed the 8-seed smoke test. At the frozen 32-seed screen, neith
 
 ## Data policy
 
-This Git branch contains refined, reviewable artifacts. Complete raw non-weight artifacts are archived in a separate GitHub Release with SHA256 manifests. Checkpoints, MatterSim weights, Conda environments, caches, datasets, and large per-task logs are excluded from Git history.
+This Git branch contains refined, reviewable artifacts. Complete raw non-weight artifacts are archived in [GitHub Release budget-aware-gating-data-20260724](https://github.com/du17183/mattergen_v1/releases/tag/budget-aware-gating-data-20260724) with SHA256 manifests. Checkpoints, MatterSim weights, Conda environments, caches, datasets, and large per-task logs are excluded from Git history.

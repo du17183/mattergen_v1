@@ -31,3 +31,10 @@ No candidate passed every frozen 32-seed Pareto gate; stopped before 64-seed wit
 G1 delivered its intended conservative speed/compute reduction and improved mean E-hull, but missed the frozen stable and NUS tolerances. G2 delivered the intended compute reduction but missed median speed, stable, and E-hull thresholds. No post-hoc retuning was performed.
 
 The old G3 formal reference is displayed separately and is never mixed into the new paired statistics.
+
+## GitHub archive
+
+- Branch: `feature/budget-aware-corrector-gating`
+- Archive commit: `f8ceae2`
+- Draft PR: https://github.com/du17183/mattergen_v1/pull/2
+- Complete non-weight data Release: https://github.com/du17183/mattergen_v1/releases/tag/budget-aware-gating-data-20260724
