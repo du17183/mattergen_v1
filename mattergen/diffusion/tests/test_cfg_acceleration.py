@@ -44,6 +44,7 @@ def test_acceleration_defaults_disabled() -> None:
         is False
     )
     assert CrystalGenerator.__dataclass_fields__["cfg_acceleration_enabled"].default is False
+    assert CrystalGenerator.__dataclass_fields__["cfg_trace_mode"].default == "auto"
 
 
 def test_warmup_only_runs_full_cfg() -> None:
@@ -184,6 +185,11 @@ def _sampler(enabled: bool) -> GuidedPredictorCorrector:
     sampler._sample_seed = 1
     sampler._run_id = "unit"
     sampler._trace_enabled = False
+    sampler._trace_to_disk = False
+    sampler._cfg_trace_mode = "off"
+    sampler._cfg_summary_path = None
+    sampler._trace_build_cpu_seconds = 0.0
+    sampler._trace_write_cpu_seconds = 0.0
     sampler._guidance_trace_rows = []
     sampler._sampling_context = {
         "sampling_step": 1,

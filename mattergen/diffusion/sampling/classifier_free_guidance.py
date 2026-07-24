@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import csv
+import json
 import math
 import os
 import time
@@ -140,6 +141,8 @@ class GuidedPredictorCorrector(PredictorCorrector):
         cfg_min_progress: float = 0.0,
         cfg_max_progress: float = 1.0,
         cfg_trace_path: str | None = None,
+        cfg_trace_mode: str = "auto",
+        cfg_summary_path: str | None = None,
         sample_seed: int | None = None,
         run_id: str | None = None,
         **kwargs,
@@ -181,8 +184,16 @@ class GuidedPredictorCorrector(PredictorCorrector):
             "yes",
             "on",
         )
-        self._trace_enabled = save_trace or selected_trace_path is not None
-        if self._trace_enabled and selected_trace_path is None:
+        if cfg_trace_mode not in ("auto", "off", "memory", "disk"):
+            raise ValueError("cfg_trace_mode must be auto, off, memory, or disk")
+        self._cfg_trace_mode = (
+            ("disk" if save_trace or selected_trace_path is not None else "off")
+            if cfg_trace_mode == "auto"
+            else cfg_trace_mode
+        )
+        self._trace_enabled = self._cfg_trace_mode != "off"
+        self._trace_to_disk = self._cfg_trace_mode == "disk"
+        if self._trace_to_disk and selected_trace_path is None:
             raise ValueError(
                 "Guidance trace is enabled but no guidance_trace_path or GUIDANCE_TRACE_PATH was set"
             )
@@ -191,7 +202,14 @@ class GuidedPredictorCorrector(PredictorCorrector):
         )
         if self._guidance_trace_path is not None and not self._guidance_trace_path.is_absolute():
             raise ValueError("guidance_trace_path must be an absolute path")
+        self._cfg_summary_path = (
+            Path(cfg_summary_path).expanduser() if cfg_summary_path is not None else None
+        )
+        if self._cfg_summary_path is not None and not self._cfg_summary_path.is_absolute():
+            raise ValueError("cfg_summary_path must be an absolute path")
         self._guidance_trace_rows: list[dict[str, Any]] = []
+        self._trace_build_cpu_seconds = 0.0
+        self._trace_write_cpu_seconds = 0.0
         self._cfg_acceleration_enabled = bool(cfg_acceleration_enabled)
         self._cfg_controller = ConvergenceAwareCFGController(
             warmup_frac=cfg_warmup_frac,
@@ -243,22 +261,58 @@ class GuidedPredictorCorrector(PredictorCorrector):
         self._guidance_controller.reset()
         self._reset_cfg_acceleration_state()
         self._guidance_trace_rows = []
-        if self._trace_enabled:
+        self._trace_build_cpu_seconds = 0.0
+        self._trace_write_cpu_seconds = 0.0
+        if self._trace_to_disk:
             assert self._guidance_trace_path is not None
             if self._guidance_trace_path.exists():
                 raise FileExistsError(
                     f"Refusing to overwrite existing guidance trace: {self._guidance_trace_path}"
                 )
+        if self._cfg_summary_path is not None and self._cfg_summary_path.exists():
+            raise FileExistsError(
+                f"Refusing to overwrite existing CFG summary: {self._cfg_summary_path}"
+            )
 
     def _on_sampling_end(self, error: BaseException | None) -> None:
-        if not self._trace_enabled:
-            return
-        assert self._guidance_trace_path is not None
-        self._guidance_trace_path.parent.mkdir(parents=True, exist_ok=True)
-        with self._guidance_trace_path.open("x", newline="", encoding="utf-8") as stream:
-            writer = csv.DictWriter(stream, fieldnames=TRACE_FIELD_NAMES)
-            writer.writeheader()
-            writer.writerows(self._guidance_trace_rows)
+        if self._trace_to_disk:
+            started = time.perf_counter()
+            assert self._guidance_trace_path is not None
+            self._guidance_trace_path.parent.mkdir(parents=True, exist_ok=True)
+            with self._guidance_trace_path.open("x", newline="", encoding="utf-8") as stream:
+                writer = csv.DictWriter(stream, fieldnames=TRACE_FIELD_NAMES)
+                writer.writeheader()
+                writer.writerows(self._guidance_trace_rows)
+                stream.flush()
+                os.fsync(stream.fileno())
+            self._trace_write_cpu_seconds = time.perf_counter() - started
+        if self._cfg_summary_path is not None:
+            self._cfg_summary_path.parent.mkdir(parents=True, exist_ok=True)
+            payload = {
+                "success": error is None,
+                "error_type": None if error is None else type(error).__name__,
+                "trace_mode": self._cfg_trace_mode,
+                "trace_rows": len(self._guidance_trace_rows),
+                "trace_build_cpu_seconds": self._trace_build_cpu_seconds,
+                "trace_write_cpu_seconds": self._trace_write_cpu_seconds,
+                "nfe": self._cfg_nfe.as_dict(),
+                "mode_counts": {
+                    "full_cfg": self._cfg_nfe.full_cfg_steps,
+                    "reuse": self._cfg_nfe.reuse_steps,
+                    "extrapolate": self._cfg_nfe.extrapolation_steps,
+                    "periodic_calibration": self._cfg_nfe.calibration_steps,
+                    "fallback_full_cfg": self._cfg_nfe.fallback_steps,
+                },
+            }
+            temporary = self._cfg_summary_path.with_name(
+                f".{self._cfg_summary_path.name}.tmp.{os.getpid()}"
+            )
+            with temporary.open("x", encoding="utf-8") as stream:
+                json.dump(payload, stream, indent=2)
+                stream.write("\n")
+                stream.flush()
+                os.fsync(stream.fileno())
+            os.replace(temporary, self._cfg_summary_path)
 
     def _trace_decision(
         self,
@@ -269,6 +323,7 @@ class GuidedPredictorCorrector(PredictorCorrector):
     ) -> None:
         if not self._trace_enabled:
             return
+        trace_started = time.perf_counter()
         context = self.sampling_context
         self._guidance_trace_rows.append(
             {
@@ -294,6 +349,7 @@ class GuidedPredictorCorrector(PredictorCorrector):
                 "fallback_reason": decision["fallback_reason"],
             }
         )
+        self._trace_build_cpu_seconds += time.perf_counter() - trace_started
 
     def _current_progress_and_phase(self) -> tuple[float, str]:
         context = self.sampling_context
@@ -349,6 +405,7 @@ class GuidedPredictorCorrector(PredictorCorrector):
     ) -> None:
         if not self._trace_enabled:
             return
+        trace_started = time.perf_counter()
         context = self.sampling_context
         ema = observation.field_ema if observation else self._cfg_controller.state_for_phase(str(context.get("phase", "predictor"))).residual_ema
         flags = observation.field_converged if observation else {field: True for field in CFG_FIELDS}
@@ -379,6 +436,7 @@ class GuidedPredictorCorrector(PredictorCorrector):
             "conditional_only_forward_count": nfe["conditional_only_forward_count"],
             "elapsed_ms": elapsed_ms,
         })
+        self._trace_build_cpu_seconds += time.perf_counter() - trace_started
 
     def _score_fn_accelerated(self, x: Diffusable, t: torch.Tensor) -> Diffusable:
         fields = tuple(self._multi_corruption.corrupted_fields)
@@ -458,7 +516,10 @@ class GuidedPredictorCorrector(PredictorCorrector):
 
     def _score_fn(self, x: Diffusable, t: torch.Tensor) -> Diffusable:
         if not self._cfg_acceleration_enabled:
-            return self._score_fn_unaccelerated(x, t)
+            result = self._score_fn_unaccelerated(x, t)
+            if self._cfg_summary_path is not None:
+                self._cfg_nfe.record_full("full_cfg")
+            return result
         return self._score_fn_accelerated(x, t)
 
     def _score_fn_unaccelerated(

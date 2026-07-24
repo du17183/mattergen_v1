@@ -54,6 +54,8 @@ def main(
     cfg_min_progress: float = 0.0,
     cfg_max_progress: float = 1.0,
     cfg_trace_path: str | None = None,
+    cfg_trace_mode: str = "auto",
+    cfg_summary_path: str | None = None,
 ) -> list[Structure]:
     """
     Evaluate diffusion model against molecular metrics.
@@ -153,6 +155,8 @@ def main(
         cfg_min_progress=cfg_min_progress,
         cfg_max_progress=cfg_max_progress,
         cfg_trace_path=cfg_trace_path,
+        cfg_trace_mode=cfg_trace_mode,
+        cfg_summary_path=cfg_summary_path,
     )
     return generator.generate(output_dir=Path(output_path))
 

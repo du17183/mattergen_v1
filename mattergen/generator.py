@@ -220,6 +220,8 @@ class CrystalGenerator:
     cfg_min_progress: float = 0.0
     cfg_max_progress: float = 1.0
     cfg_trace_path: str | None = None
+    cfg_trace_mode: str = "auto"
+    cfg_summary_path: str | None = None
 
     # Additional overrides, only has an effect when using a diffusion-codebase model
     sampling_config_overrides: list[str] | None = None
@@ -355,6 +357,7 @@ class CrystalGenerator:
                 f"sampler_partial.cfg_fallback_threshold={self.cfg_fallback_threshold}",
                 f"sampler_partial.cfg_min_progress={self.cfg_min_progress}",
                 f"sampler_partial.cfg_max_progress={self.cfg_max_progress}",
+                f"sampler_partial.cfg_trace_mode={self.cfg_trace_mode}",
             ]
             if self.seed is not None:
                 sampling_config_overrides.append(f"sampler_partial.sample_seed={self.seed}")
@@ -367,6 +370,10 @@ class CrystalGenerator:
             if self.cfg_trace_path is not None:
                 sampling_config_overrides.append(
                     f"sampler_partial.cfg_trace_path={self.cfg_trace_path}"
+                )
+            if self.cfg_summary_path is not None:
+                sampling_config_overrides.append(
+                    f"sampler_partial.cfg_summary_path={self.cfg_summary_path}"
                 )
         else:
             # `condition_loader_partial` for fixed atom type (crystal structure prediction)
