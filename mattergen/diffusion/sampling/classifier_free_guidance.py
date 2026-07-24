@@ -113,6 +113,16 @@ CORRECTOR_TRACE_FIELD_NAMES = (
     "corrector_calibration_count",
     "corrector_fallback_count",
     "corrector_rescue_count",
+    "corrector_atomic_veto_count",
+    "skip_budget_total",
+    "skip_budget_used",
+    "skip_budget_remaining",
+    "skip_budget_exhausted",
+    "atomic_veto",
+    "atomic_residual",
+    "atomic_residual_change",
+    "atomic_stable_steps",
+    "calibration_interval_current",
     "physical_forward_count",
     "joint_batch_forward_count",
     "conditional_only_forward_count",
@@ -210,6 +220,15 @@ class GuidedPredictorCorrector(PredictorCorrector):
         corrector_max_consecutive_skips: int = 8,
         corrector_fallback_threshold: float = 0.20,
         corrector_rescue_enabled: bool = True,
+        corrector_budget_aware_enabled: bool = False,
+        corrector_max_skip_ratio: float = 1.0,
+        corrector_atomic_veto_enabled: bool = False,
+        corrector_atomic_stability_threshold: float = 0.05,
+        corrector_atomic_min_stable_steps: int = 1,
+        corrector_adaptive_calibration_enabled: bool = False,
+        corrector_calibration_interval_min: int = 4,
+        corrector_calibration_interval_max: int = 16,
+        corrector_field_aggregation: str = "all_fields",
         corrector_trace_path: str | None = None,
         corrector_summary_path: str | None = None,
         sample_seed: int | None = None,
@@ -299,6 +318,9 @@ class GuidedPredictorCorrector(PredictorCorrector):
         self._cfg_last_observation: dict[str, AccelerationObservation | None] = {}
         self._reset_cfg_acceleration_state()
         self._corrector_gating_enabled = bool(corrector_gating_enabled)
+        self._corrector_budget_aware_enabled = bool(
+            corrector_budget_aware_enabled
+        )
         if self._corrector_gating_enabled and self._cfg_acceleration_enabled:
             raise ValueError(
                 "corrector gating cannot be combined with the archived "
@@ -314,6 +336,28 @@ class GuidedPredictorCorrector(PredictorCorrector):
             max_consecutive_skips=corrector_max_consecutive_skips,
             fallback_threshold=corrector_fallback_threshold,
             rescue_enabled=corrector_rescue_enabled,
+            max_skip_ratio=(
+                corrector_max_skip_ratio
+                if self._corrector_budget_aware_enabled
+                else None
+            ),
+            atomic_veto_enabled=corrector_atomic_veto_enabled,
+            atomic_stability_threshold=(
+                corrector_atomic_stability_threshold
+            ),
+            atomic_min_stable_steps=(
+                corrector_atomic_min_stable_steps
+            ),
+            adaptive_calibration_enabled=(
+                corrector_adaptive_calibration_enabled
+            ),
+            calibration_interval_min=(
+                corrector_calibration_interval_min
+            ),
+            calibration_interval_max=(
+                corrector_calibration_interval_max
+            ),
+            field_aggregation=corrector_field_aggregation,
         )
         self._corrector_trace_path = (
             Path(corrector_trace_path).expanduser()
@@ -421,6 +465,7 @@ class GuidedPredictorCorrector(PredictorCorrector):
             )
         if corrector_summary_path is not None:
             accounting = self._corrector_accounting.as_dict()
+            gate_state = self._corrector_gate.snapshot()
             baseline_physical = self.N * (1 + self._n_steps_corrector)
             if not self._corrector_gating_enabled:
                 cfg_nfe = self._cfg_nfe.as_dict()
@@ -449,6 +494,9 @@ class GuidedPredictorCorrector(PredictorCorrector):
                 "success": error is None,
                 "error_type": None if error is None else type(error).__name__,
                 "enabled": self._corrector_gating_enabled,
+                "budget_aware_enabled": (
+                    self._corrector_budget_aware_enabled
+                ),
                 "seed": self._sample_seed,
                 "sampling_steps": self.N,
                 "n_steps_corrector": self._n_steps_corrector,
@@ -461,7 +509,34 @@ class GuidedPredictorCorrector(PredictorCorrector):
                     - accounting["physical_model_forward_count"]
                     / max(baseline_physical, 1)
                 ),
-                "final_gate_state": self._corrector_gate.snapshot(),
+                "corrector_skip_budget": gate_state[
+                    "skip_budget_total"
+                ],
+                "corrector_budget_used": gate_state[
+                    "skip_budget_used"
+                ],
+                "corrector_budget_remaining": gate_state[
+                    "skip_budget_remaining"
+                ],
+                "budget_exhausted": gate_state[
+                    "skip_budget_exhausted"
+                ],
+                "calibration_interval_mean": gate_state[
+                    "calibration_interval_mean"
+                ],
+                "cell_stable_rate": gate_state[
+                    "cell_stable_rate"
+                ],
+                "pos_stable_rate": gate_state[
+                    "pos_stable_rate"
+                ],
+                "atomic_stable_rate": gate_state[
+                    "atomic_stable_rate"
+                ],
+                "all_fields_stable_rate": gate_state[
+                    "all_fields_stable_rate"
+                ],
+                "final_gate_state": gate_state,
             }
             self._atomic_write_json(corrector_summary_path, payload)
         if self._trace_to_disk:
@@ -573,6 +648,8 @@ class GuidedPredictorCorrector(PredictorCorrector):
             self._corrector_accounting.record_calibration()
         if decision.fallback:
             self._corrector_accounting.record_fallback()
+        if decision.atomic_veto:
+            self._corrector_accounting.record_atomic_veto()
         return decision.execute_corrector
 
     def _on_corrector_skipped(
@@ -725,6 +802,32 @@ class GuidedPredictorCorrector(PredictorCorrector):
                 ],
                 "corrector_rescue_count": accounting[
                     "corrector_rescue_count"
+                ],
+                "corrector_atomic_veto_count": accounting[
+                    "corrector_atomic_veto_count"
+                ],
+                "skip_budget_total": snapshot[
+                    "skip_budget_total"
+                ],
+                "skip_budget_used": snapshot[
+                    "skip_budget_used"
+                ],
+                "skip_budget_remaining": snapshot[
+                    "skip_budget_remaining"
+                ],
+                "skip_budget_exhausted": snapshot[
+                    "skip_budget_exhausted"
+                ],
+                "atomic_veto": decision.atomic_veto,
+                "atomic_residual": snapshot["atomic_residual"],
+                "atomic_residual_change": snapshot[
+                    "atomic_residual_change"
+                ],
+                "atomic_stable_steps": snapshot[
+                    "atomic_stable_steps"
+                ],
+                "calibration_interval_current": snapshot[
+                    "calibration_interval_current"
                 ],
                 "physical_forward_count": accounting[
                     "physical_model_forward_count"

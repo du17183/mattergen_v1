@@ -1,0 +1,34 @@
+comparison,left_method,right_method,metric,metric_type,paired_sample_count,paired_mean_difference_right_minus_left,paired_median_difference_right_minus_left,bootstrap_95_ci_low,bootstrap_95_ci_high,effect_size_paired_cohens_d,test,test_statistic,raw_p_value,holm_corrected_p_value,right_method_wins,ties,right_method_losses,lower_is_better,note
+C0_vs_A0,C0,A0,energy_above_hull_per_atom,continuous,256,-0.0034349449371532522,-0.005504208627842691,-0.017925620109732726,0.011030035803165077,-0.029047550020780917,Wilcoxon signed-rank,15356.0,0.357355396201648,1.0,137.0,1.0,118.0,True,
+C0_vs_A0,C0,A0,stable,binary,256,0.05859375,0.0,-0.015625,0.1328125,,exact paired discordant-binomial (McNemar exact),54.0,0.14617702864715262,1.0,54.0,163.0,39.0,False,
+C0_vs_A0,C0,A0,novel_unique_stable,binary,256,0.03515625,0.0,-0.02734375,0.09765625,,exact paired discordant-binomial (McNemar exact),40.0,0.34247099841986794,1.0,40.0,185.0,31.0,False,
+C0_vs_A0,C0,A0,composition_valid,binary,256,-0.00390625,0.0,-0.0625,0.0546875,,exact paired discordant-binomial (McNemar exact),30.0,1.0,1.0,30.0,195.0,31.0,False,
+C0_vs_A0,C0,A0,basic_structure_valid,binary,256,0.0,0.0,0.0,0.0,,exact paired discordant-binomial (McNemar exact),0.0,1.0,1.0,0.0,256.0,0.0,False,
+C0_vs_A0,C0,A0,novel,binary,256,0.02734375,0.0,-0.04296875,0.09765625,,exact paired discordant-binomial (McNemar exact),45.0,0.5104099416812344,1.0,45.0,173.0,38.0,False,
+C0_vs_A0,C0,A0,unique,binary,256,0.0234375,0.0,-0.00390625,0.05078125,,exact paired discordant-binomial (McNemar exact),10.0,0.1795654296875,1.0,10.0,242.0,4.0,False,
+C0_vs_A0,C0,A0,relax_converged,binary,256,-0.01953125,0.0,-0.0390625,-0.00390625,,exact paired discordant-binomial (McNemar exact),0.0,0.0625,1.0,0.0,251.0,5.0,False,
+C0_vs_A0,C0,A0,precision,aggregate_official_metric,0,-0.02734375,,,,,not available from aggregate reference metric,,,,,,,,Official precision/recall are aggregate reference-set metrics and lack a valid per-seed decomposition.
+C0_vs_A0,C0,A0,recall,aggregate_official_metric,0,-6.501205087015675e-05,,,,,not available from aggregate reference metric,,,,,,,,Official precision/recall are aggregate reference-set metrics and lack a valid per-seed decomposition.
+A0_vs_G3,A0,G3,generation_elapsed_seconds,continuous,256,-69.53144567926472,-69.46692842300399,-70.6064060078936,-68.46118270909295,-8.053227767945398,Wilcoxon signed-rank,0.0,9.640418513895798e-44,2.5552753032579518e-42,256.0,0.0,0.0,True,
+A0_vs_G3,A0,G3,physical_model_forward_count,continuous,256,-707.36328125,-709.5,-709.19140625,-705.5,-46.78708095941193,Wilcoxon signed-rank,0.0,9.46398260465908e-44,2.5552753032579518e-42,256.0,0.0,0.0,True,
+A0_vs_G3,A0,G3,corrector_forward_count,continuous,256,-707.36328125,-709.5,-709.19140625,-705.5,-46.78708095941193,Wilcoxon signed-rank,0.0,9.46398260465908e-44,2.5552753032579518e-42,256.0,0.0,0.0,True,
+A0_vs_G3,A0,G3,energy_above_hull_per_atom,continuous,256,0.022422907470552582,0.017678881386283596,0.0045272593942020595,0.04096241980496026,0.15027468482025283,Wilcoxon signed-rank,13523.0,0.013642959746797599,0.29433146657208664,115.0,0.0,141.0,True,
+A0_vs_G3,A0,G3,stable,binary,256,-0.09765625,0.0,-0.171875,-0.0234375,,exact paired discordant-binomial (McNemar exact),35.0,0.013378703026003939,0.29433146657208664,35.0,161.0,60.0,False,
+A0_vs_G3,A0,G3,novel_unique_stable,binary,256,-0.09375,0.0,-0.16015625,-0.02734375,,exact paired discordant-binomial (McNemar exact),28.0,0.009682849923057572,0.22270554823032415,28.0,176.0,52.0,False,
+A0_vs_G3,A0,G3,composition_valid,binary,256,-0.00390625,0.0,-0.06640625,0.05859375,,exact paired discordant-binomial (McNemar exact),32.0,1.0,1.0,32.0,191.0,33.0,False,
+A0_vs_G3,A0,G3,basic_structure_valid,binary,256,0.0,0.0,0.0,0.0,,exact paired discordant-binomial (McNemar exact),0.0,1.0,1.0,0.0,256.0,0.0,False,
+A0_vs_G3,A0,G3,novel,binary,256,-0.02734375,0.0,-0.08984375,0.03515625,,exact paired discordant-binomial (McNemar exact),31.0,0.47036853185814453,1.0,31.0,187.0,38.0,False,
+A0_vs_G3,A0,G3,unique,binary,256,0.0078125,0.0,-0.01171875,0.02734375,,exact paired discordant-binomial (McNemar exact),4.0,0.6875,1.0,4.0,250.0,2.0,False,
+A0_vs_G3,A0,G3,relax_converged,binary,256,-0.03515625,0.0,-0.06640625,-0.00390625,,exact paired discordant-binomial (McNemar exact),4.0,0.049041748046875,0.9808349609375,4.0,239.0,13.0,False,
+A0_vs_G3,A0,G3,precision,aggregate_official_metric,0,0.02734375,,,,,not available from aggregate reference metric,,,,,,,,Official precision/recall are aggregate reference-set metrics and lack a valid per-seed decomposition.
+A0_vs_G3,A0,G3,recall,aggregate_official_metric,0,2.4822783059514394e-05,,,,,not available from aggregate reference metric,,,,,,,,Official precision/recall are aggregate reference-set metrics and lack a valid per-seed decomposition.
+C0_vs_G3,C0,G3,energy_above_hull_per_atom,continuous,256,0.01898796253339933,0.009936044006549682,0.0009462482166440856,0.037835725011845074,0.12679195037111396,Wilcoxon signed-rank,14686.0,0.13732664970105918,1.0,115.0,0.0,141.0,True,
+C0_vs_G3,C0,G3,stable,binary,256,-0.0390625,0.0,-0.11328125,0.03515625,,exact paired discordant-binomial (McNemar exact),43.0,0.3583976321916263,1.0,43.0,160.0,53.0,False,
+C0_vs_G3,C0,G3,novel_unique_stable,binary,256,-0.05859375,0.0,-0.12890625,0.0078125,,exact paired discordant-binomial (McNemar exact),34.0,0.12385305946180147,1.0,34.0,173.0,49.0,False,
+C0_vs_G3,C0,G3,composition_valid,binary,256,-0.0078125,0.0,-0.0703125,0.0546875,,exact paired discordant-binomial (McNemar exact),31.0,0.9006532462520334,1.0,31.0,192.0,33.0,False,
+C0_vs_G3,C0,G3,basic_structure_valid,binary,256,0.0,0.0,0.0,0.0,,exact paired discordant-binomial (McNemar exact),0.0,1.0,1.0,0.0,256.0,0.0,False,
+C0_vs_G3,C0,G3,novel,binary,256,0.0,0.0,-0.0703125,0.0703125,,exact paired discordant-binomial (McNemar exact),41.0,1.0,1.0,41.0,174.0,41.0,False,
+C0_vs_G3,C0,G3,unique,binary,256,0.03125,0.0,0.00390625,0.05859375,,exact paired discordant-binomial (McNemar exact),11.0,0.057373046875,1.0,11.0,242.0,3.0,False,
+C0_vs_G3,C0,G3,relax_converged,binary,256,-0.0546875,0.0,-0.0859375,-0.02734375,,exact paired discordant-binomial (McNemar exact),0.0,0.0001220703125,0.0029296875,0.0,242.0,14.0,False,
+C0_vs_G3,C0,G3,precision,aggregate_official_metric,0,0.0,,,,,not available from aggregate reference metric,,,,,,,,Official precision/recall are aggregate reference-set metrics and lack a valid per-seed decomposition.
+C0_vs_G3,C0,G3,recall,aggregate_official_metric,0,-4.018926781064236e-05,,,,,not available from aggregate reference metric,,,,,,,,Official precision/recall are aggregate reference-set metrics and lack a valid per-seed decomposition.

@@ -38,6 +38,15 @@ sampler_partial:
   corrector_max_consecutive_skips: 8
   corrector_fallback_threshold: 0.20
   corrector_rescue_enabled: true
+  corrector_budget_aware_enabled: false
+  corrector_max_skip_ratio: 1.0
+  corrector_atomic_veto_enabled: false
+  corrector_atomic_stability_threshold: 0.05
+  corrector_atomic_min_stable_steps: 1
+  corrector_adaptive_calibration_enabled: false
+  corrector_calibration_interval_min: 4
+  corrector_calibration_interval_max: 16
+  corrector_field_aggregation: all_fields
   corrector_trace_path: null
   corrector_summary_path: null
   sample_seed: null

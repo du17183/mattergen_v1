@@ -1,0 +1,54 @@
+{
+  "stage": "screen_32",
+  "seeds": [
+    14000,
+    14031
+  ],
+  "decisions": {
+    "G1": {
+      "go": false,
+      "gates": {
+        "median_speed_multiplier": true,
+        "physical_forward_reduction": true,
+        "stable_decline": false,
+        "NUS_decline": false,
+        "Ehull_degradation": true,
+        "generation_success_100_percent": true,
+        "structure_validity_100_percent": true,
+        "composition_validity_no_significant_decline": true,
+        "same_seed_level1": true
+      },
+      "targets": {
+        "speed": 1.15,
+        "forward": 0.12,
+        "stable": -0.02,
+        "nus": -0.02,
+        "ehull": 0.01
+      }
+    },
+    "G2": {
+      "go": false,
+      "gates": {
+        "median_speed_multiplier": false,
+        "physical_forward_reduction": true,
+        "stable_decline": false,
+        "NUS_decline": true,
+        "Ehull_degradation": false,
+        "generation_success_100_percent": true,
+        "structure_validity_100_percent": true,
+        "composition_validity_no_significant_decline": true,
+        "same_seed_level1": true
+      },
+      "targets": {
+        "speed": 1.25,
+        "forward": 0.2,
+        "stable": -0.03,
+        "nus": -0.03,
+        "ehull": 0.015
+      }
+    }
+  },
+  "STABILITY_SOURCE": "MatterSim-5M surrogate",
+  "DFT_VERIFIED": false,
+  "PROPERTY_TARGET_VERIFIED": false
+}

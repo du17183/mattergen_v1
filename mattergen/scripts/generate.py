@@ -66,6 +66,15 @@ def main(
     corrector_max_consecutive_skips: int = 8,
     corrector_fallback_threshold: float = 0.20,
     corrector_rescue_enabled: bool = True,
+    corrector_budget_aware_enabled: bool = False,
+    corrector_max_skip_ratio: float = 1.0,
+    corrector_atomic_veto_enabled: bool = False,
+    corrector_atomic_stability_threshold: float = 0.05,
+    corrector_atomic_min_stable_steps: int = 1,
+    corrector_adaptive_calibration_enabled: bool = False,
+    corrector_calibration_interval_min: int = 4,
+    corrector_calibration_interval_max: int = 16,
+    corrector_field_aggregation: str = "all_fields",
     corrector_trace_path: str | None = None,
     corrector_summary_path: str | None = None,
 ) -> list[Structure]:
@@ -179,6 +188,25 @@ def main(
         corrector_max_consecutive_skips=corrector_max_consecutive_skips,
         corrector_fallback_threshold=corrector_fallback_threshold,
         corrector_rescue_enabled=corrector_rescue_enabled,
+        corrector_budget_aware_enabled=corrector_budget_aware_enabled,
+        corrector_max_skip_ratio=corrector_max_skip_ratio,
+        corrector_atomic_veto_enabled=corrector_atomic_veto_enabled,
+        corrector_atomic_stability_threshold=(
+            corrector_atomic_stability_threshold
+        ),
+        corrector_atomic_min_stable_steps=(
+            corrector_atomic_min_stable_steps
+        ),
+        corrector_adaptive_calibration_enabled=(
+            corrector_adaptive_calibration_enabled
+        ),
+        corrector_calibration_interval_min=(
+            corrector_calibration_interval_min
+        ),
+        corrector_calibration_interval_max=(
+            corrector_calibration_interval_max
+        ),
+        corrector_field_aggregation=corrector_field_aggregation,
         corrector_trace_path=corrector_trace_path,
         corrector_summary_path=corrector_summary_path,
     )

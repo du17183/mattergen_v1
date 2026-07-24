@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "experiment": "Budget-Aware Convergence-Guided Corrector Scheduling",
+  "created_at": "2026-07-24T17:13:47+08:00",
+  "updated_at": "2026-07-24T18:14:58+08:00",
+  "current_stage": "stop_for_review",
+  "overall_status": "success",
+  "development_seed_range": [
+    14000,
+    14063
+  ],
+  "development_seed_count": 64,
+  "future_formal_seed_range": [
+    30000,
+    30255
+  ],
+  "formal_30000_seeds_started": false,
+  "original_formal_seeds_reused_for_tuning": false,
+  "original_g3_parameters_modified": false,
+  "original_g3_formal_result_frozen": true,
+  "original_g3_config_sha256": "33177d98708dc0a3d2a05643f640989071653cca40e8aea4e6578269723e07a1",
+  "source_base_commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+  "other_processes_terminated": false,
+  "sigkill_used": false,
+  "launcher_pid": 2865632,
+  "launcher_pgid": 2865056,
+  "tmux_session": "mattergen_budget_aware_gating_pro5000",
+  "stages": [
+    {
+      "stage": "state_audit",
+      "status": "success",
+      "started_at": "2026-07-24T17:13:47+08:00",
+      "finished_at": "2026-07-24T17:13:47+08:00",
+      "message": "Actual Git/tmux/process/GPU/progress/remote state audited."
+    },
+    {
+      "stage": "formal_result_freeze",
+      "status": "success",
+      "started_at": "2026-07-24T17:13:47+08:00",
+      "finished_at": "2026-07-24T17:13:47+08:00",
+      "message": "Completed formal 256-seed baseline copied and SHA256 frozen without modification."
+    },
+    {
+      "stage": "branch_creation",
+      "status": "success",
+      "started_at": "2026-07-24T17:13:59+08:00",
+      "finished_at": "2026-07-24T17:13:59+08:00",
+      "message": "Created feature/budget-aware-corrector-gating from 5de00419eea2d8a9be303638f2db8ece15a22366."
+    },
+    {
+      "stage": "implementation",
+      "status": "success",
+      "started_at": null,
+      "finished_at": "2026-07-24T17:30:50+08:00",
+      "message": "Budget, late-stage gate, atomic veto, adaptive calibration, aggregation and accounting implemented at f59ebad248c85c7699ee850810cd152607fb5229."
+    },
+    {
+      "stage": "tests",
+      "status": "success",
+      "started_at": null,
+      "finished_at": "2026-07-24T17:30:50+08:00",
+      "message": "52 focused tests passed; full suite has 7 pre-existing MP-20/PyTorch weights_only data-environment failures; git diff --check passed."
+    },
+    {
+      "stage": "threshold_probe",
+      "status": "success",
+      "started_at": "2026-07-24T17:36:09+08:00",
+      "finished_at": "2026-07-24T17:51:00+08:00",
+      "message": "4/4 full traces validated; G1/G2 resolved configs frozen by SHA256."
+    },
+    {
+      "stage": "eight_seed_generation",
+      "status": "success",
+      "started_at": "2026-07-24T17:38:10+08:00",
+      "finished_at": "2026-07-24T17:51:00+08:00",
+      "message": "A0/G1/G2/G3 main=32/32 and determinism repeats=16/16."
+    },
+    {
+      "stage": "eight_seed_go_no_go",
+      "status": "success",
+      "started_at": "2026-07-24T17:47:04+08:00",
+      "finished_at": "2026-07-24T17:51:00+08:00",
+      "message": "BUDGET_AWARE_GATING_GO=True"
+    },
+    {
+      "stage": "thirty_two_generation",
+      "status": "success",
+      "started_at": "2026-07-24T17:51:03+08:00",
+      "finished_at": "2026-07-24T18:03:13+08:00",
+      "message": "96/96 valid outputs."
+    },
+    {
+      "stage": "thirty_two_relax",
+      "status": "success",
+      "started_at": "2026-07-24T18:03:13+08:00",
+      "finished_at": "2026-07-24T18:03:40+08:00",
+      "message": "96/96 valid relax outputs."
+    },
+    {
+      "stage": "thirty_two_metrics",
+      "status": "success",
+      "started_at": "2026-07-24T18:03:40+08:00",
+      "finished_at": "2026-07-24T18:08:31+08:00",
+      "message": "32-seed official metrics complete."
+    },
+    {
+      "stage": "pareto_candidate_freeze",
+      "status": "success",
+      "started_at": "2026-07-24T18:08:31+08:00",
+      "finished_at": "2026-07-24T18:08:31+08:00",
+      "message": "Frozen exact candidates=[]."
+    },
+    {
+      "stage": "sixty_four_generation",
+      "status": "not_applicable",
+      "started_at": null,
+      "finished_at": "2026-07-24T18:08:31+08:00",
+      "message": "No 32-seed candidate passed; stopped without retuning."
+    },
+    {
+      "stage": "sixty_four_relax",
+      "status": "not_applicable",
+      "started_at": null,
+      "finished_at": "2026-07-24T18:11:13+08:00",
+      "message": "No candidate passed frozen 32-seed gates; 64-seed relax not started."
+    },
+    {
+      "stage": "sixty_four_metrics",
+      "status": "not_applicable",
+      "started_at": null,
+      "finished_at": "2026-07-24T18:11:13+08:00",
+      "message": "No candidate passed frozen 32-seed gates; 64-seed metrics not started."
+    },
+    {
+      "stage": "paired_analysis",
+      "status": "success",
+      "started_at": null,
+      "finished_at": "2026-07-24T18:11:13+08:00",
+      "message": "32-seed A0/G1/G2 paired analysis complete; G3 kept separate."
+    },
+    {
+      "stage": "pareto_report",
+      "status": "success",
+      "started_at": null,
+      "finished_at": "2026-07-24T18:11:13+08:00",
+      "message": "32-seed terminal No-Go report and 10 figures complete."
+    },
+    {
+      "stage": "github_archive",
+      "status": "success",
+      "started_at": "2026-07-24T18:11:13+08:00",
+      "finished_at": "2026-07-24T18:14:58+08:00",
+      "message": "Branch pushed, Draft PR #2 created, and complete non-weight data Release uploaded."
+    },
+    {
+      "stage": "stop_for_review",
+      "status": "success",
+      "started_at": null,
+      "finished_at": "2026-07-24T18:14:58+08:00",
+      "message": "Terminal 32-seed No-Go archived; stopped for user review without 64/formal seeds."
+    }
+  ],
+  "git_branch": "feature/budget-aware-corrector-gating",
+  "git_commit": "f59ebad248c85c7699ee850810cd152607fb5229",
+  "stop_requested": false,
+  "probe_completed": true,
+  "budget_aware_gating_go": true,
+  "eight_seed_completed": true,
+  "budget_aware_gating_development_validated": false,
+  "budget_aware_gating_completed": true,
+  "formal_14032_14063_started": false,
+  "github_branch": "feature/budget-aware-corrector-gating",
+  "github_archive_commit": "f8ceae2",
+  "draft_pr": "https://github.com/du17183/mattergen_v1/pull/2",
+  "data_release": "https://github.com/du17183/mattergen_v1/releases/tag/budget-aware-gating-data-20260724"
+}

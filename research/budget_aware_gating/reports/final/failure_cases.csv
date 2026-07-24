@@ -1,0 +1,3 @@
+stage,config,seed,failure_type,details
+relax,A0,14000,valid_max_step_nonconvergence,steps=500; max_force=0.099846251308918
+relax,G1,14008,valid_max_step_nonconvergence,steps=500; max_force=0.04523148015141487
