@@ -72,8 +72,20 @@ class LangevinCorrector(Sampler):
             and not isinstance(corruption, WrappedSDEMixin)
         )
 
-    def update_fn(self, *, x, t, batch_idx, dt: torch.Tensor) -> SampleAndMean:
+    def update_fn(
+        self,
+        *,
+        x,
+        t,
+        batch_idx,
+        dt: torch.Tensor | None = None,
+    ) -> SampleAndMean:
         assert self.score_fn is not None, "Did you mean to use step_given_score?"
+        # Backward compatibility for direct callers predating the sampler's
+        # explicit dt plumbing. Production PredictorCorrector always supplies
+        # the real negative timestep increment.
+        if dt is None:
+            dt = torch.zeros_like(t)
         for _ in range(self.n_steps):
             score = self.score_fn(x, t, batch_idx)
             x, x_mean = self.step_given_score(x=x, batch_idx=batch_idx, score=score, t=t, dt=dt)

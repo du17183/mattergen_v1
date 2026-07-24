@@ -222,6 +222,18 @@ class CrystalGenerator:
     cfg_trace_path: str | None = None
     cfg_trace_mode: str = "auto"
     cfg_summary_path: str | None = None
+    corrector_gating_enabled: bool = False
+    corrector_warmup_frac: float = 0.15
+    corrector_min_progress: float = 0.15
+    corrector_max_progress: float = 0.95
+    corrector_convergence_threshold: float = 0.05
+    corrector_consecutive_stable_steps: int = 3
+    corrector_calibration_interval: int = 10
+    corrector_max_consecutive_skips: int = 8
+    corrector_fallback_threshold: float = 0.20
+    corrector_rescue_enabled: bool = True
+    corrector_trace_path: str | None = None
+    corrector_summary_path: str | None = None
 
     # Additional overrides, only has an effect when using a diffusion-codebase model
     sampling_config_overrides: list[str] | None = None
@@ -358,6 +370,16 @@ class CrystalGenerator:
                 f"sampler_partial.cfg_min_progress={self.cfg_min_progress}",
                 f"sampler_partial.cfg_max_progress={self.cfg_max_progress}",
                 f"sampler_partial.cfg_trace_mode={self.cfg_trace_mode}",
+                f"sampler_partial.corrector_gating_enabled={self.corrector_gating_enabled}",
+                f"sampler_partial.corrector_warmup_frac={self.corrector_warmup_frac}",
+                f"sampler_partial.corrector_min_progress={self.corrector_min_progress}",
+                f"sampler_partial.corrector_max_progress={self.corrector_max_progress}",
+                f"sampler_partial.corrector_convergence_threshold={self.corrector_convergence_threshold}",
+                f"sampler_partial.corrector_consecutive_stable_steps={self.corrector_consecutive_stable_steps}",
+                f"sampler_partial.corrector_calibration_interval={self.corrector_calibration_interval}",
+                f"sampler_partial.corrector_max_consecutive_skips={self.corrector_max_consecutive_skips}",
+                f"sampler_partial.corrector_fallback_threshold={self.corrector_fallback_threshold}",
+                f"sampler_partial.corrector_rescue_enabled={self.corrector_rescue_enabled}",
             ]
             if self.seed is not None:
                 sampling_config_overrides.append(f"sampler_partial.sample_seed={self.seed}")
@@ -374,6 +396,14 @@ class CrystalGenerator:
             if self.cfg_summary_path is not None:
                 sampling_config_overrides.append(
                     f"sampler_partial.cfg_summary_path={self.cfg_summary_path}"
+                )
+            if self.corrector_trace_path is not None:
+                sampling_config_overrides.append(
+                    f"sampler_partial.corrector_trace_path={self.corrector_trace_path}"
+                )
+            if self.corrector_summary_path is not None:
+                sampling_config_overrides.append(
+                    f"sampler_partial.corrector_summary_path={self.corrector_summary_path}"
                 )
         else:
             # `condition_loader_partial` for fixed atom type (crystal structure prediction)

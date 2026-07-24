@@ -56,6 +56,18 @@ def main(
     cfg_trace_path: str | None = None,
     cfg_trace_mode: str = "auto",
     cfg_summary_path: str | None = None,
+    corrector_gating_enabled: bool = False,
+    corrector_warmup_frac: float = 0.15,
+    corrector_min_progress: float = 0.15,
+    corrector_max_progress: float = 0.95,
+    corrector_convergence_threshold: float = 0.05,
+    corrector_consecutive_stable_steps: int = 3,
+    corrector_calibration_interval: int = 10,
+    corrector_max_consecutive_skips: int = 8,
+    corrector_fallback_threshold: float = 0.20,
+    corrector_rescue_enabled: bool = True,
+    corrector_trace_path: str | None = None,
+    corrector_summary_path: str | None = None,
 ) -> list[Structure]:
     """
     Evaluate diffusion model against molecular metrics.
@@ -157,6 +169,18 @@ def main(
         cfg_trace_path=cfg_trace_path,
         cfg_trace_mode=cfg_trace_mode,
         cfg_summary_path=cfg_summary_path,
+        corrector_gating_enabled=corrector_gating_enabled,
+        corrector_warmup_frac=corrector_warmup_frac,
+        corrector_min_progress=corrector_min_progress,
+        corrector_max_progress=corrector_max_progress,
+        corrector_convergence_threshold=corrector_convergence_threshold,
+        corrector_consecutive_stable_steps=corrector_consecutive_stable_steps,
+        corrector_calibration_interval=corrector_calibration_interval,
+        corrector_max_consecutive_skips=corrector_max_consecutive_skips,
+        corrector_fallback_threshold=corrector_fallback_threshold,
+        corrector_rescue_enabled=corrector_rescue_enabled,
+        corrector_trace_path=corrector_trace_path,
+        corrector_summary_path=corrector_summary_path,
     )
     return generator.generate(output_dir=Path(output_path))
 

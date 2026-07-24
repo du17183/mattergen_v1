@@ -5,6 +5,8 @@ from __future__ import annotations
 
 from typing import Any, Generic, Mapping, Tuple, TypeVar
 
+import time
+
 import torch
 from tqdm.auto import tqdm
 
@@ -116,6 +118,52 @@ class PredictorCorrector(Generic[Diffusable]):
     def _on_sampling_end(self, error: BaseException | None) -> None:
         """Hook for run-local cleanup and trace persistence."""
 
+    def _corrector_gating_active(self) -> bool:
+        """Whether to use the gated loop; false preserves the frozen loop exactly."""
+
+        return False
+
+    def _corrector_gate_should_execute(
+        self, *, batch: Diffusable, t: torch.Tensor, sampling_step: int
+    ) -> bool:
+        return True
+
+    def _on_corrector_skipped(
+        self, *, batch: Diffusable, t: torch.Tensor, sampling_step: int
+    ) -> None:
+        """Hook after the scheduled corrector is completely skipped."""
+
+    def _on_phase_model_forward(
+        self, *, phase: str, sampling_step: int, rescue: bool
+    ) -> None:
+        """Hook after one real score-model invocation."""
+
+    def _on_phase_update(
+        self,
+        *,
+        phase: str,
+        before: Diffusable,
+        after: Diffusable,
+        sampling_step: int,
+        rescue: bool,
+    ) -> None:
+        """Hook after one complete phase state update."""
+
+    def _corrector_rescue_required(
+        self, *, batch: Diffusable, t: torch.Tensor, sampling_step: int
+    ) -> bool:
+        return False
+
+    def _on_timestep_end(
+        self,
+        *,
+        batch: Diffusable,
+        t: torch.Tensor,
+        sampling_step: int,
+        elapsed_ms: float,
+    ) -> None:
+        """Hook after scheduled phases and any immediate rescue."""
+
     def _set_sampling_context(self, *, sampling_step: int, phase: str) -> None:
         self._sampling_context = {
             "sampling_step": sampling_step,
@@ -207,6 +255,10 @@ class PredictorCorrector(Generic[Diffusable]):
         record: bool = False,
     ) -> SampleAndMeanAndMaybeRecords:
         """Denoise from a prior sample to a t=eps_t sample."""
+        if self._corrector_gating_active():
+            return self._denoise_with_corrector_gating(
+                batch=batch, mask=mask, record=record
+            )
         recorded_samples = None
         if record:
             recorded_samples = []
@@ -262,6 +314,150 @@ class PredictorCorrector(Generic[Diffusable]):
                 recorded_samples.append(batch.clone().to("cpu"))
             batch, mean_batch = _mask_replace(
                 samples_means=samples_means, batch=batch, mean_batch=mean_batch, mask=mask
+            )
+
+        return batch, mean_batch, recorded_samples
+
+    @torch.no_grad()
+    def _denoise_with_corrector_gating(
+        self,
+        batch: Diffusable,
+        mask: dict[str, torch.Tensor],
+        record: bool = False,
+    ) -> SampleAndMeanAndMaybeRecords:
+        """Denoise while gating outside the complete corrector score call."""
+
+        recorded_samples = [] if record else None
+        for key in self._predictors:
+            mask.setdefault(key, None)
+        for key in self._correctors:
+            mask.setdefault(key, None)
+        mean_batch = batch.clone()
+        timesteps = torch.linspace(
+            self._max_t, self._eps_t, self.N, device=self._device
+        )
+        dt = -torch.tensor(
+            (self._max_t - self._eps_t) / (self.N - 1)
+        ).to(self._device)
+
+        def apply_corrector(*, sampling_step: int, t: torch.Tensor, rescue: bool):
+            nonlocal batch, mean_batch
+            before = batch.clone()
+            for _ in range(self._n_steps_corrector):
+                self._set_sampling_context(
+                    sampling_step=sampling_step, phase="corrector"
+                )
+                score = self._score_fn(batch, t)
+                self._on_phase_model_forward(
+                    phase="corrector",
+                    sampling_step=sampling_step,
+                    rescue=rescue,
+                )
+                functions = {
+                    key: corrector.step_given_score
+                    for key, corrector in self._correctors.items()
+                }
+                samples_means: dict[
+                    str, Tuple[torch.Tensor, torch.Tensor]
+                ] = apply(
+                    fns=functions,
+                    broadcast={"t": t, "dt": dt},
+                    x=batch,
+                    score=score,
+                    batch_idx=self._multi_corruption._get_batch_indices(
+                        batch
+                    ),
+                )
+                if record:
+                    assert recorded_samples is not None
+                    recorded_samples.append(batch.clone().to("cpu"))
+                batch, mean_batch = _mask_replace(
+                    samples_means=samples_means,
+                    batch=batch,
+                    mean_batch=mean_batch,
+                    mask=mask,
+                )
+            self._on_phase_update(
+                phase="corrector",
+                before=before,
+                after=batch,
+                sampling_step=sampling_step,
+                rescue=rescue,
+            )
+
+        for sampling_step in tqdm(
+            range(self.N), miniters=50, mininterval=5
+        ):
+            step_started = time.perf_counter()
+            t = torch.full(
+                (batch.get_batch_size(),),
+                timesteps[sampling_step],
+                device=self._device,
+            )
+
+            if self._correctors:
+                execute = self._corrector_gate_should_execute(
+                    batch=batch, t=t, sampling_step=sampling_step
+                )
+                if execute:
+                    apply_corrector(
+                        sampling_step=sampling_step, t=t, rescue=False
+                    )
+                else:
+                    self._on_corrector_skipped(
+                        batch=batch, t=t, sampling_step=sampling_step
+                    )
+
+            predictor_before = batch.clone()
+            self._set_sampling_context(
+                sampling_step=sampling_step, phase="predictor"
+            )
+            score = self._score_fn(batch, t)
+            self._on_phase_model_forward(
+                phase="predictor",
+                sampling_step=sampling_step,
+                rescue=False,
+            )
+            predictor_functions = {
+                key: predictor.update_given_score
+                for key, predictor in self._predictors.items()
+            }
+            samples_means = apply(
+                fns=predictor_functions,
+                x=batch,
+                score=score,
+                broadcast={"t": t, "batch": batch, "dt": dt},
+                batch_idx=self._multi_corruption._get_batch_indices(batch),
+            )
+            if record:
+                assert recorded_samples is not None
+                recorded_samples.append(batch.clone().to("cpu"))
+            batch, mean_batch = _mask_replace(
+                samples_means=samples_means,
+                batch=batch,
+                mean_batch=mean_batch,
+                mask=mask,
+            )
+            self._on_phase_update(
+                phase="predictor",
+                before=predictor_before,
+                after=batch,
+                sampling_step=sampling_step,
+                rescue=False,
+            )
+
+            if self._correctors and self._corrector_rescue_required(
+                batch=batch, t=t, sampling_step=sampling_step
+            ):
+                apply_corrector(
+                    sampling_step=sampling_step, t=t, rescue=True
+                )
+
+            self._on_timestep_end(
+                batch=batch,
+                t=t,
+                sampling_step=sampling_step,
+                elapsed_ms=(time.perf_counter() - step_started) * 1000.0,
             )
 
         return batch, mean_batch, recorded_samples

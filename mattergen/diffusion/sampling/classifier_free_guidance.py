@@ -18,6 +18,12 @@ from mattergen.diffusion.sampling.guidance_schedule import GuidanceController
 from mattergen.diffusion.sampling.cfg_acceleration import (
     CFG_FIELDS, AccelerationObservation, ConvergenceAwareCFGController, NFEAccounting,
 )
+from mattergen.diffusion.sampling.corrector_gating import (
+    GATING_FIELDS,
+    ConvergenceAwareCorrectorGate,
+    CorrectorGateDecision,
+    CorrectorGatingAccounting,
+)
 from mattergen.diffusion.sampling.pc_sampler import Diffusable, PredictorCorrector
 
 BatchTransform = Callable[[Diffusable], Diffusable]
@@ -63,6 +69,57 @@ TRACE_FIELD_NAMES = (
     "physical_forward_count",
     "joint_batch_forward_count",
     "conditional_only_forward_count",
+    "elapsed_ms",
+)
+
+CORRECTOR_TRACE_FIELD_NAMES = (
+    "seed",
+    "sampling_step",
+    "progress",
+    "t",
+    "decision",
+    "corrector_executed",
+    "corrector_skipped",
+    "forced_calibration",
+    "fallback",
+    "fallback_reason",
+    "residual_cell",
+    "residual_pos",
+    "residual_atomic",
+    "corrector_residual_cell",
+    "corrector_residual_pos",
+    "corrector_residual_atomic",
+    "predictor_residual_change_cell",
+    "predictor_residual_change_pos",
+    "predictor_residual_change_atomic",
+    "corrector_residual_change_cell",
+    "corrector_residual_change_pos",
+    "corrector_residual_change_atomic",
+    "predictor_update_cell",
+    "predictor_update_pos",
+    "predictor_update_atomic",
+    "corrector_update_cell",
+    "corrector_update_pos",
+    "corrector_update_atomic",
+    "cell_converged",
+    "pos_converged",
+    "atomic_converged",
+    "global_converged",
+    "stable_count",
+    "consecutive_skip_count",
+    "predictor_forward_count",
+    "corrector_forward_count",
+    "corrector_skipped_count",
+    "corrector_calibration_count",
+    "corrector_fallback_count",
+    "corrector_rescue_count",
+    "physical_forward_count",
+    "joint_batch_forward_count",
+    "conditional_only_forward_count",
+    "logical_conditional_nfe",
+    "logical_unconditional_nfe",
+    "rescue",
+    "rescue_reason",
     "elapsed_ms",
 )
 
@@ -143,6 +200,18 @@ class GuidedPredictorCorrector(PredictorCorrector):
         cfg_trace_path: str | None = None,
         cfg_trace_mode: str = "auto",
         cfg_summary_path: str | None = None,
+        corrector_gating_enabled: bool = False,
+        corrector_warmup_frac: float = 0.15,
+        corrector_min_progress: float = 0.15,
+        corrector_max_progress: float = 0.95,
+        corrector_convergence_threshold: float = 0.05,
+        corrector_consecutive_stable_steps: int = 3,
+        corrector_calibration_interval: int = 10,
+        corrector_max_consecutive_skips: int = 8,
+        corrector_fallback_threshold: float = 0.20,
+        corrector_rescue_enabled: bool = True,
+        corrector_trace_path: str | None = None,
+        corrector_summary_path: str | None = None,
         sample_seed: int | None = None,
         run_id: str | None = None,
         **kwargs,
@@ -229,6 +298,46 @@ class GuidedPredictorCorrector(PredictorCorrector):
         self._cfg_guidance_cache: dict[str, float | None] = {}
         self._cfg_last_observation: dict[str, AccelerationObservation | None] = {}
         self._reset_cfg_acceleration_state()
+        self._corrector_gating_enabled = bool(corrector_gating_enabled)
+        if self._corrector_gating_enabled and self._cfg_acceleration_enabled:
+            raise ValueError(
+                "corrector gating cannot be combined with the archived "
+                "unconditional-reuse acceleration"
+            )
+        self._corrector_gate = ConvergenceAwareCorrectorGate(
+            warmup_frac=corrector_warmup_frac,
+            min_progress=corrector_min_progress,
+            max_progress=corrector_max_progress,
+            convergence_threshold=corrector_convergence_threshold,
+            consecutive_stable_steps=corrector_consecutive_stable_steps,
+            calibration_interval=corrector_calibration_interval,
+            max_consecutive_skips=corrector_max_consecutive_skips,
+            fallback_threshold=corrector_fallback_threshold,
+            rescue_enabled=corrector_rescue_enabled,
+        )
+        self._corrector_trace_path = (
+            Path(corrector_trace_path).expanduser()
+            if corrector_trace_path is not None
+            else None
+        )
+        self._corrector_summary_path = (
+            Path(corrector_summary_path).expanduser()
+            if corrector_summary_path is not None
+            else None
+        )
+        for label, selected_path in (
+            ("corrector_trace_path", self._corrector_trace_path),
+            ("corrector_summary_path", self._corrector_summary_path),
+        ):
+            if selected_path is not None and not selected_path.is_absolute():
+                raise ValueError(f"{label} must be an absolute path")
+        self._corrector_trace_rows: list[dict[str, Any]] = []
+        self._corrector_accounting = CorrectorGatingAccounting()
+        self._corrector_current_decision = CorrectorGateDecision(
+            True, "full_corrector", "initial"
+        )
+        self._corrector_rescue_performed = False
+        self._corrector_rescue_reason = ""
 
     @property
     def guidance_schedule(self) -> str:
@@ -241,6 +350,13 @@ class GuidedPredictorCorrector(PredictorCorrector):
     @property
     def cfg_nfe_summary(self) -> Mapping[str, int]:
         return self._cfg_nfe.as_dict()
+
+    @property
+    def corrector_gating_summary(self) -> Mapping[str, int]:
+        return self._corrector_accounting.as_dict()
+
+    def _corrector_gating_active(self) -> bool:
+        return bool(getattr(self, "_corrector_gating_enabled", False))
 
     def _reset_cfg_acceleration_state(self) -> None:
         self._cfg_controller.reset()
@@ -256,6 +372,16 @@ class GuidedPredictorCorrector(PredictorCorrector):
         self._cfg_guidance_cache = {"corrector": None, "predictor": None}
         self._cfg_last_observation = {"corrector": None, "predictor": None}
 
+    def _reset_corrector_gating_state(self) -> None:
+        self._corrector_gate.reset()
+        self._corrector_accounting = CorrectorGatingAccounting()
+        self._corrector_trace_rows = []
+        self._corrector_current_decision = CorrectorGateDecision(
+            True, "full_corrector", "reset"
+        )
+        self._corrector_rescue_performed = False
+        self._corrector_rescue_reason = ""
+
     def _on_sampling_start(self) -> None:
         super()._on_sampling_start()
         self._guidance_controller.reset()
@@ -263,6 +389,16 @@ class GuidedPredictorCorrector(PredictorCorrector):
         self._guidance_trace_rows = []
         self._trace_build_cpu_seconds = 0.0
         self._trace_write_cpu_seconds = 0.0
+        if hasattr(self, "_corrector_gate"):
+            self._reset_corrector_gating_state()
+        for label, selected_path in (
+            ("corrector trace", getattr(self, "_corrector_trace_path", None)),
+            ("corrector summary", getattr(self, "_corrector_summary_path", None)),
+        ):
+            if selected_path is not None and selected_path.exists():
+                raise FileExistsError(
+                    f"Refusing to overwrite existing {label}: {selected_path}"
+                )
         if self._trace_to_disk:
             assert self._guidance_trace_path is not None
             if self._guidance_trace_path.exists():
@@ -275,6 +411,59 @@ class GuidedPredictorCorrector(PredictorCorrector):
             )
 
     def _on_sampling_end(self, error: BaseException | None) -> None:
+        corrector_trace_path = getattr(self, "_corrector_trace_path", None)
+        corrector_summary_path = getattr(self, "_corrector_summary_path", None)
+        if corrector_trace_path is not None:
+            self._atomic_write_csv(
+                corrector_trace_path,
+                CORRECTOR_TRACE_FIELD_NAMES,
+                self._corrector_trace_rows,
+            )
+        if corrector_summary_path is not None:
+            accounting = self._corrector_accounting.as_dict()
+            baseline_physical = self.N * (1 + self._n_steps_corrector)
+            if not self._corrector_gating_enabled:
+                cfg_nfe = self._cfg_nfe.as_dict()
+                accounting.update(
+                    predictor_forward_count=self.N,
+                    corrector_forward_count=(
+                        self.N * self._n_steps_corrector
+                    ),
+                    physical_model_forward_count=cfg_nfe[
+                        "physical_model_forward_count"
+                    ],
+                    joint_batch_forward_count=cfg_nfe[
+                        "joint_batch_forward_count"
+                    ],
+                    conditional_only_forward_count=cfg_nfe[
+                        "conditional_only_forward_count"
+                    ],
+                    logical_conditional_nfe=cfg_nfe[
+                        "conditional_logical_nfe"
+                    ],
+                    logical_unconditional_nfe=cfg_nfe[
+                        "unconditional_logical_nfe"
+                    ],
+                )
+            payload = {
+                "success": error is None,
+                "error_type": None if error is None else type(error).__name__,
+                "enabled": self._corrector_gating_enabled,
+                "seed": self._sample_seed,
+                "sampling_steps": self.N,
+                "n_steps_corrector": self._n_steps_corrector,
+                **accounting,
+                "corrector_skip_rate": (
+                    accounting["corrector_skipped_count"] / max(self.N, 1)
+                ),
+                "physical_forward_reduction": (
+                    1.0
+                    - accounting["physical_model_forward_count"]
+                    / max(baseline_physical, 1)
+                ),
+                "final_gate_state": self._corrector_gate.snapshot(),
+            }
+            self._atomic_write_json(corrector_summary_path, payload)
         if self._trace_to_disk:
             started = time.perf_counter()
             assert self._guidance_trace_path is not None
@@ -313,6 +502,250 @@ class GuidedPredictorCorrector(PredictorCorrector):
                 stream.flush()
                 os.fsync(stream.fileno())
             os.replace(temporary, self._cfg_summary_path)
+
+    @staticmethod
+    def _atomic_write_csv(
+        path: Path, fieldnames: tuple[str, ...], rows: list[dict[str, Any]]
+    ) -> None:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        temporary = path.with_name(f".{path.name}.tmp.{os.getpid()}")
+        with temporary.open("x", newline="", encoding="utf-8") as stream:
+            writer = csv.DictWriter(stream, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(rows)
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(temporary, path)
+
+    @staticmethod
+    def _atomic_write_json(path: Path, payload: Mapping[str, Any]) -> None:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        temporary = path.with_name(f".{path.name}.tmp.{os.getpid()}")
+        with temporary.open("x", encoding="utf-8") as stream:
+            json.dump(payload, stream, indent=2)
+            stream.write("\n")
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(temporary, path)
+
+    @staticmethod
+    def _normalized_update_rms(
+        before: Diffusable, after: Diffusable
+    ) -> dict[str, float | None]:
+        norms: dict[str, float | None] = {}
+        for field in GATING_FIELDS:
+            try:
+                old = before[field]
+                new = after[field]
+                if (
+                    not isinstance(old, torch.Tensor)
+                    or not isinstance(new, torch.Tensor)
+                    or old.shape != new.shape
+                    or old.numel() == 0
+                ):
+                    raise ValueError("invalid tensors")
+                delta_rms = torch.sqrt(
+                    torch.mean((new.float() - old.float()).square())
+                )
+                scale = torch.sqrt(torch.mean(old.float().square()))
+                value = delta_rms / (scale + 1e-8)
+                norms[field] = (
+                    float(value.item())
+                    if bool(torch.isfinite(value).item())
+                    else None
+                )
+            except (KeyError, TypeError, ValueError):
+                norms[field] = None
+        return norms
+
+    def _corrector_gate_should_execute(
+        self, *, batch: Diffusable, t: torch.Tensor, sampling_step: int
+    ) -> bool:
+        del batch, t
+        self._corrector_rescue_performed = False
+        self._corrector_rescue_reason = ""
+        decision = self._corrector_gate.decide(
+            sampling_step=sampling_step, num_steps=self.N
+        )
+        self._corrector_current_decision = decision
+        self._corrector_gate.record_scheduled_decision(decision)
+        if decision.forced_calibration:
+            self._corrector_accounting.record_calibration()
+        if decision.fallback:
+            self._corrector_accounting.record_fallback()
+        return decision.execute_corrector
+
+    def _on_corrector_skipped(
+        self, *, batch: Diffusable, t: torch.Tensor, sampling_step: int
+    ) -> None:
+        del batch, t, sampling_step
+        self._corrector_accounting.record_skip()
+
+    def _on_phase_model_forward(
+        self, *, phase: str, sampling_step: int, rescue: bool
+    ) -> None:
+        del sampling_step
+        if phase == "predictor":
+            self._corrector_accounting.record_predictor_forward()
+        elif phase == "corrector":
+            self._corrector_accounting.record_corrector_forward(
+                rescue=rescue
+            )
+        else:
+            raise ValueError(f"unknown phase: {phase}")
+
+    def _on_phase_update(
+        self,
+        *,
+        phase: str,
+        before: Diffusable,
+        after: Diffusable,
+        sampling_step: int,
+        rescue: bool,
+    ) -> None:
+        del sampling_step, rescue
+        self._corrector_gate.observe_update(
+            phase=phase,
+            update_norms=self._normalized_update_rms(before, after),
+        )
+
+    def _corrector_rescue_required(
+        self, *, batch: Diffusable, t: torch.Tensor, sampling_step: int
+    ) -> bool:
+        del batch, t, sampling_step
+        rescue, reason = self._corrector_gate.should_rescue_after_predictor()
+        self._corrector_rescue_performed = rescue
+        self._corrector_rescue_reason = reason
+        if rescue:
+            self._corrector_gate.record_rescue()
+        return rescue
+
+    def _on_timestep_end(
+        self,
+        *,
+        batch: Diffusable,
+        t: torch.Tensor,
+        sampling_step: int,
+        elapsed_ms: float,
+    ) -> None:
+        del batch
+        self._corrector_gate.finalize_step()
+        if self._corrector_trace_path is None:
+            return
+        snapshot = self._corrector_gate.snapshot()
+        predictor_residual = snapshot["residuals"]["predictor"]
+        corrector_residual = snapshot["residuals"]["corrector"]
+        predictor_residual_change = snapshot["residual_relative_change"][
+            "predictor"
+        ]
+        corrector_residual_change = snapshot["residual_relative_change"][
+            "corrector"
+        ]
+        predictor_update = snapshot["update_norms"]["predictor"]
+        corrector_update = snapshot["update_norms"]["corrector"]
+        converged = snapshot["field_converged"]
+        accounting = self._corrector_accounting.as_dict()
+        decision = self._corrector_current_decision
+        rescue = self._corrector_rescue_performed
+        trace_decision = "rescue_corrector" if rescue else decision.mode
+        self._corrector_trace_rows.append(
+            {
+                "seed": self._sample_seed,
+                "sampling_step": sampling_step,
+                "progress": sampling_step / max(self.N - 1, 1),
+                "t": float(t.detach().reshape(-1)[0].cpu().item()),
+                "decision": trace_decision,
+                "corrector_executed": decision.execute_corrector or rescue,
+                "corrector_skipped": not decision.execute_corrector,
+                "forced_calibration": decision.forced_calibration,
+                "fallback": decision.fallback or rescue,
+                "fallback_reason": (
+                    self._corrector_rescue_reason
+                    if rescue
+                    else decision.reason
+                ),
+                "residual_cell": predictor_residual["cell"],
+                "residual_pos": predictor_residual["pos"],
+                "residual_atomic": predictor_residual["atomic_numbers"],
+                "corrector_residual_cell": corrector_residual["cell"],
+                "corrector_residual_pos": corrector_residual["pos"],
+                "corrector_residual_atomic": corrector_residual[
+                    "atomic_numbers"
+                ],
+                "predictor_residual_change_cell": (
+                    predictor_residual_change["cell"]
+                ),
+                "predictor_residual_change_pos": (
+                    predictor_residual_change["pos"]
+                ),
+                "predictor_residual_change_atomic": (
+                    predictor_residual_change["atomic_numbers"]
+                ),
+                "corrector_residual_change_cell": (
+                    corrector_residual_change["cell"]
+                ),
+                "corrector_residual_change_pos": (
+                    corrector_residual_change["pos"]
+                ),
+                "corrector_residual_change_atomic": (
+                    corrector_residual_change["atomic_numbers"]
+                ),
+                "predictor_update_cell": predictor_update["cell"],
+                "predictor_update_pos": predictor_update["pos"],
+                "predictor_update_atomic": predictor_update[
+                    "atomic_numbers"
+                ],
+                "corrector_update_cell": corrector_update["cell"],
+                "corrector_update_pos": corrector_update["pos"],
+                "corrector_update_atomic": corrector_update[
+                    "atomic_numbers"
+                ],
+                "cell_converged": converged["cell"],
+                "pos_converged": converged["pos"],
+                "atomic_converged": converged["atomic_numbers"],
+                "global_converged": snapshot["global_converged"],
+                "stable_count": snapshot["stable_count"],
+                "consecutive_skip_count": snapshot[
+                    "consecutive_skip_count"
+                ],
+                "predictor_forward_count": accounting[
+                    "predictor_forward_count"
+                ],
+                "corrector_forward_count": accounting[
+                    "corrector_forward_count"
+                ],
+                "corrector_skipped_count": accounting[
+                    "corrector_skipped_count"
+                ],
+                "corrector_calibration_count": accounting[
+                    "corrector_calibration_count"
+                ],
+                "corrector_fallback_count": accounting[
+                    "corrector_fallback_count"
+                ],
+                "corrector_rescue_count": accounting[
+                    "corrector_rescue_count"
+                ],
+                "physical_forward_count": accounting[
+                    "physical_model_forward_count"
+                ],
+                "joint_batch_forward_count": accounting[
+                    "joint_batch_forward_count"
+                ],
+                "conditional_only_forward_count": accounting[
+                    "conditional_only_forward_count"
+                ],
+                "logical_conditional_nfe": accounting[
+                    "logical_conditional_nfe"
+                ],
+                "logical_unconditional_nfe": accounting[
+                    "logical_unconditional_nfe"
+                ],
+                "rescue": rescue,
+                "rescue_reason": self._corrector_rescue_reason,
+                "elapsed_ms": elapsed_ms,
+            }
+        )
 
     def _trace_decision(
         self,
@@ -562,7 +995,11 @@ class GuidedPredictorCorrector(PredictorCorrector):
 
         # This exact branch retains the original torch.lerp call and arithmetic
         # whenever users do not request a new schedule or trace.
-        if self.guidance_schedule == "constant" and not self._trace_enabled:
+        if (
+            self.guidance_schedule == "constant"
+            and not self._trace_enabled
+            and not self._corrector_gating_active()
+        ):
             return unconditional_score.replace(
                 **{
                     field: torch.lerp(
@@ -588,6 +1025,10 @@ class GuidedPredictorCorrector(PredictorCorrector):
             residual_error=residual_error,
         )
         decision_dict = decision.as_dict()
+        if self._corrector_gating_active():
+            self._corrector_gate.observe_residual(
+                phase=phase, residuals=field_deltas
+            )
         self._trace_decision(t=t, field_deltas=field_deltas, decision=decision_dict)
         return unconditional_score.replace(
             **{
