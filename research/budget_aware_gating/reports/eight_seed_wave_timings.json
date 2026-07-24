@@ -1,0 +1,26 @@
+{
+  "A0": {
+    "success": true,
+    "elapsed_seconds": 87.26434597099433,
+    "executed_tasks": 8,
+    "throughput_structures_per_hour": 330.0316948410155
+  },
+  "G1": {
+    "success": true,
+    "elapsed_seconds": 74.51842659799149,
+    "executed_tasks": 8,
+    "throughput_structures_per_hour": 386.48159005515356
+  },
+  "G2": {
+    "success": true,
+    "elapsed_seconds": 70.85114600503584,
+    "executed_tasks": 8,
+    "throughput_structures_per_hour": 406.48601503147177
+  },
+  "G3": {
+    "success": true,
+    "elapsed_seconds": 58.597535646986216,
+    "executed_tasks": 8,
+    "throughput_structures_per_hour": 491.4882457429972
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "BUDGET_AWARE_GATING_GO": true,
+  "seeds": [
+    14000,
+    14007
+  ],
+  "repeat_seeds": [
+    14000,
+    14001,
+    14002,
+    14003
+  ],
+  "aggregate": {
+    "A0": {
+      "generation_success_rate": 1.0,
+      "basic_structure_validity": 1,
+      "composition_validity": 0.625,
+      "median_elapsed_seconds": 73.3491958520026,
+      "physical_forward_reduction": 0.0,
+      "corrector_skip_rate": 0.0,
+      "atomic_veto_mean": 0.0,
+      "fallback_mean": 0.0,
+      "calibration_mean": 0.0,
+      "rescue_mean": 0.0,
+      "wave_elapsed_seconds": 87.26434597099433,
+      "throughput_structures_per_hour": 330.0316948410155,
+      "determinism_level1": true
+    },
+    "G1": {
+      "generation_success_rate": 1.0,
+      "basic_structure_validity": 1,
+      "composition_validity": 0.75,
+      "median_elapsed_seconds": 64.03939949951018,
+      "physical_forward_reduction": 0.1268125,
+      "corrector_skip_rate": 0.253625,
+      "atomic_veto_mean": 115.125,
+      "fallback_mean": 10.375,
+      "calibration_mean": 49.625,
+      "rescue_mean": 0.0,
+      "wave_elapsed_seconds": 74.51842659799149,
+      "throughput_structures_per_hour": 386.48159005515356,
+      "determinism_level1": true,
+      "speed_multiplier": 1.145376072000232,
+      "throughput_gain": 0.17104386062475418
+    },
+    "G2": {
+      "generation_success_rate": 1.0,
+      "basic_structure_validity": 1,
+      "composition_validity": 0.625,
+      "median_elapsed_seconds": 58.76624630999868,
+      "physical_forward_reduction": 0.20587499999999997,
+      "corrector_skip_rate": 0.41175,
+      "atomic_veto_mean": 61.5,
+      "fallback_mean": 11.625,
+      "calibration_mean": 48.125,
+      "rescue_mean": 0.0,
+      "wave_elapsed_seconds": 70.85114600503584,
+      "throughput_structures_per_hour": 406.48601503147177,
+      "determinism_level1": true,
+      "speed_multiplier": 1.2481517955915915,
+      "throughput_gain": 0.23165750861378998
+    },
+    "G3": {
+      "generation_success_rate": 1.0,
+      "basic_structure_validity": 1,
+      "composition_validity": 0.75,
+      "median_elapsed_seconds": 50.051555064477725,
+      "physical_forward_reduction": 0.35268750000000004,
+      "corrector_skip_rate": 0.705375,
+      "atomic_veto_mean": 0.0,
+      "fallback_mean": 10.375,
+      "calibration_mean": 53.0,
+      "rescue_mean": 0.0,
+      "wave_elapsed_seconds": 58.597535646986216,
+      "throughput_structures_per_hour": 491.4882457429972,
+      "determinism_level1": true
+    }
+  },
+  "candidate_decisions": {
+    "G1": {
+      "go": true,
+      "gates": {
+        "physical_forward_reduction_ge_10_percent": true,
+        "speed_or_throughput": true,
+        "generation_success_100_percent": true,
+        "determinism_level1": true,
+        "structure_validity_100_percent": true,
+        "composition_validity_not_obviously_lower": true,
+        "cross_config_initial_pairing": true
+      }
+    },
+    "G2": {
+      "go": true,
+      "gates": {
+        "physical_forward_reduction_ge_10_percent": true,
+        "speed_or_throughput": true,
+        "generation_success_100_percent": true,
+        "determinism_level1": true,
+        "structure_validity_100_percent": true,
+        "composition_validity_not_obviously_lower": true,
+        "cross_config_initial_pairing": true
+      }
+    }
+  },
+  "initial_hash_pairing": true,
+  "original_g3_parameters_modified": false,
+  "formal_30000_seeds_started": false
+}

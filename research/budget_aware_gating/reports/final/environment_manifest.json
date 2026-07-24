@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-07-24T18:10:50+08:00",
+  "hostname": "VM-0-16-ubuntu",
+  "platform": "Linux-6.8.0-117-generic-x86_64-with-glibc2.39",
+  "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+  "git_branch": "feature/budget-aware-corrector-gating",
+  "git_commit": "f59ebad248c85c7699ee850810cd152607fb5229",
+  "git_status": "",
+  "nvidia_smi": "GPU 0: NVIDIA RTX PRO 5000 72GB Blackwell (UUID: GPU-8afc3b00-e872-3cfd-219c-ecfcef3f79d1)\nGPU 1: NVIDIA RTX PRO 5000 72GB Blackwell (UUID: GPU-7895e7f2-03b9-35d5-4eac-067683df6d9f)\nGPU 2: NVIDIA RTX PRO 5000 72GB Blackwell (UUID: GPU-98fc9c0b-ef1f-e79b-7e91-01cfff8a9243)\nGPU 3: NVIDIA RTX PRO 5000 72GB Blackwell (UUID: GPU-9009f7f9-a965-4bb2-a451-7d87029e6272)\nGPU 4: NVIDIA RTX PRO 5000 72GB Blackwell (UUID: GPU-2a6490b5-f502-06ee-f07b-eca0a02d84bd)\nGPU 5: NVIDIA RTX PRO 5000 72GB Blackwell (UUID: GPU-01a2a872-8329-de6e-9cae-d728fa539193)\nGPU 6: NVIDIA RTX PRO 5000 72GB Blackwell (UUID: GPU-49e67765-ce41-f6cd-2ba8-19cbbb9e4857)\nGPU 7: NVIDIA RTX PRO 5000 72GB Blackwell (UUID: GPU-1e92b4b4-ebff-e41a-f7e1-6ba8a2831a42)",
+  "generation_workers_per_gpu": 4,
+  "relax_workers_per_gpu": 2,
+  "checkpoint_sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+  "mattersim_checkpoint_sha256": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5",
+  "FORMAL_30000_SEEDS_STARTED": false
+}

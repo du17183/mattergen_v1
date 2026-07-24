@@ -1,0 +1,41 @@
+{
+  "config_id": "G1",
+  "gating_enabled": true,
+  "budget_aware_enabled": true,
+  "warmup_frac": 0.4,
+  "min_progress": 0.4,
+  "max_progress": 1.0,
+  "convergence_threshold": 1.1219068872685298,
+  "consecutive_stable_steps": 4,
+  "calibration_interval": 4,
+  "max_consecutive_skips": 5,
+  "fallback_threshold": 3.9144905477788186,
+  "rescue_enabled": true,
+  "max_skip_ratio": 0.45,
+  "atomic_veto_enabled": true,
+  "atomic_stability_threshold": 0.13343943612965592,
+  "atomic_min_stable_steps": 3,
+  "adaptive_calibration_enabled": true,
+  "calibration_interval_min": 4,
+  "calibration_interval_max": 8,
+  "field_aggregation": "all_fields",
+  "target_physical_forward_reduction": 0.13,
+  "probe_estimate": {
+    "scheduled_skips": 1042,
+    "estimated_rescues": 0,
+    "estimated_fallbacks": 27,
+    "estimated_calibrations": 182,
+    "estimated_atomic_vetoes": 574,
+    "budget_used": 1042,
+    "net_corrector_skips": 1042,
+    "estimated_corrector_skip_rate": 0.2605,
+    "estimated_physical_forward_reduction": 0.13025
+  },
+  "probe_seeds": [
+    14000,
+    14001,
+    14002,
+    14003
+  ],
+  "source_commit": "f59ebad248c85c7699ee850810cd152607fb5229"
+}

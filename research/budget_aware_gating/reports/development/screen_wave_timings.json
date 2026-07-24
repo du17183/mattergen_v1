@@ -1,0 +1,32 @@
+{
+  "A0": {
+    "config": "A0",
+    "workers_per_gpu": 4,
+    "total_concurrency": 32,
+    "structures": 32,
+    "elapsed_seconds": 270.24868569296086,
+    "structures_per_hour": 426.27404349667336,
+    "measurement": "same-concurrency pending-task wave",
+    "recorded_at": "2026-07-24T17:55:33+08:00"
+  },
+  "G1": {
+    "config": "G1",
+    "workers_per_gpu": 4,
+    "total_concurrency": 32,
+    "structures": 32,
+    "elapsed_seconds": 239.14547136501642,
+    "structures_per_hour": 481.71516417371777,
+    "measurement": "same-concurrency pending-task wave",
+    "recorded_at": "2026-07-24T17:59:32+08:00"
+  },
+  "G2": {
+    "config": "G2",
+    "workers_per_gpu": 4,
+    "total_concurrency": 32,
+    "structures": 32,
+    "elapsed_seconds": 221.0132811559597,
+    "structures_per_hour": 521.2356442901196,
+    "measurement": "same-concurrency pending-task wave",
+    "recorded_at": "2026-07-24T18:03:13+08:00"
+  }
+}

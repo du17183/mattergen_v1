@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-07-24T18:03:40+08:00",
+  "configs": [
+    "A0",
+    "G1",
+    "G2"
+  ],
+  "seeds": [
+    14000,
+    14031
+  ],
+  "expected": 96,
+  "total_success": 96,
+  "generation_success_100_percent": true,
+  "basic_structure_validity": 1,
+  "composition_validity": {
+    "A0": 0.84375,
+    "G1": 0.71875,
+    "G2": 0.75
+  },
+  "cross_config_initial_hash_mismatch_count": 0,
+  "cross_config_initial_hash_mismatches": [],
+  "same_config_same_seed_level1_inherited_from_8_seed": {
+    "A0": true,
+    "G1": true,
+    "G2": true
+  }
+}

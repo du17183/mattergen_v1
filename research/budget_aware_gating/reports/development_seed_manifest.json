@@ -1,0 +1,45 @@
+{
+  "development_seed_start": 14000,
+  "development_seed_end": 14063,
+  "development_seed_count": 64,
+  "smoke_seed_range": [
+    14000,
+    14007
+  ],
+  "screen_seed_range": [
+    14000,
+    14031
+  ],
+  "validation_seed_range": [
+    14000,
+    14063
+  ],
+  "previous_ranges": [
+    [
+      10000,
+      10063
+    ],
+    [
+      11000,
+      11063
+    ],
+    [
+      12000,
+      12031
+    ],
+    [
+      13000,
+      13507
+    ],
+    [
+      20000,
+      20255
+    ]
+  ],
+  "intersection_count": 0,
+  "future_formal_seed_range": [
+    30000,
+    30255
+  ],
+  "future_formal_started": false
+}
