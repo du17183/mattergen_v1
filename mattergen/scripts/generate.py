@@ -42,6 +42,18 @@ def main(
     guidance_adaptive_eps: float = 1e-6,
     guidance_trace_path: str | None = None,
     guidance_run_id: str | None = None,
+    cfg_acceleration_enabled: bool = False,
+    cfg_warmup_frac: float = 0.15,
+    cfg_convergence_threshold: float = 0.05,
+    cfg_consecutive_stable_steps: int = 3,
+    cfg_calibration_interval: int = 10,
+    cfg_max_reuse_steps: int = 8,
+    cfg_extrapolation_enabled: bool = False,
+    cfg_extrapolation_order: int = 1,
+    cfg_fallback_threshold: float = 0.20,
+    cfg_min_progress: float = 0.0,
+    cfg_max_progress: float = 1.0,
+    cfg_trace_path: str | None = None,
 ) -> list[Structure]:
     """
     Evaluate diffusion model against molecular metrics.
@@ -129,6 +141,18 @@ def main(
         guidance_adaptive_eps=guidance_adaptive_eps,
         guidance_trace_path=guidance_trace_path,
         guidance_run_id=guidance_run_id,
+        cfg_acceleration_enabled=cfg_acceleration_enabled,
+        cfg_warmup_frac=cfg_warmup_frac,
+        cfg_convergence_threshold=cfg_convergence_threshold,
+        cfg_consecutive_stable_steps=cfg_consecutive_stable_steps,
+        cfg_calibration_interval=cfg_calibration_interval,
+        cfg_max_reuse_steps=cfg_max_reuse_steps,
+        cfg_extrapolation_enabled=cfg_extrapolation_enabled,
+        cfg_extrapolation_order=cfg_extrapolation_order,
+        cfg_fallback_threshold=cfg_fallback_threshold,
+        cfg_min_progress=cfg_min_progress,
+        cfg_max_progress=cfg_max_progress,
+        cfg_trace_path=cfg_trace_path,
     )
     return generator.generate(output_dir=Path(output_path))
 

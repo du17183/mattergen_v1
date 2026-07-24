@@ -208,6 +208,18 @@ class CrystalGenerator:
     guidance_adaptive_eps: float = 1e-6
     guidance_trace_path: str | None = None
     guidance_run_id: str | None = None
+    cfg_acceleration_enabled: bool = False
+    cfg_warmup_frac: float = 0.15
+    cfg_convergence_threshold: float = 0.05
+    cfg_consecutive_stable_steps: int = 3
+    cfg_calibration_interval: int = 10
+    cfg_max_reuse_steps: int = 8
+    cfg_extrapolation_enabled: bool = False
+    cfg_extrapolation_order: int = 1
+    cfg_fallback_threshold: float = 0.20
+    cfg_min_progress: float = 0.0
+    cfg_max_progress: float = 1.0
+    cfg_trace_path: str | None = None
 
     # Additional overrides, only has an effect when using a diffusion-codebase model
     sampling_config_overrides: list[str] | None = None
@@ -332,6 +344,17 @@ class CrystalGenerator:
                 f"sampler_partial.guidance_adaptive_alpha={self.guidance_adaptive_alpha}",
                 f"sampler_partial.guidance_adaptive_ema={self.guidance_adaptive_ema}",
                 f"sampler_partial.guidance_adaptive_eps={self.guidance_adaptive_eps}",
+                f"sampler_partial.cfg_acceleration_enabled={self.cfg_acceleration_enabled}",
+                f"sampler_partial.cfg_warmup_frac={self.cfg_warmup_frac}",
+                f"sampler_partial.cfg_convergence_threshold={self.cfg_convergence_threshold}",
+                f"sampler_partial.cfg_consecutive_stable_steps={self.cfg_consecutive_stable_steps}",
+                f"sampler_partial.cfg_calibration_interval={self.cfg_calibration_interval}",
+                f"sampler_partial.cfg_max_reuse_steps={self.cfg_max_reuse_steps}",
+                f"sampler_partial.cfg_extrapolation_enabled={self.cfg_extrapolation_enabled}",
+                f"sampler_partial.cfg_extrapolation_order={self.cfg_extrapolation_order}",
+                f"sampler_partial.cfg_fallback_threshold={self.cfg_fallback_threshold}",
+                f"sampler_partial.cfg_min_progress={self.cfg_min_progress}",
+                f"sampler_partial.cfg_max_progress={self.cfg_max_progress}",
             ]
             if self.seed is not None:
                 sampling_config_overrides.append(f"sampler_partial.sample_seed={self.seed}")
@@ -341,6 +364,10 @@ class CrystalGenerator:
                 )
             if self.guidance_run_id is not None:
                 sampling_config_overrides.append(f"sampler_partial.run_id={self.guidance_run_id}")
+            if self.cfg_trace_path is not None:
+                sampling_config_overrides.append(
+                    f"sampler_partial.cfg_trace_path={self.cfg_trace_path}"
+                )
         else:
             # `condition_loader_partial` for fixed atom type (crystal structure prediction)
             num_structures_to_generate_per_composition = (
