@@ -26,6 +26,8 @@ sampler_partial:
   cfg_min_progress: 0.0
   cfg_max_progress: 1.0
   cfg_trace_path: null
+  cfg_trace_mode: auto
+  cfg_summary_path: null
   sample_seed: null
   run_id: null
   remove_conditioning_fn:
