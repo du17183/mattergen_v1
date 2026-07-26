@@ -3,7 +3,7 @@
   "base_commit": "9bc6747a3ddfd26db6d931bcdb6df5d299844544",
   "branch": "feature/rp-qtfg",
   "created_at": "2026-07-26T23:23:13+08:00",
-  "current_stage": "mvp_go_no_go",
+  "current_stage": "stop_for_review",
   "eight_seed_started": true,
   "formal_seed_started": false,
   "other_processes_terminated": false,
@@ -49,9 +49,14 @@
       "updated_at": "2026-07-27T00:21:37+08:00"
     },
     "github_archive": {
-      "detail": "",
-      "metrics": {},
-      "status": "pending"
+      "detail": "Source, tests, refined reports and compact non-weight CSV/JSON artifacts pushed; Draft PR created.",
+      "metrics": {
+        "branch": "feature/rp-qtfg",
+        "draft_pr": "https://github.com/du17183/mattergen_v1/pull/5",
+        "results_commit": "e457a43404e6d52d5ce2e4bb2dffc015d36a71d5"
+      },
+      "status": "success",
+      "updated_at": "2026-07-27T00:30:48+08:00"
     },
     "implementation": {
       "detail": "RP-QTFG position/cell guidance, residual protection, trust region, backtracking, fallback, deterministic generation runner and telemetry implemented.",
@@ -169,9 +174,13 @@
       "updated_at": "2026-07-26T23:39:32+08:00"
     },
     "stop_for_review": {
-      "detail": "",
-      "metrics": {},
-      "status": "pending"
+      "detail": "RP-QTFG Phase 0 complete and stopped after Gate 1 No-Go. No 32/64/256-seed work started.",
+      "metrics": {
+        "RP_QTFG_MVP_NO_GO": true,
+        "gpu_workers": 0
+      },
+      "status": "stop_for_review",
+      "updated_at": "2026-07-27T00:30:48+08:00"
     },
     "tests": {
       "detail": "RP-QTFG scientific gate regression and Adaptive CFG joint tests passed; full-suite failures are unchanged main/PyTorch API compatibility issues.",
@@ -198,5 +207,5 @@
   },
   "thirty_two_seed_started": false,
   "tmux_session": "mattergen_rp_qtfg_phase0",
-  "updated_at": "2026-07-27T00:29:16+08:00"
+  "updated_at": "2026-07-27T00:30:48+08:00"
 }

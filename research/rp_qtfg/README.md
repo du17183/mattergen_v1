@@ -64,3 +64,10 @@ The offline and online results therefore reveal a mechanism mismatch: a tiny det
 | G1_P60_M |                                0.5  |                              0.375 |                              0.375 |                          0.625 |                       0.0312144   |           0.125 |               -0.125 |                  0 |              0 |               0 |         0.25 |               2.93323  |                           -0.00679134 |           0.488207 | True                           | False                         | mean RMSD or pre-relax max force improves at least 3 percent and at least 5 of 8 pairs improve | False     |
 | G2_P75_S |                                0.5  |                              0.375 |                              0.25  |                          0.625 |                      -0.000394328 |           0     |                0     |                  0 |              0 |               0 |         0    |               0.163015 |                            0.0175105  |           0.321955 | True                           | False                         | mean RMSD or pre-relax max force improves at least 3 percent and at least 5 of 8 pairs improve | False     |
 | G2_P60_M |                                0.5  |                              0.5   |                              0.375 |                          0.625 |                      -0.00375282  |           0.25  |                0     |                  0 |              0 |               0 |         0.25 |               1.05763  |                            0.238171   |           0.441825 | True                           | False                         | mean RMSD or pre-relax max force improves at least 3 percent and at least 5 of 8 pairs improve | False     |
+
+## GitHub archive
+
+- Branch: `feature/rp-qtfg`
+- Results commit: `e457a43404e6d52d5ce2e4bb2dffc015d36a71d5`
+- Draft PR: https://github.com/du17183/mattergen_v1/pull/5
+- GPU workers after completion: 0
