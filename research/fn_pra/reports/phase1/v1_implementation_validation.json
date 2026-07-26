@@ -1,0 +1,109 @@
+{
+  "checkpoint": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt",
+  "checkpoint_missing_keys": [
+    "diffusion_module.model.repa_adapter.down.weight",
+    "diffusion_module.model.repa_adapter.norm.bias",
+    "diffusion_module.model.repa_adapter.norm.weight",
+    "diffusion_module.model.repa_adapter.up.weight",
+    "diffusion_module.model.student_projection.weight",
+    "diffusion_module.model.teacher_projection.weight"
+  ],
+  "checkpoint_unexpected_keys": [],
+  "created_at": "2026-07-25T21:29:24+08:00",
+  "feature_disabled_comparison": {
+    "atomic_numbers": {
+      "bitwise": true,
+      "max_abs": 0.0
+    },
+    "cell": {
+      "bitwise": true,
+      "max_abs": 0.0
+    },
+    "pos": {
+      "bitwise": true,
+      "max_abs": 0.0
+    }
+  },
+  "frozen_checksum_after": "4381b0d6e2eec07db0d16278739e0949e4c7fb7adbf94a8363dbbfde9904266b",
+  "frozen_checksum_before": "4381b0d6e2eec07db0d16278739e0949e4c7fb7adbf94a8363dbbfde9904266b",
+  "frozen_checksum_unchanged": true,
+  "gradient_report": {
+    "diffusion_module.model.repa_adapter.down.weight": {
+      "finite": true,
+      "norm": 0.0,
+      "present": true
+    },
+    "diffusion_module.model.repa_adapter.norm.bias": {
+      "finite": true,
+      "norm": 0.0,
+      "present": true
+    },
+    "diffusion_module.model.repa_adapter.norm.weight": {
+      "finite": true,
+      "norm": 0.0,
+      "present": true
+    },
+    "diffusion_module.model.repa_adapter.up.weight": {
+      "finite": true,
+      "norm": 0.043567460030317307,
+      "present": true
+    },
+    "diffusion_module.model.student_projection.weight": {
+      "finite": true,
+      "norm": 1.8120108842849731,
+      "present": true
+    },
+    "diffusion_module.model.teacher_projection.weight": {
+      "finite": true,
+      "norm": 0.6073107123374939,
+      "present": true
+    }
+  },
+  "identity_device": "cpu_single_thread",
+  "inference_parameters": 17408,
+  "inference_projection_calls": {
+    "student": 0,
+    "teacher": 0
+  },
+  "loss": 0.5055879950523376,
+  "metrics": {
+    "atomic_numbers": 0.07145007699728012,
+    "cell": 0.0050731529481709,
+    "loss_diffusion": 0.2655520737171173,
+    "loss_repa_alignment": 2.4003593921661377,
+    "loss_repa_weighted": 0.24003593623638153,
+    "pos": 1.8902883529663086
+  },
+  "new_parameter_parts": [
+    "repa_adapter",
+    "student_projection",
+    "teacher_projection"
+  ],
+  "passed": true,
+  "schema_version": 2,
+  "total_parameters": 48851579,
+  "trainable_names": [
+    "diffusion_module.model.repa_adapter.norm.weight",
+    "diffusion_module.model.repa_adapter.norm.bias",
+    "diffusion_module.model.repa_adapter.down.weight",
+    "diffusion_module.model.repa_adapter.up.weight",
+    "diffusion_module.model.student_projection.weight",
+    "diffusion_module.model.teacher_projection.weight"
+  ],
+  "trainable_parameters": 91136,
+  "trainable_ratio": 0.0018655691763822004,
+  "zero_init_comparison": {
+    "atomic_numbers": {
+      "bitwise": true,
+      "max_abs": 0.0
+    },
+    "cell": {
+      "bitwise": true,
+      "max_abs": 0.0
+    },
+    "pos": {
+      "bitwise": true,
+      "max_abs": 0.0
+    }
+  }
+}

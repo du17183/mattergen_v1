@@ -1,0 +1,19 @@
+{
+  "PHASE1_BLOCKED_BY_MAPPING": false,
+  "chemgraph_atom_order": "preserved; only fractional coordinates are reduced modulo 1",
+  "created_at": "2026-07-25T20:17:10+08:00",
+  "dataset_item_atom_order": "preserved by contiguous offset slicing",
+  "ddp_sampler_behavior": "may permute structures across ranks, never atoms within a structure",
+  "fn_pra_mapping_strategy": "cache-backed RepaCrystalDataset attaches teacher rows by cache index before collate",
+  "positive_key": [
+    "split",
+    "structure_id",
+    "atom_index"
+  ],
+  "probe_records": 1000,
+  "pyg_batch_order": "preserved per input graph; ptr/num_atoms retain boundaries",
+  "schema_version": 1,
+  "strict_mapping_established": true,
+  "structure_id_in_cache": true,
+  "structure_id_in_default_chemgraph": false
+}

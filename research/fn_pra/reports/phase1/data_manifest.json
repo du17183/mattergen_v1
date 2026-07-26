@@ -1,0 +1,192 @@
+{
+  "archive": {
+    "path": "/data/dxl/data/archives/mp_20.zip",
+    "sha256": "5f44d6ad75299b6c08a3679ebcbd166def45c6d7733baacdce3972c2ec452e3a",
+    "size_bytes": 12254159
+  },
+  "cache_root": "/data/dxl/datasets/cache/mp_20",
+  "created_at": "2026-07-25T20:17:10+08:00",
+  "license": "CC BY 4.0",
+  "raw_root": "/data/dxl/data/extracted/mp_20",
+  "schema_version": 1,
+  "source": "microsoft/mattergen data-release/mp-20",
+  "splits": [
+    {
+      "atomic_number_max": 94,
+      "atomic_number_min": 1,
+      "atoms": 279553,
+      "dft_mag_density_non_null": 26117,
+      "files": [
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/train/atomic_numbers.npy",
+          "sha256": "11bc5552f4b7cc2f3f3a43b2124798d7b8152b73f32f666fee3465cdd3872c9c",
+          "size_bytes": 2236552
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/train/cell.npy",
+          "sha256": "e36308c53e33d199d0c987a3e146c7aa15a20513064a9e513b1b4c54a1d664c3",
+          "size_bytes": 1953920
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/train/dft_band_gap.json",
+          "sha256": "3f99f9f5dff6f4e3d73badef1d6655b9f5c5d54b111f96310807628c1dea1338",
+          "size_bytes": 218508
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/train/dft_bulk_modulus.json",
+          "sha256": "c88856030be31eca900e9bc5461f0bfeffe53795eeaabab5beda3e3ff06ba156",
+          "size_bytes": 184758
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/train/dft_mag_density.json",
+          "sha256": "c724718c0ee090c35ace9141bac0fce59f913197d491be1f1014c4fcab349281",
+          "size_bytes": 477058
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/train/formation_energy_per_atom.json",
+          "sha256": "93a294d26210466724c4bc517f702d51f43327ebebd92bffc7d1eceab8298317",
+          "size_bytes": 551484
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/train/num_atoms.npy",
+          "sha256": "b14e95af8a6b7dcb3b55b97deadffab4a29c29add00864239ed90a760af1e0e4",
+          "size_bytes": 217216
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/train/pos.npy",
+          "sha256": "b6e4323a0e71b2732a029fff4de40672aceb6a2d24a4645fd8eba1e8a8b9c832",
+          "size_bytes": 6709400
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/train/structure_id.npy",
+          "sha256": "b10a55a76c621640bd4ce3c258c20252b544e1202e1281f661fa8bf9967b5571",
+          "size_bytes": 1085568
+        }
+      ],
+      "max_atoms": 20,
+      "min_atoms": 1,
+      "split": "train",
+      "structure_id_available": true,
+      "structures": 27136,
+      "unique_structure_ids": 27136
+    },
+    {
+      "atomic_number_max": 94,
+      "atomic_number_min": 1,
+      "atoms": 92454,
+      "dft_mag_density_non_null": 8694,
+      "files": [
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/val/atomic_numbers.npy",
+          "sha256": "688af658185587f2ae498a03a8d862cfdc5558dc039900c2e6ae1071af71d144",
+          "size_bytes": 739760
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/val/cell.npy",
+          "sha256": "2ea1d26bf1a3f94fa619a36c159b4e63357ef6becb9f405d9ede38ac24a9758b",
+          "size_bytes": 651512
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/val/dft_band_gap.json",
+          "sha256": "9970f40281c10bee03044cfcd454cc8471d8c5ef4c328574fbba81bcb1629c4d",
+          "size_bytes": 72366
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/val/dft_bulk_modulus.json",
+          "sha256": "17fb131d118006c4a2d4e8586b47941c0c25b71a05d273640c53a462100e5f0d",
+          "size_bytes": 61833
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/val/dft_mag_density.json",
+          "sha256": "da1992cc769dc64228e0c0303fc081ddbebd113f58ac8397f7377260e97b2fb2",
+          "size_bytes": 158289
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/val/formation_energy_per_atom.json",
+          "sha256": "74cc6af84f35287a015cbca6effe2617f10d55c32ff317d44841dfc36bce9596",
+          "size_bytes": 183836
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/val/num_atoms.npy",
+          "sha256": "71a7964eddbdac6ab83e43423179dd995840069b1acd0a065e686fd738a8cd8c",
+          "size_bytes": 72504
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/val/pos.npy",
+          "sha256": "9806da29678c9305f0694fdd860f3afb6f913d6b0607da7c6335fb3e64e0f876",
+          "size_bytes": 2219024
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/val/structure_id.npy",
+          "sha256": "3ac0e5687a4eaba5f9be79403cac6acad32a15ffa9a464667fffc678c7301df6",
+          "size_bytes": 362008
+        }
+      ],
+      "max_atoms": 20,
+      "min_atoms": 1,
+      "split": "val",
+      "structure_id_available": true,
+      "structures": 9047,
+      "unique_structure_ids": 9047
+    },
+    {
+      "atomic_number_max": 94,
+      "atomic_number_min": 1,
+      "atoms": 92085,
+      "dft_mag_density_non_null": 8716,
+      "files": [
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/test/atomic_numbers.npy",
+          "sha256": "920b1bf0e9d21b8c45d2266e20b47e226c35bb6310fdecb891a6710d8306a9ad",
+          "size_bytes": 736808
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/test/cell.npy",
+          "sha256": "0aa6673f4c4838635746f1608e3de83c8bf431c4b6028fd2f90898ef6ba95a2b",
+          "size_bytes": 651440
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/test/dft_band_gap.json",
+          "sha256": "6ba2161b5bb2171c851784e75dae3ed4e1eb7c1cb0d2a514a92f3f91b4bea3e3",
+          "size_bytes": 72208
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/test/dft_bulk_modulus.json",
+          "sha256": "b79b7e31a4ec3fe15db9c21fcaf2c38c50e6f1fa2a32a331f581594dca9f47da",
+          "size_bytes": 62026
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/test/dft_mag_density.json",
+          "sha256": "0ce6d103cc72e1834d3db7c61f9468ffe9d288d79c7659539d77fa6212f71729",
+          "size_bytes": 158892
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/test/formation_energy_per_atom.json",
+          "sha256": "067808a7bf56499e9541ff9d27cdb70b97d36b9da1e061d1d2c699c003ee13de",
+          "size_bytes": 183092
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/test/num_atoms.npy",
+          "sha256": "6b08edbbcc417c9e22c3499cf3b52104b99e985d2e7c47eb944d5f53e5c49f30",
+          "size_bytes": 72496
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/test/pos.npy",
+          "sha256": "9a9ee3065d23ac4f9b8719028e6da91bc9f5198c47a35060195534ef92cf19c5",
+          "size_bytes": 2210168
+        },
+        {
+          "path": "/data/dxl/datasets/cache/mp_20/test/structure_id.npy",
+          "sha256": "7997c5280014dbcbbde8c6a6474164ed17695b6921d4fb0e6a4f667c6cd60f6c",
+          "size_bytes": 361968
+        }
+      ],
+      "max_atoms": 20,
+      "min_atoms": 1,
+      "split": "test",
+      "structure_id_available": true,
+      "structures": 9046,
+      "unique_structure_ids": 9046
+    }
+  ]
+}

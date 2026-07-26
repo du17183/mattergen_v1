@@ -1,0 +1,59 @@
+{
+  "A0_composition_valid": 6,
+  "A0_median_generation_seconds": 62.4086052714847,
+  "A0_structure_valid": 8,
+  "A0_success": 8,
+  "P1_composition_valid": 6,
+  "P1_median_generation_seconds": 62.43131812498905,
+  "P1_median_overhead_fraction": 0.0003639378480826405,
+  "P1_structure_valid": 8,
+  "P1_success": 8,
+  "created_at": "2026-07-25T23:02:00+08:00",
+  "determinism_repeat": {
+    "A0": {
+      "final_level1": true,
+      "initial_level1": true,
+      "rng_level1": true
+    },
+    "P1": {
+      "final_level1": true,
+      "initial_level1": true,
+      "rng_level1": true
+    }
+  },
+  "initial_hash_exact_all": true,
+  "initial_hash_exact_by_seed": {
+    "15000": true,
+    "15001": true,
+    "15002": true,
+    "15003": true,
+    "15004": true,
+    "15005": true,
+    "15006": true,
+    "15007": true
+  },
+  "passed": true,
+  "projection_heads_loaded_at_p1_inference": false,
+  "rng_hash_exact_all": true,
+  "rng_hash_exact_by_seed": {
+    "15000": true,
+    "15001": true,
+    "15002": true,
+    "15003": true,
+    "15004": true,
+    "15005": true,
+    "15006": true,
+    "15007": true
+  },
+  "seeds": [
+    15000,
+    15001,
+    15002,
+    15003,
+    15004,
+    15005,
+    15006,
+    15007
+  ],
+  "teacher_used_at_p1_inference": false
+}

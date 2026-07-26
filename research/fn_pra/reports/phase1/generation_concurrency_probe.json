@@ -1,0 +1,90 @@
+{
+  "created_at": "2026-07-25T23:16:45+08:00",
+  "gpu": 4,
+  "methods": [
+    "A0",
+    "P1"
+  ],
+  "passed": true,
+  "rows": [
+    {
+      "all_initial_hashes_identical": true,
+      "all_structure_valid": true,
+      "max_peak_allocated_bytes_per_process": 257048576,
+      "max_peak_reserved_bytes_per_process": 761266176,
+      "method": "A0",
+      "physical_gpu": 4,
+      "structures_per_hour": 50.52237932534525,
+      "success": 1,
+      "wall_seconds": 71.2555514620035,
+      "workers_per_gpu": 1
+    },
+    {
+      "all_initial_hashes_identical": true,
+      "all_structure_valid": true,
+      "max_peak_allocated_bytes_per_process": 259130880,
+      "max_peak_reserved_bytes_per_process": 278921216,
+      "method": "P1",
+      "physical_gpu": 4,
+      "structures_per_hour": 50.757135557437145,
+      "success": 1,
+      "wall_seconds": 70.925988247036,
+      "workers_per_gpu": 1
+    },
+    {
+      "all_initial_hashes_identical": true,
+      "all_structure_valid": true,
+      "max_peak_allocated_bytes_per_process": 257048576,
+      "max_peak_reserved_bytes_per_process": 761266176,
+      "method": "A0",
+      "physical_gpu": 4,
+      "structures_per_hour": 66.49227930203786,
+      "success": 2,
+      "wall_seconds": 108.28324845497264,
+      "workers_per_gpu": 2
+    },
+    {
+      "all_initial_hashes_identical": true,
+      "all_structure_valid": true,
+      "max_peak_allocated_bytes_per_process": 259130880,
+      "max_peak_reserved_bytes_per_process": 278921216,
+      "method": "P1",
+      "physical_gpu": 4,
+      "structures_per_hour": 67.23787842572888,
+      "success": 2,
+      "wall_seconds": 107.08249826700194,
+      "workers_per_gpu": 2
+    },
+    {
+      "all_initial_hashes_identical": true,
+      "all_structure_valid": true,
+      "max_peak_allocated_bytes_per_process": 257048576,
+      "max_peak_reserved_bytes_per_process": 761266176,
+      "method": "A0",
+      "physical_gpu": 4,
+      "structures_per_hour": 80.69234895584293,
+      "success": 4,
+      "wall_seconds": 178.4555808120058,
+      "workers_per_gpu": 4
+    },
+    {
+      "all_initial_hashes_identical": true,
+      "all_structure_valid": true,
+      "max_peak_allocated_bytes_per_process": 259130880,
+      "max_peak_reserved_bytes_per_process": 278921216,
+      "method": "P1",
+      "physical_gpu": 4,
+      "structures_per_hour": 80.84934744472098,
+      "success": 4,
+      "wall_seconds": 178.1090442300192,
+      "workers_per_gpu": 4
+    }
+  ],
+  "selected_total_concurrency": 32,
+  "selected_workers_per_gpu": 4,
+  "workers_tested": [
+    1,
+    2,
+    4
+  ]
+}

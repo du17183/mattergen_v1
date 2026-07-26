@@ -1,0 +1,26 @@
+{
+  "baseline_failures": {
+    "classifications": {
+      "default_dataset_path_not_present": 1,
+      "pre_existing_rdf_numeric_expectation": 1,
+      "stale_corrector_test_signature": 4
+    },
+    "count_after_torch_load_compat": 6,
+    "fn_pra_related": 0
+  },
+  "conclusion": "FN-PRA focused tests pass. Full-suite residual failures are reproducible baseline/environment compatibility issues and do not exercise FN-PRA code.",
+  "created_at": "2026-07-25T22:45:15+08:00",
+  "fn_pra_focused": {
+    "log": "/data/dxl/logs/fn_pra/phase1/focused_tests.log",
+    "passed": true,
+    "summary": "summary unavailable"
+  },
+  "full_suite_compat": {
+    "log": "/data/dxl/logs/fn_pra/phase1/full_pytest_compat.log",
+    "summary": "summary unavailable"
+  },
+  "full_suite_default": {
+    "log": "/data/dxl/logs/fn_pra/phase1/full_pytest.log",
+    "summary": "summary unavailable"
+  }
+}

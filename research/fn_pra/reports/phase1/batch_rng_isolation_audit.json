@@ -1,0 +1,133 @@
+{
+  "comparisons": {
+    "15000": {
+      "cpu_rng_end_identical_across_batch_context": true,
+      "cuda_rng_end_identical_across_batch_context": true,
+      "final_level1_identical_across_batch_context": false,
+      "initial_identical_across_batch_context": true
+    },
+    "15001": {
+      "cpu_rng_end_identical_across_batch_context": true,
+      "cuda_rng_end_identical_across_batch_context": true,
+      "final_level1_identical_across_batch_context": true,
+      "initial_identical_across_batch_context": true
+    }
+  },
+  "contexts": {
+    "pair": {
+      "cpu_rng_end": {
+        "15000": "877fae4012eeabb577d95ac3de7f93699972ead8dcef357f14bd2b2abd8cbfaf",
+        "15001": "3873d6273c594d32270cd8d86e71b0063d823c2b75ccbb539652e60b9b4bfb9f"
+      },
+      "cuda_rng_end": {
+        "15000": "79bc24e19583c9f56ed99fb874560e985ad97020fcf8ec84bedee107bb69631c",
+        "15001": "654fb0c00e5f43dab5e52571fe8caab88698cbc9812a19f74007cf3473773a3b"
+      },
+      "final": {
+        "15000": {
+          "atomic_numbers": "89b0978a8834588c44eba61fbf7fb5e5726cdf2f4d6f5b204a7dca2eff667bac",
+          "cell": "8c088653716ed50d9216db98b4b849f222ed88bded7e0802519494e16e8fae31",
+          "combined": "55c8f49c037d7201262df5e57484a3cd0927a3202c135db6352875861ca27561",
+          "pos": "fb4a02b16df653773536f93d0bd2aa91870a8750a478b55d2291f6328debc915"
+        },
+        "15001": {
+          "atomic_numbers": "b8190e19067922b08495910c9fe84df58daf86a399138b87eb7b38d4cdb1d440",
+          "cell": "7c7a123b6ea72f5f7d9b8876789f96b724834b27559f910251a04ff2f4eb952a",
+          "combined": "9234cdb03449da32f04b3e8b0282f5991fa6b3a61572ffd831edc5cfd475b578",
+          "pos": "33048ad8051b92dc41691fef7130e40b059fdc664124de3282ab49bc0b8b0613"
+        }
+      },
+      "initial": {
+        "15000": {
+          "atomic_numbers": "7c0f3c0de6f9593cb69375415525ac4e9f79587073810bc408d46c083409a9eb",
+          "cell": "91df627cc05fe9ae0752cebfbf6b393c4af83f5fa4435b770e0be14fd0a3cb63",
+          "combined": "e0b9499dd177345b2e27fb9971e0e7c96b7150316114b38a66bc6dc9c99af945",
+          "pos": "958bf866e5a0708f89d33517a6b0499a21c6c7bd6497264b18a78b1e28b4a4e6"
+        },
+        "15001": {
+          "atomic_numbers": "a6e265b21ff0808f721d6dc405155023d5c15521580308c6a248a07db58b7c07",
+          "cell": "ed2a7acb7e67b4391b7a4c5d1883f6e056cb53d24dfab1982431e4df19c1a447",
+          "combined": "0b2653f58848046553b4966423258db2b40c21808a1f71729e7677961b54e5f8",
+          "pos": "0913d645865486397ca137a469c2f68d5b12d54aa9c2a8d382d89d03591dc572"
+        }
+      },
+      "seeds": [
+        15000,
+        15001
+      ]
+    },
+    "reversed_pair": {
+      "cpu_rng_end": {
+        "15000": "877fae4012eeabb577d95ac3de7f93699972ead8dcef357f14bd2b2abd8cbfaf",
+        "15001": "3873d6273c594d32270cd8d86e71b0063d823c2b75ccbb539652e60b9b4bfb9f"
+      },
+      "cuda_rng_end": {
+        "15000": "79bc24e19583c9f56ed99fb874560e985ad97020fcf8ec84bedee107bb69631c",
+        "15001": "654fb0c00e5f43dab5e52571fe8caab88698cbc9812a19f74007cf3473773a3b"
+      },
+      "final": {
+        "15000": {
+          "atomic_numbers": "89b0978a8834588c44eba61fbf7fb5e5726cdf2f4d6f5b204a7dca2eff667bac",
+          "cell": "8c088653716ed50d9216db98b4b849f222ed88bded7e0802519494e16e8fae31",
+          "combined": "55c8f49c037d7201262df5e57484a3cd0927a3202c135db6352875861ca27561",
+          "pos": "fb4a02b16df653773536f93d0bd2aa91870a8750a478b55d2291f6328debc915"
+        },
+        "15001": {
+          "atomic_numbers": "b8190e19067922b08495910c9fe84df58daf86a399138b87eb7b38d4cdb1d440",
+          "cell": "7c7a123b6ea72f5f7d9b8876789f96b724834b27559f910251a04ff2f4eb952a",
+          "combined": "9234cdb03449da32f04b3e8b0282f5991fa6b3a61572ffd831edc5cfd475b578",
+          "pos": "33048ad8051b92dc41691fef7130e40b059fdc664124de3282ab49bc0b8b0613"
+        }
+      },
+      "initial": {
+        "15000": {
+          "atomic_numbers": "7c0f3c0de6f9593cb69375415525ac4e9f79587073810bc408d46c083409a9eb",
+          "cell": "91df627cc05fe9ae0752cebfbf6b393c4af83f5fa4435b770e0be14fd0a3cb63",
+          "combined": "e0b9499dd177345b2e27fb9971e0e7c96b7150316114b38a66bc6dc9c99af945",
+          "pos": "958bf866e5a0708f89d33517a6b0499a21c6c7bd6497264b18a78b1e28b4a4e6"
+        },
+        "15001": {
+          "atomic_numbers": "a6e265b21ff0808f721d6dc405155023d5c15521580308c6a248a07db58b7c07",
+          "cell": "ed2a7acb7e67b4391b7a4c5d1883f6e056cb53d24dfab1982431e4df19c1a447",
+          "combined": "0b2653f58848046553b4966423258db2b40c21808a1f71729e7677961b54e5f8",
+          "pos": "0913d645865486397ca137a469c2f68d5b12d54aa9c2a8d382d89d03591dc572"
+        }
+      },
+      "seeds": [
+        15001,
+        15000
+      ]
+    },
+    "singleton": {
+      "cpu_rng_end": {
+        "15000": "877fae4012eeabb577d95ac3de7f93699972ead8dcef357f14bd2b2abd8cbfaf"
+      },
+      "cuda_rng_end": {
+        "15000": "79bc24e19583c9f56ed99fb874560e985ad97020fcf8ec84bedee107bb69631c"
+      },
+      "final": {
+        "15000": {
+          "atomic_numbers": "2a35098ca71e587fb2acb9c90dc84f65b7d0869d41b7c587e0d86b7bdf3442da",
+          "cell": "028c2f22d63589af1010dd1a245156157098dc541509825aa2953e09869ffe30",
+          "combined": "86f1548000b22f7d44375e53e800a3dd408074465333031ad6d2ac5a58ea0afe",
+          "pos": "4be91260a30db88411b74193f18419ce76537106674a5a12b648c87c3b758701"
+        }
+      },
+      "initial": {
+        "15000": {
+          "atomic_numbers": "7c0f3c0de6f9593cb69375415525ac4e9f79587073810bc408d46c083409a9eb",
+          "cell": "91df627cc05fe9ae0752cebfbf6b393c4af83f5fa4435b770e0be14fd0a3cb63",
+          "combined": "e0b9499dd177345b2e27fb9971e0e7c96b7150316114b38a66bc6dc9c99af945",
+          "pos": "958bf866e5a0708f89d33517a6b0499a21c6c7bd6497264b18a78b1e28b4a4e6"
+        }
+      },
+      "seeds": [
+        15000
+      ]
+    }
+  },
+  "created_at": "2026-07-25T23:06:40+08:00",
+  "interpretation": "Final hashes may differ because changing model batch shape/order changes floating-point score arithmetic; identical end RNG states prove this is not cross-seed RNG consumption.",
+  "rng_isolation_passed": true,
+  "sampling_steps": 10
+}
