@@ -1,17 +1,31 @@
 #!/usr/bin/env bash
 set -euo pipefail
-session=mattergen_cg_tdr_phase0
-pid="$(tmux list-panes -t "$session" -F '#{pane_pid}' 2>/dev/null | head -n1 || true)"
-if [[ -z "$pid" ]]; then
-  echo "No active $session pane."
+
+declare -A groups=()
+while read -r pid user comm args; do
+  [[ "$user" == "ubuntu" && "$comm" == "python" ]] || continue
+  if [[ "$args" != *"research/cg_tdr/launch_teacher_generation.py"* \
+     && "$args" != *"research/cg_tdr/run_phase0.py"* ]]; then
+    continue
+  fi
+  cwd="$(readlink -f "/proc/$pid/cwd" 2>/dev/null || true)"
+  exe="$(readlink -f "/proc/$pid/exe" 2>/dev/null || true)"
+  pgid="$(ps -o pgid= -p "$pid" | tr -d ' ')"
+  if [[ "$cwd" != "/data/dxl/mattergen_v1" \
+     || "$exe" != /data/dxl/envs/*/bin/python \
+     || -z "$pgid" ]]; then
+    echo "Refusing unverified process: pid=$pid cwd=$cwd exe=$exe args=$args" >&2
+    exit 2
+  fi
+  groups["$pgid"]=1
+done < <(ps -eo pid=,user=,comm=,args=)
+
+if [[ "${#groups[@]}" -eq 0 ]]; then
+  echo "No active verified CG-TDR launcher or pipeline."
   exit 0
 fi
-cwd="$(readlink -f "/proc/$pid/cwd" 2>/dev/null || true)"
-cmd="$(tr '\0' ' ' < "/proc/$pid/cmdline" 2>/dev/null || true)"
-if [[ "$cwd" != "/data/dxl/mattergen_v1" ]] || [[ "$cmd" != *"launch_teacher_generation.py"* ]]; then
-  echo "Refusing SIGINT: pane ownership check failed." >&2
-  echo "pid=$pid cwd=$cwd cmd=$cmd" >&2
-  exit 2
-fi
-kill -INT "$pid"
-echo "SIGINT sent to verified CG-TDR launcher pid=$pid"
+
+for pgid in "${!groups[@]}"; do
+  echo "Sending SIGINT to verified CG-TDR process group $pgid"
+  kill -INT -- "-$pgid"
+done
