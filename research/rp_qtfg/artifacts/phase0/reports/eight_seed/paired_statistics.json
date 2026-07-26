@@ -1,0 +1,454 @@
+[
+  {
+    "bootstrap_95_ci": [
+      -1.7823594989141434e-05,
+      0.006356398264567575
+    ],
+    "candidate_losses": 5,
+    "candidate_wins": 2,
+    "difference_definition": "candidate_minus_baseline",
+    "mean_difference": 0.0026624395389751587,
+    "median_difference": 1.7484029131153989e-06,
+    "method": "G1_P75_S",
+    "metric": "initial_energy_per_atom_ev",
+    "paired_n": 8,
+    "ties": 1,
+    "wilcoxon_p_value": 0.34375,
+    "wilcoxon_statistic": 10.0
+  },
+  {
+    "bootstrap_95_ci": [
+      -0.004242267164108271,
+      0.001643831473306603
+    ],
+    "candidate_losses": 4,
+    "candidate_wins": 4,
+    "difference_definition": "candidate_minus_baseline",
+    "mean_difference": -0.0008490550084491258,
+    "median_difference": 1.4313859090508974e-05,
+    "method": "G1_P75_S",
+    "metric": "initial_max_force_ev_ang",
+    "paired_n": 8,
+    "ties": 0,
+    "wilcoxon_p_value": 1.0,
+    "wilcoxon_statistic": 18.0
+  },
+  {
+    "bootstrap_95_ci": [
+      -2.060306017179908e-05,
+      0.07468596781933398
+    ],
+    "candidate_losses": 4,
+    "candidate_wins": 4,
+    "difference_definition": "candidate_minus_baseline",
+    "mean_difference": 0.025487436704360975,
+    "median_difference": 2.4628571427549872e-05,
+    "method": "G1_P75_S",
+    "metric": "rmsd_from_relaxation",
+    "paired_n": 8,
+    "ties": 0,
+    "wilcoxon_p_value": 0.4609375,
+    "wilcoxon_statistic": 12.0
+  },
+  {
+    "bootstrap_95_ci": [
+      -0.013055282036463108,
+      0.002994936227797885
+    ],
+    "candidate_losses": 2,
+    "candidate_wins": 3,
+    "difference_definition": "candidate_minus_baseline",
+    "mean_difference": -0.0033530450132157608,
+    "median_difference": 0.0,
+    "method": "G1_P75_S",
+    "metric": "energy_above_hull_per_atom",
+    "paired_n": 8,
+    "ties": 3,
+    "wilcoxon_p_value": 0.875,
+    "wilcoxon_statistic": 13.0
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 0,
+    "losses": 0,
+    "method": "G1_P75_S",
+    "metric": "stable",
+    "paired_n": 8,
+    "ties": 8
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 0,
+    "losses": 0,
+    "method": "G1_P75_S",
+    "metric": "comp_validity",
+    "paired_n": 8,
+    "ties": 8
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 0,
+    "losses": 0,
+    "method": "G1_P75_S",
+    "metric": "structure_validity",
+    "paired_n": 8,
+    "ties": 8
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 0,
+    "losses": 0,
+    "method": "G1_P75_S",
+    "metric": "novel",
+    "paired_n": 8,
+    "ties": 8
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 0,
+    "losses": 0,
+    "method": "G1_P75_S",
+    "metric": "unique",
+    "paired_n": 8,
+    "ties": 8
+  },
+  {
+    "bootstrap_95_ci": [
+      -0.3908327348304521,
+      0.3051783228913877
+    ],
+    "candidate_losses": 4,
+    "candidate_wins": 4,
+    "difference_definition": "candidate_minus_baseline",
+    "mean_difference": -0.022041465898956614,
+    "median_difference": -3.250439961721696e-05,
+    "method": "G1_P60_M",
+    "metric": "initial_energy_per_atom_ev",
+    "paired_n": 8,
+    "ties": 0,
+    "wilcoxon_p_value": 0.84375,
+    "wilcoxon_statistic": 16.0
+  },
+  {
+    "bootstrap_95_ci": [
+      -0.2935168405344859,
+      0.24886451515099245
+    ],
+    "candidate_losses": 5,
+    "candidate_wins": 3,
+    "difference_definition": "candidate_minus_baseline",
+    "mean_difference": -0.0021921280550814054,
+    "median_difference": 0.0010375085043122512,
+    "method": "G1_P60_M",
+    "metric": "initial_max_force_ev_ang",
+    "paired_n": 8,
+    "ties": 0,
+    "wilcoxon_p_value": 0.84375,
+    "wilcoxon_statistic": 16.0
+  },
+  {
+    "bootstrap_95_ci": [
+      -0.001298128942866389,
+      0.25600735168776534
+    ],
+    "candidate_losses": 5,
+    "candidate_wins": 3,
+    "difference_definition": "candidate_minus_baseline",
+    "mean_difference": 0.1094919796297499,
+    "median_difference": 0.0007463457558622025,
+    "method": "G1_P60_M",
+    "metric": "rmsd_from_relaxation",
+    "paired_n": 8,
+    "ties": 0,
+    "wilcoxon_p_value": 0.25,
+    "wilcoxon_statistic": 9.0
+  },
+  {
+    "bootstrap_95_ci": [
+      -0.0404919682850265,
+      0.1268865327520866
+    ],
+    "candidate_losses": 3,
+    "candidate_wins": 5,
+    "difference_definition": "candidate_minus_baseline",
+    "mean_difference": 0.03121442223704829,
+    "median_difference": -5.283355712943499e-06,
+    "method": "G1_P60_M",
+    "metric": "energy_above_hull_per_atom",
+    "paired_n": 8,
+    "ties": 0,
+    "wilcoxon_p_value": 0.9453125,
+    "wilcoxon_statistic": 17.0
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 2,
+    "losses": 1,
+    "method": "G1_P60_M",
+    "metric": "stable",
+    "paired_n": 8,
+    "ties": 5
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 0,
+    "losses": 1,
+    "method": "G1_P60_M",
+    "metric": "comp_validity",
+    "paired_n": 8,
+    "ties": 7
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 0,
+    "losses": 0,
+    "method": "G1_P60_M",
+    "metric": "structure_validity",
+    "paired_n": 8,
+    "ties": 8
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 0,
+    "losses": 0,
+    "method": "G1_P60_M",
+    "metric": "novel",
+    "paired_n": 8,
+    "ties": 8
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 0,
+    "losses": 0,
+    "method": "G1_P60_M",
+    "metric": "unique",
+    "paired_n": 8,
+    "ties": 8
+  },
+  {
+    "bootstrap_95_ci": [
+      -0.00011260641945654015,
+      0.0005014002323159262
+    ],
+    "candidate_losses": 4,
+    "candidate_wins": 4,
+    "difference_definition": "candidate_minus_baseline",
+    "mean_difference": 0.0001650428531150272,
+    "median_difference": -1.5894571969710114e-07,
+    "method": "G2_P75_S",
+    "metric": "initial_energy_per_atom_ev",
+    "paired_n": 8,
+    "ties": 0,
+    "wilcoxon_p_value": 0.9453125,
+    "wilcoxon_statistic": 17.0
+  },
+  {
+    "bootstrap_95_ci": [
+      -0.00017403567814445954,
+      0.013184401764403206
+    ],
+    "candidate_losses": 5,
+    "candidate_wins": 3,
+    "difference_definition": "candidate_minus_baseline",
+    "mean_difference": 0.005652081930698241,
+    "median_difference": 0.0006454609865155087,
+    "method": "G2_P75_S",
+    "metric": "initial_max_force_ev_ang",
+    "paired_n": 8,
+    "ties": 0,
+    "wilcoxon_p_value": 0.25,
+    "wilcoxon_statistic": 9.0
+  },
+  {
+    "bootstrap_95_ci": [
+      3.9627865490841544e-05,
+      0.017879526380091312
+    ],
+    "candidate_losses": 6,
+    "candidate_wins": 2,
+    "difference_definition": "candidate_minus_baseline",
+    "mean_difference": 0.0060850364843635886,
+    "median_difference": 9.372148633725319e-05,
+    "method": "G2_P75_S",
+    "metric": "rmsd_from_relaxation",
+    "paired_n": 8,
+    "ties": 0,
+    "wilcoxon_p_value": 0.0390625,
+    "wilcoxon_statistic": 3.0
+  },
+  {
+    "bootstrap_95_ci": [
+      -0.0011844963304927895,
+      2.9805597630879616e-06
+    ],
+    "candidate_losses": 3,
+    "candidate_wins": 5,
+    "difference_definition": "candidate_minus_baseline",
+    "mean_difference": -0.00039432778984606516,
+    "median_difference": -1.0566711425991082e-06,
+    "method": "G2_P75_S",
+    "metric": "energy_above_hull_per_atom",
+    "paired_n": 8,
+    "ties": 0,
+    "wilcoxon_p_value": 0.8125,
+    "wilcoxon_statistic": 16.0
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 0,
+    "losses": 0,
+    "method": "G2_P75_S",
+    "metric": "stable",
+    "paired_n": 8,
+    "ties": 8
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 0,
+    "losses": 0,
+    "method": "G2_P75_S",
+    "metric": "comp_validity",
+    "paired_n": 8,
+    "ties": 8
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 0,
+    "losses": 0,
+    "method": "G2_P75_S",
+    "metric": "structure_validity",
+    "paired_n": 8,
+    "ties": 8
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 0,
+    "losses": 0,
+    "method": "G2_P75_S",
+    "metric": "novel",
+    "paired_n": 8,
+    "ties": 8
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 0,
+    "losses": 0,
+    "method": "G2_P75_S",
+    "metric": "unique",
+    "paired_n": 8,
+    "ties": 8
+  },
+  {
+    "bootstrap_95_ci": [
+      -0.1816069720369397,
+      0.7827994227409363
+    ],
+    "candidate_losses": 3,
+    "candidate_wins": 4,
+    "difference_definition": "candidate_minus_baseline",
+    "mean_difference": 0.1993045403499798,
+    "median_difference": -0.00014591217041015625,
+    "method": "G2_P60_M",
+    "metric": "initial_energy_per_atom_ev",
+    "paired_n": 8,
+    "ties": 1,
+    "wilcoxon_p_value": 0.890625,
+    "wilcoxon_statistic": 16.0
+  },
+  {
+    "bootstrap_95_ci": [
+      -0.33951407366833297,
+      0.5425916945469491
+    ],
+    "candidate_losses": 4,
+    "candidate_wins": 4,
+    "difference_definition": "candidate_minus_baseline",
+    "mean_difference": 0.07687745174906645,
+    "median_difference": 0.0004013269400993929,
+    "method": "G2_P60_M",
+    "metric": "initial_max_force_ev_ang",
+    "paired_n": 8,
+    "ties": 0,
+    "wilcoxon_p_value": 0.9453125,
+    "wilcoxon_statistic": 17.0
+  },
+  {
+    "bootstrap_95_ci": [
+      -0.007995890653846432,
+      0.10003540061422574
+    ],
+    "candidate_losses": 5,
+    "candidate_wins": 3,
+    "difference_definition": "candidate_minus_baseline",
+    "mean_difference": 0.039479142292119906,
+    "median_difference": 0.0007107883796706989,
+    "method": "G2_P60_M",
+    "metric": "rmsd_from_relaxation",
+    "paired_n": 8,
+    "ties": 0,
+    "wilcoxon_p_value": 0.25,
+    "wilcoxon_statistic": 9.0
+  },
+  {
+    "bootstrap_95_ci": [
+      -0.040657143821478905,
+      0.02999997287159199
+    ],
+    "candidate_losses": 2,
+    "candidate_wins": 5,
+    "difference_definition": "candidate_minus_baseline",
+    "mean_difference": -0.0037528212723445687,
+    "median_difference": -5.811691284246523e-06,
+    "method": "G2_P60_M",
+    "metric": "energy_above_hull_per_atom",
+    "paired_n": 8,
+    "ties": 1,
+    "wilcoxon_p_value": 0.421875,
+    "wilcoxon_statistic": 11.0
+  },
+  {
+    "exact_p_value": 0.5,
+    "gains": 2,
+    "losses": 0,
+    "method": "G2_P60_M",
+    "metric": "stable",
+    "paired_n": 8,
+    "ties": 6
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 1,
+    "losses": 1,
+    "method": "G2_P60_M",
+    "metric": "comp_validity",
+    "paired_n": 8,
+    "ties": 6
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 0,
+    "losses": 0,
+    "method": "G2_P60_M",
+    "metric": "structure_validity",
+    "paired_n": 8,
+    "ties": 8
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 0,
+    "losses": 0,
+    "method": "G2_P60_M",
+    "metric": "novel",
+    "paired_n": 8,
+    "ties": 8
+  },
+  {
+    "exact_p_value": 1.0,
+    "gains": 0,
+    "losses": 0,
+    "method": "G2_P60_M",
+    "metric": "unique",
+    "paired_n": 8,
+    "ties": 8
+  }
+]

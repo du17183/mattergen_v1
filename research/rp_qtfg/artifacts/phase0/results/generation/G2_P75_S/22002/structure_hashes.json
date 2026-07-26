@@ -1,0 +1,28 @@
+{
+  "atomic_numbers": [
+    63,
+    63,
+    63,
+    63,
+    12,
+    63,
+    14,
+    63,
+    63,
+    14,
+    12,
+    14
+  ],
+  "extxyz_sha256": "a4ac8da432179a3386ba23d600096b10a5b04488ac0e827a8779f70a5bf02fae",
+  "final_structure_hash": "63c2f638c0f1609605f73790b6e4a1ecc1794419981261ceba3b873ab0990e54",
+  "formula": "Eu7Mg2Si3",
+  "initial_field_hashes": {
+    "atomic_numbers": "f8c31ab8b1b12a6a00bd5df0d8470ad61994a7325b80508c6e1ee17947fa911b",
+    "cell": "7761ec8cd6f474c253082b0e5569f0b4318faeffc8c771b46a18b31d6bf8f889",
+    "combined": "89906dac04fa92cdb842d9aab4bd1955e40e47f42f14e50e8e2fbf66d9c78dcb",
+    "pos": "af13bec34de26b9fbeb98b5961433a9e9dabdac0bce2fdce1b86da81ec860132"
+  },
+  "initial_state_hash": "89906dac04fa92cdb842d9aab4bd1955e40e47f42f14e50e8e2fbf66d9c78dcb",
+  "num_atoms": 12,
+  "rng_state_hash": "3d051c1061bd48b0f82736695db6f6c0a77750e3385ce0f563e545b14ec667d7"
+}

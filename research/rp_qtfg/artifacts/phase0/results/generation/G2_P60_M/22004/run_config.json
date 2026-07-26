@@ -1,0 +1,30 @@
+{
+  "adaptive_alpha": 0.5,
+  "adaptive_ema": 0.95,
+  "adaptive_epsilon": 1e-06,
+  "base_guidance": 2.0,
+  "checkpoint_sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+  "config": {
+    "backtrack_max": 3,
+    "cell_eta_per_gpa": 5e-05,
+    "cell_strain_radius": 0.001,
+    "config_id": "G2_P60_M",
+    "conflict_threshold": -0.2,
+    "enabled": true,
+    "guidance_fields": "position_cell",
+    "position_eta": 0.0025,
+    "position_radius_angstrom": 0.01,
+    "score_ratio_max": 0.15,
+    "start_progress": 0.6
+  },
+  "created_at": "2026-07-27T00:09:22+08:00",
+  "guidance_max_scale": 5.0,
+  "guidance_min_scale": 0.0,
+  "guidance_schedule": "adaptive",
+  "physical_gpu": 4,
+  "sampling_steps": 1000,
+  "seed": 22004,
+  "target": {
+    "dft_mag_density": 0.1
+  }
+}

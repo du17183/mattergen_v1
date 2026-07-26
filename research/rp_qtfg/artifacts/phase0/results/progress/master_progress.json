@@ -1,0 +1,211 @@
+{
+  "base_branch": "main",
+  "base_commit": "9bc6747a3ddfd26db6d931bcdb6df5d299844544",
+  "branch": "feature/rp-qtfg",
+  "created_at": "2026-07-26T23:23:13+08:00",
+  "current_stage": "stop_for_review",
+  "eight_seed_started": true,
+  "formal_seed_started": false,
+  "other_processes_terminated": false,
+  "overall_status": "stop_for_review",
+  "schema_version": 1,
+  "sigkill_used": false,
+  "sixty_four_seed_started": false,
+  "stages": {
+    "branch_creation": {
+      "detail": "Created feature/rp-qtfg from stable main commit 9bc6747.",
+      "metrics": {},
+      "status": "success",
+      "updated_at": "2026-07-26T23:39:32+08:00"
+    },
+    "direction_go_no_go": {
+      "detail": "Gate 0B passed with poscell_1.",
+      "metrics": {
+        "PHYSICS_DIRECTION_GO": true,
+        "selected": "poscell_1",
+        "structures": 64
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T23:47:36+08:00"
+    },
+    "eight_seed_generation": {
+      "detail": "Generation complete: 40/40.",
+      "metrics": {
+        "mode": "eight",
+        "remaining": 0,
+        "success": 40,
+        "total": 40
+      },
+      "status": "success",
+      "updated_at": "2026-07-27T00:12:52+08:00"
+    },
+    "eight_seed_review": {
+      "detail": "8-seed No-Go: no candidate met every frozen smoke gate.",
+      "metrics": {
+        "RP_QTFG_EIGHT_SEED_GO": false,
+        "selected": null
+      },
+      "status": "stop_for_review",
+      "updated_at": "2026-07-27T00:21:37+08:00"
+    },
+    "github_archive": {
+      "detail": "Source, tests, refined reports and compact non-weight CSV/JSON artifacts pushed; Draft PR created.",
+      "metrics": {
+        "branch": "feature/rp-qtfg",
+        "draft_pr": "https://github.com/du17183/mattergen_v1/pull/5",
+        "results_commit": "e457a43404e6d52d5ce2e4bb2dffc015d36a71d5"
+      },
+      "status": "success",
+      "updated_at": "2026-07-27T00:30:48+08:00"
+    },
+    "implementation": {
+      "detail": "RP-QTFG position/cell guidance, residual protection, trust region, backtracking, fallback, deterministic generation runner and telemetry implemented.",
+      "metrics": {
+        "atomic_numbers_unchanged": true,
+        "disabled_bitwise_equal": true,
+        "enabled_checkpoint_smoke": true
+      },
+      "status": "success",
+      "updated_at": "2026-07-27T00:03:30+08:00"
+    },
+    "literature_verification": {
+      "detail": "Scout-Matter, Training-Free Guidance, Universal Guidance, CFG++ and CHGNet interfaces verified against primary sources.",
+      "metrics": {},
+      "status": "success",
+      "updated_at": "2026-07-26T23:39:19+08:00"
+    },
+    "mag_oracle_validation": {
+      "detail": "CHGNet magnetic-density candidate oracle validation completed.",
+      "metrics": {
+        "CHGNET_MAG_ORACLE_GO": true,
+        "actual_hit_rate_0.01": 0.016750803120697568,
+        "actual_hit_rate_0.02": 0.03396053235429096,
+        "actual_hit_rate_0.05": 0.09878384580082607,
+        "created_at": "2026-07-26T23:24:09+08:00",
+        "formula": "sum(abs(CHGNet site magmom [mu_B])) / cell volume [A^3]",
+        "gate_thresholds": {
+          "spearman_min": 0.6,
+          "target_region_mae_max": 0.03,
+          "top_100_enrichment_min": 2.0
+        },
+        "mae": 0.004015275514214907,
+        "model_checkpoint": "/data/dxl/envs/fn_pra_teacher/lib/python3.10/site-packages/chgnet/pretrained/0.3.0/chgnet_0.3.0_e29f68s314m37.pth.tar",
+        "model_name": "CHGNet 0.3.0",
+        "n": 8716,
+        "r2": 0.841641988236419,
+        "rmse": 0.011793329751001665,
+        "spearman": 0.6417183527818888,
+        "target": 0.1,
+        "target_region_definition": "abs(dft_mag_density - 0.10) <= 0.05",
+        "target_region_mae": 0.008434594053579427,
+        "target_region_n": 861,
+        "top_k_target_enrichment": {
+          "100": {
+            "enrichment": 22.673378378378377,
+            "hit_rate_0.02": 0.77,
+            "random_hit_rate_0.02": 0.03396053235429096,
+            "selected": 100
+          },
+          "200": {
+            "enrichment": 22.820608108108107,
+            "hit_rate_0.02": 0.775,
+            "random_hit_rate_0.02": 0.03396053235429096,
+            "selected": 200
+          },
+          "50": {
+            "enrichment": 22.37891891891892,
+            "hit_rate_0.02": 0.76,
+            "random_hit_rate_0.02": 0.03396053235429096,
+            "selected": 50
+          },
+          "500": {
+            "enrichment": 15.900810810810812,
+            "hit_rate_0.02": 0.54,
+            "random_hit_rate_0.02": 0.03396053235429096,
+            "selected": 500
+          }
+        }
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T23:24:09+08:00"
+    },
+    "mattergen_code_map": {
+      "detail": "Adaptive CFG, field residuals, predictor/corrector loop, clean-state conversion and three-field SDE code paths mapped to concrete classes and functions.",
+      "metrics": {},
+      "status": "success",
+      "updated_at": "2026-07-26T23:39:19+08:00"
+    },
+    "metrics": {
+      "detail": "",
+      "metrics": {},
+      "status": "pending"
+    },
+    "mvp_go_no_go": {
+      "detail": "RP-QTFG stopped at Gate 1: no candidate showed a clear RMSD or pre-relax force improvement while meeting every smoke gate.",
+      "metrics": {
+        "RP_QTFG_EIGHT_SEED_GO": false,
+        "RP_QTFG_MVP_GO": false,
+        "RP_QTFG_MVP_NO_GO": true,
+        "thirty_two_started": false
+      },
+      "status": "stop_for_review",
+      "updated_at": "2026-07-27T00:29:16+08:00"
+    },
+    "offline_direction_probe": {
+      "detail": "Gate 0B completed on 64 frozen A0 structures with independent MatterSim evaluation.",
+      "metrics": {
+        "PHYSICS_DIRECTION_GO": true,
+        "selected": "poscell_1",
+        "structures": 64,
+        "tasks": 384
+      },
+      "status": "success",
+      "updated_at": "2026-07-27T00:03:30+08:00"
+    },
+    "state_audit": {
+      "detail": "Git, GPU, process, environment, checkpoint and evaluator audit passed.",
+      "metrics": {
+        "checkpoint_sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+        "gpu_count": 8,
+        "gpu_workers": 0,
+        "mattersim_sha256": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5"
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T23:39:32+08:00"
+    },
+    "stop_for_review": {
+      "detail": "RP-QTFG Phase 0 complete and stopped after Gate 1 No-Go. No 32/64/256-seed work started.",
+      "metrics": {
+        "RP_QTFG_MVP_NO_GO": true,
+        "gpu_workers": 0
+      },
+      "status": "stop_for_review",
+      "updated_at": "2026-07-27T00:30:48+08:00"
+    },
+    "tests": {
+      "detail": "RP-QTFG scientific gate regression and Adaptive CFG joint tests passed; full-suite failures are unchanged main/PyTorch API compatibility issues.",
+      "metrics": {
+        "full_suite_passed": 179,
+        "full_suite_preexisting_failures": 5,
+        "git_diff_check": true,
+        "rp_qtfg_plus_adaptive_cfg": "38/38",
+        "rp_qtfg_tests": "25/25"
+      },
+      "status": "success",
+      "updated_at": "2026-07-27T00:29:16+08:00"
+    },
+    "thirty_two_generation": {
+      "detail": "",
+      "metrics": {},
+      "status": "pending"
+    },
+    "thirty_two_relax": {
+      "detail": "",
+      "metrics": {},
+      "status": "pending"
+    }
+  },
+  "thirty_two_seed_started": false,
+  "tmux_session": "mattergen_rp_qtfg_phase0",
+  "updated_at": "2026-07-27T00:30:48+08:00"
+}

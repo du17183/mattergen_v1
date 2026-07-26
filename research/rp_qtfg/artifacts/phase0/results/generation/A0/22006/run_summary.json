@@ -1,0 +1,38 @@
+{
+  "atomic_numbers": [
+    26,
+    45,
+    26,
+    45,
+    26,
+    26,
+    33,
+    33,
+    45,
+    45,
+    33,
+    33
+  ],
+  "basic_structure_valid": true,
+  "composition_valid": true,
+  "config_id": "A0",
+  "elapsed_seconds": 75.95415721903555,
+  "error": null,
+  "extxyz_sha256": "c43ebe342dc1346ef76bd3b55b9c8cc0d8484f765037d1398a5031bf091e3fcf",
+  "final_structure_hash": "1ccbad2c159a85e67490749ab28f8c4d04bb64cbc5aa127ba56ce04e551bd3ab",
+  "formula": "As4Fe4Rh4",
+  "num_atoms": 12,
+  "peak_allocated_bytes": 512785408,
+  "peak_reserved_bytes": 593494016,
+  "physical_gpu": 6,
+  "process_cpu_seconds": 72.418016273,
+  "return_code": 0,
+  "seed": 22006,
+  "success": true,
+  "telemetry": {
+    "max_utilization_percent": 44.0,
+    "mean_utilization_percent": 40.86440677966102,
+    "peak_memory_mib": 1164.0,
+    "samples": 59
+  }
+}

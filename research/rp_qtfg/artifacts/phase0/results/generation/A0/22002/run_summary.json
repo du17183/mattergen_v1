@@ -1,0 +1,38 @@
+{
+  "atomic_numbers": [
+    63,
+    63,
+    63,
+    63,
+    12,
+    63,
+    14,
+    63,
+    63,
+    14,
+    12,
+    14
+  ],
+  "basic_structure_valid": true,
+  "composition_valid": false,
+  "config_id": "A0",
+  "elapsed_seconds": 75.55671959603205,
+  "error": null,
+  "extxyz_sha256": "c2824fe9bda6974733053c4f76487c50da4a26263bd273c7610c271bccf391e5",
+  "final_structure_hash": "e2335034652c0d55c799dbcd325ed02bd484985238fc01ca933c0b0883a39d5e",
+  "formula": "Eu7Mg2Si3",
+  "num_atoms": 12,
+  "peak_allocated_bytes": 512785408,
+  "peak_reserved_bytes": 593494016,
+  "physical_gpu": 2,
+  "process_cpu_seconds": 71.76737071599999,
+  "return_code": 0,
+  "seed": 22002,
+  "success": true,
+  "telemetry": {
+    "max_utilization_percent": 44.0,
+    "mean_utilization_percent": 40.08474576271186,
+    "peak_memory_mib": 1164.0,
+    "samples": 59
+  }
+}

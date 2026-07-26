@@ -1,0 +1,501 @@
+{
+  "ENERGY_IMPROVEMENT_RATE": 0.78125,
+  "FORCE_IMPROVEMENT_RATE": 0.734375,
+  "MATTERSIM_DIRECTION_AGREEMENT": 0.78125,
+  "OFFLINE_PROBE_STRUCTURES": 64,
+  "PHYSICS_DIRECTION_GO": true,
+  "PHYSICS_DIRECTION_NO_GO": false,
+  "RMSD_IMPROVEMENT_RATE": 0.609375,
+  "SELECTED_OFFLINE_VARIANT": "poscell_1",
+  "comparisons": [
+    {
+      "any_primary_improvement_rate": 0.796875,
+      "composition_validity_change": 0.0,
+      "ehull_change_candidate_minus_a0": -2.3081136128255686e-05,
+      "matterSim_energy_improvement_rate": 0.640625,
+      "matterSim_force_improvement_rate": 0.703125,
+      "method": "pos_1",
+      "relaxation_rmsd_improvement_rate": 0.546875,
+      "structure_validity_change": 0.0,
+      "validity_safe": true,
+      "variant_gate_go": true
+    },
+    {
+      "any_primary_improvement_rate": 0.765625,
+      "composition_validity_change": 0.0,
+      "ehull_change_candidate_minus_a0": -1.2455930406801707e-05,
+      "matterSim_energy_improvement_rate": 0.671875,
+      "matterSim_force_improvement_rate": 0.65625,
+      "method": "pos_3",
+      "relaxation_rmsd_improvement_rate": 0.5625,
+      "structure_validity_change": 0.0,
+      "validity_safe": true,
+      "variant_gate_go": true
+    },
+    {
+      "any_primary_improvement_rate": 0.75,
+      "composition_validity_change": 0.0,
+      "ehull_change_candidate_minus_a0": 8.579530224067655e-06,
+      "matterSim_energy_improvement_rate": 0.65625,
+      "matterSim_force_improvement_rate": 0.671875,
+      "method": "pos_5",
+      "relaxation_rmsd_improvement_rate": 0.578125,
+      "structure_validity_change": 0.0,
+      "validity_safe": true,
+      "variant_gate_go": true
+    },
+    {
+      "any_primary_improvement_rate": 0.921875,
+      "composition_validity_change": 0.0,
+      "ehull_change_candidate_minus_a0": -1.0055331862074413e-05,
+      "matterSim_energy_improvement_rate": 0.78125,
+      "matterSim_force_improvement_rate": 0.734375,
+      "method": "poscell_1",
+      "relaxation_rmsd_improvement_rate": 0.609375,
+      "structure_validity_change": 0.0,
+      "validity_safe": true,
+      "variant_gate_go": true
+    },
+    {
+      "any_primary_improvement_rate": 0.875,
+      "composition_validity_change": 0.0,
+      "ehull_change_candidate_minus_a0": -5.29179440589278e-06,
+      "matterSim_energy_improvement_rate": 0.78125,
+      "matterSim_force_improvement_rate": 0.671875,
+      "method": "poscell_3",
+      "relaxation_rmsd_improvement_rate": 0.625,
+      "structure_validity_change": 0.0,
+      "validity_safe": true,
+      "variant_gate_go": true
+    }
+  ],
+  "created_at": "2026-07-26T23:47:36+08:00",
+  "interpretation": {
+    "dft_verified": false,
+    "gate_rule": ">=60% structures improve at least one of MatterSim initial energy, initial max force, or relaxation RMSD; validity/composition/short-bond safe; mean E-hull change <=0.002 eV/atom.",
+    "magnetic_property_verified": false,
+    "stability_source": "MatterSim-5M surrogate"
+  },
+  "paired_statistics": [
+    {
+      "bootstrap_95_ci": [
+        -0.00035867559531366255,
+        -9.679803358647876e-05
+      ],
+      "candidate_losses": 18,
+      "candidate_wins": 41,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -0.00021379190304912643,
+      "median_difference": -9.5367431640625e-06,
+      "method": "pos_1",
+      "metric": "initial_energy_per_atom_ev",
+      "paired_n": 64,
+      "ties": 5,
+      "wilcoxon_p_value": 0.0002133315100876679,
+      "wilcoxon_statistic": 479.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -0.06493050790509587,
+        -0.01590659266631403
+      ],
+      "candidate_losses": 19,
+      "candidate_wins": 45,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -0.0376265634291712,
+      "median_difference": -0.0031528711364974225,
+      "method": "pos_1",
+      "metric": "initial_max_force_ev_ang",
+      "paired_n": 64,
+      "ties": 0,
+      "wilcoxon_p_value": 2.445023683167715e-05,
+      "wilcoxon_statistic": 409.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -0.0006483573628664948,
+        0.0005683227664830332
+      ],
+      "candidate_losses": 29,
+      "candidate_wins": 35,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -5.331756583457313e-05,
+      "median_difference": -1.3435734827023458e-05,
+      "method": "pos_1",
+      "metric": "rmsd_from_relaxation",
+      "paired_n": 64,
+      "ties": 0,
+      "wilcoxon_p_value": 0.9254069974164145,
+      "wilcoxon_statistic": 1026.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -7.67296207375531e-05,
+        1.0079474517725587e-05
+      ],
+      "candidate_losses": 25,
+      "candidate_wins": 34,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -2.308113612824803e-05,
+      "median_difference": -7.748921712763535e-07,
+      "method": "pos_1",
+      "metric": "energy_above_hull_per_atom",
+      "paired_n": 64,
+      "ties": 5,
+      "wilcoxon_p_value": 0.32229463652320767,
+      "wilcoxon_statistic": 892.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -0.000634024574288114,
+        -0.00017872511394434538
+      ],
+      "candidate_losses": 19,
+      "candidate_wins": 43,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -0.00038372725248322914,
+      "median_difference": -1.564025878941777e-05,
+      "method": "pos_3",
+      "metric": "initial_energy_per_atom_ev",
+      "paired_n": 64,
+      "ties": 2,
+      "wilcoxon_p_value": 0.0007776734229808155,
+      "wilcoxon_statistic": 536.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -0.091122762206932,
+        -0.024638220462532237
+      ],
+      "candidate_losses": 22,
+      "candidate_wins": 42,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -0.05503070168763104,
+      "median_difference": -0.006839207358443275,
+      "method": "pos_3",
+      "metric": "initial_max_force_ev_ang",
+      "paired_n": 64,
+      "ties": 0,
+      "wilcoxon_p_value": 0.0013273393004344298,
+      "wilcoxon_statistic": 560.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -0.0012261271263402317,
+        0.000390914906806837
+      ],
+      "candidate_losses": 28,
+      "candidate_wins": 36,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -0.00037489051193803733,
+      "median_difference": -5.2401693546552316e-05,
+      "method": "pos_3",
+      "metric": "rmsd_from_relaxation",
+      "paired_n": 64,
+      "ties": 0,
+      "wilcoxon_p_value": 0.7993988519573043,
+      "wilcoxon_statistic": 1002.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -2.8469984677590806e-05,
+        1.0660906375592407e-06
+      ],
+      "candidate_losses": 29,
+      "candidate_wins": 32,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -1.2455930406780172e-05,
+      "median_difference": -4.2266845666407565e-07,
+      "method": "pos_3",
+      "metric": "energy_above_hull_per_atom",
+      "paired_n": 64,
+      "ties": 3,
+      "wilcoxon_p_value": 0.3062175098567721,
+      "wilcoxon_statistic": 887.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -0.0007416824582548741,
+        -0.0001969541355020801
+      ],
+      "candidate_losses": 21,
+      "candidate_wins": 42,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -0.0004437816521476595,
+      "median_difference": -2.13199191625435e-05,
+      "method": "pos_5",
+      "metric": "initial_energy_per_atom_ev",
+      "paired_n": 64,
+      "ties": 1,
+      "wilcoxon_p_value": 0.002504593543036246,
+      "wilcoxon_statistic": 587.5
+    },
+    {
+      "bootstrap_95_ci": [
+        -0.10109812584951461,
+        -0.024933048004825487
+      ],
+      "candidate_losses": 21,
+      "candidate_wins": 43,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -0.05996378757563805,
+      "median_difference": -0.0081962231324395,
+      "method": "pos_5",
+      "metric": "initial_max_force_ev_ang",
+      "paired_n": 64,
+      "ties": 0,
+      "wilcoxon_p_value": 0.0049733945885401835,
+      "wilcoxon_statistic": 620.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -0.0018366510318808065,
+        0.00021271590632590103
+      ],
+      "candidate_losses": 27,
+      "candidate_wins": 37,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -0.0007752629335110899,
+      "median_difference": -0.00010196895875973656,
+      "method": "pos_5",
+      "metric": "rmsd_from_relaxation",
+      "paired_n": 64,
+      "ties": 0,
+      "wilcoxon_p_value": 0.41075650210426795,
+      "wilcoxon_statistic": 917.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -9.007195723807472e-06,
+        3.020582189421334e-05
+      ],
+      "candidate_losses": 30,
+      "candidate_wins": 31,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": 8.57953022408919e-06,
+      "median_difference": 3.5561831257524545e-17,
+      "method": "pos_5",
+      "metric": "energy_above_hull_per_atom",
+      "paired_n": 64,
+      "ties": 3,
+      "wilcoxon_p_value": 0.98932857483916,
+      "wilcoxon_statistic": 1038.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -0.0006098320754982213,
+        -0.00019861740961877458
+      ],
+      "candidate_losses": 14,
+      "candidate_wins": 50,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -0.0003814557005487468,
+      "median_difference": -0.0001009623209626831,
+      "method": "poscell_1",
+      "metric": "initial_energy_per_atom_ev",
+      "paired_n": 64,
+      "ties": 0,
+      "wilcoxon_p_value": 1.5235439877375793e-07,
+      "wilcoxon_statistic": 255.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -0.06711682689250584,
+        -0.01640042869245859
+      ],
+      "candidate_losses": 17,
+      "candidate_wins": 47,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -0.03894917143117734,
+      "median_difference": -0.0032467328264137174,
+      "method": "poscell_1",
+      "metric": "initial_max_force_ev_ang",
+      "paired_n": 64,
+      "ties": 0,
+      "wilcoxon_p_value": 5.8398482923347564e-05,
+      "wilcoxon_statistic": 439.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -0.0010448889717297161,
+        0.00034315811099648765
+      ],
+      "candidate_losses": 25,
+      "candidate_wins": 39,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -0.0003546072397896294,
+      "median_difference": -3.42307991644448e-05,
+      "method": "poscell_1",
+      "metric": "rmsd_from_relaxation",
+      "paired_n": 64,
+      "ties": 0,
+      "wilcoxon_p_value": 0.31258478997119,
+      "wilcoxon_statistic": 889.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -4.826245332520227e-05,
+        1.5921574580548707e-05
+      ],
+      "candidate_losses": 26,
+      "candidate_wins": 35,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -1.0055331862052878e-05,
+      "median_difference": -8.923000760219235e-07,
+      "method": "poscell_1",
+      "metric": "energy_above_hull_per_atom",
+      "paired_n": 64,
+      "ties": 3,
+      "wilcoxon_p_value": 0.6613616319120009,
+      "wilcoxon_statistic": 974.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -0.0014150839766102683,
+        -0.0003922828144968873
+      ],
+      "candidate_losses": 14,
+      "candidate_wins": 50,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -0.0008159095096208491,
+      "median_difference": -0.00020467970106308186,
+      "method": "poscell_3",
+      "metric": "initial_energy_per_atom_ev",
+      "paired_n": 64,
+      "ties": 0,
+      "wilcoxon_p_value": 1.3310153362918386e-06,
+      "wilcoxon_statistic": 317.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -0.09452083553236318,
+        -0.024918538826648413
+      ],
+      "candidate_losses": 21,
+      "candidate_wins": 43,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -0.056806409305939505,
+      "median_difference": -0.004572597441655803,
+      "method": "poscell_3",
+      "metric": "initial_max_force_ev_ang",
+      "paired_n": 64,
+      "ties": 0,
+      "wilcoxon_p_value": 0.0026760521149108408,
+      "wilcoxon_statistic": 591.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -0.0023095799783459828,
+        -0.00022772872797465147
+      ],
+      "candidate_losses": 24,
+      "candidate_wins": 40,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -0.0011903748411007443,
+      "median_difference": -0.00012131232681913441,
+      "method": "poscell_3",
+      "metric": "rmsd_from_relaxation",
+      "paired_n": 64,
+      "ties": 0,
+      "wilcoxon_p_value": 0.10273192047937604,
+      "wilcoxon_statistic": 796.0
+    },
+    {
+      "bootstrap_95_ci": [
+        -4.800600550219389e-05,
+        2.556289943934637e-05
+      ],
+      "candidate_losses": 33,
+      "candidate_wins": 30,
+      "difference_definition": "candidate_minus_baseline",
+      "mean_difference": -5.291794405871245e-06,
+      "median_difference": 2.113342285225972e-06,
+      "method": "poscell_3",
+      "metric": "energy_above_hull_per_atom",
+      "paired_n": 64,
+      "ties": 1,
+      "wilcoxon_p_value": 0.40696131615278397,
+      "wilcoxon_statistic": 916.0
+    }
+  ],
+  "summaries": [
+    {
+      "average_ehull": 0.1340949428632926,
+      "composition_validity": 0.859375,
+      "convergence_rate": 0.984375,
+      "initial_energy_per_atom_mean": -7.604624913419995,
+      "initial_max_force_mean": 0.2494885506724715,
+      "method": "baseline",
+      "n": 64,
+      "relaxation_rmsd_mean": 0.059183136472292286,
+      "severe_short_bond_count": 0,
+      "stable_rate": 0.53125,
+      "structure_validity": 1.0
+    },
+    {
+      "average_ehull": 0.13407186172716434,
+      "composition_validity": 0.859375,
+      "convergence_rate": 0.984375,
+      "initial_energy_per_atom_mean": -7.604838705323045,
+      "initial_max_force_mean": 0.2118619872433003,
+      "method": "pos_1",
+      "n": 64,
+      "relaxation_rmsd_mean": 0.05912981890645772,
+      "severe_short_bond_count": 0,
+      "stable_rate": 0.53125,
+      "structure_validity": 1.0
+    },
+    {
+      "average_ehull": 0.1340824869328858,
+      "composition_validity": 0.859375,
+      "convergence_rate": 0.984375,
+      "initial_energy_per_atom_mean": -7.605008640672478,
+      "initial_max_force_mean": 0.19445784898484045,
+      "method": "pos_3",
+      "n": 64,
+      "relaxation_rmsd_mean": 0.058808245960354256,
+      "severe_short_bond_count": 0,
+      "stable_rate": 0.53125,
+      "structure_validity": 1.0
+    },
+    {
+      "average_ehull": 0.13410352239351667,
+      "composition_validity": 0.859375,
+      "convergence_rate": 0.984375,
+      "initial_energy_per_atom_mean": -7.605068695072144,
+      "initial_max_force_mean": 0.18952476309683344,
+      "method": "pos_5",
+      "n": 64,
+      "relaxation_rmsd_mean": 0.05840787353878121,
+      "severe_short_bond_count": 0,
+      "stable_rate": 0.53125,
+      "structure_validity": 1.0
+    },
+    {
+      "average_ehull": 0.13408488753143052,
+      "composition_validity": 0.859375,
+      "convergence_rate": 0.984375,
+      "initial_energy_per_atom_mean": -7.605006369120545,
+      "initial_max_force_mean": 0.21053937924129418,
+      "method": "poscell_1",
+      "n": 64,
+      "relaxation_rmsd_mean": 0.05882852923250267,
+      "severe_short_bond_count": 0,
+      "stable_rate": 0.53125,
+      "structure_validity": 1.0
+    },
+    {
+      "average_ehull": 0.1340896510688867,
+      "composition_validity": 0.859375,
+      "convergence_rate": 0.984375,
+      "initial_energy_per_atom_mean": -7.6054408229296175,
+      "initial_max_force_mean": 0.192682141366532,
+      "method": "poscell_3",
+      "n": 64,
+      "relaxation_rmsd_mean": 0.05799276163119155,
+      "severe_short_bond_count": 0,
+      "stable_rate": 0.53125,
+      "structure_validity": 1.0
+    }
+  ]
+}

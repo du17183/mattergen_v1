@@ -1,0 +1,37 @@
+{
+  "atomic_numbers": [
+    26,
+    8,
+    26,
+    3,
+    26,
+    3,
+    26,
+    8,
+    8,
+    8,
+    8
+  ],
+  "basic_structure_valid": true,
+  "composition_valid": true,
+  "config_id": "A0",
+  "elapsed_seconds": 74.40455876098713,
+  "error": null,
+  "extxyz_sha256": "ada50fe38d5bbbe662471c03794dc7b07222c5ecbd8d65a6d8e739bfb3194241",
+  "final_structure_hash": "f1bcf80d1533689db3f02b75fe6a0094abaae340b715484525d56d96cd2a9635",
+  "formula": "Fe4Li2O5",
+  "num_atoms": 11,
+  "peak_allocated_bytes": 512785408,
+  "peak_reserved_bytes": 593494016,
+  "physical_gpu": 0,
+  "process_cpu_seconds": 70.784935652,
+  "return_code": 0,
+  "seed": 22000,
+  "success": true,
+  "telemetry": {
+    "max_utilization_percent": 43.0,
+    "mean_utilization_percent": 38.63157894736842,
+    "peak_memory_mib": 1286.0,
+    "samples": 57
+  }
+}

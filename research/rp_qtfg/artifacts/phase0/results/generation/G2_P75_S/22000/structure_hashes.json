@@ -1,0 +1,27 @@
+{
+  "atomic_numbers": [
+    26,
+    8,
+    26,
+    3,
+    26,
+    3,
+    26,
+    8,
+    8,
+    8,
+    8
+  ],
+  "extxyz_sha256": "09a03e6ef904228d954559712e76ffcf80f293d7ac610fa8e6d614220f16a52d",
+  "final_structure_hash": "d75447f8ee41b5ee7627620f33aab40f7b558237afa55c916c364aef3d6d6114",
+  "formula": "Fe4Li2O5",
+  "initial_field_hashes": {
+    "atomic_numbers": "4586c4f906958bc450dbbbec20f526484822118ac7ce0dcb236e35180ed607f3",
+    "cell": "e3469d19a666133f39716496ad54647ff733ddd0ce45ee6e7910866b07d0f5f7",
+    "combined": "f4029523655b190814e4aa0065b5436b383d21fa0ca79e4f173c59f0c930f8cb",
+    "pos": "7af407b3049395a0c9f197657a16a5f2c5b192c990e4e9b54e57c492a8931018"
+  },
+  "initial_state_hash": "f4029523655b190814e4aa0065b5436b383d21fa0ca79e4f173c59f0c930f8cb",
+  "num_atoms": 11,
+  "rng_state_hash": "49cdaaec53a7157753bd1e415050b09eddd2f062ed41ac21f0ab6abed048768d"
+}

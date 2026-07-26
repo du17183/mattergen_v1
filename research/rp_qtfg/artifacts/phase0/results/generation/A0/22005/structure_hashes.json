@@ -1,0 +1,20 @@
+{
+  "atomic_numbers": [
+    46,
+    25,
+    50,
+    45
+  ],
+  "extxyz_sha256": "9127d44be82f34abad052096b2408b73196e539de40a41195a030e2eeba7f1b8",
+  "final_structure_hash": "f70817abfaf6aff7b18f2efd8c1800133cab963e53eb4d744fd4894825f84ae4",
+  "formula": "MnPdRhSn",
+  "initial_field_hashes": {
+    "atomic_numbers": "7c0f3c0de6f9593cb69375415525ac4e9f79587073810bc408d46c083409a9eb",
+    "cell": "9ae0c42166aeb9a8fc76b07f855da00763dfb3b711790ab9250b9010140ed1b1",
+    "combined": "72c174a3bfa725d65d58fc3b1deb95d32ae86856def698c82744ff6d3051c34b",
+    "pos": "be9c348e3a7dd9563cd45d1b0172fe447ecda7ec76318b49ea36b6f6a9cac7cd"
+  },
+  "initial_state_hash": "72c174a3bfa725d65d58fc3b1deb95d32ae86856def698c82744ff6d3051c34b",
+  "num_atoms": 4,
+  "rng_state_hash": "7fb3eba0f76ad03627167497caadd1df3740f0a5dc8847468d56f718983a2f8e"
+}

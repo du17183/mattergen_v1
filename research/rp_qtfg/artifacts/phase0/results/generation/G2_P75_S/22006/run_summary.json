@@ -1,0 +1,38 @@
+{
+  "atomic_numbers": [
+    26,
+    45,
+    26,
+    45,
+    26,
+    26,
+    33,
+    33,
+    45,
+    45,
+    33,
+    33
+  ],
+  "basic_structure_valid": true,
+  "composition_valid": true,
+  "config_id": "G2_P75_S",
+  "elapsed_seconds": 101.1342292430345,
+  "error": null,
+  "extxyz_sha256": "28a51735c8f8c3636dfbbc03c88fddbc16e842cce14d4d368924d164e8340883",
+  "final_structure_hash": "66866e6597d9069d0b0b43a7385b06a3b2bfa43faf96c69274764b85fb47215c",
+  "formula": "As4Fe4Rh4",
+  "num_atoms": 12,
+  "peak_allocated_bytes": 512785408,
+  "peak_reserved_bytes": 627048448,
+  "physical_gpu": 6,
+  "process_cpu_seconds": 150.189996596,
+  "return_code": 0,
+  "seed": 22006,
+  "success": true,
+  "telemetry": {
+    "max_utilization_percent": 45.0,
+    "mean_utilization_percent": 34.45977011494253,
+    "peak_memory_mib": 1228.0,
+    "samples": 87
+  }
+}
