@@ -1,0 +1,40 @@
+{
+  "crystalrepa_targeted": {
+    "command": "python -m pytest mattergen/tests/test_crystalrepa.py -q",
+    "passed": 4,
+    "failed": 0,
+    "status": "PASS"
+  },
+  "smact_metric_boundary": {
+    "missing_oxidation_state_is_composition_invalid": true,
+    "generation_retained": true,
+    "status": "PASS"
+  },
+  "ddp_ea_nce": {
+    "devices": 8,
+    "variable_atom_rows": "2-9 per rank",
+    "finite_gradients": true,
+    "same_element_off_diagonal_excluded": true,
+    "status": "PASS"
+  },
+  "integration": {
+    "official_checkpoint_strict_load": true,
+    "adaptive_cfg_disabled": true,
+    "alignment_block": 2,
+    "teacher_student_mapping": true,
+    "loss_finite": true,
+    "checkpoint_save_resume": true,
+    "teacher_absent_at_inference": true,
+    "status": "PASS"
+  },
+  "full_repository": {
+    "crystalrepa_regressions": 0,
+    "unrelated_baseline_failures": 5,
+    "known_failures": [
+      "Four pre-existing Corrector tests omit the required dt argument.",
+      "One scheduler test supplies the PyTorch-2.7-removed ReduceLROnPlateau verbose argument."
+    ],
+    "status": "BASELINE_LIMITATION"
+  },
+  "git_diff_check": "PENDING_FINAL_TREE"
+}

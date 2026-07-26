@@ -1,0 +1,1905 @@
+{
+  "base_branch": "main",
+  "base_commit": "9bc6747a3ddfd26db6d931bcdb6df5d299844544",
+  "branch": "feature/crystalrepa-repro",
+  "conditional_fn_pra_started": false,
+  "created_at": "2026-07-26T20:07:10+08:00",
+  "current_stage": "stop_for_review",
+  "formal_seeds_started": false,
+  "overall_status": "stop_for_review",
+  "schema_version": 1,
+  "stages": {
+    "branch_creation": {
+      "detail": "Created feature/crystalrepa-repro from main.",
+      "metrics": {
+        "base_commit": "9bc6747a3ddfd26db6d931bcdb6df5d299844544"
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T20:10:34+08:00"
+    },
+    "cache_reuse_audit": {
+      "detail": "Teacher cache reused; every MP-20 train/val structure and atom hash matched.",
+      "metrics": {
+        "CACHE_MAPPING_PASSED": true,
+        "CACHE_REUSED": true,
+        "cache": "/data/dxl/data/crystalrepa_teacher_cache",
+        "created_at": "2026-07-26T20:10:34+08:00",
+        "representation_dimension": 64,
+        "splits": [
+          {
+            "atom_rows_match": true,
+            "atoms": 279553,
+            "canonical_full_coverage": true,
+            "feature_dtype": "float16",
+            "feature_shape": [
+              279553,
+              64
+            ],
+            "features_finite": true,
+            "hash_mismatches": {
+              "atomic": 0,
+              "cell": 0,
+              "combined": 0,
+              "position": 0
+            },
+            "passed": true,
+            "split": "train",
+            "structures": 27136
+          },
+          {
+            "atom_rows_match": true,
+            "atoms": 92454,
+            "canonical_full_coverage": true,
+            "feature_dtype": "float16",
+            "feature_shape": [
+              92454,
+              64
+            ],
+            "features_finite": true,
+            "hash_mismatches": {
+              "atomic": 0,
+              "cell": 0,
+              "combined": 0,
+              "position": 0
+            },
+            "passed": true,
+            "split": "val",
+            "structures": 9047
+          }
+        ],
+        "teacher": "CHGNet 0.3.0",
+        "teacher_checkpoint_sha256": "d14ab7c0f093efe64b60a7bcd540bca10e74fb7f46c86108a079af60524659d1",
+        "teacher_layer": "atom_fea before final CHGNet convolution"
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T20:10:35+08:00"
+    },
+    "checkpoint_audit": {
+      "detail": "Official unconditional MP-20 checkpoint located and SHA256 verified.",
+      "metrics": {
+        "exists": true,
+        "expected_sha256": "ffb80e4425a6f99f479a67b8cd111885d45117234e8947ff77eb3a55df420b9a",
+        "passed": true,
+        "path": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/mp_20_base/checkpoints/last.ckpt",
+        "sha256": "ffb80e4425a6f99f479a67b8cd111885d45117234e8947ff77eb3a55df420b9a",
+        "strict_load_pending_integration_test": true
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T20:10:34+08:00"
+    },
+    "eight_seed_smoke": {
+      "detail": "8-seed smoke passed=True.",
+      "metrics": {
+        "created_at": "2026-07-26T21:57:38+08:00",
+        "determinism": {
+          "R1": {
+            "extxyz_hash": true,
+            "final_hash": true,
+            "initial_hash": true
+          },
+          "U0": {
+            "extxyz_hash": true,
+            "final_hash": true,
+            "initial_hash": true
+          }
+        },
+        "pairing": {
+          "passed": true,
+          "rows": [
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17000
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17001
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17002
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17003
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17004
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17005
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17006
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17007
+            }
+          ]
+        },
+        "passed": true,
+        "repeat_tasks": [
+          {
+            "method": "U0",
+            "seed": 17000,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17000,
+            "skipped_resume": true,
+            "success": true
+          }
+        ],
+        "tasks": [
+          {
+            "method": "U0",
+            "seed": 17006,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17002,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17000,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17007,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17001,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17001,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17000,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17005,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17003,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17004,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17006,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17002,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17003,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17004,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17005,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17007,
+            "skipped_resume": true,
+            "success": true
+          }
+        ]
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T21:57:38+08:00"
+    },
+    "github_archive": {
+      "detail": "Code, tests, reports, and all small non-weight artifacts pushed; Draft PR created.",
+      "metrics": {
+        "artifact_files": 1211,
+        "draft_pr": "https://github.com/du17183/mattergen_v1/pull/4",
+        "science_commit": "36ceecf",
+        "weights_uploaded": false
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T22:10:59+08:00"
+    },
+    "metrics": {
+      "detail": "Unified generation, relaxation, E-hull, MSUN/SUN metrics complete.",
+      "metrics": {
+        "R1": {
+          "average_ehull_ev_atom": 0.29616706875371535,
+          "composition_validity": 0.8125,
+          "ehull_finite_count": 59,
+          "ehull_missing_count": 5,
+          "force_convergence": 0.984375,
+          "generation_success": 1.0,
+          "median_generation_seconds": 141.10480395599734,
+          "metastable_rate": 0.15625,
+          "method": "R1",
+          "msun_rate": 0.09375,
+          "novel_rate": 0.859375,
+          "relax_success": 1.0,
+          "relaxation_rmsd": 0.2387417565967243,
+          "stable_rate": 0.0,
+          "structure_validity": 1.0,
+          "sun_rate": 0.0,
+          "unique_rate": 1.0
+        },
+        "U0": {
+          "average_ehull_ev_atom": 0.20193066479529997,
+          "composition_validity": 0.84375,
+          "ehull_finite_count": 64,
+          "ehull_missing_count": 0,
+          "force_convergence": 0.984375,
+          "generation_success": 1.0,
+          "median_generation_seconds": 154.8199675969954,
+          "metastable_rate": 0.21875,
+          "method": "U0",
+          "msun_rate": 0.078125,
+          "novel_rate": 0.84375,
+          "relax_success": 1.0,
+          "relaxation_rmsd": 0.20545155802945556,
+          "stable_rate": 0.0,
+          "structure_validity": 1.0,
+          "sun_rate": 0.0,
+          "unique_rate": 1.0
+        }
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T22:02:29+08:00"
+    },
+    "paired_statistics": {
+      "detail": "Paired statistics completed for 64 matched seeds.",
+      "metrics": {
+        "rows": 11
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T22:02:29+08:00"
+    },
+    "paper_config_verification": {
+      "detail": "Paper configuration verified; CHGNet teacher deviation explicitly frozen.",
+      "metrics": {
+        "alignment_block": 2,
+        "alignment_weight": 1.0,
+        "temperature": 0.1
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T20:10:34+08:00"
+    },
+    "repro_go_no_go": {
+      "detail": "Reproduction decision complete: base_reproduced=False.",
+      "metrics": {
+        "DFT_VERIFIED": false,
+        "R1": {
+          "average_ehull_ev_atom": 0.29616706875371535,
+          "composition_validity": 0.8125,
+          "ehull_finite_count": 59,
+          "ehull_missing_count": 5,
+          "force_convergence": 0.984375,
+          "generation_success": 1.0,
+          "median_generation_seconds": 141.10480395599734,
+          "metastable_rate": 0.15625,
+          "method": "R1",
+          "msun_rate": 0.09375,
+          "novel_rate": 0.859375,
+          "relax_success": 1.0,
+          "relaxation_rmsd": 0.2387417565967243,
+          "stable_rate": 0.0,
+          "structure_validity": 1.0,
+          "sun_rate": 0.0,
+          "unique_rate": 1.0
+        },
+        "REPA_BASE_REPRODUCED": false,
+        "REPA_REPRO_ENGINEERING_GO": false,
+        "REPA_REPRO_NO_GO": true,
+        "REPA_REPRO_SCIENTIFIC_GO": false,
+        "U0": {
+          "average_ehull_ev_atom": 0.20193066479529997,
+          "composition_validity": 0.84375,
+          "ehull_finite_count": 64,
+          "ehull_missing_count": 0,
+          "force_convergence": 0.984375,
+          "generation_success": 1.0,
+          "median_generation_seconds": 154.8199675969954,
+          "metastable_rate": 0.21875,
+          "method": "U0",
+          "msun_rate": 0.078125,
+          "novel_rate": 0.84375,
+          "relax_success": 1.0,
+          "relaxation_rmsd": 0.20545155802945556,
+          "stable_rate": 0.0,
+          "structure_validity": 1.0,
+          "sun_rate": 0.0,
+          "unique_rate": 1.0
+        },
+        "controlled_deviation": "CHGNet 0.3.0 is not one of the paper's ten teachers",
+        "created_at": "2026-07-26T22:02:29+08:00",
+        "engineering_checks": {
+          "composition_drop_le_2pp": false,
+          "generation_success_100pct": true,
+          "inference_overhead_le_5pct": true,
+          "projection_absent_inference": true,
+          "relax_failure_increment_le_2pp": true,
+          "structure_validity_not_lower": true,
+          "teacher_absent_inference": true
+        },
+        "inference_overhead_fraction": -0.08858782141525423,
+        "no_systematic_harm": {
+          "ehull_not_worse_0_015": false,
+          "metastable_not_lower_3pp": false,
+          "msun_not_lower_3pp": true,
+          "rmsd_not_worse_10pct": false,
+          "stable_not_lower_3pp": true,
+          "sun_not_lower_3pp": true
+        },
+        "scientific_positive_signals": {
+          "ehull_drop_ge_0_005": false,
+          "metastable_gain_ge_2pp": false,
+          "msun_or_sun_gain_ge_1_5pp": true,
+          "rmsd_drop_ge_10pct": false,
+          "stable_gain_ge_1_5pp": false
+        },
+        "stability_source": "MatterSim-5M surrogate",
+        "teacher_evaluator_independent": true
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T22:02:29+08:00"
+    },
+    "repro_implementation": {
+      "detail": "Strict load, disabled identity, block-2 gradient, and training-only Teacher path passed.",
+      "metrics": {
+        "adaptive_cfg_enabled": false,
+        "alignment_block_1_indexed": 2,
+        "auxiliary_consumed_once": true,
+        "block_2_gradient_norm_sum": 35.81393086910248,
+        "condition_fields": [],
+        "created_at": "2026-07-26T20:13:36+08:00",
+        "ea_nce_symmetric": true,
+        "feature_disabled_comparison": {
+          "atomic_numbers": {
+            "bitwise": false,
+            "max_abs": 1.9073486328125e-05,
+            "within_1e_4": true
+          },
+          "cell": {
+            "bitwise": false,
+            "max_abs": 5.960464477539062e-07,
+            "within_1e_4": true
+          },
+          "pos": {
+            "bitwise": false,
+            "max_abs": 8.642673492431641e-07,
+            "within_1e_4": true
+          }
+        },
+        "gemnet_blocks": 4,
+        "inference_projection_required": false,
+        "loss": 4.3162841796875,
+        "metrics": {
+          "atomic_numbers": 0.1383596956729889,
+          "cell": 0.009416847489774227,
+          "loss_diffusion": 0.4444124698638916,
+          "loss_repa_alignment": 3.8718719482421875,
+          "loss_repa_weighted": 3.8718719482421875,
+          "pos": 2.9663596153259277,
+          "repa_positive_cosine": -5.777955084340647e-05
+        },
+        "non_trainable_parameter_names": [
+          "diffusion_module.model.gemnet.out_blocks.0.scale_sum.scale_factor",
+          "diffusion_module.model.gemnet.out_blocks.0.scale_rbf_F.scale_factor",
+          "diffusion_module.model.gemnet.out_blocks.1.scale_sum.scale_factor",
+          "diffusion_module.model.gemnet.out_blocks.1.scale_rbf_F.scale_factor",
+          "diffusion_module.model.gemnet.out_blocks.2.scale_sum.scale_factor",
+          "diffusion_module.model.gemnet.out_blocks.2.scale_rbf_F.scale_factor",
+          "diffusion_module.model.gemnet.out_blocks.3.scale_sum.scale_factor",
+          "diffusion_module.model.gemnet.out_blocks.3.scale_rbf_F.scale_factor",
+          "diffusion_module.model.gemnet.out_blocks.4.scale_sum.scale_factor",
+          "diffusion_module.model.gemnet.out_blocks.4.scale_rbf_F.scale_factor",
+          "diffusion_module.model.gemnet.int_blocks.0.trip_interaction.scale_rbf.scale_factor",
+          "diffusion_module.model.gemnet.int_blocks.0.trip_interaction.scale_cbf_sum.scale_factor",
+          "diffusion_module.model.gemnet.int_blocks.0.atom_update.scale_sum.scale_factor",
+          "diffusion_module.model.gemnet.int_blocks.1.trip_interaction.scale_rbf.scale_factor",
+          "diffusion_module.model.gemnet.int_blocks.1.trip_interaction.scale_cbf_sum.scale_factor",
+          "diffusion_module.model.gemnet.int_blocks.1.atom_update.scale_sum.scale_factor",
+          "diffusion_module.model.gemnet.int_blocks.2.trip_interaction.scale_rbf.scale_factor",
+          "diffusion_module.model.gemnet.int_blocks.2.trip_interaction.scale_cbf_sum.scale_factor",
+          "diffusion_module.model.gemnet.int_blocks.2.atom_update.scale_sum.scale_factor",
+          "diffusion_module.model.gemnet.int_blocks.3.trip_interaction.scale_rbf.scale_factor",
+          "diffusion_module.model.gemnet.int_blocks.3.trip_interaction.scale_cbf_sum.scale_factor",
+          "diffusion_module.model.gemnet.int_blocks.3.atom_update.scale_sum.scale_factor"
+        ],
+        "official_checkpoint": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/mp_20_base/checkpoints/last.ckpt",
+        "official_strict_load": true,
+        "passed": true,
+        "projection_gradient_norm_sum": 19.866016924381256,
+        "r1_missing_projection_keys": [
+          "diffusion_module.model.student_projection.norm.weight",
+          "diffusion_module.model.student_projection.norm.bias",
+          "diffusion_module.model.student_projection.residual.weight",
+          "diffusion_module.model.student_projection.residual.bias",
+          "diffusion_module.model.student_projection.output.weight",
+          "diffusion_module.model.student_projection.output.bias"
+        ],
+        "r1_unexpected_keys": [],
+        "same_element_off_diagonal_excluded": true,
+        "schema_version": 1,
+        "teacher_module_loaded": false,
+        "total_parameters": 44858555,
+        "trainable_parameters": 44858533,
+        "trainable_ratio": 0.9999995095695793
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T20:13:36+08:00"
+    },
+    "sixty_four_generation": {
+      "detail": "Paired generation complete; passed=True.",
+      "metrics": {
+        "composition_valid": {
+          "R1": 52,
+          "U0": 54
+        },
+        "created_at": "2026-07-26T21:57:38+08:00",
+        "elapsed_seconds": 0.032942195946816355,
+        "pairing": {
+          "passed": true,
+          "rows": [
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17000
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17001
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17002
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17003
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17004
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17005
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17006
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17007
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17008
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17009
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17010
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17011
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17012
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17013
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17014
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17015
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17016
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17017
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17018
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17019
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17020
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17021
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17022
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17023
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17024
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17025
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17026
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17027
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17028
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17029
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17030
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17031
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17032
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17033
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17034
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17035
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17036
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17037
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17038
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17039
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17040
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17041
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17042
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17043
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17044
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17045
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17046
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17047
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17048
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17049
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17050
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17051
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17052
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17053
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17054
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17055
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17056
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17057
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17058
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17059
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17060
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17061
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17062
+            },
+            {
+              "gpu_match": true,
+              "initial_hash_match": true,
+              "rng_hash_match": true,
+              "seed": 17063
+            }
+          ]
+        },
+        "passed": true,
+        "projection_loaded_at_inference": false,
+        "structure_valid": {
+          "R1": 64,
+          "U0": 64
+        },
+        "success": {
+          "R1": 64,
+          "U0": 64
+        },
+        "tasks": [
+          {
+            "method": "R1",
+            "seed": 17029,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17014,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17002,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17015,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17040,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17008,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17054,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17018,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17039,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17047,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17008,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17007,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17038,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17014,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17037,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17039,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17037,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17013,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17028,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17012,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17035,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17036,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17025,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17005,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17026,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17045,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17009,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17004,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17032,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17010,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17033,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17009,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17034,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17027,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17016,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17004,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17019,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17026,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17044,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17015,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17031,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17049,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17031,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17003,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17045,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17006,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17025,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17000,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17012,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17029,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17048,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17001,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17063,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17028,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17062,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17042,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17061,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17041,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17002,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17060,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17003,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17001,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17059,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17027,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17057,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17007,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17006,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17023,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17030,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17038,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17035,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17034,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17042,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17016,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17033,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17021,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17055,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17032,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17052,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17020,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17041,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17000,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17024,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17051,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17024,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17017,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17030,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17058,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17023,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17050,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17022,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17021,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17020,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17053,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17056,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17036,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17010,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17046,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17022,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17013,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17019,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17005,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17011,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17018,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17011,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "U0",
+            "seed": 17043,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17049,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17055,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17040,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17017,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17051,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17044,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17043,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17054,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17057,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17053,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17063,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17052,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17046,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17060,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17050,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17047,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17059,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17058,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17056,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17048,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17062,
+            "skipped_resume": true,
+            "success": true
+          },
+          {
+            "method": "R1",
+            "seed": 17061,
+            "skipped_resume": true,
+            "success": true
+          }
+        ],
+        "teacher_used_at_inference": false
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T21:57:38+08:00"
+    },
+    "sixty_four_relax": {
+      "detail": "Resume audit reused 128/128 finite relax outputs; converged=126.",
+      "metrics": {
+        "checkpoint_sha256": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5",
+        "converged": 126,
+        "created_at": "2026-07-26T21:57:38+08:00",
+        "skipped_resume": true,
+        "success": 128,
+        "total_concurrency": 16,
+        "valid_but_not_converged": 2,
+        "workers_per_gpu": 2
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T21:57:38+08:00"
+    },
+    "state_audit": {
+      "detail": "P1 frozen; worktree/process/GPU audit passed before branch creation.",
+      "metrics": {
+        "duplicate_launcher": false,
+        "gpu_count": 8,
+        "p1_frozen": true
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T20:10:34+08:00"
+    },
+    "stop_for_review": {
+      "detail": "CrystalREPA unconditional reproduction completed; REPA_BASE_REPRODUCED=False. Waiting for human review.",
+      "metrics": {
+        "conditional_fn_pra_started": false,
+        "formal_seeds_started": false,
+        "gpu_workers": 0,
+        "other_processes_terminated": false,
+        "sigkill_used": false
+      },
+      "status": "stop_for_review",
+      "updated_at": "2026-07-26T22:10:59+08:00"
+    },
+    "tests": {
+      "detail": "CrystalREPA targeted/integration/DDP tests passed; SMACT boundary regression added; five unrelated repository baseline failures recorded.",
+      "metrics": {
+        "ddp_ea_nce_passed": true,
+        "known_unrelated_baseline_failures": 5,
+        "smact_boundary_passed": true,
+        "targeted_failed": 0,
+        "targeted_passed": 4
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T21:35:58+08:00"
+    },
+    "training_decision": {
+      "detail": "1000-step gate passed; continuing toward the 10000-step cap.",
+      "metrics": {
+        "checks": {
+          "alignment_decreased": true,
+          "all_logged_metrics_finite": true,
+          "cosine_improved": true,
+          "diffusion_not_diverged": true
+        },
+        "created_at": "2026-07-26T21:57:29+08:00",
+        "passed": true,
+        "schema_version": 1,
+        "summary": {
+          "checkpoint": "/data/dxl/results/crystalrepa_repro/training/r1/checkpoints/step=001000.ckpt",
+          "created_at": "2026-07-26T20:27:19+08:00",
+          "loss_diffusion_train_step": {
+            "finite": true,
+            "first": 0.4070194661617279,
+            "last": 0.4100099802017212,
+            "max": 0.5927103757858276,
+            "min": 0.241771325469017
+          },
+          "loss_diffusion_val": {
+            "finite": true,
+            "first": 0.4267691373825073,
+            "last": 0.3719419538974762,
+            "max": 0.4267691373825073,
+            "min": 0.3700605630874634
+          },
+          "loss_repa_alignment_train_step": {
+            "finite": true,
+            "first": 6.116691112518311,
+            "last": 3.0937695503234863,
+            "max": 6.116691112518311,
+            "min": 1.615611910820007
+          },
+          "loss_repa_alignment_val": {
+            "finite": true,
+            "first": 2.8560683727264404,
+            "last": 2.2510480880737305,
+            "max": 2.8560683727264404,
+            "min": 2.0233852863311768
+          },
+          "loss_train_step": {
+            "finite": true,
+            "first": 6.52371072769165,
+            "last": 3.503779649734497,
+            "max": 6.52371072769165,
+            "min": 2.036618947982788
+          },
+          "loss_val": {
+            "finite": true,
+            "first": 3.282837390899658,
+            "last": 2.622990131378174,
+            "max": 3.282837390899658,
+            "min": 2.436043262481689
+          },
+          "max_steps": 1000,
+          "metrics_csv": "/data/dxl/results/crystalrepa_repro/training/r1/csv/version_2/metrics.csv",
+          "official_checkpoint": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/mp_20_base/checkpoints/last.ckpt",
+          "passed": true,
+          "repa_positive_cosine_train_step": {
+            "finite": true,
+            "first": 0.2317474782466888,
+            "last": 0.5601157546043396,
+            "max": 0.7163177728652954,
+            "min": 0.2317474782466888
+          },
+          "repa_positive_cosine_val": {
+            "finite": true,
+            "first": 0.5368403196334839,
+            "last": 0.6030690670013428,
+            "max": 0.6288807392120361,
+            "min": 0.5368403196334839
+          },
+          "resume": null,
+          "schema_version": 1,
+          "trainable_parameters": 44858533
+        }
+      },
+      "status": "running",
+      "updated_at": "2026-07-26T21:57:29+08:00"
+    },
+    "training_smoke": {
+      "detail": "R1 reached step 1000; finite=True.",
+      "metrics": {
+        "checkpoint": "/data/dxl/results/crystalrepa_repro/training/r1/checkpoints/step=001000.ckpt",
+        "created_at": "2026-07-26T20:27:19+08:00",
+        "loss_diffusion_train_step": {
+          "finite": true,
+          "first": 0.4070194661617279,
+          "last": 0.4100099802017212,
+          "max": 0.5927103757858276,
+          "min": 0.241771325469017
+        },
+        "loss_diffusion_val": {
+          "finite": true,
+          "first": 0.4267691373825073,
+          "last": 0.3719419538974762,
+          "max": 0.4267691373825073,
+          "min": 0.3700605630874634
+        },
+        "loss_repa_alignment_train_step": {
+          "finite": true,
+          "first": 6.116691112518311,
+          "last": 3.0937695503234863,
+          "max": 6.116691112518311,
+          "min": 1.615611910820007
+        },
+        "loss_repa_alignment_val": {
+          "finite": true,
+          "first": 2.8560683727264404,
+          "last": 2.2510480880737305,
+          "max": 2.8560683727264404,
+          "min": 2.0233852863311768
+        },
+        "loss_train_step": {
+          "finite": true,
+          "first": 6.52371072769165,
+          "last": 3.503779649734497,
+          "max": 6.52371072769165,
+          "min": 2.036618947982788
+        },
+        "loss_val": {
+          "finite": true,
+          "first": 3.282837390899658,
+          "last": 2.622990131378174,
+          "max": 3.282837390899658,
+          "min": 2.436043262481689
+        },
+        "max_steps": 1000,
+        "metrics_csv": "/data/dxl/results/crystalrepa_repro/training/r1/csv/version_2/metrics.csv",
+        "official_checkpoint": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/mp_20_base/checkpoints/last.ckpt",
+        "passed": true,
+        "repa_positive_cosine_train_step": {
+          "finite": true,
+          "first": 0.2317474782466888,
+          "last": 0.5601157546043396,
+          "max": 0.7163177728652954,
+          "min": 0.2317474782466888
+        },
+        "repa_positive_cosine_val": {
+          "finite": true,
+          "first": 0.5368403196334839,
+          "last": 0.6030690670013428,
+          "max": 0.6288807392120361,
+          "min": 0.5368403196334839
+        },
+        "resume": null,
+        "schema_version": 1,
+        "trainable_parameters": 44858533
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T20:27:19+08:00"
+    }
+  },
+  "tmux_session": "mattergen_crystalrepa_repro",
+  "updated_at": "2026-07-26T22:10:59+08:00"
+}

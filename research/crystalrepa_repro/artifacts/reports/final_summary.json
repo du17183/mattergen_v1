@@ -1,0 +1,115 @@
+{
+  "ALIGNMENT_BLOCK": 2,
+  "ALIGNMENT_WEIGHT": 1.0,
+  "BASE_CHECKPOINT": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/mp_20_base/checkpoints/last.ckpt",
+  "BASE_CHECKPOINT_SHA256": "ffb80e4425a6f99f479a67b8cd111885d45117234e8947ff77eb3a55df420b9a",
+  "BASE_MODEL": "Official unconditional MP-20 MatterGen",
+  "BEST_CHECKPOINT": "/data/dxl/results/crystalrepa_repro/training/r1/checkpoints/best-step=009250-loss_val=2.133707.ckpt",
+  "BEST_VALIDATION_LOSS": 2.133707,
+  "COMPOSITION_CHANGE_PP": -3.125,
+  "CONDITIONAL_FN_PRA_STARTED": false,
+  "CRYSTALREPA_REPRO_COMPLETED": true,
+  "DETERMINISM_LEVEL": {
+    "exact_repeat": {
+      "R1": {
+        "extxyz_hash": true,
+        "final_hash": true,
+        "initial_hash": true
+      },
+      "U0": {
+        "extxyz_hash": true,
+        "final_hash": true,
+        "initial_hash": true
+      }
+    },
+    "paired_initial_state": true
+  },
+  "DRAFT_PR": "https://github.com/du17183/mattergen_v1/pull/4",
+  "EA_NCE_TEMPERATURE": 0.1,
+  "EHULL_CHANGE": 0.09423640395841537,
+  "EHULL_REFERENCE_COVERAGE": {
+    "R1": "59/64",
+    "R1_missing_terminal_elements": [
+      "Pm",
+      "Pu",
+      "Tc",
+      "U"
+    ],
+    "U0": "64/64",
+    "policy": "Mean over reference-supported rows; missing rows remain NaN. Metastable/stable tests count missing E-hull as False."
+  },
+  "FINAL_REPORT": "/data/dxl/reports/crystalrepa_repro/crystalrepa_repro_final_report.md",
+  "FORMAL_SEEDS_STARTED": false,
+  "GITHUB_BRANCH": "feature/crystalrepa-repro",
+  "GITHUB_COMMIT": "36ceecf",
+  "GPU_WORKERS": 0,
+  "INFERENCE_OVERHEAD": -0.08858782141525423,
+  "LIMITATIONS": [
+    "CHGNet 0.3.0 is not one of the ten CrystalREPA paper Teachers.",
+    "The 10,000-step cap is much shorter than the paper's 1,900 epochs.",
+    "Stability is a MatterSim-5M surrogate estimate, not DFT.",
+    "The paired development set contains 64 seeds, not the paper's 1,024 samples over five runs.",
+    "TRI2024 has no terminal references for Pm, Pu, Tc, or U; R1 E-hull uses 59/64 reference-supported rows and paired E-hull statistics use the same 59 seeds."
+  ],
+  "METASTABLE_CHANGE_PP": -6.25,
+  "NEXT_ACTION": "Do not stack more conditional REPA modules; switch to field-confidence three-field Self-Conditioning.",
+  "NUS_OR_SUN_CHANGE_PP": {
+    "MSUN": 1.5625,
+    "SUN": 0.0
+  },
+  "OTHER_PROCESSES_TERMINATED": false,
+  "PAIRED_EHULL": {
+    "bootstrap_95_ci": [
+      -0.05682830143849321,
+      0.34533845424360177
+    ],
+    "mean_difference": 0.0922353590893691,
+    "sample_count": 59,
+    "wilcoxon_p_value": 0.9278297318416311
+  },
+  "PAIRED_STATISTICS": {
+    "report": "/data/dxl/reports/crystalrepa_repro/paired_statistics.csv",
+    "rows": 11
+  },
+  "PAPER_CONFIG_SOURCE": "https://arxiv.org/html/2605.08960",
+  "R1_AVG_EHULL": 0.29616706875371535,
+  "R1_COMPOSITION_VALIDITY": 0.8125,
+  "R1_GENERATION": "64/64",
+  "R1_METASTABLE": 0.15625,
+  "R1_NUS_OR_SUN": {
+    "MSUN": 0.09375,
+    "SUN": 0.0
+  },
+  "R1_RELAX": "64/64",
+  "R1_RELAX_RMSD": 0.2387417565967243,
+  "R1_STABLE": 0.0,
+  "R1_STRUCTURE_VALIDITY": 1.0,
+  "RELAX_CONVERGED_TOTAL": 126,
+  "RELAX_VALID_AT_CAP_TOTAL": 2,
+  "REPA_BASE_REPRODUCED": false,
+  "REPA_REPRO_ENGINEERING_GO": false,
+  "REPA_REPRO_NO_GO": true,
+  "REPA_REPRO_SCIENTIFIC_GO": false,
+  "RMSD_CHANGE": 0.03329019856726875,
+  "SIGKILL_USED": false,
+  "STABLE_CHANGE_PP": 0.0,
+  "STRUCTURE_CHANGE_PP": 0.0,
+  "TEACHER": "CHGNet 0.3.0 (controlled local deviation)",
+  "TEACHER_LAYER": "atom_fea before final CHGNet convolution",
+  "TESTS_PASSED": "4/4 targeted + integration + 8-rank DDP; 5 unrelated baseline failures documented",
+  "TRAINABLE_PARAMETERS": 44858533,
+  "TRAINING_STEPS": 10000,
+  "U0_AVG_EHULL": 0.20193066479529997,
+  "U0_COMPOSITION_VALIDITY": 0.84375,
+  "U0_GENERATION": "64/64",
+  "U0_METASTABLE": 0.21875,
+  "U0_NUS_OR_SUN": {
+    "MSUN": 0.078125,
+    "SUN": 0.0
+  },
+  "U0_RELAX": "64/64",
+  "U0_RELAX_RMSD": 0.20545155802945556,
+  "U0_STABLE": 0.0,
+  "U0_STRUCTURE_VALIDITY": 1.0,
+  "created_at": "2026-07-26T22:10:59+08:00"
+}

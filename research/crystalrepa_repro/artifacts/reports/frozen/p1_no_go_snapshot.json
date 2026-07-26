@@ -1,0 +1,17 @@
+{
+  "P1_FROZEN": true,
+  "created_at": "2026-07-26T20:10:34+08:00",
+  "files": [
+    {
+      "path": "/data/dxl/reports/fn_pra/phase1/phase1_decision.json",
+      "sha256": "83460b9375cff94921a68a499d498348a90634f7fae4cef18bddfea739109fb5"
+    },
+    {
+      "path": "/data/dxl/reports/fn_pra/phase1/phase1_final_report.md",
+      "sha256": "60d1d59baecb633c5d62f923bb36efcc93544ef02e320cf85148ff44c2ce60e3"
+    }
+  ],
+  "modified": false,
+  "source_branch": "feature/fn-pra",
+  "source_commit": "42681f83a0d70c25f6f2e598232868c169904e30"
+}

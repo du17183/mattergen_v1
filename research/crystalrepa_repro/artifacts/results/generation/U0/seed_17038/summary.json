@@ -1,0 +1,25 @@
+{
+  "composition_valid": true,
+  "extxyz_sha256": "585309d6d3a535d37f6f27b7428173577e3ccaf1e1679dbead77e5d31ad3baeb",
+  "final_structure_hash": "f33070038a9b4f943bf641cecbf524a07a4f392abd8d1801f34eb380c2b6888f",
+  "formula": "Cu2GaLi2MnO8Si2",
+  "generation_seconds": 169.08870511199348,
+  "initial_hashes": {
+    "atomic_numbers": "ed64431646595dfb72e3bf1a654d95b4d5ac30182a75487052cb0296000f5464",
+    "cell": "737129c68ed1e4416e30e4dbf3d3b98874b22d932696d5c6d8a5aa7d81bb0003",
+    "combined": "1b79a772fefcd0477c38e2eee00f6ebd0ff74aca74ad034657d49f71da1b12da",
+    "pos": "335041c89003e604ee29db1d0907bf3e5147c51294b3092ae5cba5b1cef15fff"
+  },
+  "method": "U0",
+  "model_load_seconds": 5.269667004002258,
+  "num_atoms": 16,
+  "peak_allocated_bytes": 269451776,
+  "peak_reserved_bytes": 685768704,
+  "physical_gpu": 6,
+  "projection_loaded_at_inference": false,
+  "rng_before_prior_hash": "60feda753c2d32f6c986c04d3cf85ac83cde34f25418ef4e47866d4d66b44013",
+  "seed": 17038,
+  "structure_valid": true,
+  "success": true,
+  "teacher_used_at_inference": false
+}

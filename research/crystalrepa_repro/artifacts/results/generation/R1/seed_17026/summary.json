@@ -1,0 +1,25 @@
+{
+  "composition_valid": true,
+  "extxyz_sha256": "00493f8c98b308625b67d1c30db2032b89b63812295e3233670eefd80576d0ad",
+  "final_structure_hash": "3f558239ed653453df079204c0d6ac3d507a5fce1a789a4a62ab88ebef2fc058",
+  "formula": "Mn3SrTe4",
+  "generation_seconds": 140.87688098696526,
+  "initial_hashes": {
+    "atomic_numbers": "258ce0a9e50bb69ade6f393f9f5b530b0f228df8339ff7d0d75670aad9d614b0",
+    "cell": "c4bde0777dfd61f4b19e5ab124718414d3a43a8865e57cc5ff14227b978ebb7c",
+    "combined": "38cb527f797b2705199d42e2d589998a5947ad3faf5071c7910cf7c0f0182b0f",
+    "pos": "2dbdc12bd6572204d5d5c26d135c20b9674621d0024e0b1087a7875a6b5d8eb4"
+  },
+  "method": "R1",
+  "model_load_seconds": 2.709073967009317,
+  "num_atoms": 8,
+  "peak_allocated_bytes": 240767488,
+  "peak_reserved_bytes": 249561088,
+  "physical_gpu": 2,
+  "projection_loaded_at_inference": false,
+  "rng_before_prior_hash": "837f19372da00b454db0512dc6d02b82fb05099bbb3065550635c62e19f64097",
+  "seed": 17026,
+  "structure_valid": true,
+  "success": true,
+  "teacher_used_at_inference": false
+}

@@ -1,0 +1,19 @@
+{
+  "paths": {
+    "0": "/data/dxl/results/crystalrepa_repro/training/r1/checkpoints/step=000000.ckpt",
+    "1000": "/data/dxl/results/crystalrepa_repro/training/r1/checkpoints/step=001000.ckpt",
+    "10000": "/data/dxl/results/crystalrepa_repro/training/r1/checkpoints/step=010000.ckpt",
+    "2500": "/data/dxl/results/crystalrepa_repro/training/r1/checkpoints/step=002500.ckpt",
+    "5000": "/data/dxl/results/crystalrepa_repro/training/r1/checkpoints/step=005000.ckpt",
+    "7500": "/data/dxl/results/crystalrepa_repro/training/r1/checkpoints/step=007500.ckpt"
+  },
+  "saved_steps": [
+    0,
+    1000,
+    2500,
+    5000,
+    7500,
+    10000
+  ],
+  "updated_at": "2026-07-26T21:18:58+08:00"
+}

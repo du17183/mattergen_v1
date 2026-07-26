@@ -1,0 +1,81 @@
+{
+  "adaptive_cfg_enabled": false,
+  "alignment_block_1_indexed": 2,
+  "auxiliary_consumed_once": true,
+  "block_2_gradient_norm_sum": 35.81393086910248,
+  "condition_fields": [],
+  "created_at": "2026-07-26T20:13:36+08:00",
+  "ea_nce_symmetric": true,
+  "feature_disabled_comparison": {
+    "atomic_numbers": {
+      "bitwise": false,
+      "max_abs": 1.9073486328125e-05,
+      "within_1e_4": true
+    },
+    "cell": {
+      "bitwise": false,
+      "max_abs": 5.960464477539062e-07,
+      "within_1e_4": true
+    },
+    "pos": {
+      "bitwise": false,
+      "max_abs": 8.642673492431641e-07,
+      "within_1e_4": true
+    }
+  },
+  "gemnet_blocks": 4,
+  "inference_projection_required": false,
+  "loss": 4.3162841796875,
+  "metrics": {
+    "atomic_numbers": 0.1383596956729889,
+    "cell": 0.009416847489774227,
+    "loss_diffusion": 0.4444124698638916,
+    "loss_repa_alignment": 3.8718719482421875,
+    "loss_repa_weighted": 3.8718719482421875,
+    "pos": 2.9663596153259277,
+    "repa_positive_cosine": -5.777955084340647e-05
+  },
+  "non_trainable_parameter_names": [
+    "diffusion_module.model.gemnet.out_blocks.0.scale_sum.scale_factor",
+    "diffusion_module.model.gemnet.out_blocks.0.scale_rbf_F.scale_factor",
+    "diffusion_module.model.gemnet.out_blocks.1.scale_sum.scale_factor",
+    "diffusion_module.model.gemnet.out_blocks.1.scale_rbf_F.scale_factor",
+    "diffusion_module.model.gemnet.out_blocks.2.scale_sum.scale_factor",
+    "diffusion_module.model.gemnet.out_blocks.2.scale_rbf_F.scale_factor",
+    "diffusion_module.model.gemnet.out_blocks.3.scale_sum.scale_factor",
+    "diffusion_module.model.gemnet.out_blocks.3.scale_rbf_F.scale_factor",
+    "diffusion_module.model.gemnet.out_blocks.4.scale_sum.scale_factor",
+    "diffusion_module.model.gemnet.out_blocks.4.scale_rbf_F.scale_factor",
+    "diffusion_module.model.gemnet.int_blocks.0.trip_interaction.scale_rbf.scale_factor",
+    "diffusion_module.model.gemnet.int_blocks.0.trip_interaction.scale_cbf_sum.scale_factor",
+    "diffusion_module.model.gemnet.int_blocks.0.atom_update.scale_sum.scale_factor",
+    "diffusion_module.model.gemnet.int_blocks.1.trip_interaction.scale_rbf.scale_factor",
+    "diffusion_module.model.gemnet.int_blocks.1.trip_interaction.scale_cbf_sum.scale_factor",
+    "diffusion_module.model.gemnet.int_blocks.1.atom_update.scale_sum.scale_factor",
+    "diffusion_module.model.gemnet.int_blocks.2.trip_interaction.scale_rbf.scale_factor",
+    "diffusion_module.model.gemnet.int_blocks.2.trip_interaction.scale_cbf_sum.scale_factor",
+    "diffusion_module.model.gemnet.int_blocks.2.atom_update.scale_sum.scale_factor",
+    "diffusion_module.model.gemnet.int_blocks.3.trip_interaction.scale_rbf.scale_factor",
+    "diffusion_module.model.gemnet.int_blocks.3.trip_interaction.scale_cbf_sum.scale_factor",
+    "diffusion_module.model.gemnet.int_blocks.3.atom_update.scale_sum.scale_factor"
+  ],
+  "official_checkpoint": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/mp_20_base/checkpoints/last.ckpt",
+  "official_strict_load": true,
+  "passed": true,
+  "projection_gradient_norm_sum": 19.866016924381256,
+  "r1_missing_projection_keys": [
+    "diffusion_module.model.student_projection.norm.weight",
+    "diffusion_module.model.student_projection.norm.bias",
+    "diffusion_module.model.student_projection.residual.weight",
+    "diffusion_module.model.student_projection.residual.bias",
+    "diffusion_module.model.student_projection.output.weight",
+    "diffusion_module.model.student_projection.output.bias"
+  ],
+  "r1_unexpected_keys": [],
+  "same_element_off_diagonal_excluded": true,
+  "schema_version": 1,
+  "teacher_module_loaded": false,
+  "total_parameters": 44858555,
+  "trainable_parameters": 44858533,
+  "trainable_ratio": 0.9999995095695793
+}

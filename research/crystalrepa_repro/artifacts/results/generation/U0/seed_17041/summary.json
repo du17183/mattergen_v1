@@ -1,0 +1,25 @@
+{
+  "composition_valid": false,
+  "extxyz_sha256": "360f2feede93e278dfe4192a545f3bca990e254a9e5f8126479d8f997ef91dd4",
+  "final_structure_hash": "927a18bc955df744255fa9ee7b8938a2d5b9acfc95e3c0c5a5c87e9dca271179",
+  "formula": "CaCdNa2O8Ti2",
+  "generation_seconds": 164.63809073000448,
+  "initial_hashes": {
+    "atomic_numbers": "a74c45bff78cf3094299939052b15a4d920b1131d5206078fcdd110744c7e466",
+    "cell": "6e02f4a6245215f1f9974890215499e8bdb345848e5eddac20aa7e1aca78d22a",
+    "combined": "53c1b99a48172ed5a28faa77cccf0a90abe0477b4854c2f4d8479f9636f341b6",
+    "pos": "fb78680eb5bf500218e400bcb23614ca8e57b6256c8240f19e3781291af4ebdb"
+  },
+  "method": "U0",
+  "model_load_seconds": 2.7119584350148216,
+  "num_atoms": 14,
+  "peak_allocated_bytes": 263743488,
+  "peak_reserved_bytes": 685768704,
+  "physical_gpu": 1,
+  "projection_loaded_at_inference": false,
+  "rng_before_prior_hash": "62e04e6ae28f70c3215fa03d7f3d0f9576711dada52b257fe298bd671751a1d0",
+  "seed": 17041,
+  "structure_valid": true,
+  "success": true,
+  "teacher_used_at_inference": false
+}

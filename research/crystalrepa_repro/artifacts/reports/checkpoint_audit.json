@@ -1,0 +1,8 @@
+{
+  "exists": true,
+  "expected_sha256": "ffb80e4425a6f99f479a67b8cd111885d45117234e8947ff77eb3a55df420b9a",
+  "passed": true,
+  "path": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/mp_20_base/checkpoints/last.ckpt",
+  "sha256": "ffb80e4425a6f99f479a67b8cd111885d45117234e8947ff77eb3a55df420b9a",
+  "strict_load_pending_integration_test": true
+}

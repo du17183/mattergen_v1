@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/data/dxl/mattergen_v1/mattergen/evaluation/metrics/structure.py", line 435, in is_smact_valid
+    return smact_validity(comp=elems, count=comps, use_pauling_test=True, include_alloys=True)
+  File "/data/dxl/mattergen_v1/mattergen/evaluation/metrics/structure.py", line 487, in smact_validity
+    n_comb = np.prod([len(ls) for ls in ox_combos])
+  File "/data/dxl/mattergen_v1/mattergen/evaluation/metrics/structure.py", line 487, in <listcomp>
+    n_comb = np.prod([len(ls) for ls in ox_combos])
+TypeError: object of type 'NoneType' has no len()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/dxl/mattergen_v1/research/crystalrepa_repro/run_paired_sample.py", line 163, in main
+    "composition_valid": bool(is_smact_valid(structure)),
+  File "/data/dxl/mattergen_v1/mattergen/evaluation/metrics/structure.py", line 437, in is_smact_valid
+    raise TypeError(
+TypeError: SMACT validity checker failed. Check that all elements Pm2 Tl2 present in the structure are also present in smact.element_dictionary().

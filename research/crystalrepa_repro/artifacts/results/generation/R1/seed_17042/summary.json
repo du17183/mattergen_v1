@@ -1,0 +1,25 @@
+{
+  "composition_valid": true,
+  "extxyz_sha256": "3ab006efc49bb4f5de13113c7f0047ad6157cae33fcb8818258f9086a750e4c7",
+  "final_structure_hash": "cc4c46e9cd7f952ec266d87e04b0f275f19d3756dcb36786236081967b4429ef",
+  "formula": "GaHfNi2",
+  "generation_seconds": 139.6368401379441,
+  "initial_hashes": {
+    "atomic_numbers": "7c0f3c0de6f9593cb69375415525ac4e9f79587073810bc408d46c083409a9eb",
+    "cell": "e9353fd79a397065838ceebf7f829e71e636bc57c44f662625f95b7544c153ad",
+    "combined": "aa5bafca562fa71f6d33db006e129e436dab8615271acf3c26ab9d5f9c1392e9",
+    "pos": "088bc4fbaab43d2d790b69b45355d4fe1aa8e3d2a6501610bb4bab3ebefc5b0f"
+  },
+  "method": "R1",
+  "model_load_seconds": 2.4165756450383924,
+  "num_atoms": 4,
+  "peak_allocated_bytes": 226313728,
+  "peak_reserved_bytes": 247463936,
+  "physical_gpu": 2,
+  "projection_loaded_at_inference": false,
+  "rng_before_prior_hash": "378ad565e9f31d096e08906c7b2f657c05a9effce9e44f76502af09613cd3426",
+  "seed": 17042,
+  "structure_valid": true,
+  "success": true,
+  "teacher_used_at_inference": false
+}

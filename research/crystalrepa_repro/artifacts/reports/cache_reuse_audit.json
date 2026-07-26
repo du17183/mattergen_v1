@@ -1,0 +1,52 @@
+{
+  "CACHE_MAPPING_PASSED": true,
+  "CACHE_REUSED": true,
+  "cache": "/data/dxl/data/crystalrepa_teacher_cache",
+  "created_at": "2026-07-26T20:10:34+08:00",
+  "representation_dimension": 64,
+  "splits": [
+    {
+      "atom_rows_match": true,
+      "atoms": 279553,
+      "canonical_full_coverage": true,
+      "feature_dtype": "float16",
+      "feature_shape": [
+        279553,
+        64
+      ],
+      "features_finite": true,
+      "hash_mismatches": {
+        "atomic": 0,
+        "cell": 0,
+        "combined": 0,
+        "position": 0
+      },
+      "passed": true,
+      "split": "train",
+      "structures": 27136
+    },
+    {
+      "atom_rows_match": true,
+      "atoms": 92454,
+      "canonical_full_coverage": true,
+      "feature_dtype": "float16",
+      "feature_shape": [
+        92454,
+        64
+      ],
+      "features_finite": true,
+      "hash_mismatches": {
+        "atomic": 0,
+        "cell": 0,
+        "combined": 0,
+        "position": 0
+      },
+      "passed": true,
+      "split": "val",
+      "structures": 9047
+    }
+  ],
+  "teacher": "CHGNet 0.3.0",
+  "teacher_checkpoint_sha256": "d14ab7c0f093efe64b60a7bcd540bca10e74fb7f46c86108a079af60524659d1",
+  "teacher_layer": "atom_fea before final CHGNet convolution"
+}

@@ -1,0 +1,12 @@
+{
+  "ddp_comm_hook_registered": true,
+  "ddp_communication_time_seconds_local_rank": 6.727724419091828,
+  "global_step": 10000,
+  "mean_microbatch_seconds": 0.06884205051593933,
+  "microbatches_observed": 35997,
+  "peak_vram_bytes_local_rank": 7238661120,
+  "samples_observed_global": 4607616,
+  "samples_per_second": 1859.3286957709597,
+  "training_batch_wall_seconds": 2478.107292422268,
+  "updated_at": "2026-07-26T21:18:59+08:00"
+}

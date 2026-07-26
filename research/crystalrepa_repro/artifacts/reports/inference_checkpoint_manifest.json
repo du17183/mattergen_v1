@@ -1,0 +1,10 @@
+{
+  "best_training_checkpoint": "/data/dxl/results/crystalrepa_repro/training/r1/checkpoints/best-step=009250-loss_val=2.133707.ckpt",
+  "best_validation_loss": 2.133707,
+  "created_at": "2026-07-26T21:57:37+08:00",
+  "inference_checkpoint": "/data/dxl/results/crystalrepa_repro/inference/r1_inference.ckpt",
+  "inference_checkpoint_sha256": "9ca6659e8973a0fc092516d5d944be7bfc58718d621f92b0ec130bcda01241c6",
+  "projection_removed": true,
+  "strict_official_architecture_load": true,
+  "teacher_absent": true
+}

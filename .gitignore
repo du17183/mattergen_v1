@@ -415,3 +415,7 @@ results/
 logs/
 wandb/
 lightning_logs/
+
+# Local checkpoint materialization and dataset links
+/config.yaml
+/datasets/cache/

@@ -1,0 +1,27 @@
+{
+  "alignment_block": 2,
+  "alignment_temperature": 0.1,
+  "alignment_weight": 1.0,
+  "base_checkpoint": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/mp_20_base/checkpoints/last.ckpt",
+  "created_at": "2026-07-26T20:27:37+08:00",
+  "devices": 8,
+  "effective_batch": 512,
+  "global_micro_batch": 128,
+  "gradient_accumulation": 4,
+  "learning_rate": 0.0001,
+  "max_steps": 10000,
+  "micro_batch_per_gpu": 16,
+  "missing_projection_keys": [
+    "diffusion_module.model.student_projection.norm.weight",
+    "diffusion_module.model.student_projection.norm.bias",
+    "diffusion_module.model.student_projection.residual.weight",
+    "diffusion_module.model.student_projection.residual.bias",
+    "diffusion_module.model.student_projection.output.weight",
+    "diffusion_module.model.student_projection.output.bias"
+  ],
+  "teacher": "CHGNet 0.3.0",
+  "teacher_feature_dim": 64,
+  "total_parameters": 44858555,
+  "trainable_parameters": 44858533,
+  "training_mode": "full unconditional MatterGen backbone plus student projection"
+}

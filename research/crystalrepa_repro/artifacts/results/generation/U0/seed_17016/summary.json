@@ -1,0 +1,25 @@
+{
+  "composition_valid": false,
+  "extxyz_sha256": "429be84207ffd30536aad837d3e1bbc059245019917fce7d86bc43da7e9e2e9b",
+  "final_structure_hash": "27d98ea8fadb7ad9555d35f641e3af143b5272428c4545bbccdf3bc22f3e19c7",
+  "formula": "Ce7Si",
+  "generation_seconds": 166.4501477490412,
+  "initial_hashes": {
+    "atomic_numbers": "258ce0a9e50bb69ade6f393f9f5b530b0f228df8339ff7d0d75670aad9d614b0",
+    "cell": "4a5038660dda983614aa8dec861421f8192d08b53c38afc781ecfff53e91541c",
+    "combined": "4162acac3f223b375a3cf51f2df3f1fcd26b62e59ab954cb358a9f3176212cf2",
+    "pos": "e9d114b6ed734f699a3a66b960cf8e978265d2ed9c64619050de8d5954fd87f0"
+  },
+  "method": "U0",
+  "model_load_seconds": 4.902270313992631,
+  "num_atoms": 8,
+  "peak_allocated_bytes": 241996800,
+  "peak_reserved_bytes": 685768704,
+  "physical_gpu": 0,
+  "projection_loaded_at_inference": false,
+  "rng_before_prior_hash": "9aad53639e298aa64ae7d24052ca604f5c2f05ce128b5677fb238f1801c917a0",
+  "seed": 17016,
+  "structure_valid": true,
+  "success": true,
+  "teacher_used_at_inference": false
+}

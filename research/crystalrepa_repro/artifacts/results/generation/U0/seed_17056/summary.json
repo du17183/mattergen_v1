@@ -1,0 +1,25 @@
+{
+  "composition_valid": true,
+  "extxyz_sha256": "7cb2629f2ebaf7c7077018833e319576ef6557709d653a15f7833d323d867be3",
+  "final_structure_hash": "d5f73d9d3e2b46b90422848c5d2779b02308ef5f75a53ee3213bd38be0a69c38",
+  "formula": "Cu3O4Pr",
+  "generation_seconds": 168.47247789998073,
+  "initial_hashes": {
+    "atomic_numbers": "258ce0a9e50bb69ade6f393f9f5b530b0f228df8339ff7d0d75670aad9d614b0",
+    "cell": "1f006bb78540ea500210d3b567a0443bf949fec7792c4a8faf013406dc97aab9",
+    "combined": "7a7a6cbd09f9b01919e09176f6a27d105ac0addd0d0792f979d5ed366f7ddeb5",
+    "pos": "4be1b84a8e6d7ca5ead12dfb9927f5a886956eb9bb692262cf0b5dcc41cfd277"
+  },
+  "method": "U0",
+  "model_load_seconds": 3.3979395359638147,
+  "num_atoms": 8,
+  "peak_allocated_bytes": 241908736,
+  "peak_reserved_bytes": 685768704,
+  "physical_gpu": 0,
+  "projection_loaded_at_inference": false,
+  "rng_before_prior_hash": "7ea6a9302a7181b0b4daeb8bd998e97388ef0a354f034f3d7f24b1cb0e871cdc",
+  "seed": 17056,
+  "structure_valid": true,
+  "success": true,
+  "teacher_used_at_inference": false
+}
