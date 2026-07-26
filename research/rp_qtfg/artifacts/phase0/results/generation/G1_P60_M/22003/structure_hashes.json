@@ -1,0 +1,34 @@
+{
+  "atomic_numbers": [
+    63,
+    63,
+    8,
+    8,
+    38,
+    63,
+    38,
+    63,
+    8,
+    8,
+    8,
+    63,
+    8,
+    8,
+    8,
+    8,
+    8,
+    63
+  ],
+  "extxyz_sha256": "a9b6fc4b5c0bc6fbfc239550134690303c451185bac31eb8479d816cb934d8c9",
+  "final_structure_hash": "485e93897519aefde19dab1351050fc3345e3b384b58a791648ae5119990c95b",
+  "formula": "Eu6O10Sr2",
+  "initial_field_hashes": {
+    "atomic_numbers": "a6e265b21ff0808f721d6dc405155023d5c15521580308c6a248a07db58b7c07",
+    "cell": "058905a3d723141d6905611a72650a8ff0fbfa9a6f0002d45cdd8cf79dc449e0",
+    "combined": "12faca051c6b500d49861675885f8cc7c2548003156ec28af19a5673388c1007",
+    "pos": "e96286391909f9383fad184571c675419dad01d1edbf74969ff4043d1cfd9bad"
+  },
+  "initial_state_hash": "12faca051c6b500d49861675885f8cc7c2548003156ec28af19a5673388c1007",
+  "num_atoms": 18,
+  "rng_state_hash": "34ef803ddf53f057876573d8b604743130841c10887610bf9fe4eace62f9eaca"
+}

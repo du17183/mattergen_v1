@@ -1,0 +1,26 @@
+{
+  "atomic_numbers_unchanged": true,
+  "config": {
+    "backtrack_max": 3,
+    "batch_size": 128,
+    "cell_eta_per_gpa": 0.00025,
+    "cell_strain_radius": 0.003,
+    "minimum_distance_angstrom": 0.5,
+    "position_eta": 0.01,
+    "position_radius_angstrom": 0.02
+  },
+  "created_at": "2026-07-26T23:39:44+08:00",
+  "manifest": "/data/dxl/results/rp_qtfg/phase0/offline_probe/probe_manifest.csv",
+  "model": "CHGNet 0.3.0",
+  "records": 384,
+  "status": "success",
+  "structures": 64,
+  "variants": [
+    "baseline",
+    "pos_1",
+    "pos_3",
+    "pos_5",
+    "poscell_1",
+    "poscell_3"
+  ]
+}

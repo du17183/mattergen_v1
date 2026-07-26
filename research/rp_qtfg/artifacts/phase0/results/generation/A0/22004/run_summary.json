@@ -1,0 +1,34 @@
+{
+  "atomic_numbers": [
+    83,
+    63,
+    48,
+    48,
+    63,
+    83,
+    83,
+    83
+  ],
+  "basic_structure_valid": true,
+  "composition_valid": true,
+  "config_id": "A0",
+  "elapsed_seconds": 72.46968692197697,
+  "error": null,
+  "extxyz_sha256": "9d64f4d9f9df77b9174a53762d9ced107f5984758c1dfe059061e5a030b9df1c",
+  "final_structure_hash": "796a5af25f0452badf6538ee5ed5dffedacee6b7eb5068ce915c2a5d1601bdfa",
+  "formula": "Bi4Cd2Eu2",
+  "num_atoms": 8,
+  "peak_allocated_bytes": 512785408,
+  "peak_reserved_bytes": 566231040,
+  "physical_gpu": 4,
+  "process_cpu_seconds": 68.703389619,
+  "return_code": 0,
+  "seed": 22004,
+  "success": true,
+  "telemetry": {
+    "max_utilization_percent": 35.0,
+    "mean_utilization_percent": 32.214285714285715,
+    "peak_memory_mib": 1138.0,
+    "samples": 56
+  }
+}

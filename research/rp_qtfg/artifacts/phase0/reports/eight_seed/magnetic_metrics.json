@@ -1,0 +1,56 @@
+{
+  "CHGNET_MAG_ORACLE_GO": true,
+  "created_at": "2026-07-27T00:14:02+08:00",
+  "formula": "sum(abs(CHGNet site magmom)) / volume",
+  "magnetic_property_dft_verified": false,
+  "mode": "eight",
+  "summaries": [
+    {
+      "config_id": "A0",
+      "hit_0.01": 0.125,
+      "hit_0.02": 0.25,
+      "hit_0.05": 1.0,
+      "mean_target_error": 0.030843815586889686,
+      "median_target_error": 0.035311536219633545,
+      "n": 8
+    },
+    {
+      "config_id": "G1_P75_S",
+      "hit_0.01": 0.125,
+      "hit_0.02": 0.25,
+      "hit_0.05": 1.0,
+      "mean_target_error": 0.030204916287817685,
+      "median_target_error": 0.03272676951706878,
+      "n": 8
+    },
+    {
+      "config_id": "G1_P60_M",
+      "hit_0.01": 0.125,
+      "hit_0.02": 0.25,
+      "hit_0.05": 0.875,
+      "mean_target_error": 0.030950450833190146,
+      "median_target_error": 0.03230963938139856,
+      "n": 8
+    },
+    {
+      "config_id": "G2_P75_S",
+      "hit_0.01": 0.125,
+      "hit_0.02": 0.25,
+      "hit_0.05": 1.0,
+      "mean_target_error": 0.030501224771518818,
+      "median_target_error": 0.033879107366316705,
+      "n": 8
+    },
+    {
+      "config_id": "G2_P60_M",
+      "hit_0.01": 0.125,
+      "hit_0.02": 0.125,
+      "hit_0.05": 0.875,
+      "mean_target_error": 0.03647708938222891,
+      "median_target_error": 0.03464872247146047,
+      "n": 8
+    }
+  ],
+  "target": 0.1,
+  "total": 40
+}

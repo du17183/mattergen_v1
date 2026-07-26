@@ -1,0 +1,38 @@
+{
+  "atomic_numbers": [
+    63,
+    63,
+    12,
+    63,
+    12,
+    63,
+    14,
+    12,
+    63,
+    14,
+    63,
+    14
+  ],
+  "basic_structure_valid": true,
+  "composition_valid": false,
+  "config_id": "G1_P60_M",
+  "elapsed_seconds": 102.70477047399618,
+  "error": null,
+  "extxyz_sha256": "1131ff4748f38d76a96b0ad2e103a03aa5980c2493b63cabab750af8ffa99061",
+  "final_structure_hash": "6d5db049690970d29f229187e3d9028ad85ba5cdf6e8824bf5627f48adc036fc",
+  "formula": "Eu6Mg3Si3",
+  "num_atoms": 12,
+  "peak_allocated_bytes": 512785408,
+  "peak_reserved_bytes": 627048448,
+  "physical_gpu": 2,
+  "process_cpu_seconds": 163.07903331600002,
+  "return_code": 0,
+  "seed": 22002,
+  "success": true,
+  "telemetry": {
+    "max_utilization_percent": 45.0,
+    "mean_utilization_percent": 33.68181818181818,
+    "peak_memory_mib": 1228.0,
+    "samples": 88
+  }
+}

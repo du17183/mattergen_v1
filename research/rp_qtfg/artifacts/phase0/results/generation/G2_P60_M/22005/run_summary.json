@@ -1,0 +1,30 @@
+{
+  "atomic_numbers": [
+    46,
+    25,
+    50,
+    45
+  ],
+  "basic_structure_valid": true,
+  "composition_valid": true,
+  "config_id": "G2_P60_M",
+  "elapsed_seconds": 101.61557139601791,
+  "error": null,
+  "extxyz_sha256": "6b3613c595f0cb3d2b88db46e6fc233e4dde4225462d2d24e25da21d5632ea2f",
+  "final_structure_hash": "5ed497db495d181ce9dc046a1683965e36c56639b86e7489c10d59b5083d77f3",
+  "formula": "MnPdRhSn",
+  "num_atoms": 4,
+  "peak_allocated_bytes": 707842560,
+  "peak_reserved_bytes": 794820608,
+  "physical_gpu": 5,
+  "process_cpu_seconds": 161.676346731,
+  "return_code": 0,
+  "seed": 22005,
+  "success": true,
+  "telemetry": {
+    "max_utilization_percent": 31.0,
+    "mean_utilization_percent": 26.275862068965516,
+    "peak_memory_mib": 1388.0,
+    "samples": 87
+  }
+}

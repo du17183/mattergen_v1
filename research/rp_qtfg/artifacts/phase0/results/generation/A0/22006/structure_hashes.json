@@ -1,0 +1,28 @@
+{
+  "atomic_numbers": [
+    26,
+    45,
+    26,
+    45,
+    26,
+    26,
+    33,
+    33,
+    45,
+    45,
+    33,
+    33
+  ],
+  "extxyz_sha256": "c43ebe342dc1346ef76bd3b55b9c8cc0d8484f765037d1398a5031bf091e3fcf",
+  "final_structure_hash": "1ccbad2c159a85e67490749ab28f8c4d04bb64cbc5aa127ba56ce04e551bd3ab",
+  "formula": "As4Fe4Rh4",
+  "initial_field_hashes": {
+    "atomic_numbers": "f8c31ab8b1b12a6a00bd5df0d8470ad61994a7325b80508c6e1ee17947fa911b",
+    "cell": "f9c6c734a39cdc2b5b59d2712fd9ef4147f97a64aa30b47dfc2203804b97e12a",
+    "combined": "48e924ee5c575d1a96bbe981af963dc64a6952a92c1b25381430d36b6be9a2bc",
+    "pos": "d3cee50949742bc91dbbb281a309f8a3f61a8cbbae2a37bef65b3f0409182f03"
+  },
+  "initial_state_hash": "48e924ee5c575d1a96bbe981af963dc64a6952a92c1b25381430d36b6be9a2bc",
+  "num_atoms": 12,
+  "rng_state_hash": "5b4cf644ecb5651c963709bfbc0e3f78bb53586f1803c7b5f89107c2feec73ee"
+}

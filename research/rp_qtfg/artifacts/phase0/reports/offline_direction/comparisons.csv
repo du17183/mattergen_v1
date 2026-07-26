@@ -1,0 +1,6 @@
+method,matterSim_energy_improvement_rate,matterSim_force_improvement_rate,relaxation_rmsd_improvement_rate,any_primary_improvement_rate,ehull_change_candidate_minus_a0,structure_validity_change,composition_validity_change,validity_safe,variant_gate_go
+pos_1,0.640625,0.703125,0.546875,0.796875,-2.3081136128255686e-05,0.0,0.0,True,True
+pos_3,0.671875,0.65625,0.5625,0.765625,-1.2455930406801707e-05,0.0,0.0,True,True
+pos_5,0.65625,0.671875,0.578125,0.75,8.579530224067655e-06,0.0,0.0,True,True
+poscell_1,0.78125,0.734375,0.609375,0.921875,-1.0055331862074413e-05,0.0,0.0,True,True
+poscell_3,0.78125,0.671875,0.625,0.875,-5.29179440589278e-06,0.0,0.0,True,True

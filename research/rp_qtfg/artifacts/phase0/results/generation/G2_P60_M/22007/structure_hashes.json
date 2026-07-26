@@ -1,0 +1,20 @@
+{
+  "atomic_numbers": [
+    63,
+    3,
+    3,
+    63
+  ],
+  "extxyz_sha256": "886104f578c51329ade1928f7e55c3853b9206adcfac4731c4531ebf4a12d1c4",
+  "final_structure_hash": "4b2f751eb75b243d8dc6de7a5ede7015c2ede83cdd35fd14440533b20130b072",
+  "formula": "Eu2Li2",
+  "initial_field_hashes": {
+    "atomic_numbers": "7c0f3c0de6f9593cb69375415525ac4e9f79587073810bc408d46c083409a9eb",
+    "cell": "82307cb94af5f63926e01723c8ddc76ff081913b27aa4aea833bace455d7b679",
+    "combined": "f0684ffa3a94060193115ac90be91a658b83e1ea7a432f3f7f2244034100209b",
+    "pos": "fc7412026ece4e4a1823d3a7354df13f29931e8fd6394dfdd46cbc77213ff557"
+  },
+  "initial_state_hash": "f0684ffa3a94060193115ac90be91a658b83e1ea7a432f3f7f2244034100209b",
+  "num_atoms": 4,
+  "rng_state_hash": "5814c5a1a27a326fdf41d6ee72c70a39bde24b7ec7e8970195970335cb8daa98"
+}

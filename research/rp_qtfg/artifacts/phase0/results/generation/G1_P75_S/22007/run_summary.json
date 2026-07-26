@@ -1,0 +1,30 @@
+{
+  "atomic_numbers": [
+    63,
+    3,
+    3,
+    63
+  ],
+  "basic_structure_valid": true,
+  "composition_valid": true,
+  "config_id": "G1_P75_S",
+  "elapsed_seconds": 86.7019783090218,
+  "error": null,
+  "extxyz_sha256": "007e32c49b91f29cd3b6630fd1010dc88d08c842f571dedfc605d749a2e30570",
+  "final_structure_hash": "22450a3f094fb4118dc8cd77895da251bb853b538e550769b251abb704d1456b",
+  "formula": "Eu2Li2",
+  "num_atoms": 4,
+  "peak_allocated_bytes": 512785408,
+  "peak_reserved_bytes": 585105408,
+  "physical_gpu": 7,
+  "process_cpu_seconds": 121.734548949,
+  "return_code": 0,
+  "seed": 22007,
+  "success": true,
+  "telemetry": {
+    "max_utilization_percent": 30.0,
+    "mean_utilization_percent": 23.653333333333332,
+    "peak_memory_mib": 1188.0,
+    "samples": 75
+  }
+}

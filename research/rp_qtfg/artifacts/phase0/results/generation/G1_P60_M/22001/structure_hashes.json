@@ -1,0 +1,28 @@
+{
+  "atomic_numbers": [
+    64,
+    64,
+    8,
+    64,
+    8,
+    8,
+    8,
+    64,
+    8,
+    8,
+    8,
+    9
+  ],
+  "extxyz_sha256": "624b14b79f220616d6b40d11284a6d71e05fe952bb0f2e055ff73dd5d152873e",
+  "final_structure_hash": "9b356e9f6da6657390028ce6ba7faec38745bf79aafa6467024b55bddbae9d6a",
+  "formula": "FGd4O7",
+  "initial_field_hashes": {
+    "atomic_numbers": "f8c31ab8b1b12a6a00bd5df0d8470ad61994a7325b80508c6e1ee17947fa911b",
+    "cell": "9e5b10476ebf4ffb9687c457cda3a7492c622d7080bebe373586cb4bb8219599",
+    "combined": "2630450e8a199e65c060b1c593dc25e68b57d3b9f13a1571c59419bd20b8cb88",
+    "pos": "261e23951b9ef18b20f24ed06a9a90a40de465005b870b8b55be0e42894fa919"
+  },
+  "initial_state_hash": "2630450e8a199e65c060b1c593dc25e68b57d3b9f13a1571c59419bd20b8cb88",
+  "num_atoms": 12,
+  "rng_state_hash": "3b2070d94b3aed36cbc0021c89dae828ee4bbd7062155779957abad31aeeb95a"
+}

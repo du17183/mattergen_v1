@@ -1,0 +1,50 @@
+{
+  "CHGNET_MAG_ORACLE_GO": true,
+  "actual_hit_rate_0.01": 0.016750803120697568,
+  "actual_hit_rate_0.02": 0.03396053235429096,
+  "actual_hit_rate_0.05": 0.09878384580082607,
+  "created_at": "2026-07-26T23:24:09+08:00",
+  "formula": "sum(abs(CHGNet site magmom [mu_B])) / cell volume [A^3]",
+  "gate_thresholds": {
+    "spearman_min": 0.6,
+    "target_region_mae_max": 0.03,
+    "top_100_enrichment_min": 2.0
+  },
+  "mae": 0.004015275514214907,
+  "model_checkpoint": "/data/dxl/envs/fn_pra_teacher/lib/python3.10/site-packages/chgnet/pretrained/0.3.0/chgnet_0.3.0_e29f68s314m37.pth.tar",
+  "model_name": "CHGNet 0.3.0",
+  "n": 8716,
+  "r2": 0.841641988236419,
+  "rmse": 0.011793329751001665,
+  "spearman": 0.6417183527818888,
+  "target": 0.1,
+  "target_region_definition": "abs(dft_mag_density - 0.10) <= 0.05",
+  "target_region_mae": 0.008434594053579427,
+  "target_region_n": 861,
+  "top_k_target_enrichment": {
+    "100": {
+      "enrichment": 22.673378378378377,
+      "hit_rate_0.02": 0.77,
+      "random_hit_rate_0.02": 0.03396053235429096,
+      "selected": 100
+    },
+    "200": {
+      "enrichment": 22.820608108108107,
+      "hit_rate_0.02": 0.775,
+      "random_hit_rate_0.02": 0.03396053235429096,
+      "selected": 200
+    },
+    "50": {
+      "enrichment": 22.37891891891892,
+      "hit_rate_0.02": 0.76,
+      "random_hit_rate_0.02": 0.03396053235429096,
+      "selected": 50
+    },
+    "500": {
+      "enrichment": 15.900810810810812,
+      "hit_rate_0.02": 0.54,
+      "random_hit_rate_0.02": 0.03396053235429096,
+      "selected": 500
+    }
+  }
+}

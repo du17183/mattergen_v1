@@ -1,0 +1,37 @@
+{
+  "atomic_numbers": [
+    26,
+    8,
+    26,
+    26,
+    26,
+    8,
+    8,
+    8,
+    8,
+    8,
+    26
+  ],
+  "basic_structure_valid": true,
+  "composition_valid": false,
+  "config_id": "G2_P60_M",
+  "elapsed_seconds": 122.99765185895376,
+  "error": null,
+  "extxyz_sha256": "a94b170957212ab3187e199dba21f5be97bf9edaf32f674992344c4488a9bb1d",
+  "final_structure_hash": "14def6f284e5c84b42f56fb04284c050e26049131508ca586e54430ccbe78a4f",
+  "formula": "Fe5O6",
+  "num_atoms": 11,
+  "peak_allocated_bytes": 512785408,
+  "peak_reserved_bytes": 627048448,
+  "physical_gpu": 0,
+  "process_cpu_seconds": 200.770296343,
+  "return_code": 0,
+  "seed": 22000,
+  "success": true,
+  "telemetry": {
+    "max_utilization_percent": 39.0,
+    "mean_utilization_percent": 29.884615384615383,
+    "peak_memory_mib": 1350.0,
+    "samples": 104
+  }
+}
