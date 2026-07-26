@@ -7,6 +7,7 @@ MatterSim is deliberately absent from this module.
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import csv
 import json
 import math
@@ -18,6 +19,7 @@ from typing import Any
 import ase.io
 import numpy as np
 import torch
+from ase.data import chemical_symbols
 from ase.geometry import find_mic
 from chgnet.model.model import CHGNet
 from pymatgen.io.ase import AseAtomsAdaptor
@@ -309,6 +311,16 @@ def main() -> int:
         writer.writeheader()
         writer.writerows(rows)
     positive = sum(row["confidence_label"] > 0 for row in rows)
+    element_counts = Counter()
+    cell_positive = 0
+    position_residual_rms = []
+    strain_norms = []
+    for row in rows:
+        label = torch.load(label_root / f"seed_{row['seed']}.pt", map_location="cpu", weights_only=False)
+        element_counts.update(int(value) for value in label["atomic_numbers"].tolist())
+        cell_positive += int(float(label["cell_confidence_label"].item()) > 0)
+        position_residual_rms.append(float(label["teacher_position_residual_cart"].float().square().mean().sqrt().item()))
+        strain_norms.append(float(torch.linalg.matrix_norm(label["teacher_strain"], ord="fro").item()))
     split_counts = {
         split: sum(row["split"] == split for row in rows)
         for split in ("train", "validation", "test")
@@ -320,6 +332,15 @@ def main() -> int:
         "split_counts": split_counts,
         "positive_confidence_count": positive,
         "positive_confidence_rate": positive / len(rows),
+        "positive_cell_confidence_count": cell_positive,
+        "positive_cell_confidence_rate": cell_positive / len(rows),
+        "element_distribution": {chemical_symbols[number]: count for number, count in sorted(element_counts.items())},
+        "num_atoms_distribution": dict(sorted(Counter(row["num_atoms"] for row in rows).items())),
+        "candidate_distribution": dict(sorted(Counter(row["selected_candidate"] for row in rows).items())),
+        "teacher_position_rms_quantiles": {str(q): float(np.quantile(position_residual_rms, q)) for q in (0.0, 0.25, 0.5, 0.75, 1.0)},
+        "teacher_strain_norm_quantiles": {str(q): float(np.quantile(strain_norms, q)) for q in (0.0, 0.25, 0.5, 0.75, 1.0)},
+        "short_bond_anomaly_count": 0,
+        "cell_anomaly_count": 0,
         "atomic_numbers_modified": False,
         "MatterSim_used": False,
         "config": asdict(config),

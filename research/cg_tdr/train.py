@@ -320,6 +320,8 @@ def main() -> int:
         "best_validation_loss": best_validation,
         "stopped_reason": stopped_reason,
         "parameter_count": model.parameter_count,
+        "mattergen_parameter_count": 57936253,
+        "parameter_percent_of_mattergen": model.parameter_count / 57936253 * 100.0,
         "config": asdict(config),
         "overfit_100": overfit,
         "train_structures": len(train_samples),
