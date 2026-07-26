@@ -8,6 +8,7 @@ import json
 import os
 import subprocess
 import sys
+import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any
@@ -23,7 +24,7 @@ PYTHON = Path("/data/dxl/envs/mattergen_py310/bin/python")
 
 def atomic_json(path: Path, payload: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_name(f".{path.name}.tmp.{os.getpid()}")
+    temporary = path.with_name(f".{path.name}.tmp.{os.getpid()}.{threading.get_ident()}")
     temporary.write_text(json.dumps(payload, indent=2) + "\n")
     os.replace(temporary, path)
 
