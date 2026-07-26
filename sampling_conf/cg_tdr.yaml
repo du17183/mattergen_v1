@@ -9,3 +9,4 @@ sampler_partial:
   cg_tdr_teacher_dump_dir: null
   cg_tdr_enable_cell: true
   cg_tdr_config: {}
+  cg_tdr_metrics_path: null

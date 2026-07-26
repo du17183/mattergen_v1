@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 from pathlib import Path
 from typing import Any, Mapping
@@ -46,6 +47,7 @@ class CGTDRGuidedPredictorCorrector(GuidedPredictorCorrector):
         cg_tdr_teacher_dump_dir: str | None = None,
         cg_tdr_enable_cell: bool = True,
         cg_tdr_config: Mapping[str, Any] | None = None,
+        cg_tdr_metrics_path: str | None = None,
         **kwargs: Any,
     ):
         super().__init__(**kwargs)
@@ -58,6 +60,7 @@ class CGTDRGuidedPredictorCorrector(GuidedPredictorCorrector):
         )
         self._cg_tdr_enable_cell = bool(cg_tdr_enable_cell)
         self._cg_tdr_config = CGTDRConfig(**dict(cg_tdr_config or {}))
+        self._cg_tdr_metrics_path = Path(cg_tdr_metrics_path).expanduser() if cg_tdr_metrics_path else None
         self._cg_tdr_model: CGTDRRefiner | None = None
         self._terminal_history: list[Any] = []
         self._last_residual: dict[str, float | None] = {}
@@ -76,6 +79,23 @@ class CGTDRGuidedPredictorCorrector(GuidedPredictorCorrector):
         self._last_residual = {}
         self._last_score_rms = {}
         self._cg_tdr_metrics = {}
+        if self._cg_tdr_metrics_path is not None and self._cg_tdr_metrics_path.exists():
+            raise FileExistsError(f"Refusing to overwrite CG-TDR metrics: {self._cg_tdr_metrics_path}")
+
+    def _on_sampling_end(self, error: BaseException | None) -> None:
+        super()._on_sampling_end(error)
+        if self._cg_tdr_metrics_path is None:
+            return
+        self._cg_tdr_metrics_path.parent.mkdir(parents=True, exist_ok=True)
+        payload = {
+            "enabled": self._cg_tdr_enabled,
+            "sample_seed": self._sample_seed,
+            "error": None if error is None else repr(error),
+            **self._cg_tdr_metrics,
+        }
+        temporary = self._cg_tdr_metrics_path.with_suffix(self._cg_tdr_metrics_path.suffix + ".tmp")
+        temporary.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+        os.replace(temporary, self._cg_tdr_metrics_path)
 
     def _trace_decision(
         self,
