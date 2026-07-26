@@ -1,0 +1,67 @@
+{
+  "checkpoint": "/data/dxl/results/crystalrepa_repro/training/r1/checkpoints/step=001000.ckpt",
+  "created_at": "2026-07-26T20:27:19+08:00",
+  "loss_diffusion_train_step": {
+    "finite": true,
+    "first": 0.4070194661617279,
+    "last": 0.4100099802017212,
+    "max": 0.5927103757858276,
+    "min": 0.241771325469017
+  },
+  "loss_diffusion_val": {
+    "finite": true,
+    "first": 0.4267691373825073,
+    "last": 0.3719419538974762,
+    "max": 0.4267691373825073,
+    "min": 0.3700605630874634
+  },
+  "loss_repa_alignment_train_step": {
+    "finite": true,
+    "first": 6.116691112518311,
+    "last": 3.0937695503234863,
+    "max": 6.116691112518311,
+    "min": 1.615611910820007
+  },
+  "loss_repa_alignment_val": {
+    "finite": true,
+    "first": 2.8560683727264404,
+    "last": 2.2510480880737305,
+    "max": 2.8560683727264404,
+    "min": 2.0233852863311768
+  },
+  "loss_train_step": {
+    "finite": true,
+    "first": 6.52371072769165,
+    "last": 3.503779649734497,
+    "max": 6.52371072769165,
+    "min": 2.036618947982788
+  },
+  "loss_val": {
+    "finite": true,
+    "first": 3.282837390899658,
+    "last": 2.622990131378174,
+    "max": 3.282837390899658,
+    "min": 2.436043262481689
+  },
+  "max_steps": 1000,
+  "metrics_csv": "/data/dxl/results/crystalrepa_repro/training/r1/csv/version_2/metrics.csv",
+  "official_checkpoint": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/mp_20_base/checkpoints/last.ckpt",
+  "passed": true,
+  "repa_positive_cosine_train_step": {
+    "finite": true,
+    "first": 0.2317474782466888,
+    "last": 0.5601157546043396,
+    "max": 0.7163177728652954,
+    "min": 0.2317474782466888
+  },
+  "repa_positive_cosine_val": {
+    "finite": true,
+    "first": 0.5368403196334839,
+    "last": 0.6030690670013428,
+    "max": 0.6288807392120361,
+    "min": 0.5368403196334839
+  },
+  "resume": null,
+  "schema_version": 1,
+  "trainable_parameters": 44858533
+}

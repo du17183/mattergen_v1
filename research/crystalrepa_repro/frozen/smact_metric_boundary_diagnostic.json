@@ -1,0 +1,14 @@
+{
+  "method": "R1",
+  "seed": 17011,
+  "formula": "Pm2Tl2",
+  "generation_completed": true,
+  "initial_failure_classification": "post-generation metric exception",
+  "exception": "SMACT oxidation-state dictionary returned no entry for a generated element",
+  "scientific_resolution": "composition_valid=false",
+  "generation_failure": false,
+  "code_resolution": "TypeError is retained as composition_validity_error while the finite generated structure remains a successful inference",
+  "targeted_regression_test": "PASS",
+  "other_processes_terminated": false,
+  "sigkill_used": false
+}

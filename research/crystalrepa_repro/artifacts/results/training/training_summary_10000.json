@@ -1,0 +1,67 @@
+{
+  "checkpoint": "/data/dxl/results/crystalrepa_repro/training/r1/checkpoints/step=010000.ckpt",
+  "created_at": "2026-07-26T21:19:00+08:00",
+  "loss_diffusion_train_step": {
+    "finite": true,
+    "first": 0.436081200838089,
+    "last": 0.4433518946170807,
+    "max": 0.6911870837211609,
+    "min": 0.2228847444057464
+  },
+  "loss_diffusion_val": {
+    "finite": true,
+    "first": 0.4088022708892822,
+    "last": 0.3860197961330414,
+    "max": 0.4390398859977722,
+    "min": 0.350458949804306
+  },
+  "loss_repa_alignment_train_step": {
+    "finite": true,
+    "first": 1.8466826677322388,
+    "last": 2.23445725440979,
+    "max": 4.047552108764648,
+    "min": 1.207133412361145
+  },
+  "loss_repa_alignment_val": {
+    "finite": true,
+    "first": 2.001750469207764,
+    "last": 2.0382096767425537,
+    "max": 2.2497353553771973,
+    "min": 1.7519311904907229
+  },
+  "loss_train_step": {
+    "finite": true,
+    "first": 2.282763719558716,
+    "last": 2.677809238433838,
+    "max": 4.42642068862915,
+    "min": 1.4703372716903689
+  },
+  "loss_val": {
+    "finite": true,
+    "first": 2.410552978515625,
+    "last": 2.424229383468628,
+    "max": 2.6635262966156006,
+    "min": 2.133707046508789
+  },
+  "max_steps": 10000,
+  "metrics_csv": "/data/dxl/results/crystalrepa_repro/training/r1/csv/version_3/metrics.csv",
+  "official_checkpoint": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/mp_20_base/checkpoints/last.ckpt",
+  "passed": true,
+  "repa_positive_cosine_train_step": {
+    "finite": true,
+    "first": 0.6909397840499878,
+    "last": 0.6548629403114319,
+    "max": 0.7717204093933105,
+    "min": 0.4635465145111084
+  },
+  "repa_positive_cosine_val": {
+    "finite": true,
+    "first": 0.6292092800140381,
+    "last": 0.6297085285186768,
+    "max": 0.6637954115867615,
+    "min": 0.6022313237190247
+  },
+  "resume": "/data/dxl/results/crystalrepa_repro/training/r1/checkpoints/step=001000.ckpt",
+  "schema_version": 1,
+  "trainable_parameters": 44858533
+}

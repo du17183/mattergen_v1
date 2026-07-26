@@ -1,0 +1,26 @@
+{
+  "composition_valid": false,
+  "composition_validity_error": "TypeError: SMACT validity checker failed. Check that all elements Pm2 Tl2 present in the structure are also present in smact.element_dictionary().",
+  "extxyz_sha256": "9944bb08d58afc5e62320d671d48e6c8fe89c40e3ec7d7f3575574e6027cb6e7",
+  "final_structure_hash": "57e113b2efad719710a5845b47df6b1166c7239f2137c2d0ef1db0c9f15e88c4",
+  "formula": "Pm2Tl2",
+  "generation_seconds": 57.07804934098385,
+  "initial_hashes": {
+    "atomic_numbers": "7c0f3c0de6f9593cb69375415525ac4e9f79587073810bc408d46c083409a9eb",
+    "cell": "78b03b84e8048d22ba23ea3495cc98316f4136e520a7d787bd1da36899507f15",
+    "combined": "e26535cae58a0700b23781c44266b8708fc0ac804920ea32ea5d66c654bd9eb8",
+    "pos": "a65fa10ffb25be96ba3b342d48d070db9b39898095ada8d44b29b167f2905af3"
+  },
+  "method": "R1",
+  "model_load_seconds": 2.578667175024748,
+  "num_atoms": 4,
+  "peak_allocated_bytes": 225910272,
+  "peak_reserved_bytes": 247463936,
+  "physical_gpu": 3,
+  "projection_loaded_at_inference": false,
+  "rng_before_prior_hash": "946088da19ca3c706615a77f29f3e91fef2df3e981aea53605a7b12fad0c624c",
+  "seed": 17011,
+  "structure_valid": true,
+  "success": true,
+  "teacher_used_at_inference": false
+}

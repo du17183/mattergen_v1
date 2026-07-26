@@ -1,0 +1,25 @@
+{
+  "composition_valid": true,
+  "extxyz_sha256": "20a337681ef1e9ba0b7dba42a289b7909ce3278229f9e7ff3d39beb667253028",
+  "final_structure_hash": "a3f52131e6eda4af810838218a2a366b8bed2cff93e101b07647ab0785f9dc0f",
+  "formula": "Al3Ni2Pr5",
+  "generation_seconds": 92.82893770799274,
+  "initial_hashes": {
+    "atomic_numbers": "7981046bc6b3af77d05fc4d8201cf2204670bf96d1007bc31ce6d6db5b0ff9c1",
+    "cell": "df2a049b2a5e1d575a84e47c01dd45713223395194ffebc6f9235fd605237591",
+    "combined": "e88b9ff21336dcc88b81e0a3ae25582cd451479f6633373553628b1fcdc1371c",
+    "pos": "f504d33ffe1c65a4b921561e8b57ac1ac435d593aa662e12ba2876113bf39784"
+  },
+  "method": "U0",
+  "model_load_seconds": 4.033187307999469,
+  "num_atoms": 10,
+  "peak_allocated_bytes": 250508800,
+  "peak_reserved_bytes": 685768704,
+  "physical_gpu": 5,
+  "projection_loaded_at_inference": false,
+  "rng_before_prior_hash": "366c6aa787b1c8d129efaed6d9d1291851b095ed58e425b73ab15f09922b8e59",
+  "seed": 17005,
+  "structure_valid": true,
+  "success": true,
+  "teacher_used_at_inference": false
+}

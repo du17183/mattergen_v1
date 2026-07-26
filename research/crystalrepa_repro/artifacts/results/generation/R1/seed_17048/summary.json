@@ -1,0 +1,25 @@
+{
+  "composition_valid": true,
+  "extxyz_sha256": "5ef44816c88dcfb5fa212e0344d1ae9abce8a7797b370ccb7579eabdb84d6a84",
+  "final_structure_hash": "93b524052282852f003f1742c8ad7082ce29af4e8140217cf4f2b5e6ad263dcb",
+  "formula": "BaKO6ReSm",
+  "generation_seconds": 112.79849837697111,
+  "initial_hashes": {
+    "atomic_numbers": "7981046bc6b3af77d05fc4d8201cf2204670bf96d1007bc31ce6d6db5b0ff9c1",
+    "cell": "bc58cbb628af20866a3c2b796fd99c4ece5ecb3d16228e2924a0e568580e486a",
+    "combined": "15d3d50bbb2c928537d4b8169c5313b445a246ae0e1cd1965730700108fdf5cd",
+    "pos": "90e4412449ee51472943437080543f928c11f52364810e245e3f25baaf11b70b"
+  },
+  "method": "R1",
+  "model_load_seconds": 2.0343541119946167,
+  "num_atoms": 10,
+  "peak_allocated_bytes": 248446464,
+  "peak_reserved_bytes": 272629760,
+  "physical_gpu": 0,
+  "projection_loaded_at_inference": false,
+  "rng_before_prior_hash": "42e4efa29c20152e372dce1e294ebd3da2d309d799dbdf42abba3ccd2ac283c5",
+  "seed": 17048,
+  "structure_valid": true,
+  "success": true,
+  "teacher_used_at_inference": false
+}

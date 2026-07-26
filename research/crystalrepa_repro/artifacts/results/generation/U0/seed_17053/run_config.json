@@ -1,0 +1,32 @@
+{
+  "actual_sampling_config": {
+    "N": 1000,
+    "corrector_fields": [
+      "cell",
+      "pos"
+    ],
+    "guidance_scale": 0.0,
+    "guidance_schedule": "constant",
+    "n_steps_corrector": 1,
+    "predictor_fields": [
+      "atomic_numbers",
+      "cell",
+      "pos"
+    ]
+  },
+  "adaptive_cfg": false,
+  "cfg": false,
+  "condition_fields": [],
+  "created_at": "2026-07-26T21:26:24+08:00",
+  "method": "U0",
+  "official_checkpoint_sha256": "ffb80e4425a6f99f479a67b8cd111885d45117234e8947ff77eb3a55df420b9a",
+  "physical_gpu": 5,
+  "predictor_corrector": "official full flow",
+  "projection_loaded_at_inference": false,
+  "r1_checkpoint": null,
+  "r1_checkpoint_sha256": null,
+  "repeat_index": 1,
+  "sampling_steps": 1000,
+  "seed": 17053,
+  "teacher_used_at_inference": false
+}

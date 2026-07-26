@@ -1,0 +1,93 @@
+{
+  "backend": "nccl",
+  "created_at": "2026-07-26T20:14:35+08:00",
+  "passed": true,
+  "positive_offset_rule": "sum of preceding rank row counts",
+  "ranks": [
+    {
+      "cosine_finite": true,
+      "count": 2,
+      "gradient_finite": true,
+      "gradient_norm": 3.2436516284942627,
+      "gradient_present": true,
+      "loss_finite": true,
+      "rank": 0
+    },
+    {
+      "cosine_finite": true,
+      "count": 3,
+      "gradient_finite": true,
+      "gradient_norm": 2.8959507942199707,
+      "gradient_present": true,
+      "loss_finite": true,
+      "rank": 1
+    },
+    {
+      "cosine_finite": true,
+      "count": 4,
+      "gradient_finite": true,
+      "gradient_norm": 1.9751498699188232,
+      "gradient_present": true,
+      "loss_finite": true,
+      "rank": 2
+    },
+    {
+      "cosine_finite": true,
+      "count": 5,
+      "gradient_finite": true,
+      "gradient_norm": 1.9363148212432861,
+      "gradient_present": true,
+      "loss_finite": true,
+      "rank": 3
+    },
+    {
+      "cosine_finite": true,
+      "count": 6,
+      "gradient_finite": true,
+      "gradient_norm": 1.9118841886520386,
+      "gradient_present": true,
+      "loss_finite": true,
+      "rank": 4
+    },
+    {
+      "cosine_finite": true,
+      "count": 7,
+      "gradient_finite": true,
+      "gradient_norm": 2.3981094360351562,
+      "gradient_present": true,
+      "loss_finite": true,
+      "rank": 5
+    },
+    {
+      "cosine_finite": true,
+      "count": 8,
+      "gradient_finite": true,
+      "gradient_norm": 1.5700987577438354,
+      "gradient_present": true,
+      "loss_finite": true,
+      "rank": 6
+    },
+    {
+      "cosine_finite": true,
+      "count": 9,
+      "gradient_finite": true,
+      "gradient_norm": 1.271366834640503,
+      "gradient_present": true,
+      "loss_finite": true,
+      "rank": 7
+    }
+  ],
+  "same_element_mask": true,
+  "schema_version": 1,
+  "variable_row_counts": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "world_size": 8
+}

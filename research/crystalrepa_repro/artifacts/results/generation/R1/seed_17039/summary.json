@@ -1,0 +1,25 @@
+{
+  "composition_valid": true,
+  "extxyz_sha256": "a89d3b2e55397aa8a07429acdfbd43a4da8bbefa57777772b69a8b8de22f7029",
+  "final_structure_hash": "fdd3c377c88314de13e0d2dd1d89e7fa393017a59421f7a22d3fdb8be78f0427",
+  "formula": "Ge2Nd2O6",
+  "generation_seconds": 148.43284668802517,
+  "initial_hashes": {
+    "atomic_numbers": "7981046bc6b3af77d05fc4d8201cf2204670bf96d1007bc31ce6d6db5b0ff9c1",
+    "cell": "3235e6555f95dfe51b1948c9dc281658d2762c62465f691d4bc20214ed67a83f",
+    "combined": "658e1c61f5268f20a0b7460b81976394dedeb8866d771b156b6e259c07bd0e17",
+    "pos": "d34113fba7a8271383868a0579c792bf7af56a68b995e52e6c0698ec5c910e9a"
+  },
+  "method": "R1",
+  "model_load_seconds": 2.780659392999951,
+  "num_atoms": 10,
+  "peak_allocated_bytes": 247711744,
+  "peak_reserved_bytes": 272629760,
+  "physical_gpu": 7,
+  "projection_loaded_at_inference": false,
+  "rng_before_prior_hash": "29e7f3697db2d8f3255db2b86e4a610867b67e3959535e594de881780554da82",
+  "seed": 17039,
+  "structure_valid": true,
+  "success": true,
+  "teacher_used_at_inference": false
+}

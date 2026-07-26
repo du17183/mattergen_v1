@@ -1,0 +1,25 @@
+{
+  "composition_valid": true,
+  "extxyz_sha256": "e1caae8da4b84bd9ee3478a693a4d3c28dd8de64afde5ce665892ae57c1f3225",
+  "final_structure_hash": "2adc9e7faf6f85e1dd5267d361dda329a70a899c865f3ca2ca542b9909663742",
+  "formula": "HoLu2Mn2O11Sr3",
+  "generation_seconds": 100.70027104602195,
+  "initial_hashes": {
+    "atomic_numbers": "ea3c3daa0a79240059a33996448e11830239c2a4042b460044a680ae1b8b5a0f",
+    "cell": "52ace4707a7179f3977129c0527aa2e522bafa58b8e844bc406c362ba770061c",
+    "combined": "06614c250e28361b3fc7461637b4fc53657c88a7eff95e1ecbd5fcc44eeebf7a",
+    "pos": "b098c12ae34751227a5925b4275866dbdb6dcca36ee0dc85c268fd923f984e08"
+  },
+  "method": "R1",
+  "model_load_seconds": 2.518054541957099,
+  "num_atoms": 19,
+  "peak_allocated_bytes": 282666496,
+  "peak_reserved_bytes": 301989888,
+  "physical_gpu": 2,
+  "projection_loaded_at_inference": false,
+  "rng_before_prior_hash": "a4890e05d6e9804b87abcd8062e35cb80549f69d567b21c268a4b63ed3809cd2",
+  "seed": 17002,
+  "structure_valid": true,
+  "success": true,
+  "teacher_used_at_inference": false
+}

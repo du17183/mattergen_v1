@@ -1,0 +1,25 @@
+{
+  "composition_valid": true,
+  "extxyz_sha256": "07f6b2352179b5830d91105114d5d5bbcd75b7a282ca3d64110fe586feda1b4c",
+  "final_structure_hash": "6dfbba150a5ce85c93aa7d39417c146160bd7438ace7324acec7268204e10f11",
+  "formula": "Dy2Ge4Pt4",
+  "generation_seconds": 147.2640239149914,
+  "initial_hashes": {
+    "atomic_numbers": "7981046bc6b3af77d05fc4d8201cf2204670bf96d1007bc31ce6d6db5b0ff9c1",
+    "cell": "6b37e2fbfb3d59c5187a539aa1d6851b6790318ac075de42b98ee32c8a9c648c",
+    "combined": "8b23d38830f5ddb3cdaacf13b8148ec97437d70c5bac40886060332131076481",
+    "pos": "cb855e2dcd79f5eb7468f1c300b6a51bab85b40eea040be582adff294fa3deb6"
+  },
+  "method": "U0",
+  "model_load_seconds": 2.9310060020070523,
+  "num_atoms": 10,
+  "peak_allocated_bytes": 249022464,
+  "peak_reserved_bytes": 685768704,
+  "physical_gpu": 6,
+  "projection_loaded_at_inference": false,
+  "rng_before_prior_hash": "1cf2503cf59bfd69eac5a4fe48808be3681b09a200ee15574f7b99f4053adf8f",
+  "seed": 17054,
+  "structure_valid": true,
+  "success": true,
+  "teacher_used_at_inference": false
+}

@@ -1,0 +1,15 @@
+{
+  "development_seed_start": 17000,
+  "development_seed_end": 17063,
+  "seed_count": 64,
+  "methods": ["U0", "R1"],
+  "historical_search_roots": [
+    "/data/dxl/reports",
+    "/data/dxl/results"
+  ],
+  "historical_search_excluded": "/data/dxl/{reports,results}/crystalrepa_repro",
+  "json_seed_field_intersections": 0,
+  "csv_seed_cell_intersections": 0,
+  "historical_result_directory_intersections": 0,
+  "SEED_INTERSECTION_ZERO": true
+}

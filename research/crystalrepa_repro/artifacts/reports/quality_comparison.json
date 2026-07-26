@@ -1,0 +1,46 @@
+{
+  "created_at": "2026-07-26T22:02:29+08:00",
+  "metastable_threshold": 0.1,
+  "methods": [
+    {
+      "average_ehull_ev_atom": 0.20193066479529997,
+      "composition_validity": 0.84375,
+      "ehull_finite_count": 64,
+      "ehull_missing_count": 0,
+      "force_convergence": 0.984375,
+      "generation_success": 1.0,
+      "median_generation_seconds": 154.8199675969954,
+      "metastable_rate": 0.21875,
+      "method": "U0",
+      "msun_rate": 0.078125,
+      "novel_rate": 0.84375,
+      "relax_success": 1.0,
+      "relaxation_rmsd": 0.20545155802945556,
+      "stable_rate": 0.0,
+      "structure_validity": 1.0,
+      "sun_rate": 0.0,
+      "unique_rate": 1.0
+    },
+    {
+      "average_ehull_ev_atom": 0.29616706875371535,
+      "composition_validity": 0.8125,
+      "ehull_finite_count": 59,
+      "ehull_missing_count": 5,
+      "force_convergence": 0.984375,
+      "generation_success": 1.0,
+      "median_generation_seconds": 141.10480395599734,
+      "metastable_rate": 0.15625,
+      "method": "R1",
+      "msun_rate": 0.09375,
+      "novel_rate": 0.859375,
+      "relax_success": 1.0,
+      "relaxation_rmsd": 0.2387417565967243,
+      "stable_rate": 0.0,
+      "structure_validity": 1.0,
+      "sun_rate": 0.0,
+      "unique_rate": 1.0
+    }
+  ],
+  "official_metric_errors": [],
+  "stable_threshold": 0.0
+}

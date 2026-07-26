@@ -1,0 +1,25 @@
+{
+  "composition_valid": true,
+  "extxyz_sha256": "c2866c3804df99f86e528242b9f08197874d8803eb86d683bec8104552a618ea",
+  "final_structure_hash": "31521f0e4aa216b5495d6cfdba1463e52b593d4a5a427ebb7ba57b8cc79454cd",
+  "formula": "SeTeTi",
+  "generation_seconds": 153.90599551500054,
+  "initial_hashes": {
+    "atomic_numbers": "0b44ffdaccaf1859f2b59c2b47e7d507b35dac82147d3df85ad8fa4a2dc1fe28",
+    "cell": "03af42a150dd83ada2aa7a4f4ea33f6d6acf877bd9a27c846a38217cc08da367",
+    "combined": "069e12a21b58a48d833042f94a646625086640dd3d888001c6bb6a2701021f85",
+    "pos": "8686fb0e937a581c10054a8f0120dbb06cb77c2a28397355e1feebaf72f582b7"
+  },
+  "method": "U0",
+  "model_load_seconds": 4.875617774960119,
+  "num_atoms": 3,
+  "peak_allocated_bytes": 223489536,
+  "peak_reserved_bytes": 685768704,
+  "physical_gpu": 4,
+  "projection_loaded_at_inference": false,
+  "rng_before_prior_hash": "695eee7929124b42aed8e88a9d069f4ae7ca4f8816d0b8b6f90fd6e1769be550",
+  "seed": 17028,
+  "structure_valid": true,
+  "success": true,
+  "teacher_used_at_inference": false
+}

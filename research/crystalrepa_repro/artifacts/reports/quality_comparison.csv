@@ -1,0 +1,3 @@
+method,generation_success,composition_validity,structure_validity,relax_success,force_convergence,average_ehull_ev_atom,ehull_finite_count,ehull_missing_count,metastable_rate,stable_rate,novel_rate,unique_rate,msun_rate,sun_rate,relaxation_rmsd,median_generation_seconds
+U0,1.0,0.84375,1.0,1.0,0.984375,0.20193066479529997,64,0,0.21875,0.0,0.84375,1.0,0.078125,0.0,0.20545155802945556,154.8199675969954
+R1,1.0,0.8125,1.0,1.0,0.984375,0.29616706875371535,59,5,0.15625,0.0,0.859375,1.0,0.09375,0.0,0.2387417565967243,141.10480395599734

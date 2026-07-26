@@ -1,0 +1,25 @@
+{
+  "composition_valid": true,
+  "extxyz_sha256": "68ccd05680cc3cff4b180b8476565725b9bcbd136354486c251b434edce5d1ae",
+  "final_structure_hash": "34ea029006e13ec45049ae992b108ed65b339ac39dab24c3a139a8bf062bf161",
+  "formula": "La2O3",
+  "generation_seconds": 168.6864888309501,
+  "initial_hashes": {
+    "atomic_numbers": "8ba2d47dfbceefc5fca1108e069ae02e1d2b0c48e961933c36c82de166d7efc6",
+    "cell": "d53843ea444f93b4d081ae6740356f03d8ae6775191391d8ed81c5fcea59cc45",
+    "combined": "32c62d7857e8354637bbd27c6d84a935d2e2a8bcbc731d56f9b5b2882aaf1dad",
+    "pos": "30b943d55b62f516e136dc371f5324a0f339099ac6b9cb52f53790486a03bdd5"
+  },
+  "method": "U0",
+  "model_load_seconds": 3.1143330749473535,
+  "num_atoms": 5,
+  "peak_allocated_bytes": 231879168,
+  "peak_reserved_bytes": 685768704,
+  "physical_gpu": 0,
+  "projection_loaded_at_inference": false,
+  "rng_before_prior_hash": "9beabfea9c4d93f4a33fd7c9f7238d7f4c49eaa1221b43592b9866cb8126ecad",
+  "seed": 17040,
+  "structure_valid": true,
+  "success": true,
+  "teacher_used_at_inference": false
+}

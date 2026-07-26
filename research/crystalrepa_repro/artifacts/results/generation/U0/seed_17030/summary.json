@@ -1,0 +1,25 @@
+{
+  "composition_valid": false,
+  "extxyz_sha256": "b76def63ef622de76745471d2a67b9d3dc4efe98ba91e521e83e7affc198d29f",
+  "final_structure_hash": "8a09126343c447cd9f67d262ccd6e0a7d398859ab56b24c599907d6fb6dfb432",
+  "formula": "Na3O11Ti4V2",
+  "generation_seconds": 168.615561972023,
+  "initial_hashes": {
+    "atomic_numbers": "00fd9cb7d9a57eff57e9aa81525286d4585e3b355310c90678a446d552829406",
+    "cell": "e733d4e0fbc78590d427fea6292817ff8d9a93bb92ce8dceba6327c3bf2aac1d",
+    "combined": "c6d29b083b9c3121126a11040171c9a28443a781909b5d494c74c9cd2ceb2dd1",
+    "pos": "8d645e57db2ec4d931b7925fa0596c7bc6b6731961462684787314aeae3bf2b5"
+  },
+  "method": "U0",
+  "model_load_seconds": 4.255941586976405,
+  "num_atoms": 20,
+  "peak_allocated_bytes": 285388800,
+  "peak_reserved_bytes": 706740224,
+  "physical_gpu": 6,
+  "projection_loaded_at_inference": false,
+  "rng_before_prior_hash": "33135bf114d65b0ce4e785d3dedb6c2ee3a25ed966de20a5ce98cfd597bc08ba",
+  "seed": 17030,
+  "structure_valid": true,
+  "success": true,
+  "teacher_used_at_inference": false
+}

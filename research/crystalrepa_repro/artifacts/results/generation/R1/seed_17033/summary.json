@@ -1,0 +1,25 @@
+{
+  "composition_valid": true,
+  "extxyz_sha256": "06620b52eea09cd46b633c1fb80460d716bec0a8bfa93583ba61efee81fdd086",
+  "final_structure_hash": "5ef37d372591a63bd681e741cc38f5d3d58ea13b5372e4a56eb698f7f19a99c5",
+  "formula": "Li2MnTe4V",
+  "generation_seconds": 174.57361096900422,
+  "initial_hashes": {
+    "atomic_numbers": "258ce0a9e50bb69ade6f393f9f5b530b0f228df8339ff7d0d75670aad9d614b0",
+    "cell": "8a5bc926a8d8c61ab4063126fd67a7e619a13fb33cbea0f9661ad204935c58e8",
+    "combined": "c15b629c24c1f760c280c7e0b542a953bfc97bc1cdc5b45737f85ef919586ba4",
+    "pos": "fcfc2ba460315049fe263e42d99b52086693304bbcadca84537a263f3d10a7e2"
+  },
+  "method": "R1",
+  "model_load_seconds": 2.172632935049478,
+  "num_atoms": 8,
+  "peak_allocated_bytes": 240757248,
+  "peak_reserved_bytes": 249561088,
+  "physical_gpu": 1,
+  "projection_loaded_at_inference": false,
+  "rng_before_prior_hash": "2eab01e38f6111661948c7abbd408c5b98060e1771cb137c23813e7900302be2",
+  "seed": 17033,
+  "structure_valid": true,
+  "success": true,
+  "teacher_used_at_inference": false
+}

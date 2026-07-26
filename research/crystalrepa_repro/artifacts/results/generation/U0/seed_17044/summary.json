@@ -1,0 +1,25 @@
+{
+  "composition_valid": true,
+  "extxyz_sha256": "2193fd7fa9b4b5929aafa346d4dcc6e3a14f1133277f7ae411ca1af428cf2e55",
+  "final_structure_hash": "ac296bbee242a9a1a86a811a7040dd248deb9f9211a2ea291ee5a2d210082bb0",
+  "formula": "LiO2Zr",
+  "generation_seconds": 150.56934906198876,
+  "initial_hashes": {
+    "atomic_numbers": "7c0f3c0de6f9593cb69375415525ac4e9f79587073810bc408d46c083409a9eb",
+    "cell": "35c74d3a7f8af70a55b0d63b7d8d5bd0205b51433087127e71b206ff377d1089",
+    "combined": "e3c6fa1273d3d67a6e288ef283c89dece1999aaac2b965136f5c332594eb8e3b",
+    "pos": "b589f7acfd775706c879d86c70501aebe1cbad6106a67c17bbb3b6136d7d7136"
+  },
+  "method": "U0",
+  "model_load_seconds": 2.7846282880054787,
+  "num_atoms": 4,
+  "peak_allocated_bytes": 226671104,
+  "peak_reserved_bytes": 685768704,
+  "physical_gpu": 4,
+  "projection_loaded_at_inference": false,
+  "rng_before_prior_hash": "fe45d67f1389dc62235a3bfb53874c9b5f4f26eabe373b88134df59c80dd9463",
+  "seed": 17044,
+  "structure_valid": true,
+  "success": true,
+  "teacher_used_at_inference": false
+}
