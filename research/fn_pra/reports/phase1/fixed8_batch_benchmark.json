@@ -1,0 +1,67 @@
+{
+  "all_success": true,
+  "created_at": "2026-07-26T01:44:58+08:00",
+  "gpu_count": 8,
+  "rows": [
+    {
+      "all_deterministic_repeats_level1": true,
+      "batch_size_per_gpu": 1,
+      "fixed8_samples_per_hour": 430.5370201186697,
+      "generation_success": 8,
+      "gpu_count": 8,
+      "max_peak_allocated_bytes": 257474560,
+      "max_peak_reserved_bytes": 761266176,
+      "measured_samples": 320,
+      "process_wall_seconds_including_warmup_and_load": 2888.9234945189673,
+      "repeats_per_gpu": 40,
+      "steady_state_wall_seconds": 2675.728093445883,
+      "throughput_gain_vs_batch1": 0.0,
+      "warmups_per_gpu": 3
+    },
+    {
+      "all_deterministic_repeats_level1": true,
+      "batch_size_per_gpu": 2,
+      "fixed8_samples_per_hour": 679.7350326152167,
+      "generation_success": 8,
+      "gpu_count": 8,
+      "max_peak_allocated_bytes": 385347584,
+      "max_peak_reserved_bytes": 746586112,
+      "measured_samples": 320,
+      "process_wall_seconds_including_warmup_and_load": 1965.893636381952,
+      "repeats_per_gpu": 20,
+      "steady_state_wall_seconds": 1694.7780307391076,
+      "throughput_gain_vs_batch1": 0.5788073983228204,
+      "warmups_per_gpu": 3
+    },
+    {
+      "all_deterministic_repeats_level1": true,
+      "batch_size_per_gpu": 4,
+      "fixed8_samples_per_hour": 996.9313840512463,
+      "generation_success": 8,
+      "gpu_count": 8,
+      "max_peak_allocated_bytes": 502272512,
+      "max_peak_reserved_bytes": 1012924416,
+      "measured_samples": 320,
+      "process_wall_seconds_including_warmup_and_load": 1513.363824533997,
+      "repeats_per_gpu": 10,
+      "steady_state_wall_seconds": 1155.5459266600665,
+      "throughput_gain_vs_batch1": 1.3155532218262214,
+      "warmups_per_gpu": 3
+    },
+    {
+      "all_deterministic_repeats_level1": true,
+      "batch_size_per_gpu": 8,
+      "fixed8_samples_per_hour": 1526.4813004257244,
+      "generation_success": 8,
+      "gpu_count": 8,
+      "max_peak_allocated_bytes": 768645120,
+      "max_peak_reserved_bytes": 1772093440,
+      "measured_samples": 320,
+      "process_wall_seconds_including_warmup_and_load": 1219.3558237300022,
+      "repeats_per_gpu": 5,
+      "steady_state_wall_seconds": 754.6767848900054,
+      "throughput_gain_vs_batch1": 2.5455285587403784,
+      "warmups_per_gpu": 3
+    }
+  ]
+}

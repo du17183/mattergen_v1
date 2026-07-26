@@ -1,0 +1,54 @@
+{
+  "created_at": "2026-07-25T22:31:42+08:00",
+  "entries": [
+    {
+      "bytes": 511777278,
+      "path": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt",
+      "sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e"
+    },
+    {
+      "bytes": 195690877,
+      "path": "/data/dxl/results/fn_pra/phase1/training/v1_smoke/checkpoints/step=000000.ckpt",
+      "sha256": "6561f1ad76af0eef21b17c4b13420a33b37247287631fa3261f7a029bddf733c"
+    },
+    {
+      "bytes": 196370803,
+      "path": "/data/dxl/results/fn_pra/phase1/training/v1_smoke/checkpoints/step=000100.ckpt",
+      "sha256": "2b3e9e7e496a725846f90ed1b1aa80077ec5e1625d77825163270aeb89acab50"
+    },
+    {
+      "bytes": 196370803,
+      "path": "/data/dxl/results/fn_pra/phase1/training/v1_smoke/checkpoints/step=000250.ckpt",
+      "sha256": "2039c852de376de1748d9a7ee63961e5180849bba07b9cdc0015a50885055306"
+    },
+    {
+      "bytes": 196370867,
+      "path": "/data/dxl/results/fn_pra/phase1/training/v1_smoke/checkpoints/step=000500.ckpt",
+      "sha256": "c5657555d7f024fa235a47832a0dda2739db92be363a213b819d050976c88296"
+    },
+    {
+      "bytes": 196370995,
+      "path": "/data/dxl/results/fn_pra/phase1/training/v1_smoke/checkpoints/step=001000.ckpt",
+      "sha256": "2f1fdd66ccd81b5d6e0e8e876c547f3475c4bf4e98f63603a91acc65369d023a"
+    },
+    {
+      "bytes": 196371123,
+      "path": "/data/dxl/results/fn_pra/phase1/training/v1_decision/checkpoints/step=002500.ckpt",
+      "sha256": "5728cd75ee11bb3601708ae04e8f4e3f6b2cbc35b9d28e93e6ecb02812403b99"
+    },
+    {
+      "bytes": 196371123,
+      "path": "/data/dxl/results/fn_pra/phase1/training/v1_decision/checkpoints/best-step=003000-loss_val=0.297921.ckpt",
+      "sha256": "68be996761ad079917b4e7c63e76b2acc7587de1f1fc28f8708325fbe76f17d7"
+    },
+    {
+      "bytes": 196371123,
+      "path": "/data/dxl/results/fn_pra/phase1/training/v1_decision/checkpoints/step=005000.ckpt",
+      "sha256": "5244fe42a331f9b092cff5472e126d720876aa5c2a6223fa576010c31fb90c5f"
+    }
+  ],
+  "official_checkpoint": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt",
+  "schema_version": 1,
+  "selected_p1_checkpoint": "/data/dxl/results/fn_pra/phase1/training/v1_decision/checkpoints/best-step=003000-loss_val=0.297921.ckpt",
+  "selection_rule": "minimum recorded validation loss"
+}

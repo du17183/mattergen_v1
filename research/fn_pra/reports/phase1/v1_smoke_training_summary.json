@@ -1,0 +1,45 @@
+{
+  "checkpoint": "/data/dxl/results/fn_pra/phase1/training/v1_smoke/checkpoints/step=001000.ckpt",
+  "created_at": "2026-07-25T21:58:08+08:00",
+  "devices": 8,
+  "frozen_backbone": {
+    "mismatch_count": 0,
+    "mismatches": [],
+    "official_keys": 304,
+    "passed": true
+  },
+  "loss_diffusion_train_step": {
+    "finite": true,
+    "first": 0.4526787996292114,
+    "last": 0.3544521629810333,
+    "max": 0.4536019265651703,
+    "min": 0.2617829740047455
+  },
+  "loss_repa_alignment_train_step": {
+    "finite": true,
+    "first": 8.260628700256348,
+    "last": 2.475656032562256,
+    "max": 8.260628700256348,
+    "min": 2.009775400161743
+  },
+  "loss_train_step": {
+    "finite": true,
+    "first": 1.2787415981292725,
+    "last": 0.6020177602767944,
+    "max": 1.2787415981292725,
+    "min": 0.4804440140724182
+  },
+  "loss_val": {
+    "finite": true,
+    "first": 0.3330973982810974,
+    "last": 0.3404189348220825,
+    "max": 0.3406451344490051,
+    "min": 0.3055188059806824
+  },
+  "max_steps": 1000,
+  "metrics_csv": "/data/dxl/results/fn_pra/phase1/training/v1_smoke/csv/version_3/metrics.csv",
+  "official_checkpoint": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt",
+  "passed": true,
+  "run_name": "v1_smoke",
+  "schema_version": 1
+}

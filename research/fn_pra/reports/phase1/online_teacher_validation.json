@@ -1,0 +1,16 @@
+{
+  "atom_order_match": true,
+  "atoms": 617,
+  "cache_dtype": "float16",
+  "created_at": "2026-07-25T21:15:31+08:00",
+  "identity_match": true,
+  "max_abs_error": 0.0038890838623046875,
+  "mean_abs_error": 0.00034772473736666143,
+  "note": "Difference includes independent GPU inference and float16 cache quantization.",
+  "online_dtype": "float32",
+  "passed": true,
+  "schema_version": 1,
+  "shape_match": true,
+  "structures": 64,
+  "tolerance": 0.02
+}
