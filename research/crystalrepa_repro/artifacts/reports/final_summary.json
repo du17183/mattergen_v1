@@ -24,7 +24,7 @@
     },
     "paired_initial_state": true
   },
-  "DRAFT_PR": "PENDING",
+  "DRAFT_PR": "https://github.com/du17183/mattergen_v1/pull/4",
   "EA_NCE_TEMPERATURE": 0.1,
   "EHULL_CHANGE": 0.09423640395841537,
   "EHULL_REFERENCE_COVERAGE": {
@@ -41,7 +41,7 @@
   "FINAL_REPORT": "/data/dxl/reports/crystalrepa_repro/crystalrepa_repro_final_report.md",
   "FORMAL_SEEDS_STARTED": false,
   "GITHUB_BRANCH": "feature/crystalrepa-repro",
-  "GITHUB_COMMIT": "PENDING",
+  "GITHUB_COMMIT": "36ceecf",
   "GPU_WORKERS": 0,
   "INFERENCE_OVERHEAD": -0.08858782141525423,
   "LIMITATIONS": [
@@ -111,5 +111,5 @@
   "U0_RELAX_RMSD": 0.20545155802945556,
   "U0_STABLE": 0.0,
   "U0_STRUCTURE_VALIDITY": 1.0,
-  "created_at": "2026-07-26T22:06:23+08:00"
+  "created_at": "2026-07-26T22:10:59+08:00"
 }

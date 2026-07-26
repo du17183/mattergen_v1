@@ -4,9 +4,9 @@
   "branch": "feature/crystalrepa-repro",
   "conditional_fn_pra_started": false,
   "created_at": "2026-07-26T20:07:10+08:00",
-  "current_stage": "repro_go_no_go",
+  "current_stage": "stop_for_review",
   "formal_seeds_started": false,
-  "overall_status": "running",
+  "overall_status": "stop_for_review",
   "schema_version": 1,
   "stages": {
     "branch_creation": {
@@ -274,9 +274,15 @@
       "updated_at": "2026-07-26T21:57:38+08:00"
     },
     "github_archive": {
-      "detail": "",
-      "metrics": {},
-      "status": "pending"
+      "detail": "Code, tests, reports, and all small non-weight artifacts pushed; Draft PR created.",
+      "metrics": {
+        "artifact_files": 1211,
+        "draft_pr": "https://github.com/du17183/mattergen_v1/pull/4",
+        "science_commit": "36ceecf",
+        "weights_uploaded": false
+      },
+      "status": "success",
+      "updated_at": "2026-07-26T22:10:59+08:00"
     },
     "metrics": {
       "detail": "Unified generation, relaxation, E-hull, MSUN/SUN metrics complete.",
@@ -1715,9 +1721,16 @@
       "updated_at": "2026-07-26T20:10:34+08:00"
     },
     "stop_for_review": {
-      "detail": "",
-      "metrics": {},
-      "status": "pending"
+      "detail": "CrystalREPA unconditional reproduction completed; REPA_BASE_REPRODUCED=False. Waiting for human review.",
+      "metrics": {
+        "conditional_fn_pra_started": false,
+        "formal_seeds_started": false,
+        "gpu_workers": 0,
+        "other_processes_terminated": false,
+        "sigkill_used": false
+      },
+      "status": "stop_for_review",
+      "updated_at": "2026-07-26T22:10:59+08:00"
     },
     "tests": {
       "detail": "CrystalREPA targeted/integration/DDP tests passed; SMACT boundary regression added; five unrelated repository baseline failures recorded.",
@@ -1888,5 +1901,5 @@
     }
   },
   "tmux_session": "mattergen_crystalrepa_repro",
-  "updated_at": "2026-07-26T22:02:29+08:00"
+  "updated_at": "2026-07-26T22:10:59+08:00"
 }

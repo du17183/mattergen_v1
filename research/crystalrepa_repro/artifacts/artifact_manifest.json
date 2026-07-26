@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-07-26T22:08:39+08:00",
+  "created_at": "2026-07-26T22:11:00+08:00",
   "exclusions": [
     "model/training/inference weights",
     "Teacher and dataset caches",
@@ -75,9 +75,9 @@
       "sha256": "a5098be1eb740af83cce2f1bd4ddfddeef99f7ea842b48ec983966a1296032aa"
     },
     {
-      "bytes": 3991,
+      "bytes": 4030,
       "path": "reports/final_summary.json",
-      "sha256": "11c058e8f99717cf24ca6e71ede315d74cae555cf326bf28a46bb68b0794f99c"
+      "sha256": "a8c0e9b09148fd2e1b6c29c0589c9927424bf0c322c8d220b923032c7e28067b"
     },
     {
       "bytes": 1926,
@@ -2790,14 +2790,14 @@
       "sha256": "3afa388e70ddfff45c8f3cb2d538d38d12c0ec317c3c6f8082e5c76ba8e0aa1d"
     },
     {
-      "bytes": 422963,
+      "bytes": 423671,
       "path": "results/progress/events.jsonl",
-      "sha256": "5c081ed3d0fcf8d0539b7c02daa1fdf51ffeb4279f8e8e6865968608c793084b"
+      "sha256": "85b2cfa0340d6851d4f50a2869e3d251f36a4ae7e7859965acf8c11b100e8213"
     },
     {
-      "bytes": 54322,
+      "bytes": 54994,
       "path": "results/progress/master_progress.json",
-      "sha256": "737d5d60500a074584b705360a719489eb03d7efcb8174be690c68cbb43b24fd"
+      "sha256": "379e575354d2adae97ca4b3bf1abab8a7d2415cb07c8af18e0733423123b66a9"
     },
     {
       "bytes": 86785,
@@ -6065,5 +6065,5 @@
       "sha256": "2e845d29cdb38c66fc42d19f01c08ff86064cb92ee90150754733a07f9727e6a"
     }
   ],
-  "total_bytes": 2114941
+  "total_bytes": 2116360
 }
