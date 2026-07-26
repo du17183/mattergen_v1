@@ -106,6 +106,11 @@ def run(command: list[str], stage: str, environment: dict[str, str] | None = Non
 
 
 def wait_for_teacher() -> None:
+    progress = json.loads(PROGRESS.read_text())
+    if progress.get("overall_status") == "completed":
+        if int(progress.get("completed_tasks", 0)) != 512:
+            raise RuntimeError("Teacher launcher claimed completion without 512 tasks")
+        return
     set_stage("teacher_data_generation", "waiting_for_active_launcher")
     while True:
         progress = json.loads(PROGRESS.read_text())
