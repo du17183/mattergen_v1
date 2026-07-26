@@ -1,0 +1,11 @@
+defaults:
+  - default
+  - _self_
+
+sampler_partial:
+  _target_: research.cg_tdr.sampler.CGTDRGuidedPredictorCorrector.from_pl_module
+  cg_tdr_enabled: false
+  cg_tdr_checkpoint: null
+  cg_tdr_teacher_dump_dir: null
+  cg_tdr_enable_cell: true
+  cg_tdr_config: {}
