@@ -1,0 +1,10 @@
+{
+  "mattergen_source_files_changed_by_this_branch": 0,
+  "mps_fastgate_unit_tests": "9 passed",
+  "remaining_baseline_failures": [
+    "Four existing corrector tests omit the dt argument required by the current main implementation.",
+    "The existing CPU training smoke passes verbose to ReduceLROnPlateau, which the installed PyTorch no longer accepts."
+  ],
+  "repository_failed_tests_with_project_torch_load_compatibility": "6 passed, 5 failed",
+  "repository_suite_default": "157 passed, 11 failed"
+}

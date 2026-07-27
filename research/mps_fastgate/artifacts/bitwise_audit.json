@@ -1,0 +1,13 @@
+{
+  "bitwise_equivalent": true,
+  "field_match_count": {
+    "atomic_numbers_hash": 48,
+    "cell_hash": 48,
+    "final_structure_hash": 48,
+    "positions_hash": 48,
+    "random_tape_hash": 48
+  },
+  "mismatch_count": 0,
+  "mismatches": [],
+  "pair_count": 48
+}
