@@ -1,0 +1,22 @@
+{
+  "atom_padding_waste": 0.15774956284914038,
+  "created_at": "2026-07-27T15:29:10+08:00",
+  "max_candidate_pair_capacity": 18000,
+  "max_edge_capacity": 626,
+  "max_periodic_image_capacity": 125,
+  "max_raw_edge_capacity": 600,
+  "max_rep_a1": 2,
+  "max_rep_a2": 2,
+  "max_rep_a3": 2,
+  "max_triplet_capacity": 32156,
+  "num_atoms_max": 12,
+  "num_atoms_min": 8,
+  "padding_waste": 0.3759018022479096,
+  "sample_coverage": 0.625,
+  "selected_bucket": "atoms_8_12_rep_le_2",
+  "selection_rule": "maximum state coverage among contiguous <=5-atom and isotropic periodic-repetition buckets with candidate padding <=40%, coverage >=20%, and at least 10000 validation states",
+  "state_coverage": 0.336578125,
+  "total_samples": 32,
+  "total_states": 64000,
+  "validation_states_available": 21541
+}
