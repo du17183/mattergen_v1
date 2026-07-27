@@ -1,0 +1,146 @@
+{
+  "status": "success",
+  "environment": "/data/dxl/envs/mattergen_py310",
+  "same_command": true,
+  "shared_dataset_cache": "/data/dxl/mattergen_v1/datasets/cache",
+  "main": {
+    "commit": "9bc6747a3ddfd26db6d931bcdb6df5d299844544",
+    "command": "/data/dxl/envs/mattergen_py310/bin/python -m pytest -q",
+    "log": "/data/dxl/logs/cg_tdr/phase0/main_full_tests.log",
+    "passed": 148,
+    "failed": 11,
+    "warnings": 136,
+    "seconds": 31.18,
+    "failures": [
+      {
+        "node": "mattergen/common/tests/data_utils_test.py::test_polar_decomposition",
+        "detail": "_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, do those steps only if you trust the source of the checkpoint. ",
+        "error_type": "_pickle.UnpicklingError"
+      },
+      {
+        "node": "mattergen/common/tests/gemnet_test.py::test_lattice_score_scale_invariance",
+        "detail": null,
+        "error_type": "_pickle.UnpicklingError"
+      },
+      {
+        "node": "mattergen/common/tests/gemnet_test.py::test_nonconservative_lattice_score_translation_invariance",
+        "detail": null,
+        "error_type": "_pickle.UnpicklingError"
+      },
+      {
+        "node": "mattergen/common/tests/gemnet_test.py::test_lattice_parameterization_invariance",
+        "detail": null,
+        "error_type": "_pickle.UnpicklingError"
+      },
+      {
+        "node": "mattergen/common/tests/gemnet_test.py::test_symmetric_lattice_score",
+        "detail": "_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, do those steps only if you trust the source of the checkpoint. ",
+        "error_type": "_pickle.UnpicklingError"
+      },
+      {
+        "node": "mattergen/common/tests/gemnet_test.py::test_rotation_invariance",
+        "detail": "_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, do those steps only if you trust the source of the checkpoint. ",
+        "error_type": "_pickle.UnpicklingError"
+      },
+      {
+        "node": "mattergen/diffusion/tests/test_sampling.py::test_corrector[VPSDE-LangevinCorrector]",
+        "detail": null,
+        "error_type": "TypeError"
+      },
+      {
+        "node": "mattergen/diffusion/tests/test_sampling.py::test_corrector[VESDE-LangevinCorrector]",
+        "detail": null,
+        "error_type": "TypeError"
+      },
+      {
+        "node": "mattergen/diffusion/tests/test_sampling.py::test_corrector[WrappedVPSDE-WrappedLangevinCorrector]",
+        "detail": null,
+        "error_type": "TypeError"
+      },
+      {
+        "node": "mattergen/diffusion/tests/test_sampling.py::test_corrector[WrappedVESDE-WrappedLangevinCorrector]",
+        "detail": null,
+        "error_type": "TypeError"
+      },
+      {
+        "node": "mattergen/tests/test_diffusion_instantiation.py::test_train_on_one_batch[default]",
+        "detail": null,
+        "error_type": "TypeError"
+      }
+    ]
+  },
+  "feature": {
+    "commit": "81796fd53a40f2916f256b97f054f8554284b4bb",
+    "command": "/data/dxl/envs/mattergen_py310/bin/python -m pytest -q",
+    "log": "/data/dxl/logs/cg_tdr/phase0/feature_full_tests.log",
+    "passed": 155,
+    "failed": 11,
+    "warnings": 136,
+    "seconds": 31.66,
+    "failures": [
+      {
+        "node": "mattergen/common/tests/data_utils_test.py::test_polar_decomposition",
+        "detail": "_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, do those steps only if you trust the source of the checkpoint. ",
+        "error_type": "_pickle.UnpicklingError"
+      },
+      {
+        "node": "mattergen/common/tests/gemnet_test.py::test_lattice_score_scale_invariance",
+        "detail": null,
+        "error_type": "_pickle.UnpicklingError"
+      },
+      {
+        "node": "mattergen/common/tests/gemnet_test.py::test_nonconservative_lattice_score_translation_invariance",
+        "detail": null,
+        "error_type": "_pickle.UnpicklingError"
+      },
+      {
+        "node": "mattergen/common/tests/gemnet_test.py::test_lattice_parameterization_invariance",
+        "detail": null,
+        "error_type": "_pickle.UnpicklingError"
+      },
+      {
+        "node": "mattergen/common/tests/gemnet_test.py::test_symmetric_lattice_score",
+        "detail": "_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, do those steps only if you trust the source of the checkpoint. ",
+        "error_type": "_pickle.UnpicklingError"
+      },
+      {
+        "node": "mattergen/common/tests/gemnet_test.py::test_rotation_invariance",
+        "detail": "_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, do those steps only if you trust the source of the checkpoint. ",
+        "error_type": "_pickle.UnpicklingError"
+      },
+      {
+        "node": "mattergen/diffusion/tests/test_sampling.py::test_corrector[VPSDE-LangevinCorrector]",
+        "detail": null,
+        "error_type": "TypeError"
+      },
+      {
+        "node": "mattergen/diffusion/tests/test_sampling.py::test_corrector[VESDE-LangevinCorrector]",
+        "detail": null,
+        "error_type": "TypeError"
+      },
+      {
+        "node": "mattergen/diffusion/tests/test_sampling.py::test_corrector[WrappedVPSDE-WrappedLangevinCorrector]",
+        "detail": null,
+        "error_type": "TypeError"
+      },
+      {
+        "node": "mattergen/diffusion/tests/test_sampling.py::test_corrector[WrappedVESDE-WrappedLangevinCorrector]",
+        "detail": null,
+        "error_type": "TypeError"
+      },
+      {
+        "node": "mattergen/tests/test_diffusion_instantiation.py::test_train_on_one_batch[default]",
+        "detail": null,
+        "error_type": "TypeError"
+      }
+    ]
+  },
+  "TEST_FAILURE_SET_IDENTICAL": true,
+  "PRE_EXISTING_TEST_FAILURES": 11,
+  "CG_TDR_INTRODUCED_TEST_FAILURES": 0,
+  "FULL_TEST_BLOCKER_CLEARED": true,
+  "introduced_nodes": [],
+  "resolved_nodes": [],
+  "error_type_changes": {},
+  "feature_added_passing_tests": 7
+}

@@ -1,0 +1,63 @@
+{
+  "status": "success",
+  "source_labels": "/data/dxl/data/cg_tdr_teacher/labels",
+  "output_labels": "/data/dxl/data/cg_tdr_teacher/labels_v2",
+  "structures": 512,
+  "training_seed_range": [
+    30000,
+    30383
+  ],
+  "weights": {
+    "energy": 0.45,
+    "force": 0.45,
+    "stress": 0.1
+  },
+  "normalization": "positive train-split 90th percentile per component",
+  "component_scales": {
+    "energy": 0.001626968383789062,
+    "force": 0.1983647023938154,
+    "stress": 0.12344143748314935
+  },
+  "train_utility_quantiles": {
+    "q40": 0.2594290396488066,
+    "q70": 0.5046186563229027,
+    "q90": 0.916840006879812
+  },
+  "splits": {
+    "train": {
+      "n": 384,
+      "position_target_mean": 0.2840166541664282,
+      "position_high_confidence_rate_ge_0_5": 0.2838541666666667,
+      "position_zero_low_rate_le_0_1": 0.5208333333333334,
+      "cell_target_mean": 0.2774689356032492,
+      "cell_high_confidence_rate_ge_0_5": 0.2760416666666667,
+      "cell_zero_low_rate_le_0_1": 0.5286458333333334,
+      "position_target_utility_spearman": 0.9134532800655436,
+      "cell_target_utility_spearman": 0.8944249570636175
+    },
+    "validation": {
+      "n": 64,
+      "position_target_mean": 0.26741285455493935,
+      "position_high_confidence_rate_ge_0_5": 0.28125,
+      "position_zero_low_rate_le_0_1": 0.5625,
+      "cell_target_mean": 0.25525542410413193,
+      "cell_high_confidence_rate_ge_0_5": 0.265625,
+      "cell_zero_low_rate_le_0_1": 0.578125,
+      "position_target_utility_spearman": 0.96114647480012,
+      "cell_target_utility_spearman": 0.9210919528788077
+    },
+    "test": {
+      "n": 64,
+      "position_target_mean": 0.18253737616140897,
+      "position_high_confidence_rate_ge_0_5": 0.171875,
+      "position_zero_low_rate_le_0_1": 0.671875,
+      "cell_target_mean": 0.18253737616140897,
+      "cell_high_confidence_rate_ge_0_5": 0.171875,
+      "cell_zero_low_rate_le_0_1": 0.671875,
+      "position_target_utility_spearman": 0.8594966280218483,
+      "cell_target_utility_spearman": 0.8594966280218483
+    }
+  },
+  "MatterSim_used": false,
+  "teacher_structures_regenerated": false
+}
