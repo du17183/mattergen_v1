@@ -1,0 +1,23 @@
+{
+  "MPS_AVAILABLE": true,
+  "MPS_CLIENT_CONNECTED": true,
+  "MPS_SERVER_STARTED": true,
+  "MPS_SMOKE_PASSED": true,
+  "base_branch": "main",
+  "base_commit": "9bc6747a3ddfd26db6d931bcdb6df5d299844544",
+  "branch": "feature/mps-runtime-fastgate",
+  "completed_at": "2026-07-27T19:58:50+08:00",
+  "driver": "580.126.20",
+  "driver_reported_cuda": "13.0",
+  "gpu0_idle": true,
+  "gpu_count": 8,
+  "mattergen_smoke": "/data/dxl/results/mps_fastgate/smoke/mattergen_forward.json",
+  "mps_control": "/usr/bin/nvidia-cuda-mps-control",
+  "mps_server": "/usr/bin/nvidia-cuda-mps-server",
+  "mps_server_running_after_smoke": false,
+  "other_processes_terminated": false,
+  "preexisting_mps_processes": 0,
+  "preexisting_project_workers": 0,
+  "project_torch_cuda": "12.8",
+  "sigkill_used": false
+}
