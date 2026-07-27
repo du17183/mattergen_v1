@@ -1,0 +1,44 @@
+{
+  "completed_at": "2026-07-27T15:59:14+08:00",
+  "distance_max_error": 0.0,
+  "fallback_states": 0,
+  "first_failure": null,
+  "match_counts": {
+    "edge_order_match": 10000,
+    "edge_set_match": 10000,
+    "id_swap_match": 10000,
+    "neighbors_match": 10000,
+    "offset_match": 10000,
+    "raw_edge_order_match": 10000,
+    "raw_offset_order_match": 10000,
+    "triplet_order_match": 10000,
+    "triplet_ragged_match": 10000,
+    "triplet_set_match": 10000
+  },
+  "match_rates": {
+    "edge_order_match": 1.0,
+    "edge_set_match": 1.0,
+    "id_swap_match": 1.0,
+    "neighbors_match": 1.0,
+    "offset_match": 1.0,
+    "raw_edge_order_match": 1.0,
+    "raw_offset_order_match": 1.0,
+    "triplet_order_match": 1.0,
+    "triplet_ragged_match": 1.0,
+    "triplet_set_match": 1.0
+  },
+  "passed": true,
+  "states": 10000,
+  "static_states": 10000,
+  "vector_max_error": 0.0,
+  "worker_states": [
+    1250,
+    1250,
+    1250,
+    1250,
+    1250,
+    1250,
+    1250,
+    1250
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "eligible_states": 21541,
+  "num_atoms": {
+    "10": 4145,
+    "11": 935,
+    "12": 2241,
+    "8": 1667,
+    "9": 1012
+  },
+  "path": "/data/dxl/results/spg_static_mvp/equivalence/manifest.json",
+  "phase_counts": {
+    "corrector": 4956,
+    "predictor": 5044
+  },
+  "sampling_step_max": 999,
+  "sampling_step_min": 0,
+  "seed_count": 20,
+  "seeds": [
+    24501,
+    24502,
+    24503,
+    24505,
+    24507,
+    24508,
+    24511,
+    24512,
+    24513,
+    24514,
+    24515,
+    24516,
+    24518,
+    24523,
+    24524,
+    24526,
+    24527,
+    24529,
+    24530,
+    24531
+  ],
+  "state_index_max": 1999,
+  "state_index_min": 0,
+  "states": 10000
+}
