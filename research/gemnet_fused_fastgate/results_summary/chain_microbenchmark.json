@@ -1,0 +1,55 @@
+{
+  "baseline_cuda_event_count": 893,
+  "baseline_cuda_median_ms": 8.33549609375,
+  "baseline_rounds": [
+    {
+      "cuda_ms_per_call": 8.337203125,
+      "peak_allocated_bytes": 486207488,
+      "peak_reserved_bytes": 1086324736,
+      "wall_ms_per_call": 8.337020120001398
+    },
+    {
+      "cuda_ms_per_call": 8.3214052734375,
+      "peak_allocated_bytes": 486207488,
+      "peak_reserved_bytes": 1086324736,
+      "wall_ms_per_call": 8.321209558052942
+    },
+    {
+      "cuda_ms_per_call": 8.33549609375,
+      "peak_allocated_bytes": 486207488,
+      "peak_reserved_bytes": 1086324736,
+      "wall_ms_per_call": 8.33530262298882
+    }
+  ],
+  "baseline_wall_median_ms": 8.33530262298882,
+  "candidate_cuda_event_count": 692,
+  "candidate_cuda_median_ms": 7.4158671875,
+  "candidate_rounds": [
+    {
+      "cuda_ms_per_call": 7.4158671875,
+      "peak_allocated_bytes": 484159488,
+      "peak_reserved_bytes": 1086324736,
+      "wall_ms_per_call": 7.415693187038414
+    },
+    {
+      "cuda_ms_per_call": 7.3989521484375,
+      "peak_allocated_bytes": 484159488,
+      "peak_reserved_bytes": 1086324736,
+      "wall_ms_per_call": 7.398778027971275
+    },
+    {
+      "cuda_ms_per_call": 7.422994140625,
+      "peak_allocated_bytes": 484159488,
+      "peak_reserved_bytes": 1086324736,
+      "wall_ms_per_call": 7.422824446926825
+    }
+  ],
+  "candidate_wall_median_ms": 7.415693187038414,
+  "cuda_speedup": 1.1240082761730286,
+  "gate_speedup": 1.25,
+  "passed": false,
+  "repeats": 1000,
+  "rounds": 3,
+  "wall_speedup": 1.1240085603268692,
+  "warmup": 50
+}

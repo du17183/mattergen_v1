@@ -1,0 +1,1616 @@
+{
+  "base_total_throughput": 452.97298324514577,
+  "completed_at": "2026-07-27T19:16:39+08:00",
+  "levels": [
+    {
+      "completed_at": "2026-07-27T19:08:42+08:00",
+      "failure_attempts": 0,
+      "fairness_max_tasks": 4,
+      "fairness_min_tasks": 4,
+      "latency_median_seconds": 60.34029467694927,
+      "latency_p95_seconds": 65.22106393400463,
+      "measured_wall_seconds": 254.31980330194347,
+      "ready": [
+        {
+          "gpu": 4,
+          "model_load_warmup_seconds": 4.062928750994615,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu4_slot0"
+        },
+        {
+          "gpu": 3,
+          "model_load_warmup_seconds": 3.820607203990221,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu3_slot0"
+        },
+        {
+          "gpu": 7,
+          "model_load_warmup_seconds": 4.431039131944999,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu7_slot0"
+        },
+        {
+          "gpu": 0,
+          "model_load_warmup_seconds": 4.447745617944747,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu0_slot0"
+        },
+        {
+          "gpu": 5,
+          "model_load_warmup_seconds": 4.1012134740594774,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu5_slot0"
+        },
+        {
+          "gpu": 1,
+          "model_load_warmup_seconds": 4.115894780959934,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu1_slot0"
+        },
+        {
+          "gpu": 2,
+          "model_load_warmup_seconds": 4.112170572974719,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu2_slot0"
+        },
+        {
+          "gpu": 6,
+          "model_load_warmup_seconds": 4.422313429997303,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu6_slot0"
+        }
+      ],
+      "rows": [
+        {
+          "combined_hash": "57c4f36f0f84d0e06001516ae5320d5aa3471684084e2afbcf2bdbcc6a685e75",
+          "elapsed_seconds": 58.56496811390389,
+          "gpu": 4,
+          "peak_allocated_bytes": 346281984,
+          "peak_reserved_bytes": 694157312,
+          "seed": 27000,
+          "slot": 0,
+          "worker_id": "gpu4_slot0"
+        },
+        {
+          "combined_hash": "24055cb0f3a1f96f23509fba861f427cb779ff71e7a6b7c1c73e89236cda42ab",
+          "elapsed_seconds": 59.919144130079076,
+          "gpu": 3,
+          "peak_allocated_bytes": 293273088,
+          "peak_reserved_bytes": 566231040,
+          "seed": 27001,
+          "slot": 0,
+          "worker_id": "gpu3_slot0"
+        },
+        {
+          "combined_hash": "440738f6d9e37b97baf8ac5c6af32bf2b7ebd398ff70cc548cc3224441e416e9",
+          "elapsed_seconds": 63.08593538403511,
+          "gpu": 7,
+          "peak_allocated_bytes": 286622208,
+          "peak_reserved_bytes": 566231040,
+          "seed": 27002,
+          "slot": 0,
+          "worker_id": "gpu7_slot0"
+        },
+        {
+          "combined_hash": "63e435625789eb0f35aae15c7882678c61191c947e2ac7bf2d0179766307bbce",
+          "elapsed_seconds": 60.37031766795553,
+          "gpu": 0,
+          "peak_allocated_bytes": 338196992,
+          "peak_reserved_bytes": 673185792,
+          "seed": 27003,
+          "slot": 0,
+          "worker_id": "gpu0_slot0"
+        },
+        {
+          "combined_hash": "39d0ca55c4ba3400d6bfed50048df924143c613e01a1f2d656673578dceecafa",
+          "elapsed_seconds": 58.391233443049714,
+          "gpu": 5,
+          "peak_allocated_bytes": 257516544,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27004,
+          "slot": 0,
+          "worker_id": "gpu5_slot0"
+        },
+        {
+          "combined_hash": "9fc097a42e42da169d40b43744f341d2644405541360e0a20b59179c67bbb121",
+          "elapsed_seconds": 58.1881788210012,
+          "gpu": 1,
+          "peak_allocated_bytes": 315714048,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27005,
+          "slot": 0,
+          "worker_id": "gpu1_slot0"
+        },
+        {
+          "combined_hash": "147dc2842fd66b627108e524d4de4e711f31ed458ccc085ceea7e501f57422b4",
+          "elapsed_seconds": 62.886239480925724,
+          "gpu": 2,
+          "peak_allocated_bytes": 315398656,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27006,
+          "slot": 0,
+          "worker_id": "gpu2_slot0"
+        },
+        {
+          "combined_hash": "09177e727eb8a3565e6d6e99cf1f924e8e8b93578fb6185eab73a4b293ecb80c",
+          "elapsed_seconds": 60.355063229915686,
+          "gpu": 6,
+          "peak_allocated_bytes": 264927744,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27007,
+          "slot": 0,
+          "worker_id": "gpu6_slot0"
+        },
+        {
+          "combined_hash": "9012c6bb22fd5d7064f235a4106bbf5fb91f96054e441f1569b5c84d91a8e7cf",
+          "elapsed_seconds": 58.49453552707564,
+          "gpu": 1,
+          "peak_allocated_bytes": 316374016,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27008,
+          "slot": 0,
+          "worker_id": "gpu1_slot0"
+        },
+        {
+          "combined_hash": "3286dce748858a47a128e10503fa0efeb1e3d4d5e9c58bbb6dfed099def9291e",
+          "elapsed_seconds": 57.93848409096245,
+          "gpu": 5,
+          "peak_allocated_bytes": 272069120,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27009,
+          "slot": 0,
+          "worker_id": "gpu5_slot0"
+        },
+        {
+          "combined_hash": "8b59df2b751029324331a8a6436bf89e7d30c75436ce849c855a99127e703f87",
+          "elapsed_seconds": 58.062883069040254,
+          "gpu": 4,
+          "peak_allocated_bytes": 301335552,
+          "peak_reserved_bytes": 694157312,
+          "seed": 27010,
+          "slot": 0,
+          "worker_id": "gpu4_slot0"
+        },
+        {
+          "combined_hash": "6e8228e4b8ae1b792b9a40a3b8d8fe2d9378120a2acad26daeda5ce359c546a1",
+          "elapsed_seconds": 59.56644651503302,
+          "gpu": 3,
+          "peak_allocated_bytes": 257325056,
+          "peak_reserved_bytes": 566231040,
+          "seed": 27011,
+          "slot": 0,
+          "worker_id": "gpu3_slot0"
+        },
+        {
+          "combined_hash": "94e71b16c976a03c30be0bec353ebe408c0f8c8302a14beca5ea372344b375bc",
+          "elapsed_seconds": 68.57223608298227,
+          "gpu": 6,
+          "peak_allocated_bytes": 370395648,
+          "peak_reserved_bytes": 769654784,
+          "seed": 27012,
+          "slot": 0,
+          "worker_id": "gpu6_slot0"
+        },
+        {
+          "combined_hash": "a3d37b7ceb912de437bdd037de4264d335ac08964b1051a2958e863b7a5c0d6b",
+          "elapsed_seconds": 58.81300908292178,
+          "gpu": 0,
+          "peak_allocated_bytes": 250171904,
+          "peak_reserved_bytes": 673185792,
+          "seed": 27013,
+          "slot": 0,
+          "worker_id": "gpu0_slot0"
+        },
+        {
+          "combined_hash": "5e5c28980246fe00b7d64f34ac27f375ad5db0dbf559a9810046e122f955a51c",
+          "elapsed_seconds": 63.06106800190173,
+          "gpu": 2,
+          "peak_allocated_bytes": 302347776,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27014,
+          "slot": 0,
+          "worker_id": "gpu2_slot0"
+        },
+        {
+          "combined_hash": "e95c4cffe52e4e0733cf3e4288177a0250c0c9c4af5bd490070c28500f4a1978",
+          "elapsed_seconds": 63.7216723280726,
+          "gpu": 7,
+          "peak_allocated_bytes": 280465920,
+          "peak_reserved_bytes": 566231040,
+          "seed": 27015,
+          "slot": 0,
+          "worker_id": "gpu7_slot0"
+        },
+        {
+          "combined_hash": "48cb3935eec9937edb08baa1855e0ccb549475b93d5d57442b05f4460bae54f2",
+          "elapsed_seconds": 59.086140536936,
+          "gpu": 5,
+          "peak_allocated_bytes": 301947392,
+          "peak_reserved_bytes": 570425344,
+          "seed": 27016,
+          "slot": 0,
+          "worker_id": "gpu5_slot0"
+        },
+        {
+          "combined_hash": "5c1711933778bc9c97a705dfc844667c896c05bf88a153c4cae3f5db8a8d0995",
+          "elapsed_seconds": 57.9749184360262,
+          "gpu": 4,
+          "peak_allocated_bytes": 302732800,
+          "peak_reserved_bytes": 694157312,
+          "seed": 27017,
+          "slot": 0,
+          "worker_id": "gpu4_slot0"
+        },
+        {
+          "combined_hash": "d04db685c53bc0b7e9e0ed2ca620b5efaa2958fc432f2e50713524a6f7387bee",
+          "elapsed_seconds": 64.7290069970768,
+          "gpu": 1,
+          "peak_allocated_bytes": 360122880,
+          "peak_reserved_bytes": 719323136,
+          "seed": 27018,
+          "slot": 0,
+          "worker_id": "gpu1_slot0"
+        },
+        {
+          "combined_hash": "ee3d1730c17b83bc45102a6b56093855c51927cac5755827e99b77a51dce50e5",
+          "elapsed_seconds": 60.49635512405075,
+          "gpu": 0,
+          "peak_allocated_bytes": 349583872,
+          "peak_reserved_bytes": 734003200,
+          "seed": 27019,
+          "slot": 0,
+          "worker_id": "gpu0_slot0"
+        },
+        {
+          "combined_hash": "afb13739a127d70fd8e84644b6980530c83a62beeb6387baafceba048ec72dae",
+          "elapsed_seconds": 65.82246685691644,
+          "gpu": 3,
+          "peak_allocated_bytes": 358765568,
+          "peak_reserved_bytes": 717225984,
+          "seed": 27020,
+          "slot": 0,
+          "worker_id": "gpu3_slot0"
+        },
+        {
+          "combined_hash": "1671a07dcb9c85e5eaae1bfa23a15533b7a3ea190b9fe12bd52ab57f3208a14d",
+          "elapsed_seconds": 63.007179489010014,
+          "gpu": 2,
+          "peak_allocated_bytes": 302933504,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27021,
+          "slot": 0,
+          "worker_id": "gpu2_slot0"
+        },
+        {
+          "combined_hash": "b3216eb9f78e44a37a38a060115419be1a21154e4f0b0ac46da9d86873eff553",
+          "elapsed_seconds": 64.02979623596184,
+          "gpu": 7,
+          "peak_allocated_bytes": 272301056,
+          "peak_reserved_bytes": 566231040,
+          "seed": 27022,
+          "slot": 0,
+          "worker_id": "gpu7_slot0"
+        },
+        {
+          "combined_hash": "373551357b453fed0f66dbcbbf6afa05a1a26569554e85f57c65d77f8d845f9b",
+          "elapsed_seconds": 60.576593603007495,
+          "gpu": 6,
+          "peak_allocated_bytes": 315511296,
+          "peak_reserved_bytes": 769654784,
+          "seed": 27023,
+          "slot": 0,
+          "worker_id": "gpu6_slot0"
+        },
+        {
+          "combined_hash": "725064f5f6f221a0c05ee60e3d7697778a89972559d4b9b32af09ba9c0f56b84",
+          "elapsed_seconds": 58.26462338899728,
+          "gpu": 4,
+          "peak_allocated_bytes": 315959808,
+          "peak_reserved_bytes": 694157312,
+          "seed": 27024,
+          "slot": 0,
+          "worker_id": "gpu4_slot0"
+        },
+        {
+          "combined_hash": "a5311d2e098308962869c0fc62049d0c252fbf20aaf68bcd5d7dfe6705d28fb0",
+          "elapsed_seconds": 58.99885589594487,
+          "gpu": 5,
+          "peak_allocated_bytes": 303112704,
+          "peak_reserved_bytes": 570425344,
+          "seed": 27025,
+          "slot": 0,
+          "worker_id": "gpu5_slot0"
+        },
+        {
+          "combined_hash": "cba10ea5425e62532c27622a0f800d634da4a916ecadfb07dbeaa7195841c820",
+          "elapsed_seconds": 60.44767235999461,
+          "gpu": 0,
+          "peak_allocated_bytes": 343005184,
+          "peak_reserved_bytes": 734003200,
+          "seed": 27026,
+          "slot": 0,
+          "worker_id": "gpu0_slot0"
+        },
+        {
+          "combined_hash": "dbdd05884aabb5df9de6246ed42af993bc3c7943eef13af6eb0541ea151d1470",
+          "elapsed_seconds": 57.65946608397644,
+          "gpu": 1,
+          "peak_allocated_bytes": 286084096,
+          "peak_reserved_bytes": 719323136,
+          "seed": 27027,
+          "slot": 0,
+          "worker_id": "gpu1_slot0"
+        },
+        {
+          "combined_hash": "5b03582df05d16652fc77f931fe585e9ce07b50b7aa6a3fe2938f5945d46168f",
+          "elapsed_seconds": 60.16996204596944,
+          "gpu": 3,
+          "peak_allocated_bytes": 315407360,
+          "peak_reserved_bytes": 717225984,
+          "seed": 27028,
+          "slot": 0,
+          "worker_id": "gpu3_slot0"
+        },
+        {
+          "combined_hash": "927819b6f7892e14d5ee82b9bbb8940ce60282111b095bda3caf227142e1e59a",
+          "elapsed_seconds": 62.59265022096224,
+          "gpu": 2,
+          "peak_allocated_bytes": 259128832,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27029,
+          "slot": 0,
+          "worker_id": "gpu2_slot0"
+        },
+        {
+          "combined_hash": "e44e7ec1a6f91bc501405774f23484410602d1428d190f5ef013747ba557bc5f",
+          "elapsed_seconds": 60.325526123982854,
+          "gpu": 6,
+          "peak_allocated_bytes": 301605376,
+          "peak_reserved_bytes": 769654784,
+          "seed": 27030,
+          "slot": 0,
+          "worker_id": "gpu6_slot0"
+        },
+        {
+          "combined_hash": "e514c11eafebc61917bdd6d08607acc9391a27fedfcf327a4c817ac69d804a33",
+          "elapsed_seconds": 63.478862788993865,
+          "gpu": 7,
+          "peak_allocated_bytes": 287206400,
+          "peak_reserved_bytes": 566231040,
+          "seed": 27031,
+          "slot": 0,
+          "worker_id": "gpu7_slot0"
+        }
+      ],
+      "same_seed_bitwise_equivalent": true,
+      "seeds": [
+        27000,
+        27001,
+        27002,
+        27003,
+        27004,
+        27005,
+        27006,
+        27007,
+        27008,
+        27009,
+        27010,
+        27011,
+        27012,
+        27013,
+        27014,
+        27015,
+        27016,
+        27017,
+        27018,
+        27019,
+        27020,
+        27021,
+        27022,
+        27023,
+        27024,
+        27025,
+        27026,
+        27027,
+        27028,
+        27029,
+        27030,
+        27031
+      ],
+      "single_gpu_throughput_samples_per_hour": 56.62162290564322,
+      "success_count": 32,
+      "task_counts_per_worker": {
+        "gpu0_slot0": 4,
+        "gpu1_slot0": 4,
+        "gpu2_slot0": 4,
+        "gpu3_slot0": 4,
+        "gpu4_slot0": 4,
+        "gpu5_slot0": 4,
+        "gpu6_slot0": 4,
+        "gpu7_slot0": 4
+      },
+      "telemetry": {
+        "memory_peak_mib": 1420.0,
+        "power_mean_w": 112.87895555555555,
+        "samples": 1800,
+        "utilization_max_percent": 64.0,
+        "utilization_mean_percent": 39.995
+      },
+      "throughput_speedup_vs_1worker": 1.0,
+      "total_throughput_samples_per_hour": 452.97298324514577,
+      "total_workers": 8,
+      "worker_peak_allocated_bytes": 370395648,
+      "worker_peak_reserved_bytes": 769654784,
+      "workers_per_gpu": 1
+    },
+    {
+      "completed_at": "2026-07-27T19:12:38+08:00",
+      "failure_attempts": 0,
+      "fairness_max_tasks": 2,
+      "fairness_min_tasks": 2,
+      "latency_median_seconds": 104.42089371295879,
+      "latency_p95_seconds": 115.71296295931678,
+      "measured_wall_seconds": 218.67051183001604,
+      "ready": [
+        {
+          "gpu": 3,
+          "model_load_warmup_seconds": 5.001413307036273,
+          "ready": true,
+          "slot": 1,
+          "worker_id": "gpu3_slot1"
+        },
+        {
+          "gpu": 2,
+          "model_load_warmup_seconds": 4.961825120961294,
+          "ready": true,
+          "slot": 1,
+          "worker_id": "gpu2_slot1"
+        },
+        {
+          "gpu": 0,
+          "model_load_warmup_seconds": 4.732934625004418,
+          "ready": true,
+          "slot": 1,
+          "worker_id": "gpu0_slot1"
+        },
+        {
+          "gpu": 2,
+          "model_load_warmup_seconds": 4.906126630026847,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu2_slot0"
+        },
+        {
+          "gpu": 5,
+          "model_load_warmup_seconds": 5.125349660986103,
+          "ready": true,
+          "slot": 1,
+          "worker_id": "gpu5_slot1"
+        },
+        {
+          "gpu": 6,
+          "model_load_warmup_seconds": 5.141091661062092,
+          "ready": true,
+          "slot": 1,
+          "worker_id": "gpu6_slot1"
+        },
+        {
+          "gpu": 1,
+          "model_load_warmup_seconds": 5.1223549579735845,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu1_slot0"
+        },
+        {
+          "gpu": 1,
+          "model_load_warmup_seconds": 5.1391892860410735,
+          "ready": true,
+          "slot": 1,
+          "worker_id": "gpu1_slot1"
+        },
+        {
+          "gpu": 0,
+          "model_load_warmup_seconds": 5.025469651911408,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu0_slot0"
+        },
+        {
+          "gpu": 7,
+          "model_load_warmup_seconds": 5.001698435051367,
+          "ready": true,
+          "slot": 1,
+          "worker_id": "gpu7_slot1"
+        },
+        {
+          "gpu": 5,
+          "model_load_warmup_seconds": 5.000444663921371,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu5_slot0"
+        },
+        {
+          "gpu": 7,
+          "model_load_warmup_seconds": 4.951895460952073,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu7_slot0"
+        },
+        {
+          "gpu": 6,
+          "model_load_warmup_seconds": 4.900972867035307,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu6_slot0"
+        },
+        {
+          "gpu": 3,
+          "model_load_warmup_seconds": 5.291645789984614,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu3_slot0"
+        },
+        {
+          "gpu": 4,
+          "model_load_warmup_seconds": 5.128577474039048,
+          "ready": true,
+          "slot": 1,
+          "worker_id": "gpu4_slot1"
+        },
+        {
+          "gpu": 4,
+          "model_load_warmup_seconds": 5.1171165079576895,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu4_slot0"
+        }
+      ],
+      "rows": [
+        {
+          "combined_hash": "57c4f36f0f84d0e06001516ae5320d5aa3471684084e2afbcf2bdbcc6a685e75",
+          "elapsed_seconds": 95.14768876705784,
+          "gpu": 3,
+          "peak_allocated_bytes": 346281984,
+          "peak_reserved_bytes": 694157312,
+          "seed": 27000,
+          "slot": 1,
+          "worker_id": "gpu3_slot1"
+        },
+        {
+          "combined_hash": "24055cb0f3a1f96f23509fba861f427cb779ff71e7a6b7c1c73e89236cda42ab",
+          "elapsed_seconds": 106.97167133295443,
+          "gpu": 2,
+          "peak_allocated_bytes": 293273088,
+          "peak_reserved_bytes": 566231040,
+          "seed": 27001,
+          "slot": 1,
+          "worker_id": "gpu2_slot1"
+        },
+        {
+          "combined_hash": "440738f6d9e37b97baf8ac5c6af32bf2b7ebd398ff70cc548cc3224441e416e9",
+          "elapsed_seconds": 107.56510068103671,
+          "gpu": 0,
+          "peak_allocated_bytes": 286622208,
+          "peak_reserved_bytes": 566231040,
+          "seed": 27002,
+          "slot": 1,
+          "worker_id": "gpu0_slot1"
+        },
+        {
+          "combined_hash": "63e435625789eb0f35aae15c7882678c61191c947e2ac7bf2d0179766307bbce",
+          "elapsed_seconds": 107.04194850707427,
+          "gpu": 2,
+          "peak_allocated_bytes": 338196992,
+          "peak_reserved_bytes": 673185792,
+          "seed": 27003,
+          "slot": 0,
+          "worker_id": "gpu2_slot0"
+        },
+        {
+          "combined_hash": "39d0ca55c4ba3400d6bfed50048df924143c613e01a1f2d656673578dceecafa",
+          "elapsed_seconds": 100.30405384395272,
+          "gpu": 5,
+          "peak_allocated_bytes": 257516544,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27004,
+          "slot": 1,
+          "worker_id": "gpu5_slot1"
+        },
+        {
+          "combined_hash": "9fc097a42e42da169d40b43744f341d2644405541360e0a20b59179c67bbb121",
+          "elapsed_seconds": 120.12286061106715,
+          "gpu": 6,
+          "peak_allocated_bytes": 315714048,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27005,
+          "slot": 1,
+          "worker_id": "gpu6_slot1"
+        },
+        {
+          "combined_hash": "147dc2842fd66b627108e524d4de4e711f31ed458ccc085ceea7e501f57422b4",
+          "elapsed_seconds": 104.35303416696843,
+          "gpu": 1,
+          "peak_allocated_bytes": 315398656,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27006,
+          "slot": 0,
+          "worker_id": "gpu1_slot0"
+        },
+        {
+          "combined_hash": "09177e727eb8a3565e6d6e99cf1f924e8e8b93578fb6185eab73a4b293ecb80c",
+          "elapsed_seconds": 104.48875325894915,
+          "gpu": 1,
+          "peak_allocated_bytes": 264927744,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27007,
+          "slot": 1,
+          "worker_id": "gpu1_slot1"
+        },
+        {
+          "combined_hash": "9012c6bb22fd5d7064f235a4106bbf5fb91f96054e441f1569b5c84d91a8e7cf",
+          "elapsed_seconds": 107.70996968098916,
+          "gpu": 0,
+          "peak_allocated_bytes": 316365824,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27008,
+          "slot": 0,
+          "worker_id": "gpu0_slot0"
+        },
+        {
+          "combined_hash": "3286dce748858a47a128e10503fa0efeb1e3d4d5e9c58bbb6dfed099def9291e",
+          "elapsed_seconds": 91.94303375401068,
+          "gpu": 7,
+          "peak_allocated_bytes": 272060928,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27009,
+          "slot": 1,
+          "worker_id": "gpu7_slot1"
+        },
+        {
+          "combined_hash": "8b59df2b751029324331a8a6436bf89e7d30c75436ce849c855a99127e703f87",
+          "elapsed_seconds": 99.42813449993264,
+          "gpu": 5,
+          "peak_allocated_bytes": 301907456,
+          "peak_reserved_bytes": 589299712,
+          "seed": 27010,
+          "slot": 0,
+          "worker_id": "gpu5_slot0"
+        },
+        {
+          "combined_hash": "6e8228e4b8ae1b792b9a40a3b8d8fe2d9378120a2acad26daeda5ce359c546a1",
+          "elapsed_seconds": 94.16251171403565,
+          "gpu": 7,
+          "peak_allocated_bytes": 257316864,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27011,
+          "slot": 0,
+          "worker_id": "gpu7_slot0"
+        },
+        {
+          "combined_hash": "94e71b16c976a03c30be0bec353ebe408c0f8c8302a14beca5ea372344b375bc",
+          "elapsed_seconds": 116.87556851492263,
+          "gpu": 6,
+          "peak_allocated_bytes": 370387456,
+          "peak_reserved_bytes": 769654784,
+          "seed": 27012,
+          "slot": 0,
+          "worker_id": "gpu6_slot0"
+        },
+        {
+          "combined_hash": "a3d37b7ceb912de437bdd037de4264d335ac08964b1051a2958e863b7a5c0d6b",
+          "elapsed_seconds": 102.66056750109419,
+          "gpu": 3,
+          "peak_allocated_bytes": 250163712,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27013,
+          "slot": 0,
+          "worker_id": "gpu3_slot0"
+        },
+        {
+          "combined_hash": "5e5c28980246fe00b7d64f34ac27f375ad5db0dbf559a9810046e122f955a51c",
+          "elapsed_seconds": 96.72405843192246,
+          "gpu": 4,
+          "peak_allocated_bytes": 303214080,
+          "peak_reserved_bytes": 589299712,
+          "seed": 27014,
+          "slot": 1,
+          "worker_id": "gpu4_slot1"
+        },
+        {
+          "combined_hash": "e95c4cffe52e4e0733cf3e4288177a0250c0c9c4af5bd490070c28500f4a1978",
+          "elapsed_seconds": 100.46201704104897,
+          "gpu": 4,
+          "peak_allocated_bytes": 280143360,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27015,
+          "slot": 0,
+          "worker_id": "gpu4_slot0"
+        },
+        {
+          "combined_hash": "48cb3935eec9937edb08baa1855e0ccb549475b93d5d57442b05f4460bae54f2",
+          "elapsed_seconds": 104.61145491001662,
+          "gpu": 7,
+          "peak_allocated_bytes": 301947392,
+          "peak_reserved_bytes": 570425344,
+          "seed": 27016,
+          "slot": 1,
+          "worker_id": "gpu7_slot1"
+        },
+        {
+          "combined_hash": "5c1711933778bc9c97a705dfc844667c896c05bf88a153c4cae3f5db8a8d0995",
+          "elapsed_seconds": 103.77734560798854,
+          "gpu": 7,
+          "peak_allocated_bytes": 303301632,
+          "peak_reserved_bytes": 589299712,
+          "seed": 27017,
+          "slot": 0,
+          "worker_id": "gpu7_slot0"
+        },
+        {
+          "combined_hash": "d04db685c53bc0b7e9e0ed2ca620b5efaa2958fc432f2e50713524a6f7387bee",
+          "elapsed_seconds": 114.76174023200292,
+          "gpu": 3,
+          "peak_allocated_bytes": 359343616,
+          "peak_reserved_bytes": 725614592,
+          "seed": 27018,
+          "slot": 1,
+          "worker_id": "gpu3_slot1"
+        },
+        {
+          "combined_hash": "ee3d1730c17b83bc45102a6b56093855c51927cac5755827e99b77a51dce50e5",
+          "elapsed_seconds": 99.04852584796026,
+          "gpu": 4,
+          "peak_allocated_bytes": 349354496,
+          "peak_reserved_bytes": 727711744,
+          "seed": 27019,
+          "slot": 1,
+          "worker_id": "gpu4_slot1"
+        },
+        {
+          "combined_hash": "afb13739a127d70fd8e84644b6980530c83a62beeb6387baafceba048ec72dae",
+          "elapsed_seconds": 114.54857198498212,
+          "gpu": 5,
+          "peak_allocated_bytes": 358765568,
+          "peak_reserved_bytes": 719323136,
+          "seed": 27020,
+          "slot": 0,
+          "worker_id": "gpu5_slot0"
+        },
+        {
+          "combined_hash": "1671a07dcb9c85e5eaae1bfa23a15533b7a3ea190b9fe12bd52ab57f3208a14d",
+          "elapsed_seconds": 114.16703722300008,
+          "gpu": 5,
+          "peak_allocated_bytes": 303463936,
+          "peak_reserved_bytes": 589299712,
+          "seed": 27021,
+          "slot": 1,
+          "worker_id": "gpu5_slot1"
+        },
+        {
+          "combined_hash": "b3216eb9f78e44a37a38a060115419be1a21154e4f0b0ac46da9d86873eff553",
+          "elapsed_seconds": 102.81004034902435,
+          "gpu": 4,
+          "peak_allocated_bytes": 272301056,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27022,
+          "slot": 0,
+          "worker_id": "gpu4_slot0"
+        },
+        {
+          "combined_hash": "373551357b453fed0f66dbcbbf6afa05a1a26569554e85f57c65d77f8d845f9b",
+          "elapsed_seconds": 112.35275500593707,
+          "gpu": 3,
+          "peak_allocated_bytes": 314853888,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27023,
+          "slot": 0,
+          "worker_id": "gpu3_slot0"
+        },
+        {
+          "combined_hash": "725064f5f6f221a0c05ee60e3d7697778a89972559d4b9b32af09ba9c0f56b84",
+          "elapsed_seconds": 109.14671312191058,
+          "gpu": 1,
+          "peak_allocated_bytes": 316157952,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27024,
+          "slot": 0,
+          "worker_id": "gpu1_slot0"
+        },
+        {
+          "combined_hash": "a5311d2e098308962869c0fc62049d0c252fbf20aaf68bcd5d7dfe6705d28fb0",
+          "elapsed_seconds": 108.98510792094748,
+          "gpu": 1,
+          "peak_allocated_bytes": 303140352,
+          "peak_reserved_bytes": 589299712,
+          "seed": 27025,
+          "slot": 1,
+          "worker_id": "gpu1_slot1"
+        },
+        {
+          "combined_hash": "cba10ea5425e62532c27622a0f800d634da4a916ecadfb07dbeaa7195841c820",
+          "elapsed_seconds": 100.24961280007847,
+          "gpu": 2,
+          "peak_allocated_bytes": 343107584,
+          "peak_reserved_bytes": 658505728,
+          "seed": 27026,
+          "slot": 1,
+          "worker_id": "gpu2_slot1"
+        },
+        {
+          "combined_hash": "dbdd05884aabb5df9de6246ed42af993bc3c7943eef13af6eb0541ea151d1470",
+          "elapsed_seconds": 105.46646323904861,
+          "gpu": 2,
+          "peak_allocated_bytes": 286084096,
+          "peak_reserved_bytes": 673185792,
+          "seed": 27027,
+          "slot": 0,
+          "worker_id": "gpu2_slot0"
+        },
+        {
+          "combined_hash": "5b03582df05d16652fc77f931fe585e9ce07b50b7aa6a3fe2938f5945d46168f",
+          "elapsed_seconds": 96.58960409706924,
+          "gpu": 0,
+          "peak_allocated_bytes": 314908672,
+          "peak_reserved_bytes": 587202560,
+          "seed": 27028,
+          "slot": 1,
+          "worker_id": "gpu0_slot1"
+        },
+        {
+          "combined_hash": "927819b6f7892e14d5ee82b9bbb8940ce60282111b095bda3caf227142e1e59a",
+          "elapsed_seconds": 104.74401084589772,
+          "gpu": 0,
+          "peak_allocated_bytes": 259128832,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27029,
+          "slot": 0,
+          "worker_id": "gpu0_slot0"
+        },
+        {
+          "combined_hash": "e44e7ec1a6f91bc501405774f23484410602d1428d190f5ef013747ba557bc5f",
+          "elapsed_seconds": 99.86860464792699,
+          "gpu": 6,
+          "peak_allocated_bytes": 301605376,
+          "peak_reserved_bytes": 769654784,
+          "seed": 27030,
+          "slot": 0,
+          "worker_id": "gpu6_slot0"
+        },
+        {
+          "combined_hash": "e514c11eafebc61917bdd6d08607acc9391a27fedfcf327a4c817ac69d804a33",
+          "elapsed_seconds": 98.54575978103094,
+          "gpu": 6,
+          "peak_allocated_bytes": 286241280,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27031,
+          "slot": 1,
+          "worker_id": "gpu6_slot1"
+        }
+      ],
+      "same_seed_bitwise_equivalent": true,
+      "seeds": [
+        27000,
+        27001,
+        27002,
+        27003,
+        27004,
+        27005,
+        27006,
+        27007,
+        27008,
+        27009,
+        27010,
+        27011,
+        27012,
+        27013,
+        27014,
+        27015,
+        27016,
+        27017,
+        27018,
+        27019,
+        27020,
+        27021,
+        27022,
+        27023,
+        27024,
+        27025,
+        27026,
+        27027,
+        27028,
+        27029,
+        27030,
+        27031
+      ],
+      "single_gpu_throughput_samples_per_hour": 65.85250054746233,
+      "success_count": 32,
+      "task_counts_per_worker": {
+        "gpu0_slot0": 2,
+        "gpu0_slot1": 2,
+        "gpu1_slot0": 2,
+        "gpu1_slot1": 2,
+        "gpu2_slot0": 2,
+        "gpu2_slot1": 2,
+        "gpu3_slot0": 2,
+        "gpu3_slot1": 2,
+        "gpu4_slot0": 2,
+        "gpu4_slot1": 2,
+        "gpu5_slot0": 2,
+        "gpu5_slot1": 2,
+        "gpu6_slot0": 2,
+        "gpu6_slot1": 2,
+        "gpu7_slot0": 2,
+        "gpu7_slot1": 2
+      },
+      "telemetry": {
+        "memory_peak_mib": 2491.0,
+        "power_mean_w": 135.29708776595746,
+        "samples": 1504,
+        "utilization_max_percent": 93.0,
+        "utilization_mean_percent": 87.10438829787235
+      },
+      "throughput_speedup_vs_1worker": 1.1630274295952598,
+      "total_throughput_samples_per_hour": 526.8200043796986,
+      "total_workers": 16,
+      "worker_peak_allocated_bytes": 370387456,
+      "worker_peak_reserved_bytes": 769654784,
+      "workers_per_gpu": 2
+    },
+    {
+      "completed_at": "2026-07-27T19:16:39+08:00",
+      "failure_attempts": 0,
+      "fairness_max_tasks": 1,
+      "fairness_min_tasks": 1,
+      "latency_median_seconds": 195.30346338899108,
+      "latency_p95_seconds": 214.56703709641587,
+      "measured_wall_seconds": 215.29093877098057,
+      "ready": [
+        {
+          "gpu": 6,
+          "model_load_warmup_seconds": 4.4008939530467615,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu6_slot0"
+        },
+        {
+          "gpu": 4,
+          "model_load_warmup_seconds": 4.3576568600256,
+          "ready": true,
+          "slot": 3,
+          "worker_id": "gpu4_slot3"
+        },
+        {
+          "gpu": 6,
+          "model_load_warmup_seconds": 4.415711064008065,
+          "ready": true,
+          "slot": 2,
+          "worker_id": "gpu6_slot2"
+        },
+        {
+          "gpu": 0,
+          "model_load_warmup_seconds": 4.51158582395874,
+          "ready": true,
+          "slot": 1,
+          "worker_id": "gpu0_slot1"
+        },
+        {
+          "gpu": 2,
+          "model_load_warmup_seconds": 4.593532535014674,
+          "ready": true,
+          "slot": 2,
+          "worker_id": "gpu2_slot2"
+        },
+        {
+          "gpu": 2,
+          "model_load_warmup_seconds": 5.002959768055007,
+          "ready": true,
+          "slot": 1,
+          "worker_id": "gpu2_slot1"
+        },
+        {
+          "gpu": 5,
+          "model_load_warmup_seconds": 4.963297729031183,
+          "ready": true,
+          "slot": 3,
+          "worker_id": "gpu5_slot3"
+        },
+        {
+          "gpu": 2,
+          "model_load_warmup_seconds": 5.208253839984536,
+          "ready": true,
+          "slot": 3,
+          "worker_id": "gpu2_slot3"
+        },
+        {
+          "gpu": 0,
+          "model_load_warmup_seconds": 5.1217877069721,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu0_slot0"
+        },
+        {
+          "gpu": 4,
+          "model_load_warmup_seconds": 5.468282424961217,
+          "ready": true,
+          "slot": 1,
+          "worker_id": "gpu4_slot1"
+        },
+        {
+          "gpu": 1,
+          "model_load_warmup_seconds": 5.5424057400086895,
+          "ready": true,
+          "slot": 1,
+          "worker_id": "gpu1_slot1"
+        },
+        {
+          "gpu": 3,
+          "model_load_warmup_seconds": 5.536485516000539,
+          "ready": true,
+          "slot": 1,
+          "worker_id": "gpu3_slot1"
+        },
+        {
+          "gpu": 7,
+          "model_load_warmup_seconds": 5.479890180984512,
+          "ready": true,
+          "slot": 1,
+          "worker_id": "gpu7_slot1"
+        },
+        {
+          "gpu": 5,
+          "model_load_warmup_seconds": 5.67869026993867,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu5_slot0"
+        },
+        {
+          "gpu": 1,
+          "model_load_warmup_seconds": 5.522019261028618,
+          "ready": true,
+          "slot": 3,
+          "worker_id": "gpu1_slot3"
+        },
+        {
+          "gpu": 5,
+          "model_load_warmup_seconds": 5.444313021027483,
+          "ready": true,
+          "slot": 2,
+          "worker_id": "gpu5_slot2"
+        },
+        {
+          "gpu": 7,
+          "model_load_warmup_seconds": 5.346459492924623,
+          "ready": true,
+          "slot": 2,
+          "worker_id": "gpu7_slot2"
+        },
+        {
+          "gpu": 0,
+          "model_load_warmup_seconds": 5.662811385001987,
+          "ready": true,
+          "slot": 3,
+          "worker_id": "gpu0_slot3"
+        },
+        {
+          "gpu": 1,
+          "model_load_warmup_seconds": 5.125438084010966,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu1_slot0"
+        },
+        {
+          "gpu": 3,
+          "model_load_warmup_seconds": 4.688869680045173,
+          "ready": true,
+          "slot": 3,
+          "worker_id": "gpu3_slot3"
+        },
+        {
+          "gpu": 6,
+          "model_load_warmup_seconds": 5.426466224016622,
+          "ready": true,
+          "slot": 3,
+          "worker_id": "gpu6_slot3"
+        },
+        {
+          "gpu": 3,
+          "model_load_warmup_seconds": 5.76495119498577,
+          "ready": true,
+          "slot": 2,
+          "worker_id": "gpu3_slot2"
+        },
+        {
+          "gpu": 6,
+          "model_load_warmup_seconds": 5.0704996639396995,
+          "ready": true,
+          "slot": 1,
+          "worker_id": "gpu6_slot1"
+        },
+        {
+          "gpu": 7,
+          "model_load_warmup_seconds": 5.446287013008259,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu7_slot0"
+        },
+        {
+          "gpu": 0,
+          "model_load_warmup_seconds": 4.75151192699559,
+          "ready": true,
+          "slot": 2,
+          "worker_id": "gpu0_slot2"
+        },
+        {
+          "gpu": 2,
+          "model_load_warmup_seconds": 5.0138035180279985,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu2_slot0"
+        },
+        {
+          "gpu": 7,
+          "model_load_warmup_seconds": 5.368709136033431,
+          "ready": true,
+          "slot": 3,
+          "worker_id": "gpu7_slot3"
+        },
+        {
+          "gpu": 5,
+          "model_load_warmup_seconds": 5.663898627040908,
+          "ready": true,
+          "slot": 1,
+          "worker_id": "gpu5_slot1"
+        },
+        {
+          "gpu": 3,
+          "model_load_warmup_seconds": 4.789129629032686,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu3_slot0"
+        },
+        {
+          "gpu": 1,
+          "model_load_warmup_seconds": 5.095166323939338,
+          "ready": true,
+          "slot": 2,
+          "worker_id": "gpu1_slot2"
+        },
+        {
+          "gpu": 4,
+          "model_load_warmup_seconds": 5.112501673982479,
+          "ready": true,
+          "slot": 0,
+          "worker_id": "gpu4_slot0"
+        },
+        {
+          "gpu": 4,
+          "model_load_warmup_seconds": 5.106821532011963,
+          "ready": true,
+          "slot": 2,
+          "worker_id": "gpu4_slot2"
+        }
+      ],
+      "rows": [
+        {
+          "combined_hash": "57c4f36f0f84d0e06001516ae5320d5aa3471684084e2afbcf2bdbcc6a685e75",
+          "elapsed_seconds": 202.75770071300212,
+          "gpu": 6,
+          "peak_allocated_bytes": 346281984,
+          "peak_reserved_bytes": 694157312,
+          "seed": 27000,
+          "slot": 0,
+          "worker_id": "gpu6_slot0"
+        },
+        {
+          "combined_hash": "24055cb0f3a1f96f23509fba861f427cb779ff71e7a6b7c1c73e89236cda42ab",
+          "elapsed_seconds": 181.26945172494743,
+          "gpu": 4,
+          "peak_allocated_bytes": 293273088,
+          "peak_reserved_bytes": 566231040,
+          "seed": 27001,
+          "slot": 3,
+          "worker_id": "gpu4_slot3"
+        },
+        {
+          "combined_hash": "440738f6d9e37b97baf8ac5c6af32bf2b7ebd398ff70cc548cc3224441e416e9",
+          "elapsed_seconds": 203.9081437799614,
+          "gpu": 6,
+          "peak_allocated_bytes": 286622208,
+          "peak_reserved_bytes": 566231040,
+          "seed": 27002,
+          "slot": 2,
+          "worker_id": "gpu6_slot2"
+        },
+        {
+          "combined_hash": "63e435625789eb0f35aae15c7882678c61191c947e2ac7bf2d0179766307bbce",
+          "elapsed_seconds": 206.65470403095242,
+          "gpu": 0,
+          "peak_allocated_bytes": 338196992,
+          "peak_reserved_bytes": 673185792,
+          "seed": 27003,
+          "slot": 1,
+          "worker_id": "gpu0_slot1"
+        },
+        {
+          "combined_hash": "39d0ca55c4ba3400d6bfed50048df924143c613e01a1f2d656673578dceecafa",
+          "elapsed_seconds": 184.13246384903323,
+          "gpu": 2,
+          "peak_allocated_bytes": 257516544,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27004,
+          "slot": 2,
+          "worker_id": "gpu2_slot2"
+        },
+        {
+          "combined_hash": "9fc097a42e42da169d40b43744f341d2644405541360e0a20b59179c67bbb121",
+          "elapsed_seconds": 180.32156451197807,
+          "gpu": 2,
+          "peak_allocated_bytes": 315714048,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27005,
+          "slot": 1,
+          "worker_id": "gpu2_slot1"
+        },
+        {
+          "combined_hash": "147dc2842fd66b627108e524d4de4e711f31ed458ccc085ceea7e501f57422b4",
+          "elapsed_seconds": 173.97884492599405,
+          "gpu": 5,
+          "peak_allocated_bytes": 315398656,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27006,
+          "slot": 3,
+          "worker_id": "gpu5_slot3"
+        },
+        {
+          "combined_hash": "09177e727eb8a3565e6d6e99cf1f924e8e8b93578fb6185eab73a4b293ecb80c",
+          "elapsed_seconds": 185.2458897769684,
+          "gpu": 2,
+          "peak_allocated_bytes": 264927744,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27007,
+          "slot": 3,
+          "worker_id": "gpu2_slot3"
+        },
+        {
+          "combined_hash": "9012c6bb22fd5d7064f235a4106bbf5fb91f96054e441f1569b5c84d91a8e7cf",
+          "elapsed_seconds": 206.81421687302645,
+          "gpu": 0,
+          "peak_allocated_bytes": 316365824,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27008,
+          "slot": 0,
+          "worker_id": "gpu0_slot0"
+        },
+        {
+          "combined_hash": "3286dce748858a47a128e10503fa0efeb1e3d4d5e9c58bbb6dfed099def9291e",
+          "elapsed_seconds": 178.4256423918996,
+          "gpu": 4,
+          "peak_allocated_bytes": 272060928,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27009,
+          "slot": 1,
+          "worker_id": "gpu4_slot1"
+        },
+        {
+          "combined_hash": "8b59df2b751029324331a8a6436bf89e7d30c75436ce849c855a99127e703f87",
+          "elapsed_seconds": 200.27997300599236,
+          "gpu": 1,
+          "peak_allocated_bytes": 301907456,
+          "peak_reserved_bytes": 589299712,
+          "seed": 27010,
+          "slot": 1,
+          "worker_id": "gpu1_slot1"
+        },
+        {
+          "combined_hash": "6e8228e4b8ae1b792b9a40a3b8d8fe2d9378120a2acad26daeda5ce359c546a1",
+          "elapsed_seconds": 192.49557636899408,
+          "gpu": 3,
+          "peak_allocated_bytes": 257316864,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27011,
+          "slot": 1,
+          "worker_id": "gpu3_slot1"
+        },
+        {
+          "combined_hash": "94e71b16c976a03c30be0bec353ebe408c0f8c8302a14beca5ea372344b375bc",
+          "elapsed_seconds": 214.2735892960336,
+          "gpu": 7,
+          "peak_allocated_bytes": 370387456,
+          "peak_reserved_bytes": 769654784,
+          "seed": 27012,
+          "slot": 1,
+          "worker_id": "gpu7_slot1"
+        },
+        {
+          "combined_hash": "a3d37b7ceb912de437bdd037de4264d335ac08964b1051a2958e863b7a5c0d6b",
+          "elapsed_seconds": 176.55230659199879,
+          "gpu": 5,
+          "peak_allocated_bytes": 250163712,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27013,
+          "slot": 0,
+          "worker_id": "gpu5_slot0"
+        },
+        {
+          "combined_hash": "5e5c28980246fe00b7d64f34ac27f375ad5db0dbf559a9810046e122f955a51c",
+          "elapsed_seconds": 200.30809050402604,
+          "gpu": 1,
+          "peak_allocated_bytes": 303214080,
+          "peak_reserved_bytes": 589299712,
+          "seed": 27014,
+          "slot": 3,
+          "worker_id": "gpu1_slot3"
+        },
+        {
+          "combined_hash": "e95c4cffe52e4e0733cf3e4288177a0250c0c9c4af5bd490070c28500f4a1978",
+          "elapsed_seconds": 174.73484663595445,
+          "gpu": 5,
+          "peak_allocated_bytes": 280143360,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27015,
+          "slot": 2,
+          "worker_id": "gpu5_slot2"
+        },
+        {
+          "combined_hash": "48cb3935eec9937edb08baa1855e0ccb549475b93d5d57442b05f4460bae54f2",
+          "elapsed_seconds": 215.28875902004074,
+          "gpu": 7,
+          "peak_allocated_bytes": 301939200,
+          "peak_reserved_bytes": 570425344,
+          "seed": 27016,
+          "slot": 2,
+          "worker_id": "gpu7_slot2"
+        },
+        {
+          "combined_hash": "5c1711933778bc9c97a705dfc844667c896c05bf88a153c4cae3f5db8a8d0995",
+          "elapsed_seconds": 206.26303121692035,
+          "gpu": 0,
+          "peak_allocated_bytes": 303293440,
+          "peak_reserved_bytes": 589299712,
+          "seed": 27017,
+          "slot": 3,
+          "worker_id": "gpu0_slot3"
+        },
+        {
+          "combined_hash": "d04db685c53bc0b7e9e0ed2ca620b5efaa2958fc432f2e50713524a6f7387bee",
+          "elapsed_seconds": 198.11135040898807,
+          "gpu": 1,
+          "peak_allocated_bytes": 360114688,
+          "peak_reserved_bytes": 719323136,
+          "seed": 27018,
+          "slot": 0,
+          "worker_id": "gpu1_slot0"
+        },
+        {
+          "combined_hash": "ee3d1730c17b83bc45102a6b56093855c51927cac5755827e99b77a51dce50e5",
+          "elapsed_seconds": 191.71678799996153,
+          "gpu": 3,
+          "peak_allocated_bytes": 350893568,
+          "peak_reserved_bytes": 725614592,
+          "seed": 27019,
+          "slot": 3,
+          "worker_id": "gpu3_slot3"
+        },
+        {
+          "combined_hash": "afb13739a127d70fd8e84644b6980530c83a62beeb6387baafceba048ec72dae",
+          "elapsed_seconds": 201.20951519499067,
+          "gpu": 6,
+          "peak_allocated_bytes": 358757376,
+          "peak_reserved_bytes": 723517440,
+          "seed": 27020,
+          "slot": 3,
+          "worker_id": "gpu6_slot3"
+        },
+        {
+          "combined_hash": "1671a07dcb9c85e5eaae1bfa23a15533b7a3ea190b9fe12bd52ab57f3208a14d",
+          "elapsed_seconds": 191.5156580050243,
+          "gpu": 3,
+          "peak_allocated_bytes": 303455744,
+          "peak_reserved_bytes": 589299712,
+          "seed": 27021,
+          "slot": 2,
+          "worker_id": "gpu3_slot2"
+        },
+        {
+          "combined_hash": "b3216eb9f78e44a37a38a060115419be1a21154e4f0b0ac46da9d86873eff553",
+          "elapsed_seconds": 205.47723454306833,
+          "gpu": 6,
+          "peak_allocated_bytes": 272292864,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27022,
+          "slot": 1,
+          "worker_id": "gpu6_slot1"
+        },
+        {
+          "combined_hash": "373551357b453fed0f66dbcbbf6afa05a1a26569554e85f57c65d77f8d845f9b",
+          "elapsed_seconds": 214.67929252097383,
+          "gpu": 7,
+          "peak_allocated_bytes": 314845696,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27023,
+          "slot": 0,
+          "worker_id": "gpu7_slot0"
+        },
+        {
+          "combined_hash": "725064f5f6f221a0c05ee60e3d7697778a89972559d4b9b32af09ba9c0f56b84",
+          "elapsed_seconds": 204.70580062898807,
+          "gpu": 0,
+          "peak_allocated_bytes": 316149760,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27024,
+          "slot": 2,
+          "worker_id": "gpu0_slot2"
+        },
+        {
+          "combined_hash": "a5311d2e098308962869c0fc62049d0c252fbf20aaf68bcd5d7dfe6705d28fb0",
+          "elapsed_seconds": 183.06861833296716,
+          "gpu": 2,
+          "peak_allocated_bytes": 303132160,
+          "peak_reserved_bytes": 589299712,
+          "seed": 27025,
+          "slot": 0,
+          "worker_id": "gpu2_slot0"
+        },
+        {
+          "combined_hash": "cba10ea5425e62532c27622a0f800d634da4a916ecadfb07dbeaa7195841c820",
+          "elapsed_seconds": 214.47519174905028,
+          "gpu": 7,
+          "peak_allocated_bytes": 343099392,
+          "peak_reserved_bytes": 664797184,
+          "seed": 27026,
+          "slot": 3,
+          "worker_id": "gpu7_slot3"
+        },
+        {
+          "combined_hash": "dbdd05884aabb5df9de6246ed42af993bc3c7943eef13af6eb0541ea151d1470",
+          "elapsed_seconds": 175.12183681305032,
+          "gpu": 5,
+          "peak_allocated_bytes": 286544896,
+          "peak_reserved_bytes": 566231040,
+          "seed": 27027,
+          "slot": 1,
+          "worker_id": "gpu5_slot1"
+        },
+        {
+          "combined_hash": "5b03582df05d16652fc77f931fe585e9ce07b50b7aa6a3fe2938f5945d46168f",
+          "elapsed_seconds": 190.8076821139548,
+          "gpu": 3,
+          "peak_allocated_bytes": 315063808,
+          "peak_reserved_bytes": 593494016,
+          "seed": 27028,
+          "slot": 0,
+          "worker_id": "gpu3_slot0"
+        },
+        {
+          "combined_hash": "927819b6f7892e14d5ee82b9bbb8940ce60282111b095bda3caf227142e1e59a",
+          "elapsed_seconds": 200.5188990390161,
+          "gpu": 1,
+          "peak_allocated_bytes": 259120640,
+          "peak_reserved_bytes": 551550976,
+          "seed": 27029,
+          "slot": 2,
+          "worker_id": "gpu1_slot2"
+        },
+        {
+          "combined_hash": "e44e7ec1a6f91bc501405774f23484410602d1428d190f5ef013747ba557bc5f",
+          "elapsed_seconds": 181.29999145597685,
+          "gpu": 4,
+          "peak_allocated_bytes": 301597184,
+          "peak_reserved_bytes": 589299712,
+          "seed": 27030,
+          "slot": 0,
+          "worker_id": "gpu4_slot0"
+        },
+        {
+          "combined_hash": "e514c11eafebc61917bdd6d08607acc9391a27fedfcf327a4c817ac69d804a33",
+          "elapsed_seconds": 179.31673279893585,
+          "gpu": 4,
+          "peak_allocated_bytes": 287198208,
+          "peak_reserved_bytes": 566231040,
+          "seed": 27031,
+          "slot": 2,
+          "worker_id": "gpu4_slot2"
+        }
+      ],
+      "same_seed_bitwise_equivalent": true,
+      "seeds": [
+        27000,
+        27001,
+        27002,
+        27003,
+        27004,
+        27005,
+        27006,
+        27007,
+        27008,
+        27009,
+        27010,
+        27011,
+        27012,
+        27013,
+        27014,
+        27015,
+        27016,
+        27017,
+        27018,
+        27019,
+        27020,
+        27021,
+        27022,
+        27023,
+        27024,
+        27025,
+        27026,
+        27027,
+        27028,
+        27029,
+        27030,
+        27031
+      ],
+      "single_gpu_throughput_samples_per_hour": 66.88623349502994,
+      "success_count": 32,
+      "task_counts_per_worker": {
+        "gpu0_slot0": 1,
+        "gpu0_slot1": 1,
+        "gpu0_slot2": 1,
+        "gpu0_slot3": 1,
+        "gpu1_slot0": 1,
+        "gpu1_slot1": 1,
+        "gpu1_slot2": 1,
+        "gpu1_slot3": 1,
+        "gpu2_slot0": 1,
+        "gpu2_slot1": 1,
+        "gpu2_slot2": 1,
+        "gpu2_slot3": 1,
+        "gpu3_slot0": 1,
+        "gpu3_slot1": 1,
+        "gpu3_slot2": 1,
+        "gpu3_slot3": 1,
+        "gpu4_slot0": 1,
+        "gpu4_slot1": 1,
+        "gpu4_slot2": 1,
+        "gpu4_slot3": 1,
+        "gpu5_slot0": 1,
+        "gpu5_slot1": 1,
+        "gpu5_slot2": 1,
+        "gpu5_slot3": 1,
+        "gpu6_slot0": 1,
+        "gpu6_slot1": 1,
+        "gpu6_slot2": 1,
+        "gpu6_slot3": 1,
+        "gpu7_slot0": 1,
+        "gpu7_slot1": 1,
+        "gpu7_slot2": 1,
+        "gpu7_slot3": 1
+      },
+      "telemetry": {
+        "memory_peak_mib": 4856.0,
+        "power_mean_w": 134.54544161676645,
+        "samples": 1336,
+        "utilization_max_percent": 93.0,
+        "utilization_mean_percent": 81.84880239520957
+      },
+      "throughput_speedup_vs_1worker": 1.1812842879211025,
+      "total_throughput_samples_per_hour": 535.0898679602395,
+      "total_workers": 32,
+      "worker_peak_allocated_bytes": 370387456,
+      "worker_peak_reserved_bytes": 769654784,
+      "workers_per_gpu": 4
+    }
+  ],
+  "runtime_pass": false,
+  "runtime_quality_safe": true,
+  "runtime_speedup": 1.1812842879211025,
+  "runtime_total_throughput": 535.0898679602395,
+  "same_seed_bitwise_equivalent": true,
+  "selected_workers_per_gpu": 4,
+  "throughput_gate": 1.25
+}
