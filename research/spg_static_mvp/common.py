@@ -172,7 +172,14 @@ def set_stage(
 
 
 def set_termination_state(state_name: str) -> None:
-    if state_name not in {"MVP_PASS", "MVP_NO_GO", "HARD_BLOCKED"}:
+    if state_name not in {
+        "MVP_PASS",
+        "MVP_NO_GO",
+        "SINGLE_BUCKET_STRONG_PASS",
+        "SINGLE_BUCKET_TECHNICAL_PASS",
+        "SINGLE_BUCKET_NO_GO",
+        "HARD_BLOCKED",
+    }:
         raise ValueError(f"invalid termination state: {state_name}")
     initialize_progress()
     with file_lock(PROGRESS_DIR / ".master_progress.lock"):
