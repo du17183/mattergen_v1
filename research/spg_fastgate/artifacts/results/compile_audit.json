@@ -1,0 +1,270 @@
+{
+  "PARTIAL_COMPILE_WORKS": false,
+  "STATIC_GRAPH_REQUIRED": true,
+  "best_block_speedup": 0.0,
+  "best_other_speedup": 0.0,
+  "components": [
+    {
+      "modes": [
+        {
+          "calls": 100,
+          "comparison": {
+            "allclose": false,
+            "max_absolute_error": 0.009678840637207031,
+            "tensor_count": 2
+          },
+          "compile_and_first_seconds": 3.8394934899988584,
+          "compiled_median_ms": 1.7931039929389954,
+          "dynamic_shape_support": "NOT_VERIFIED_SINGLE_CAPTURED_SHAPE",
+          "eager_median_ms": 2.071039915084839,
+          "graph_break_count": 3,
+          "mode": "default",
+          "peak_allocated_bytes": 707842560,
+          "recompile_count": 5,
+          "speedup": 1.1550026787293532,
+          "success": true,
+          "unique_graphs": 6
+        },
+        {
+          "calls": 100,
+          "comparison": {
+            "allclose": false,
+            "max_absolute_error": 0.009678840637207031,
+            "tensor_count": 2
+          },
+          "compile_and_first_seconds": 1.5813839479815215,
+          "compiled_median_ms": 1.7155199646949768,
+          "dynamic_shape_support": "NOT_VERIFIED_SINGLE_CAPTURED_SHAPE",
+          "eager_median_ms": 2.0680640935897827,
+          "graph_break_count": 3,
+          "mode": "reduce-overhead",
+          "peak_allocated_bytes": 707842560,
+          "recompile_count": 5,
+          "speedup": 1.2055027840830106,
+          "success": true,
+          "unique_graphs": 6
+        },
+        {
+          "calls": 100,
+          "comparison": {
+            "allclose": false,
+            "max_absolute_error": 0.2912917137145996,
+            "tensor_count": 2
+          },
+          "compile_and_first_seconds": 23.36375105800107,
+          "compiled_median_ms": 1.1916800141334534,
+          "dynamic_shape_support": "NOT_VERIFIED_SINGLE_CAPTURED_SHAPE",
+          "eager_median_ms": 2.0447360277175903,
+          "graph_break_count": 3,
+          "mode": "max-autotune-no-cudagraphs",
+          "peak_allocated_bytes": 707842560,
+          "recompile_count": 5,
+          "speedup": 1.7158431822861848,
+          "success": true,
+          "unique_graphs": 6
+        }
+      ],
+      "name": "interaction_block"
+    },
+    {
+      "modes": [
+        {
+          "calls": 100,
+          "comparison": {
+            "allclose": false,
+            "max_absolute_error": 6.079673767089844e-06,
+            "tensor_count": 2
+          },
+          "compile_and_first_seconds": 0.5179183209547773,
+          "compiled_median_ms": 1.0063520073890686,
+          "dynamic_shape_support": "NOT_VERIFIED_SINGLE_CAPTURED_SHAPE",
+          "eager_median_ms": 1.213919997215271,
+          "graph_break_count": 0,
+          "mode": "default",
+          "peak_allocated_bytes": 707842560,
+          "recompile_count": 0,
+          "speedup": 1.2062578385119214,
+          "success": true,
+          "unique_graphs": 1
+        },
+        {
+          "calls": 100,
+          "comparison": {
+            "allclose": false,
+            "max_absolute_error": 6.079673767089844e-06,
+            "tensor_count": 2
+          },
+          "compile_and_first_seconds": 0.9616317459731363,
+          "compiled_median_ms": 1.0450400114059448,
+          "dynamic_shape_support": "NOT_VERIFIED_SINGLE_CAPTURED_SHAPE",
+          "eager_median_ms": 1.2346880435943604,
+          "graph_break_count": 0,
+          "mode": "reduce-overhead",
+          "peak_allocated_bytes": 707842560,
+          "recompile_count": 0,
+          "speedup": 1.1814744221451123,
+          "success": true,
+          "unique_graphs": 1
+        },
+        {
+          "calls": 100,
+          "comparison": {
+            "allclose": false,
+            "max_absolute_error": 0.0005510896444320679,
+            "tensor_count": 2
+          },
+          "compile_and_first_seconds": 4.916388557001483,
+          "compiled_median_ms": 0.5680480003356934,
+          "dynamic_shape_support": "NOT_VERIFIED_SINGLE_CAPTURED_SHAPE",
+          "eager_median_ms": 1.210815966129303,
+          "graph_break_count": 0,
+          "mode": "max-autotune-no-cudagraphs",
+          "peak_allocated_bytes": 707842560,
+          "recompile_count": 0,
+          "speedup": 2.131538118986001,
+          "success": true,
+          "unique_graphs": 1
+        }
+      ],
+      "name": "score_head"
+    },
+    {
+      "modes": [
+        {
+          "calls": 1000,
+          "comparison": {
+            "allclose": false,
+            "max_absolute_error": 0.5173776149749756,
+            "tensor_count": 2
+          },
+          "compile_and_first_seconds": 0.967142203997355,
+          "compiled_median_ms": 0.19223999977111816,
+          "dynamic_shape_support": "NOT_VERIFIED_SINGLE_CAPTURED_SHAPE",
+          "eager_median_ms": 0.29580798745155334,
+          "graph_break_count": 3,
+          "mode": "default",
+          "peak_allocated_bytes": 707842560,
+          "recompile_count": 3,
+          "speedup": 1.5387431741767774,
+          "success": true,
+          "unique_graphs": 4
+        },
+        {
+          "calls": 1000,
+          "comparison": {
+            "allclose": false,
+            "max_absolute_error": 0.5173776149749756,
+            "tensor_count": 2
+          },
+          "compile_and_first_seconds": 0.8559092209907249,
+          "compiled_median_ms": 0.2292959988117218,
+          "dynamic_shape_support": "NOT_VERIFIED_SINGLE_CAPTURED_SHAPE",
+          "eager_median_ms": 0.2961760014295578,
+          "graph_break_count": 3,
+          "mode": "reduce-overhead",
+          "peak_allocated_bytes": 707842560,
+          "recompile_count": 3,
+          "speedup": 1.2916754019452041,
+          "success": true,
+          "unique_graphs": 4
+        },
+        {
+          "calls": 1000,
+          "comparison": {
+            "allclose": false,
+            "max_absolute_error": 0.5173776149749756,
+            "tensor_count": 2
+          },
+          "compile_and_first_seconds": 2.1457267540390603,
+          "compiled_median_ms": 0.19327999651432037,
+          "dynamic_shape_support": "NOT_VERIFIED_SINGLE_CAPTURED_SHAPE",
+          "eager_median_ms": 0.2959519922733307,
+          "graph_break_count": 3,
+          "mode": "max-autotune-no-cudagraphs",
+          "peak_allocated_bytes": 707842560,
+          "recompile_count": 3,
+          "speedup": 1.5312085969093197,
+          "success": true,
+          "unique_graphs": 4
+        }
+      ],
+      "name": "predictor_pos"
+    },
+    {
+      "modes": [
+        {
+          "calls": 1000,
+          "comparison": {
+            "allclose": false,
+            "max_absolute_error": 0.7415618896484375,
+            "tensor_count": 2
+          },
+          "compile_and_first_seconds": 0.7949266629875638,
+          "compiled_median_ms": 0.6730720102787018,
+          "dynamic_shape_support": "NOT_VERIFIED_SINGLE_CAPTURED_SHAPE",
+          "eager_median_ms": 0.42640000581741333,
+          "graph_break_count": 6,
+          "mode": "default",
+          "peak_allocated_bytes": 707842560,
+          "recompile_count": 5,
+          "speedup": 0.6335132040936483,
+          "success": true,
+          "unique_graphs": 6
+        },
+        {
+          "calls": 1000,
+          "comparison": {
+            "allclose": false,
+            "max_absolute_error": 0.7415618896484375,
+            "tensor_count": 2
+          },
+          "compile_and_first_seconds": 0.8973860630067065,
+          "compiled_median_ms": 0.8239519894123077,
+          "dynamic_shape_support": "NOT_VERIFIED_SINGLE_CAPTURED_SHAPE",
+          "eager_median_ms": 0.4243200123310089,
+          "graph_break_count": 6,
+          "mode": "reduce-overhead",
+          "peak_allocated_bytes": 707842560,
+          "recompile_count": 5,
+          "speedup": 0.5149814768135453,
+          "success": true,
+          "unique_graphs": 6
+        },
+        {
+          "calls": 1000,
+          "comparison": {
+            "allclose": false,
+            "max_absolute_error": 0.7415618896484375,
+            "tensor_count": 2
+          },
+          "compile_and_first_seconds": 1.8719077179557644,
+          "compiled_median_ms": 0.6794880032539368,
+          "dynamic_shape_support": "NOT_VERIFIED_SINGLE_CAPTURED_SHAPE",
+          "eager_median_ms": 0.42449599504470825,
+          "graph_break_count": 6,
+          "mode": "max-autotune-no-cudagraphs",
+          "peak_allocated_bytes": 707842560,
+          "recompile_count": 5,
+          "speedup": 0.624729197589772,
+          "success": true,
+          "unique_graphs": 6
+        }
+      ],
+      "name": "corrector_pos"
+    }
+  ],
+  "created_at": "2026-07-27T13:59:43+08:00",
+  "full_score_model_fullgraph": {
+    "error": "Traceback (most recent call last):\n  File \"/data/dxl/mattergen_v1/research/spg_fastgate/compile_audit.py\", line 258, in fullgraph_audit\n    compiled(*args, **kwargs)\n  File \"/data/dxl/envs/mattergen_py310/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1751, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/data/dxl/envs/mattergen_py310/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1762, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/data/dxl/envs/mattergen_py310/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py\", line 659, in _fn\n    raise e.with_traceback(None) from None\ntorch._dynamo.exc.Unsupported: Data-dependent branching\n  Explanation: Detected data-dependent branching (e.g. `if my_tensor.sum() > 0:`). Dynamo does not support tracing dynamic control flow.\n  Hint: This graph break is fundamental - it is unlikely that Dynamo will ever be able to trace through your code. Consider finding a workaround.\n  Hint: Use `torch.cond` to express dynamic control flow.\n\n  Developer debug context: attempted to jump with TensorVariable()\n\n\nfrom user code:\n   File \"/data/dxl/mattergen_v1/mattergen/adapter.py\", line 79, in forward\n    conditions_adapt_dict[cond_field] = property_embedding.forward(batch=x)\n  File \"/data/dxl/mattergen_v1/mattergen/property_embeddings.py\", line 497, in forward\n    if (\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n\n",
+    "fullgraph_success": false
+  },
+  "max_recompiles_observed": 5,
+  "modes": [
+    "default",
+    "reduce-overhead",
+    "max-autotune-no-cudagraphs"
+  ],
+  "successful_numeric_modes": 0,
+  "torch_version": "2.7.1+cu128",
+  "total_graph_breaks_observed": 36
+}
