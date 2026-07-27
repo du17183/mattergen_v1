@@ -196,8 +196,24 @@ class StaticPeriodicGraphBuilder(torch.nn.Module):
             torch.arange(config.max_raw_edge_capacity, device=device),
         )
         self.register_buffer(
+            "packed_candidate_indices",
+            torch.zeros(
+                config.max_raw_edge_capacity,
+                dtype=torch.long,
+                device=device,
+            ),
+        )
+        self.register_buffer(
             "edge_slot_rank",
             torch.arange(config.max_edge_capacity, device=device),
+        )
+        self.register_buffer(
+            "representative_indices_buffer",
+            torch.zeros(
+                config.half_edge_capacity,
+                dtype=torch.long,
+                device=device,
+            ),
         )
         for atoms in range(config.num_atoms_min, config.num_atoms_max + 1):
             mask = (candidate_target < atoms) & (candidate_source < atoms)
@@ -602,24 +618,14 @@ class StaticPeriodicGraphBuilder(torch.nn.Module):
             * row_width
         )
         selected_flat = (selected_slots + row_offsets).reshape(-1)
-        self.candidate_selected.zero_()
-        self.candidate_selected.scatter_(0, selected_flat, True)
-        self.candidate_selected.logical_and_(self.candidate_valid)
-        raw_count = int(self.candidate_selected.sum())
+        selected_valid = selected_flat[self.candidate_valid[selected_flat]]
+        packed_valid_indices = torch.sort(selected_valid).values
+        raw_count = packed_valid_indices.numel()
         if raw_count > self.config.max_raw_edge_capacity:
             return self._fallback("raw_edge_capacity")
-
-        packing_key = torch.where(
-            self.candidate_selected,
-            self.candidate_rank,
-            self.candidate_rank + self.config.candidate_capacity,
-        )
-        packed_candidate_indices = torch.topk(
-            packing_key,
-            k=self.config.max_raw_edge_capacity,
-            largest=False,
-            sorted=True,
-        ).indices
+        self.packed_candidate_indices.zero_()
+        self.packed_candidate_indices[:raw_count].copy_(packed_valid_indices)
+        packed_candidate_indices = self.packed_candidate_indices
         self.raw_edge_index[0].copy_(
             self.candidate_source[packed_candidate_indices]
         )
@@ -672,17 +678,14 @@ class StaticPeriodicGraphBuilder(torch.nn.Module):
         half_capacity = self.config.half_edge_capacity
         if half_count > half_capacity:
             return self._fallback("edge_capacity")
-        raw_pack_key = torch.where(
-            representative,
-            self.raw_rank,
-            self.raw_rank + self.config.max_raw_edge_capacity,
+        valid_representative_indices = torch.nonzero(
+            representative, as_tuple=False
+        ).flatten()
+        self.representative_indices_buffer.zero_()
+        self.representative_indices_buffer[:half_count].copy_(
+            valid_representative_indices
         )
-        representative_indices = torch.topk(
-            raw_pack_key,
-            k=half_capacity,
-            largest=False,
-            sorted=True,
-        ).indices
+        representative_indices = self.representative_indices_buffer
         first = slice(0, half_capacity)
         second = slice(half_capacity, 2 * half_capacity)
         rep_source = source[representative_indices]
