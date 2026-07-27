@@ -66,7 +66,7 @@ def structure_record(path: Path) -> dict:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--method", choices=("A0", "T1", "T2"), required=True)
+    parser.add_argument("--method", choices=("A0", "T1", "T2", "V2P", "V2C"), required=True)
     parser.add_argument("--seed", type=int, required=True)
     parser.add_argument("--physical-gpu", type=int, required=True)
     parser.add_argument("--output-dir", required=True)
@@ -114,7 +114,7 @@ def main() -> int:
         from mattergen.scripts.generate import main as generate
 
         enabled = args.method != "A0"
-        enable_cell = args.method == "T2"
+        enable_cell = args.method in ("T2", "V2C")
         overrides = [
             f"sampler_partial.cg_tdr_enabled={str(enabled).lower()}",
             f"sampler_partial.cg_tdr_enable_cell={str(enable_cell).lower()}",

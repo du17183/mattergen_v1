@@ -1,0 +1,80 @@
+{
+  "status": "success",
+  "checkpoint": "/data/dxl/results/cg_tdr/phase0/training/checkpoints/best.pt",
+  "checkpoint_step": 100,
+  "training_seed": 3100,
+  "test_seed_start": 30448,
+  "test_seed_end": 30511,
+  "test_structures": 64,
+  "identity_baseline": {
+    "zero_position_loss": 0.0005739084238527425,
+    "model_position_loss": 0.0011953564080613432,
+    "teacher_position_loss": 0.0,
+    "position_loss_improvement": -1.0828347492039185,
+    "zero_cell_loss": 5.249903670012657e-05,
+    "model_cell_loss": 0.0011179027806065278,
+    "teacher_cell_loss": 0.0,
+    "cell_loss_improvement": -20.29377700760427,
+    "zero_weighted_residual_loss": 0.012528149211057382,
+    "model_weighted_residual_loss": 0.04626518377335742,
+    "teacher_weighted_residual_loss": 0.0
+  },
+  "position": {
+    "cosine_mean": -0.044357000983348584,
+    "cosine_median": -0.046256294260115585,
+    "positive_cosine_rate": 0.41935483870967744,
+    "cosine_gt_0_5_rate": 0.04838709677419355,
+    "dot_positive_rate": 0.41935483870967744,
+    "magnitude_ratio_mean": 1.8750182841262995,
+    "magnitude_ratio_median": 1.1550011208204405,
+    "over_prediction_rate": 0.5645161290322581,
+    "under_prediction_rate": 0.43548387096774194,
+    "predicted_rms_mean": 0.0017132596333413535,
+    "teacher_rms_mean": 0.0015102417894541436
+  },
+  "cell": {
+    "cosine_mean": 0.06458160732207835,
+    "cosine_median": 0.22146849041276498,
+    "positive_cosine_rate": 0.5409836065573771,
+    "cosine_gt_0_5_rate": 0.3442622950819672,
+    "dot_positive_rate": 0.5409836065573771,
+    "magnitude_ratio_mean": 30.07125480678547,
+    "magnitude_ratio_median": 23.16472350945003,
+    "over_prediction_rate": 1.0,
+    "under_prediction_rate": 0.0,
+    "predicted_rms_mean": 0.0032936358236570337,
+    "teacher_rms_mean": 0.00020183790237766875
+  },
+  "position_gate": {
+    "mean": 0.9937227433547378,
+    "median": 0.9970218241214752,
+    "std": 0.008384357197599718,
+    "fraction_lt_0_1": 0.0,
+    "fraction_lt_0_5": 0.0,
+    "fraction_gt_0_9": 1.0
+  },
+  "cell_gate": {
+    "mean": 0.9877311484888196,
+    "median": 0.9921843707561493,
+    "std": 0.01319300510654945,
+    "fraction_lt_0_1": 0.0,
+    "fraction_lt_0_5": 0.0,
+    "fraction_gt_0_9": 1.0
+  },
+  "gate_correlations": {
+    "position_gate_utility_pearson": -0.38265250139296425,
+    "position_gate_utility_spearman": -0.2510788814139018,
+    "position_gate_magnitude_pearson": -0.42117389264831195,
+    "position_gate_magnitude_spearman": -0.14860518092984742,
+    "cell_gate_utility_pearson": -0.3203705110342805,
+    "cell_gate_utility_spearman": -0.25810735014683406,
+    "cell_gate_magnitude_pearson": -0.08162169349811552,
+    "cell_gate_magnitude_spearman": 0.1518332398593049
+  },
+  "gate_selectivity_criteria": {
+    "each_gate_std_at_least": 0.05,
+    "each_fraction_gt_0_9_at_most": 0.8,
+    "all_utility_and_magnitude_spearman_positive": true
+  },
+  "GATE_SELECTIVITY_VALID": false
+}
