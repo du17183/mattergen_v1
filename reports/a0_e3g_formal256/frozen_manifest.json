@@ -1,0 +1,55 @@
+{
+  "a0_commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+  "a0_official_metrics": "/data/dxl/reports/formal_256/A0/official_metrics_per_structure.csv",
+  "a0_seed_manifest": "/data/dxl/reports/formal_256/final/formal_seed_manifest.csv",
+  "created_at": "2026-07-28T17:08:55+08:00",
+  "e3g_commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+  "formal_base_commit": "ba2303c284210fdae0a35bb0153a8ef3af45a54c",
+  "formal_branch": "feature/a0-e3g-formal256",
+  "formal_code_commit_at_audit": "353422fd85bcaa759d15c1438730af95c3c4679e",
+  "frozen_validation": {
+    "a0_commit_in_ancestry": false,
+    "a0_frozen_config": {
+      "adaptive_alpha": 0.5,
+      "adaptive_ema": 0.95,
+      "adaptive_epsilon": 1e-06,
+      "base_guidance": 2.0,
+      "corrector_gating_enabled": false,
+      "guidance_max_scale": 5.0,
+      "guidance_min_scale": 0.0
+    },
+    "asset_hashes": {
+      "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+      "/data/dxl/mattergen_v1/configs/q3_e3_pcr_frozen64.json": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a",
+      "/data/dxl/mattergen_v1/research/postgen_fastgate/refiner_eval.py": "3d1d6e38066bb195c893ea8665f284e66261f74a055e1521ed4d6250d469895f",
+      "/data/dxl/mattersim_weights/mattersim-v1.0.0-5M.pth": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5",
+      "/data/dxl/results/postgen_fastgate/q3_refiner/model/q3_gate.joblib": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e"
+    },
+    "compatibility_code_unchanged": true,
+    "e3g_commit_in_ancestry": true,
+    "q3_gate_threshold": 0.5,
+    "q3_training_rows": 64,
+    "q3_training_seed_range": [
+      20000,
+      20063
+    ]
+  },
+  "new_a0_mattersim_runs": 0,
+  "new_e3g_mattersim_runs": 0,
+  "new_mattergen_runs": 0,
+  "q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e",
+  "q3_config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a",
+  "q3_source_sha256": "3d1d6e38066bb195c893ea8665f284e66261f74a055e1521ed4d6250d469895f",
+  "q3_training_seed_range": [
+    20000,
+    20063
+  ],
+  "registered_a0_seed_range": [
+    20000,
+    20255
+  ],
+  "schema_version": 1,
+  "source_data_formally_eligible": false,
+  "source_data_physically_complete": true,
+  "training_or_retuning": false
+}
