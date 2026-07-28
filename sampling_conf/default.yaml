@@ -14,6 +14,32 @@ sampler_partial:
   guidance_adaptive_ema: 0.95
   guidance_adaptive_eps: 1.0e-6
   guidance_trace_path: null
+  cfg_acceleration_enabled: false
+  cfg_warmup_frac: 0.15
+  cfg_convergence_threshold: 0.05
+  cfg_consecutive_stable_steps: 3
+  cfg_calibration_interval: 10
+  cfg_max_reuse_steps: 8
+  cfg_extrapolation_enabled: false
+  cfg_extrapolation_order: 1
+  cfg_fallback_threshold: 0.20
+  cfg_min_progress: 0.0
+  cfg_max_progress: 1.0
+  cfg_trace_path: null
+  cfg_trace_mode: auto
+  cfg_summary_path: null
+  corrector_gating_enabled: false
+  corrector_warmup_frac: 0.15
+  corrector_min_progress: 0.15
+  corrector_max_progress: 0.95
+  corrector_convergence_threshold: 0.05
+  corrector_consecutive_stable_steps: 3
+  corrector_calibration_interval: 10
+  corrector_max_consecutive_skips: 8
+  corrector_fallback_threshold: 0.20
+  corrector_rescue_enabled: true
+  corrector_trace_path: null
+  corrector_summary_path: null
   sample_seed: null
   run_id: null
   remove_conditioning_fn:
