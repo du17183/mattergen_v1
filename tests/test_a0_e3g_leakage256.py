@@ -25,5 +25,15 @@ def test_pipeline_uses_importable_module_name() -> None:
     assert leakage.MODULE_NAME == "research.a0_e3g_leakage256"
 
 
+def test_safety_leakage_overrides_unclear_mean_effect() -> None:
+    state = leakage.classify_leakage(
+        (-0.02, 0.08),
+        -0.16,
+        (-0.21, -0.10),
+        1.0e-4,
+    )
+    assert state == "LEAKAGE_INFLATION_DETECTED"
+
+
 def test_only_e3g_is_scheduled_for_new_relaxation() -> None:
     assert leakage.METHODS == ("A0_E3G",)

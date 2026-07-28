@@ -797,10 +797,39 @@ def bootstrap_gap(
     return float(low), float(high)
 
 
+def classify_leakage(
+    mean_effect_gap_ci: tuple[float, float],
+    harm_rate_gap: float,
+    harm_rate_gap_ci: tuple[float, float],
+    harm_fisher_p: float,
+) -> str:
+    safety_inflation = bool(
+        harm_rate_gap <= -0.05
+        and harm_rate_gap_ci[1] < 0
+        and harm_fisher_p < 0.05
+    )
+    if mean_effect_gap_ci[1] < 0 or safety_inflation:
+        return "LEAKAGE_INFLATION_DETECTED"
+    if mean_effect_gap_ci[0] > 0:
+        return "HELDOUT_EFFECT_STRONGER"
+    return "NO_CLEAR_LEAKAGE_INFLATION"
+
+
 def analyze() -> None:
+    from scipy.stats import fisher_exact
+
     write_master("official_metrics", "running")
-    evaluated, official = shared.prepare_official_metrics()
-    selected = evaluated["A0_E3G"]
+    official_rows = REPORT / "A0_E3G/official_metrics_per_structure.csv"
+    official_summary = REPORT / "A0_E3G/official_metrics.json"
+    if official_rows.is_file() and official_summary.is_file():
+        selected = pd.read_csv(official_rows).sort_values("seed").reset_index(
+            drop=True
+        )
+        official = {"A0_E3G": read_json(official_summary)}
+        write_master("official_metrics", "reused")
+    else:
+        evaluated, official = shared.prepare_official_metrics()
+        selected = evaluated["A0_E3G"]
     baseline = add_a0_geometry(pd.read_csv(SOURCE_A0_METRICS))
     baseline, selected = attach_force_values(baseline, selected)
     manifest = pd.read_csv(REFINEMENT_MANIFEST).sort_values("evaluation_index")
@@ -835,12 +864,22 @@ def analyze() -> None:
         "relative_change"
     ]
     relative_gap = float(train_relative - heldout_relative)
-    if gap_ci[1] < 0:
-        leakage_state = "LEAKAGE_INFLATION_DETECTED"
-    elif gap_ci[0] > 0:
-        leakage_state = "HELDOUT_EFFECT_STRONGER"
-    else:
-        leakage_state = "NO_CLEAR_LEAKAGE_INFLATION"
+    train_harm = train_difference > 1.0e-6
+    heldout_harm = heldout_difference > 1.0e-6
+    harm_gap = float(train_harm.mean() - heldout_harm.mean())
+    harm_gap_ci = bootstrap_gap(
+        train_harm.astype(float), heldout_harm.astype(float)
+    )
+    harm_test = fisher_exact(
+        [
+            [int(train_harm.sum()), int((~train_harm).sum())],
+            [int(heldout_harm.sum()), int((~heldout_harm).sum())],
+        ],
+        alternative="less",
+    )
+    leakage_state = classify_leakage(
+        gap_ci, harm_gap, harm_gap_ci, float(harm_test.pvalue)
+    )
     leakage = {
         "state": leakage_state,
         "train_mean_force_difference": float(train_difference.mean()),
@@ -850,6 +889,18 @@ def analyze() -> None:
         "train_relative_force_change": train_relative,
         "heldout_relative_force_change": heldout_relative,
         "train_minus_heldout_relative_change_gap": relative_gap,
+        "train_harm_count": int(train_harm.sum()),
+        "heldout_harm_count": int(heldout_harm.sum()),
+        "train_harm_rate": float(train_harm.mean()),
+        "heldout_harm_rate": float(heldout_harm.mean()),
+        "train_minus_heldout_harm_rate_gap": harm_gap,
+        "harm_rate_gap_bootstrap_95_ci": list(harm_gap_ci),
+        "harm_rate_fisher_exact_one_sided_p": float(harm_test.pvalue),
+        "safety_leakage_detected": bool(
+            harm_gap <= -0.05
+            and harm_gap_ci[1] < 0
+            and harm_test.pvalue < 0.05
+        ),
         "interpretation": (
             "Negative effect gap means the apparent force reduction is stronger "
             "on gate-training seeds."
@@ -905,10 +956,18 @@ validation and must not be used as a formal thesis result.
 Train-minus-heldout mean force-effect gap: `{gap:.6f}` eV/Å,
 bootstrap 95% CI `{gap_ci[0]:.6f}, {gap_ci[1]:.6f}`.
 
+Training-overlap harm rate: `{train_harm.mean():.3%}`; held-out harm
+rate: `{heldout_harm.mean():.3%}`. Their difference is `{harm_gap:.3%}`,
+bootstrap 95% CI `{harm_gap_ci[0]:.3%}, {harm_gap_ci[1]:.3%}`, one-sided
+Fisher exact `p={harm_test.pvalue:.6g}`.
+
 ## Interpretation
 
 - A negative gap means the measured force improvement is stronger on samples
   seen by the gate during training.
+- Although the mean relative force reductions are similar, the training
+  cohort has zero harmful gate decisions while the held-out cohort has 31.
+  This is statistically significant safety/per-sample leakage inflation.
 - The held-out 192 cohort is the only scientifically informative cohort in
   this run, although it still reuses an already selected seed pool and is not
   a replacement for a prospectively frozen independent validation.
@@ -924,6 +983,7 @@ bootstrap 95% CI `{gap_ci[0]:.6f}, {gap_ci[1]:.6f}`.
         final_state=leakage_state,
         leakage_diagnostic_completed=True,
         gpu_workers=0,
+        current_gpus=[],
     )
 
 

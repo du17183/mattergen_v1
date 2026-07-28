@@ -1,0 +1,42 @@
+{
+  "a0_generation_rerun": false,
+  "a0_generation_reused": 256,
+  "a0_generation_source": "/data/dxl/results/formal_256/generation/A0",
+  "a0_metrics_source": "/data/dxl/reports/formal_256/A0/official_metrics_per_structure.csv",
+  "a0_official_metrics_reused": 256,
+  "a0_relaxation_rerun": false,
+  "a0_relaxation_reused": 256,
+  "a0_relaxation_source": "/data/dxl/results/formal_256/relaxed/A0",
+  "backtrack_max": 3,
+  "created_at": "2026-07-28T17:33:46+08:00",
+  "dft_verified": false,
+  "formal_claim_allowed": false,
+  "frozen_source_sha256": "3d1d6e38066bb195c893ea8665f284e66261f74a055e1521ed4d6250d469895f",
+  "gate_threshold": 0.5,
+  "heldout_count": 192,
+  "heldout_seeds": [
+    20064,
+    20255
+  ],
+  "independent_validation": false,
+  "matterSim_checkpoint_sha256": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5",
+  "maximum_cumulative_displacement_angstrom": 0.1,
+  "mixed_256_contaminated": true,
+  "per_step_radius_angstrom": 0.02,
+  "position_eta": 0.01,
+  "property_target_verified": false,
+  "purpose": "training-test leakage effect diagnostic",
+  "q3_checkpoint": "/data/dxl/results/postgen_fastgate/q3_refiner/model/q3_gate.joblib",
+  "q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e",
+  "q3_config": "/data/dxl/mattergen_v1/configs/q3_e3_pcr_frozen64.json",
+  "q3_config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a",
+  "q3_training_overlap_count": 64,
+  "refinement_steps": 5,
+  "schema_version": 1,
+  "stability_source": "MatterSim-5M surrogate",
+  "training_or_retuning": false,
+  "training_overlap_seeds": [
+    20000,
+    20063
+  ]
+}
