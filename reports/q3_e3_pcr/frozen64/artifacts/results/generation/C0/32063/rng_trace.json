@@ -1,0 +1,9 @@
+{
+  "python": "bc23423364e7b1fc4a5bbc26cced0bab3abc9e5174732b00e6aaba43cac64280",
+  "numpy": "c1d30810c1cebfb720592dc3cf3bd62bc3fd497257c1b9815e7662cff5be8533",
+  "torch_cpu": "443a85876ce433707409ef56fe6be0a6ef22cd9e47139e4e8434c5f123ccd508",
+  "torch_cuda": [
+    "f17ebc4ce9ce630547ef14c1a8acdeea0bc377ef97983b0aa6155d7a4279e781"
+  ],
+  "combined": "e89cd0522fadb798a3a08be3038dcf7d09f73ccbaf65e7311d660cff122e78c9"
+}

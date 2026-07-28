@@ -1,0 +1,78 @@
+{
+  "base_branch": "feature/postgen-quality-modules-fastgate",
+  "base_commit": "b65f42a8792004c7c820e59fa4413e1310e06143",
+  "config_path": "/data/dxl/mattergen_v1/configs/q3_e3_pcr_frozen64.json",
+  "config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a",
+  "created_at": "2026-07-28T13:45:31+08:00",
+  "evaluation_base_commit": "b65f42a8792004c7c820e59fa4413e1310e06143",
+  "evaluation_script_path": "/data/dxl/mattergen_v1/research/q3_frozen64.py",
+  "evaluation_seeds": [
+    32000,
+    32063
+  ],
+  "fallback_conditions": [
+    "learned gate probability below 0.5",
+    "non-finite proposal or CHGNet energy",
+    "minimum distance below 0.5 angstrom",
+    "new CHGNet energy above prior energy",
+    "all three backtracking scales rejected"
+  ],
+  "frozen_branch": "feature/q3-e3-pcr-frozen64",
+  "frozen_files_match_base_commit": true,
+  "frozen_source_path": "/data/dxl/mattergen_v1/research/postgen_fastgate/refiner_eval.py",
+  "frozen_source_sha256": "3d1d6e38066bb195c893ea8665f284e66261f74a055e1521ed4d6250d469895f",
+  "gate_threshold": 0.5,
+  "hashes": {
+    "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+    "/data/dxl/mattersim_weights/mattersim-v1.0.0-5M.pth": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5",
+    "/data/dxl/results/postgen_fastgate/q3_refiner/model/q3_gate.joblib": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e"
+  },
+  "input_features": [
+    "num_atoms",
+    "volume_per_atom",
+    "mass_density_amu_ang3",
+    "minimum_distance_angstrom",
+    "atomic_number_mean",
+    "atomic_number_std",
+    "cell_condition",
+    "chgnet_energy_per_atom_ev",
+    "chgnet_force_rms_ev_ang",
+    "chgnet_max_force_ev_ang",
+    "chgnet_force_mean_ev_ang",
+    "chgnet_stress_rms_gpa",
+    "chgnet_stress_max_abs_gpa",
+    "chgnet_mag_density"
+  ],
+  "mattergen_checkpoint": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt",
+  "mattergen_checkpoint_sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+  "mattersim_checkpoint": "/data/dxl/mattersim_weights/mattersim-v1.0.0-5M.pth",
+  "mattersim_checkpoint_sha256": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5",
+  "network_seed": 20260728,
+  "q3_checkpoint": "/data/dxl/results/postgen_fastgate/q3_refiner/model/q3_gate.joblib",
+  "q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e",
+  "refinement": {
+    "atomic_numbers_modified": false,
+    "backtrack_max": 3,
+    "cell_modified": false,
+    "maximum_cumulative_displacement_angstrom": 0.1,
+    "minimum_distance_angstrom": 0.5,
+    "per_step_radius_angstrom": 0.02,
+    "position_eta": 0.01,
+    "steps": 5
+  },
+  "schema_version": 1,
+  "seed_audit": {
+    "development_33000_33127_intersection": [],
+    "known_cg_tdr_intersection": [],
+    "manual_repository_audit": "no seed-field or path conflicts",
+    "training_intersection": []
+  },
+  "seed_count": 64,
+  "trainable_parameters": 129,
+  "training_data_split": "frozen 64 A0 historical outputs",
+  "training_seed_range": [
+    20000,
+    20063
+  ],
+  "tuning_after_freeze": false
+}

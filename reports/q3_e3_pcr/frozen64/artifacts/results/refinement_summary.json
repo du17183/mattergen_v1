@@ -1,0 +1,34 @@
+{
+  "always_on_instrumentation": {
+    "clipped_atoms": 5,
+    "proposal_atoms": 3404,
+    "proposal_calls": 321
+  },
+  "always_on_refinement_total_seconds": 4.471360229072161,
+  "atomic_numbers_modified": 0,
+  "backtracking_mean": 0.0,
+  "cell_modified": 0,
+  "created_at": "2026-07-28T13:53:17+08:00",
+  "fallback_mean": 0.0,
+  "gate_forward_seconds_per_structure": 6.228874553926289e-06,
+  "gate_forward_total_seconds": 0.0003986479714512825,
+  "gate_on_count": 42,
+  "gate_on_rate": 0.65625,
+  "gate_rejected_exact_fallback_count": 22,
+  "gate_threshold": 0.5,
+  "learned_clipping_rate": 0.002012072434607646,
+  "learned_instrumentation": {
+    "clipped_atoms": 5,
+    "proposal_atoms": 2485,
+    "proposal_calls": 210
+  },
+  "maximum_displacement_angstrom": 0.09454990533292935,
+  "mean_displacement_angstrom": 0.00945975917480142,
+  "median_displacement_angstrom": 0.0037496763538506115,
+  "peak_vram_bytes": 7597894656,
+  "q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e",
+  "q3_parameter_count": 129,
+  "q3_refinement_seconds_per_structure": 0.049430000688516884,
+  "q3_refinement_total_seconds": 3.1635200440650806,
+  "schema_version": 1
+}

@@ -1,0 +1,1 @@
+/data/dxl/envs/mattergen_py310/bin/python /data/dxl/tools/guidance_stage7/run_sample.py --output-dir /data/dxl/results/q3_e3_pcr/frozen64/generation/C0/32055 --seed 32055 --physical-gpu 7 --method constant --trace off
