@@ -29,3 +29,4 @@
 {"gate_mechanism_formal_supported": true, "stage": "gate_mechanism_analysis", "status": "success", "time": "2026-07-28T15:21:49+08:00"}
 {"final_method": "LEARNED_GATED_E3_PCR", "final_report": "/data/dxl/reports/q3_e3_pcr/formal256/final_report.md", "final_state": "E3_G_FORMAL_CONFIRMED", "stage": "formal_decision", "status": "success", "time": "2026-07-28T15:21:49+08:00"}
 {"final_state": "E3_G_FORMAL_CONFIRMED", "gpu_workers": 0, "stage": "github_archive", "status": "pending", "time": "2026-07-28T15:21:50+08:00"}
+{"draft_pr": "https://github.com/du17183/mattergen_v1/pull/13", "final_method": "LEARNED_GATED_E3_PCR", "final_state": "E3_G_FORMAL_CONFIRMED", "github_branch": "feature/q3-e3-pcr-formal256", "github_commit": "bef05db9ed22446f3fcd799511335c2341a8c555", "gpu_workers": 0, "stage": "stop_for_review", "status": "success", "time": "2026-07-28T15:26:47+08:00"}
