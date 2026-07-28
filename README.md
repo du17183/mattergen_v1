@@ -4,6 +4,25 @@
     <img src="assets/MatterGenlogo_.png" alt="MatterGen logo" width="600"/>
 </p>
 </h1>
+<!-- BEGIN THESIS EXPERIMENT BRANCH NOTICE -->
+## 本分支的论文实验说明
+
+**实验状态：`A0_E3G_INDEPENDENT64_GO=True`**
+
+- 方法：Adaptive CFG A0 + Learned-Gated E3-PCR。
+- 完全独立 seeds：50000–50063，共 64 个预注册样本；未训练、调参或匿名化 seeds。
+- 冻结实验代码：`22e1db74a59476562f1f746cd4210b9420cbdf05`。
+- 主要结果：预松弛最大力均值降低 19.02%。
+- 论文用途：两个创新点组合效果的第二次完全独立复现。
+
+- 完整分支说明：[EXPERIMENT_CARD.md](EXPERIMENT_CARD.md)
+- 统一论文归档：[thesis_archive](https://github.com/du17183/mattergen_v1/tree/archive/thesis-analysis-package-v1/thesis_archive)
+- 归档 Draft PR：[PR #18](https://github.com/du17183/mattergen_v1/pull/18)
+- 评价边界：`STABILITY_SOURCE=MatterSim-5M surrogate`；`DFT_VERIFIED=False`；`PROPERTY_TARGET_VERIFIED=False`。
+
+> 本节仅说明当前实验分支；下方保留 MatterGen 原项目 README、安装和使用文档。
+<!-- END THESIS EXPERIMENT BRANCH NOTICE -->
+
 
 <h4 align="center">
 
