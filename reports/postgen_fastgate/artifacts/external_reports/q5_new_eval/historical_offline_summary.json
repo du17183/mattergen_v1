@@ -1,0 +1,132 @@
+{
+  "frozen_parameters": {
+    "composition_margin": 0.05,
+    "ehull_tolerance": 0.05,
+    "ehull_weight": 2.0,
+    "ensemble_std_multiplier": 1.0,
+    "novel_unique_margin": 0.1,
+    "nus_weight": 0.75,
+    "stable_weight": 0.25,
+    "target_hit_radius": 0.02,
+    "target_mag_density": 0.1,
+    "target_weight": 50.0
+  },
+  "new_blind_labels_used": false,
+  "schema_version": 1,
+  "test": {
+    "go": true,
+    "positive_gate": true,
+    "rows": 32,
+    "safety_gate": true,
+    "split": "test",
+    "summary": {
+      "composition_validity": {
+        "mean": 0.057875,
+        "median": 0.0,
+        "q025": -0.125,
+        "q975": 0.25
+      },
+      "ehull": {
+        "mean": -0.01588827829090473,
+        "median": -0.015087400172107732,
+        "q025": -0.06931961704720623,
+        "q975": 0.03356339426015452
+      },
+      "nonbaseline_selection_rate": {
+        "mean": 0.539,
+        "median": 0.5,
+        "q025": 0.25,
+        "q975": 0.875
+      },
+      "novel": {
+        "mean": 0.0385,
+        "median": 0.0,
+        "q025": -0.25,
+        "q975": 0.375
+      },
+      "nus": {
+        "mean": 0.196375,
+        "median": 0.25,
+        "q025": 0.0,
+        "q975": 0.375
+      },
+      "stable": {
+        "mean": 0.180375,
+        "median": 0.125,
+        "q025": -0.125,
+        "q975": 0.5
+      },
+      "target_hit_0_02": {
+        "mean": 0.285625,
+        "median": 0.25,
+        "q025": 0.0,
+        "q975": 0.625
+      },
+      "unique": {
+        "mean": 0.078375,
+        "median": 0.125,
+        "q025": -0.125,
+        "q975": 0.25
+      }
+    },
+    "trials": 1000
+  },
+  "validation": {
+    "go": true,
+    "positive_gate": true,
+    "rows": 32,
+    "safety_gate": true,
+    "split": "validation",
+    "summary": {
+      "composition_validity": {
+        "mean": 0.02175,
+        "median": 0.0,
+        "q025": -0.25,
+        "q975": 0.375
+      },
+      "ehull": {
+        "mean": -0.03137530302586112,
+        "median": -0.03029941536719241,
+        "q025": -0.09622426565568024,
+        "q975": 0.028971541267455724
+      },
+      "nonbaseline_selection_rate": {
+        "mean": 0.57,
+        "median": 0.625,
+        "q025": 0.25,
+        "q975": 0.875
+      },
+      "novel": {
+        "mean": 0.0365,
+        "median": 0.0,
+        "q025": -0.25,
+        "q975": 0.375
+      },
+      "nus": {
+        "mean": 0.118375,
+        "median": 0.125,
+        "q025": -0.125,
+        "q975": 0.375
+      },
+      "stable": {
+        "mean": 0.120375,
+        "median": 0.125,
+        "q025": -0.125,
+        "q975": 0.375
+      },
+      "target_hit_0_02": {
+        "mean": 0.295875,
+        "median": 0.25,
+        "q025": 0.0,
+        "q975": 0.625
+      },
+      "unique": {
+        "mean": 0.00275,
+        "median": 0.0,
+        "q025": -0.125,
+        "q975": 0.125
+      }
+    },
+    "trials": 1000
+  }
+}

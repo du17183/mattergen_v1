@@ -1,0 +1,54 @@
+{
+  "rng_state_hash": "2bd77960868cdf736867f21fd168e31ac45d40c6e3b8762fa3a11179a462a814",
+  "initial_atomic_numbers_hash": "7c0f3c0de6f9593cb69375415525ac4e9f79587073810bc408d46c083409a9eb",
+  "initial_pos_hash": "ddcf4f2e22d70af52cfda38f41824fa2277d5444de4373f2d69aebdd1eaca820",
+  "initial_cell_hash": "1acb21db74f3de7d1d2b6081ad46e5a2038a41e51ea634811b6f24f1e10ac5c6",
+  "initial_state_hash": "3c062328bae93affd10b05588901984e356b1e79015c375d034e3b3beda92f2a",
+  "final_structure_hash": "02cafb55eaef0b8f5f4b33b94897a622edf60cf168f71278d0a61e855612366d",
+  "extxyz_sha256": "4e58a64ae0cdd0c0701b0ceb1de505dfae9b42e4cc2d7a231c77d1e0539a13dc",
+  "atomic_numbers": [
+    26,
+    77,
+    27,
+    77
+  ],
+  "positions": [
+    [
+      1.61296092,
+      2.37371309,
+      1.93295051
+    ],
+    [
+      0.02832263,
+      0.37304415,
+      1.22416232
+    ],
+    [
+      1.93952452,
+      0.36973944,
+      3.13897782
+    ],
+    [
+      0.93590906,
+      2.37209205,
+      4.52884519
+    ]
+  ],
+  "cell": [
+    [
+      2.580371618270874,
+      0.0,
+      -0.7033051252365112
+    ],
+    [
+      0.004989351116097281,
+      4.00127815073622,
+      0.000980039476417005
+    ],
+    [
+      0.0,
+      0.0,
+      5.076159477233887
+    ]
+  ]
+}

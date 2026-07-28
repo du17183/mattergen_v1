@@ -1,0 +1,60 @@
+{
+  "Q3_OFFLINE_GO": true,
+  "chgnet_trainable": false,
+  "created_at": "2026-07-28T12:50:30+08:00",
+  "eight_fold_out_of_fold": {
+    "accuracy": 0.625,
+    "apply_rate": 0.703125,
+    "auroc": 0.6190476190476191,
+    "balanced_accuracy": 0.5625692137320044,
+    "composition_change": 0.0,
+    "force_improvement_rate": 0.5,
+    "force_relative_change": -0.21359702786825774,
+    "force_worsening_rate": 0.203125,
+    "novel_change": 0.0,
+    "nus_change": 0.0,
+    "stable_change": 0.0,
+    "structure_change": 0.0,
+    "unique_change": 0.0
+  },
+  "feature_columns": [
+    "num_atoms",
+    "volume_per_atom",
+    "mass_density_amu_ang3",
+    "minimum_distance_angstrom",
+    "atomic_number_mean",
+    "atomic_number_std",
+    "cell_condition",
+    "chgnet_energy_per_atom_ev",
+    "chgnet_force_rms_ev_ang",
+    "chgnet_max_force_ev_ang",
+    "chgnet_force_mean_ev_ang",
+    "chgnet_stress_rms_gpa",
+    "chgnet_stress_max_abs_gpa",
+    "chgnet_mag_density"
+  ],
+  "mattergen_backbone_trainable": false,
+  "model_path": "/data/dxl/results/postgen_fastgate/q3_refiner/model/q3_gate.joblib",
+  "model_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e",
+  "network": {
+    "alpha": 0.1,
+    "hidden_dims": [
+      8
+    ],
+    "input_dim": 14,
+    "output_dim": 1,
+    "random_seed": 20260728,
+    "threshold": 0.5,
+    "trainable_parameters": 129,
+    "type": "StandardScaler + MLPClassifier"
+  },
+  "positive_gate": true,
+  "safety_gate": true,
+  "schema_version": 1,
+  "training_generator": "A0 historical outputs",
+  "training_rows": 64,
+  "training_seed_range": [
+    20000,
+    20063
+  ]
+}

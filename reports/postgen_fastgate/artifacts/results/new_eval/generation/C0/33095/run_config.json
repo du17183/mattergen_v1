@@ -1,0 +1,30 @@
+{
+  "method": "constant",
+  "seed": 33095,
+  "physical_gpu": 7,
+  "checkpoint_root": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density",
+  "checkpoint_sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+  "code_commit": "9bc6747a3ddfd26db6d931bcdb6df5d299844544",
+  "target": {
+    "dft_mag_density": 0.1
+  },
+  "base_guidance": 2.0,
+  "batch_size": 1,
+  "sampling_steps": 1000,
+  "strict_deterministic": true,
+  "guidance_trace": false,
+  "record_trajectories": false,
+  "cpu_threads": {
+    "intra_op": 2,
+    "inter_op": 1
+  },
+  "guidance_parameters": {
+    "warmup_frac": 0.1,
+    "decay_frac": 0.1,
+    "min_scale": 0.0,
+    "max_scale": 5.0,
+    "adaptive_alpha": 0.5,
+    "adaptive_ema": 0.95,
+    "adaptive_eps": 1e-06
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "project": "Frozen MatterGen post-generation module fast-gate",
+  "base_branch": "main",
+  "base_commit": "9bc6747a3ddfd26db6d931bcdb6df5d299844544",
+  "generator": {
+    "method": "C0",
+    "description": "Original dft_mag_density MatterGen with constant CFG and full Predictor/Corrector",
+    "sampling_trajectory_modified": false,
+    "backbone_trainable": false
+  },
+  "candidates": {
+    "Q1_UQ_PQR": "Uncertainty-aware pairwise quality reranker",
+    "Q2_RFR": "Relaxability and failure-risk router",
+    "Q3_E3_PCR": "Equivariant post-generation crystal refiner",
+    "Q4_CPRC": "Cross-potential residual calibrator",
+    "Q5_CQPS": "Condition-quality Pareto selector",
+    "Q6_NS_SETRANK": "Novelty-stability set ranker"
+  },
+  "historical_seed_split": {
+    "train": [20000, 20191],
+    "validation": [20192, 20223],
+    "test": [20224, 20255],
+    "rule": "All methods sharing a seed remain in the same split."
+  },
+  "historical_oracle": {
+    "source": "/data/dxl/reports/formal_256/C0/official_metrics_per_structure.csv",
+    "pool_size": 4,
+    "random_grouping_trials": 1000,
+    "random_seed": 20260728
+  },
+  "new_evaluation": {
+    "seeds": [33000, 33127],
+    "pool_size": 4,
+    "pool_count": 32,
+    "generated_trajectories": 128,
+    "baseline": "first member of each frozen pool",
+    "methods_share_candidate_pool": true
+  },
+  "safety_gates": {
+    "generation_success": 1.0,
+    "structure_validity_drop_max": 0.0,
+    "composition_validity_drop_max": 0.03125,
+    "stable_drop_max": 0.03125,
+    "nus_drop_max": 0.03125,
+    "novel_drop_max": 0.02,
+    "unique_drop_max": 0.02,
+    "relaxation_failure_increase_max": 0.0
+  },
+  "positive_gates_any": {
+    "ehull_reduction_ev_atom_min": 0.005,
+    "stable_increase_min": 0.03125,
+    "nus_increase_min": 0.03125,
+    "rmsd_relative_reduction_min": 0.10,
+    "pre_relax_max_force_relative_reduction_min": 0.10,
+    "target_hit_0_02_increase_min": 0.10
+  },
+  "termination": {
+    "success": "At least one candidate passes safety and a positive gate on new data.",
+    "no_go": "All six candidates fail their frozen gate.",
+    "intermediate_stop_allowed": false
+  }
+}
