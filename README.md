@@ -1,27 +1,77 @@
+<!-- BEGIN THESIS EXPERIMENT BRANCH NOTICE -->
+# MatterGen 学位论文项目：进度与分支说明
+
+## 当前分支
+
+> **分支：`feature/q3-e3-pcr-formal256`**<br>
+> **角色：创新点二 Learned-Gated E3-PCR 的独立正式验证分支**<br>
+> **状态：`FINAL_STATE=E3_G_FORMAL_CONFIRMED`**
+
+- 冻结代码/审计 commit：`0275cbf08ed3c6321cea7d06f7a3a8edb83b7483`
+- 当前结果：正式 seeds 40000–40255（256），与 Q3 训练 seeds 无交集；E3-G 最大力均值相对 C0 降低 23.28%，harm rate 18.359%。
+- 论文用途：可用于创新点二独立正式主结论。
+
+## 项目整体进度
+
+| 工作项 | 最终状态 | 主要证据与结果 |
+|---|---|---|
+| 创新点一：Multi-field Residual-driven Online Adaptive CFG | **正式成立** | 256-seed 正式验证；`FORMAL_INNOVATION1_CONFIRMED=True` |
+| 创新点二：Learned-Gated E3-PCR | **正式成立** | 256-seed 独立正式验证；最大力相对 C0 降低 23.28% |
+| 两创新点组合验证 1 | **GO** | 41000–41063；A0+E3-G 最大力降低 27.10% |
+| 两创新点组合验证 2 | **GO / 完全独立复现** | 50000–50063；A0+E3-G 最大力降低 19.02% |
+| 训练重叠诊断 | **已完成，发现安全性乐观偏差** | overlap harm 0/64，held-out harm 31/192；Mixed 256 无正式资格 |
+| 旧 A0 256 批次复用审计 | **SOURCE_DATA_INCOMPLETE** | 64 个 seeds 与 Gate 训练重叠；没有效果估计，不是方法 No-Go |
+| 论文分析归档 | **THESIS_ARCHIVE_COMPLETED** | 181 个归档文件、逐 seed 数据、统计/表格/绘图脚本；Draft PR #18 |
+| 历史候选路线 | **已完成 Go/No-Go 筛选** | No-Go 路线保留作过程与负面消融，不属于最终两个创新点 |
+
+## 两个创新点的关系
+
+创新点一在项目中是**共享基础模块（common/shared base）**，不是指 GitHub 仓库是公开的；本仓库仍为 **Private**。
+
+```text
+MatterGen 条件生成
+  └─ 创新点一：Adaptive CFG（采样阶段，形成 A0）
+       └─ 创新点二：Learned-Gated E3-PCR（生成后位置精修，形成 A0+E3-G）
+            └─ MatterSim-5M surrogate 评价
+```
+
+- `main` 已包含 Adaptive CFG 的稳定实现，作为后续组合实验的共享集成基线。
+- 创新点一的正式科学溯源仍以 `feature/convergence-aware-corrector-gating` 和冻结 commit `5de00419...` 为准。
+- 创新点二可以独立作用于 C0，也可以串联在 A0 后；正式 256 验证的是 C0/E3-A/E3-G，两个 64-seed 分支验证的是 A0+E3-G。
+- “共享基础”表示代码和实验流程复用，不表示所有分支拥有相同 Git commit 祖先，也不表示仓库公开。
+
+## 分支与论文用途地图
+
+| 分支 | 角色 | 论文使用方式 |
+|---|---|---|
+| `main` | 稳定集成基线，包含 Adaptive CFG 实现 | 日常开发与组合代码基础；不是全部正式报告的唯一来源 |
+| `feature/convergence-aware-corrector-gating` | 创新点一正式来源 | 创新点一主结论 |
+| `feature/q3-e3-pcr-formal256` | 创新点二正式 256 | 创新点二主结论 |
+| `feature/a0-e3g-compatibility64` | A0+E3-G 独立组合验证 1 | 组合兼容性证据 |
+| `feature/a0-e3g-independent64` | A0+E3-G 完全独立复现 2 | 组合复现证据 |
+| `experiment/a0-e3g-leakage-diagnostic256` | 训练重叠诊断 | 仅诊断/补充，不是独立正式结果 |
+| `feature/a0-e3g-formal256` | 旧数据复用资格审计 | 解释为何停止；无效果估计 |
+| `archive/thesis-analysis-package-v1` | 统一论文归档 | README、逐 seed 数据、配置、统计脚本、表格和基础图 |
+
+## 统一归档与结论边界
+
+- 当前分支完整实验卡：[EXPERIMENT_CARD.md](EXPERIMENT_CARD.md)
+- 统一论文归档：[thesis_archive](https://github.com/du17183/mattergen_v1/tree/archive/thesis-analysis-package-v1/thesis_archive)
+- 归档 Draft PR：[PR #18](https://github.com/du17183/mattergen_v1/pull/18)
+- 固定边界：`STABILITY_SOURCE=MatterSim-5M surrogate`；`DFT_VERIFIED=False`；`PROPERTY_TARGET_VERIFIED=False`。
+- Q3 training-overlap 与 Mixed 256 不得用于独立正式结论；所有 seeds 保留真实编号，没有匿名化。
+- 下方“新服务器重建与研究进度”记录的是 2026-07-23 的历史快照，不代表当前最终状态；当前状态以本页顶部总表和统一归档为准。
+
+> 下方内容是 MatterGen 原项目 README、安装和使用文档，保持不变。
+<!-- END THESIS EXPERIMENT BRANCH NOTICE -->
+
+---
 
 <h1>
 <p align="center">
     <img src="assets/MatterGenlogo_.png" alt="MatterGen logo" width="600"/>
 </p>
 </h1>
-<!-- BEGIN THESIS EXPERIMENT BRANCH NOTICE -->
-## 本分支的论文实验说明
-
-**实验状态：`FINAL_STATE=E3_G_FORMAL_CONFIRMED`**
-
-- 方法：Learned-Gated E3-PCR。
-- 正式 seeds：40000–40255，共 256 个独立样本；与 Q3 训练 seeds 20000–20063 交集为 0。
-- 冻结实验代码：`0275cbf08ed3c6321cea7d06f7a3a8edb83b7483`。
-- 主要结果：E3-G 预松弛最大力均值相对 C0 降低 23.28%，harm rate 为 18.359%。
-- 论文用途：创新点二独立正式主结论。
-
-- 完整分支说明：[EXPERIMENT_CARD.md](EXPERIMENT_CARD.md)
-- 统一论文归档：[thesis_archive](https://github.com/du17183/mattergen_v1/tree/archive/thesis-analysis-package-v1/thesis_archive)
-- 归档 Draft PR：[PR #18](https://github.com/du17183/mattergen_v1/pull/18)
-- 评价边界：`STABILITY_SOURCE=MatterSim-5M surrogate`；`DFT_VERIFIED=False`；`PROPERTY_TARGET_VERIFIED=False`。
-
-> 本节仅说明当前实验分支；下方保留 MatterGen 原项目 README、安装和使用文档。
-<!-- END THESIS EXPERIMENT BRANCH NOTICE -->
 
 
 <h4 align="center">
