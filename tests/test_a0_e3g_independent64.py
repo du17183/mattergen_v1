@@ -6,6 +6,15 @@ from ase import Atoms
 from research import a0_e3g_independent64 as compat
 
 
+def test_force_outcome_counts_treats_gpu_noise_as_tie() -> None:
+    delta = np.asarray([-2.0e-6, -5.7e-7, 0.0, 5.7e-7, 2.0e-6])
+    assert compat.force_outcome_counts(delta) == {
+        "wins": 1,
+        "ties": 3,
+        "losses": 1,
+    }
+
+
 def test_seed_contract() -> None:
     assert compat.SEEDS == tuple(range(50000, 50064))
     assert compat.METHODS == ("A0", "A0_E3G")

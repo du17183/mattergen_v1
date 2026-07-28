@@ -1,0 +1,15 @@
+metric,type,paired_count,baseline_mean,selected_mean,baseline_median,selected_median,mean_difference,median_difference,bootstrap_95_ci_low,bootstrap_95_ci_high,test,p_value,wins,ties,losses,comparison
+pre_relax_max_force_ev_ang,continuous,64,0.26527988196406616,0.21482998015936608,0.1663651630022272,0.1475314680545636,-0.05044990180470007,-0.0007735449319139004,-0.10221274022731316,-0.01069625841941559,Wilcoxon signed-rank,0.000587376523879349,46,0,18,A0+E3-G vs A0
+relaxation_steps,continuous,64,37.765625,37.0625,20.5,19.0,-0.703125,0.0,-2.265625,0.765625,Wilcoxon signed-rank,0.24111832628130758,16,38,10,A0+E3-G vs A0
+relaxation_rmsd,continuous,64,0.0775783977021853,0.07629309817339794,0.012670912316494701,0.01201603733236925,-0.0012852995287873684,-7.014510494745001e-05,-0.0021070080394817556,-0.000516728684702059,Wilcoxon signed-rank,0.0006481359698000127,44,0,20,A0+E3-G vs A0
+relaxation_elapsed_seconds,continuous,64,1.0862119299272308,1.0246330101690546,0.5963491940055974,0.5454300799756311,-0.0615789197581762,-0.004025584494229434,-0.13106135364578222,-0.0011187377580427328,Wilcoxon signed-rank,0.2816195602751511,37,0,27,A0+E3-G vs A0
+energy_above_hull_per_atom_common_coverage,continuous,64,0.13996250888708173,0.1399626240268793,0.0943341244732129,0.09434173250544026,1.1513979757392095e-07,-2.348158090539898e-07,-1.2992831180507656e-05,1.468988096320505e-05,Wilcoxon signed-rank,0.18868534293473405,32,11,21,A0+E3-G vs A0
+force_converged,binary,64,1.0,1.0,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,64,0,A0+E3-G vs A0
+stable,binary,64,0.546875,0.546875,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,64,0,A0+E3-G vs A0
+nus,binary,64,0.328125,0.328125,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,64,0,A0+E3-G vs A0
+structure_validity,binary,64,1.0,1.0,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,64,0,A0+E3-G vs A0
+composition_validity,binary,64,0.84375,0.84375,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,64,0,A0+E3-G vs A0
+novel,binary,64,0.671875,0.671875,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,64,0,A0+E3-G vs A0
+unique,binary,64,1.0,1.0,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,64,0,A0+E3-G vs A0
+pre_relax_short_bond,binary,64,0.0,0.0,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,64,0,A0+E3-G vs A0
+pre_relax_abnormal_cell,binary,64,0.0,0.0,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,64,0,A0+E3-G vs A0

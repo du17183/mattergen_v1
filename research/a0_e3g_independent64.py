@@ -158,6 +158,35 @@ def write_master(stage: str, status: str, **values: Any) -> None:
             "e3g_formal_commit": E3G_FORMAL_COMMIT,
             "independent_branch": BRANCH,
             "evaluation_seeds": [SEEDS[0], SEEDS[-1]],
+        "independence": {
+            "seed_audit_passed": read_json(REPORT / "seed_audit.json")["passed"],
+            "known_range_intersections": read_json(
+                REPORT / "seed_audit.json"
+            )["known_range_intersections"],
+            "training_or_retuning": False,
+            "leaked_results_used": False,
+            "seed_anonymization_used": False,
+        },
+        "independence": {
+            "seed_audit_passed": read_json(REPORT / "seed_audit.json")["passed"],
+            "known_range_intersections": read_json(
+                REPORT / "seed_audit.json"
+            )["known_range_intersections"],
+            "training_or_retuning": False,
+            "leaked_results_used": False,
+            "seed_anonymization_used": False,
+        },
+        "independence": {
+            "seed_audit_passed": read_json(REPORT / "seed_audit.json")[
+                "passed"
+            ],
+            "known_range_intersections": read_json(
+                REPORT / "seed_audit.json"
+            )["known_range_intersections"],
+            "training_or_retuning": False,
+            "leaked_results_used": False,
+            "seed_anonymization_used": False,
+        },
             "created_at": now(),
             "formal_256_combination_started": False,
             "dft_started": False,
@@ -812,11 +841,44 @@ def quality_pass(
     return all(gates.values()), gates
 
 
+def force_outcome_counts(
+    delta: np.ndarray, epsilon: float = FORCE_HARM_EPSILON
+) -> dict[str, int]:
+    """Classify paired force changes with an explicit numerical tolerance."""
+    values = np.asarray(delta, dtype=float)
+    return {
+        "wins": int((values < -epsilon).sum()),
+        "ties": int((np.abs(values) <= epsilon).sum()),
+        "losses": int((values > epsilon).sum()),
+    }
+
+
 def analyze() -> None:
     from scipy.stats import spearmanr
 
     write_master("metrics", "running")
-    evaluated, official_metrics = shared.prepare_official_metrics()
+    cached_metric_paths = {
+        method: REPORT / method / "official_metrics_per_structure.csv"
+        for method in METHODS
+    }
+    cached_summary_paths = {
+        method: REPORT / method / "official_metrics.json" for method in METHODS
+    }
+    if (
+        all(path.exists() for path in cached_metric_paths.values())
+        and all(path.exists() for path in cached_summary_paths.values())
+        and (REPORT / "ehull_coverage.json").exists()
+    ):
+        evaluated = {
+            method: pd.read_csv(path).sort_values("seed").reset_index(drop=True)
+            for method, path in cached_metric_paths.items()
+        }
+        official_metrics = {
+            method: read_json(path)
+            for method, path in cached_summary_paths.items()
+        }
+    else:
+        evaluated, official_metrics = shared.prepare_official_metrics()
     baseline = evaluated["A0"]
     selected = evaluated["A0_E3G"]
     means = {
@@ -835,7 +897,8 @@ def analyze() -> None:
         means[label]["ehull"] = float(values.mean())
         means[label]["ehull_median"] = float(np.median(values))
     coverage = read_json(REPORT / "ehull_coverage.json")
-    coverage["common_two_arm"] = coverage.pop("common_three_arm")
+    if "common_three_arm" in coverage:
+        coverage["common_two_arm"] = coverage.pop("common_three_arm")
     atomic_json(REPORT / "ehull_coverage.json", coverage)
 
     paired_rows: list[dict[str, Any]] = []
@@ -911,7 +974,34 @@ def analyze() -> None:
     baseline_force = baseline["pre_relax_max_force_ev_ang"].to_numpy(float)
     selected_force = selected["pre_relax_max_force_ev_ang"].to_numpy(float)
     improvement = baseline_force - selected_force
-    harm = selected_force > baseline_force + FORCE_HARM_EPSILON
+    force_delta = selected_force - baseline_force
+    harm = force_delta > FORCE_HARM_EPSILON
+    gate_applied = manifest["gate_applied"].astype(bool).to_numpy()
+    raw_numeric_counts = {
+        key: int(primary[key]) for key in ("wins", "ties", "losses")
+    }
+    primary.update(
+        {
+            f"raw_numeric_{key}_1e_minus_12": value
+            for key, value in raw_numeric_counts.items()
+        }
+    )
+    primary.update(force_outcome_counts(force_delta))
+    primary["counting_epsilon"] = FORCE_HARM_EPSILON
+    primary["gate_on_wins"] = int(
+        (force_delta[gate_applied] < -FORCE_HARM_EPSILON).sum()
+    )
+    primary["gate_on_ties"] = int(
+        (np.abs(force_delta[gate_applied]) <= FORCE_HARM_EPSILON).sum()
+    )
+    primary["gate_on_losses"] = int(
+        (force_delta[gate_applied] > FORCE_HARM_EPSILON).sum()
+    )
+    primary["gate_off_exact_structure_ties"] = int((~gate_applied).sum())
+    primary["gate_off_max_abs_numeric_difference"] = float(
+        np.abs(force_delta[~gate_applied]).max() if (~gate_applied).any() else 0.0
+    )
+    atomic_json(REPORT / "primary_statistics.json", primary)
     order = np.argsort(baseline_force, kind="stable")
     low = np.zeros(len(SEEDS), dtype=bool)
     low[order[: len(SEEDS) // 2]] = True
@@ -927,6 +1017,21 @@ def analyze() -> None:
             (~manifest["gate_applied"].astype(bool)).mean()
         ),
         "harm_rate": float(harm.mean()),
+        "gate_on_improvement_count": int(
+            (force_delta[gate_applied] < -FORCE_HARM_EPSILON).sum()
+        ),
+        "gate_on_harm_count": int(
+            (force_delta[gate_applied] > FORCE_HARM_EPSILON).sum()
+        ),
+        "gate_on_improvement_rate": float(
+            (force_delta[gate_applied] < -FORCE_HARM_EPSILON).mean()
+        ),
+        "gate_on_harm_rate": float(
+            (force_delta[gate_applied] > FORCE_HARM_EPSILON).mean()
+        ),
+        "gate_off_max_abs_numeric_difference": primary[
+            "gate_off_max_abs_numeric_difference"
+        ],
         "low_force_count": int(low.sum()),
         "low_force_threshold": float(baseline_force[low].max()),
         "low_force_harm_rate": float(harm[low].mean()),
@@ -977,6 +1082,15 @@ def analyze() -> None:
         "completed_at": now(),
         "A0_E3G_INDEPENDENT64_COMPLETED": True,
         "final_state": state,
+        "independence": {
+            "seed_audit_passed": read_json(REPORT / "seed_audit.json")["passed"],
+            "known_range_intersections": read_json(
+                REPORT / "seed_audit.json"
+            )["known_range_intersections"],
+            "training_or_retuning": False,
+            "leaked_results_used": False,
+            "seed_anonymization_used": False,
+        },
         "a0_e3g_independent64_go": state == "A0_E3G_INDEPENDENT64_GO",
         "a0_e3g_independent64_no_go": state == "A0_E3G_INDEPENDENT64_NO_GO",
         "a0_commit": A0_FORMAL_COMMIT,
@@ -1058,12 +1172,14 @@ def analyze() -> None:
         f"- Final state: `{state}`\n"
         f"- Primary effect pass: `{primary['primary_effect_pass']}`\n"
         f"- Quality safety pass: `{safety_pass}`\n"
+        "- Independent seeds: `50000-50063` (seed audit passed; no prior-range intersections)\n"
         "- A0 generation: `64/64`\n"
         "- A0+E3-G refinement: `64/64`\n"
         "- MatterSim relaxation: `128/128`\n"
         "- A0+E3-G derives from the exact same A0 structures.\n"
         "- No training, retuning, 256-seed combination, DFT, or independent "
-        "MLIP experiment was started.\n\n"
+        "MLIP experiment was started.\n"
+        "- No leaked result or seed anonymization was used as independent evidence.\n\n"
         "## Aggregate metrics\n\n"
         + aggregate.to_markdown(index=False)
         + "\n\n## Primary endpoint\n\n"

@@ -1,0 +1,47 @@
+{
+  "candidate_count": 64,
+  "candidate_range": [
+    50000,
+    50063
+  ],
+  "created_at": "2026-07-28T19:18:20+08:00",
+  "known_range_intersections": [],
+  "known_seed_ranges": [
+    [
+      10000,
+      10063
+    ],
+    [
+      11000,
+      11063
+    ],
+    [
+      20000,
+      20255
+    ],
+    [
+      22000,
+      22031
+    ],
+    [
+      32000,
+      32063
+    ],
+    [
+      33000,
+      33127
+    ],
+    [
+      40000,
+      40255
+    ],
+    [
+      41000,
+      41063
+    ]
+  ],
+  "note": "Exact numeric-boundary search produced only non-seed numeric/hash matches.",
+  "passed": true,
+  "path_component_intersections": [],
+  "seed_field_intersections": []
+}
