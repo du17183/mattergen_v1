@@ -1,0 +1,22 @@
+{
+  "always_on_force_relative_change": -0.36140561779496005,
+  "always_on_mean_force": 0.2538878743407328,
+  "always_on_worsening_rate": 0.09375,
+  "baseline_mean_force": 0.3975729843787045,
+  "gate_mechanism_supported": false,
+  "learned_gate_force_relative_change": -0.3356254975240015,
+  "learned_gate_mean_force": 0.2641373536944997,
+  "learned_gate_worsening_rate": 0.1875,
+  "learned_vs_always_on": 0.01024947935376691,
+  "learned_vs_random_gate_mean_relative_change": -0.12142578961978795,
+  "random_gate": {
+    "force_relative_change_range": [
+      -0.29997554644828095,
+      -0.13046118143146657
+    ],
+    "mean_force_relative_change": -0.21419970790421355,
+    "mean_losses": 3.6,
+    "mean_wins": 38.4,
+    "random_gate_runs": 5
+  }
+}

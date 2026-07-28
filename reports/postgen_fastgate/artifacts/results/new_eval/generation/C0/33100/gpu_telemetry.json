@@ -1,0 +1,294 @@
+{
+  "samples": [
+    {
+      "time": 1785212335.9130754,
+      "memory_used_mib": 5082,
+      "memory_free_mib": 67750,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212339.6153486,
+      "memory_used_mib": 5098,
+      "memory_free_mib": 67733,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212343.186054,
+      "memory_used_mib": 5779,
+      "memory_free_mib": 67053,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212346.5495315,
+      "memory_used_mib": 5969,
+      "memory_free_mib": 66863,
+      "utilization_gpu_percent": 92
+    },
+    {
+      "time": 1785212350.1644232,
+      "memory_used_mib": 6201,
+      "memory_free_mib": 66631,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212353.5800648,
+      "memory_used_mib": 6041,
+      "memory_free_mib": 66791,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212356.3935924,
+      "memory_used_mib": 4882,
+      "memory_free_mib": 67950,
+      "utilization_gpu_percent": 90
+    },
+    {
+      "time": 1785212359.5687616,
+      "memory_used_mib": 4882,
+      "memory_free_mib": 67950,
+      "utilization_gpu_percent": 90
+    },
+    {
+      "time": 1785212363.0300798,
+      "memory_used_mib": 4882,
+      "memory_free_mib": 67950,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212366.6253326,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212370.2209759,
+      "memory_used_mib": 4340,
+      "memory_free_mib": 68492,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212373.6210527,
+      "memory_used_mib": 4596,
+      "memory_free_mib": 68236,
+      "utilization_gpu_percent": 92
+    },
+    {
+      "time": 1785212377.287984,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212380.3772984,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212383.9009137,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 90
+    },
+    {
+      "time": 1785212387.4908657,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212391.2235358,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212394.611536,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212397.943879,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 92
+    },
+    {
+      "time": 1785212401.2960646,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212404.8142023,
+      "memory_used_mib": 3074,
+      "memory_free_mib": 69757,
+      "utilization_gpu_percent": 92
+    },
+    {
+      "time": 1785212408.5859087,
+      "memory_used_mib": 3380,
+      "memory_free_mib": 69451,
+      "utilization_gpu_percent": 92
+    },
+    {
+      "time": 1785212412.0190547,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 92
+    },
+    {
+      "time": 1785212415.28361,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212418.425551,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212421.9224882,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212425.6694949,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 92
+    },
+    {
+      "time": 1785212429.0214825,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 92
+    },
+    {
+      "time": 1785212432.4477847,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212435.5959146,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212439.1400135,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212442.6216807,
+      "memory_used_mib": 3762,
+      "memory_free_mib": 69069,
+      "utilization_gpu_percent": 92
+    },
+    {
+      "time": 1785212446.2858615,
+      "memory_used_mib": 3784,
+      "memory_free_mib": 69048,
+      "utilization_gpu_percent": 92
+    },
+    {
+      "time": 1785212449.9047108,
+      "memory_used_mib": 4480,
+      "memory_free_mib": 68352,
+      "utilization_gpu_percent": 92
+    },
+    {
+      "time": 1785212453.3222003,
+      "memory_used_mib": 4736,
+      "memory_free_mib": 68096,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212456.6445174,
+      "memory_used_mib": 5082,
+      "memory_free_mib": 67750,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212460.1262827,
+      "memory_used_mib": 5082,
+      "memory_free_mib": 67750,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212463.5378149,
+      "memory_used_mib": 5082,
+      "memory_free_mib": 67750,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212466.9267104,
+      "memory_used_mib": 5082,
+      "memory_free_mib": 67750,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212470.4252088,
+      "memory_used_mib": 5082,
+      "memory_free_mib": 67750,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212474.085323,
+      "memory_used_mib": 5082,
+      "memory_free_mib": 67750,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212477.6739223,
+      "memory_used_mib": 5082,
+      "memory_free_mib": 67750,
+      "utilization_gpu_percent": 90
+    },
+    {
+      "time": 1785212481.468324,
+      "memory_used_mib": 5082,
+      "memory_free_mib": 67750,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212484.5895264,
+      "memory_used_mib": 5082,
+      "memory_free_mib": 67750,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212487.6020365,
+      "memory_used_mib": 5082,
+      "memory_free_mib": 67750,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212490.8408859,
+      "memory_used_mib": 5082,
+      "memory_free_mib": 67750,
+      "utilization_gpu_percent": 91
+    },
+    {
+      "time": 1785212494.503294,
+      "memory_used_mib": 5082,
+      "memory_free_mib": 67750,
+      "utilization_gpu_percent": 92
+    }
+  ],
+  "summary": {
+    "samples": 47,
+    "memory_used_at_launch_mib": 5082,
+    "free_memory_at_launch_mib": 67750,
+    "nvidia_smi_peak_used_mib": 6201,
+    "utilization_mean_percent": 91.17021276595744,
+    "utilization_max_percent": 92
+  }
+}

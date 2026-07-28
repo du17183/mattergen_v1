@@ -1,0 +1,326 @@
+Traceback (most recent call last):
+  File "/data/dxl/mattergen_v1/research/q3_frozen64.py", line 1657, in <module>
+    raise SystemExit(main())
+  File "/data/dxl/mattergen_v1/research/q3_frozen64.py", line 1640, in main
+    generate()
+  File "/data/dxl/mattergen_v1/research/q3_frozen64.py", line 364, in generate
+    generation = configure_generation_module()
+  File "/data/dxl/mattergen_v1/research/q3_frozen64.py", line 347, in configure_generation_module
+    from research.postgen_fastgate import new_eval as generation
+ModuleNotFoundError: No module named 'research'
+Traceback (most recent call last):
+  File "/data/dxl/envs/mattergen_py310/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/dxl/envs/mattergen_py310/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/data/dxl/mattergen_v1/research/q3_frozen64.py", line 1657, in <module>
+    raise SystemExit(main())
+  File "/data/dxl/mattergen_v1/research/q3_frozen64.py", line 1648, in main
+    pipeline()
+  File "/data/dxl/mattergen_v1/research/q3_frozen64.py", line 1591, in pipeline
+    subprocess.run(command, cwd=PROJECT, check=True)
+  File "/data/dxl/envs/mattergen_py310/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/data/dxl/envs/mattergen_py310/bin/python', '/data/dxl/mattergen_v1/research/q3_frozen64.py', 'generate']' returned non-zero exit status 1.
+{"stage": "generation", "seed": 32023, "status": "success", "success": 1, "total": 64}
+{"stage": "generation", "seed": 32015, "status": "success", "success": 2, "total": 64}
+{"stage": "generation", "seed": 32007, "status": "success", "success": 3, "total": 64}
+{"stage": "generation", "seed": 32031, "status": "success", "success": 4, "total": 64}
+{"stage": "generation", "seed": 32014, "status": "success", "success": 5, "total": 64}
+{"stage": "generation", "seed": 32022, "status": "success", "success": 6, "total": 64}
+{"stage": "generation", "seed": 32020, "status": "success", "success": 7, "total": 64}
+{"stage": "generation", "seed": 32030, "status": "success", "success": 8, "total": 64}
+{"stage": "generation", "seed": 32012, "status": "success", "success": 9, "total": 64}
+{"stage": "generation", "seed": 32008, "status": "success", "success": 10, "total": 64}
+{"stage": "generation", "seed": 32004, "status": "success", "success": 11, "total": 64}
+{"stage": "generation", "seed": 32024, "status": "success", "success": 12, "total": 64}
+{"stage": "generation", "seed": 32013, "status": "success", "success": 13, "total": 64}
+{"stage": "generation", "seed": 32009, "status": "success", "success": 14, "total": 64}
+{"stage": "generation", "seed": 32029, "status": "success", "success": 15, "total": 64}
+{"stage": "generation", "seed": 32006, "status": "success", "success": 16, "total": 64}
+{"stage": "generation", "seed": 32000, "status": "success", "success": 17, "total": 64}
+{"stage": "generation", "seed": 32005, "status": "success", "success": 18, "total": 64}
+{"stage": "generation", "seed": 32016, "status": "success", "success": 19, "total": 64}
+{"stage": "generation", "seed": 32021, "status": "success", "success": 20, "total": 64}
+{"stage": "generation", "seed": 32028, "status": "success", "success": 21, "total": 64}
+{"stage": "generation", "seed": 32001, "status": "success", "success": 22, "total": 64}
+{"stage": "generation", "seed": 32017, "status": "success", "success": 23, "total": 64}
+{"stage": "generation", "seed": 32025, "status": "success", "success": 24, "total": 64}
+{"stage": "generation", "seed": 32026, "status": "success", "success": 25, "total": 64}
+{"stage": "generation", "seed": 32018, "status": "success", "success": 26, "total": 64}
+{"stage": "generation", "seed": 32002, "status": "success", "success": 27, "total": 64}
+{"stage": "generation", "seed": 32010, "status": "success", "success": 28, "total": 64}
+{"stage": "generation", "seed": 32011, "status": "success", "success": 29, "total": 64}
+{"stage": "generation", "seed": 32003, "status": "success", "success": 30, "total": 64}
+{"stage": "generation", "seed": 32019, "status": "success", "success": 31, "total": 64}
+{"stage": "generation", "seed": 32027, "status": "success", "success": 32, "total": 64}
+{"stage": "generation", "seed": 32033, "status": "success", "success": 33, "total": 64}
+{"stage": "generation", "seed": 32032, "status": "success", "success": 34, "total": 64}
+{"stage": "generation", "seed": 32039, "status": "success", "success": 35, "total": 64}
+{"stage": "generation", "seed": 32037, "status": "success", "success": 36, "total": 64}
+{"stage": "generation", "seed": 32047, "status": "success", "success": 37, "total": 64}
+{"stage": "generation", "seed": 32041, "status": "success", "success": 38, "total": 64}
+{"stage": "generation", "seed": 32055, "status": "success", "success": 39, "total": 64}
+{"stage": "generation", "seed": 32036, "status": "success", "success": 40, "total": 64}
+{"stage": "generation", "seed": 32045, "status": "success", "success": 41, "total": 64}
+{"stage": "generation", "seed": 32049, "status": "success", "success": 42, "total": 64}
+{"stage": "generation", "seed": 32040, "status": "success", "success": 43, "total": 64}
+{"stage": "generation", "seed": 32057, "status": "success", "success": 44, "total": 64}
+{"stage": "generation", "seed": 32053, "status": "success", "success": 45, "total": 64}
+{"stage": "generation", "seed": 32048, "status": "success", "success": 46, "total": 64}
+{"stage": "generation", "seed": 32056, "status": "success", "success": 47, "total": 64}
+{"stage": "generation", "seed": 32038, "status": "success", "success": 48, "total": 64}
+{"stage": "generation", "seed": 32063, "status": "success", "success": 49, "total": 64}
+{"stage": "generation", "seed": 32034, "status": "success", "success": 50, "total": 64}
+{"stage": "generation", "seed": 32044, "status": "success", "success": 51, "total": 64}
+{"stage": "generation", "seed": 32061, "status": "success", "success": 52, "total": 64}
+{"stage": "generation", "seed": 32052, "status": "success", "success": 53, "total": 64}
+{"stage": "generation", "seed": 32046, "status": "success", "success": 54, "total": 64}
+{"stage": "generation", "seed": 32054, "status": "success", "success": 55, "total": 64}
+{"stage": "generation", "seed": 32060, "status": "success", "success": 56, "total": 64}
+{"stage": "generation", "seed": 32035, "status": "success", "success": 57, "total": 64}
+{"stage": "generation", "seed": 32050, "status": "success", "success": 58, "total": 64}
+{"stage": "generation", "seed": 32042, "status": "success", "success": 59, "total": 64}
+{"stage": "generation", "seed": 32043, "status": "success", "success": 60, "total": 64}
+{"stage": "generation", "seed": 32051, "status": "success", "success": 61, "total": 64}
+{"stage": "generation", "seed": 32058, "status": "success", "success": 62, "total": 64}
+{"stage": "generation", "seed": 32059, "status": "success", "success": 63, "total": 64}
+{"stage": "generation", "seed": 32062, "status": "success", "success": 64, "total": 64}
+CHGNet v0.3.0 initialized with 412,525 parameters
+{"stage": "feature_extraction", "completed": 32, "total": 64}
+{"stage": "feature_extraction", "completed": 64, "total": 64}
+/data/dxl/envs/mattergen_py310/lib/python3.10/site-packages/uncertainties/core.py:1024: UserWarning: Using UFloat objects with std_dev==0 may give unexpected results.
+  warn("Using UFloat objects with std_dev==0 may give unexpected results.")
+/data/dxl/envs/mattergen_py310/lib/python3.10/site-packages/pymatgen/io/vasp/sets.py:757: BadInputSetWarning: Relaxation of likely metal with ISMEAR < 0 (-5). See VASP recommendations on ISMEAR for metals (https://www.vasp.at/wiki/index.php/ISMEAR).
+  warnings.warn(
+/data/dxl/envs/mattergen_py310/lib/python3.10/site-packages/pymatgen/io/vasp/sets.py:580: UserWarning: Co without an oxidation state is initialized as low spin by default in Pymatgen. If this default behavior is not desired, please set the spin on the magmom on the site directly to ensure correct initialization.
+  warnings.warn(
+[2026-07-28 13:58:51,060] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_energy_above_hull_per_atom
+[2026-07-28 13:58:51,060] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_energy_above_hull_per_atom
+[2026-07-28 13:58:51,060] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_energy_above_hull_per_atom
+[2026-07-28 13:58:51,060] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_energy_above_hull_per_atom
+Computing energies above hull:   0%|          | 0/61 [00:00<?, ?it/s]Computing energies above hull:   3%|▎         | 2/61 [00:00<00:11,  4.98it/s]Computing energies above hull:   5%|▍         | 3/61 [00:02<00:49,  1.18it/s]Computing energies above hull:   7%|▋         | 4/61 [00:02<00:36,  1.54it/s]Computing energies above hull:   8%|▊         | 5/61 [00:02<00:28,  1.98it/s]Computing energies above hull:  10%|▉         | 6/61 [00:02<00:22,  2.44it/s]Computing energies above hull:  16%|█▋        | 10/61 [00:03<00:09,  5.28it/s]Computing energies above hull:  18%|█▊        | 11/61 [00:03<00:09,  5.01it/s]Computing energies above hull:  21%|██▏       | 13/61 [00:03<00:08,  5.72it/s]Computing energies above hull:  25%|██▍       | 15/61 [00:03<00:06,  7.11it/s]Computing energies above hull:  28%|██▊       | 17/61 [00:04<00:06,  6.43it/s]Computing energies above hull:  31%|███       | 19/61 [00:04<00:08,  5.06it/s]Computing energies above hull:  34%|███▍      | 21/61 [00:04<00:06,  6.53it/s]Computing energies above hull:  38%|███▊      | 23/61 [00:05<00:04,  7.71it/s]Computing energies above hull:  41%|████      | 25/61 [00:06<00:09,  3.96it/s]Computing energies above hull:  43%|████▎     | 26/61 [00:06<00:07,  4.41it/s]Computing energies above hull:  44%|████▍     | 27/61 [00:06<00:07,  4.68it/s]Computing energies above hull:  51%|█████     | 31/61 [00:06<00:03,  8.61it/s]Computing energies above hull:  54%|█████▍    | 33/61 [00:06<00:03,  8.65it/s]Computing energies above hull:  57%|█████▋    | 35/61 [00:07<00:03,  8.09it/s]Computing energies above hull:  61%|██████    | 37/61 [00:07<00:03,  6.42it/s]Computing energies above hull:  67%|██████▋   | 41/61 [00:07<00:01, 10.15it/s]Computing energies above hull:  70%|███████   | 43/61 [00:08<00:02,  6.59it/s]Computing energies above hull:  74%|███████▍  | 45/61 [00:09<00:03,  4.71it/s]Computing energies above hull:  75%|███████▌  | 46/61 [00:09<00:03,  4.39it/s]Computing energies above hull:  79%|███████▊  | 48/61 [00:09<00:02,  4.98it/s]Computing energies above hull:  82%|████████▏ | 50/61 [00:09<00:01,  6.33it/s]Computing energies above hull:  85%|████████▌ | 52/61 [00:10<00:01,  6.30it/s]Computing energies above hull:  90%|█████████ | 55/61 [00:10<00:00,  8.56it/s]Computing energies above hull:  93%|█████████▎| 57/61 [00:10<00:00,  6.39it/s]Computing energies above hull: 100%|██████████| 61/61 [00:10<00:00,  9.76it/s]Computing energies above hull: 100%|██████████| 61/61 [00:10<00:00,  5.60it/s]
+[2026-07-28 13:59:01,973] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_rmsd_from_relaxation
+[2026-07-28 13:59:01,973] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_rmsd_from_relaxation
+[2026-07-28 13:59:01,973] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_rmsd_from_relaxation
+[2026-07-28 13:59:01,973] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_rmsd_from_relaxation
+[2026-07-28 13:59:02,560] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_stable_structures
+[2026-07-28 13:59:02,560] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_stable_structures
+[2026-07-28 13:59:02,560] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_stable_structures
+[2026-07-28 13:59:02,560] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_stable_structures
+Finding novel structures:   0%|          | 0/63 [00:00<?, ?it/s]Finding novel structures:  11%|█         | 7/63 [00:00<00:00, 65.76it/s]Finding novel structures:  46%|████▌     | 29/63 [00:00<00:00, 81.03it/s]Finding novel structures:  62%|██████▏   | 39/63 [00:00<00:00, 37.80it/s]Finding novel structures:  78%|███████▊  | 49/63 [00:01<00:00, 46.01it/s]Finding novel structures: 100%|██████████| 63/63 [00:01<00:00, 57.70it/s]
+Finding unique structures by reduced formula:   0%|          | 0/63 [00:00<?, ?it/s]Finding unique structures by reduced formula: 100%|██████████| 63/63 [00:00<00:00, 14944.08it/s]
+[2026-07-28 13:59:03,751] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_stable_structures
+[2026-07-28 13:59:03,751] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_stable_structures
+[2026-07-28 13:59:03,751] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_stable_structures
+[2026-07-28 13:59:03,751] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_stable_structures
+[2026-07-28 13:59:03,751] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_successful_jobs
+[2026-07-28 13:59:03,751] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_successful_jobs
+[2026-07-28 13:59:03,751] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_successful_jobs
+[2026-07-28 13:59:03,751] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_successful_jobs
+[2026-07-28 13:59:03,751] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_comp_validity
+[2026-07-28 13:59:03,751] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_comp_validity
+[2026-07-28 13:59:03,751] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_comp_validity
+[2026-07-28 13:59:03,751] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_comp_validity
+Computing avg comp validity:   0%|          | 0/64 [00:00<?, ?it/s]Computing avg comp validity: 100%|██████████| 64/64 [00:00<00:00, 2242.91it/s]
+[2026-07-28 13:59:03,780] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_comp_validity
+[2026-07-28 13:59:03,780] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_comp_validity
+[2026-07-28 13:59:03,780] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_comp_validity
+[2026-07-28 13:59:03,780] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_comp_validity
+[2026-07-28 13:59:03,798] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_validity
+[2026-07-28 13:59:03,798] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_validity
+[2026-07-28 13:59:03,798] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_validity
+[2026-07-28 13:59:03,798] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_validity
+Computing avg structure validity:   0%|          | 0/64 [00:00<?, ?it/s]Computing avg structure validity: 100%|██████████| 64/64 [00:00<00:00, 20623.50it/s]
+[2026-07-28 13:59:03,802] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_structures
+[2026-07-28 13:59:03,802] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_structures
+[2026-07-28 13:59:03,802] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_structures
+[2026-07-28 13:59:03,802] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_structures
+[2026-07-28 13:59:03,802] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_systems
+[2026-07-28 13:59:03,802] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_systems
+[2026-07-28 13:59:03,802] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_systems
+[2026-07-28 13:59:03,802] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_systems
+[2026-07-28 13:59:03,803] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_structures
+[2026-07-28 13:59:03,803] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_structures
+[2026-07-28 13:59:03,803] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_structures
+[2026-07-28 13:59:03,803] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_structures
+[2026-07-28 13:59:03,803] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_structures
+[2026-07-28 13:59:03,803] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_structures
+[2026-07-28 13:59:03,803] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_structures
+[2026-07-28 13:59:03,803] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_structures
+[2026-07-28 13:59:03,803] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_systems
+[2026-07-28 13:59:03,803] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_systems
+[2026-07-28 13:59:03,803] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_systems
+[2026-07-28 13:59:03,803] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_systems
+[2026-07-28 13:59:03,804] [INFO] [evaluator.py:277:compute_metrics] Computing metric precision
+[2026-07-28 13:59:03,804] [INFO] [evaluator.py:277:compute_metrics] Computing metric precision
+[2026-07-28 13:59:03,804] [INFO] [evaluator.py:277:compute_metrics] Computing metric precision
+[2026-07-28 13:59:03,804] [INFO] [evaluator.py:277:compute_metrics] Computing metric precision
+[2026-07-28 13:59:03,804] [INFO] [evaluator.py:277:compute_metrics] Computing metric recall
+[2026-07-28 13:59:03,804] [INFO] [evaluator.py:277:compute_metrics] Computing metric recall
+[2026-07-28 13:59:03,804] [INFO] [evaluator.py:277:compute_metrics] Computing metric recall
+[2026-07-28 13:59:03,804] [INFO] [evaluator.py:277:compute_metrics] Computing metric recall
+[2026-07-28 13:59:03,805] [INFO] [evaluator.py:297:compute_metrics] Saved metrics to /data/dxl/reports/q3_e3_pcr/frozen64/C0/official_metrics.json
+[2026-07-28 13:59:03,805] [INFO] [evaluator.py:297:compute_metrics] Saved metrics to /data/dxl/reports/q3_e3_pcr/frozen64/C0/official_metrics.json
+[2026-07-28 13:59:03,805] [INFO] [evaluator.py:297:compute_metrics] Saved metrics to /data/dxl/reports/q3_e3_pcr/frozen64/C0/official_metrics.json
+[2026-07-28 13:59:03,805] [INFO] [evaluator.py:297:compute_metrics] Saved metrics to /data/dxl/reports/q3_e3_pcr/frozen64/C0/official_metrics.json
+Computing self-consistent energies above hull:   0%|          | 0/61 [00:00<?, ?it/s]/data/dxl/envs/mattergen_py310/lib/python3.10/site-packages/uncertainties/core.py:1024: UserWarning: Using UFloat objects with std_dev==0 may give unexpected results.
+  warn("Using UFloat objects with std_dev==0 may give unexpected results.")
+Computing self-consistent energies above hull:   3%|▎         | 2/61 [00:00<00:13,  4.47it/s]Computing self-consistent energies above hull:   5%|▍         | 3/61 [00:02<00:51,  1.12it/s]Computing self-consistent energies above hull:   7%|▋         | 4/61 [00:02<00:46,  1.22it/s]Computing self-consistent energies above hull:  10%|▉         | 6/61 [00:03<00:25,  2.14it/s]Computing self-consistent energies above hull:  16%|█▋        | 10/61 [00:03<00:11,  4.31it/s]Computing self-consistent energies above hull:  20%|█▉        | 12/61 [00:03<00:08,  5.55it/s]Computing self-consistent energies above hull:  23%|██▎       | 14/61 [00:04<00:09,  5.06it/s]Computing self-consistent energies above hull:  28%|██▊       | 17/61 [00:04<00:06,  6.35it/s]Computing self-consistent energies above hull:  31%|███       | 19/61 [00:04<00:08,  5.22it/s]Computing self-consistent energies above hull:  34%|███▍      | 21/61 [00:05<00:06,  6.57it/s]Computing self-consistent energies above hull:  38%|███▊      | 23/61 [00:05<00:06,  6.25it/s]Computing self-consistent energies above hull:  41%|████      | 25/61 [00:06<00:08,  4.11it/s]Computing self-consistent energies above hull:  43%|████▎     | 26/61 [00:06<00:07,  4.55it/s]Computing self-consistent energies above hull:  44%|████▍     | 27/61 [00:06<00:08,  4.00it/s]Computing self-consistent energies above hull:  51%|█████     | 31/61 [00:06<00:04,  7.41it/s]Computing self-consistent energies above hull:  56%|█████▌    | 34/61 [00:07<00:04,  6.54it/s]Computing self-consistent energies above hull:  61%|██████    | 37/61 [00:07<00:03,  7.44it/s]Computing self-consistent energies above hull:  67%|██████▋   | 41/61 [00:07<00:01, 10.82it/s]Computing self-consistent energies above hull:  70%|███████   | 43/61 [00:08<00:02,  6.83it/s]Computing self-consistent energies above hull:  74%|███████▍  | 45/61 [00:09<00:03,  4.77it/s]Computing self-consistent energies above hull:  77%|███████▋  | 47/61 [00:09<00:02,  4.71it/s]Computing self-consistent energies above hull:  79%|███████▊  | 48/61 [00:10<00:02,  4.75it/s]Computing self-consistent energies above hull:  82%|████████▏ | 50/61 [00:10<00:01,  6.08it/s]Computing self-consistent energies above hull:  85%|████████▌ | 52/61 [00:10<00:01,  5.88it/s]Computing self-consistent energies above hull:  90%|█████████ | 55/61 [00:10<00:00,  8.16it/s]Computing self-consistent energies above hull:  93%|█████████▎| 57/61 [00:11<00:00,  5.94it/s]Computing self-consistent energies above hull: 100%|██████████| 61/61 [00:11<00:00,  9.19it/s]Computing self-consistent energies above hull: 100%|██████████| 61/61 [00:11<00:00,  5.35it/s]
+[2026-07-28T13:59:15+08:00] official metrics complete config=C0
+/data/dxl/envs/mattergen_py310/lib/python3.10/site-packages/uncertainties/core.py:1024: UserWarning: Using UFloat objects with std_dev==0 may give unexpected results.
+  warn("Using UFloat objects with std_dev==0 may give unexpected results.")
+/data/dxl/envs/mattergen_py310/lib/python3.10/site-packages/pymatgen/io/vasp/sets.py:757: BadInputSetWarning: Relaxation of likely metal with ISMEAR < 0 (-5). See VASP recommendations on ISMEAR for metals (https://www.vasp.at/wiki/index.php/ISMEAR).
+  warnings.warn(
+/data/dxl/envs/mattergen_py310/lib/python3.10/site-packages/pymatgen/io/vasp/sets.py:580: UserWarning: Co without an oxidation state is initialized as low spin by default in Pymatgen. If this default behavior is not desired, please set the spin on the magmom on the site directly to ensure correct initialization.
+  warnings.warn(
+[2026-07-28 13:59:15,690] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_energy_above_hull_per_atom
+[2026-07-28 13:59:15,690] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_energy_above_hull_per_atom
+[2026-07-28 13:59:15,690] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_energy_above_hull_per_atom
+[2026-07-28 13:59:15,690] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_energy_above_hull_per_atom
+Computing energies above hull:   0%|          | 0/61 [00:00<?, ?it/s]Computing energies above hull:   3%|▎         | 2/61 [00:00<00:14,  4.14it/s]Computing energies above hull:   5%|▍         | 3/61 [00:02<00:53,  1.08it/s]Computing energies above hull:   7%|▋         | 4/61 [00:02<00:39,  1.43it/s]Computing energies above hull:  10%|▉         | 6/61 [00:03<00:25,  2.15it/s]Computing energies above hull:  16%|█▋        | 10/61 [00:03<00:11,  4.28it/s]Computing energies above hull:  20%|█▉        | 12/61 [00:03<00:08,  5.49it/s]Computing energies above hull:  23%|██▎       | 14/61 [00:04<00:09,  4.99it/s]Computing energies above hull:  28%|██▊       | 17/61 [00:04<00:06,  6.30it/s]Computing energies above hull:  31%|███       | 19/61 [00:04<00:08,  5.10it/s]Computing energies above hull:  34%|███▍      | 21/61 [00:05<00:06,  6.37it/s]Computing energies above hull:  38%|███▊      | 23/61 [00:05<00:06,  6.06it/s]Computing energies above hull:  41%|████      | 25/61 [00:06<00:09,  3.97it/s]Computing energies above hull:  43%|████▎     | 26/61 [00:06<00:07,  4.40it/s]Computing energies above hull:  44%|████▍     | 27/61 [00:06<00:08,  3.85it/s]Computing energies above hull:  51%|█████     | 31/61 [00:07<00:04,  7.16it/s]Computing energies above hull:  56%|█████▌    | 34/61 [00:07<00:04,  6.35it/s]Computing energies above hull:  61%|██████    | 37/61 [00:07<00:03,  7.05it/s]Computing energies above hull:  67%|██████▋   | 41/61 [00:08<00:01, 10.23it/s]Computing energies above hull:  70%|███████   | 43/61 [00:08<00:02,  6.63it/s]Computing energies above hull:  74%|███████▍  | 45/61 [00:09<00:03,  4.71it/s]Computing energies above hull:  75%|███████▌  | 46/61 [00:09<00:03,  4.27it/s]Computing energies above hull:  79%|███████▊  | 48/61 [00:10<00:02,  4.86it/s]Computing energies above hull:  82%|████████▏ | 50/61 [00:10<00:02,  5.11it/s]Computing energies above hull:  85%|████████▌ | 52/61 [00:10<00:01,  6.27it/s]Computing energies above hull:  90%|█████████ | 55/61 [00:10<00:00,  8.47it/s]Computing energies above hull:  93%|█████████▎| 57/61 [00:11<00:00,  6.15it/s]Computing energies above hull: 100%|██████████| 61/61 [00:11<00:00,  9.45it/s]Computing energies above hull: 100%|██████████| 61/61 [00:11<00:00,  5.30it/s]
+[2026-07-28 13:59:27,210] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_rmsd_from_relaxation
+[2026-07-28 13:59:27,210] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_rmsd_from_relaxation
+[2026-07-28 13:59:27,210] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_rmsd_from_relaxation
+[2026-07-28 13:59:27,210] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_rmsd_from_relaxation
+[2026-07-28 13:59:27,845] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_stable_structures
+[2026-07-28 13:59:27,845] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_stable_structures
+[2026-07-28 13:59:27,845] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_stable_structures
+[2026-07-28 13:59:27,845] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_stable_structures
+Finding novel structures:   0%|          | 0/63 [00:00<?, ?it/s]Finding novel structures:  30%|███       | 19/63 [00:00<00:00, 186.33it/s]Finding novel structures:  60%|██████    | 38/63 [00:00<00:00, 100.60it/s]Finding novel structures:  81%|████████  | 51/63 [00:01<00:00, 36.87it/s] Finding novel structures:  98%|█████████▊| 62/63 [00:01<00:00, 46.22it/s]Finding novel structures: 100%|██████████| 63/63 [00:01<00:00, 52.76it/s]
+Finding unique structures by reduced formula:   0%|          | 0/63 [00:00<?, ?it/s]Finding unique structures by reduced formula: 100%|██████████| 63/63 [00:00<00:00, 14381.25it/s]
+[2026-07-28 13:59:29,077] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_stable_structures
+[2026-07-28 13:59:29,077] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_stable_structures
+[2026-07-28 13:59:29,077] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_stable_structures
+[2026-07-28 13:59:29,077] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_stable_structures
+[2026-07-28 13:59:29,077] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_successful_jobs
+[2026-07-28 13:59:29,077] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_successful_jobs
+[2026-07-28 13:59:29,077] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_successful_jobs
+[2026-07-28 13:59:29,077] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_successful_jobs
+[2026-07-28 13:59:29,077] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_comp_validity
+[2026-07-28 13:59:29,077] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_comp_validity
+[2026-07-28 13:59:29,077] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_comp_validity
+[2026-07-28 13:59:29,077] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_comp_validity
+Computing avg comp validity:   0%|          | 0/64 [00:00<?, ?it/s]Computing avg comp validity: 100%|██████████| 64/64 [00:00<00:00, 4005.48it/s]
+[2026-07-28 13:59:29,093] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_comp_validity
+[2026-07-28 13:59:29,093] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_comp_validity
+[2026-07-28 13:59:29,093] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_comp_validity
+[2026-07-28 13:59:29,093] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_comp_validity
+[2026-07-28 13:59:29,113] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_validity
+[2026-07-28 13:59:29,113] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_validity
+[2026-07-28 13:59:29,113] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_validity
+[2026-07-28 13:59:29,113] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_validity
+Computing avg structure validity:   0%|          | 0/64 [00:00<?, ?it/s]Computing avg structure validity: 100%|██████████| 64/64 [00:00<00:00, 20292.97it/s]
+[2026-07-28 13:59:29,116] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_structures
+[2026-07-28 13:59:29,116] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_structures
+[2026-07-28 13:59:29,116] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_structures
+[2026-07-28 13:59:29,116] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_structures
+[2026-07-28 13:59:29,116] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_systems
+[2026-07-28 13:59:29,116] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_systems
+[2026-07-28 13:59:29,116] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_systems
+[2026-07-28 13:59:29,116] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_systems
+[2026-07-28 13:59:29,117] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_structures
+[2026-07-28 13:59:29,117] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_structures
+[2026-07-28 13:59:29,117] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_structures
+[2026-07-28 13:59:29,117] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_structures
+[2026-07-28 13:59:29,117] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_structures
+[2026-07-28 13:59:29,117] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_structures
+[2026-07-28 13:59:29,117] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_structures
+[2026-07-28 13:59:29,117] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_structures
+[2026-07-28 13:59:29,117] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_systems
+[2026-07-28 13:59:29,117] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_systems
+[2026-07-28 13:59:29,117] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_systems
+[2026-07-28 13:59:29,117] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_systems
+[2026-07-28 13:59:29,119] [INFO] [evaluator.py:277:compute_metrics] Computing metric precision
+[2026-07-28 13:59:29,119] [INFO] [evaluator.py:277:compute_metrics] Computing metric precision
+[2026-07-28 13:59:29,119] [INFO] [evaluator.py:277:compute_metrics] Computing metric precision
+[2026-07-28 13:59:29,119] [INFO] [evaluator.py:277:compute_metrics] Computing metric precision
+[2026-07-28 13:59:29,119] [INFO] [evaluator.py:277:compute_metrics] Computing metric recall
+[2026-07-28 13:59:29,119] [INFO] [evaluator.py:277:compute_metrics] Computing metric recall
+[2026-07-28 13:59:29,119] [INFO] [evaluator.py:277:compute_metrics] Computing metric recall
+[2026-07-28 13:59:29,119] [INFO] [evaluator.py:277:compute_metrics] Computing metric recall
+[2026-07-28 13:59:29,119] [INFO] [evaluator.py:297:compute_metrics] Saved metrics to /data/dxl/reports/q3_e3_pcr/frozen64/Q3_E3_PCR/official_metrics.json
+[2026-07-28 13:59:29,119] [INFO] [evaluator.py:297:compute_metrics] Saved metrics to /data/dxl/reports/q3_e3_pcr/frozen64/Q3_E3_PCR/official_metrics.json
+[2026-07-28 13:59:29,119] [INFO] [evaluator.py:297:compute_metrics] Saved metrics to /data/dxl/reports/q3_e3_pcr/frozen64/Q3_E3_PCR/official_metrics.json
+[2026-07-28 13:59:29,119] [INFO] [evaluator.py:297:compute_metrics] Saved metrics to /data/dxl/reports/q3_e3_pcr/frozen64/Q3_E3_PCR/official_metrics.json
+Computing self-consistent energies above hull:   0%|          | 0/61 [00:00<?, ?it/s]Computing self-consistent energies above hull:   3%|▎         | 2/61 [00:00<00:12,  4.58it/s]Computing self-consistent energies above hull:   5%|▍         | 3/61 [00:02<00:52,  1.11it/s]Computing self-consistent energies above hull:   7%|▋         | 4/61 [00:02<00:46,  1.22it/s]Computing self-consistent energies above hull:  10%|▉         | 6/61 [00:03<00:25,  2.15it/s]Computing self-consistent energies above hull:  16%|█▋        | 10/61 [00:03<00:11,  4.31it/s]Computing self-consistent energies above hull:  20%|█▉        | 12/61 [00:03<00:08,  5.56it/s]Computing self-consistent energies above hull:  23%|██▎       | 14/61 [00:03<00:07,  6.10it/s]Computing self-consistent energies above hull:  25%|██▍       | 15/61 [00:04<00:08,  5.36it/s]Computing self-consistent energies above hull:  28%|██▊       | 17/61 [00:04<00:06,  6.34it/s]Computing self-consistent energies above hull:  31%|███       | 19/61 [00:04<00:08,  5.03it/s]Computing self-consistent energies above hull:  34%|███▍      | 21/61 [00:05<00:06,  6.58it/s]Computing self-consistent energies above hull:  38%|███▊      | 23/61 [00:05<00:04,  7.89it/s]Computing self-consistent energies above hull:  41%|████      | 25/61 [00:06<00:09,  3.78it/s]Computing self-consistent energies above hull:  43%|████▎     | 26/61 [00:06<00:08,  4.25it/s]Computing self-consistent energies above hull:  44%|████▍     | 27/61 [00:06<00:07,  4.55it/s]Computing self-consistent energies above hull:  51%|█████     | 31/61 [00:06<00:03,  8.42it/s]Computing self-consistent energies above hull:  56%|█████▌    | 34/61 [00:07<00:03,  7.01it/s]Computing self-consistent energies above hull:  61%|██████    | 37/61 [00:07<00:03,  6.53it/s]Computing self-consistent energies above hull:  67%|██████▋   | 41/61 [00:07<00:02,  9.62it/s]Computing self-consistent energies above hull:  70%|███████   | 43/61 [00:08<00:02,  6.30it/s]Computing self-consistent energies above hull:  74%|███████▍  | 45/61 [00:09<00:03,  4.50it/s]Computing self-consistent energies above hull:  75%|███████▌  | 46/61 [00:09<00:03,  4.75it/s]Computing self-consistent energies above hull:  79%|███████▊  | 48/61 [00:09<00:02,  5.31it/s]Computing self-consistent energies above hull:  82%|████████▏ | 50/61 [00:10<00:02,  5.39it/s]Computing self-consistent energies above hull:  85%|████████▌ | 52/61 [00:10<00:01,  6.57it/s]Computing self-consistent energies above hull:  90%|█████████ | 55/61 [00:10<00:00,  8.89it/s]Computing self-consistent energies above hull:  93%|█████████▎| 57/61 [00:11<00:00,  6.27it/s]Computing self-consistent energies above hull: 100%|██████████| 61/61 [00:11<00:00,  9.65it/s]Computing self-consistent energies above hull: 100%|██████████| 61/61 [00:11<00:00,  5.42it/s]
+[2026-07-28T13:59:40+08:00] official metrics complete config=Q3_E3_PCR
+/data/dxl/envs/mattergen_py310/lib/python3.10/site-packages/uncertainties/core.py:1024: UserWarning: Using UFloat objects with std_dev==0 may give unexpected results.
+  warn("Using UFloat objects with std_dev==0 may give unexpected results.")
+/data/dxl/envs/mattergen_py310/lib/python3.10/site-packages/pymatgen/io/vasp/sets.py:757: BadInputSetWarning: Relaxation of likely metal with ISMEAR < 0 (-5). See VASP recommendations on ISMEAR for metals (https://www.vasp.at/wiki/index.php/ISMEAR).
+  warnings.warn(
+/data/dxl/envs/mattergen_py310/lib/python3.10/site-packages/pymatgen/io/vasp/sets.py:580: UserWarning: Co without an oxidation state is initialized as low spin by default in Pymatgen. If this default behavior is not desired, please set the spin on the magmom on the site directly to ensure correct initialization.
+  warnings.warn(
+[2026-07-28 13:59:40,867] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_energy_above_hull_per_atom
+[2026-07-28 13:59:40,867] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_energy_above_hull_per_atom
+[2026-07-28 13:59:40,867] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_energy_above_hull_per_atom
+[2026-07-28 13:59:40,867] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_energy_above_hull_per_atom
+Computing energies above hull:   0%|          | 0/61 [00:00<?, ?it/s]Computing energies above hull:   2%|▏         | 1/61 [00:00<00:14,  4.14it/s]Computing energies above hull:   3%|▎         | 2/61 [00:00<00:13,  4.48it/s]Computing energies above hull:   5%|▍         | 3/61 [00:02<00:56,  1.03it/s]Computing energies above hull:   7%|▋         | 4/61 [00:03<00:49,  1.16it/s]Computing energies above hull:  10%|▉         | 6/61 [00:03<00:26,  2.10it/s]Computing energies above hull:  16%|█▋        | 10/61 [00:03<00:11,  4.28it/s]Computing energies above hull:  20%|█▉        | 12/61 [00:03<00:08,  5.50it/s]Computing energies above hull:  23%|██▎       | 14/61 [00:04<00:09,  4.85it/s]Computing energies above hull:  28%|██▊       | 17/61 [00:04<00:07,  6.16it/s]Computing energies above hull:  31%|███       | 19/61 [00:05<00:08,  4.96it/s]Computing energies above hull:  34%|███▍      | 21/61 [00:05<00:06,  6.23it/s]Computing energies above hull:  38%|███▊      | 23/61 [00:05<00:06,  5.91it/s]Computing energies above hull:  41%|████      | 25/61 [00:06<00:09,  3.86it/s]Computing energies above hull:  43%|████▎     | 26/61 [00:06<00:08,  4.27it/s]Computing energies above hull:  44%|████▍     | 27/61 [00:07<00:09,  3.71it/s]Computing energies above hull:  51%|█████     | 31/61 [00:07<00:04,  6.90it/s]Computing energies above hull:  56%|█████▌    | 34/61 [00:07<00:03,  7.54it/s]Computing energies above hull:  61%|██████    | 37/61 [00:08<00:03,  6.62it/s]Computing energies above hull:  67%|██████▋   | 41/61 [00:08<00:02,  9.66it/s]Computing energies above hull:  70%|███████   | 43/61 [00:08<00:02,  6.34it/s]Computing energies above hull:  74%|███████▍  | 45/61 [00:09<00:03,  4.50it/s]Computing energies above hull:  75%|███████▌  | 46/61 [00:09<00:03,  4.74it/s]Computing energies above hull:  77%|███████▋  | 47/61 [00:10<00:03,  4.34it/s]Computing energies above hull:  79%|███████▊  | 48/61 [00:10<00:02,  4.45it/s]Computing energies above hull:  82%|████████▏ | 50/61 [00:10<00:01,  6.03it/s]Computing energies above hull:  85%|████████▌ | 52/61 [00:10<00:01,  7.46it/s]Computing energies above hull:  89%|████████▊ | 54/61 [00:11<00:00,  7.17it/s]Computing energies above hull:  92%|█████████▏| 56/61 [00:11<00:00,  8.25it/s]Computing energies above hull:  95%|█████████▌| 58/61 [00:11<00:00,  5.79it/s]Computing energies above hull: 100%|██████████| 61/61 [00:11<00:00,  5.14it/s]
+[2026-07-28 13:59:52,752] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_rmsd_from_relaxation
+[2026-07-28 13:59:52,752] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_rmsd_from_relaxation
+[2026-07-28 13:59:52,752] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_rmsd_from_relaxation
+[2026-07-28 13:59:52,752] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_rmsd_from_relaxation
+[2026-07-28 13:59:53,423] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_stable_structures
+[2026-07-28 13:59:53,423] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_stable_structures
+[2026-07-28 13:59:53,423] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_stable_structures
+[2026-07-28 13:59:53,423] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_stable_structures
+Finding novel structures:   0%|          | 0/63 [00:00<?, ?it/s]Finding novel structures:  30%|███       | 19/63 [00:00<00:00, 187.24it/s]Finding novel structures:  60%|██████    | 38/63 [00:00<00:00, 99.85it/s] Finding novel structures:  81%|████████  | 51/63 [00:01<00:00, 34.46it/s]Finding novel structures:  98%|█████████▊| 62/63 [00:01<00:00, 43.46it/s]Finding novel structures: 100%|██████████| 63/63 [00:01<00:00, 49.83it/s]
+Finding unique structures by reduced formula:   0%|          | 0/63 [00:00<?, ?it/s]Finding unique structures by reduced formula: 100%|██████████| 63/63 [00:00<00:00, 12775.77it/s]
+[2026-07-28 13:59:54,725] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_stable_structures
+[2026-07-28 13:59:54,725] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_stable_structures
+[2026-07-28 13:59:54,725] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_stable_structures
+[2026-07-28 13:59:54,725] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_stable_structures
+[2026-07-28 13:59:54,726] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_successful_jobs
+[2026-07-28 13:59:54,726] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_successful_jobs
+[2026-07-28 13:59:54,726] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_successful_jobs
+[2026-07-28 13:59:54,726] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_successful_jobs
+[2026-07-28 13:59:54,726] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_comp_validity
+[2026-07-28 13:59:54,726] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_comp_validity
+[2026-07-28 13:59:54,726] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_comp_validity
+[2026-07-28 13:59:54,726] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_comp_validity
+Computing avg comp validity:   0%|          | 0/64 [00:00<?, ?it/s]Computing avg comp validity: 100%|██████████| 64/64 [00:00<00:00, 3907.58it/s]
+[2026-07-28 13:59:54,742] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_comp_validity
+[2026-07-28 13:59:54,742] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_comp_validity
+[2026-07-28 13:59:54,742] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_comp_validity
+[2026-07-28 13:59:54,742] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_comp_validity
+[2026-07-28 13:59:54,761] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_validity
+[2026-07-28 13:59:54,761] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_validity
+[2026-07-28 13:59:54,761] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_validity
+[2026-07-28 13:59:54,761] [INFO] [evaluator.py:277:compute_metrics] Computing metric avg_structure_validity
+Computing avg structure validity:   0%|          | 0/64 [00:00<?, ?it/s]Computing avg structure validity: 100%|██████████| 64/64 [00:00<00:00, 20615.58it/s]
+[2026-07-28 13:59:54,765] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_structures
+[2026-07-28 13:59:54,765] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_structures
+[2026-07-28 13:59:54,765] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_structures
+[2026-07-28 13:59:54,765] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_structures
+[2026-07-28 13:59:54,765] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_systems
+[2026-07-28 13:59:54,765] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_systems
+[2026-07-28 13:59:54,765] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_systems
+[2026-07-28 13:59:54,765] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_systems
+[2026-07-28 13:59:54,766] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_structures
+[2026-07-28 13:59:54,766] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_structures
+[2026-07-28 13:59:54,766] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_structures
+[2026-07-28 13:59:54,766] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_novel_unique_structures
+[2026-07-28 13:59:54,766] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_structures
+[2026-07-28 13:59:54,766] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_structures
+[2026-07-28 13:59:54,766] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_structures
+[2026-07-28 13:59:54,766] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_structures
+[2026-07-28 13:59:54,766] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_systems
+[2026-07-28 13:59:54,766] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_systems
+[2026-07-28 13:59:54,766] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_systems
+[2026-07-28 13:59:54,766] [INFO] [evaluator.py:277:compute_metrics] Computing metric frac_unique_systems
+[2026-07-28 13:59:54,767] [INFO] [evaluator.py:277:compute_metrics] Computing metric precision
+[2026-07-28 13:59:54,767] [INFO] [evaluator.py:277:compute_metrics] Computing metric precision
+[2026-07-28 13:59:54,767] [INFO] [evaluator.py:277:compute_metrics] Computing metric precision
+[2026-07-28 13:59:54,767] [INFO] [evaluator.py:277:compute_metrics] Computing metric precision
+[2026-07-28 13:59:54,767] [INFO] [evaluator.py:277:compute_metrics] Computing metric recall
+[2026-07-28 13:59:54,767] [INFO] [evaluator.py:277:compute_metrics] Computing metric recall
+[2026-07-28 13:59:54,767] [INFO] [evaluator.py:277:compute_metrics] Computing metric recall
+[2026-07-28 13:59:54,767] [INFO] [evaluator.py:277:compute_metrics] Computing metric recall
+[2026-07-28 13:59:54,768] [INFO] [evaluator.py:297:compute_metrics] Saved metrics to /data/dxl/reports/q3_e3_pcr/frozen64/ALWAYS_ON/official_metrics.json
+[2026-07-28 13:59:54,768] [INFO] [evaluator.py:297:compute_metrics] Saved metrics to /data/dxl/reports/q3_e3_pcr/frozen64/ALWAYS_ON/official_metrics.json
+[2026-07-28 13:59:54,768] [INFO] [evaluator.py:297:compute_metrics] Saved metrics to /data/dxl/reports/q3_e3_pcr/frozen64/ALWAYS_ON/official_metrics.json
+[2026-07-28 13:59:54,768] [INFO] [evaluator.py:297:compute_metrics] Saved metrics to /data/dxl/reports/q3_e3_pcr/frozen64/ALWAYS_ON/official_metrics.json
+Computing self-consistent energies above hull:   0%|          | 0/61 [00:00<?, ?it/s]Computing self-consistent energies above hull:   3%|▎         | 2/61 [00:00<00:06,  8.75it/s]Computing self-consistent energies above hull:   5%|▍         | 3/61 [00:02<00:49,  1.18it/s]Computing self-consistent energies above hull:   7%|▋         | 4/61 [00:02<00:44,  1.27it/s]Computing self-consistent energies above hull:  10%|▉         | 6/61 [00:03<00:24,  2.22it/s]Computing self-consistent energies above hull:  16%|█▋        | 10/61 [00:03<00:11,  4.42it/s]Computing self-consistent energies above hull:  20%|█▉        | 12/61 [00:03<00:08,  5.68it/s]Computing self-consistent energies above hull:  23%|██▎       | 14/61 [00:03<00:09,  5.10it/s]Computing self-consistent energies above hull:  28%|██▊       | 17/61 [00:04<00:08,  5.32it/s]Computing self-consistent energies above hull:  31%|███       | 19/61 [00:04<00:07,  5.41it/s]Computing self-consistent energies above hull:  34%|███▍      | 21/61 [00:05<00:07,  5.60it/s]Computing self-consistent energies above hull:  38%|███▊      | 23/61 [00:05<00:05,  6.74it/s]Computing self-consistent energies above hull:  41%|████      | 25/61 [00:06<00:08,  4.18it/s]Computing self-consistent energies above hull:  43%|████▎     | 26/61 [00:06<00:07,  4.61it/s]Computing self-consistent energies above hull:  44%|████▍     | 27/61 [00:06<00:08,  3.93it/s]Computing self-consistent energies above hull:  51%|█████     | 31/61 [00:06<00:04,  7.30it/s]Computing self-consistent energies above hull:  56%|█████▌    | 34/61 [00:07<00:04,  6.40it/s]Computing self-consistent energies above hull:  61%|██████    | 37/61 [00:07<00:03,  7.29it/s]Computing self-consistent energies above hull:  67%|██████▋   | 41/61 [00:07<00:01, 10.63it/s]Computing self-consistent energies above hull:  70%|███████   | 43/61 [00:08<00:02,  6.75it/s]Computing self-consistent energies above hull:  74%|███████▍  | 45/61 [00:09<00:03,  4.69it/s]Computing self-consistent energies above hull:  77%|███████▋  | 47/61 [00:09<00:02,  5.38it/s]Computing self-consistent energies above hull:  80%|████████  | 49/61 [00:10<00:02,  5.02it/s]Computing self-consistent energies above hull:  84%|████████▎ | 51/61 [00:10<00:01,  5.91it/s]Computing self-consistent energies above hull:  89%|████████▊ | 54/61 [00:10<00:00,  8.26it/s]Computing self-consistent energies above hull:  92%|█████████▏| 56/61 [00:10<00:00,  7.18it/s]Computing self-consistent energies above hull:  95%|█████████▌| 58/61 [00:11<00:00,  6.88it/s]Computing self-consistent energies above hull: 100%|██████████| 61/61 [00:11<00:00,  5.47it/s]
+[2026-07-28T14:00:05+08:00] official metrics complete config=ALWAYS_ON
+Closing LMDB environment /data/dxl/reference_assets/reference_TRI2024correction.lmdb
+{"Q3_FROZEN_64_GO": true, "Q3_FROZEN_64_NO_GO": false, "effect_gate": true, "gate_mechanism_supported": false, "mechanism_safety": true, "quality_gate": true}

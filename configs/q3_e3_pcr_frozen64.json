@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "candidate": "Q3_E3_PCR",
+  "base_generator": {
+    "name": "C0",
+    "checkpoint": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt",
+    "checkpoint_sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+    "target_dft_mag_density": 0.1,
+    "cfg": "constant",
+    "guidance_scale": 2.0,
+    "sampling_steps": 1000,
+    "batch_size": 1,
+    "precision": "FP32",
+    "predictor_corrector": "full"
+  },
+  "gate": {
+    "checkpoint": "/data/dxl/results/postgen_fastgate/q3_refiner/model/q3_gate.joblib",
+    "checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e",
+    "input_dim": 14,
+    "hidden_dims": [
+      8
+    ],
+    "output_dim": 1,
+    "trainable_parameters": 129,
+    "threshold": 0.5,
+    "training_seed_start": 20000,
+    "training_seed_end": 20063,
+    "network_seed": 20260728
+  },
+  "refinement": {
+    "steps": 5,
+    "position_eta": 0.01,
+    "per_step_radius_angstrom": 0.02,
+    "maximum_cumulative_displacement_angstrom": 0.1,
+    "backtrack_max": 3,
+    "minimum_distance_angstrom": 0.5,
+    "modify_atomic_numbers": false,
+    "modify_cell": false
+  },
+  "evaluation": {
+    "seed_start": 32000,
+    "seed_end": 32063,
+    "seed_count": 64,
+    "random_gate_seeds": [
+      2026072901,
+      2026072902,
+      2026072903,
+      2026072904,
+      2026072905
+    ],
+    "bootstrap_seed": 20260728,
+    "bootstrap_samples": 20000,
+    "mattersim_checkpoint": "/data/dxl/mattersim_weights/mattersim-v1.0.0-5M.pth",
+    "mattersim_sha256": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5"
+  },
+  "go_no_go": {
+    "minimum_force_reduction": 0.1,
+    "maximum_composition_drop": 0.015625,
+    "maximum_ehull_increase_ev_atom": 0.002,
+    "maximum_stable_drop": 0.015625,
+    "maximum_nus_drop": 0.015625,
+    "maximum_novel_drop": 0.015625,
+    "maximum_rmsd_relative_increase": 0.05
+  }
+}

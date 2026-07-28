@@ -1,0 +1,1 @@
+/data/dxl/envs/mattergen_py310/bin/python /data/dxl/tools/guidance_stage7/run_sample.py --output-dir /data/dxl/results/postgen_fastgate/new_eval/generation/C0/33040 --seed 33040 --physical-gpu 0 --method constant --trace off
