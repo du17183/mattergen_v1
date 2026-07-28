@@ -207,6 +207,52 @@ def configure_modules() -> None:
     core.relax_rows = compatibility_relax_rows
 
 
+def free_gpu_ids() -> tuple[int, ...]:
+    gpu_rows = subprocess.run(
+        [
+            "nvidia-smi",
+            "--query-gpu=index,uuid",
+            "--format=csv,noheader",
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.splitlines()
+    index_by_uuid = {
+        row.split(",", 1)[1].strip(): int(row.split(",", 1)[0].strip())
+        for row in gpu_rows
+    }
+    applications = subprocess.run(
+        [
+            "nvidia-smi",
+            "--query-compute-apps=gpu_uuid",
+            "--format=csv,noheader",
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.splitlines()
+    busy = {row.strip() for row in applications if row.strip()}
+    return tuple(
+        index for uuid, index in sorted(index_by_uuid.items(), key=lambda item: item[1])
+        if uuid not in busy
+    )
+
+
+def wait_for_free_gpus(next_stage: str) -> tuple[int, ...]:
+    while True:
+        available = free_gpu_ids()
+        if available:
+            return available
+        write_master(
+            "waiting_for_gpus",
+            "waiting",
+            next_stage=next_stage,
+            available_gpus=[],
+        )
+        time.sleep(30)
+
+
 def generation_environment(gpu: int) -> dict[str, str]:
     env = os.environ.copy()
     env.update(
@@ -277,8 +323,8 @@ def generation_rows() -> list[dict[str, Any]]:
             "seed": seed,
             "status": "pending",
             "attempt": 0,
-            "gpu": index % 8,
-            "slot": (index % 32) // 8,
+            "gpu": None,
+            "slot": None,
             "output_dir": str(GENERATION / str(seed)),
             "elapsed_seconds": None,
             "return_code": None,
@@ -396,9 +442,14 @@ def run_generation_task(row: dict[str, Any], state: dict[str, Any]) -> bool:
 
 
 def generate() -> None:
-    shared.wait_for_all_gpus_free("a0_generation")
-    write_master("a0_generation", "running")
+    gpus = wait_for_free_gpus("a0_generation")
+    write_master("a0_generation", "running", current_gpus=list(gpus))
     state = load_generation_progress()
+    for index, row in enumerate(state["tasks"]):
+        if row["status"] != "success":
+            row["gpu"] = gpus[index % len(gpus)]
+            row["slot"] = (index // len(gpus)) % 4
+    save_generation_progress(state)
     for _round in range(2):
         pending = [
             row
@@ -408,7 +459,7 @@ def generate() -> None:
         ]
         if not pending:
             break
-        with ThreadPoolExecutor(max_workers=32) as pool:
+        with ThreadPoolExecutor(max_workers=len(gpus) * 4) as pool:
             futures = [
                 pool.submit(run_generation_task, row, state) for row in pending
             ]
@@ -483,12 +534,13 @@ def audited_refinement_subset(
 
 
 def refine() -> None:
+    gpus = wait_for_free_gpus("e3g_refinement")
+    os.environ["CUDA_VISIBLE_DEVICES"] = str(gpus[0])
     import torch
     from chgnet.model.model import CHGNet
     from research.postgen_fastgate import refiner_eval as frozen
 
-    shared.wait_for_all_gpus_free("e3g_refinement")
-    write_master("e3g_refinement", "running")
+    write_master("e3g_refinement", "running", current_gpus=[gpus[0]])
     if sha256(Q3_CHECKPOINT) != Q3_CHECKPOINT_SHA256:
         raise RuntimeError("Q3 checkpoint changed after freeze")
     torch.cuda.reset_peak_memory_stats()
@@ -642,8 +694,13 @@ def compatibility_relax_rows() -> list[dict[str, Any]]:
 
 
 def relax() -> None:
-    shared.wait_for_all_gpus_free("a0_relaxation")
-    write_master("a0_relaxation", "running", total_relaxations=128)
+    gpus = wait_for_free_gpus("a0_relaxation")
+    write_master(
+        "a0_relaxation",
+        "running",
+        total_relaxations=128,
+        current_gpus=list(gpus),
+    )
     if sha256(MATTERSIM) != MATTERSIM_SHA256:
         raise RuntimeError("MatterSim checkpoint SHA256 mismatch")
     state = core.initialize_relax()
@@ -653,7 +710,7 @@ def relax() -> None:
         processes = []
         handles = []
         for slot in range(2):
-            for gpu in range(8):
+            for gpu in gpus:
                 handle = (worker_logs / f"gpu{gpu}_slot{slot}.log").open(
                     "a", encoding="utf-8"
                 )
