@@ -21,5 +21,9 @@ def test_negative_bootstrap_gap_means_stronger_training_effect() -> None:
     assert low <= high < 0
 
 
+def test_pipeline_uses_importable_module_name() -> None:
+    assert leakage.MODULE_NAME == "research.a0_e3g_leakage256"
+
+
 def test_only_e3g_is_scheduled_for_new_relaxation() -> None:
     assert leakage.METHODS == ("A0_E3G",)

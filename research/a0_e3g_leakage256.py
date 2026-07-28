@@ -85,6 +85,7 @@ FROZEN_SOURCE_SHA256 = (
 )
 BOOTSTRAP_SEED = 20260728
 BOOTSTRAP_SAMPLES = 20_000
+MODULE_NAME = "research.a0_e3g_leakage256"
 
 
 def now() -> str:
@@ -935,10 +936,10 @@ def pipeline() -> None:
             raise RuntimeError("another leakage diagnostic is running") from error
         initialize()
         commands = (
-            [str(CHGNET_PYTHON), "-m", __name__, "refine"],
-            [str(MATTERGEN_PYTHON), "-m", __name__, "relax"],
-            [str(MATTERGEN_PYTHON), "-m", __name__, "probe"],
-            [str(MATTERGEN_PYTHON), "-m", __name__, "analyze"],
+            [str(CHGNET_PYTHON), "-m", MODULE_NAME, "refine"],
+            [str(MATTERGEN_PYTHON), "-m", MODULE_NAME, "relax"],
+            [str(MATTERGEN_PYTHON), "-m", MODULE_NAME, "probe"],
+            [str(MATTERGEN_PYTHON), "-m", MODULE_NAME, "analyze"],
         )
         for command in commands:
             subprocess.run(command, cwd=PROJECT, check=True)
