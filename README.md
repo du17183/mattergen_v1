@@ -4,6 +4,25 @@
     <img src="assets/MatterGenlogo_.png" alt="MatterGen logo" width="600"/>
 </p>
 </h1>
+<!-- BEGIN THESIS EXPERIMENT BRANCH NOTICE -->
+## 本分支的论文实验说明
+
+**实验状态：`FINAL_STATE=E3_G_FORMAL_CONFIRMED`**
+
+- 方法：Learned-Gated E3-PCR。
+- 正式 seeds：40000–40255，共 256 个独立样本；与 Q3 训练 seeds 20000–20063 交集为 0。
+- 冻结实验代码：`0275cbf08ed3c6321cea7d06f7a3a8edb83b7483`。
+- 主要结果：E3-G 预松弛最大力均值相对 C0 降低 23.28%，harm rate 为 18.359%。
+- 论文用途：创新点二独立正式主结论。
+
+- 完整分支说明：[EXPERIMENT_CARD.md](EXPERIMENT_CARD.md)
+- 统一论文归档：[thesis_archive](https://github.com/du17183/mattergen_v1/tree/archive/thesis-analysis-package-v1/thesis_archive)
+- 归档 Draft PR：[PR #18](https://github.com/du17183/mattergen_v1/pull/18)
+- 评价边界：`STABILITY_SOURCE=MatterSim-5M surrogate`；`DFT_VERIFIED=False`；`PROPERTY_TARGET_VERIFIED=False`。
+
+> 本节仅说明当前实验分支；下方保留 MatterGen 原项目 README、安装和使用文档。
+<!-- END THESIS EXPERIMENT BRANCH NOTICE -->
+
 
 <h4 align="center">
 
