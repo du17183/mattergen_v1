@@ -1,0 +1,36 @@
+{
+  "accepted_step_mean": 3.125,
+  "backtracking_mean": 0.0,
+  "candidate": "Q3_E3_PCR",
+  "chgnet_trainable": false,
+  "created_at": "2026-07-28T12:50:33+08:00",
+  "fallback_mean": 0.0,
+  "gate_apply_count": 20,
+  "manifest_sha256": "5fc65c72aec54fb753c3c6fefb4a35e091764ceb1fe3d34c813dab36de923059",
+  "mattergen_backbone_trainable": false,
+  "maximum_displacement_angstrom": 0.04078983015312698,
+  "model_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e",
+  "network": {
+    "alpha": 0.1,
+    "hidden_dims": [
+      8
+    ],
+    "input_dim": 14,
+    "output_dim": 1,
+    "random_seed": 20260728,
+    "threshold": 0.5,
+    "trainable_parameters": 129,
+    "type": "StandardScaler + MLPClassifier"
+  },
+  "new_blind_labels_used": false,
+  "refinement_frozen_before_mattersim": true,
+  "sampling_trajectory_modified": false,
+  "schema_version": 1,
+  "trust_region": {
+    "backtrack_max": 3,
+    "minimum_distance_angstrom": 0.5,
+    "per_step_radius_angstrom": 0.02,
+    "position_eta": 0.01,
+    "steps": 5
+  }
+}

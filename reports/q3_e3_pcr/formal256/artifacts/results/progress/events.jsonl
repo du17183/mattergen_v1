@@ -1,0 +1,32 @@
+{"stage": "state_audit", "status": "running", "time": "2026-07-28T14:37:24+08:00"}
+{"config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a", "frozen_source_sha256": "3d1d6e38066bb195c893ea8665f284e66261f74a055e1521ed4d6250d469895f", "q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e", "stage": "freeze_audit", "status": "success", "time": "2026-07-28T14:37:25+08:00"}
+{"formal_seed_count": 256, "formal_seeds": [40000, 40255], "stage": "formal_seed_audit", "status": "success", "time": "2026-07-28T14:37:25+08:00"}
+{"stage": "state_audit", "status": "running", "time": "2026-07-28T14:38:07+08:00"}
+{"config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a", "frozen_source_sha256": "3d1d6e38066bb195c893ea8665f284e66261f74a055e1521ed4d6250d469895f", "q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e", "stage": "freeze_audit", "status": "success", "time": "2026-07-28T14:38:08+08:00"}
+{"formal_seed_count": 256, "formal_seeds": [40000, 40255], "stage": "formal_seed_audit", "status": "success", "time": "2026-07-28T14:38:08+08:00"}
+{"stage": "state_audit", "status": "running", "time": "2026-07-28T14:39:34+08:00"}
+{"config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a", "frozen_source_sha256": "3d1d6e38066bb195c893ea8665f284e66261f74a055e1521ed4d6250d469895f", "q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e", "stage": "freeze_audit", "status": "success", "time": "2026-07-28T14:39:34+08:00"}
+{"formal_seed_count": 256, "formal_seeds": [40000, 40255], "stage": "formal_seed_audit", "status": "success", "time": "2026-07-28T14:39:34+08:00"}
+{"stage": "state_audit", "status": "running", "time": "2026-07-28T14:39:47+08:00"}
+{"config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a", "frozen_source_sha256": "3d1d6e38066bb195c893ea8665f284e66261f74a055e1521ed4d6250d469895f", "q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e", "stage": "freeze_audit", "status": "success", "time": "2026-07-28T14:39:47+08:00"}
+{"formal_seed_count": 256, "formal_seeds": [40000, 40255], "stage": "formal_seed_audit", "status": "success", "time": "2026-07-28T14:39:47+08:00"}
+{"stage": "c0_generation", "status": "running", "time": "2026-07-28T14:39:48+08:00"}
+{"stage": "c0_generation", "status": "running", "time": "2026-07-28T14:39:48+08:00"}
+{"c0_generation": "256/256", "median_elapsed_seconds": 204.61416710802587, "stage": "c0_generation", "status": "success", "time": "2026-07-28T15:08:52+08:00"}
+{"c0_generated_once": true, "c0_generation": "256/256", "stage": "c0_generation", "status": "success", "time": "2026-07-28T15:08:53+08:00"}
+{"stage": "e3a_refinement", "status": "running", "time": "2026-07-28T15:08:53+08:00"}
+{"stage": "q3_refinement", "status": "running", "time": "2026-07-28T15:08:55+08:00"}
+{"gate_on_count": 170, "gate_on_rate": 0.6640625, "maximum_displacement_angstrom": 0.0656860392400019, "q3_refinement": "256/256", "stage": "q3_refinement", "status": "success", "time": "2026-07-28T15:09:29+08:00"}
+{"e3a_refinement": "256/256", "refinement_rate": 1.0, "stage": "e3a_refinement", "status": "success", "time": "2026-07-28T15:09:29+08:00"}
+{"e3g_refinement": "256/256", "gate_off_exact_fallback": 86, "refinement_rate": 0.6640625, "stage": "e3g_refinement", "status": "success", "time": "2026-07-28T15:09:29+08:00"}
+{"stage": "c0_relaxation", "status": "running", "time": "2026-07-28T15:09:30+08:00", "total_relaxations": 768}
+{"c0_relaxation": "256/256", "stage": "c0_relaxation", "status": "success", "time": "2026-07-28T15:12:17+08:00"}
+{"e3a_relaxation": "256/256", "stage": "e3a_relaxation", "status": "success", "time": "2026-07-28T15:12:17+08:00"}
+{"e3g_relaxation": "256/256", "stage": "e3g_relaxation", "status": "success", "time": "2026-07-28T15:12:17+08:00"}
+{"stage": "metrics", "status": "running", "time": "2026-07-28T15:12:17+08:00"}
+{"e3a_primary_pass": true, "e3g_primary_pass": true, "stage": "primary_statistics", "status": "success", "time": "2026-07-28T15:21:49+08:00"}
+{"e3a_quality_pass": true, "e3g_quality_pass": true, "stage": "secondary_statistics", "status": "success", "time": "2026-07-28T15:21:49+08:00"}
+{"gate_mechanism_formal_supported": true, "stage": "gate_mechanism_analysis", "status": "success", "time": "2026-07-28T15:21:49+08:00"}
+{"final_method": "LEARNED_GATED_E3_PCR", "final_report": "/data/dxl/reports/q3_e3_pcr/formal256/final_report.md", "final_state": "E3_G_FORMAL_CONFIRMED", "stage": "formal_decision", "status": "success", "time": "2026-07-28T15:21:49+08:00"}
+{"final_state": "E3_G_FORMAL_CONFIRMED", "gpu_workers": 0, "stage": "github_archive", "status": "pending", "time": "2026-07-28T15:21:50+08:00"}
+{"draft_pr": "https://github.com/du17183/mattergen_v1/pull/13", "final_method": "LEARNED_GATED_E3_PCR", "final_state": "E3_G_FORMAL_CONFIRMED", "github_branch": "feature/q3-e3-pcr-formal256", "github_commit": "bef05db9ed22446f3fcd799511335c2341a8c555", "gpu_workers": 0, "stage": "stop_for_review", "status": "success", "time": "2026-07-28T15:26:47+08:00"}

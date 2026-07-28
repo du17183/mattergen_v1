@@ -1,0 +1,25 @@
+{"stage": "state_audit", "status": "running", "time": "2026-07-28T16:00:34+08:00"}
+{"q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e", "q3_config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a", "stage": "freeze_audit", "status": "success", "time": "2026-07-28T16:00:34+08:00"}
+{"evaluation_seeds": [41000, 41063], "stage": "seed_audit", "status": "success", "time": "2026-07-28T16:00:34+08:00"}
+{"stage": "state_audit", "status": "running", "time": "2026-07-28T16:00:48+08:00"}
+{"q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e", "q3_config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a", "stage": "freeze_audit", "status": "success", "time": "2026-07-28T16:00:49+08:00"}
+{"evaluation_seeds": [41000, 41063], "stage": "seed_audit", "status": "success", "time": "2026-07-28T16:00:49+08:00"}
+{"external_gpu_processes": ["2679673, /home/ubuntu/miniconda3/envs/codeformer/bin/python"], "next_stage": "a0_generation", "stage": "waiting_for_gpus", "status": "waiting", "time": "2026-07-28T16:00:49+08:00"}
+{"external_gpu_processes": ["2679673, /home/ubuntu/miniconda3/envs/codeformer/bin/python"], "next_stage": "a0_generation", "stage": "waiting_for_gpus", "status": "waiting", "time": "2026-07-28T16:01:20+08:00"}
+{"external_gpu_processes": ["2679673, /home/ubuntu/miniconda3/envs/codeformer/bin/python"], "next_stage": "a0_generation", "stage": "waiting_for_gpus", "status": "waiting", "time": "2026-07-28T16:01:50+08:00"}
+{"stage": "state_audit", "status": "running", "time": "2026-07-28T16:03:45+08:00"}
+{"q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e", "q3_config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a", "stage": "freeze_audit", "status": "success", "time": "2026-07-28T16:03:46+08:00"}
+{"evaluation_seeds": [41000, 41063], "stage": "seed_audit", "status": "success", "time": "2026-07-28T16:03:46+08:00"}
+{"stage": "state_audit", "status": "running", "time": "2026-07-28T16:03:58+08:00"}
+{"q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e", "q3_config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a", "stage": "freeze_audit", "status": "success", "time": "2026-07-28T16:03:59+08:00"}
+{"evaluation_seeds": [41000, 41063], "stage": "seed_audit", "status": "success", "time": "2026-07-28T16:03:59+08:00"}
+{"current_gpus": [1, 2, 3, 4, 5, 6, 7], "stage": "a0_generation", "status": "running", "time": "2026-07-28T16:04:00+08:00"}
+{"a0_generated_once": true, "a0_generation": "64/64", "stage": "a0_generation", "status": "success", "time": "2026-07-28T16:13:09+08:00"}
+{"current_gpus": [0], "stage": "e3g_refinement", "status": "running", "time": "2026-07-28T16:13:12+08:00"}
+{"e3g_refinement": "64/64", "gate_off_exact_fallback": 19, "gate_on_count": 45, "gate_on_rate": 0.703125, "maximum_displacement_angstrom": 0.04079950940907184, "stage": "e3g_refinement", "status": "success", "time": "2026-07-28T16:13:17+08:00"}
+{"current_gpus": [0, 1, 2, 3, 4, 5, 6, 7], "stage": "a0_relaxation", "status": "running", "time": "2026-07-28T16:13:18+08:00", "total_relaxations": 128}
+{"a0_relaxation": "64/64", "stage": "a0_relaxation", "status": "success", "time": "2026-07-28T16:13:55+08:00"}
+{"e3g_relaxation": "64/64", "stage": "e3g_relaxation", "status": "success", "time": "2026-07-28T16:13:55+08:00"}
+{"stage": "metrics", "status": "running", "time": "2026-07-28T16:13:56+08:00"}
+{"a0_e3g_compatibility_go": true, "final_report": "/data/dxl/reports/a0_e3g_compat64/final_report.md", "final_state": "A0_E3G_COMPATIBILITY_GO", "stage": "compatibility_decision", "status": "success", "time": "2026-07-28T16:19:16+08:00"}
+{"final_state": "A0_E3G_COMPATIBILITY_GO", "gpu_workers": 0, "stage": "github_archive", "status": "pending", "time": "2026-07-28T16:19:17+08:00"}

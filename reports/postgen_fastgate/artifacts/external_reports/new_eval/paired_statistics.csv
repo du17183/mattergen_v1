@@ -1,0 +1,11 @@
+metric,type,baseline_mean,selected_mean,mean_difference_selected_minus_baseline,median_difference_selected_minus_baseline,bootstrap_95_ci_low,bootstrap_95_ci_high,test,p_value,wins,ties,losses
+energy_above_hull_per_atom,continuous,0.15974763361579505,0.1260251396101338,-0.03372249400566124,-0.043148976391522265,-0.09848736417811692,0.046173753672383404,Wilcoxon signed-rank,0.017491041131231153,21,3,8
+rmsd_from_relaxation,continuous,0.07189467948005515,0.03382484311820645,-0.03806983636184871,-0.0034524523050654156,-0.12316931194483142,0.02172434760145705,Wilcoxon signed-rank,0.223978775087744,21,0,11
+pre_relax_max_force_ev_ang,continuous,0.28750701536216017,0.15642002292179769,-0.1310869924403625,-0.015007370377608062,-0.23301916270425918,-0.0403424969325055,Wilcoxon signed-rank,0.030921863857656717,19,0,13
+stable,binary,0.28125,0.5625,0.28125,0.0,0.0625,0.5,exact paired discordant-binomial,0.049041748046875,13,15,4
+novel_unique_stable,binary,0.09375,0.1875,0.09375,0.0,-0.0625,0.25,exact paired discordant-binomial,0.453125,5,25,2
+comp_validity,binary,0.75,0.96875,0.21875,0.0,0.09375,0.375,exact paired discordant-binomial,0.015625,7,25,0
+structure_validity,binary,1.0,1.0,0.0,0.0,0.0,0.0,exact paired discordant-binomial,1.0,0,32,0
+novel,binary,0.71875,0.59375,-0.125,0.0,-0.34375,0.09375,exact paired discordant-binomial,0.4239501953125,5,18,9
+unique,binary,1.0,1.0,0.0,0.0,0.0,0.0,exact paired discordant-binomial,1.0,0,32,0
+converged,binary,0.96875,1.0,0.03125,0.0,0.0,0.09375,exact paired discordant-binomial,1.0,1,31,0

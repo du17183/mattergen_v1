@@ -1,0 +1,12 @@
+metric,type,paired_count,baseline_mean,selected_mean,baseline_median,selected_median,mean_difference,median_difference,bootstrap_95_ci_low,bootstrap_95_ci_high,test,p_value,wins,ties,losses
+pre_relax_max_force_ev_ang,continuous,256,0.33214588802594247,0.2409000935948128,0.17819717787394956,0.1538802675551668,-0.0912457944311297,-0.0018712540072421853,-0.1260167265602078,-0.06262975820599685,Wilcoxon signed-rank,5.21690395228222e-18,139,86,31
+relaxation_steps,continuous,256,60.375,60.265625,30.0,29.0,-0.109375,0.0,-1.203125,0.97265625,Wilcoxon signed-rank,0.7262885276505433,63,134,59
+relaxation_rmsd,continuous,256,0.0738217266760687,0.06824729319252071,0.0211629763613666,0.01815222974595125,-0.005574433483547984,-2.2161288125606415e-07,-0.014741473752129086,-0.000634491339908467,Wilcoxon signed-rank,9.946252650270714e-08,161,0,95
+energy_above_hull_per_atom_common_coverage,continuous,256,0.14023160920514416,0.14199624633350016,0.11099701746103015,0.1145234619090458,0.0017646371283560306,0.0,-8.301252336203741e-05,0.005398386234036156,Wilcoxon signed-rank,0.7294890716506344,104,55,97
+force_converged,binary,256,0.98046875,0.98046875,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0
+stable,binary,256,0.46875,0.46484375,,,-0.00390625,0.0,-0.01171875,0.0,McNemar exact / paired discordant binomial,1.0,0,255,1
+nus,binary,256,0.2578125,0.2578125,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0
+composition_validity,binary,256,0.83984375,0.83984375,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0
+structure_validity,binary,256,1.0,1.0,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0
+novel,binary,256,0.765625,0.765625,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0
+unique,binary,256,0.98046875,0.98046875,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0

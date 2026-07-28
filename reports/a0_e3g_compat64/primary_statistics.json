@@ -1,0 +1,33 @@
+{
+  "baseline_mean": 0.21730158680797604,
+  "baseline_median": 0.1028512876702643,
+  "bootstrap_95_ci": [
+    -0.09234130839938041,
+    -0.029753947559803366
+  ],
+  "bootstrap_ci_upper_below_zero": true,
+  "effect_reduction_ge_10_percent": true,
+  "leave_one_out_mean_difference_range": [
+    -0.06184503803671121,
+    -0.051108498526013436
+  ],
+  "losses": 19,
+  "maximum_single_sample_absolute_contribution_rate": 0.1304799254081911,
+  "mean_difference": -0.058885317910431105,
+  "median_difference": -0.0015403742024287016,
+  "primary_effect_pass": true,
+  "relative_change": -0.2709842977928487,
+  "remove_most_favorable_relative_change": -0.24895525018557285,
+  "remove_most_favorable_sample_index": 53,
+  "remove_most_favorable_sample_seed": 41053,
+  "remove_most_unfavorable_relative_change": -0.29098998442599955,
+  "remove_most_unfavorable_sample_index": 36,
+  "remove_most_unfavorable_sample_seed": 41036,
+  "selected_mean": 0.1584162688975449,
+  "selected_median": 0.0912627609710765,
+  "statistical_evidence_pass": true,
+  "ties": 0,
+  "wilcoxon_p_below_0_05": true,
+  "wilcoxon_p_raw": 7.73986718896914e-05,
+  "wins": 45
+}
