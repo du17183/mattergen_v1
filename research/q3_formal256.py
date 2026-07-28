@@ -584,7 +584,8 @@ def relax() -> None:
                 process = subprocess.Popen(
                     [
                         str(MATTERGEN_PYTHON),
-                        str(Path(__file__).resolve()),
+                        "-m",
+                        "research.q3_formal256",
                         "relax-worker",
                         "--gpu",
                         str(gpu),
@@ -1630,10 +1631,10 @@ def pipeline() -> None:
             raise RuntimeError("another formal256 pipeline is already running") from error
         initialize()
         commands = (
-            [str(MATTERGEN_PYTHON), str(Path(__file__).resolve()), "generate"],
-            [str(CHGNET_PYTHON), str(Path(__file__).resolve()), "refine"],
-            [str(MATTERGEN_PYTHON), str(Path(__file__).resolve()), "relax"],
-            [str(MATTERGEN_PYTHON), str(Path(__file__).resolve()), "analyze"],
+            [str(MATTERGEN_PYTHON), "-m", "research.q3_formal256", "generate"],
+            [str(CHGNET_PYTHON), "-m", "research.q3_formal256", "refine"],
+            [str(MATTERGEN_PYTHON), "-m", "research.q3_formal256", "relax"],
+            [str(MATTERGEN_PYTHON), "-m", "research.q3_formal256", "analyze"],
         )
         for command in commands:
             subprocess.run(command, cwd=PROJECT, check=True)

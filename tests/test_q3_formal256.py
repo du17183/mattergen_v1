@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 import numpy as np
 
 from research import q3_formal256 as formal
@@ -53,6 +55,12 @@ def test_final_state_no_go() -> None:
         "E3_PCR_FORMAL_NO_GO",
         "NONE",
     )
+
+
+def test_formal_subprocesses_use_module_entrypoint() -> None:
+    source = Path("research/q3_formal256.py").read_text(encoding="utf-8")
+    assert source.count("research.q3_formal256") >= 5
+    assert "core.relax()" not in source
 
 
 def test_formal_method_contract() -> None:
