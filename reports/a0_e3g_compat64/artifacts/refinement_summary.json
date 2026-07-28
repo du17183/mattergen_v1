@@ -1,0 +1,32 @@
+{
+  "atomic_numbers_modified": 0,
+  "backtracking_mean": 0.03125,
+  "cell_modified": 0,
+  "created_at": "2026-07-28T16:13:17+08:00",
+  "fallback_mean": 0.0625,
+  "gate_forward_seconds_per_structure": 6.492704414995387e-06,
+  "gate_forward_total_seconds": 0.0004155330825597048,
+  "gate_on_count": 45,
+  "gate_on_rate": 0.703125,
+  "gate_rejected_exact_fallback_count": 19,
+  "gate_threshold": 0.5,
+  "learned_clipping_rate": 0.0,
+  "learned_instrumentation": {
+    "abnormal_cell_rejections": 0,
+    "clipped_atoms": 0,
+    "proposal_atoms": 2433,
+    "proposal_calls": 235,
+    "safety_checks": 235,
+    "safety_rejections": 0,
+    "short_bond_rejections": 0
+  },
+  "maximum_displacement_angstrom": 0.04079950940907184,
+  "mean_displacement_angstrom": 0.007484324050997016,
+  "median_displacement_angstrom": 0.0037790181933602296,
+  "peak_vram_bytes": 4729391104,
+  "q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e",
+  "q3_parameter_count": 129,
+  "q3_refinement_seconds_per_structure": 0.051764115452897386,
+  "q3_refinement_total_seconds": 3.3129033889854327,
+  "schema_version": 1
+}
