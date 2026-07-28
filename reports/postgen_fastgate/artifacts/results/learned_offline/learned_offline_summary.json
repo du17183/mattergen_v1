@@ -1,0 +1,548 @@
+{
+  "frozen_scores": {
+    "Q1_UQ_PQR": "multi-task quality + ensemble uncertainty",
+    "Q2_RFR": "RMSD risk + safety probabilities",
+    "Q4_CPRC": "MatterSim E-hull prediction + uncertainty + safety",
+    "Q6_NS_SETRANK_PROXY": "NUS/stable/novel/unique probabilities"
+  },
+  "gates": {
+    "Q1_UQ_PQR_LEARNED_OFFLINE_GO": false,
+    "Q2_RFR_LEARNED_OFFLINE_GO": false,
+    "Q4_CPRC_LEARNED_OFFLINE_GO": false,
+    "Q6_NS_SETRANK_PROXY_LEARNED_OFFLINE_GO": true
+  },
+  "method": [
+    "C0"
+  ],
+  "pool_size": 4,
+  "pools_per_trial": 8,
+  "random_seed": 20260728,
+  "rows": 32,
+  "schema_version": 1,
+  "split": [
+    "test"
+  ],
+  "summary": {
+    "Q1_UQ_PQR": {
+      "comp_validity": {
+        "mean": 0.89925,
+        "median": 0.875,
+        "q025": 0.75,
+        "q975": 1.0
+      },
+      "composition_change": {
+        "mean": 0.05175,
+        "median": 0.0,
+        "q025": -0.25,
+        "q975": 0.375
+      },
+      "converged": {
+        "mean": 1.0,
+        "median": 1.0,
+        "q025": 1.0,
+        "q975": 1.0
+      },
+      "ehull_change": {
+        "mean": -0.07045739848549028,
+        "median": -0.06939827091968041,
+        "q025": -0.13491550230615212,
+        "q975": -0.007070016818119842
+      },
+      "energy_above_hull_per_atom": {
+        "mean": 0.0775554152882869,
+        "median": 0.073820692172088,
+        "q025": 0.0534205283629013,
+        "q975": 0.11669891382664738
+      },
+      "novel": {
+        "mean": 0.414,
+        "median": 0.375,
+        "q025": 0.25,
+        "q975": 0.625
+      },
+      "novel_change": {
+        "mean": -0.148625,
+        "median": -0.125,
+        "q025": -0.5,
+        "q975": 0.25
+      },
+      "novel_unique_stable": {
+        "mean": 0.35275,
+        "median": 0.375,
+        "q025": 0.125,
+        "q975": 0.5
+      },
+      "nus_change": {
+        "mean": 0.1945,
+        "median": 0.25,
+        "q025": -0.125,
+        "q975": 0.5
+      },
+      "rmsd_from_relaxation": {
+        "mean": 0.017098387226748973,
+        "median": 0.013220265257303387,
+        "q025": 0.00503307382540935,
+        "q975": 0.04861165203268637
+      },
+      "rmsd_relative_change": {
+        "mean": -0.6102153919683313,
+        "median": -0.743269547895162,
+        "q025": -0.9368224642563516,
+        "q975": 0.45839453389537727
+      },
+      "stable": {
+        "mean": 0.847125,
+        "median": 0.875,
+        "q025": 0.625,
+        "q975": 1.0
+      },
+      "stable_change": {
+        "mean": 0.438,
+        "median": 0.5,
+        "q025": 0.125,
+        "q975": 0.75
+      },
+      "structure_change": {
+        "mean": 0.0,
+        "median": 0.0,
+        "q025": 0.0,
+        "q975": 0.0
+      },
+      "structure_validity": {
+        "mean": 1.0,
+        "median": 1.0,
+        "q025": 1.0,
+        "q975": 1.0
+      },
+      "unique": {
+        "mean": 0.912,
+        "median": 0.875,
+        "q025": 0.75,
+        "q975": 1.0
+      },
+      "unique_change": {
+        "mean": 0.065125,
+        "median": 0.0,
+        "q025": -0.125,
+        "q975": 0.375
+      }
+    },
+    "Q2_RFR": {
+      "comp_validity": {
+        "mean": 0.941125,
+        "median": 1.0,
+        "q025": 0.75,
+        "q975": 1.0
+      },
+      "composition_change": {
+        "mean": 0.093625,
+        "median": 0.125,
+        "q025": -0.125,
+        "q975": 0.375
+      },
+      "converged": {
+        "mean": 1.0,
+        "median": 1.0,
+        "q025": 1.0,
+        "q975": 1.0
+      },
+      "ehull_change": {
+        "mean": -0.07938233742411802,
+        "median": -0.07927734499677755,
+        "q025": -0.1436353796497612,
+        "q975": -0.0192373783980508
+      },
+      "energy_above_hull_per_atom": {
+        "mean": 0.06863047634965914,
+        "median": 0.06520345440440531,
+        "q025": 0.050067000390324815,
+        "q975": 0.10219715707937801
+      },
+      "novel": {
+        "mean": 0.260125,
+        "median": 0.25,
+        "q025": 0.0,
+        "q975": 0.5
+      },
+      "novel_change": {
+        "mean": -0.3025,
+        "median": -0.25,
+        "q025": -0.625,
+        "q975": 0.0
+      },
+      "novel_unique_stable": {
+        "mean": 0.229625,
+        "median": 0.25,
+        "q025": 0.0,
+        "q975": 0.375
+      },
+      "nus_change": {
+        "mean": 0.071375,
+        "median": 0.125,
+        "q025": -0.25,
+        "q975": 0.375
+      },
+      "rmsd_from_relaxation": {
+        "mean": 0.009455266374297654,
+        "median": 0.006934680123480551,
+        "q025": 0.0033675683012433467,
+        "q975": 0.03955644952985298
+      },
+      "rmsd_relative_change": {
+        "mean": -0.786382530522101,
+        "median": -0.8485001053168486,
+        "q025": -0.9553960853976458,
+        "q975": -0.25760729154407463
+      },
+      "stable": {
+        "mean": 0.80825,
+        "median": 0.8125,
+        "q025": 0.625,
+        "q975": 1.0
+      },
+      "stable_change": {
+        "mean": 0.399125,
+        "median": 0.375,
+        "q025": 0.0,
+        "q975": 0.75
+      },
+      "structure_change": {
+        "mean": 0.0,
+        "median": 0.0,
+        "q025": 0.0,
+        "q975": 0.0
+      },
+      "structure_validity": {
+        "mean": 1.0,
+        "median": 1.0,
+        "q025": 1.0,
+        "q975": 1.0
+      },
+      "unique": {
+        "mean": 0.762375,
+        "median": 0.75,
+        "q025": 0.625,
+        "q975": 0.875
+      },
+      "unique_change": {
+        "mean": -0.0845,
+        "median": -0.125,
+        "q025": -0.375,
+        "q975": 0.25
+      }
+    },
+    "Q4_CPRC": {
+      "comp_validity": {
+        "mean": 0.892375,
+        "median": 0.875,
+        "q025": 0.75,
+        "q975": 1.0
+      },
+      "composition_change": {
+        "mean": 0.044875,
+        "median": 0.0,
+        "q025": -0.25,
+        "q975": 0.25312499999999716
+      },
+      "converged": {
+        "mean": 1.0,
+        "median": 1.0,
+        "q025": 1.0,
+        "q975": 1.0
+      },
+      "ehull_change": {
+        "mean": -0.07199423411608549,
+        "median": -0.07099203881219726,
+        "q025": -0.13549538497424504,
+        "q975": -0.007868101511705392
+      },
+      "energy_above_hull_per_atom": {
+        "mean": 0.07601857965769167,
+        "median": 0.07185372871463028,
+        "q025": 0.05190060554375638,
+        "q975": 0.11426997202924508
+      },
+      "novel": {
+        "mean": 0.391875,
+        "median": 0.375,
+        "q025": 0.125,
+        "q975": 0.625
+      },
+      "novel_change": {
+        "mean": -0.17075,
+        "median": -0.125,
+        "q025": -0.5,
+        "q975": 0.25
+      },
+      "novel_unique_stable": {
+        "mean": 0.332625,
+        "median": 0.375,
+        "q025": 0.125,
+        "q975": 0.5
+      },
+      "nus_change": {
+        "mean": 0.174375,
+        "median": 0.125,
+        "q025": -0.125,
+        "q975": 0.5
+      },
+      "rmsd_from_relaxation": {
+        "mean": 0.016898214725737947,
+        "median": 0.013245817210102373,
+        "q025": 0.005151770925339364,
+        "q975": 0.04830886029967526
+      },
+      "rmsd_relative_change": {
+        "mean": -0.616376338770641,
+        "median": -0.7454512775680506,
+        "q025": -0.9363252903784172,
+        "q975": 0.3493055301406917
+      },
+      "stable": {
+        "mean": 0.8535,
+        "median": 0.875,
+        "q025": 0.625,
+        "q975": 1.0
+      },
+      "stable_change": {
+        "mean": 0.444375,
+        "median": 0.5,
+        "q025": 0.125,
+        "q975": 0.7531249999999972
+      },
+      "structure_change": {
+        "mean": 0.0,
+        "median": 0.0,
+        "q025": 0.0,
+        "q975": 0.0
+      },
+      "structure_validity": {
+        "mean": 1.0,
+        "median": 1.0,
+        "q025": 1.0,
+        "q975": 1.0
+      },
+      "unique": {
+        "mean": 0.9135,
+        "median": 0.875,
+        "q025": 0.75,
+        "q975": 1.0
+      },
+      "unique_change": {
+        "mean": 0.066625,
+        "median": 0.0,
+        "q025": -0.125,
+        "q975": 0.375
+      }
+    },
+    "Q6_NS_SETRANK_PROXY": {
+      "comp_validity": {
+        "mean": 0.902375,
+        "median": 0.875,
+        "q025": 0.75,
+        "q975": 1.0
+      },
+      "composition_change": {
+        "mean": 0.054875,
+        "median": 0.0,
+        "q025": -0.25,
+        "q975": 0.375
+      },
+      "converged": {
+        "mean": 1.0,
+        "median": 1.0,
+        "q025": 1.0,
+        "q975": 1.0
+      },
+      "ehull_change": {
+        "mean": -0.06565561198060482,
+        "median": -0.06376527160080603,
+        "q025": -0.13084621238834954,
+        "q975": -0.007287301371647383
+      },
+      "energy_above_hull_per_atom": {
+        "mean": 0.08235720179317235,
+        "median": 0.07985884955252728,
+        "q025": 0.06075575530724633,
+        "q975": 0.11316563046289475
+      },
+      "novel": {
+        "mean": 0.57675,
+        "median": 0.625,
+        "q025": 0.375,
+        "q975": 0.75
+      },
+      "novel_change": {
+        "mean": 0.014125,
+        "median": 0.0,
+        "q025": -0.375,
+        "q975": 0.375
+      },
+      "novel_unique_stable": {
+        "mean": 0.512625,
+        "median": 0.5,
+        "q025": 0.375,
+        "q975": 0.625
+      },
+      "nus_change": {
+        "mean": 0.354375,
+        "median": 0.375,
+        "q025": 0.125,
+        "q975": 0.625
+      },
+      "rmsd_from_relaxation": {
+        "mean": 0.021527618057094612,
+        "median": 0.013239746548168532,
+        "q025": 0.005772205980671788,
+        "q975": 0.05545457838553521
+      },
+      "rmsd_relative_change": {
+        "mean": -0.508311790959541,
+        "median": -0.669438792055788,
+        "q025": -0.9002122719509753,
+        "q975": 0.853777331402949
+      },
+      "stable": {
+        "mean": 0.82175,
+        "median": 0.875,
+        "q025": 0.625,
+        "q975": 1.0
+      },
+      "stable_change": {
+        "mean": 0.412625,
+        "median": 0.375,
+        "q025": 0.0,
+        "q975": 0.75
+      },
+      "structure_change": {
+        "mean": 0.0,
+        "median": 0.0,
+        "q025": 0.0,
+        "q975": 0.0
+      },
+      "structure_validity": {
+        "mean": 1.0,
+        "median": 1.0,
+        "q025": 1.0,
+        "q975": 1.0
+      },
+      "unique": {
+        "mean": 0.9055,
+        "median": 0.875,
+        "q025": 0.75,
+        "q975": 1.0
+      },
+      "unique_change": {
+        "mean": 0.058625,
+        "median": 0.0,
+        "q025": -0.125,
+        "q975": 0.375
+      }
+    },
+    "baseline_first": {
+      "comp_validity": {
+        "mean": 0.8475,
+        "median": 0.875,
+        "q025": 0.625,
+        "q975": 1.0
+      },
+      "composition_change": {
+        "mean": 0.0,
+        "median": 0.0,
+        "q025": 0.0,
+        "q975": 0.0
+      },
+      "converged": {
+        "mean": 1.0,
+        "median": 1.0,
+        "q025": 1.0,
+        "q975": 1.0
+      },
+      "ehull_change": {
+        "mean": 0.0,
+        "median": 0.0,
+        "q025": 0.0,
+        "q975": 0.0
+      },
+      "energy_above_hull_per_atom": {
+        "mean": 0.14801281377377717,
+        "median": 0.14745470515895936,
+        "q025": 0.09408476540403676,
+        "q975": 0.20387787267824686
+      },
+      "novel": {
+        "mean": 0.562625,
+        "median": 0.625,
+        "q025": 0.25,
+        "q975": 0.875
+      },
+      "novel_change": {
+        "mean": 0.0,
+        "median": 0.0,
+        "q025": 0.0,
+        "q975": 0.0
+      },
+      "novel_unique_stable": {
+        "mean": 0.15825,
+        "median": 0.125,
+        "q025": 0.0,
+        "q975": 0.375
+      },
+      "nus_change": {
+        "mean": 0.0,
+        "median": 0.0,
+        "q025": 0.0,
+        "q975": 0.0
+      },
+      "rmsd_from_relaxation": {
+        "mean": 0.05619723030803416,
+        "median": 0.05430734365238822,
+        "q025": 0.017674655099694105,
+        "q975": 0.11038685466419147
+      },
+      "rmsd_relative_change": {
+        "mean": 0.0,
+        "median": 0.0,
+        "q025": 0.0,
+        "q975": 0.0
+      },
+      "stable": {
+        "mean": 0.409125,
+        "median": 0.375,
+        "q025": 0.125,
+        "q975": 0.75
+      },
+      "stable_change": {
+        "mean": 0.0,
+        "median": 0.0,
+        "q025": 0.0,
+        "q975": 0.0
+      },
+      "structure_change": {
+        "mean": 0.0,
+        "median": 0.0,
+        "q025": 0.0,
+        "q975": 0.0
+      },
+      "structure_validity": {
+        "mean": 1.0,
+        "median": 1.0,
+        "q025": 1.0,
+        "q975": 1.0
+      },
+      "unique": {
+        "mean": 0.846875,
+        "median": 0.875,
+        "q025": 0.625,
+        "q975": 1.0
+      },
+      "unique_change": {
+        "mean": 0.0,
+        "median": 0.0,
+        "q025": 0.0,
+        "q975": 0.0
+      }
+    }
+  },
+  "trials": 1000
+}

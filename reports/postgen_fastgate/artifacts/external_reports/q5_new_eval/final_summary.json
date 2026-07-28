@@ -1,0 +1,74 @@
+{
+  "baseline": {
+    "composition_validity": 0.75,
+    "converged": 0.96875,
+    "ehull": 0.15974763361579503,
+    "novel": 0.71875,
+    "nus": 0.09375,
+    "pre_relax_max_force_ev_ang": 0.28750701536216017,
+    "rmsd": 0.07189467948005512,
+    "stable": 0.28125,
+    "structure_validity": 1.0,
+    "unique": 1.0
+  },
+  "candidate": "Q5_CQPS",
+  "changes": {
+    "composition_validity": 0.09375,
+    "converged": 0.0,
+    "ehull": -0.031396607094203666,
+    "novel": -0.15625,
+    "nus": 0.03125,
+    "pre_relax_max_force_relative": -0.36810180412955806,
+    "rmsd_relative": -0.5196346541727298,
+    "stable": 0.21875,
+    "structure_validity": 0.0,
+    "target_hit_0_02": 0.375,
+    "unique": 0.0
+  },
+  "chgnet_mag_oracle_previously_verified": true,
+  "completed_at": "2026-07-28T12:42:56+08:00",
+  "dft_verified": false,
+  "frozen_selection_manifest": "/data/dxl/reports/postgen_fastgate/q5_new_eval/frozen_selection_manifest.json",
+  "gates": {
+    "Q5_CQPS_FINAL_GO": false,
+    "positive_gate": true,
+    "safety_gate": false
+  },
+  "mattergen_backbone_trainable": false,
+  "new_blind_labels_used_for_selection": false,
+  "official_metrics": {
+    "Q5_CQPS": {
+      "avg_comp_validity": 0.84375,
+      "avg_energy_above_hull_per_atom": 0.12835102652159142,
+      "avg_rmsd_from_relaxation": 0.03453571257157749,
+      "avg_structure_comp_validity": 0.84375,
+      "avg_structure_validity": 1.0,
+      "frac_novel_structures": 0.5625,
+      "frac_novel_systems": 0.09375,
+      "frac_novel_unique_stable_structures": 0.125,
+      "frac_novel_unique_structures": 0.5625,
+      "frac_stable_structures": 0.5,
+      "frac_successful_jobs": 1.0,
+      "frac_unique_structures": 1.0,
+      "frac_unique_systems": 1.0,
+      "precision": 0.4375,
+      "recall": 2.60048203480627e-05
+    }
+  },
+  "paired_statistics": "/data/dxl/reports/postgen_fastgate/q5_new_eval/paired_statistics.csv",
+  "sampling_trajectory_modified": false,
+  "schema_version": 1,
+  "selected": {
+    "composition_validity": 0.84375,
+    "converged": 0.96875,
+    "ehull": 0.12835102652159136,
+    "novel": 0.5625,
+    "nus": 0.125,
+    "pre_relax_max_force_ev_ang": 0.18167516430744446,
+    "rmsd": 0.03453571257157743,
+    "stable": 0.5,
+    "structure_validity": 1.0,
+    "unique": 1.0
+  },
+  "target_hit_is_chgnet_surrogate_not_dft": true
+}

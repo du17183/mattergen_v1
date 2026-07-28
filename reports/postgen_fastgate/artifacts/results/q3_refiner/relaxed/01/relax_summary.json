@@ -1,0 +1,19 @@
+{
+  "converged": true,
+  "elapsed_seconds": 1.1722815539687872,
+  "energy_ev": -62.06513214111328,
+  "energy_per_atom_ev": -6.206513214111328,
+  "gpu": 0,
+  "initial_energy_ev": -62.05302047729492,
+  "initial_energy_per_atom_ev": -6.205302047729492,
+  "input_hash": "73d328ecfe8f2590d9ab6842bb09637e07e2c6763a43cc1b9b37bd4d7105b412",
+  "input_path": "/data/dxl/results/postgen_fastgate/q3_refiner/refined/01/refined_structure.extxyz",
+  "maximum_force_ev_ang": 0.04607541859149933,
+  "method": "Q3_E3_PCR",
+  "output_hash": "47aed456fe2984c9816c8b30e9dae444c07508b84c772e93ed0c640581cf5000",
+  "pool_id": 1,
+  "pre_relax_max_force_ev_ang": 0.16387264662799225,
+  "seed": 33004,
+  "steps": 26,
+  "success": true
+}

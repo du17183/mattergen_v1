@@ -1,0 +1,23 @@
+{
+  "candidate_seed": 33046,
+  "checkpoint": "/data/dxl/mattersim_weights/mattersim-v1.0.0-5M.pth",
+  "checkpoint_sha256": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5",
+  "converged": true,
+  "elapsed_seconds": 0.6477408669888973,
+  "energy_ev": -33.30426788330078,
+  "energy_per_atom_ev": -8.326066970825195,
+  "gpu": 0,
+  "initial_energy_ev": -33.29718780517578,
+  "initial_energy_per_atom_ev": -8.324296951293945,
+  "input_hash": "d5fa46dc09481f8b8a54f4ec7dd96c540ca99ab84277c2057a398968109d77ce",
+  "input_path": "/data/dxl/results/postgen_fastgate/new_eval/generation/C0/33046/generated_crystals.extxyz",
+  "maximum_force_ev_ang": 0.034715939313173294,
+  "method": "Q6_NS_SETRANK",
+  "output_hash": "bc944efbd9603a5657238582d3f781d8b6729de6fd2e67024030893c363dc551",
+  "pool_id": 11,
+  "pre_relax_max_force_ev_ang": 0.1453775442934274,
+  "slot": 0,
+  "steps": 20,
+  "success": true,
+  "task_id": "Q6_NS_SETRANK_pool_11"
+}

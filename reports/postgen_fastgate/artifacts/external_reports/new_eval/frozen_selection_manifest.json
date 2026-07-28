@@ -1,0 +1,30 @@
+{
+  "candidate_pool_count": 32,
+  "candidate_pool_size": 4,
+  "chgnet_trainable": false,
+  "created_at": "2026-07-28T12:24:29+08:00",
+  "mattergen_backbone_trainable": false,
+  "quality_checkpoint_metadata_source": "/data/dxl/results/postgen_fastgate/quality_model/checkpoints/quality_member_4101.pt",
+  "quality_checkpoint_sha256": "ac4aab6c34298659c5e8d86897b6127c4ab6c51c3fd807ae2dd29fe4fdd5eb9e",
+  "sampling_trajectory_modified": false,
+  "schema_version": 1,
+  "selected_before_mattersim": true,
+  "selection_path": "/data/dxl/results/postgen_fastgate/new_eval/selection.csv",
+  "selection_rule": "ensemble mean minus 0.25 standard deviations",
+  "selection_sha256": "e43e77a6825396ebf95a4526f722f3d33db3ca8ad60bcf939c5cc7d905d2373d",
+  "selector": "Q6_NS_SETRANK_v2",
+  "setrank_checkpoints": [
+    {
+      "path": "/data/dxl/results/postgen_fastgate/setrank/checkpoints/setrank_member_5101.pt",
+      "sha256": "879a2eb7ff476563e86b3e722fdf0a85ee4791dfe2bb24389b98270c6aa02967"
+    },
+    {
+      "path": "/data/dxl/results/postgen_fastgate/setrank/checkpoints/setrank_member_5102.pt",
+      "sha256": "cc39c20fb4230edf746cd4c77cad03032e693680c50d04099433008a4efea80e"
+    },
+    {
+      "path": "/data/dxl/results/postgen_fastgate/setrank/checkpoints/setrank_member_5103.pt",
+      "sha256": "3cb1f8e0869410e1995908e379b84199acf872fe144c2d84eddbcccfeb25044f"
+    }
+  ]
+}
