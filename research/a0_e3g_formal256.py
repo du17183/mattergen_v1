@@ -136,7 +136,9 @@ def atomic_csv(path: Path, rows: list[dict[str, Any]]) -> None:
     )
     try:
         with os.fdopen(descriptor, "w", encoding="utf-8", newline="") as stream:
-            writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+            writer = csv.DictWriter(
+                stream, fieldnames=list(rows[0]), lineterminator="\n"
+            )
             writer.writeheader()
             writer.writerows(rows)
             stream.flush()
