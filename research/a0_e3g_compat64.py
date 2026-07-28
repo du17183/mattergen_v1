@@ -1246,12 +1246,16 @@ def status() -> None:
         else {"status": "not_started"}
     )
     if GEN_PROGRESS.is_file():
+        generation_state = read_json(GEN_PROGRESS)
         payload["generation"] = {
-            "success": load_generation_progress()["success"],
+            "success": sum(
+                row["status"] == "success"
+                for row in generation_state["tasks"]
+            ),
             "total": 64,
         }
     if RELAX_PROGRESS.is_file():
-        state = core.initialize_relax()
+        state = read_json(RELAX_PROGRESS)
         payload["relaxation"] = {
             method: sum(
                 row["status"] == "success" and row["method"] == method

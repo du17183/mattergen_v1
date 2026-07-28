@@ -1,0 +1,74 @@
+{
+  "a0_disabled_existing_code_unchanged": true,
+  "a0_formal_source_commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+  "a0_frozen_parameters": {
+    "adaptive_alpha": 0.5,
+    "adaptive_ema": 0.95,
+    "adaptive_epsilon": 1e-06,
+    "base_guidance": 2.0,
+    "corrector_gating_enabled": false,
+    "guidance_max_scale": 5.0,
+    "guidance_min_scale": 0.0,
+    "guidance_schedule": "adaptive"
+  },
+  "a0_paths_unchanged_from_base": [
+    "mattergen/diffusion/sampling/guidance_schedule.py",
+    "mattergen/diffusion/sampling/classifier_free_guidance.py",
+    "mattergen/generator.py",
+    "mattergen/scripts/generate.py"
+  ],
+  "assets": {
+    "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+    "/data/dxl/mattergen_v1/configs/q3_e3_pcr_frozen64.json": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a",
+    "/data/dxl/mattergen_v1/research/postgen_fastgate/refiner_eval.py": "3d1d6e38066bb195c893ea8665f284e66261f74a055e1521ed4d6250d469895f",
+    "/data/dxl/mattersim_weights/mattersim-v1.0.0-5M.pth": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5",
+    "/data/dxl/results/postgen_fastgate/q3_refiner/model/q3_gate.joblib": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e"
+  },
+  "compatibility_base_commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+  "compatibility_branch": "feature/a0-e3g-compatibility64",
+  "created_at": "2026-07-28T16:03:59+08:00",
+  "e3g_disabled_exact_a0_route": true,
+  "e3g_formal_commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+  "evaluation_code_commit": "d83464c7b80ff17c30b64b3ba8da1903625be85d",
+  "evaluation_script": "/data/dxl/mattergen_v1/research/a0_e3g_compat64.py",
+  "evaluation_script_sha256": "c568525db1ef3ab943df3e4664e9e28bc6dca5f3fecd9aeede0f29607d28021d",
+  "evaluation_seed_count": 64,
+  "evaluation_seeds": [
+    41000,
+    41063
+  ],
+  "q3_checkpoint": "/data/dxl/results/postgen_fastgate/q3_refiner/model/q3_gate.joblib",
+  "q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e",
+  "q3_config": "/data/dxl/mattergen_v1/configs/q3_e3_pcr_frozen64.json",
+  "q3_config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a",
+  "q3_contract": {
+    "atomic_numbers_modified": false,
+    "backtrack_max": 3,
+    "cell_modified": false,
+    "checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e",
+    "config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a",
+    "frozen_source_sha256": "3d1d6e38066bb195c893ea8665f284e66261f74a055e1521ed4d6250d469895f",
+    "gate_hidden_dims": [
+      8
+    ],
+    "gate_input_dim": 14,
+    "gate_output_dim": 1,
+    "gate_threshold": 0.5,
+    "mattergen_checkpoint_sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+    "mattersim_checkpoint_sha256": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5",
+    "maximum_cumulative_displacement_angstrom": 0.1,
+    "minimum_distance_angstrom": 0.5,
+    "network_seed": 20260728,
+    "per_step_radius_angstrom": 0.02,
+    "position_eta": 0.01,
+    "refinement_steps": 5,
+    "trainable_parameters": 129,
+    "training_seed_range": [
+      20000,
+      20063
+    ]
+  },
+  "q3_parameters": 129,
+  "schema_version": 1,
+  "training_or_retuning": false
+}
