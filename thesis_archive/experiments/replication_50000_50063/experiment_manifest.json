@@ -1,0 +1,19 @@
+{
+  "key": "replication_50000_50063",
+  "data": "compatibility_2",
+  "title": "A0 + E3-G 第二次完全独立复现",
+  "branch": "feature/a0-e3g-independent64",
+  "commit": "22e1db74a59476562f1f746cd4210b9420cbdf05",
+  "pr": "https://github.com/du17183/mattergen_v1/pull/17",
+  "seeds": "50000–50063",
+  "n": 64,
+  "status": "A0_E3G_INDEPENDENT64_GO=True",
+  "independence": "预注册全新 seeds；无训练、调参或历史测试交集",
+  "result": "预松弛最大力均值降低 19.02%。",
+  "use": "可用于第二次完全独立复现证据。",
+  "forbid": "不得只选择该批次而隐去第一次独立验证。",
+  "stability_source": "MatterSim-5M surrogate",
+  "dft_verified": false,
+  "property_target_verified": false,
+  "documentation_commit": "85485bc956fce1cf7d01c55baaa92c0b69fd745e"
+}

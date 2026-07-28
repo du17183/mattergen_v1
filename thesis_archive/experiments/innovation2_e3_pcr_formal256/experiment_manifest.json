@@ -1,0 +1,19 @@
+{
+  "key": "innovation2_e3_pcr_formal256",
+  "data": "innovation2",
+  "title": "创新点二：Learned-Gated E3-PCR 正式 256",
+  "branch": "feature/q3-e3-pcr-formal256",
+  "commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+  "pr": "https://github.com/du17183/mattergen_v1/pull/13",
+  "seeds": "40000–40255",
+  "n": 256,
+  "status": "FINAL_STATE=E3_G_FORMAL_CONFIRMED",
+  "independence": "正式 seeds 与 Q3 训练 seeds 20000–20063 交集为 0",
+  "result": "E3-G 最大力均值降低 23.28%，harm rate 18.359%，质量代理指标保持。",
+  "use": "可用于创新点二独立正式主结论。",
+  "forbid": "不得把 MatterSim 代理评价表述为 DFT。",
+  "stability_source": "MatterSim-5M surrogate",
+  "dft_verified": false,
+  "property_target_verified": false,
+  "documentation_commit": "41479015c5c3edc389601c4b7cc44a6db5e115cd"
+}

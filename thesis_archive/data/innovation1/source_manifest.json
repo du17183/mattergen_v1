@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-07-28T00:00:00+08:00",
+  "normalized_file": "data/innovation1/per_seed_metrics.csv",
+  "generation_script": "external CPU-only archive normalization; transformations are exhaustively listed below",
+  "sources": [
+    {
+      "archived_source": "data/innovation1/source/formal_per_seed_records.csv",
+      "original_server_path": "/data/dxl/reports/formal_256/final/per_seed_records.csv",
+      "sha256": "4efd49e7cf868769adc62da267e621ccaac70d6d62983ec3a9ff0d1785fcb259"
+    },
+    {
+      "archived_source": "data/innovation1/source/C0_official_metrics_per_structure.csv",
+      "original_server_path": "/data/dxl/reports/formal_256/C0/official_metrics_per_structure.csv",
+      "sha256": "57aa48fd04b2d0733a3c9ccb0c04b16844fe8e798c4487bca83ee5f27a08e579"
+    },
+    {
+      "archived_source": "data/innovation1/source/A0_official_metrics_per_structure.csv",
+      "original_server_path": "/data/dxl/reports/formal_256/A0/official_metrics_per_structure.csv",
+      "sha256": "67661edf112c8593b3cf55c854a0c993017bff8e438e7ca2ff71b84d999ae2e1"
+    }
+  ],
+  "field_mapping": {
+    "seed": "per_seed_records.seed",
+    "C0/A0 E-hull and binary metrics": "per_seed_records corresponding fields",
+    "max force and RMSD": "official_metrics_per_structure.csv, joined by seed"
+  },
+  "unit_conversion": "none",
+  "missing_values": "NaN only when source has no per-seed value; never imputed",
+  "statistics": {
+    "n": 256,
+    "ehull_change_a0_minus_c0": -0.0034349449371532522,
+    "stable_change_a0_minus_c0": 0.05859375,
+    "nus_change_a0_minus_c0": 0.03515625,
+    "FORMAL_INNOVATION1_CONFIRMED": true
+  }
+}

@@ -1,0 +1,5 @@
+| evidence_class     | metric           |       C0 |       A0 |      change |
+|:-------------------|:-----------------|---------:|---------:|------------:|
+| Independent formal | E-hull (eV/atom) | 0.143667 | 0.140232 | -0.00343494 |
+| Independent formal | Stable rate      | 0.410156 | 0.46875  |  0.0585938  |
+| Independent formal | NUS rate         | 0.222656 | 0.257812 |  0.0351562  |

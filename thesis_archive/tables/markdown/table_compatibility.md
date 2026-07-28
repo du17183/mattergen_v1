@@ -1,0 +1,3 @@
+| evidence_class            |   n |   baseline_mean |   selected_mean |   mean_difference |   relative_change |   wins |   ties |   losses |   harm_rate |   wilcoxon_p |
+|:--------------------------|----:|----------------:|----------------:|------------------:|------------------:|-------:|-------:|---------:|------------:|-------------:|
+| Independent compatibility |  64 |        0.217302 |        0.158416 |        -0.0588853 |         -0.270984 |     34 |     19 |       11 |    0.171875 |  7.73987e-05 |

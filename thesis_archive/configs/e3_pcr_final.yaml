@@ -1,0 +1,13 @@
+method: LEARNED_GATED_E3_PCR
+q3_checkpoint_sha256: b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e
+config_sha256: 50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a
+q3_parameters: 129
+gate_input_dim: 14
+gate_hidden_dim: 8
+gate_threshold: 0.5
+refinement_steps: 5
+position_eta: 0.01
+per_step_radius_angstrom: 0.02
+max_cumulative_displacement_angstrom: 0.10
+backtrack_max: 3
+q3_training_seeds: [20000, 20063]

@@ -1,0 +1,10 @@
+evaluator: MatterSim-5M
+stability_source: MatterSim-5M surrogate
+dft_verified: false
+property_target_verified: false
+formal_innovation1_seeds: [20000, 20255]
+formal_innovation2_seeds: [40000, 40255]
+compatibility_seeds: [41000, 41063]
+replication_seeds: [50000, 50063]
+leakage_training_overlap: [20000, 20063]
+leakage_heldout: [20064, 20255]

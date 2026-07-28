@@ -1,0 +1,478 @@
+{
+  "A0_E3G_INDEPENDENT64_COMPLETED": true,
+  "a0_commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+  "a0_e3g_independent64_go": true,
+  "a0_e3g_independent64_no_go": false,
+  "completed_at": "2026-07-28T19:44:19+08:00",
+  "counts": {
+    "a0_generation": 64,
+    "a0_relaxation": 64,
+    "e3g_refinement": 64,
+    "e3g_relaxation": 64,
+    "total_mattersim": 128
+  },
+  "dft_started": false,
+  "dft_verified": false,
+  "e3g_commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+  "evaluation_code_commit": "57354c8d2234318b313625e8730b643048a476c8",
+  "evaluation_seeds": [
+    50000,
+    50063
+  ],
+  "final_state": "A0_E3G_INDEPENDENT64_GO",
+  "formal_256_combination_started": false,
+  "independence": {
+    "known_range_intersections": [],
+    "leaked_results_used": false,
+    "seed_anonymization_used": false,
+    "seed_audit_passed": true,
+    "training_or_retuning": false
+  },
+  "independent_branch": "feature/a0-e3g-independent64",
+  "independent_mlip_started": false,
+  "means": {
+    "A0": {
+      "abnormal_cell_rate": 0.0,
+      "composition_validity": 0.84375,
+      "convergence_rate": 1.0,
+      "ehull": 0.13996250888708173,
+      "ehull_all_available": 0.13996250888708173,
+      "ehull_coverage": 1.0,
+      "ehull_median": 0.0943341244732129,
+      "metastable": 0.796875,
+      "msun": 0.46875,
+      "novel": 0.671875,
+      "nus": 0.328125,
+      "pre_relax_max_force": 0.26527988196406616,
+      "pre_relax_max_force_median": 0.1663651630022272,
+      "relaxation_elapsed_mean": 1.0862119299272308,
+      "relaxation_failure_rate": 0.0,
+      "relaxation_steps_mean": 37.765625,
+      "relaxation_steps_median": 20.5,
+      "rmsd": 0.0775783977021853,
+      "short_bond_rate": 0.0,
+      "stable": 0.546875,
+      "structure_validity": 1.0,
+      "unique": 1.0
+    },
+    "A0+E3-G": {
+      "abnormal_cell_rate": 0.0,
+      "composition_validity": 0.84375,
+      "convergence_rate": 1.0,
+      "ehull": 0.1399626240268793,
+      "ehull_all_available": 0.1399626240268793,
+      "ehull_coverage": 1.0,
+      "ehull_median": 0.09434173250544026,
+      "metastable": 0.796875,
+      "msun": 0.46875,
+      "novel": 0.671875,
+      "nus": 0.328125,
+      "pre_relax_max_force": 0.21482998015936608,
+      "pre_relax_max_force_median": 0.1475314680545636,
+      "relaxation_elapsed_mean": 1.0246330101690546,
+      "relaxation_failure_rate": 0.0,
+      "relaxation_steps_mean": 37.0625,
+      "relaxation_steps_median": 19.0,
+      "rmsd": 0.07629309817339794,
+      "short_bond_rate": 0.0,
+      "stable": 0.546875,
+      "structure_validity": 1.0,
+      "unique": 1.0
+    }
+  },
+  "mechanism": {
+    "behavior": {
+      "abnormal_cell_rejection_rate": 0.0,
+      "abnormal_cell_rejections": 0,
+      "accepted_steps_mean": 3.59375,
+      "atomic_numbers_modified": 0,
+      "backtracking_count": 1,
+      "backtracking_mean": 0.015625,
+      "cell_modified": 0,
+      "clipped_atoms": 1,
+      "clipping_rate": 0.00043687199650502403,
+      "fallback_count": 0,
+      "fallback_mean": 0.0,
+      "finite": true,
+      "full_rejection_count": 0,
+      "full_rejections_exact_fallback": true,
+      "gate_off_count": 18,
+      "gate_off_exact_fallback": true,
+      "maximum_displacement_angstrom": 0.054535528376827,
+      "mean_displacement_angstrom": 0.007648832409844292,
+      "median_displacement_angstrom": 0.00494995512569785,
+      "minimum_distance_angstrom": 0.9833383320278656,
+      "p90_displacement_angstrom": 0.017266189522271644,
+      "p95_displacement_angstrom": 0.023239359469594854,
+      "p99_displacement_angstrom": 0.054060196926323856,
+      "proposal_atoms": 2289,
+      "refinement_count": 46,
+      "refinement_rate": 0.71875,
+      "safety_checks": 231,
+      "safety_rejection_rate": 0.0,
+      "safety_rejections": 0,
+      "short_bond_rejection_rate": 0.0,
+      "short_bond_rejections": 0
+    },
+    "fallback_rate": 0.28125,
+    "gate_confidence_improvement_spearman": 0.34697802197802197,
+    "gate_confidence_improvement_spearman_p": 0.0049702757817428915,
+    "gate_off_max_abs_numeric_difference": 5.691497747817298e-07,
+    "gate_on_count": 46,
+    "gate_on_harm_count": 11,
+    "gate_on_harm_rate": 0.2391304347826087,
+    "gate_on_improvement_count": 35,
+    "gate_on_improvement_rate": 0.7608695652173914,
+    "gate_on_rate": 0.71875,
+    "harm_rate": 0.171875,
+    "high_force_mean_improvement": 0.10040285956143548,
+    "low_force_count": 32,
+    "low_force_harm_rate": 0.1875,
+    "low_force_mean_improvement": 0.0004969440479646616,
+    "low_force_threshold": 0.1615657101335652
+  },
+  "official_metrics": {
+    "A0": {
+      "avg_comp_validity": {
+        "description": "Average composition validity (according to smact) of structures in sampled data.",
+        "value": 0.84375
+      },
+      "avg_energy_above_hull_per_atom": {
+        "description": "Average energy above hull per atom (eV/atom) of structures in sampled data.",
+        "value": 0.13996250888708178
+      },
+      "avg_rmsd_from_relaxation": {
+        "description": "root mean square displacements of atoms (Angstrom) from initial to final DFT relaxation steps in sampled data.",
+        "value": 0.07757839770218534
+      },
+      "avg_structure_comp_validity": {
+        "description": "Average number of structures in sampled data that are both valid structures and have a valid smact compositions.",
+        "value": 0.84375
+      },
+      "avg_structure_validity": {
+        "description": "Average structural validity of structures in sampled data. Any atom-atom distances less than 0.5 Angstroms or a volume less than 0.1 Angstrom**3 are considered invalid .",
+        "value": 1.0
+      },
+      "frac_novel_structures": {
+        "description": "Fraction of novel structures in sampled data.",
+        "value": 0.671875
+      },
+      "frac_novel_systems": {
+        "description": "Fraction of distinct chemical systems in sampled data and not in TRI2024correction.",
+        "value": 0.171875
+      },
+      "frac_novel_unique_stable_structures": {
+        "description": "Fraction of novel unique stable structures in sampled data within 0.1 (eV/atom) above convex hull of TRI2024correction.",
+        "value": 0.328125
+      },
+      "frac_novel_unique_structures": {
+        "description": "Fraction of novel unique structures in sampled data.",
+        "value": 0.671875
+      },
+      "frac_stable_structures": {
+        "description": "Fraction of stable structures in sampled data within 0.1 (eV/atom) above convex hull of TRI2024correction.",
+        "value": 0.546875
+      },
+      "frac_successful_jobs": {
+        "description": "Fraction of structures whose jobs ran successfully.",
+        "value": 1.0
+      },
+      "frac_unique_structures": {
+        "description": "Fraction of unique structures in sampled data.",
+        "value": 1.0
+      },
+      "frac_unique_systems": {
+        "description": "Fraction of structures in sampled data that have a unique chemical system within this set.",
+        "value": 0.90625
+      },
+      "precision": {
+        "description": "Precision of structures in sampled data compared with TRI2024correction. This is the fraction of structures in sampled data that have a matching structure in TRI2024correction.",
+        "value": 0.328125
+      },
+      "recall": {
+        "description": "Recall of structures in sampled data compared with structures in TRI2024correction. This is the fraction of structures in sampled data that have a matching structure in TRI2024correction.",
+        "value": 6.737612544725336e-05
+      }
+    },
+    "A0+E3-G": {
+      "avg_comp_validity": {
+        "description": "Average composition validity (according to smact) of structures in sampled data.",
+        "value": 0.84375
+      },
+      "avg_energy_above_hull_per_atom": {
+        "description": "Average energy above hull per atom (eV/atom) of structures in sampled data.",
+        "value": 0.13996262402687934
+      },
+      "avg_rmsd_from_relaxation": {
+        "description": "root mean square displacements of atoms (Angstrom) from initial to final DFT relaxation steps in sampled data.",
+        "value": 0.07629309817339797
+      },
+      "avg_structure_comp_validity": {
+        "description": "Average number of structures in sampled data that are both valid structures and have a valid smact compositions.",
+        "value": 0.84375
+      },
+      "avg_structure_validity": {
+        "description": "Average structural validity of structures in sampled data. Any atom-atom distances less than 0.5 Angstroms or a volume less than 0.1 Angstrom**3 are considered invalid .",
+        "value": 1.0
+      },
+      "frac_novel_structures": {
+        "description": "Fraction of novel structures in sampled data.",
+        "value": 0.671875
+      },
+      "frac_novel_systems": {
+        "description": "Fraction of distinct chemical systems in sampled data and not in TRI2024correction.",
+        "value": 0.171875
+      },
+      "frac_novel_unique_stable_structures": {
+        "description": "Fraction of novel unique stable structures in sampled data within 0.1 (eV/atom) above convex hull of TRI2024correction.",
+        "value": 0.328125
+      },
+      "frac_novel_unique_structures": {
+        "description": "Fraction of novel unique structures in sampled data.",
+        "value": 0.671875
+      },
+      "frac_stable_structures": {
+        "description": "Fraction of stable structures in sampled data within 0.1 (eV/atom) above convex hull of TRI2024correction.",
+        "value": 0.546875
+      },
+      "frac_successful_jobs": {
+        "description": "Fraction of structures whose jobs ran successfully.",
+        "value": 1.0
+      },
+      "frac_unique_structures": {
+        "description": "Fraction of unique structures in sampled data.",
+        "value": 1.0
+      },
+      "frac_unique_systems": {
+        "description": "Fraction of structures in sampled data that have a unique chemical system within this set.",
+        "value": 0.90625
+      },
+      "precision": {
+        "description": "Precision of structures in sampled data compared with TRI2024correction. This is the fraction of structures in sampled data that have a matching structure in TRI2024correction.",
+        "value": 0.328125
+      },
+      "recall": {
+        "description": "Recall of structures in sampled data compared with structures in TRI2024correction. This is the fraction of structures in sampled data that have a matching structure in TRI2024correction.",
+        "value": 6.737612544725336e-05
+      }
+    }
+  },
+  "other_processes_terminated": false,
+  "performance": {
+    "a0_generation_median_seconds": 208.95824510901002,
+    "end_to_end_overhead": 0.0002195254841387584,
+    "gate_forward_seconds_per_structure": 6.641203071922064e-06,
+    "peak_vram_bytes": 3926771712,
+    "q3_parameter_count": 129,
+    "refiner_seconds_per_structure": 0.04587165992234077
+  },
+  "primary": {
+    "baseline_mean": 0.26527988196406616,
+    "baseline_median": 0.1663651630022272,
+    "bootstrap_95_ci": [
+      -0.10221274022731316,
+      -0.01069625841941559
+    ],
+    "bootstrap_ci_upper_below_zero": true,
+    "counting_epsilon": 1e-06,
+    "effect_reduction_ge_10_percent": true,
+    "gate_off_exact_structure_ties": 18,
+    "gate_off_max_abs_numeric_difference": 5.691497747817298e-07,
+    "gate_on_losses": 11,
+    "gate_on_ties": 0,
+    "gate_on_wins": 35,
+    "leave_one_out_mean_difference_range": [
+      -0.05463224662409739,
+      -0.03311136501247086
+    ],
+    "losses": 11,
+    "maximum_single_sample_absolute_contribution_rate": 0.2559764009919278,
+    "mean_difference": -0.05044990180470007,
+    "median_difference": -0.0007735449319139004,
+    "primary_effect_pass": true,
+    "raw_numeric_losses_1e_minus_12": 18,
+    "raw_numeric_ties_1e_minus_12": 0,
+    "raw_numeric_wins_1e_minus_12": 46,
+    "relative_change": -0.1901761318317151,
+    "remove_most_favorable_relative_change": -0.1387995857794072,
+    "remove_most_favorable_sample_index": 54,
+    "remove_most_favorable_sample_seed": 50054,
+    "remove_most_unfavorable_relative_change": -0.20541761021426408,
+    "remove_most_unfavorable_sample_index": 23,
+    "remove_most_unfavorable_sample_seed": 50023,
+    "selected_mean": 0.21482998015936608,
+    "selected_median": 0.1475314680545636,
+    "statistical_evidence_pass": true,
+    "ties": 18,
+    "wilcoxon_p_below_0_05": true,
+    "wilcoxon_p_raw": 0.000587376523879349,
+    "wins": 35
+  },
+  "property_target_verified": false,
+  "q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e",
+  "q3_config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a",
+  "quality": {
+    "A0": {
+      "abnormal_cell_rate": 0.0,
+      "composition_validity": 0.84375,
+      "convergence_rate": 1.0,
+      "ehull": 0.13996250888708173,
+      "ehull_all_available": 0.13996250888708173,
+      "ehull_coverage": 1.0,
+      "ehull_median": 0.0943341244732129,
+      "metastable": 0.796875,
+      "msun": 0.46875,
+      "novel": 0.671875,
+      "nus": 0.328125,
+      "pre_relax_max_force": 0.26527988196406616,
+      "pre_relax_max_force_median": 0.1663651630022272,
+      "relaxation_elapsed_mean": 1.0862119299272308,
+      "relaxation_failure_rate": 0.0,
+      "relaxation_steps_mean": 37.765625,
+      "relaxation_steps_median": 20.5,
+      "rmsd": 0.0775783977021853,
+      "short_bond_rate": 0.0,
+      "stable": 0.546875,
+      "structure_validity": 1.0,
+      "unique": 1.0
+    },
+    "A0+E3-G": {
+      "abnormal_cell_rate": 0.0,
+      "composition_validity": 0.84375,
+      "convergence_rate": 1.0,
+      "ehull": 0.1399626240268793,
+      "ehull_all_available": 0.1399626240268793,
+      "ehull_coverage": 1.0,
+      "ehull_median": 0.09434173250544026,
+      "metastable": 0.796875,
+      "msun": 0.46875,
+      "novel": 0.671875,
+      "nus": 0.328125,
+      "pre_relax_max_force": 0.21482998015936608,
+      "pre_relax_max_force_median": 0.1475314680545636,
+      "relaxation_elapsed_mean": 1.0246330101690546,
+      "relaxation_failure_rate": 0.0,
+      "relaxation_steps_mean": 37.0625,
+      "relaxation_steps_median": 19.0,
+      "rmsd": 0.07629309817339794,
+      "short_bond_rate": 0.0,
+      "stable": 0.546875,
+      "structure_validity": 1.0,
+      "unique": 1.0
+    },
+    "ehull_coverage": {
+      "A0": {
+        "coverage": 1.0,
+        "covered": 64,
+        "missing_elements": [],
+        "missing_evaluation_indexes": [],
+        "missing_formal_seeds": [],
+        "total": 64
+      },
+      "A0+E3-G": {
+        "coverage": 1.0,
+        "covered": 64,
+        "missing_elements": [],
+        "missing_evaluation_indexes": [],
+        "missing_formal_seeds": [],
+        "total": 64
+      },
+      "common_two_arm": {
+        "coverage": 1.0,
+        "covered": 64,
+        "formal_seeds": [
+          50000,
+          50001,
+          50002,
+          50003,
+          50004,
+          50005,
+          50006,
+          50007,
+          50008,
+          50009,
+          50010,
+          50011,
+          50012,
+          50013,
+          50014,
+          50015,
+          50016,
+          50017,
+          50018,
+          50019,
+          50020,
+          50021,
+          50022,
+          50023,
+          50024,
+          50025,
+          50026,
+          50027,
+          50028,
+          50029,
+          50030,
+          50031,
+          50032,
+          50033,
+          50034,
+          50035,
+          50036,
+          50037,
+          50038,
+          50039,
+          50040,
+          50041,
+          50042,
+          50043,
+          50044,
+          50045,
+          50046,
+          50047,
+          50048,
+          50049,
+          50050,
+          50051,
+          50052,
+          50053,
+          50054,
+          50055,
+          50056,
+          50057,
+          50058,
+          50059,
+          50060,
+          50061,
+          50062,
+          50063
+        ],
+        "total": 64
+      }
+    },
+    "quality_gates": {
+      "abnormal_cell_not_increased": true,
+      "atomic_numbers_unchanged": true,
+      "cell_unchanged": true,
+      "composition_drop_le_1_over_64": true,
+      "ehull_degradation_le_0_002": true,
+      "full_rejection_exact_fallback": true,
+      "gate_off_exact_fallback": true,
+      "generation_success_not_lower": true,
+      "maximum_displacement_bounded": true,
+      "minimum_distance_safe": true,
+      "no_nan_inf": true,
+      "novel_drop_le_1_over_64": true,
+      "nus_drop_le_1_over_64": true,
+      "relaxation_failure_not_increased": true,
+      "rmsd_degradation_le_5_percent": true,
+      "short_bond_not_increased": true,
+      "stable_drop_le_1_over_64": true,
+      "structure_validity_not_lower": true,
+      "unique_not_lower": true
+    },
+    "quality_safety_pass": true
+  },
+  "schema_version": 1,
+  "sigkill_used": false,
+  "stability_source": "MatterSim-5M surrogate"
+}

@@ -1,0 +1,14 @@
+{
+  "state": "LEAKAGE_INFLATION_DETECTED",
+  "training_overlap_count": 64,
+  "heldout_count": 192,
+  "train_harm_count": 0,
+  "heldout_harm_count": 31,
+  "train_harm_rate": 0.0,
+  "heldout_harm_rate": 0.16145833333333334,
+  "fisher_exact_one_sided_p": 6.865899808947675e-05,
+  "TRAINING_OVERLAP_VALID_FOR_FORMAL_CLAIMS": false,
+  "MIXED_256_VALID_FOR_FORMAL_CLAIMS": false,
+  "HELD_OUT_192_VALID_AS_SUPPLEMENTARY": true,
+  "status": "LEAKAGE_INFLATION_DETECTED=True"
+}

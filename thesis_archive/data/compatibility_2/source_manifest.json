@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-07-28T00:00:00+08:00",
+  "normalized_file": "data/compatibility_2/per_seed_metrics.csv",
+  "generation_script": "CPU-only archive normalization; transformations listed below",
+  "sources": [
+    {
+      "archived_source": "data/compatibility_2/source/A0_official_metrics_per_structure.csv",
+      "original_server_path": "/data/dxl/reports/a0_e3g_independent64/A0/official_metrics_per_structure.csv",
+      "sha256": "26d7cc7268b1659f276e9b19dcfa0a2d0eb5ecd2a03883eaf66ba2f2ade75eeb"
+    },
+    {
+      "archived_source": "data/compatibility_2/source/A0_E3G_official_metrics_per_structure.csv",
+      "original_server_path": "/data/dxl/reports/a0_e3g_independent64/A0_E3G/official_metrics_per_structure.csv",
+      "sha256": "e9c633059282c2d75dcbf7e6aa958fbcdcb4e7f0815e0ec3bc77881649fafb79"
+    },
+    {
+      "archived_source": "data/compatibility_2/source/refinement_manifest.csv",
+      "original_server_path": "/data/dxl/results/a0_e3g_independent64/refinement_manifest.csv",
+      "sha256": "0e414bd7be393fccd75127068f4e5889fb9e2ad0cba07e83504415c339a37563"
+    }
+  ],
+  "field_mapping": {
+    "seed": "official candidate_seed / manifest seed",
+    "forces": "pre_relax_max_force_ev_ang",
+    "quality metrics": "official per-structure outputs",
+    "gate/displacement": "refinement_manifest",
+    "displacement_mean": "NaN; unavailable per seed"
+  },
+  "unit_conversion": "none",
+  "missing_values": "NaN only when source has no per-seed value; never imputed",
+  "statistics": {
+    "n": 64,
+    "baseline_mean": 0.26527988196406616,
+    "selected_mean": 0.21482998015936608,
+    "mean_difference": -0.05044990180470007,
+    "relative_change": -0.19017613183171514,
+    "wins": 35,
+    "ties": 18,
+    "losses": 11,
+    "harm_rate": 0.171875
+  }
+}

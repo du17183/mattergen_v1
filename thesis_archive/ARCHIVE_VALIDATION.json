@@ -1,0 +1,21 @@
+{
+  "ARCHIVE_VALID": true,
+  "LAPTOP_ANALYSIS_READY": true,
+  "FORMAL_DATA_LEAKAGE_FOUND": false,
+  "DATA_MISMATCH_DETECTED": false,
+  "SECRETS_FOUND": false,
+  "FILES_OVER_90MB": [],
+  "errors": [],
+  "warnings": [],
+  "checks": {
+    "required_files": 15,
+    "experiment_directories": 6,
+    "dataset_counts": {
+      "innovation1": 256,
+      "innovation2": 256,
+      "compatibility_1": 64,
+      "compatibility_2": 64,
+      "leakage_diagnostic": 256
+    }
+  }
+}

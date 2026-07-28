@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-07-28T00:00:00+08:00",
+  "normalized_file": "data/innovation2/per_seed_metrics.csv",
+  "generation_script": "CPU-only archive normalization; transformations listed below",
+  "sources": [
+    {
+      "archived_source": "data/innovation2/source/C0_official_metrics_per_structure.csv",
+      "original_server_path": "/data/dxl/reports/q3_e3_pcr/formal256/C0/official_metrics_per_structure.csv",
+      "sha256": "0bd3617f60c9b36f9e576b016d19d92a7b050993aceeaf718d537e2fb9e8bb61"
+    },
+    {
+      "archived_source": "data/innovation2/source/E3A_official_metrics_per_structure.csv",
+      "original_server_path": "/data/dxl/reports/q3_e3_pcr/formal256/ALWAYS_ON/official_metrics_per_structure.csv",
+      "sha256": "2a976ff9a3a9be72bdcc8618a434d505dc41dd0f912fd8ffa38241490ce2e815"
+    },
+    {
+      "archived_source": "data/innovation2/source/E3G_official_metrics_per_structure.csv",
+      "original_server_path": "/data/dxl/reports/q3_e3_pcr/formal256/Q3_E3_PCR/official_metrics_per_structure.csv",
+      "sha256": "90ecf6ee2361f7c9dfacd4e0a1e5ee61028d104ac89f1de04ac06bbca6055e02"
+    },
+    {
+      "archived_source": "data/innovation2/source/refinement_manifest.csv",
+      "original_server_path": "/data/dxl/results/q3_e3_pcr/formal256/refinement_manifest.csv",
+      "sha256": "9662dd8f0828f3acc2fd9b9f878f3d40299514589a981a2fab70f67bbd182d3c"
+    }
+  ],
+  "field_mapping": {
+    "seed": "official candidate_seed / manifest seed",
+    "max force": "pre_relax_max_force_ev_ang",
+    "quality metrics": "official per-structure outputs",
+    "gate fields/displacement_max": "refinement_manifest",
+    "displacement_mean": "NaN; no per-seed mean displacement exists"
+  },
+  "unit_conversion": "none",
+  "missing_values": "NaN only when source has no per-seed value; never imputed",
+  "statistics": {
+    "E3-A": {
+      "n": 256,
+      "baseline_mean": 0.34296426286559617,
+      "selected_mean": 0.24395595983940943,
+      "mean_difference": -0.09900830302618673,
+      "relative_change": -0.2886840226411198,
+      "wins": 191,
+      "ties": 0,
+      "losses": 65,
+      "harm_rate": 0.25390625
+    },
+    "E3-G": {
+      "n": 256,
+      "baseline_mean": 0.34296426286559617,
+      "selected_mean": 0.26310701792559776,
+      "mean_difference": -0.07985724493999838,
+      "relative_change": -0.2328442161080018,
+      "wins": 127,
+      "ties": 82,
+      "losses": 47,
+      "harm_rate": 0.18359375
+    },
+    "FINAL_STATE": "E3_G_FORMAL_CONFIRMED",
+    "Q3_CHECKPOINT_SHA256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e"
+  }
+}

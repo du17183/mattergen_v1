@@ -1,0 +1,25 @@
+{
+  "bootstrap_95_ci": [
+    -0.026389828278452727,
+    0.08369713876857945
+  ],
+  "harm_rate_fisher_exact_one_sided_p": 6.865899808947675e-05,
+  "harm_rate_gap_bootstrap_95_ci": [
+    -0.21354166666666666,
+    -0.109375
+  ],
+  "heldout_harm_count": 31,
+  "heldout_harm_rate": 0.16145833333333334,
+  "heldout_mean_force_difference": -0.09825218074197223,
+  "heldout_relative_force_change": -0.27315162247745617,
+  "interpretation": "Negative effect gap means the apparent force reduction is stronger on gate-training seeds.",
+  "safety_leakage_detected": true,
+  "state": "LEAKAGE_INFLATION_DETECTED",
+  "train_harm_count": 0,
+  "train_harm_rate": 0.0,
+  "train_mean_force_difference": -0.07022663549860211,
+  "train_minus_heldout_effect_gap": 0.028025545243370115,
+  "train_minus_heldout_harm_rate_gap": -0.16145833333333334,
+  "train_minus_heldout_relative_change_gap": -0.008330741487493576,
+  "train_relative_force_change": -0.28148236396494974
+}

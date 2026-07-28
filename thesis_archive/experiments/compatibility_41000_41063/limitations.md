@@ -1,0 +1,5 @@
+# 限制
+
+样本量 64，不替代 E3-PCR 正式 256。
+
+STABILITY_SOURCE=MatterSim-5M surrogate；DFT_VERIFIED=False；PROPERTY_TARGET_VERIFIED=False。
