@@ -4,6 +4,25 @@
     <img src="assets/MatterGenlogo_.png" alt="MatterGen logo" width="600"/>
 </p>
 </h1>
+<!-- BEGIN THESIS EXPERIMENT BRANCH NOTICE -->
+## 本分支的论文实验说明
+
+**实验状态：`FORMAL_INNOVATION1_CONFIRMED=True`**
+
+- 方法：Multi-field Residual-driven Online Adaptive CFG。
+- 正式 seeds：20000–20255，共 256 个同 seed 配对样本。
+- 冻结实验代码：`5de00419eea2d8a9be303638f2db8ece15a22366`。
+- 主要结果：相对 C0，E-hull -0.003435 eV/atom，Stable +5.859 pp，NUS +3.516 pp。
+- 论文用途：创新点一正式主结论。
+
+- 完整分支说明：[EXPERIMENT_CARD.md](EXPERIMENT_CARD.md)
+- 统一论文归档：[thesis_archive](https://github.com/du17183/mattergen_v1/tree/archive/thesis-analysis-package-v1/thesis_archive)
+- 归档 Draft PR：[PR #18](https://github.com/du17183/mattergen_v1/pull/18)
+- 评价边界：`STABILITY_SOURCE=MatterSim-5M surrogate`；`DFT_VERIFIED=False`；`PROPERTY_TARGET_VERIFIED=False`。
+
+> 本节仅说明当前实验分支；下方保留 MatterGen 原项目 README、安装和使用文档。
+<!-- END THESIS EXPERIMENT BRANCH NOTICE -->
+
 
 <h4 align="center">
 
