@@ -1,5 +1,5 @@
 {
-  "current_stage": "github_archive",
+  "current_stage": "stop_for_review",
   "dft_started": false,
   "eligible_source_records": 192,
   "experiment": "A0 + E3-G frozen formal 256",
@@ -19,6 +19,10 @@
   "schema_version": 1,
   "sigkill_used": false,
   "source_data_physically_complete": true,
-  "status": "pending",
-  "updated_at": "2026-07-28T17:11:32+08:00"
+  "status": "success",
+  "updated_at": "2026-07-28T09:13:28Z",
+  "next_action": "pre_register_wholly_new_independent_a0_256",
+  "github_branch": "feature/a0-e3g-formal256",
+  "github_archive_commit": "7af7a511ff012c74409706921052848276f4519d",
+  "draft_pr": "https://github.com/du17183/mattergen_v1/pull/15"
 }

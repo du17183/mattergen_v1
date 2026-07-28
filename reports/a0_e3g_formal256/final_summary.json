@@ -9,7 +9,7 @@
   "completed_at": "2026-07-28T17:11:32+08:00",
   "dft_started": false,
   "dft_verified": false,
-  "draft_pr": null,
+  "draft_pr": "https://github.com/du17183/mattergen_v1/pull/15",
   "e3g_commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
   "eligible_source_records": 192,
   "evaluation_seeds": [
@@ -21,7 +21,7 @@
   "formal_branch": "feature/a0-e3g-formal256",
   "formal_commit": "353422fd85bcaa759d15c1438730af95c3c4679e",
   "github_branch": "feature/a0-e3g-formal256",
-  "github_commit": null,
+  "github_commit": "7af7a511ff012c74409706921052848276f4519d",
   "gpu_workers": 0,
   "independent_mlip_started": false,
   "ineligible_source_records": 64,
