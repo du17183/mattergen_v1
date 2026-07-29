@@ -2,6 +2,9 @@
 
 All paths are repository-relative and all statistics originate in `thesis_archive/`.
 
+- [Figure 1–12 redraw guide](../REDRAW_GUIDE.md)
+- [Core Figures V2 redraw handoff](../CORE_FIGURES_V2_REDRAW.md)
+
 ## Figure 1: Full two-innovation method architecture
 
 - [PDF](pdf/fig01_full_method_architecture.pdf) · [SVG](svg/fig01_full_method_architecture.svg) · [PNG](png/fig01_full_method_architecture.png)

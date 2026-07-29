@@ -19,6 +19,17 @@ python thesis/scripts/validate_outputs.py
 
 ## 关键入口
 
+- [论文写作工作包状态](WRITING_PACKAGE_STATUS.md)
+- [第3章正文初稿](chapters/chapter3_draft.md)
+- [第4章正文初稿](chapters/chapter4_draft.md)
+- [第5章正文初稿](chapters/chapter5_draft.md)
+- [第6章正文初稿](chapters/chapter6_draft.md)
+- [正文/附录图表安排](MAIN_TEXT_APPENDIX_PLAN.md)
+- [7 张核心图 V2 重绘交接](figures/CORE_FIGURES_V2_REDRAW.md)
+- [12 张图通用重绘说明](figures/REDRAW_GUIDE.md)
+- [10 组表重排说明](tables/REDRAW_GUIDE.md)
+
+- [结论—章节—图表一致性审查](CONSISTENCY_REVIEW.md)
 - [冻结论文结论](PAPER_CLAIMS_FINAL.md)
 - [论文目录](THESIS_OUTLINE.md)
 - [章节写作计划](CHAPTER_WRITING_PLAN.md)

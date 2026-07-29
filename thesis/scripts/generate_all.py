@@ -14,6 +14,7 @@ sys.path.insert(0, str(SCRIPT_DIR))
 from common.paths import FIGURE_OUTPUTS, FIGURE_ROOT, TABLE_ROOT, ensure_output_directories
 import generate_architecture_figures
 import generate_statistical_figures
+import generate_core_figures_v2
 import generate_tables
 
 
@@ -92,7 +93,15 @@ def build_contact_sheet() -> None:
 
 
 def write_indices() -> None:
-    figure_lines = ["# Figure index", "", "All paths are repository-relative and all statistics originate in `thesis_archive/`.", ""]
+    figure_lines = [
+        "# Figure index",
+        "",
+        "All paths are repository-relative and all statistics originate in `thesis_archive/`.",
+        "",
+        "- [Figure 1–12 redraw guide](../REDRAW_GUIDE.md)",
+        "- [Core Figures V2 redraw handoff](../CORE_FIGURES_V2_REDRAW.md)",
+        "",
+    ]
     for idx, (stem, title) in enumerate(FIGURES, 1):
         figure_lines.extend(
             [
@@ -106,7 +115,13 @@ def write_indices() -> None:
         )
     (FIGURE_ROOT / "generated" / "figure_index.md").write_text("\n".join(figure_lines), encoding="utf-8")
 
-    table_lines = ["# Table index", "", "- [Workbook](xlsx/thesis_results.xlsx)", ""]
+    table_lines = [
+        "# Table index",
+        "",
+        "- [Workbook](xlsx/thesis_results.xlsx)",
+        "- [Table-by-table formatting guide](REDRAW_GUIDE.md)",
+        "",
+    ]
     for path in sorted((TABLE_ROOT / "csv").glob("*.csv")):
         stem = path.stem
         table_lines.append(
@@ -119,11 +134,12 @@ def main() -> None:
     ensure_output_directories()
     generate_architecture_figures.main()
     generate_statistical_figures.main()
+    generate_core_figures_v2.main()
     generate_tables.main()
     write_captions()
     build_contact_sheet()
     write_indices()
-    print("generated all thesis figures, tables, captions, and indices")
+    print("generated all thesis figures (including seven Core V2 redraws), tables, captions, and indices")
 
 
 if __name__ == "__main__":

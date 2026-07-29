@@ -11,6 +11,12 @@
 - `captions/zh/` 与 `captions/en/`：中英文图注；
 - `validation/`：自动质量检查。
 
+当前输出中的 Figure 1、2、3、5、6、7、9 已由 Core V2 重绘器覆盖；其余图保留为补充材料
+草稿。后续人工重绘请同时阅读：
+
+- [Figure 1–12 通用重绘说明](REDRAW_GUIDE.md)
+- [七张核心图 V2 分层交接](CORE_FIGURES_V2_REDRAW.md)
+
 运行：
 
 ```bash

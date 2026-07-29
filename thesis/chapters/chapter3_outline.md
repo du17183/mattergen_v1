@@ -6,14 +6,16 @@
 
 ## 3.2 三字段条件残差
 
-对 cell、position、atom 分别定义 \(r_k=s_k^{cond}-s_k^{uncond}\)，说明不可直接拼接统一归一化。
+对 cell、position、atom 分别定义 \(r_k=s_k^{cond}-s_k^{uncond}\) 和字段 RMS
+\(\delta_k\)，说明不可直接拼接张量统一归一化；三个 RMS 取有效字段均值后驱动一个共同
+guidance scale，而不是三个字段各有一个 scale。
 
 ## 3.3 在线自适应
 
-- EMA：\(\bar r_k \leftarrow \beta\bar r_k+(1-\beta)\|r_k\|\)。
-- residual-driven scale update。
+- predictor/corrector 分别维护 EMA：\(m_{t,p}\leftarrow\beta m_{t-1,p}+(1-\beta)\delta_t\)。
+- \(q_t=\delta_t/(m_{t,p}+\epsilon)\)，multiplier 限制在 [0.25,4]。
+- 最终共同 guidance scale 限制在 [0,5]。
 - \(\alpha=0.50,\beta=0.95,\epsilon=10^{-6}\)。
-- \(g_k\in[0,5]\)。
 
 ## 3.4 集成与边界
 

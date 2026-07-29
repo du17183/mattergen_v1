@@ -352,6 +352,9 @@ README 是导航和解释层，CSV/JSON、manifest、checksum 与冻结报告才
 
 - [最终论文结论](thesis/PAPER_CLAIMS_FINAL.md)
 - [论文目录](thesis/THESIS_OUTLINE.md)
+- [论文写作工作包状态](thesis/WRITING_PACKAGE_STATUS.md)
+- [正文/附录图表安排](thesis/MAIN_TEXT_APPENDIX_PLAN.md)
+- [七张核心图 V2 重绘交接](thesis/figures/CORE_FIGURES_V2_REDRAW.md)
 - [章节写作计划](thesis/CHAPTER_WRITING_PLAN.md)
 - [图表规划](thesis/FIGURE_TABLE_PLAN.md)
 - [图索引](thesis/figures/generated/figure_index.md)

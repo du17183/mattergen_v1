@@ -1,6 +1,7 @@
 # Table index
 
 - [Workbook](xlsx/thesis_results.xlsx)
+- [Table-by-table formatting guide](REDRAW_GUIDE.md)
 
 - `01_experiment_manifest`: [CSV](csv/01_experiment_manifest.csv) · [Markdown](markdown/01_experiment_manifest.md) · [LaTeX](latex/01_experiment_manifest.tex)
 - `02_innovation1`: [CSV](csv/02_innovation1.csv) · [Markdown](markdown/02_innovation1.md) · [LaTeX](latex/02_innovation1.tex)
