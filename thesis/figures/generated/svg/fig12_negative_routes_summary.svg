@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-07-29T12:47:21.997275</dc:date>
+    <dc:date>2026-07-29</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -21,20 +21,20 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 469.19952 
-L 519.59952 469.19952 
-L 519.59952 0 
-L 0 0 
+   <path d="M 0 469.19952
+L 519.59952 469.19952
+L 519.59952 0
+L 0 0
 z
 " style="fill: #ffffff"/>
   </g>
   <g id="axes_1">
    <g id="table_1">
     <g id="patch_2">
-     <path d="M 17.30399 105.267548 
-L 108.239904 105.267548 
-L 108.239904 82.308963 
-L 17.30399 82.308963 
+     <path d="M 17.30399 105.267548
+L 108.239904 105.267548
+L 108.239904 82.308963
+L 17.30399 82.308963
 z
 " style="fill: #0072b2; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -42,10 +42,10 @@ z
      <text style="fill: #ffffff; font: 700 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: middle" x="62.771947" y="95.526662" transform="rotate(-0 62.771947 95.526662)">Route</text>
     </g>
     <g id="patch_3">
-     <path d="M 108.239904 105.267548 
-L 209.279808 105.267548 
-L 209.279808 82.308963 
-L 108.239904 82.308963 
+     <path d="M 108.239904 105.267548
+L 209.279808 105.267548
+L 209.279808 82.308963
+L 108.239904 82.308963
 z
 " style="fill: #0072b2; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -53,10 +53,10 @@ z
      <text style="fill: #ffffff; font: 700 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: middle" x="158.759856" y="95.526662" transform="rotate(-0 158.759856 95.526662)">Goal</text>
     </g>
     <g id="patch_4">
-     <path d="M 209.279808 105.267548 
-L 451.775578 105.267548 
-L 451.775578 82.308963 
-L 209.279808 82.308963 
+     <path d="M 209.279808 105.267548
+L 451.775578 105.267548
+L 451.775578 82.308963
+L 209.279808 82.308963
 z
 " style="fill: #0072b2; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -64,10 +64,10 @@ z
      <text style="fill: #ffffff; font: 700 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: middle" x="330.527693" y="95.526662" transform="rotate(-0 330.527693 95.526662)">Observed failure</text>
     </g>
     <g id="patch_5">
-     <path d="M 451.775578 105.267548 
-L 502.29553 105.267548 
-L 502.29553 82.308963 
-L 451.775578 82.308963 
+     <path d="M 451.775578 105.267548
+L 502.29553 105.267548
+L 502.29553 82.308963
+L 451.775578 82.308963
 z
 " style="fill: #0072b2; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -75,10 +75,10 @@ z
      <text style="fill: #ffffff; font: 700 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: middle" x="477.035554" y="95.526662" transform="rotate(-0 477.035554 95.526662)">Status</text>
     </g>
     <g id="patch_6">
-     <path d="M 17.30399 128.226133 
-L 108.239904 128.226133 
-L 108.239904 105.267548 
-L 17.30399 105.267548 
+     <path d="M 17.30399 128.226133
+L 108.239904 128.226133
+L 108.239904 105.267548
+L 17.30399 105.267548
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -86,10 +86,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="26.397582" y="118.485247" transform="rotate(-0 26.397582 118.485247)">Residual Reuse</text>
     </g>
     <g id="patch_7">
-     <path d="M 108.239904 128.226133 
-L 209.279808 128.226133 
-L 209.279808 105.267548 
-L 108.239904 105.267548 
+     <path d="M 108.239904 128.226133
+L 209.279808 128.226133
+L 209.279808 105.267548
+L 108.239904 105.267548
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -97,10 +97,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="118.343894" y="118.485247" transform="rotate(-0 118.343894 118.485247)">Reduce CFG work</text>
     </g>
     <g id="patch_8">
-     <path d="M 209.279808 128.226133 
-L 451.775578 128.226133 
-L 451.775578 105.267548 
-L 209.279808 105.267548 
+     <path d="M 209.279808 128.226133
+L 451.775578 128.226133
+L 451.775578 105.267548
+L 209.279808 105.267548
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -108,10 +108,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="233.529385" y="118.485247" transform="rotate(-0 233.529385 118.485247)">Best throughput gain only +1.16%</text>
     </g>
     <g id="patch_9">
-     <path d="M 451.775578 128.226133 
-L 502.29553 128.226133 
-L 502.29553 105.267548 
-L 451.775578 105.267548 
+     <path d="M 451.775578 128.226133
+L 502.29553 128.226133
+L 502.29553 105.267548
+L 451.775578 105.267548
 z
 " style="fill: #fce8e3; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -119,10 +119,10 @@ z
      <text style="fill: #d55e00; font: 700 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="456.827573" y="118.485247" transform="rotate(-0 456.827573 118.485247)">No-Go</text>
     </g>
     <g id="patch_10">
-     <path d="M 17.30399 151.184718 
-L 108.239904 151.184718 
-L 108.239904 128.226133 
-L 17.30399 128.226133 
+     <path d="M 17.30399 151.184718
+L 108.239904 151.184718
+L 108.239904 128.226133
+L 17.30399 128.226133
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -130,10 +130,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="26.397582" y="141.443831" transform="rotate(-0 26.397582 141.443831)">Corrector Gating</text>
     </g>
     <g id="patch_11">
-     <path d="M 108.239904 151.184718 
-L 209.279808 151.184718 
-L 209.279808 128.226133 
-L 108.239904 128.226133 
+     <path d="M 108.239904 151.184718
+L 209.279808 151.184718
+L 209.279808 128.226133
+L 108.239904 128.226133
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -141,10 +141,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="118.343894" y="141.443831" transform="rotate(-0 118.343894 141.443831)">Skip physical forwards</text>
     </g>
     <g id="patch_12">
-     <path d="M 209.279808 151.184718 
-L 451.775578 151.184718 
-L 451.775578 128.226133 
-L 209.279808 128.226133 
+     <path d="M 209.279808 151.184718
+L 451.775578 151.184718
+L 451.775578 128.226133
+L 209.279808 128.226133
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -152,10 +152,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="233.529385" y="141.443831" transform="rotate(-0 233.529385 141.443831)">~1.5× speed; Stable/NUS and E-hull worsened</text>
     </g>
     <g id="patch_13">
-     <path d="M 451.775578 151.184718 
-L 502.29553 151.184718 
-L 502.29553 128.226133 
-L 451.775578 128.226133 
+     <path d="M 451.775578 151.184718
+L 502.29553 151.184718
+L 502.29553 128.226133
+L 451.775578 128.226133
 z
 " style="fill: #fce8e3; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -163,10 +163,10 @@ z
      <text style="fill: #d55e00; font: 700 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="456.827573" y="141.443831" transform="rotate(-0 456.827573 141.443831)">No-Go</text>
     </g>
     <g id="patch_14">
-     <path d="M 17.30399 174.143302 
-L 108.239904 174.143302 
-L 108.239904 151.184718 
-L 17.30399 151.184718 
+     <path d="M 17.30399 174.143302
+L 108.239904 174.143302
+L 108.239904 151.184718
+L 17.30399 151.184718
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -174,10 +174,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="26.397582" y="164.402416" transform="rotate(-0 26.397582 164.402416)">Budget-aware Gating</text>
     </g>
     <g id="patch_15">
-     <path d="M 108.239904 174.143302 
-L 209.279808 174.143302 
-L 209.279808 151.184718 
-L 108.239904 151.184718 
+     <path d="M 108.239904 174.143302
+L 209.279808 174.143302
+L 209.279808 151.184718
+L 108.239904 151.184718
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -185,10 +185,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="118.343894" y="164.402416" transform="rotate(-0 118.343894 164.402416)">Safer corrector skip</text>
     </g>
     <g id="patch_16">
-     <path d="M 209.279808 174.143302 
-L 451.775578 174.143302 
-L 451.775578 151.184718 
-L 209.279808 151.184718 
+     <path d="M 209.279808 174.143302
+L 451.775578 174.143302
+L 451.775578 151.184718
+L 209.279808 151.184718
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -196,10 +196,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="233.529385" y="164.402416" transform="rotate(-0 233.529385 164.402416)">Quality gates or speed target failed</text>
     </g>
     <g id="patch_17">
-     <path d="M 451.775578 174.143302 
-L 502.29553 174.143302 
-L 502.29553 151.184718 
-L 451.775578 151.184718 
+     <path d="M 451.775578 174.143302
+L 502.29553 174.143302
+L 502.29553 151.184718
+L 451.775578 151.184718
 z
 " style="fill: #fce8e3; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -207,10 +207,10 @@ z
      <text style="fill: #d55e00; font: 700 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="456.827573" y="164.402416" transform="rotate(-0 456.827573 164.402416)">No-Go</text>
     </g>
     <g id="patch_18">
-     <path d="M 17.30399 197.101887 
-L 108.239904 197.101887 
-L 108.239904 174.143302 
-L 17.30399 174.143302 
+     <path d="M 17.30399 197.101887
+L 108.239904 197.101887
+L 108.239904 174.143302
+L 17.30399 174.143302
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -218,10 +218,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="26.397582" y="187.361001" transform="rotate(-0 26.397582 187.361001)">FN-PRA</text>
     </g>
     <g id="patch_19">
-     <path d="M 108.239904 197.101887 
-L 209.279808 197.101887 
-L 209.279808 174.143302 
-L 108.239904 174.143302 
+     <path d="M 108.239904 197.101887
+L 209.279808 197.101887
+L 209.279808 174.143302
+L 108.239904 174.143302
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -229,10 +229,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="118.343894" y="187.361001" transform="rotate(-0 118.343894 187.361001)">Representation alignment</text>
     </g>
     <g id="patch_20">
-     <path d="M 209.279808 197.101887 
-L 451.775578 197.101887 
-L 451.775578 174.143302 
-L 209.279808 174.143302 
+     <path d="M 209.279808 197.101887
+L 451.775578 197.101887
+L 451.775578 174.143302
+L 209.279808 174.143302
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -240,10 +240,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="233.529385" y="187.361001" transform="rotate(-0 233.529385 187.361001)">Composition and Stable −6.25 pp</text>
     </g>
     <g id="patch_21">
-     <path d="M 451.775578 197.101887 
-L 502.29553 197.101887 
-L 502.29553 174.143302 
-L 451.775578 174.143302 
+     <path d="M 451.775578 197.101887
+L 502.29553 197.101887
+L 502.29553 174.143302
+L 451.775578 174.143302
 z
 " style="fill: #fce8e3; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -251,10 +251,10 @@ z
      <text style="fill: #d55e00; font: 700 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="456.827573" y="187.361001" transform="rotate(-0 456.827573 187.361001)">No-Go</text>
     </g>
     <g id="patch_22">
-     <path d="M 17.30399 220.060472 
-L 108.239904 220.060472 
-L 108.239904 197.101887 
-L 17.30399 197.101887 
+     <path d="M 17.30399 220.060472
+L 108.239904 220.060472
+L 108.239904 197.101887
+L 17.30399 197.101887
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -262,10 +262,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="26.397582" y="210.319586" transform="rotate(-0 26.397582 210.319586)">CrystalREPA</text>
     </g>
     <g id="patch_23">
-     <path d="M 108.239904 220.060472 
-L 209.279808 220.060472 
-L 209.279808 197.101887 
-L 108.239904 197.101887 
+     <path d="M 108.239904 220.060472
+L 209.279808 220.060472
+L 209.279808 197.101887
+L 108.239904 197.101887
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -273,10 +273,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="118.343894" y="210.319586" transform="rotate(-0 118.343894 210.319586)">Unconditional REPA repro</text>
     </g>
     <g id="patch_24">
-     <path d="M 209.279808 220.060472 
-L 451.775578 220.060472 
-L 451.775578 197.101887 
-L 209.279808 197.101887 
+     <path d="M 209.279808 220.060472
+L 451.775578 220.060472
+L 451.775578 197.101887
+L 209.279808 197.101887
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -284,10 +284,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="233.529385" y="210.319586" transform="rotate(-0 233.529385 210.319586)">E-hull +0.09424; RMSD worsened</text>
     </g>
     <g id="patch_25">
-     <path d="M 451.775578 220.060472 
-L 502.29553 220.060472 
-L 502.29553 197.101887 
-L 451.775578 197.101887 
+     <path d="M 451.775578 220.060472
+L 502.29553 220.060472
+L 502.29553 197.101887
+L 451.775578 197.101887
 z
 " style="fill: #fce8e3; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -295,10 +295,10 @@ z
      <text style="fill: #d55e00; font: 700 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="456.827573" y="210.319586" transform="rotate(-0 456.827573 210.319586)">No-Go</text>
     </g>
     <g id="patch_26">
-     <path d="M 17.30399 243.019057 
-L 108.239904 243.019057 
-L 108.239904 220.060472 
-L 17.30399 220.060472 
+     <path d="M 17.30399 243.019057
+L 108.239904 243.019057
+L 108.239904 220.060472
+L 17.30399 220.060472
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -306,10 +306,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="26.397582" y="233.278171" transform="rotate(-0 26.397582 233.278171)">RP-QTFG</text>
     </g>
     <g id="patch_27">
-     <path d="M 108.239904 243.019057 
-L 209.279808 243.019057 
-L 209.279808 220.060472 
-L 108.239904 220.060472 
+     <path d="M 108.239904 243.019057
+L 209.279808 243.019057
+L 209.279808 220.060472
+L 108.239904 220.060472
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -317,10 +317,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="118.343894" y="233.278171" transform="rotate(-0 118.343894 233.278171)">Training-free physics guidance</text>
     </g>
     <g id="patch_28">
-     <path d="M 209.279808 243.019057 
-L 451.775578 243.019057 
-L 451.775578 220.060472 
-L 209.279808 220.060472 
+     <path d="M 209.279808 243.019057
+L 451.775578 243.019057
+L 451.775578 220.060472
+L 209.279808 220.060472
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -328,10 +328,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="233.529385" y="233.278171" transform="rotate(-0 233.529385 233.278171)">Offline direction positive; online RMSD worsened</text>
     </g>
     <g id="patch_29">
-     <path d="M 451.775578 243.019057 
-L 502.29553 243.019057 
-L 502.29553 220.060472 
-L 451.775578 220.060472 
+     <path d="M 451.775578 243.019057
+L 502.29553 243.019057
+L 502.29553 220.060472
+L 451.775578 220.060472
 z
 " style="fill: #fce8e3; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -339,10 +339,10 @@ z
      <text style="fill: #d55e00; font: 700 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="456.827573" y="233.278171" transform="rotate(-0 456.827573 233.278171)">No-Go</text>
     </g>
     <g id="patch_30">
-     <path d="M 17.30399 265.977642 
-L 108.239904 265.977642 
-L 108.239904 243.019057 
-L 17.30399 243.019057 
+     <path d="M 17.30399 265.977642
+L 108.239904 265.977642
+L 108.239904 243.019057
+L 17.30399 243.019057
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -350,10 +350,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="26.397582" y="256.236756" transform="rotate(-0 26.397582 256.236756)">CG-TDR</text>
     </g>
     <g id="patch_31">
-     <path d="M 108.239904 265.977642 
-L 209.279808 265.977642 
-L 209.279808 243.019057 
-L 108.239904 243.019057 
+     <path d="M 108.239904 265.977642
+L 209.279808 265.977642
+L 209.279808 243.019057
+L 108.239904 243.019057
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -361,10 +361,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="118.343894" y="256.236756" transform="rotate(-0 118.343894 256.236756)">Teacher residual correction</text>
     </g>
     <g id="patch_32">
-     <path d="M 209.279808 265.977642 
-L 451.775578 265.977642 
-L 451.775578 243.019057 
-L 209.279808 243.019057 
+     <path d="M 209.279808 265.977642
+L 451.775578 265.977642
+L 451.775578 243.019057
+L 209.279808 243.019057
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -372,10 +372,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="233.529385" y="256.236756" transform="rotate(-0 233.529385 256.236756)">Residual no better than zero; safe gate near no effect</text>
     </g>
     <g id="patch_33">
-     <path d="M 451.775578 265.977642 
-L 502.29553 265.977642 
-L 502.29553 243.019057 
-L 451.775578 243.019057 
+     <path d="M 451.775578 265.977642
+L 502.29553 265.977642
+L 502.29553 243.019057
+L 451.775578 243.019057
 z
 " style="fill: #fce8e3; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -383,10 +383,10 @@ z
      <text style="fill: #d55e00; font: 700 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="456.827573" y="256.236756" transform="rotate(-0 456.827573 256.236756)">No-Go</text>
     </g>
     <g id="patch_34">
-     <path d="M 17.30399 288.936226 
-L 108.239904 288.936226 
-L 108.239904 265.977642 
-L 17.30399 265.977642 
+     <path d="M 17.30399 288.936226
+L 108.239904 288.936226
+L 108.239904 265.977642
+L 17.30399 265.977642
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -394,10 +394,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="26.397582" y="279.19534" transform="rotate(-0 26.397582 279.19534)">Q1 UQ-PQR</text>
     </g>
     <g id="patch_35">
-     <path d="M 108.239904 288.936226 
-L 209.279808 288.936226 
-L 209.279808 265.977642 
-L 108.239904 265.977642 
+     <path d="M 108.239904 288.936226
+L 209.279808 288.936226
+L 209.279808 265.977642
+L 108.239904 265.977642
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -405,10 +405,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="118.343894" y="279.19534" transform="rotate(-0 118.343894 279.19534)">Post-generation quality</text>
     </g>
     <g id="patch_36">
-     <path d="M 209.279808 288.936226 
-L 451.775578 288.936226 
-L 451.775578 265.977642 
-L 209.279808 265.977642 
+     <path d="M 209.279808 288.936226
+L 451.775578 288.936226
+L 451.775578 265.977642
+L 209.279808 265.977642
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -416,10 +416,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="233.529385" y="279.19534" transform="rotate(-0 233.529385 279.19534)">Novel −14.86 pp</text>
     </g>
     <g id="patch_37">
-     <path d="M 451.775578 288.936226 
-L 502.29553 288.936226 
-L 502.29553 265.977642 
-L 451.775578 265.977642 
+     <path d="M 451.775578 288.936226
+L 502.29553 288.936226
+L 502.29553 265.977642
+L 451.775578 265.977642
 z
 " style="fill: #fce8e3; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -427,10 +427,10 @@ z
      <text style="fill: #d55e00; font: 700 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="456.827573" y="279.19534" transform="rotate(-0 456.827573 279.19534)">No-Go</text>
     </g>
     <g id="patch_38">
-     <path d="M 17.30399 311.894811 
-L 108.239904 311.894811 
-L 108.239904 288.936226 
-L 17.30399 288.936226 
+     <path d="M 17.30399 311.894811
+L 108.239904 311.894811
+L 108.239904 288.936226
+L 17.30399 288.936226
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -438,10 +438,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="26.397582" y="302.153925" transform="rotate(-0 26.397582 302.153925)">Q2 RFR</text>
     </g>
     <g id="patch_39">
-     <path d="M 108.239904 311.894811 
-L 209.279808 311.894811 
-L 209.279808 288.936226 
-L 108.239904 288.936226 
+     <path d="M 108.239904 311.894811
+L 209.279808 311.894811
+L 209.279808 288.936226
+L 108.239904 288.936226
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -449,10 +449,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="118.343894" y="302.153925" transform="rotate(-0 118.343894 302.153925)">Force refinement</text>
     </g>
     <g id="patch_40">
-     <path d="M 209.279808 311.894811 
-L 451.775578 311.894811 
-L 451.775578 288.936226 
-L 209.279808 288.936226 
+     <path d="M 209.279808 311.894811
+L 451.775578 311.894811
+L 451.775578 288.936226
+L 209.279808 288.936226
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -460,10 +460,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="233.529385" y="302.153925" transform="rotate(-0 233.529385 302.153925)">Novel −30.25 pp; Unique −8.45 pp</text>
     </g>
     <g id="patch_41">
-     <path d="M 451.775578 311.894811 
-L 502.29553 311.894811 
-L 502.29553 288.936226 
-L 451.775578 288.936226 
+     <path d="M 451.775578 311.894811
+L 502.29553 311.894811
+L 502.29553 288.936226
+L 451.775578 288.936226
 z
 " style="fill: #fce8e3; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -471,10 +471,10 @@ z
      <text style="fill: #d55e00; font: 700 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="456.827573" y="302.153925" transform="rotate(-0 456.827573 302.153925)">No-Go</text>
     </g>
     <g id="patch_42">
-     <path d="M 17.30399 334.853396 
-L 108.239904 334.853396 
-L 108.239904 311.894811 
-L 17.30399 311.894811 
+     <path d="M 17.30399 334.853396
+L 108.239904 334.853396
+L 108.239904 311.894811
+L 17.30399 311.894811
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -482,10 +482,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="26.397582" y="325.11251" transform="rotate(-0 26.397582 325.11251)">Q4 CPRC</text>
     </g>
     <g id="patch_43">
-     <path d="M 108.239904 334.853396 
-L 209.279808 334.853396 
-L 209.279808 311.894811 
-L 108.239904 311.894811 
+     <path d="M 108.239904 334.853396
+L 209.279808 334.853396
+L 209.279808 311.894811
+L 108.239904 311.894811
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -493,10 +493,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="118.343894" y="325.11251" transform="rotate(-0 118.343894 325.11251)">Constrained correction</text>
     </g>
     <g id="patch_44">
-     <path d="M 209.279808 334.853396 
-L 451.775578 334.853396 
-L 451.775578 311.894811 
-L 209.279808 311.894811 
+     <path d="M 209.279808 334.853396
+L 451.775578 334.853396
+L 451.775578 311.894811
+L 209.279808 311.894811
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -504,10 +504,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="233.529385" y="325.11251" transform="rotate(-0 233.529385 325.11251)">Novel −17.08 pp</text>
     </g>
     <g id="patch_45">
-     <path d="M 451.775578 334.853396 
-L 502.29553 334.853396 
-L 502.29553 311.894811 
-L 451.775578 311.894811 
+     <path d="M 451.775578 334.853396
+L 502.29553 334.853396
+L 502.29553 311.894811
+L 451.775578 311.894811
 z
 " style="fill: #fce8e3; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -515,10 +515,10 @@ z
      <text style="fill: #d55e00; font: 700 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="456.827573" y="325.11251" transform="rotate(-0 456.827573 325.11251)">No-Go</text>
     </g>
     <g id="patch_46">
-     <path d="M 17.30399 357.811981 
-L 108.239904 357.811981 
-L 108.239904 334.853396 
-L 17.30399 334.853396 
+     <path d="M 17.30399 357.811981
+L 108.239904 357.811981
+L 108.239904 334.853396
+L 17.30399 334.853396
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -526,10 +526,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="26.397582" y="348.071095" transform="rotate(-0 26.397582 348.071095)">Q5 CQPS</text>
     </g>
     <g id="patch_47">
-     <path d="M 108.239904 357.811981 
-L 209.279808 357.811981 
-L 209.279808 334.853396 
-L 108.239904 334.853396 
+     <path d="M 108.239904 357.811981
+L 209.279808 357.811981
+L 209.279808 334.853396
+L 108.239904 334.853396
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -537,10 +537,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="118.343894" y="348.071095" transform="rotate(-0 118.343894 348.071095)">Quality-preserving selection</text>
     </g>
     <g id="patch_48">
-     <path d="M 209.279808 357.811981 
-L 451.775578 357.811981 
-L 451.775578 334.853396 
-L 209.279808 334.853396 
+     <path d="M 209.279808 357.811981
+L 451.775578 357.811981
+L 451.775578 334.853396
+L 209.279808 334.853396
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -548,10 +548,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="233.529385" y="348.071095" transform="rotate(-0 233.529385 348.071095)">Novel −15.63 pp</text>
     </g>
     <g id="patch_49">
-     <path d="M 451.775578 357.811981 
-L 502.29553 357.811981 
-L 502.29553 334.853396 
-L 451.775578 334.853396 
+     <path d="M 451.775578 357.811981
+L 502.29553 357.811981
+L 502.29553 334.853396
+L 451.775578 334.853396
 z
 " style="fill: #fce8e3; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -559,10 +559,10 @@ z
      <text style="fill: #d55e00; font: 700 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="456.827573" y="348.071095" transform="rotate(-0 456.827573 348.071095)">No-Go</text>
     </g>
     <g id="patch_50">
-     <path d="M 17.30399 380.770566 
-L 108.239904 380.770566 
-L 108.239904 357.811981 
-L 17.30399 357.811981 
+     <path d="M 17.30399 380.770566
+L 108.239904 380.770566
+L 108.239904 357.811981
+L 17.30399 357.811981
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -570,10 +570,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="26.397582" y="371.02968" transform="rotate(-0 26.397582 371.02968)">Q6 NS-SetRank</text>
     </g>
     <g id="patch_51">
-     <path d="M 108.239904 380.770566 
-L 209.279808 380.770566 
-L 209.279808 357.811981 
-L 108.239904 357.811981 
+     <path d="M 108.239904 380.770566
+L 209.279808 380.770566
+L 209.279808 357.811981
+L 108.239904 357.811981
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -581,10 +581,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="118.343894" y="371.02968" transform="rotate(-0 118.343894 371.02968)">Candidate ranking</text>
     </g>
     <g id="patch_52">
-     <path d="M 209.279808 380.770566 
-L 451.775578 380.770566 
-L 451.775578 357.811981 
-L 209.279808 357.811981 
+     <path d="M 209.279808 380.770566
+L 451.775578 380.770566
+L 451.775578 357.811981
+L 209.279808 357.811981
 z
 " style="fill: #f7f7f7; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -592,10 +592,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="233.529385" y="371.02968" transform="rotate(-0 233.529385 371.02968)">Novel −12.50 pp</text>
     </g>
     <g id="patch_53">
-     <path d="M 451.775578 380.770566 
-L 502.29553 380.770566 
-L 502.29553 357.811981 
-L 451.775578 357.811981 
+     <path d="M 451.775578 380.770566
+L 502.29553 380.770566
+L 502.29553 357.811981
+L 451.775578 357.811981
 z
 " style="fill: #fce8e3; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -603,10 +603,10 @@ z
      <text style="fill: #d55e00; font: 700 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="456.827573" y="371.02968" transform="rotate(-0 456.827573 371.02968)">No-Go</text>
     </g>
     <g id="patch_54">
-     <path d="M 17.30399 403.729151 
-L 108.239904 403.729151 
-L 108.239904 380.770566 
-L 17.30399 380.770566 
+     <path d="M 17.30399 403.729151
+L 108.239904 403.729151
+L 108.239904 380.770566
+L 17.30399 380.770566
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -614,10 +614,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="26.397582" y="393.988264" transform="rotate(-0 26.397582 393.988264)">GPU acceleration routes</text>
     </g>
     <g id="patch_55">
-     <path d="M 108.239904 403.729151 
-L 209.279808 403.729151 
-L 209.279808 380.770566 
-L 108.239904 380.770566 
+     <path d="M 108.239904 403.729151
+L 209.279808 403.729151
+L 209.279808 380.770566
+L 108.239904 380.770566
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -625,10 +625,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="118.343894" y="393.988264" transform="rotate(-0 118.343894 393.988264)">Bitwise-safe throughput</text>
     </g>
     <g id="patch_56">
-     <path d="M 209.279808 403.729151 
-L 451.775578 403.729151 
-L 451.775578 380.770566 
-L 209.279808 380.770566 
+     <path d="M 209.279808 403.729151
+L 451.775578 403.729151
+L 451.775578 380.770566
+L 209.279808 380.770566
 z
 " style="fill: #ffffff; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>
@@ -636,10 +636,10 @@ z
      <text style="font: 6.3px 'DejaVu Sans', 'Arial', 'Liberation Sans', sans-serif; text-anchor: start" x="233.529385" y="393.988264" transform="rotate(-0 233.529385 393.988264)">Batch changed quality; compile/static/MPS below gates</text>
     </g>
     <g id="patch_57">
-     <path d="M 451.775578 403.729151 
-L 502.29553 403.729151 
-L 502.29553 380.770566 
-L 451.775578 380.770566 
+     <path d="M 451.775578 403.729151
+L 502.29553 403.729151
+L 502.29553 380.770566
+L 451.775578 380.770566
 z
 " style="fill: #fce8e3; stroke: #e6e6e6; stroke-linejoin: miter"/>
     </g>

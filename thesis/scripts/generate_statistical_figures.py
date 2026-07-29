@@ -443,6 +443,9 @@ def main(selected: list[str] | None = None) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("figures", nargs="*", choices=sorted(GENERATORS))
+    parser.add_argument("figures", nargs="*")
     args = parser.parse_args()
+    unknown = sorted(set(args.figures) - set(GENERATORS))
+    if unknown:
+        parser.error(f"unknown figure keys: {unknown}")
     main(args.figures or None)

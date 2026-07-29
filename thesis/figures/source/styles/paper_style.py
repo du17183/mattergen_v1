@@ -1,6 +1,7 @@
 """Shared publication style derived from the four audited scientific skills."""
 
 from contextlib import contextmanager
+from datetime import datetime
 from pathlib import Path
 
 import matplotlib as mpl
@@ -41,6 +42,7 @@ def paper_context():
         "pdf.fonttype": 42,
         "ps.fonttype": 42,
         "svg.fonttype": "none",
+        "svg.hashsalt": "mattergen-thesis-20260729",
         "savefig.facecolor": "white",
         "figure.facecolor": "white",
         "axes.facecolor": "white",
@@ -69,25 +71,31 @@ def clean_axes(ax, grid_axis: str = "y") -> None:
 
 def save_figure(fig, stem: str, output_root: Path) -> None:
     """Save one opaque, vector-first figure in all required formats."""
-    metadata = {"Creator": "MatterGen thesis reproducible CPU pipeline"}
+    creator = "MatterGen thesis reproducible CPU pipeline"
+    fixed_time = datetime(2026, 7, 29, 0, 0, 0)
+    pdf_metadata = {"Creator": creator, "CreationDate": fixed_time, "ModDate": fixed_time}
+    svg_metadata = {"Creator": creator, "Date": "2026-07-29"}
     fig.savefig(
         output_root / "pdf" / f"{stem}.pdf",
         bbox_inches="tight",
         facecolor="white",
-        metadata=metadata,
+        metadata=pdf_metadata,
     )
+    svg_path = output_root / "svg" / f"{stem}.svg"
     fig.savefig(
-        output_root / "svg" / f"{stem}.svg",
+        svg_path,
         bbox_inches="tight",
         facecolor="white",
-        metadata=metadata,
+        metadata=svg_metadata,
     )
+    svg_text = svg_path.read_text(encoding="utf-8")
+    svg_path.write_text("\n".join(line.rstrip() for line in svg_text.splitlines()) + "\n", encoding="utf-8")
     fig.savefig(
         output_root / "png" / f"{stem}.png",
         dpi=600,
         bbox_inches="tight",
         facecolor="white",
-        metadata={"Software": metadata["Creator"]},
+        metadata={"Software": creator},
     )
     plt.close(fig)
 
