@@ -1,0 +1,171 @@
+[
+  {
+    "claim_id": "C1_ADAPTIVE_CFG_DIRECTIONAL",
+    "chapter": 4,
+    "section": "4.8",
+    "exact_wording": "在20000–20255的256个配对样本中，Adaptive CFG相对C0使代理E-hull降低0.003435 eV/atom、Stable提高5.859 pp、NUS提高3.516 pp；总体方向正向，但三项配对统计均未达到显著性。",
+    "source_data": [
+      "S10_I1_DATA"
+    ],
+    "source_code": [
+      "S06_ADAPTIVE_CONTROLLER",
+      "S07_ADAPTIVE_CFG"
+    ],
+    "figure": "Figure 5",
+    "table": "Table 02_innovation1",
+    "seed_range": "20000–20255",
+    "n": 256,
+    "statistical_evidence": "E-hull CI [-0.017926,0.011030], raw p=.357; Stable CI [-1.5625,13.2813] pp, p=.146; NUS CI [-2.7344,9.7656] pp, p=.342.",
+    "limitation": "MatterSim-5M surrogate; non-significant paired inference; no target-property verification.",
+    "forbidden_variant": "Adaptive CFG统计显著改善真实热力学稳定性。",
+    "evidence_complete": true
+  },
+  {
+    "claim_id": "C2_E3PCR_FORCE",
+    "chapter": 5,
+    "section": "5.9",
+    "exact_wording": "在40000–40255的独立256个样本中，E3-G把预松弛最大力均值从0.342964降至0.263107 eV/Å，相对下降23.28%，配对均值差95% CI为[-0.144966,-0.032453]，Holm校正p=4.19e-10。",
+    "source_data": [
+      "S17_I2_DATA"
+    ],
+    "source_code": [
+      "S13_E3_REFINER",
+      "S14_E3_FROZEN_CORE",
+      "S15_E3_FORMAL_RUNNER"
+    ],
+    "figure": "Figure 6",
+    "table": "Table 03_innovation2",
+    "seed_range": "40000–40255",
+    "n": 256,
+    "statistical_evidence": "20,000 paired bootstrap; Wilcoxon Pratt; Holm family size 2; raw W/T/L=163/0/93.",
+    "limitation": "MatterSim-5M pre-relax force; not DFT or synthesizability evidence.",
+    "forbidden_variant": "E3-PCR已通过DFT证明提升真实材料稳定性。",
+    "evidence_complete": true
+  },
+  {
+    "claim_id": "C3_GATE_HARM",
+    "chapter": 5,
+    "section": "5.10",
+    "exact_wording": "相对Always-on，Learned Gate把覆盖率从100%降至66.406%，harm从25.391%降至18.359%，低力子集harm从29.688%降至17.969%，并保留80.657%的平均降力收益；harm差异McNemar p=0.000534。",
+    "source_data": [
+      "S17_I2_DATA",
+      "S19_GATE_MECHANISM"
+    ],
+    "source_code": [
+      "S14_E3_FROZEN_CORE",
+      "S15_E3_FORMAL_RUNNER"
+    ],
+    "figure": "Figure 7",
+    "table": "Table 04_gate_ablation",
+    "seed_range": "40000–40255",
+    "n": 256,
+    "statistical_evidence": "paired exact McNemar; E3-A-only harm=22, E3-G-only harm=4.",
+    "limitation": "Always-on平均降力更大；E3-G仍有47个算法语义harm样本。",
+    "forbidden_variant": "Learned Gate平均降力优于Always-on，且保证每个样本安全。",
+    "evidence_complete": true
+  },
+  {
+    "claim_id": "C4_COMBINATION_COHORT1",
+    "chapter": 6,
+    "section": "6.3",
+    "exact_wording": "第一组独立组合cohort（41000–41063，n=64）中，A0+E3-G把预松弛最大力从0.217302降至0.158416 eV/Å，相对下降27.10%，95% CI为[-0.092341,-0.029754]，p=7.74e-5。",
+    "source_data": [
+      "S21_COHORT1_DATA"
+    ],
+    "source_code": [
+      "S06_ADAPTIVE_CONTROLLER",
+      "S13_E3_REFINER"
+    ],
+    "figure": "Figure 9",
+    "table": "Table 05_compatibility_cohort1",
+    "seed_range": "41000–41063",
+    "n": 64,
+    "statistical_evidence": "raw W/T/L=45/0/19; algorithmic 1e-6 W/T/L=34/19/11.",
+    "limitation": "独立64样本；不得替代E3-PCR正式256或与cohort 2事后合并。",
+    "forbidden_variant": "预注册128-seed组合实验的前64个样本。",
+    "evidence_complete": true
+  },
+  {
+    "claim_id": "C5_COMBINATION_COHORT2",
+    "chapter": 6,
+    "section": "6.4",
+    "exact_wording": "第二组完全独立cohort（50000–50063，n=64）中，A0+E3-G把预松弛最大力从0.265280降至0.214830 eV/Å，相对下降19.02%，95% CI为[-0.102213,-0.010696]，p=0.000587；算法语义W/T/L=35/18/11。",
+    "source_data": [
+      "S23_COHORT2_DATA"
+    ],
+    "source_code": [
+      "S06_ADAPTIVE_CONTROLLER",
+      "S13_E3_REFINER"
+    ],
+    "figure": "Figure 9 and Figure 10",
+    "table": "Table 06_compatibility_cohort2",
+    "seed_range": "50000–50063",
+    "n": 64,
+    "statistical_evidence": "raw numeric W/T/L=46/0/18; Gate-off exact structure ties=18.",
+    "limitation": "效应小于cohort 1；必须并列报告异质性。",
+    "forbidden_variant": "只报告更有利的cohort或把两组pooled为预注册128。",
+    "evidence_complete": true
+  },
+  {
+    "claim_id": "C6_LEAKAGE_SAFETY",
+    "chapter": 6,
+    "section": "6.6",
+    "exact_wording": "训练重叠没有明显夸大平均最大力改善，但显著高估Gate安全性：overlap harm=0/64，held-out harm=31/192=16.15%，单侧Fisher p=6.87e-5。",
+    "source_data": [
+      "S25_LEAK_DATA"
+    ],
+    "source_code": [
+      "S15_E3_FORMAL_RUNNER"
+    ],
+    "figure": "Figure 11",
+    "table": "Table 08_leakage_diagnostic",
+    "seed_range": "20000–20255",
+    "n": 256,
+    "statistical_evidence": "2x2 one-sided Fisher exact; held-out is supplementary only.",
+    "limitation": "Mixed 256和training overlap不得作为独立正式结果。",
+    "forbidden_variant": "Mixed 256独立验证或匿名化seed后的独立验证。",
+    "evidence_complete": true
+  },
+  {
+    "claim_id": "C7_MATTERSIM_SURROGATE",
+    "chapter": 3,
+    "section": "3.5",
+    "exact_wording": "力、RMSD、E-hull、Stable与NUS均来自MatterSim-5M代理评价，可用于统一相对比较。",
+    "source_data": [
+      "S03_DATA_DICTIONARY",
+      "S05_LIMITATIONS"
+    ],
+    "source_code": [
+      "S28_EVAL_ENERGY",
+      "S29_EVAL_RMSD"
+    ],
+    "figure": "Figure 4",
+    "table": "Table 01_experiment_manifest",
+    "seed_range": "all reported cohorts",
+    "n": 0,
+    "statistical_evidence": "not an effect claim",
+    "limitation": "STABILITY_SOURCE=MatterSim-5M surrogate; cannot replace DFT or synthesis evidence.",
+    "forbidden_variant": "MatterSim评价即DFT验证。",
+    "evidence_complete": true
+  },
+  {
+    "claim_id": "C8_NO_DFT_OR_PROPERTY",
+    "chapter": 3,
+    "section": "3.3 and 3.8",
+    "exact_wording": "DFT_VERIFIED=False且PROPERTY_TARGET_VERIFIED=False；dft_mag_density=0.1是条件输入，不是已验证命中结果。",
+    "source_data": [
+      "S01_MANIFEST",
+      "S05_LIMITATIONS",
+      "S31_BASE_CONDITION_CONFIG"
+    ],
+    "source_code": [],
+    "figure": "Figure 4",
+    "table": "Table 01_experiment_manifest",
+    "seed_range": "all reported cohorts",
+    "n": 0,
+    "statistical_evidence": "explicit negative evidence status",
+    "limitation": "不能证明真实磁性、热力学稳定性或可合成性。",
+    "forbidden_variant": "生成结构真实达到目标磁密度并通过DFT验证。",
+    "evidence_complete": true
+  }
+]

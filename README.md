@@ -350,6 +350,8 @@ README 是导航和解释层，CSV/JSON、manifest、checksum 与冻结报告才
 
 关键入口：
 
+- [第3–6章可追溯证据包](thesis/evidence_packs/README.md)
+- [证据包真实性与统计验证报告](thesis/evidence_packs/EVIDENCE_PACK_VALIDATION.md)
 - [最终论文结论](thesis/PAPER_CLAIMS_FINAL.md)
 - [论文目录](thesis/THESIS_OUTLINE.md)
 - [论文写作工作包状态](thesis/WRITING_PACKAGE_STATUS.md)

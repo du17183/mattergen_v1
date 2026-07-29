@@ -19,6 +19,8 @@ python thesis/scripts/validate_outputs.py
 
 ## 关键入口
 
+- [第3–6章可追溯证据包与网页 ChatGPT 写作入口](evidence_packs/README.md)
+- [证据包真实性与统计验证报告](evidence_packs/EVIDENCE_PACK_VALIDATION.md)
 - [论文写作工作包状态](WRITING_PACKAGE_STATUS.md)
 - [第3章正文初稿](chapters/chapter3_draft.md)
 - [第4章正文初稿](chapters/chapter4_draft.md)

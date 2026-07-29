@@ -1,0 +1,131 @@
+{
+  "chapter": 4,
+  "title": "多字段残差驱动的在线Adaptive CFG",
+  "evidence_pack_version": "v1",
+  "base_commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
+  "sections": {
+    "1_research_goal": "从正式commit恢复Adaptive CFG的精确公式、伪代码、集成边界和256-seed结果。",
+    "2_core_questions": [
+      "如何把cell、pos、atomic_numbers三种不同形状残差变成稳定控制信号？",
+      "EMA与guidance scale如何按predictor/corrector阶段更新？",
+      "方法是否跳过任何采样步骤或改变物理forward数量？",
+      "正式结果支持何种强度的结论？"
+    ],
+    "3_section_outline": [
+      "4.1 固定CFG的局限",
+      "4.2 条件与无条件分支",
+      "4.3 三字段残差定义",
+      "4.4 EMA残差状态",
+      "4.5 在线Guidance更新",
+      "4.6 完整算法流程",
+      "4.7 计算开销",
+      "4.8 正式实验结果",
+      "4.9 讨论与限制"
+    ],
+    "4_relationship": "以第3章C0和评价口径为基础，输出A0；A0随后作为第6章完整组合方法的上游。",
+    "5_source_facts": [
+      "conditional与unconditional输入先collate为一次joint model forward，再拆分score。",
+      "cell、pos、atomic_numbers残差分别计算RMS，只有在标量化后才求算术平均。",
+      "predictor和corrector各自维护EMA；首个观测直接初始化EMA。",
+      "当前实现产生一个全局guidance scale，三个字段共享，不是三套独立scale。",
+      "invalid residual/EMA触发stage guidance fallback。",
+      "Adaptive CFG不启用cfg acceleration或Corrector Gating；完整corrector和predictor流程保留。",
+      "控制器增加三字段RMS归约和常数级标量运算，但不减少或增加MatterGen模型forward次数。"
+    ],
+    "6_parameters": [
+      "g0=2.0",
+      "alpha=0.50",
+      "beta=0.95",
+      "epsilon=1e-6",
+      "multiplier clip=[0.25,4]",
+      "guidance clip=[0,5]"
+    ],
+    "7_formula_ids": [
+      "F4_RESIDUAL",
+      "F4_FIELD_RMS",
+      "F4_FIELD_MEAN",
+      "F4_EMA",
+      "F4_RATIO",
+      "F4_MULTIPLIER",
+      "F4_GUIDANCE",
+      "F4_CFG_FUSION"
+    ],
+    "8_experiment_design": [
+      "C0 vs A0严格配对，seeds 20000–20255，n=256。",
+      "每个方法generation与MatterSim relaxation均256/256成功，initial-state配对通过，Determinism Level 1。",
+      "未根据正式结果重新调参。"
+    ],
+    "9_formal_results": [
+      "E-hull C0=0.143667，A0=0.140232，差=-0.003435 eV/atom；CI跨0，p=.357。",
+      "Stable C0=41.016%，A0=46.875%，差=+5.859 pp；CI跨0，p=.146。",
+      "NUS C0=22.266%，A0=25.781%，差=+3.516 pp；CI跨0，p=.342。",
+      "三项方向均正向，但均不得称统计显著。"
+    ],
+    "10_figures": [
+      "Figure 2",
+      "Figure 5"
+    ],
+    "11_tables": [
+      "Table 02"
+    ],
+    "12_allowed_claims": [
+      "多字段在线反馈使三项代理指标呈总体正向趋势。",
+      "算法保留完整Predictor/Corrector。",
+      "控制器公式可标为代码精确等价。"
+    ],
+    "13_forbidden_claims": [
+      "Adaptive CFG统计显著提升。",
+      "该方法通过跳步或Corrector Gating加速。",
+      "三个字段各使用独立guidance scale。",
+      "代理结果证明真实磁稳定性。"
+    ],
+    "14_mandatory_limitations": [
+      "配对统计未显著。",
+      "单checkpoint、单目标和单采样配置。",
+      "没有独立属性命中验证或DFT。",
+      "精确控制开销没有作为正式主效果冻结。"
+    ],
+    "15_code_symbols": [
+      "GuidanceController",
+      "_mean_valid_deltas",
+      "score_residual_rms",
+      "GuidedPredictorCorrector._score_fn_unaccelerated",
+      "PredictorCorrector.denoise"
+    ],
+    "16_data_sources": [
+      "S09_ADAPTIVE_CONFIG",
+      "S10_I1_DATA",
+      "S11_I1_REPORT"
+    ],
+    "17_commits": [
+      "5de00419eea2d8a9be303638f2db8ece15a22366"
+    ],
+    "18_not_supported": [
+      "其他条件字段/采样步数的泛化：NOT_SUPPORTED_BY_CURRENT_REPOSITORY",
+      "真实属性命中：NOT_SUPPORTED_BY_CURRENT_REPOSITORY"
+    ],
+    "19_chatgpt_notes": "先写固定scale问题，再按residual→RMS→mean→phase EMA→ratio→multiplier→shared scale→lerp展开；主结果紧跟非显著性。",
+    "20_codex_audit": [
+      "公式与GuidanceController一致",
+      "首EMA初始化分支写明",
+      "全局scale而非field-wise scale",
+      "未混入Corrector Gating"
+    ]
+  },
+  "claims": [
+    "C1_ADAPTIVE_CFG_DIRECTIONAL"
+  ],
+  "sources": [
+    "S01_MANIFEST",
+    "S02_CLAIMS",
+    "S04_LINEAGE",
+    "S05_LIMITATIONS",
+    "S06_ADAPTIVE_CONTROLLER",
+    "S07_ADAPTIVE_CFG",
+    "S08_PC_SAMPLER",
+    "S09_ADAPTIVE_CONFIG",
+    "S10_I1_DATA",
+    "S11_I1_REPORT",
+    "S12_I1_FIGURE"
+  ]
+}

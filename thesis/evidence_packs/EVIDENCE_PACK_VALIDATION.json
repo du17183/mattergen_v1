@@ -1,0 +1,151 @@
+{
+  "EVIDENCE_PACKS_VALID": true,
+  "STATISTICS_VALID": true,
+  "FORMAL_DATA_LEAKAGE_FOUND": false,
+  "DATA_MISMATCH_DETECTED": false,
+  "UNSUPPORTED_PROJECT_FACTS_FOUND": false,
+  "SERVER_ABSOLUTE_PATHS_IN_CHATGPT_INPUT": [],
+  "statistics": {
+    "dataset_contracts": {
+      "innovation1": {
+        "n": 256,
+        "seed_min": 20000,
+        "seed_max": 20255,
+        "duplicate_seeds": 0
+      },
+      "innovation2": {
+        "n": 256,
+        "seed_min": 40000,
+        "seed_max": 40255,
+        "duplicate_seeds": 0
+      },
+      "compatibility_1": {
+        "n": 64,
+        "seed_min": 41000,
+        "seed_max": 41063,
+        "duplicate_seeds": 0
+      },
+      "compatibility_2": {
+        "n": 64,
+        "seed_min": 50000,
+        "seed_max": 50063,
+        "duplicate_seeds": 0
+      },
+      "leakage_diagnostic": {
+        "n": 256,
+        "seed_min": 20000,
+        "seed_max": 20255,
+        "duplicate_seeds": 0
+      }
+    },
+    "formal_training_seed_intersections": {
+      "innovation2": [],
+      "compatibility_1": [],
+      "compatibility_2": []
+    },
+    "innovation1": {
+      "ehull_change": -0.0034349449371532522,
+      "stable_change": 0.05859375,
+      "nus_change": 0.03515625
+    },
+    "innovation2": {
+      "E3-A": {
+        "baseline_mean": 0.34296426286559617,
+        "selected_mean": 0.24395595983940943,
+        "mean_difference": -0.09900830302618673,
+        "relative_change": -0.2886840226411198,
+        "bootstrap_95_ci": [
+          -0.16489407698758815,
+          -0.050201906937694905
+        ],
+        "wilcoxon_p_raw": 1.3100015085014907e-14,
+        "raw_wins": 191,
+        "raw_ties": 0,
+        "raw_losses": 65,
+        "semantic_wins": 191,
+        "semantic_ties": 0,
+        "semantic_losses": 65
+      },
+      "E3-G": {
+        "baseline_mean": 0.34296426286559617,
+        "selected_mean": 0.26310701792559776,
+        "mean_difference": -0.07985724493999838,
+        "relative_change": -0.23284421610800177,
+        "bootstrap_95_ci": [
+          -0.14496579962748402,
+          -0.032452653777908895
+        ],
+        "wilcoxon_p_raw": 4.1880173230809353e-10,
+        "raw_wins": 163,
+        "raw_ties": 0,
+        "raw_losses": 93,
+        "semantic_wins": 127,
+        "semantic_ties": 82,
+        "semantic_losses": 47
+      }
+    },
+    "compatibility": {
+      "compatibility_1": {
+        "baseline_mean": 0.21730158680797604,
+        "selected_mean": 0.1584162688975449,
+        "mean_difference": -0.058885317910431105,
+        "relative_change": -0.2709842977928487,
+        "bootstrap_95_ci": [
+          -0.09234130839938041,
+          -0.029753947559803366
+        ],
+        "wilcoxon_p_raw": 7.73986718896914e-05,
+        "raw_wins": 45,
+        "raw_ties": 0,
+        "raw_losses": 19,
+        "semantic_wins": 34,
+        "semantic_ties": 19,
+        "semantic_losses": 11
+      },
+      "compatibility_2": {
+        "baseline_mean": 0.26527988196406616,
+        "selected_mean": 0.21482998015936608,
+        "mean_difference": -0.05044990180470006,
+        "relative_change": -0.1901761318317151,
+        "bootstrap_95_ci": [
+          -0.10221274022731316,
+          -0.01069625841941559
+        ],
+        "wilcoxon_p_raw": 0.000587376523879349,
+        "raw_wins": 46,
+        "raw_ties": 0,
+        "raw_losses": 18,
+        "semantic_wins": 35,
+        "semantic_ties": 18,
+        "semantic_losses": 11
+      }
+    },
+    "leakage": {
+      "training_overlap_n": 64,
+      "heldout_n": 192,
+      "training_harm_count": 0,
+      "heldout_harm_count": 31,
+      "training_harm_rate": 0.0,
+      "heldout_harm_rate": 0.16145833333333334,
+      "fisher_one_sided_p": 6.865899808947675e-05
+    },
+    "DATA_MISMATCH_DETECTED": false,
+    "FORMAL_DATA_LEAKAGE_FOUND": false
+  },
+  "pack_checks": {
+    "required_files": 40,
+    "missing_files": [],
+    "json_files_checked": 9,
+    "chatgpt_inputs_checked": 4,
+    "server_absolute_paths_in_chatgpt_input": [],
+    "source_index_entries": 32,
+    "broken_source_paths": [],
+    "claims_checked": 8,
+    "claims_with_incomplete_evidence": [],
+    "formulas_checked": 20,
+    "invalid_formula_labels": [],
+    "forbidden_assertion_hits": [],
+    "UNSUPPORTED_PROJECT_FACTS_FOUND": false
+  },
+  "errors": []
+}

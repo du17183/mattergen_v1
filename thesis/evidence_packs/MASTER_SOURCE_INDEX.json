@@ -1,0 +1,447 @@
+[
+  {
+    "source_id": "S01_MANIFEST",
+    "type": "manifest",
+    "relative_path": "thesis_archive/FINAL_EXPERIMENT_MANIFEST.json",
+    "commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
+    "chapters": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "claims": [
+      "all experiment identity, seed, n, branch and evidence qualification"
+    ],
+    "qualification": "authoritative archive manifest"
+  },
+  {
+    "source_id": "S02_CLAIMS",
+    "type": "report",
+    "relative_path": "thesis/PAPER_CLAIMS_FINAL.md",
+    "commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
+    "chapters": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "claims": [
+      "C1–C6 frozen wording and scientific boundaries"
+    ],
+    "qualification": "authoritative writing claim register"
+  },
+  {
+    "source_id": "S03_DATA_DICTIONARY",
+    "type": "report",
+    "relative_path": "thesis_archive/DATA_DICTIONARY.md",
+    "commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
+    "chapters": [
+      3,
+      5,
+      6
+    ],
+    "claims": [
+      "archived column definitions and units"
+    ],
+    "qualification": "authoritative archive schema"
+  },
+  {
+    "source_id": "S04_LINEAGE",
+    "type": "report",
+    "relative_path": "thesis_archive/EXPERIMENT_LINEAGE.md",
+    "commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
+    "chapters": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "claims": [
+      "method identity, branch lineage, negative-result boundaries"
+    ],
+    "qualification": "authoritative lineage narrative"
+  },
+  {
+    "source_id": "S05_LIMITATIONS",
+    "type": "report",
+    "relative_path": "thesis/PAPER_LIMITATIONS.md",
+    "commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
+    "chapters": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "claims": [
+      "MatterSim surrogate, no DFT/property verification, leakage and cohort limits"
+    ],
+    "qualification": "mandatory disclosure"
+  },
+  {
+    "source_id": "S06_ADAPTIVE_CONTROLLER",
+    "type": "source code",
+    "relative_path": "mattergen/diffusion/sampling/guidance_schedule.py",
+    "commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+    "chapters": [
+      4
+    ],
+    "claims": [
+      "phase-specific EMA, multiplier, clipping and fallback"
+    ],
+    "qualification": "formal implementation snapshot"
+  },
+  {
+    "source_id": "S07_ADAPTIVE_CFG",
+    "type": "source code",
+    "relative_path": "mattergen/diffusion/sampling/classifier_free_guidance.py",
+    "commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+    "chapters": [
+      4
+    ],
+    "claims": [
+      "field residual RMS, joint cond/uncond forward and CFG lerp"
+    ],
+    "qualification": "formal implementation snapshot"
+  },
+  {
+    "source_id": "S08_PC_SAMPLER",
+    "type": "source code",
+    "relative_path": "mattergen/diffusion/sampling/pc_sampler.py",
+    "commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+    "chapters": [
+      3,
+      4
+    ],
+    "claims": [
+      "corrector then predictor calls; full path retained"
+    ],
+    "qualification": "formal implementation snapshot"
+  },
+  {
+    "source_id": "S09_ADAPTIVE_CONFIG",
+    "type": "config",
+    "relative_path": "thesis_archive/configs/adaptive_cfg_final.yaml",
+    "commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+    "chapters": [
+      3,
+      4
+    ],
+    "claims": [
+      "g0=2, alpha=.5, beta=.95, eps=1e-6, [0,5], FP32, B1, full PC"
+    ],
+    "qualification": "frozen configuration"
+  },
+  {
+    "source_id": "S10_I1_DATA",
+    "type": "per-seed data",
+    "relative_path": "thesis_archive/data/innovation1/per_seed_metrics.csv",
+    "commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+    "chapters": [
+      3,
+      4
+    ],
+    "claims": [
+      "Adaptive CFG paired 256 metrics"
+    ],
+    "qualification": "formal independent data; seeds 20000–20255"
+  },
+  {
+    "source_id": "S11_I1_REPORT",
+    "type": "report",
+    "relative_path": "thesis_archive/reports/innovation1/formal_final_report.json",
+    "commit": "20255f1a857cd763a7ef2bf2f24c1889c98c4d1c",
+    "chapters": [
+      4,
+      6
+    ],
+    "claims": [
+      "Adaptive effect estimates, CI, tests and Corrector Gating No-Go"
+    ],
+    "qualification": "frozen formal report"
+  },
+  {
+    "source_id": "S12_I1_FIGURE",
+    "type": "figure",
+    "relative_path": "thesis/figures/generated/pdf/fig05_adaptive_cfg_results.pdf",
+    "commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
+    "chapters": [
+      4
+    ],
+    "claims": [
+      "Adaptive paired E-hull and Stable/NUS effects"
+    ],
+    "qualification": "generated only from archived data"
+  },
+  {
+    "source_id": "S13_E3_REFINER",
+    "type": "source code",
+    "relative_path": "research/postgen_fastgate/refiner_eval.py",
+    "commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+    "chapters": [
+      5
+    ],
+    "claims": [
+      "14 features, Gate training, position proposal, safety, backtracking"
+    ],
+    "qualification": "available at formal snapshot; frozen source identity b65f42a8792004c7c820e59fa4413e1310e06143"
+  },
+  {
+    "source_id": "S14_E3_FROZEN_CORE",
+    "type": "source code",
+    "relative_path": "research/q3_frozen64.py",
+    "commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+    "chapters": [
+      3,
+      5,
+      6
+    ],
+    "claims": [
+      "formal feature extraction, learned/always arms, exact fallback and metrics"
+    ],
+    "qualification": "frozen core reused by formal runner"
+  },
+  {
+    "source_id": "S15_E3_FORMAL_RUNNER",
+    "type": "source code",
+    "relative_path": "research/q3_formal256.py",
+    "commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+    "chapters": [
+      3,
+      5,
+      6
+    ],
+    "claims": [
+      "formal contract, seed audit, paired statistics and mechanism checks"
+    ],
+    "qualification": "formal run snapshot; recorded code commit 5293b4b71be88b6663bbe349f3b57694a916835f"
+  },
+  {
+    "source_id": "S16_E3_CONFIG",
+    "type": "config",
+    "relative_path": "thesis_archive/configs/e3_pcr_final.yaml",
+    "commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+    "chapters": [
+      5
+    ],
+    "claims": [
+      "129 parameters, 14→8→1, threshold, trust and backtracking constants"
+    ],
+    "qualification": "frozen configuration"
+  },
+  {
+    "source_id": "S17_I2_DATA",
+    "type": "per-seed data",
+    "relative_path": "thesis_archive/data/innovation2/per_seed_metrics.csv",
+    "commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+    "chapters": [
+      3,
+      5
+    ],
+    "claims": [
+      "C0/E3-A/E3-G paired 256 metrics and gate behavior"
+    ],
+    "qualification": "formal independent data; seeds 40000–40255"
+  },
+  {
+    "source_id": "S18_I2_REPORT",
+    "type": "report",
+    "relative_path": "thesis_archive/reports/innovation2/final_report.md",
+    "commit": "41479015c5c3edc389601c4b7cc44a6db5e115cd",
+    "chapters": [
+      5
+    ],
+    "claims": [
+      "E3-PCR force, quality and sensitivity results"
+    ],
+    "qualification": "frozen formal report"
+  },
+  {
+    "source_id": "S19_GATE_MECHANISM",
+    "type": "summary JSON",
+    "relative_path": "reports/q3_e3_pcr/formal256/gate_mechanism_summary.json",
+    "commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+    "chapters": [
+      5,
+      6
+    ],
+    "claims": [
+      "coverage, harm, low-force harm, gain retention and displacement"
+    ],
+    "qualification": "formal mechanism evidence"
+  },
+  {
+    "source_id": "S20_RANDOM_GATE",
+    "type": "table",
+    "relative_path": "reports/q3_e3_pcr/frozen64/random_gate_ablation.csv",
+    "commit": "b65f42a8792004c7c820e59fa4413e1310e06143",
+    "chapters": [
+      5,
+      6
+    ],
+    "claims": [
+      "five random gates at equal 42/64 coverage; result range and mean"
+    ],
+    "qualification": "frozen64 supplementary ablation, not formal256"
+  },
+  {
+    "source_id": "S21_COHORT1_DATA",
+    "type": "per-seed data",
+    "relative_path": "thesis_archive/data/compatibility_1/per_seed_metrics.csv",
+    "commit": "ba2303c284210fdae0a35bb0153a8ef3af45a54c",
+    "chapters": [
+      3,
+      6
+    ],
+    "claims": [
+      "first independent A0+E3-G cohort"
+    ],
+    "qualification": "independent; seeds 41000–41063"
+  },
+  {
+    "source_id": "S22_COHORT1_REPORT",
+    "type": "report",
+    "relative_path": "thesis_archive/reports/compatibility/final_report.md",
+    "commit": "e358ee39a8cdd2a061a18bfaddbe88316b455048",
+    "chapters": [
+      6
+    ],
+    "claims": [
+      "cohort 1 effect, CI, p and quality"
+    ],
+    "qualification": "independent compatibility report"
+  },
+  {
+    "source_id": "S23_COHORT2_DATA",
+    "type": "per-seed data",
+    "relative_path": "thesis_archive/data/compatibility_2/per_seed_metrics.csv",
+    "commit": "22e1db74a59476562f1f746cd4210b9420cbdf05",
+    "chapters": [
+      3,
+      6
+    ],
+    "claims": [
+      "second independent A0+E3-G cohort"
+    ],
+    "qualification": "fully independent; seeds 50000–50063"
+  },
+  {
+    "source_id": "S24_COHORT2_REPORT",
+    "type": "report",
+    "relative_path": "thesis_archive/reports/replication/final_report.md",
+    "commit": "85485bc956fce1cf7d01c55baaa92c0b69fd745e",
+    "chapters": [
+      6
+    ],
+    "claims": [
+      "cohort 2 effect, CI, p, semantic W/T/L and quality"
+    ],
+    "qualification": "independent replication report"
+  },
+  {
+    "source_id": "S25_LEAK_DATA",
+    "type": "per-seed data",
+    "relative_path": "thesis_archive/data/leakage_diagnostic/per_seed_metrics.csv",
+    "commit": "01e9b2c30e5c58e05eaae908ba291c518b977d03",
+    "chapters": [
+      3,
+      6
+    ],
+    "claims": [
+      "training-overlap versus held-out Gate safety"
+    ],
+    "qualification": "diagnostic only; mixed 256 invalid for independent claims"
+  },
+  {
+    "source_id": "S26_LEAK_REPORT",
+    "type": "report",
+    "relative_path": "thesis_archive/reports/leakage_diagnostic/final_report.md",
+    "commit": "d5bf7d00ab51a2a0b319203443391e3463e7a91b",
+    "chapters": [
+      6
+    ],
+    "claims": [
+      "Fisher test and leakage interpretation"
+    ],
+    "qualification": "diagnostic report; held-out 192 supplementary only"
+  },
+  {
+    "source_id": "S27_EVAL_STRUCTURE",
+    "type": "source code",
+    "relative_path": "mattergen/evaluation/metrics/structure.py",
+    "commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
+    "chapters": [
+      3
+    ],
+    "claims": [
+      "novel, unique, composition and structure validity"
+    ],
+    "qualification": "official evaluator implementation in repository snapshot"
+  },
+  {
+    "source_id": "S28_EVAL_ENERGY",
+    "type": "source code",
+    "relative_path": "mattergen/evaluation/metrics/energy.py",
+    "commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
+    "chapters": [
+      3
+    ],
+    "claims": [
+      "E-hull, Stable and NUS"
+    ],
+    "qualification": "official evaluator implementation in repository snapshot"
+  },
+  {
+    "source_id": "S29_EVAL_RMSD",
+    "type": "source code",
+    "relative_path": "mattergen/evaluation/utils/metrics_structure_summary.py",
+    "commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
+    "chapters": [
+      3
+    ],
+    "claims": [
+      "relaxation RMSD source structures"
+    ],
+    "qualification": "official evaluator implementation in repository snapshot"
+  },
+  {
+    "source_id": "S30_RMSD_UTIL",
+    "type": "source code",
+    "relative_path": "mattergen/evaluation/utils/utils.py",
+    "commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
+    "chapters": [
+      3
+    ],
+    "claims": [
+      "RMSDStructureMatcher conversion to angstrom"
+    ],
+    "qualification": "official evaluator implementation in repository snapshot"
+  },
+  {
+    "source_id": "S31_BASE_CONDITION_CONFIG",
+    "type": "config",
+    "relative_path": "configs/q3_e3_pcr_frozen64.json",
+    "commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+    "chapters": [
+      3,
+      5
+    ],
+    "claims": [
+      "dft_mag_density target 0.1 and immutable refinement fields"
+    ],
+    "qualification": "frozen evaluation config"
+  },
+  {
+    "source_id": "S32_NEGATIVE_RESULTS",
+    "type": "report",
+    "relative_path": "docs/experiments/negative_results_summary.md",
+    "commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
+    "chapters": [
+      6
+    ],
+    "claims": [
+      "representative and supplementary No-Go routes"
+    ],
+    "qualification": "archive-level synthesis; some original server reports not in GitHub"
+  }
+]
