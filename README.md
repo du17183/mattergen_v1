@@ -46,3 +46,41 @@ PROPERTY_TARGET_VERIFIED=False
 ```
 
 完整项目脉络见[论文归档分支](https://github.com/du17183/mattergen_v1/tree/archive/thesis-analysis-package-v1)。
+
+## 诊断实现
+
+[`research/a0_e3g_leakage256.py`](research/a0_e3g_leakage256.py) 不改变 seed 编码，而是保留原始 seed 并显式构造三个 cohort：
+
+```text
+mixed_256        = 20000–20255
+train_overlap_64 = 20000–20063
+heldout_192      = 20064–20255
+```
+
+分析重建 A0 对照指标，将 A0 与 E3-G 按 seed 配对，然后分别计算连续指标、harm rate 和 Fisher exact test。`diagnostic_manifest.json` 保存 cohort 定义，防止后续把 mixed 集合误标为独立验证。
+
+## 实现与测试
+
+| 文件 | 内容 |
+|---|---|
+| [`research/a0_e3g_leakage256.py`](research/a0_e3g_leakage256.py) | cohort 切分、数据重建、统计和报告 |
+| [`tests/test_a0_e3g_leakage256.py`](tests/test_a0_e3g_leakage256.py) | seed 边界、重叠检测和诊断输出测试 |
+| [`reports/a0_e3g_leakage256/protocol.md`](reports/a0_e3g_leakage256/protocol.md) | 冻结诊断协议 |
+
+## 数据索引
+
+- [Overlap 64 统计](reports/a0_e3g_leakage256/cohorts/train_overlap_64/paired_statistics.csv)
+- [Held-out 192 统计](reports/a0_e3g_leakage256/cohorts/heldout_192/paired_statistics.csv)
+- [Mixed 256 统计](reports/a0_e3g_leakage256/cohorts/mixed_256/paired_statistics.csv)
+- [泄漏效应摘要](reports/a0_e3g_leakage256/leakage_effect.json)
+- [最终诊断报告](reports/a0_e3g_leakage256/final_report.md)
+
+## 复核命令
+
+```bash
+python -m pytest tests/test_a0_e3g_leakage256.py -q
+python -m research.a0_e3g_leakage256 status
+python -m research.a0_e3g_leakage256 analyze
+```
+
+`analyze` 依赖分支内已归档的逐 seed 表；不得重命名 seeds、删除 cohort 标签或把诊断输出用于正式独立验证。
