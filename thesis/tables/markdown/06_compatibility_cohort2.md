@@ -1,0 +1,3 @@
+| cohort | seed_range | n | A0_force | A0_plus_E3G_force | mean_difference | relative_change | bootstrap_95_CI | p_value | Win_Tie_Loss_algorithmic |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Cohort 2 | 50000–50063 | 64 | 0.26527988196406616 | 0.21482998015936608 | -0.0504499018047 | -0.1901761318317151 | [-0.102213, -0.010696] | 0.0005873765238793 | 35/18/11 |

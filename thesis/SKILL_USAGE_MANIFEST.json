@@ -1,0 +1,39 @@
+{
+  "read_date": "2026-07-29",
+  "scientific_skills_commit": "ab2f84ab10597c59fac186ecda6d5edd5dcc8b92",
+  "fallback_drawing_used": false,
+  "external_image_generation_used": false,
+  "skills": [
+    {
+      "name": "scientific-visualization",
+      "skill_file": "skills/scientific-visualization/SKILL.md",
+      "references_read": [
+        "references/publication_guidelines.md",
+        "references/color_palettes.md"
+      ],
+      "applied_to": ["fig01-fig12", "paper_style.py", "captions", "validation"],
+      "rules_applied": ["Okabe-Ito palette", "redundant encodings", "raw points", "vector first", "600 dpi PNG", "units and limitations"]
+    },
+    {
+      "name": "matplotlib",
+      "skill_file": "skills/matplotlib/SKILL.md",
+      "references_read": ["references/styling_guide.md"],
+      "applied_to": ["all Python figure sources", "generate_all.py"],
+      "rules_applied": ["object-oriented API", "scoped rc_context", "constrained layout", "PDF Type 42", "editable SVG text"]
+    },
+    {
+      "name": "statistical-analysis",
+      "skill_file": "skills/statistical-analysis/SKILL.md",
+      "references_read": ["references/reporting_standards.md"],
+      "applied_to": ["fig05-fig11", "tables", "PAPER_CLAIMS_FINAL"],
+      "rules_applied": ["paired design", "effect sizes", "95% CI", "exact p", "sample size", "no significance overclaim", "leakage isolation"]
+    },
+    {
+      "name": "scientific-schematics",
+      "skill_file": "skills/scientific-schematics/SKILL.md",
+      "references_read": ["references/best_practices.md"],
+      "applied_to": ["fig01-fig04", "fig12", "Graphviz DOT sources"],
+      "rules_applied": ["clear hierarchy", "directional flow", "editable vector source", "readable labels", "semantic line styles"]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Figure 12. Representative No-Go routes. Frozen experiment lineage records goals, potential benefits, observed stopping evidence, and final states across sampling, representation, post-processing, and GPU routes. No synthetic unified score or reconstructed per-seed distribution is used.

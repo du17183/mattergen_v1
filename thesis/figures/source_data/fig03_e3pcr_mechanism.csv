@@ -1,0 +1,6 @@
+parameter,value
+gate input,14 dimensions
+trainable gate,129 parameters
+threshold,0.5
+refinement,5 steps
+fields changed,positions only

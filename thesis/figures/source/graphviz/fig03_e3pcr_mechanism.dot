@@ -1,0 +1,21 @@
+// Applied skills: scientific-schematics + scientific-visualization.
+// Data source: thesis_archive/configs/e3_pcr_final.yaml. Editable semantic source for Figure 3.
+digraph G {
+  graph [rankdir=LR, bgcolor="white", fontname="Arial"];
+  node [shape=box, style="rounded,filled", fontname="Arial", fontsize=9, color="#000000"];
+  crystal [label="Generated crystal", fillcolor="#56B4E9"];
+  features [label="14-dimensional risk features", fillcolor="#F0E442"];
+  gate [label="129-parameter Gate", fillcolor="#CC79A7"];
+  threshold [label="Confidence threshold 0.5", fillcolor="#CC79A7"];
+  on [label="Gate-on", fillcolor="#009E73"];
+  off [label="Gate-off", fillcolor="#F7F7F7"];
+  refine [label="5-step equivariant refinement\npositions only", fillcolor="#009E73"];
+  trust [label="Per-step radius + cumulative trust region", fillcolor="#009E73"];
+  safety [label="Backtracking + safety checks", fillcolor="#E69F00"];
+  accepted [label="Accepted refined structure", fillcolor="#56B4E9"];
+  fallback [label="Exact fallback", fillcolor="#F7F7F7"];
+  crystal -> features -> gate -> threshold;
+  threshold -> on -> refine -> trust -> safety -> accepted;
+  threshold -> off -> fallback;
+  safety -> fallback [label="rejected"];
+}

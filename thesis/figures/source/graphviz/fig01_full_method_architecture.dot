@@ -1,0 +1,28 @@
+// Applied skills: scientific-schematics + scientific-visualization.
+// Data source: thesis_archive configs and experiment lineage. Editable semantic source for Figure 1.
+digraph G {
+  graph [rankdir=LR, bgcolor="white", fontname="Arial", nodesep=0.35, ranksep=0.55];
+  node [shape=box, style="rounded,filled", fontname="Arial", fontsize=9, color="#000000"];
+  edge [fontname="Arial", fontsize=8, color="#000000"];
+  subgraph cluster_i1 {
+    label="Innovation 1: Sampling stage"; color="#0072B2"; style="dashed";
+    target [label="Target dft_mag_density", fillcolor="#F0E442"];
+    pc [label="MatterGen Predictor/Corrector", fillcolor="#56B4E9"];
+    cfg [label="Adaptive CFG", fillcolor="#E69F00"];
+    crystal [label="Generated crystal", fillcolor="#F7F7F7"];
+    target -> pc -> cfg -> crystal;
+  }
+  subgraph cluster_i2 {
+    label="Innovation 2: Post-generation stage"; color="#009E73"; style="dashed";
+    gate [label="Learned Gate", fillcolor="#CC79A7"];
+    on [label="Gate-on", fillcolor="#009E73"];
+    off [label="Gate-off", fillcolor="#F7F7F7"];
+    refine [label="E3-PCR", fillcolor="#009E73"];
+    fallback [label="Exact fallback", fillcolor="#F7F7F7"];
+    final [label="Final crystal", fillcolor="#56B4E9"];
+    gate -> on -> refine -> final;
+    gate -> off -> fallback -> final;
+  }
+  eval [label="MatterSim-5M surrogate\n(no DFT)", fillcolor="#F0E442"];
+  crystal -> gate; final -> eval;
+}

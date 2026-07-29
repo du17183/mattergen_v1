@@ -1,0 +1,7 @@
+| method | baseline | seed_range | n | checkpoint | commit | evaluator | data_qualification |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Innovation 1 | C0 | 20000–20255 | 256 | official dft_mag_density | 5de00419eea2d8a9be303638f2db8ece15a22366 | MatterSim-5M | Formal |
+| Innovation 2 | C0 | 40000–40255 | 256 | b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e | 5293b4b71be88b6663bbe349f3b57694a916835f | MatterSim-5M | Formal independent |
+| Combination cohort 1 | A0 | 41000–41063 | 64 | b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e | see source manifest | MatterSim-5M | Independent replication |
+| Combination cohort 2 | A0 | 50000–50063 | 64 | b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e | see source manifest | MatterSim-5M | Independent replication |
+| Leakage diagnostic | A0 | 20000–20255 | 256 | b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e | diagnostic lineage | MatterSim-5M | Diagnostic; mixed invalid |

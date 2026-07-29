@@ -1,0 +1,15 @@
+| method | goal | No_Go_reason | status | main_benefit | paper_usage | branch | commit |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Residual Reuse | Reduce CFG work | Best throughput gain only +1.16% | No-Go | Small throughput gain | Negative-result motivation / boundary | See root README branch map | See thesis_archive/EXPERIMENT_LINEAGE.md |
+| Corrector Gating | Skip physical forwards | ~1.5× speed; Stable/NUS and E-hull worsened | No-Go | Real ~1.5× speed | Negative-result motivation / boundary | See root README branch map | See thesis_archive/EXPERIMENT_LINEAGE.md |
+| Budget-aware Gating | Safer corrector skip | Quality gates or speed target failed | No-Go | Moderate speed | Negative-result motivation / boundary | See root README branch map | See thesis_archive/EXPERIMENT_LINEAGE.md |
+| FN-PRA | Representation alignment | Composition and Stable −6.25 pp | No-Go | RMSD/NUS direction | Negative-result motivation / boundary | See root README branch map | See thesis_archive/EXPERIMENT_LINEAGE.md |
+| CrystalREPA | Unconditional REPA repro | E-hull +0.09424; RMSD worsened | No-Go | Base reproduction attempt | Negative-result motivation / boundary | See root README branch map | See thesis_archive/EXPERIMENT_LINEAGE.md |
+| RP-QTFG | Training-free physics guidance | Offline direction positive; online RMSD worsened | No-Go | Positive offline direction | Negative-result motivation / boundary | See root README branch map | See thesis_archive/EXPERIMENT_LINEAGE.md |
+| CG-TDR | Teacher residual correction | Residual no better than zero; safe gate near no effect | No-Go | Teacher infrastructure | Negative-result motivation / boundary | See root README branch map | See thesis_archive/EXPERIMENT_LINEAGE.md |
+| Q1 UQ-PQR | Post-generation quality | Novel −14.86 pp | No-Go | Quality predictor | Negative-result motivation / boundary | See root README branch map | See thesis_archive/EXPERIMENT_LINEAGE.md |
+| Q2 RFR | Force refinement | Novel −30.25 pp; Unique −8.45 pp | No-Go | Force reduction | Negative-result motivation / boundary | See root README branch map | See thesis_archive/EXPERIMENT_LINEAGE.md |
+| Q4 CPRC | Constrained correction | Novel −17.08 pp | No-Go | Constrained correction | Negative-result motivation / boundary | See root README branch map | See thesis_archive/EXPERIMENT_LINEAGE.md |
+| Q5 CQPS | Quality-preserving selection | Novel −15.63 pp | No-Go | Selection signal | Negative-result motivation / boundary | See root README branch map | See thesis_archive/EXPERIMENT_LINEAGE.md |
+| Q6 NS-SetRank | Candidate ranking | Novel −12.50 pp | No-Go | Ranking signal | Negative-result motivation / boundary | See root README branch map | See thesis_archive/EXPERIMENT_LINEAGE.md |
+| GPU acceleration routes | Bitwise-safe throughput | Batch changed quality; compile/static/MPS below gates | No-Go | Persistent workers | Negative-result motivation / boundary | See root README branch map | See thesis_archive/EXPERIMENT_LINEAGE.md |

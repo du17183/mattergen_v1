@@ -1,0 +1,8 @@
+component,stage
+conditional,1
+unconditional,2
+three-field residuals,3
+EMA,4
+scale update,5
+clamp,6
+CFG fusion,7

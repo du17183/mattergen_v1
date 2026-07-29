@@ -1,0 +1,1 @@
+Figure 4. Experiment and evidence lineage. Formal 256-seed experiments, two independent 64-seed replications, supplementary/diagnostic evidence, and the mixed cohort invalid for independent claims are separated by both text and line style.

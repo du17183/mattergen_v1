@@ -1,0 +1,1 @@
+Figure 3. Learned-gated E3-PCR. Fourteen risk features enter a 129-parameter gate at threshold 0.5. Gate-on executes five bounded, equivariant position-refinement steps with trust regions, backtracking, and safety checks; gate-off or rejection exactly falls back. Species and cell are unchanged.

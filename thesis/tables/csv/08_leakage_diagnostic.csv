@@ -1,0 +1,3 @@
+cohort,n,mean_force_difference,harm_count,harm_rate,valid_for_formal_claims,valid_for_supplementary_claims,qualification
+held_out,192,-0.09825218074197221,31,0.16145833333333334,False,True,Supplementary held-out only
+training_overlap,64,-0.07022663549860206,0,0.0,False,False,Diagnostic only; INVALID for independent claims

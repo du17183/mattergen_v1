@@ -1,0 +1,12 @@
+category,node
+pipeline,Target $dft\_mag\_density$
+pipeline,MatterGen Predictor/Corrector
+pipeline,Adaptive CFG
+pipeline,Generated crystal
+pipeline,Learned Gate
+pipeline,Gate-on
+pipeline,Gate-off
+pipeline,E3-PCR
+pipeline,Exact fallback
+pipeline,Final crystal
+pipeline,MatterSim-5M surrogate

@@ -1,0 +1,1 @@
+Figure 2. Adaptive CFG. Conditional and unconditional branches produce cell, position, and atom residuals followed by EMA smoothing, a residual-driven scale update, clamping to [0,5], and CFG fusion. Neither Predictor nor Corrector is skipped; this is not Corrector Gating.

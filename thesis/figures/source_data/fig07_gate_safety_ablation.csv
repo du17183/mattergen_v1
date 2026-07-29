@@ -1,0 +1,7 @@
+metric,always_on,learned_gated,unit,source
+Refinement rate,1.0,0.6640625,fraction,thesis_archive/reports/innovation2/final_summary.json
+Harm rate,0.25390625,0.18359375,fraction,thesis_archive/reports/innovation2/final_summary.json
+Low-force harm rate,0.296875,0.1796875,fraction,thesis_archive/reports/innovation2/final_summary.json
+Gain retention,1.0,0.8065711914977165,fraction,thesis_archive/reports/innovation2/final_summary.json
+Mean displacement,0.010967916240265461,0.007580279641972904,angstrom,thesis_archive/reports/innovation2/final_summary.json
+P95 displacement,0.027870263113552275,0.025003009890191174,angstrom,thesis_archive/reports/innovation2/final_summary.json

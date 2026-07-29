@@ -1,0 +1,14 @@
+// Applied skills: scientific-schematics + scientific-visualization.
+// Data source: thesis_archive/EXPERIMENT_LINEAGE.md. Editable semantic source for Figure 4.
+digraph G {
+  graph [rankdir=LR, bgcolor="white", fontname="Arial"];
+  node [shape=box, style="rounded,filled", fontname="Arial", fontsize=9, color="#000000"];
+  c0 [label="C0 original MatterGen", fillcolor="#F0E442"];
+  i1 [label="Adaptive CFG formal256\nFormal", fillcolor="#0072B2", fontcolor="white"];
+  i2 [label="E3-PCR formal256\nFormal independent", fillcolor="#009E73", fontcolor="white"];
+  c1 [label="Compatibility cohort 1\nIndependent replication", fillcolor="#56B4E9", style="rounded,filled,dashed"];
+  c2 [label="Independent cohort 2\nIndependent replication", fillcolor="#56B4E9", style="rounded,filled,dashed"];
+  diag [label="Leakage diagnostic\nDiagnostic only", fillcolor="#E69F00", style="rounded,filled,dotted"];
+  invalid [label="Mixed 256 cohort\nINVALID for independent claims", fillcolor="#F7F7F7", style="rounded,filled,dotted"];
+  c0 -> {i1 i2 c1 c2 diag invalid};
+}
