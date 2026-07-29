@@ -1,0 +1,26 @@
+{
+  "E3-A": {
+    "n": 256,
+    "baseline_mean": 0.34296426286559617,
+    "selected_mean": 0.24395595983940943,
+    "mean_difference": -0.09900830302618673,
+    "relative_change": -0.2886840226411198,
+    "wins": 191,
+    "ties": 0,
+    "losses": 65,
+    "harm_rate": 0.25390625
+  },
+  "E3-G": {
+    "n": 256,
+    "baseline_mean": 0.34296426286559617,
+    "selected_mean": 0.26310701792559776,
+    "mean_difference": -0.07985724493999838,
+    "relative_change": -0.2328442161080018,
+    "wins": 127,
+    "ties": 82,
+    "losses": 47,
+    "harm_rate": 0.18359375
+  },
+  "FINAL_STATE": "E3_G_FORMAL_CONFIRMED",
+  "Q3_CHECKPOINT_SHA256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e"
+}

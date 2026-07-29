@@ -1,0 +1,29 @@
+metric,type,paired_count,baseline_mean,selected_mean,baseline_median,selected_median,mean_difference,median_difference,bootstrap_95_ci_low,bootstrap_95_ci_high,test,p_value,wins,ties,losses,comparison
+pre_relax_max_force_ev_ang,continuous,256,0.34296426286559617,0.24395595983940943,0.18274502903184903,0.15606544682105417,-0.09900830302618673,-0.011617723587562988,-0.16489407698758815,-0.050201906937694905,Wilcoxon signed-rank,1.3100015085014907e-14,191,0,65,E3-A vs C0
+relaxation_steps,continuous,256,40.08203125,40.2421875,27.0,27.0,0.16015625,0.0,-2.62890625,4.28515625,Wilcoxon signed-rank,0.006418540539140814,107,85,64,E3-A vs C0
+relaxation_rmsd,continuous,256,0.04938950865947697,0.04505749632343868,0.02224742820400675,0.0210886003508195,-0.004332012336038291,-0.00176983072850855,-0.012558110110369199,0.001998852567295888,Wilcoxon signed-rank,5.492231828466181e-19,197,1,58,E3-A vs C0
+relaxation_elapsed_seconds,continuous,256,1.208019397544831,1.1958402627747091,0.8289796255412512,0.8024123790091835,-0.012179134770121891,-0.019639191043097498,-0.09477901738490573,0.10362347180775934,Wilcoxon signed-rank,0.014366060842585572,147,0,109,E3-A vs C0
+energy_above_hull_per_atom_common_coverage,continuous,256,0.1561356966317432,0.15617885541764848,0.11160220664333925,0.112914561667754,4.315878590526185e-05,-7.044474283970925e-07,-0.0009578072203218323,0.0010234653147016496,Wilcoxon signed-rank,0.5229660040050341,130,8,118,E3-A vs C0
+force_converged,binary,256,1.0,1.0,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-A vs C0
+stable,binary,256,0.4453125,0.4453125,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-A vs C0
+nus,binary,256,0.22265625,0.22265625,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-A vs C0
+structure_validity,binary,256,1.0,1.0,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-A vs C0
+composition_validity,binary,256,0.7890625,0.7890625,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-A vs C0
+novel,binary,256,0.71875,0.71875,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-A vs C0
+unique,binary,256,0.984375,0.984375,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-A vs C0
+pre_relax_short_bond,binary,256,0.0,0.0,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-A vs C0
+pre_relax_abnormal_cell,binary,256,0.0,0.0,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-A vs C0
+pre_relax_max_force_ev_ang,continuous,256,0.34296426286559617,0.26310701792559776,0.18274502903184903,0.1694568552852036,-0.07985724493999838,-8.604603615181006e-07,-0.14496579962748402,-0.032452653777908895,Wilcoxon signed-rank,4.1880173230809353e-10,163,0,93,E3-G vs C0
+relaxation_steps,continuous,256,40.08203125,40.0,27.0,27.0,-0.08203125,0.0,-2.6953125,3.70703125,Wilcoxon signed-rank,0.0015379344237118058,81,132,43,E3-G vs C0
+relaxation_rmsd,continuous,256,0.04938950865947697,0.04593743918984518,0.02224742820400675,0.02165349973418825,-0.0034520694696317934,-3.313482800305006e-05,-0.011657695970146148,0.0029330657417254635,Wilcoxon signed-rank,6.517421702522898e-13,172,1,83,E3-G vs C0
+relaxation_elapsed_seconds,continuous,256,1.208019397544831,1.197009216929473,0.8289796255412512,0.8215037085465156,-0.011010180615357957,-0.00881473609479147,-0.08870522166995443,0.09861823328848217,Wilcoxon signed-rank,0.003574523445266122,152,0,104,E3-G vs C0
+energy_above_hull_per_atom_common_coverage,continuous,256,0.1561356966317432,0.1561766907002915,0.11160220664333925,0.11290373078854271,4.0994068548270176e-05,0.0,-0.0009601184242508654,0.001022008244278112,Wilcoxon signed-rank,0.6622847387003667,98,63,95,E3-G vs C0
+force_converged,binary,256,1.0,1.0,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-G vs C0
+stable,binary,256,0.4453125,0.4453125,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-G vs C0
+nus,binary,256,0.22265625,0.22265625,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-G vs C0
+structure_validity,binary,256,1.0,1.0,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-G vs C0
+composition_validity,binary,256,0.7890625,0.7890625,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-G vs C0
+novel,binary,256,0.71875,0.71875,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-G vs C0
+unique,binary,256,0.984375,0.984375,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-G vs C0
+pre_relax_short_bond,binary,256,0.0,0.0,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-G vs C0
+pre_relax_abnormal_cell,binary,256,0.0,0.0,,,0.0,0.0,0.0,0.0,McNemar exact / paired discordant binomial,1.0,0,256,0,E3-G vs C0

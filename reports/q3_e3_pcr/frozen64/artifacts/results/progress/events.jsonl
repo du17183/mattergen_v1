@@ -1,0 +1,16 @@
+{"stage": "state_audit", "status": "running", "time": "2026-07-28T13:44:25+08:00"}
+{"config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a", "frozen_manifest": "/data/dxl/reports/q3_e3_pcr/frozen64/frozen_manifest.json", "q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e", "stage": "freeze_manifest", "status": "success", "time": "2026-07-28T13:44:26+08:00"}
+{"stage": "state_audit", "status": "running", "time": "2026-07-28T13:44:37+08:00"}
+{"config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a", "frozen_manifest": "/data/dxl/reports/q3_e3_pcr/frozen64/frozen_manifest.json", "q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e", "stage": "freeze_manifest", "status": "success", "time": "2026-07-28T13:44:37+08:00"}
+{"stage": "c0_generation", "status": "running", "time": "2026-07-28T13:44:38+08:00"}
+{"stage": "state_audit", "status": "running", "time": "2026-07-28T13:45:31+08:00"}
+{"config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a", "frozen_manifest": "/data/dxl/reports/q3_e3_pcr/frozen64/frozen_manifest.json", "q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e", "stage": "freeze_manifest", "status": "success", "time": "2026-07-28T13:45:31+08:00"}
+{"stage": "c0_generation", "status": "running", "time": "2026-07-28T13:45:32+08:00"}
+{"c0_generation": "64/64", "median_elapsed_seconds": 216.5746072580223, "stage": "c0_generation", "status": "success", "time": "2026-07-28T13:53:05+08:00"}
+{"stage": "q3_refinement", "status": "running", "time": "2026-07-28T13:53:08+08:00"}
+{"gate_on_count": 42, "gate_on_rate": 0.65625, "maximum_displacement_angstrom": 0.09454990533292935, "q3_refinement": "64/64", "stage": "q3_refinement", "status": "success", "time": "2026-07-28T13:53:17+08:00"}
+{"stage": "mattersim_relaxation", "status": "running", "time": "2026-07-28T13:53:18+08:00"}
+{"relaxed": 192, "stage": "mattersim_relaxation", "status": "success", "time": "2026-07-28T13:54:06+08:00"}
+{"stage": "metrics", "status": "running", "time": "2026-07-28T13:54:06+08:00"}
+{"final_report": "/data/dxl/reports/q3_e3_pcr/frozen64/final_report.md", "final_state": "Q3_FROZEN_64_GO", "q3_frozen_64_go": true, "stage": "frozen64_go_no_go", "status": "success", "time": "2026-07-28T14:00:18+08:00"}
+{"final_state": "Q3_FROZEN_64_GO", "gpu_workers": 0, "stage": "stop_for_review", "status": "success", "time": "2026-07-28T14:00:19+08:00"}

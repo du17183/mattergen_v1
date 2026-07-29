@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-07-28T12:06:23+08:00",
+  "current_stage": "go_no_go",
+  "experiment": "Frozen Q6 SetRank 32x4 blind evaluation",
+  "feature_rows": 128,
+  "final_go": false,
+  "final_summary": "/data/dxl/reports/postgen_fastgate/new_eval/final_summary.json",
+  "generated": 128,
+  "generator": "C0 original MatterGen",
+  "mattergen_backbone_trainable": false,
+  "pool_count": 32,
+  "pool_size": 4,
+  "relaxed": 64,
+  "sampling_trajectory_modified": false,
+  "schema_version": 1,
+  "seed_end": 33127,
+  "seed_start": 33000,
+  "selected_pools": 32,
+  "status": "success",
+  "updated_at": "2026-07-28T12:29:53+08:00"
+}

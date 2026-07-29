@@ -1,0 +1,102 @@
+/data/dxl/envs/mattergen_py310/lib/python3.10/site-packages/lightning_fabric/__init__.py:36: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  __import__("pkg_resources").declare_namespace(__name__)
+INFO:mattergen.common.utils.eval_utils:Loading model from checkpoint: /data/dxl/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt
+/data/dxl/mattergen_v1/mattergen/common/utils/data_classes.py:96: UserWarning:
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  with initialize_config_dir(str(self.model_path)):
+/data/dxl/mattergen_v1/mattergen/diffusion/lightning_module.py:109: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  checkpoint = torch.load(checkpoint_path, map_location=map_location)
+/data/dxl/mattergen_v1/mattergen/common/utils/data_classes.py:96: UserWarning:
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  with initialize_config_dir(str(self.model_path)):
+/data/dxl/mattergen_v1/mattergen/generator.py:372: UserWarning:
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  with hydra.initialize_config_dir(os.path.abspath(str(sampling_config_path))):
+
+Generating samples:   0%|          | 0/1 [00:00<?, ?it/s]
+
+  0%|          | 0/1000 [00:00<?, ?it/s][A
+
+  5%|▌         | 50/1000 [00:15<04:51,  3.26it/s][A
+
+ 10%|█         | 100/1000 [00:29<04:23,  3.42it/s][A
+
+ 15%|█▌        | 150/1000 [00:39<03:34,  3.97it/s][A
+
+ 15%|█▌        | 150/1000 [00:49<03:34,  3.97it/s][A
+
+ 20%|█▉        | 199/1000 [00:49<03:08,  4.26it/s][A
+
+ 22%|██▏       | 224/1000 [00:54<02:56,  4.39it/s][A
+
+ 25%|██▍       | 249/1000 [00:59<02:46,  4.52it/s][A
+
+ 27%|██▋       | 274/1000 [01:05<02:37,  4.60it/s][A
+
+ 30%|██▉       | 299/1000 [01:10<02:29,  4.68it/s][A
+
+ 32%|███▏      | 324/1000 [01:15<02:22,  4.73it/s][A
+
+ 35%|███▍      | 348/1000 [01:20<02:17,  4.74it/s][A
+
+ 37%|███▋      | 372/1000 [01:25<02:12,  4.73it/s][A
+
+ 40%|███▉      | 396/1000 [01:30<02:07,  4.72it/s][A
+
+ 42%|████▏     | 420/1000 [01:35<02:02,  4.74it/s][A
+
+ 44%|████▍     | 445/1000 [01:40<01:56,  4.78it/s][A
+
+ 47%|████▋     | 469/1000 [01:45<01:51,  4.78it/s][A
+
+ 49%|████▉     | 493/1000 [01:50<01:46,  4.77it/s][A
+
+ 52%|█████▏    | 517/1000 [01:55<01:41,  4.76it/s][A
+
+ 54%|█████▍    | 541/1000 [02:00<01:36,  4.75it/s][A
+
+ 57%|█████▋    | 566/1000 [02:06<01:30,  4.77it/s][A
+
+ 59%|█████▉    | 590/1000 [02:11<01:25,  4.77it/s][A
+
+ 61%|██████▏   | 614/1000 [02:16<01:21,  4.74it/s][A
+
+ 64%|██████▍   | 639/1000 [02:21<01:15,  4.77it/s][A
+
+ 66%|██████▋   | 663/1000 [02:26<01:10,  4.77it/s][A
+
+ 69%|██████▉   | 688/1000 [02:31<01:05,  4.79it/s][A
+
+ 71%|███████▏  | 713/1000 [02:36<00:59,  4.85it/s][A
+
+ 74%|███████▎  | 737/1000 [02:41<00:54,  4.82it/s][A
+
+ 76%|███████▌  | 762/1000 [02:46<00:49,  4.85it/s][A
+
+ 79%|███████▊  | 786/1000 [02:51<00:44,  4.83it/s][A
+
+ 81%|████████  | 811/1000 [02:56<00:39,  4.83it/s][A
+
+ 84%|████████▎ | 836/1000 [03:02<00:33,  4.84it/s][A
+
+ 86%|████████▌ | 861/1000 [03:07<00:28,  4.84it/s][A
+
+ 89%|████████▊ | 886/1000 [03:12<00:23,  4.86it/s][A
+
+ 91%|█████████ | 911/1000 [03:17<00:18,  4.87it/s][A
+
+ 94%|█████████▎| 936/1000 [03:22<00:13,  4.90it/s][A
+
+ 96%|█████████▌| 961/1000 [03:27<00:08,  4.87it/s][A
+
+ 99%|█████████▊| 986/1000 [03:32<00:02,  4.88it/s][A
+100%|██████████| 1000/1000 [03:35<00:00,  4.63it/s]
+
+Generating samples: 100%|██████████| 1/1 [03:35<00:00, 215.92s/it]
+Generating samples: 100%|██████████| 1/1 [03:35<00:00, 215.93s/it]

@@ -1,0 +1,99 @@
+{
+  "baseline": {
+    "composition_validity": 0.75,
+    "converged": 0.96875,
+    "ehull": 0.15974763361579505,
+    "novel": 0.71875,
+    "nus": 0.09375,
+    "pre_relax_max_force_ev_ang": 0.28750701536216017,
+    "rmsd": 0.07189467948005515,
+    "stable": 0.28125,
+    "structure_validity": 1.0,
+    "unique": 1.0
+  },
+  "candidate": "Q6_NS_SETRANK_v2",
+  "changes": {
+    "composition_validity": 0.21875,
+    "converged": 0.03125,
+    "ehull": -0.03372249400566124,
+    "novel": -0.125,
+    "nus": 0.09375,
+    "pre_relax_max_force_relative": -0.45594363071536836,
+    "rmsd_relative": -0.5295223045317274,
+    "stable": 0.28125,
+    "structure_validity": 0.0,
+    "unique": 0.0
+  },
+  "comparison": "Frozen selector versus first C0 trajectory in each pool",
+  "completed_at": "2026-07-28T12:29:53+08:00",
+  "dft_verified": false,
+  "evaluated_baseline": 32,
+  "evaluated_selected": 32,
+  "gates": {
+    "Q6_NS_SETRANK_FINAL_GO": false,
+    "positive_gate": true,
+    "safety_gate": false
+  },
+  "generated_trajectories": 128,
+  "mattergen_backbone_trainable": false,
+  "mattersim_used_for_selection": false,
+  "official_metrics": {
+    "C0_FIRST": {
+      "avg_comp_validity": 0.75,
+      "avg_energy_above_hull_per_atom": 0.15974763361579505,
+      "avg_rmsd_from_relaxation": 0.07189467948005515,
+      "avg_structure_comp_validity": 0.75,
+      "avg_structure_validity": 1.0,
+      "frac_novel_structures": 0.71875,
+      "frac_novel_systems": 0.125,
+      "frac_novel_unique_stable_structures": 0.09375,
+      "frac_novel_unique_structures": 0.71875,
+      "frac_stable_structures": 0.28125,
+      "frac_successful_jobs": 1.0,
+      "frac_unique_structures": 1.0,
+      "frac_unique_systems": 1.0,
+      "precision": 0.28125,
+      "recall": 1.6548522039676263e-05
+    },
+    "Q6_NS_SETRANK": {
+      "avg_comp_validity": 0.96875,
+      "avg_energy_above_hull_per_atom": 0.1260251396101338,
+      "avg_rmsd_from_relaxation": 0.03382484311820645,
+      "avg_structure_comp_validity": 0.96875,
+      "avg_structure_validity": 1.0,
+      "frac_novel_structures": 0.59375,
+      "frac_novel_systems": 0.09375,
+      "frac_novel_unique_stable_structures": 0.1875,
+      "frac_novel_unique_structures": 0.59375,
+      "frac_stable_structures": 0.5625,
+      "frac_successful_jobs": 1.0,
+      "frac_unique_structures": 1.0,
+      "frac_unique_systems": 0.9375,
+      "precision": 0.40625,
+      "recall": 1.773055932822457e-05
+    }
+  },
+  "paired_statistics": "/data/dxl/reports/postgen_fastgate/new_eval/paired_statistics.csv",
+  "pool_count": 32,
+  "pool_size": 4,
+  "quality_network_trainable_during_evaluation": false,
+  "relaxation_failures": {
+    "baseline": 0,
+    "selected": 0
+  },
+  "sampling_trajectory_modified": false,
+  "schema_version": 1,
+  "selected": {
+    "composition_validity": 0.96875,
+    "converged": 1.0,
+    "ehull": 0.1260251396101338,
+    "novel": 0.59375,
+    "nus": 0.1875,
+    "pre_relax_max_force_ev_ang": 0.15642002292179769,
+    "rmsd": 0.03382484311820645,
+    "stable": 0.5625,
+    "structure_validity": 1.0,
+    "unique": 1.0
+  },
+  "selection_manifest": "/data/dxl/reports/postgen_fastgate/new_eval/frozen_selection_manifest.json"
+}

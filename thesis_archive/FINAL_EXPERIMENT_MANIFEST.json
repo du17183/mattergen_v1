@@ -1,0 +1,122 @@
+{
+  "archive_version": "v1",
+  "created_at": "2026-07-28T00:00:00+08:00",
+  "archive_branch": "archive/thesis-analysis-package-v1",
+  "experiments": [
+    {
+      "key": "innovation1_adaptive_cfg",
+      "data": "innovation1",
+      "title": "创新点一：Multi-field Residual-driven Online Adaptive CFG",
+      "branch": "feature/convergence-aware-corrector-gating",
+      "commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+      "pr": "https://github.com/du17183/mattergen_v1/pull/1",
+      "seeds": "20000–20255",
+      "n": 256,
+      "status": "FORMAL_INNOVATION1_CONFIRMED=True",
+      "independence": "独立正式评估；本方法不使用 Q3 Gate 训练数据",
+      "result": "相对 C0：E-hull -0.003435 eV/atom，Stable +5.859 pp，NUS +3.516 pp。",
+      "use": "可用于创新点一正式主结论。",
+      "forbid": "不得宣称 DFT 或目标属性验证。",
+      "documentation_commit": "20255f1a857cd763a7ef2bf2f24c1889c98c4d1c"
+    },
+    {
+      "key": "innovation2_e3_pcr_formal256",
+      "data": "innovation2",
+      "title": "创新点二：Learned-Gated E3-PCR 正式 256",
+      "branch": "feature/q3-e3-pcr-formal256",
+      "commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+      "pr": "https://github.com/du17183/mattergen_v1/pull/13",
+      "seeds": "40000–40255",
+      "n": 256,
+      "status": "FINAL_STATE=E3_G_FORMAL_CONFIRMED",
+      "independence": "正式 seeds 与 Q3 训练 seeds 20000–20063 交集为 0",
+      "result": "E3-G 最大力均值降低 23.28%，harm rate 18.359%，质量代理指标保持。",
+      "use": "可用于创新点二独立正式主结论。",
+      "forbid": "不得把 MatterSim 代理评价表述为 DFT。",
+      "documentation_commit": "41479015c5c3edc389601c4b7cc44a6db5e115cd"
+    },
+    {
+      "key": "compatibility_41000_41063",
+      "data": "compatibility_1",
+      "title": "A0 + E3-G 第一次独立兼容性验证",
+      "branch": "feature/a0-e3g-compatibility64",
+      "commit": "ba2303c284210fdae0a35bb0153a8ef3af45a54c",
+      "pr": "https://github.com/du17183/mattergen_v1/pull/14",
+      "seeds": "41000–41063",
+      "n": 64,
+      "status": "A0_E3G_COMPATIBILITY_GO=True",
+      "independence": "与 Q3 训练和全部开发范围交集为 0",
+      "result": "预松弛最大力均值降低 27.10%。",
+      "use": "可用于组合兼容性独立证据。",
+      "forbid": "样本量 64，不替代 E3-PCR 正式 256。",
+      "documentation_commit": "e358ee39a8cdd2a061a18bfaddbe88316b455048"
+    },
+    {
+      "key": "replication_50000_50063",
+      "data": "compatibility_2",
+      "title": "A0 + E3-G 第二次完全独立复现",
+      "branch": "feature/a0-e3g-independent64",
+      "commit": "22e1db74a59476562f1f746cd4210b9420cbdf05",
+      "pr": "https://github.com/du17183/mattergen_v1/pull/17",
+      "seeds": "50000–50063",
+      "n": 64,
+      "status": "A0_E3G_INDEPENDENT64_GO=True",
+      "independence": "预注册全新 seeds；无训练、调参或历史测试交集",
+      "result": "预松弛最大力均值降低 19.02%。",
+      "use": "可用于第二次完全独立复现证据。",
+      "forbid": "不得只选择该批次而隐去第一次独立验证。",
+      "documentation_commit": "85485bc956fce1cf7d01c55baaa92c0b69fd745e"
+    },
+    {
+      "key": "leakage_diagnostic",
+      "data": "leakage_diagnostic",
+      "title": "Q3 Gate 训练重叠泄漏诊断",
+      "branch": "experiment/a0-e3g-leakage-diagnostic256",
+      "commit": "01e9b2c30e5c58e05eaae908ba291c518b977d03",
+      "pr": "https://github.com/du17183/mattergen_v1/pull/16",
+      "seeds": "20000–20255（训练重叠 64；held-out 192）",
+      "n": 256,
+      "status": "LEAKAGE_INFLATION_DETECTED=True",
+      "independence": "DIAGNOSTIC_ONLY；Mixed 256 非独立",
+      "result": "训练重叠 harm 0/64；held-out harm 31/192；Fisher p=6.87e-5。",
+      "use": "held-out 192 仅可作补充；整体用于泄漏方法学诊断。",
+      "forbid": "NOT_VALID_AS_INDEPENDENT_VALIDATION；Mixed 256 不得进正式主结果。",
+      "documentation_commit": "d5bf7d00ab51a2a0b319203443391e3463e7a91b"
+    },
+    {
+      "key": "source_data_incomplete_audit",
+      "data": null,
+      "title": "A0 256 复用资格审计",
+      "branch": "feature/a0-e3g-formal256",
+      "commit": "c1df24a8e5d118dcc99d7fb65b34e7f53be28969",
+      "pr": "https://github.com/du17183/mattergen_v1/pull/15",
+      "seeds": "候选 20000–20255",
+      "n": 256,
+      "status": "SOURCE_DATA_INCOMPLETE — NO_EFFECT_ESTIMATE_PRODUCED",
+      "independence": "64 个 seeds 与 Q3 训练重叠，故整个旧批次不具正式复用资格",
+      "result": "未启动组合效果计算；无效应估计。",
+      "use": "只用于说明数据资格审计和停止决策。",
+      "forbid": "不得写成方法 No-Go，不得生成或引用效果估计。",
+      "documentation_commit": "e09858e1b947ff6e14ebc077d61c59f3585f1b55"
+    }
+  ],
+  "scientific_boundaries": {
+    "STABILITY_SOURCE": "MatterSim-5M surrogate",
+    "DFT_VERIFIED": false,
+    "PROPERTY_TARGET_VERIFIED": false
+  },
+  "formal_conclusions": {
+    "innovation1": true,
+    "innovation2": true,
+    "compatibility_1": true,
+    "replication_2": true
+  },
+  "diagnostic_only": [
+    "leakage_diagnostic"
+  ],
+  "invalid_for_formal": [
+    "mixed_256",
+    "training_overlap_64"
+  ],
+  "source_incomplete_audit": "NO_EFFECT_ESTIMATE_PRODUCED"
+}

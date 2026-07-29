@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-07-28T14:39:47+08:00",
+  "formal_seed_count": 256,
+  "formal_seed_range": [
+    40000,
+    40255
+  ],
+  "gate_threshold_selection_intersection": [],
+  "historical_postgen_module_intersection": [],
+  "numeric_csv_false_positive_note": "Values in 40000\u201340255 found in SPG shape-statistics non-seed columns; the seed column is 245xx and has no intersection.",
+  "passed": true,
+  "path_matches": [],
+  "q3_32_development_intersection": [],
+  "q3_frozen64_intersection": [],
+  "random_gate_intersection": [],
+  "reserved_plan_reference": "/data/dxl/reports/innovation2_literature_search/minimum_validation_plan.md:39",
+  "schema_version": 1,
+  "structured_seed_field_matches": [],
+  "training_intersection": []
+}

@@ -1,0 +1,68 @@
+/data/dxl/envs/mattergen_py310/lib/python3.10/site-packages/lightning_fabric/__init__.py:36: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  __import__("pkg_resources").declare_namespace(__name__)
+INFO:mattergen.common.utils.eval_utils:Loading model from checkpoint: /data/dxl/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt
+/data/dxl/mattergen_v1/mattergen/common/utils/data_classes.py:96: UserWarning:
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  with initialize_config_dir(str(self.model_path)):
+/data/dxl/mattergen_v1/mattergen/diffusion/lightning_module.py:109: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  checkpoint = torch.load(checkpoint_path, map_location=map_location)
+/data/dxl/mattergen_v1/mattergen/common/utils/data_classes.py:96: UserWarning:
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  with initialize_config_dir(str(self.model_path)):
+/data/dxl/mattergen_v1/mattergen/generator.py:372: UserWarning:
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  with hydra.initialize_config_dir(os.path.abspath(str(sampling_config_path))):
+
+Generating samples:   0%|          | 0/1 [00:00<?, ?it/s]
+
+  0%|          | 0/1000 [00:00<?, ?it/s][A
+
+  5%|▌         | 50/1000 [00:08<02:36,  6.09it/s][A
+
+ 10%|█         | 100/1000 [00:17<02:34,  5.84it/s][A
+
+ 15%|█▌        | 150/1000 [00:25<02:26,  5.81it/s][A
+
+ 20%|██        | 200/1000 [00:34<02:17,  5.80it/s][A
+
+ 25%|██▌       | 250/1000 [00:43<02:09,  5.77it/s][A
+
+ 30%|███       | 300/1000 [00:51<02:01,  5.75it/s][A
+
+ 35%|███▌      | 350/1000 [01:00<01:52,  5.76it/s][A
+
+ 40%|████      | 400/1000 [01:09<01:43,  5.77it/s][A
+
+ 45%|████▌     | 450/1000 [01:17<01:35,  5.78it/s][A
+
+ 50%|█████     | 500/1000 [01:26<01:26,  5.79it/s][A
+
+ 55%|█████▌    | 550/1000 [01:34<01:17,  5.80it/s][A
+
+ 60%|██████    | 600/1000 [01:43<01:09,  5.78it/s][A
+
+ 65%|██████▌   | 650/1000 [01:52<01:00,  5.80it/s][A
+
+ 70%|███████   | 700/1000 [02:00<00:51,  5.77it/s][A
+
+ 75%|███████▌  | 750/1000 [02:09<00:43,  5.77it/s][A
+
+ 80%|████████  | 800/1000 [02:18<00:34,  5.78it/s][A
+
+ 85%|████████▌ | 850/1000 [02:26<00:25,  5.79it/s][A
+
+ 90%|█████████ | 900/1000 [02:33<00:16,  6.11it/s][A
+
+ 95%|█████████▌| 950/1000 [02:41<00:07,  6.34it/s][A
+
+100%|██████████| 1000/1000 [02:46<00:00,  6.99it/s][A
+100%|██████████| 1000/1000 [02:46<00:00,  6.00it/s]
+
+Generating samples: 100%|██████████| 1/1 [02:46<00:00, 166.77s/it]
+Generating samples: 100%|██████████| 1/1 [02:46<00:00, 166.77s/it]

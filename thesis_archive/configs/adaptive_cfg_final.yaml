@@ -1,0 +1,11 @@
+method: Multi-field Residual-driven Online Adaptive CFG
+base_guidance: 2.0
+adaptive_alpha: 0.50
+adaptive_ema: 0.95
+adaptive_epsilon: 1.0e-6
+guidance_min_scale: 0.0
+guidance_max_scale: 5.0
+predictor_corrector: full
+precision: FP32
+batch_size: 1
+code_commit: 5de00419eea2d8a9be303638f2db8ece15a22366

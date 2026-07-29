@@ -1,0 +1,42 @@
+{
+  "baseline_mean": 0.26527988196406616,
+  "baseline_median": 0.1663651630022272,
+  "bootstrap_95_ci": [
+    -0.10221274022731316,
+    -0.01069625841941559
+  ],
+  "bootstrap_ci_upper_below_zero": true,
+  "counting_epsilon": 1e-06,
+  "effect_reduction_ge_10_percent": true,
+  "gate_off_exact_structure_ties": 18,
+  "gate_off_max_abs_numeric_difference": 5.691497747817298e-07,
+  "gate_on_losses": 11,
+  "gate_on_ties": 0,
+  "gate_on_wins": 35,
+  "leave_one_out_mean_difference_range": [
+    -0.05463224662409739,
+    -0.03311136501247086
+  ],
+  "losses": 11,
+  "maximum_single_sample_absolute_contribution_rate": 0.2559764009919278,
+  "mean_difference": -0.05044990180470007,
+  "median_difference": -0.0007735449319139004,
+  "primary_effect_pass": true,
+  "raw_numeric_losses_1e_minus_12": 18,
+  "raw_numeric_ties_1e_minus_12": 0,
+  "raw_numeric_wins_1e_minus_12": 46,
+  "relative_change": -0.1901761318317151,
+  "remove_most_favorable_relative_change": -0.1387995857794072,
+  "remove_most_favorable_sample_index": 54,
+  "remove_most_favorable_sample_seed": 50054,
+  "remove_most_unfavorable_relative_change": -0.20541761021426408,
+  "remove_most_unfavorable_sample_index": 23,
+  "remove_most_unfavorable_sample_seed": 50023,
+  "selected_mean": 0.21482998015936608,
+  "selected_median": 0.1475314680545636,
+  "statistical_evidence_pass": true,
+  "ties": 18,
+  "wilcoxon_p_below_0_05": true,
+  "wilcoxon_p_raw": 0.000587376523879349,
+  "wins": 35
+}

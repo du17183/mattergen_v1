@@ -1,0 +1,19 @@
+{
+  "key": "compatibility_41000_41063",
+  "data": "compatibility_1",
+  "title": "A0 + E3-G 第一次独立兼容性验证",
+  "branch": "feature/a0-e3g-compatibility64",
+  "commit": "ba2303c284210fdae0a35bb0153a8ef3af45a54c",
+  "pr": "https://github.com/du17183/mattergen_v1/pull/14",
+  "seeds": "41000–41063",
+  "n": 64,
+  "status": "A0_E3G_COMPATIBILITY_GO=True",
+  "independence": "与 Q3 训练和全部开发范围交集为 0",
+  "result": "预松弛最大力均值降低 27.10%。",
+  "use": "可用于组合兼容性独立证据。",
+  "forbid": "样本量 64，不替代 E3-PCR 正式 256。",
+  "stability_source": "MatterSim-5M surrogate",
+  "dft_verified": false,
+  "property_target_verified": false,
+  "documentation_commit": "e358ee39a8cdd2a061a18bfaddbe88316b455048"
+}

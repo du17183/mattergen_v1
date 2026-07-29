@@ -1,0 +1,376 @@
+{
+  "LEAKAGE_DIAGNOSTIC_COMPLETED": true,
+  "a0_generation_reused": 256,
+  "a0_new_full_relaxations": 0,
+  "a0_new_single_point_force_probes": 170,
+  "a0_relaxation_reused": 256,
+  "cohorts": {
+    "heldout_192": {
+      "a0": {
+        "abnormal_cell_rate": 0.0,
+        "composition_validity": 0.8333333333333334,
+        "convergence_rate": 0.9791666666666666,
+        "ehull": 0.14227716465242798,
+        "ehull_coverage": 1.0,
+        "ehull_median": 0.11702462380022724,
+        "metastable": 0.7239583333333334,
+        "msun": 0.5208333333333334,
+        "novel": 0.8020833333333334,
+        "nus": 0.265625,
+        "pre_relax_max_force": 0.3596983237764997,
+        "pre_relax_max_force_median": 0.19918049253404613,
+        "relaxation_elapsed_mean": 1.9542760886409571,
+        "relaxation_failure_rate": 0.0,
+        "relaxation_steps_mean": 66.625,
+        "relaxation_steps_median": 31.0,
+        "rmsd": 0.07870125674399416,
+        "short_bond_rate": 0.0,
+        "stable": 0.4479166666666667,
+        "structure_validity": 1.0,
+        "unique": 0.9739583333333334
+      },
+      "a0_e3g": {
+        "abnormal_cell_rate": 0.0,
+        "composition_validity": 0.8333333333333334,
+        "convergence_rate": 0.9791666666666666,
+        "ehull": 0.14463017176653192,
+        "ehull_coverage": 1.0,
+        "ehull_median": 0.11857942443797939,
+        "metastable": 0.71875,
+        "msun": 0.5208333333333334,
+        "novel": 0.8020833333333334,
+        "nus": 0.265625,
+        "pre_relax_max_force": 0.26144614303452746,
+        "pre_relax_max_force_median": 0.16683745999573374,
+        "relaxation_elapsed_mean": 1.7476483632459956,
+        "relaxation_failure_rate": 0.0,
+        "relaxation_steps_mean": 66.53645833333333,
+        "relaxation_steps_median": 30.0,
+        "rmsd": 0.07165625020612044,
+        "short_bond_rate": 0.0,
+        "stable": 0.4427083333333333,
+        "structure_validity": 1.0,
+        "unique": 0.9739583333333334
+      },
+      "cohort": "heldout_192",
+      "ehull_common_coverage": 192,
+      "force_harm_rate": 0.16145833333333334,
+      "force_improvement_rate": 0.5,
+      "gate_on_count": 127,
+      "gate_on_rate": 0.6614583333333334,
+      "overlaps_q3_training": false,
+      "primary_force": {
+        "baseline_mean": 0.3596983237764997,
+        "baseline_median": 0.19918049253404613,
+        "bootstrap_95_ci": [
+          -0.1427977680870793,
+          -0.06144327966245493
+        ],
+        "leave_one_out_mean_difference_range": [
+          -0.1002517393556893,
+          -0.08378650851470046
+        ],
+        "losses": 31,
+        "maximum_single_sample_absolute_contribution_rate": 0.13370416701526175,
+        "mean_difference": -0.09825218074197223,
+        "median_difference": -0.00018242646602044323,
+        "relative_change": -0.27315162247745617,
+        "remove_most_favorable_relative_change": -0.24397787238101165,
+        "remove_most_favorable_sample_index": 138,
+        "remove_most_favorable_sample_seed": 20202,
+        "remove_most_unfavorable_relative_change": -0.2802948830308891,
+        "remove_most_unfavorable_sample_index": 70,
+        "remove_most_unfavorable_sample_seed": 20134,
+        "selected_mean": 0.26144614303452746,
+        "selected_median": 0.16683745999573374,
+        "ties": 65,
+        "wilcoxon_p_raw": 1.0295118726216634e-10,
+        "wins": 96
+      },
+      "seed_count": 192,
+      "seed_range": [
+        20064,
+        20255
+      ]
+    },
+    "mixed_256": {
+      "a0": {
+        "abnormal_cell_rate": 0.0,
+        "composition_validity": 0.83984375,
+        "convergence_rate": 0.98046875,
+        "ehull": 0.14023160920514416,
+        "ehull_coverage": 1.0,
+        "ehull_median": 0.11099701746103015,
+        "metastable": 0.73046875,
+        "msun": 0.49609375,
+        "novel": 0.765625,
+        "nus": 0.2578125,
+        "pre_relax_max_force": 0.33214588802594247,
+        "pre_relax_max_force_median": 0.17819717787394956,
+        "relaxation_elapsed_mean": 1.7643720928626863,
+        "relaxation_failure_rate": 0.0,
+        "relaxation_steps_mean": 60.375,
+        "relaxation_steps_median": 30.0,
+        "rmsd": 0.0738217266760687,
+        "short_bond_rate": 0.0,
+        "stable": 0.46875,
+        "structure_validity": 1.0,
+        "unique": 0.98046875
+      },
+      "a0_e3g": {
+        "abnormal_cell_rate": 0.0,
+        "composition_validity": 0.83984375,
+        "convergence_rate": 0.98046875,
+        "ehull": 0.14199624633350016,
+        "ehull_coverage": 1.0,
+        "ehull_median": 0.1145234619090458,
+        "metastable": 0.7265625,
+        "msun": 0.49609375,
+        "novel": 0.765625,
+        "nus": 0.2578125,
+        "pre_relax_max_force": 0.2409000935948128,
+        "pre_relax_max_force_median": 0.1538802675551668,
+        "relaxation_elapsed_mean": 1.6154621407672494,
+        "relaxation_failure_rate": 0.0,
+        "relaxation_steps_mean": 60.265625,
+        "relaxation_steps_median": 29.0,
+        "rmsd": 0.06824729319252071,
+        "short_bond_rate": 0.0,
+        "stable": 0.46484375,
+        "structure_validity": 1.0,
+        "unique": 0.98046875
+      },
+      "cohort": "mixed_256",
+      "ehull_common_coverage": 256,
+      "force_harm_rate": 0.12109375,
+      "force_improvement_rate": 0.54296875,
+      "gate_on_count": 170,
+      "gate_on_rate": 0.6640625,
+      "overlaps_q3_training": true,
+      "primary_force": {
+        "baseline_mean": 0.33214588802594247,
+        "baseline_median": 0.17819717787394956,
+        "bootstrap_95_ci": [
+          -0.1260167265602078,
+          -0.06262975820599685
+        ],
+        "leave_one_out_mean_difference_range": [
+          -0.09271602701508702,
+          -0.08038324626752283
+        ],
+        "losses": 31,
+        "maximum_single_sample_absolute_contribution_rate": 0.1104966646676579,
+        "mean_difference": -0.0912457944311297,
+        "median_difference": -0.0018712540072421853,
+        "relative_change": -0.2747160140185233,
+        "remove_most_favorable_relative_change": -0.2513202321308775,
+        "remove_most_favorable_sample_index": 202,
+        "remove_most_favorable_sample_seed": 20202,
+        "remove_most_unfavorable_relative_change": -0.2805198537009629,
+        "remove_most_unfavorable_sample_index": 134,
+        "remove_most_unfavorable_sample_seed": 20134,
+        "selected_mean": 0.2409000935948128,
+        "selected_median": 0.1538802675551668,
+        "ties": 86,
+        "wilcoxon_p_raw": 5.21690395228222e-18,
+        "wins": 139
+      },
+      "seed_count": 256,
+      "seed_range": [
+        20000,
+        20255
+      ]
+    },
+    "train_overlap_64": {
+      "a0": {
+        "abnormal_cell_rate": 0.0,
+        "composition_validity": 0.859375,
+        "convergence_rate": 0.984375,
+        "ehull": 0.1340949428632926,
+        "ehull_coverage": 1.0,
+        "ehull_median": 0.0987779341175372,
+        "metastable": 0.75,
+        "msun": 0.421875,
+        "novel": 0.65625,
+        "nus": 0.234375,
+        "pre_relax_max_force": 0.24948858077427097,
+        "pre_relax_max_force_median": 0.16208313571591085,
+        "relaxation_elapsed_mean": 1.1946601055278734,
+        "relaxation_failure_rate": 0.0,
+        "relaxation_steps_mean": 41.625,
+        "relaxation_steps_median": 24.5,
+        "rmsd": 0.059183136472292286,
+        "short_bond_rate": 0.0,
+        "stable": 0.53125,
+        "structure_validity": 1.0,
+        "unique": 1.0
+      },
+      "a0_e3g": {
+        "abnormal_cell_rate": 0.0,
+        "composition_validity": 0.859375,
+        "convergence_rate": 0.984375,
+        "ehull": 0.13409447003440494,
+        "ehull_coverage": 1.0,
+        "ehull_median": 0.09877892034393726,
+        "metastable": 0.75,
+        "msun": 0.421875,
+        "novel": 0.65625,
+        "nus": 0.234375,
+        "pre_relax_max_force": 0.17926194527566885,
+        "pre_relax_max_force_median": 0.13066679660782377,
+        "relaxation_elapsed_mean": 1.218903473331011,
+        "relaxation_failure_rate": 0.0,
+        "relaxation_steps_mean": 41.453125,
+        "relaxation_steps_median": 26.5,
+        "rmsd": 0.05802042215172154,
+        "short_bond_rate": 0.0,
+        "stable": 0.53125,
+        "structure_validity": 1.0,
+        "unique": 1.0
+      },
+      "cohort": "train_overlap_64",
+      "ehull_common_coverage": 64,
+      "force_harm_rate": 0.0,
+      "force_improvement_rate": 0.671875,
+      "gate_on_count": 43,
+      "gate_on_rate": 0.671875,
+      "overlaps_q3_training": true,
+      "primary_force": {
+        "baseline_mean": 0.24948858077427097,
+        "baseline_median": 0.16208313571591085,
+        "bootstrap_95_ci": [
+          -0.11093048175686011,
+          -0.037258592713170696
+        ],
+        "leave_one_out_mean_difference_range": [
+          -0.07134134399857993,
+          -0.059004088367633684
+        ],
+        "losses": 0,
+        "maximum_single_sample_absolute_contribution_rate": 0.17293276155817608,
+        "mean_difference": -0.07022663549860211,
+        "median_difference": -0.008192547348198426,
+        "relative_change": -0.28148236396494974,
+        "remove_most_favorable_relative_change": -0.2507112401537004,
+        "remove_most_favorable_sample_index": 10,
+        "remove_most_favorable_sample_seed": 20010,
+        "remove_most_unfavorable_relative_change": -0.2821803297672987,
+        "remove_most_unfavorable_sample_index": 2,
+        "remove_most_unfavorable_sample_seed": 20002,
+        "selected_mean": 0.17926194527566885,
+        "selected_median": 0.13066679660782377,
+        "ties": 21,
+        "wilcoxon_p_raw": 2.97042880560836e-10,
+        "wins": 43
+      },
+      "seed_count": 64,
+      "seed_range": [
+        20000,
+        20063
+      ]
+    }
+  },
+  "completed_at": "2026-07-28T17:46:40+08:00",
+  "dft_verified": false,
+  "e3g_new_mattersim_relaxations": 256,
+  "e3g_new_refinements": 256,
+  "final_state": "LEAKAGE_INFLATION_DETECTED",
+  "formal_go_no_go_allowed": false,
+  "heldout_count": 192,
+  "independent_validation": false,
+  "leakage_effect": {
+    "bootstrap_95_ci": [
+      -0.026389828278452727,
+      0.08369713876857945
+    ],
+    "harm_rate_fisher_exact_one_sided_p": 6.865899808947675e-05,
+    "harm_rate_gap_bootstrap_95_ci": [
+      -0.21354166666666666,
+      -0.109375
+    ],
+    "heldout_harm_count": 31,
+    "heldout_harm_rate": 0.16145833333333334,
+    "heldout_mean_force_difference": -0.09825218074197223,
+    "heldout_relative_force_change": -0.27315162247745617,
+    "interpretation": "Negative effect gap means the apparent force reduction is stronger on gate-training seeds.",
+    "safety_leakage_detected": true,
+    "state": "LEAKAGE_INFLATION_DETECTED",
+    "train_harm_count": 0,
+    "train_harm_rate": 0.0,
+    "train_mean_force_difference": -0.07022663549860211,
+    "train_minus_heldout_effect_gap": 0.028025545243370115,
+    "train_minus_heldout_harm_rate_gap": -0.16145833333333334,
+    "train_minus_heldout_relative_change_gap": -0.008330741487493576,
+    "train_relative_force_change": -0.28148236396494974
+  },
+  "mixed_256_contaminated": true,
+  "official_e3g_metrics": {
+    "A0_E3G": {
+      "avg_comp_validity": {
+        "description": "Average composition validity (according to smact) of structures in sampled data.",
+        "value": 0.83984375
+      },
+      "avg_energy_above_hull_per_atom": {
+        "description": "Average energy above hull per atom (eV/atom) of structures in sampled data.",
+        "value": 0.14199624633350022
+      },
+      "avg_rmsd_from_relaxation": {
+        "description": "root mean square displacements of atoms (Angstrom) from initial to final DFT relaxation steps in sampled data.",
+        "value": 0.06824729319252075
+      },
+      "avg_structure_comp_validity": {
+        "description": "Average number of structures in sampled data that are both valid structures and have a valid smact compositions.",
+        "value": 0.83984375
+      },
+      "avg_structure_validity": {
+        "description": "Average structural validity of structures in sampled data. Any atom-atom distances less than 0.5 Angstroms or a volume less than 0.1 Angstrom**3 are considered invalid .",
+        "value": 1.0
+      },
+      "frac_novel_structures": {
+        "description": "Fraction of novel structures in sampled data.",
+        "value": 0.765625
+      },
+      "frac_novel_systems": {
+        "description": "Fraction of distinct chemical systems in sampled data and not in TRI2024correction.",
+        "value": 0.1328125
+      },
+      "frac_novel_unique_stable_structures": {
+        "description": "Fraction of novel unique stable structures in sampled data within 0.1 (eV/atom) above convex hull of TRI2024correction.",
+        "value": 0.2578125
+      },
+      "frac_novel_unique_structures": {
+        "description": "Fraction of novel unique structures in sampled data.",
+        "value": 0.76171875
+      },
+      "frac_stable_structures": {
+        "description": "Fraction of stable structures in sampled data within 0.1 (eV/atom) above convex hull of TRI2024correction.",
+        "value": 0.46484375
+      },
+      "frac_successful_jobs": {
+        "description": "Fraction of structures whose jobs ran successfully.",
+        "value": 1.0
+      },
+      "frac_unique_structures": {
+        "description": "Fraction of unique structures in sampled data.",
+        "value": 0.98046875
+      },
+      "frac_unique_systems": {
+        "description": "Fraction of structures in sampled data that have a unique chemical system within this set.",
+        "value": 0.84765625
+      },
+      "precision": {
+        "description": "Precision of structures in sampled data compared with TRI2024correction. This is the fraction of structures in sampled data that have a matching structure in TRI2024correction.",
+        "value": 0.234375
+      },
+      "recall": {
+        "description": "Recall of structures in sampled data compared with structures in TRI2024correction. This is the fraction of structures in sampled data that have a matching structure in TRI2024correction.",
+        "value": 0.000260048203480627
+      }
+    }
+  },
+  "property_target_verified": false,
+  "q3_checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e",
+  "schema_version": 1,
+  "stability_source": "MatterSim-5M surrogate",
+  "training_overlap_count": 64
+}

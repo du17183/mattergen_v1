@@ -1,0 +1,19 @@
+{
+  "converged": true,
+  "elapsed_seconds": 0.5851562840398401,
+  "energy_ev": -54.88529968261719,
+  "energy_per_atom_ev": -6.860662460327148,
+  "gpu": 4,
+  "initial_energy_ev": -54.8798713684082,
+  "initial_energy_per_atom_ev": -6.859983921051025,
+  "input_hash": "67ea4b89ecc350d78f034db8de1c9f75c57ed79fd0f7003845d5ab78169136e2",
+  "input_path": "/data/dxl/results/postgen_fastgate/new_eval/generation/C0/33057/generated_crystals.extxyz",
+  "maximum_force_ev_ang": 0.048022277653217316,
+  "method": "Q5_CQPS",
+  "output_hash": "13d85fb8c5d88f1feeb705ee84dbaf5b40a778c7510d8c7b25c13e0ba3d2887e",
+  "pool_id": 14,
+  "pre_relax_max_force_ev_ang": 0.17398158654958887,
+  "selected_seed": 33057,
+  "steps": 20,
+  "success": true
+}

@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "return_code": 0,
+  "method": "constant",
+  "seed": 33017,
+  "physical_gpu": 1,
+  "elapsed_seconds": 213.20655121898744,
+  "peak_allocated_bytes": 512785408,
+  "peak_reserved_bytes": 727711744,
+  "telemetry": {
+    "samples": 63,
+    "memory_used_at_launch_mib": 464,
+    "free_memory_at_launch_mib": 72367,
+    "nvidia_smi_peak_used_mib": 4686,
+    "utilization_mean_percent": 87.77777777777777,
+    "utilization_max_percent": 91
+  },
+  "trace": {
+    "rows": 0,
+    "numeric_values_checked": 0
+  },
+  "formula": "Co8Fe5P4Si",
+  "num_atoms": 18,
+  "error": null
+}

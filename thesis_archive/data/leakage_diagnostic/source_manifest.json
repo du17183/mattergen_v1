@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-07-28T00:00:00+08:00",
+  "normalized_file": "data/leakage_diagnostic/per_seed_metrics.csv",
+  "generation_script": "CPU-only archive normalization; transformations listed below",
+  "sources": [
+    {
+      "archived_source": "data/leakage_diagnostic/source/A0_reused_metrics_augmented.csv",
+      "original_server_path": "/data/dxl/reports/a0_e3g_leakage256/A0_reused_metrics_augmented.csv",
+      "sha256": "aa232103aed4e57188bf4631a2a651f661a0e9056621d8900c9a57b13b113699"
+    },
+    {
+      "archived_source": "data/leakage_diagnostic/source/A0_E3G_metrics_augmented.csv",
+      "original_server_path": "/data/dxl/reports/a0_e3g_leakage256/A0_E3G_metrics_augmented.csv",
+      "sha256": "d0cd5a3088df303857917dbe34b200e8444c1167058fe2df2de35d2f70409f4d"
+    },
+    {
+      "archived_source": "data/leakage_diagnostic/source/refinement_manifest.csv",
+      "original_server_path": "/data/dxl/results/a0_e3g_leakage256/refinement_manifest.csv",
+      "sha256": "f521cbf66448da29d925c2f2d1a64728d832db90440162640d91cb7fd5321952"
+    },
+    {
+      "archived_source": "data/leakage_diagnostic/source/leakage_effect.json",
+      "original_server_path": "/data/dxl/reports/a0_e3g_leakage256/leakage_effect.json",
+      "sha256": "f1cdebd7034d6bbc76fa4b0bf9bf284a0fa27a53457e7cdc10a126ef4c85c364"
+    }
+  ],
+  "field_mapping": {
+    "seed": "formal_seed / manifest seed",
+    "cohort": "20000–20063 training_overlap; 20064–20255 held_out",
+    "differences": "A0_E3G minus A0",
+    "formal validity": "False for all diagnostic rows",
+    "supplementary validity": "True only held_out"
+  },
+  "unit_conversion": "none",
+  "missing_values": "NaN only when source has no per-seed value; never imputed",
+  "statistics": {
+    "state": "LEAKAGE_INFLATION_DETECTED",
+    "training_overlap_count": 64,
+    "heldout_count": 192,
+    "train_harm_count": 0,
+    "heldout_harm_count": 31,
+    "train_harm_rate": 0.0,
+    "heldout_harm_rate": 0.16145833333333334,
+    "fisher_exact_one_sided_p": 6.865899808947675e-05,
+    "TRAINING_OVERLAP_VALID_FOR_FORMAL_CLAIMS": false,
+    "MIXED_256_VALID_FOR_FORMAL_CLAIMS": false,
+    "HELD_OUT_192_VALID_AS_SUPPLEMENTARY": true
+  }
+}
