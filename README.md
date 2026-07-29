@@ -34,3 +34,33 @@ TRAINING_OVERLAP=20000–20063
 本分支适合展示实验治理过程：为什么发现问题、为什么停止、如何重新设计独立验证。不得将“未估计”改写成正向或负向科学结论。
 
 完整项目脉络见[论文归档分支](https://github.com/du17183/mattergen_v1/tree/archive/thesis-analysis-package-v1)。
+
+## 审计是如何实现的
+
+[`research/a0_e3g_formal256.py`](research/a0_e3g_formal256.py) 的职责不是计算方法效果，而是：
+
+1. 固定候选 source、branch、commit 和 seed 范围。
+2. 读取 gate 训练 seed 清单。
+3. 逐 seed 检查复用结构、哈希和指标覆盖。
+4. 一旦发现训练重叠，就将状态写为 source-incomplete。
+5. 停止正式 effect estimate，输出可恢复的 audit/report。
+
+## 代码与证据
+
+| 文件 | 内容 |
+|---|---|
+| [`research/a0_e3g_formal256.py`](research/a0_e3g_formal256.py) | `audit` 与 `status` 命令 |
+| [`tests/test_a0_e3g_formal256.py`](tests/test_a0_e3g_formal256.py) | 数据源、seed 交集和禁止错误结论的测试 |
+| [`reports/a0_e3g_formal256/reuse_audit.csv`](reports/a0_e3g_formal256/reuse_audit.csv) | 逐 seed 复用审计 |
+| [`reports/a0_e3g_formal256/frozen_manifest.md`](reports/a0_e3g_formal256/frozen_manifest.md) | 冻结输入与范围 |
+| [`reports/a0_e3g_formal256/final_report.md`](reports/a0_e3g_formal256/final_report.md) | 停止原因和后续建议 |
+
+## 复核命令
+
+```bash
+python -m pytest tests/test_a0_e3g_formal256.py -q
+python -m research.a0_e3g_formal256 status
+python -m research.a0_e3g_formal256 audit
+```
+
+该分支有意不提供“效果对比表”：在 source contract 不成立时继续计算总体效果，会制造不可接受的训练—测试泄漏。
