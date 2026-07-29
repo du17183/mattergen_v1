@@ -42,3 +42,45 @@ EIGHT_SEED_STARTED=False
 
 - [最终报告](research/spg_static_mvp/final_report.md)
 - [论文归档分支](https://github.com/du17183/mattergen_v1/tree/archive/thesis-analysis-package-v1)
+
+## 实现原理
+
+标准路径每次 forward 根据当前 cell、position 和 cutoff 动态构建周期邻接。MVP 先记录图形状分布，选择单一 bucket，预分配 edge/offset 容量，并用 reference builder 做严格语义校验：
+
+```text
+record graph shapes
+→ freeze one safe-capacity bucket
+→ static edge/offset buffers
+→ overflow or mismatch uses reference fallback
+→ compare edges, offsets, distances and final score
+```
+
+## 实现位置
+
+| 文件 | 内容 |
+|---|---|
+| [`static_builder.py`](research/spg_static_mvp/static_builder.py) | 静态 buffer、bucket 和 fallback |
+| [`reference_graph.py`](research/spg_static_mvp/reference_graph.py) | 原始图语义参考 |
+| [`capacity_analysis.py`](research/spg_static_mvp/capacity_analysis.py) | bucket 容量分析 |
+| [`numerical_equivalence.py`](research/spg_static_mvp/numerical_equivalence.py) | 10k 图和 CFG 数值对齐 |
+| [`builder_benchmark.py`](research/spg_static_mvp/builder_benchmark.py) | builder 微基准 |
+| [`forward_benchmark.py`](research/spg_static_mvp/forward_benchmark.py) | 完整 GemNet forward 基准 |
+| [`test_static_builder.py`](research/spg_static_mvp/tests/test_static_builder.py) | 边、offset、overflow 和 fallback 测试 |
+
+## 数据索引
+
+- [原始图语义](research/spg_static_mvp/artifacts/correctness/original_graph_semantics.md)
+- [形状与 bucket](research/spg_static_mvp/artifacts/correctness/shape_distribution.md)
+- [10k 等价报告](research/spg_static_mvp/artifacts/correctness/equivalence_report.md)
+- [Builder 优化基准](research/spg_static_mvp/artifacts/performance/builder_benchmark_optimized.md)
+- [完整 forward 基准](research/spg_static_mvp/artifacts/performance/forward_benchmark.md)
+- [最终判定](research/spg_static_mvp/artifacts/final/final_report.md)
+
+## 复现入口
+
+```bash
+bash research/spg_static_mvp/scripts/status_mvp.sh
+python -m pytest research/spg_static_mvp/tests/test_static_builder.py -q
+```
+
+完整 runner 为 `research/spg_static_mvp/scripts/run_mvp.sh`。严格正确性通过，但 builder 收益不足且完整 forward 变慢，因此没有进入生成质量实验。
