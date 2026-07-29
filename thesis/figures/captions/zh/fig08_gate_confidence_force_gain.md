@@ -1,0 +1,1 @@
+图8 Gate confidence 与真实最大力改善（seeds 40000–40255，n=256）。横轴为真实逐 seed confidence，纵轴为 C0−E3-G 最大力；虚线为零改善，点型区分 Gate-on 与精确回退。Spearman ρ 与 p 值由归档逐 seed 数据直接计算，趋势线仅作描述，不作因果或完美校准声明。所有原子力、结构松弛和稳定性指标均由 MatterSim-5M 代理势评价，本文未开展 DFT 验证。

@@ -1,0 +1,15 @@
+// Applied skills: scientific-schematics + scientific-visualization.
+// Data source: thesis_archive/EXPERIMENT_LINEAGE.md. Companion editable decision map for Figure 12.
+digraph G {
+  graph [rankdir=LR, bgcolor="white", fontname="Arial"];
+  node [shape=box, style="rounded,filled", fontname="Arial", fontsize=8, color="#000000"];
+  start [label="Candidate route", fillcolor="#56B4E9"];
+  speed [label="Sampling / GPU speed", fillcolor="#F0E442"];
+  quality [label="Representation / quality", fillcolor="#F0E442"];
+  post [label="Post-generation correction", fillcolor="#F0E442"];
+  nogo [label="No-Go evidence\nquality, effect, or throughput gate failed", fillcolor="#FCE8E3"];
+  start -> {speed quality post};
+  speed -> nogo [label="reuse, corrector, budget, GPU"];
+  quality -> nogo [label="FN-PRA, CrystalREPA, CG-TDR"];
+  post -> nogo [label="RP-QTFG, Q1/Q2/Q4/Q5/Q6"];
+}

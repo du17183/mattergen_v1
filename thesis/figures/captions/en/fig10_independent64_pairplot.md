@@ -1,0 +1,1 @@
+Figure 10. Newest independent paired combination cohort (seeds 50000–50063; n=64). Lines connect A0 and A0+E3-G maximum forces; gate-off cases are algorithmic exact ties. Semantic Win/Tie/Loss=35/18/11, and mean maximum force fell by 19.02%. All force, relaxation, and stability metrics are evaluated using the MatterSim-5M surrogate potential. No DFT verification is included.

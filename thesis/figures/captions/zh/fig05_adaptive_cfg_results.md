@@ -1,0 +1,1 @@
+图5 Adaptive CFG 正式效果（seeds 20000–20255，n=256）。E-hull 平均变化为 −0.003435 eV/atom，Stable 和 NUS 分别提高 5.859 与 3.516 个百分点；配对 bootstrap 95% CI 均跨越零，Holm 校正后未达到显著性，故只解释为总体正向趋势。所有原子力、结构松弛和稳定性指标均由 MatterSim-5M 代理势评价，本文未开展 DFT 验证。

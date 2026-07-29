@@ -343,3 +343,30 @@ Teacher cache
 5. 不要点击旧 commit 后把历史 README 当作分支当前说明；固定论文版本时才使用报告记录的 frozen commit。
 
 README 是导航和解释层，CSV/JSON、manifest、checksum 与冻结报告才是论文数字的最终证据层。
+
+## 17. 论文规划与可复现图表
+
+论文工作区位于 [`thesis/`](thesis/README.md)，包含冻结结论、章节写作计划、12 张论文级图、10 组结果表、中英文图表注、逐图源数据和 CPU-only 一键复现脚本。
+
+关键入口：
+
+- [最终论文结论](thesis/PAPER_CLAIMS_FINAL.md)
+- [论文目录](thesis/THESIS_OUTLINE.md)
+- [论文写作工作包状态](thesis/WRITING_PACKAGE_STATUS.md)
+- [正文/附录图表安排](thesis/MAIN_TEXT_APPENDIX_PLAN.md)
+- [七张核心图 V2 重绘交接](thesis/figures/CORE_FIGURES_V2_REDRAW.md)
+- [章节写作计划](thesis/CHAPTER_WRITING_PLAN.md)
+- [图表规划](thesis/FIGURE_TABLE_PLAN.md)
+- [图索引](thesis/figures/generated/figure_index.md)
+- [表索引](thesis/tables/table_index.md)
+- [Scientific Skill 使用证据](thesis/SKILL_USAGE_MANIFEST.md)
+
+复现命令：
+
+```bash
+python -m pip install -r thesis_archive/requirements-analysis.txt
+python thesis/scripts/generate_all.py
+python thesis/scripts/validate_outputs.py
+```
+
+该流程只读取 `thesis_archive/`，不需要 GPU、MatterGen/MatterSim 权重或服务器环境，也不会启动新实验。

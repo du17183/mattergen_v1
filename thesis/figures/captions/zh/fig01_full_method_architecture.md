@@ -1,0 +1,1 @@
+图1 完整方法架构。目标 dft_mag_density 条件经过带完整 Predictor/Corrector 的 MatterGen 与多字段残差驱动 Adaptive CFG，生成晶体后由 Learned Gate 决定执行 E3-PCR 或精确回退。MatterSim-5M 仅用于代理评价。创新点一位于采样阶段，创新点二位于后处理阶段。所有原子力、结构松弛和稳定性指标均由 MatterSim-5M 代理势评价，本文未开展 DFT 验证。

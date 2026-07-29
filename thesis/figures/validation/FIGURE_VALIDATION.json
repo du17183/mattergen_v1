@@ -1,0 +1,16 @@
+{
+  "valid": true,
+  "figures_expected": 12,
+  "figures_generated": 12,
+  "formats_each": [
+    "pdf",
+    "svg",
+    "png"
+  ],
+  "png_dpi_minimum": 600,
+  "graphviz_sources": 5,
+  "source_data_files": 12,
+  "formal_data_leakage_found": false,
+  "errors": [],
+  "warnings": []
+}

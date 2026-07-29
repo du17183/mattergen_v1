@@ -1,0 +1,7 @@
+evidence_class,experiment,seed_range
+Formal,Adaptive CFG formal256,20000–20255
+Formal independent,E3-PCR formal256,40000–40255
+Independent replication,Compatibility cohort 1,41000–41063
+Independent replication,Independent cohort 2,50000–50063
+Diagnostic only,Leakage diagnostic,20000–20255
+INVALID for independent claims,Mixed 256 cohort,20000–20255

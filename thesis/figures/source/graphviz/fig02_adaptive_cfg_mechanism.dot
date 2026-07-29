@@ -1,0 +1,14 @@
+// Applied skills: scientific-schematics + scientific-visualization.
+// Data source: thesis_archive/configs/adaptive_cfg_final.yaml. Editable semantic source for Figure 2.
+digraph G {
+  graph [rankdir=LR, bgcolor="white", fontname="Arial"];
+  node [shape=box, style="rounded,filled", fontname="Arial", fontsize=9, color="#000000"];
+  cond [label="Conditional branch", fillcolor="#56B4E9"];
+  uncond [label="Unconditional branch", fillcolor="#F7F7F7"];
+  residual [label="Three-field residuals\ncell · position · atom", fillcolor="#F0E442"];
+  ema [label="EMA smoothing", fillcolor="#E69F00"];
+  update [label="Residual-driven scale update", fillcolor="#E69F00"];
+  fusion [label="Clamp [0,5] + CFG fusion", fillcolor="#009E73"];
+  pc [label="Continue full Predictor + Corrector\n(no skip; not Corrector Gating)", fillcolor="#56B4E9"];
+  cond -> residual; uncond -> residual; residual -> ema -> update -> fusion -> pc;
+}

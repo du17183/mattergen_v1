@@ -1,0 +1,7 @@
+{
+  "valid": true,
+  "table_families_expected": 10,
+  "table_families_generated": 10,
+  "workbook": "thesis/tables/xlsx/thesis_results.xlsx",
+  "errors": []
+}
