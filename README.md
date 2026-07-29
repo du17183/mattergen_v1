@@ -2,7 +2,7 @@
 
 > 本仓库基于 Microsoft MatterGen，记录一个面向计算机专业学位论文的条件晶体生成研究项目。当前最终方法由两个可独立验证、可串联使用的模块组成：采样阶段的 **Multi-field Residual-driven Online Adaptive CFG**，以及生成后处理阶段的 **Learned-Gated E3-PCR**。
 >
-> 本页是项目总入口。论文数据资格、逐 seed 证据与 CPU 重算入口以 [`thesis_archive/`](thesis_archive/README.md) 为准；上游 MatterGen 信息见[第 16 节](#16-上游-mattergen-信息)。
+> 本页是项目总入口。论文数据资格、逐 seed 证据与 CPU 重算入口以 [`thesis_archive/`](thesis_archive/README.md) 为准；各实验的实现和复现入口见对应分支根 README。
 
 ## 1. 项目简介
 
@@ -329,3 +329,17 @@ Teacher cache
 3. 将 Corrector Gating、RP-QTFG、CG-TDR 和候选排序失败写入负面实验/消融；
 4. 明确区分 MatterSim surrogate 与 DFT 结论；
 5. 如还有额外算力，只优先补 DFT 小规模复核和目标磁密度独立验证，不再回溯调参。
+
+## 16. 如何使用各分支 README
+
+每个活跃研究分支的根 `README.md` 都是独立实验档案，包含：研究问题、算法执行链、真实实现文件、数据范围、逐 seed 证据、关键结果、复现/状态命令和科学边界。
+
+建议阅读顺序：
+
+1. 先在本页确认该路线属于正式 GO、工程收益、科学 No-Go、泄漏诊断还是 source audit。
+2. 点击分支名称，阅读该分支自己的根 README。
+3. 继续进入 README 链接的 frozen manifest、逐结构 CSV、paired statistics 和 final report。
+4. 需要复现实验时先运行专项测试和 `status`，再决定是否使用服务器专用 runner。
+5. 不要点击旧 commit 后把历史 README 当作分支当前说明；固定论文版本时才使用报告记录的 frozen commit。
+
+README 是导航和解释层，CSV/JSON、manifest、checksum 与冻结报告才是论文数字的最终证据层。
