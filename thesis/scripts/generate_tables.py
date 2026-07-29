@@ -4,7 +4,10 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
+import zipfile
+from datetime import datetime
 from pathlib import Path
 
 import numpy as np
@@ -40,10 +43,36 @@ def markdown_table(frame: pd.DataFrame) -> str:
     return "\n".join([header, rule, *rows]) + "\n"
 
 
-def fmt_float(value, digits=6):
-    if value is None or (isinstance(value, float) and np.isnan(value)):
-        return ""
-    return f"{float(value):.{digits}g}"
+def latex_escape(value) -> str:
+    """Escape a scalar for a compact, dependency-free LaTeX tabular."""
+    text = "" if pd.isna(value) else str(value)
+    replacements = {
+        "\\": r"\textbackslash{}",
+        "&": r"\&",
+        "%": r"\%",
+        "$": r"\$",
+        "#": r"\#",
+        "_": r"\_",
+        "{": r"\{",
+        "}": r"\}",
+    }
+    return "".join(replacements.get(char, char) for char in text)
+
+
+def latex_table(frame: pd.DataFrame) -> str:
+    """Write LaTeX without pandas' optional Jinja2 dependency."""
+    columns = "l" * len(frame.columns)
+    lines = [
+        rf"\begin{{tabular}}{{{columns}}}",
+        r"\toprule",
+        " & ".join(latex_escape(column) for column in frame.columns) + r" \\",
+        r"\midrule",
+    ]
+    for row in frame.itertuples(index=False, name=None):
+        lines.append(" & ".join(latex_escape(value) for value in row) + r" \\")
+    lines.extend([r"\bottomrule", r"\end{tabular}", ""])
+    return "\n".join(lines)
+
 
 
 def build_tables() -> dict[str, pd.DataFrame]:
@@ -262,12 +291,40 @@ CAPTIONS = {
     ),
 }
 
+FIXED_XLSX_TIME = (2026, 7, 29, 0, 0, 0)
+
+
+def normalize_xlsx(path: Path) -> None:
+    """Canonicalize ZIP member order/timestamps for byte-reproducible XLSX."""
+    canonical = path.with_name(path.stem + ".canonical.xlsx")
+    with zipfile.ZipFile(path, "r") as source, zipfile.ZipFile(
+        canonical, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9
+    ) as target:
+        for name in sorted(source.namelist()):
+            original = source.getinfo(name)
+            info = zipfile.ZipInfo(name, date_time=FIXED_XLSX_TIME)
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = original.external_attr
+            data = source.read(name)
+            if name == "docProps/core.xml":
+                data = re.sub(
+                    rb"<dcterms:modified[^>]*>[^<]*</dcterms:modified>",
+                    b"<dcterms:modified xsi:type=\"dcterms:W3CDTF\">2026-07-29T00:00:00Z</dcterms:modified>",
+                    data,
+                )
+            target.writestr(info, data)
+    canonical.replace(path)
+
+
 
 def main() -> None:
     ensure_output_directories()
     tables = build_tables()
     workbook = TABLE_ROOT / "xlsx" / "thesis_results.xlsx"
     with pd.ExcelWriter(workbook, engine="openpyxl") as writer:
+        fixed = datetime(*FIXED_XLSX_TIME)
+        writer.book.properties.created = fixed
+        writer.book.properties.modified = fixed
         for sheet, frame in tables.items():
             frame.to_excel(writer, sheet_name=sheet[:31], index=False)
             worksheet = writer.sheets[sheet[:31]]
@@ -276,14 +333,12 @@ def main() -> None:
             for column_cells in worksheet.columns:
                 width = min(55, max(12, max(len(str(cell.value or "")) for cell in column_cells) + 2))
                 worksheet.column_dimensions[column_cells[0].column_letter].width = width
+    normalize_xlsx(workbook)
     for name, frame in tables.items():
         stem = name.lower()
         frame.to_csv(TABLE_ROOT / "csv" / f"{stem}.csv", index=False)
         (TABLE_ROOT / "markdown" / f"{stem}.md").write_text(markdown_table(frame), encoding="utf-8")
-        (TABLE_ROOT / "latex" / f"{stem}.tex").write_text(
-            frame.to_latex(index=False, escape=True, float_format=lambda x: fmt_float(x)),
-            encoding="utf-8",
-        )
+        (TABLE_ROOT / "latex" / f"{stem}.tex").write_text(latex_table(frame), encoding="utf-8")
         zh, en = CAPTIONS[name]
         (TABLE_ROOT / "captions" / f"{stem}_zh.md").write_text(zh + "\n", encoding="utf-8")
         (TABLE_ROOT / "captions" / f"{stem}_en.md").write_text(en + "\n", encoding="utf-8")
