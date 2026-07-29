@@ -329,35 +329,3 @@ Teacher cache
 3. 将 Corrector Gating、RP-QTFG、CG-TDR 和候选排序失败写入负面实验/消融；
 4. 明确区分 MatterSim surrogate 与 DFT 结论；
 5. 如还有额外算力，只优先补 DFT 小规模复核和目标磁密度独立验证，不再回溯调参。
-
-## 16. 上游 MatterGen 信息
-
-MatterGen 是 Microsoft 发布的无机材料生成模型，可在元素周期表范围内生成晶体，并通过微调支持多种属性条件。该研究仓库保留上游代码与许可，但包含项目自有分支、实验脚本和论文归档；不要把本项目结论归因于上游作者。
-
-- 上游仓库：[microsoft/mattergen](https://github.com/microsoft/mattergen)
-- 论文：[A generative model for inorganic materials design](https://www.nature.com/articles/s41586-025-08628-5)
-- 预训练模型：[Microsoft MatterGen on Hugging Face](https://huggingface.co/microsoft/mattergen)
-- 本仓库许可证：[LICENSE](LICENSE)
-- 模型透明度说明：[MODEL_CARD.md](MODEL_CARD.md)
-- 上游完整安装、生成、评估和训练说明请参考[官方 README](https://github.com/microsoft/mattergen#readme)。
-
-基础安装示例：
-
-```bash
-pip install uv
-uv venv .venv --python 3.10
-source .venv/bin/activate
-uv pip install -e .
-```
-
-MatterGen 原论文引用：
-
-```bibtex
-@article{MatterGen2025,
-  author  = {Zeni, Claudio and Pinsler, Robert and Z{\"u}gner, Daniel and others},
-  journal = {Nature},
-  title   = {A generative model for inorganic materials design},
-  year    = {2025},
-  doi     = {10.1038/s41586-025-08628-5}
-}
-```
