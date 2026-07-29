@@ -8,6 +8,6 @@
 
 - 数据：`S10_I1_DATA`
 - 报告：`S11_I1_REPORT`
-- 图：Figure 5；表：Table 02。
+- 图：图4-2；表：表4-2。
 - Holm-corrected p均为1.0。
 - `FORMAL_INNOVATION1_CONFIRMED=True`是冻结工程/方向门槛结论，不等于统计显著。

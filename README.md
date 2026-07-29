@@ -346,19 +346,23 @@ README 是导航和解释层，CSV/JSON、manifest、checksum 与冻结报告才
 
 ## 17. 论文规划与可复现图表
 
-论文工作区位于 [`thesis/`](thesis/README.md)，包含冻结结论、章节写作计划、12 张论文级图、10 组结果表、中英文图表注、逐图源数据和 CPU-only 一键复现脚本。
+学校登记论文题目固定为《基于深度学习的材料逆向生成》。论文工作区位于[`thesis/`](thesis/README.md)，采用预训练MatterGen作为条件晶体扩散生成基线，并包含冻结研究定位、最终章节编号、章节证据包、12张论文级图、10组结果表和CPU-only复现脚本。
 
 关键入口：
 
+- [学校登记论文题目](thesis/THESIS_TITLE_FINAL.md)
+- [冻结论文研究定位](thesis/THESIS_POSITIONING_FINAL.md)
+- [MatterGen命名与归属规则](thesis/MATTERGEN_NAMING_POLICY.md)
+- [最终章节、图表与公式编号](thesis/CHAPTER_NUMBERING_FINAL.md)
 - [第3–6章可追溯证据包](thesis/evidence_packs/README.md)
 - [证据包真实性与统计验证报告](thesis/evidence_packs/EVIDENCE_PACK_VALIDATION.md)
 - [最终论文结论](thesis/PAPER_CLAIMS_FINAL.md)
-- [论文目录](thesis/THESIS_OUTLINE.md)
+- [旧版论文目录（历史参考）](thesis/THESIS_OUTLINE.md)
 - [论文写作工作包状态](thesis/WRITING_PACKAGE_STATUS.md)
 - [正文/附录图表安排](thesis/MAIN_TEXT_APPENDIX_PLAN.md)
 - [七张核心图 V2 重绘交接](thesis/figures/CORE_FIGURES_V2_REDRAW.md)
-- [章节写作计划](thesis/CHAPTER_WRITING_PLAN.md)
-- [图表规划](thesis/FIGURE_TABLE_PLAN.md)
+- [旧版章节写作计划（历史编号）](thesis/CHAPTER_WRITING_PLAN.md)
+- [旧版图表规划（历史编号）](thesis/FIGURE_TABLE_PLAN.md)
 - [图索引](thesis/figures/generated/figure_index.md)
 - [表索引](thesis/tables/table_index.md)
 - [Scientific Skill 使用证据](thesis/SKILL_USAGE_MANIFEST.md)

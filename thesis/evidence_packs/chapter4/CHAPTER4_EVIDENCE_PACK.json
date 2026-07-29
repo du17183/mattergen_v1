@@ -1,6 +1,6 @@
 {
   "chapter": 4,
-  "title": "多字段残差驱动的在线Adaptive CFG",
+  "title": "多字段残差驱动的在线自适应条件引导方法",
   "evidence_pack_version": "v1",
   "base_commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
   "sections": {
@@ -24,6 +24,7 @@
     ],
     "4_relationship": "以第3章C0和评价口径为基础，输出A0；A0随后作为第6章完整组合方法的上游。",
     "5_source_facts": [
+      "C0是由预训练MatterGen实现的条件晶体扩散生成基线，不是本文提出的方法；本章只讨论本文在该基线上的扩展。",
       "conditional与unconditional输入先collate为一次joint model forward，再拆分score。",
       "cell、pos、atomic_numbers残差分别计算RMS，只有在标量化后才求算术平均。",
       "predictor和corrector各自维护EMA；首个观测直接初始化EMA。",
@@ -62,11 +63,12 @@
       "三项方向均正向，但均不得称统计显著。"
     ],
     "10_figures": [
-      "Figure 2",
-      "Figure 5"
+      "图4-1",
+      "图4-2"
     ],
     "11_tables": [
-      "Table 02"
+      "表4-1",
+      "表4-2"
     ],
     "12_allowed_claims": [
       "多字段在线反馈使三项代理指标呈总体正向趋势。",

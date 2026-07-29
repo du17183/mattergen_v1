@@ -1,5 +1,19 @@
 # 符号表
 
+## 方法代号
+
+| 代号 | 定义 |
+|---|---|
+| C0 | 预训练MatterGen条件晶体扩散生成基线；constant CFG scale=2.0；完整Predictor/Corrector |
+| A0 | C0 + Multi-field Residual-driven Online Adaptive CFG |
+| E3-A | C0生成结构 + Always-on E3-PCR |
+| E3-G | C0生成结构 + Learned-Gated E3-PCR |
+| Full method | A0生成结构 + Learned-Gated E3-PCR后处理 |
+
+这些代号描述实验方法臂，不改变基线归属。MatterGen原有模型结构不属于本文创新。
+
+## 数学符号
+
 | 符号 | 含义 | 单位/范围 |
 |---|---|---|
 | \(s_k^{cond}\) | 字段 \(k\) 的条件 score | 模型字段单位 |
@@ -29,4 +43,12 @@ Adaptive CFG 先分别计算三个字段的 RMS，再聚合为一个控制统计
 各自使用不同 guidance scale。
 
 本文所有 CI 为 95% CI；“pp”表示百分点而不是相对百分比。
+
+正文中的Stable、NUS、\(E_{hull}\)和RMSD均来自MatterSim-5M代理评价：
+
+```text
+STABILITY_SOURCE=MatterSim-5M surrogate
+DFT_VERIFIED=False
+PROPERTY_TARGET_VERIFIED=False
+```
 

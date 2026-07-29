@@ -1,10 +1,10 @@
 # 网页ChatGPT写作输入：第5章
 
-你将撰写毕业论文第5章《Learned-Gated E3-PCR后生成精修方法》。只能依据以下证据，不得补造项目事实；通用理论若需加入，必须标成待补参考文献，不能冒充项目实现。
+你将撰写毕业论文第5章《学习门控的晶体生成后质量优化方法》。只能依据以下证据，不得补造项目事实；通用理论若需加入，必须标成待补参考文献，不能冒充项目实现。
 
 ## 项目术语
 
-C0=原始dft_mag_density MatterGen；A0=C0+Adaptive CFG；E3-A=Always-on E3-PCR；E3-G=Learned-Gated E3-PCR；完整方法=A0+E3-G。MatterGen是生成模型，MatterSim-5M是评价代理，CHGNet是E3-PCR辅助代理。
+C0=原始条件晶体扩散生成基线，由预训练dft_mag_density MatterGen实现；A0=C0+Adaptive CFG；E3-A=C0生成结构+Always-on E3-PCR；E3-G=C0生成结构+Learned-Gated E3-PCR；完整方法=A0+E3-G。MatterGen是预训练基线而非本文贡献，MatterSim-5M是评价代理，CHGNet是E3-PCR辅助代理。
 
 ## 章节结构
 
@@ -66,9 +66,9 @@ C0=原始dft_mag_density MatterGen；A0=C0+Adaptive CFG；E3-A=Always-on E3-PCR�
 
 ## 图表
 
-图：Figure 3, Figure 6, Figure 7, Figure 8。
+图：图5-1, 图5-2, 图5-3, 图5-4。
 
-表：Table 03, Table 04。
+表：表5-2, 表5-3。
 
 ## 允许结论
 

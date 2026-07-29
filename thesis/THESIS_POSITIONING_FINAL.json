@@ -1,0 +1,18 @@
+{
+  "registered_title_zh": "基于深度学习的材料逆向生成",
+  "research_topic": "面向目标属性条件的晶体材料逆向生成",
+  "research_object": "周期晶体材料",
+  "foundation_model_category": "预训练条件晶体扩散生成模型",
+  "experimental_baseline": "MatterGen",
+  "baseline_attribution": "MatterGen是本文采用的预训练条件晶体扩散生成基线、实验框架和实现载体，不是本文提出的方法。",
+  "contributions": [
+    "Multi-field Residual-driven Online Adaptive CFG",
+    "Learned-Gated E3-PCR"
+  ],
+  "full_method": "A0生成后连接E3-G后处理",
+  "stability_source": "MatterSim-5M surrogate",
+  "dft_verified": false,
+  "property_target_verified": false,
+  "mattergen_proposed_by_this_thesis": false,
+  "mattergen_backbone_trained_by_this_thesis": false
+}

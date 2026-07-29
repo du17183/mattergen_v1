@@ -35,4 +35,14 @@
 | S31_BASE_CONDITION_CONFIG | config | `configs/q3_e3_pcr_frozen64.json` | `0275cbf08ed3c6321cea7d06f7a3a8edb83b7483` | 3,5 | dft_mag_density target 0.1 and immutable refinement fields | frozen evaluation config |
 | S32_NEGATIVE_RESULTS | report | `docs/experiments/negative_results_summary.md` | `a7d778265103cd5b547ddc07c1db4083c75513fc` | 6 | representative and supplementary No-Go routes | archive-level synthesis; some original server reports not in GitHub |
 
-所有路径均为仓库相对路径。正式源码事实必须同时使用路径和commit。
+## 写作定位来源
+
+| source_id | 类型 | 相对路径 | commit | 用于章节 | 用于结论 | 数据资格 |
+| --- | --- | --- | --- | --- | --- | --- |
+| S33_TITLE | writing authority | `thesis/THESIS_TITLE_FINAL.md` | this documentation branch | 1,3,7 | registered Chinese title and provisional English title | school-title authority; no experimental claim |
+| S34_POSITIONING | writing authority | `thesis/THESIS_POSITIONING_FINAL.md` | this documentation branch | 1,3,4,5,6,7 | research scope, baseline attribution and contribution boundary | final thesis positioning |
+| S35_NAMING_POLICY | writing policy | `thesis/MATTERGEN_NAMING_POLICY.md` | this documentation branch | 1,2,3,4,5,6 | chapter-specific MatterGen naming and attribution | mandatory writing policy |
+| S36_NUMBERING | writing authority | `thesis/CHAPTER_NUMBERING_FINAL.md` | this documentation branch | 1,2,3,4,5,6,7 | final chapter, figure, table and formula numbering | final numbering authority |
+| S37_CH3_PROMPT | writing prompt | `thesis/evidence_packs/chapter3/chatgpt_input_final.md` | this documentation branch | 3 | traceable 3.1–3.3 web-ChatGPT input | writing aid; not scientific evidence |
+
+所有路径均为仓库相对路径。正式源码事实必须同时使用路径和commit；写作定位来源在本分支提交后由Git历史固定。

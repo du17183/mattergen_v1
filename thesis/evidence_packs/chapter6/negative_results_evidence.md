@@ -10,4 +10,4 @@
 
 ## 表格/附录路线
 
-Residual Reuse、Budget-aware Gating、FN-PRA、CrystalREPA、Q1 UQ-PQR、Q2 RFR、Q4 CPRC、Q5 CQPS、Q6 NS-SetRank和GPU acceleration routes统一引用`S32_NEGATIVE_RESULTS`与Table 09。部分原始日志/报告不在GitHub，必须保留`NOT_FULLY_RECOVERED_FROM_ARCHIVE`，不得据摘要扩写新数值。
+Residual Reuse、Budget-aware Gating、FN-PRA、CrystalREPA、Q1 UQ-PQR、Q2 RFR、Q4 CPRC、Q5 CQPS、Q6 NS-SetRank和GPU acceleration routes统一引用`S32_NEGATIVE_RESULTS`与表6-3。部分原始日志/报告不在GitHub，必须保留`NOT_FULLY_RECOVERED_FROM_ARCHIVE`，不得据摘要扩写新数值。

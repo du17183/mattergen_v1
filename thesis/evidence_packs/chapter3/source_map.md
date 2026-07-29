@@ -22,4 +22,10 @@
 | S30_RMSD_UTIL | source code | `mattergen/evaluation/utils/utils.py` | `a7d778265103cd5b547ddc07c1db4083c75513fc` | RMSDStructureMatcher conversion to angstrom | official evaluator implementation in repository snapshot |
 | S31_BASE_CONDITION_CONFIG | config | `configs/q3_e3_pcr_frozen64.json` | `0275cbf08ed3c6321cea7d06f7a3a8edb83b7483` | dft_mag_density target 0.1 and immutable refinement fields | frozen evaluation config |
 
+| S33_TITLE | writing authority | `thesis/THESIS_TITLE_FINAL.md` | this documentation branch | registered title and English-title status | school-title authority |
+| S34_POSITIONING | writing authority | `thesis/THESIS_POSITIONING_FINAL.md` | this documentation branch | research scope, baseline attribution and contribution boundary | final thesis positioning |
+| S35_NAMING_POLICY | writing policy | `thesis/MATTERGEN_NAMING_POLICY.md` | this documentation branch | MatterGen chapter naming and attribution | mandatory policy |
+| S36_NUMBERING | writing authority | `thesis/CHAPTER_NUMBERING_FINAL.md` | this documentation branch | final chapter/figure/table/formula numbering | final numbering authority |
+| S37_CH3_PROMPT | writing prompt | `thesis/evidence_packs/chapter3/chatgpt_input_final.md` | this documentation branch | traceable 3.1–3.3 prompt | writing aid only |
+
 正式commit内源码应使用 `git show <commit>:<relative_path>` 查看；不能只依赖当前工作树或README。
