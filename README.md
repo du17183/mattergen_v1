@@ -48,3 +48,48 @@ THIRTY_TWO_SEED_STARTED=False
 
 - [Phase 0 最终报告](research/rp_qtfg/artifacts/phase0/reports/final_report.md)
 - [论文归档分支](https://github.com/du17183/mattergen_v1/tree/archive/thesis-analysis-package-v1)
+
+## 方法实现
+
+RP-QTFG 首先用 A0 score 恢复预测 clean structure，再在中低噪声区间调用冻结 CHGNet：
+
+```text
+A0 safe update
+→ clean-x0 position/cell estimate
+→ CHGNet energy/force/stress objective
+→ field-wise gradient normalization
+→ 与 A0 conditional residual 做冲突检测
+→ trust-region proposal
+→ 最多 3 次 backtracking
+→ 通过安全检查则使用，否则 exact fallback 到 A0
+```
+
+Atomic field 从不接受物理梯度，原子种类不被修改。MatterSim 只用于独立评价，不参与 guidance。
+
+## 实现位置
+
+| 文件 | 内容 |
+|---|---|
+| [`physics_guidance.py`](research/rp_qtfg/physics_guidance.py) | CHGNet objective、梯度、conflict、trust region 和 backtracking |
+| [`sampler.py`](research/rp_qtfg/sampler.py) | A0 safe update 与 physics update 组合 |
+| [`mag_oracle.py`](research/rp_qtfg/mag_oracle.py) | CHGNet site magmom Oracle 评估 |
+| [`offline_probe.py`](research/rp_qtfg/offline_probe.py) | 64 结构离线方向 Gate 0B |
+| [`experiment_config.py`](research/rp_qtfg/experiment_config.py) | G1/G2、起点和 trust radius |
+| [`test_rp_qtfg.py`](mattergen/diffusion/tests/test_rp_qtfg.py) | bitwise-off、原子不变、fallback 和 RNG 测试 |
+
+## 数据索引
+
+- [MatterGen 代码映射](research/rp_qtfg/artifacts/phase0/reports/mattergen_code_map.md)
+- [磁 Oracle 报告](research/rp_qtfg/artifacts/phase0/reports/mag_oracle_report.md)
+- [离线方向报告](research/rp_qtfg/artifacts/phase0/reports/offline_direction/offline_direction_report.md)
+- [8-seed 候选对比](research/rp_qtfg/artifacts/phase0/reports/eight_seed/comparisons.csv)
+- [8-seed 配对统计](research/rp_qtfg/artifacts/phase0/reports/eight_seed/paired_statistics.json)
+
+## 复现入口
+
+```bash
+bash research/rp_qtfg/scripts/status_phase0.sh
+python -m pytest mattergen/diffusion/tests/test_rp_qtfg.py -q
+```
+
+完整 runner 为 `research/rp_qtfg/scripts/run_phase0.sh`。离线方向通过但在线采样失败，说明静态结构上的 CHGNet 下降方向不能直接等价为扩散轨迹中的安全 guidance。
