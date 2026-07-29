@@ -43,3 +43,35 @@ QUALITY_CHANGE_EXPECTED=False
 
 - [最终报告](research/gemnet_fused_fastgate/results_summary/final_report.md)
 - [论文归档分支](https://github.com/du17183/mattergen_v1/tree/archive/thesis-analysis-package-v1)
+
+## 实现路线
+
+Route 1 只编译热点 K2 aggregation/module，先做 chain 微基准，再放回完整 GemNet forward；Route 2 保持 B1 数值路径不变，用每 GPU 多个持久化进程摊薄加载和调度空隙。
+
+## 代码位置
+
+| 文件 | 内容 |
+|---|---|
+| [`profile_hotspots.py`](research/gemnet_fused_fastgate/profile_hotspots.py) | PyTorch/NSYS 热点定位 |
+| [`k2_local_compile.py`](research/gemnet_fused_fastgate/k2_local_compile.py) | K2 局部 compile 与 fallback |
+| [`validate_and_benchmark.py`](research/gemnet_fused_fastgate/validate_and_benchmark.py) | 数值与性能 gate |
+| [`persistent_runtime.py`](research/gemnet_fused_fastgate/persistent_runtime.py) | 1/2/4 workers/GPU 持久化运行时 |
+| [`tests/test_gemnet_fused_fastgate.py`](tests/test_gemnet_fused_fastgate.py) | harness、配置和正确性测试 |
+
+## 数据索引
+
+- [热点画像](research/gemnet_fused_fastgate/results_summary/hotspot_profile.md)
+- [Chain 微基准](research/gemnet_fused_fastgate/results_summary/chain_microbenchmark.json)
+- [完整 forward 微基准](research/gemnet_fused_fastgate/results_summary/forward_microbenchmark.json)
+- [数值验证](research/gemnet_fused_fastgate/results_summary/numerical_validation.json)
+- [持久化 Worker 报告](research/gemnet_fused_fastgate/results_summary/runtime_report.md)
+- [复现说明](research/gemnet_fused_fastgate/results_summary/reproduction.md)
+
+## 验证入口
+
+```bash
+bash research/gemnet_fused_fastgate/scripts/status.sh
+python -m pytest tests/test_gemnet_fused_fastgate.py -q
+```
+
+局部编译因数值和收益门槛失败；持久化 2 workers/GPU 可作为工程配置，但不是达到 1.25× 的论文创新。
