@@ -39,3 +39,45 @@ FORMAL_SEEDS_STARTED=False
 
 - [最终评估报告](research/cg_tdr/artifacts/eval/cg_tdr_eval_final.md)
 - [论文归档分支](https://github.com/du17183/mattergen_v1/tree/archive/thesis-analysis-package-v1)
+
+## 方法实现
+
+CG-TDR 先从 A0 与 Teacher 数据构造目标 residual，再训练轻量模型预测采样修正；Gate V2 使用质量标签判断修正是否安全：
+
+```text
+Teacher/A0 paired states
+→ 构建 residual 与安全标签
+→ 训练 residual model / gate
+→ 采样时预测 position 或联合修正
+→ gate 通过才应用，否则 identity fallback
+→ MatterSim 独立评价
+```
+
+## 代码位置
+
+| 文件 | 内容 |
+|---|---|
+| [`model.py`](research/cg_tdr/model.py) | residual 与 gate 网络 |
+| [`train.py`](research/cg_tdr/train.py) | V1 训练 |
+| [`train_gate_v2.py`](research/cg_tdr/train_gate_v2.py) | Gate V2 训练 |
+| [`sampler.py`](research/cg_tdr/sampler.py) | 采样期修正与 fallback |
+| [`experiment_generation_v2.py`](research/cg_tdr/experiment_generation_v2.py) | V2 生成评估 |
+| [`tests/test_gate_v2.py`](research/cg_tdr/tests/test_gate_v2.py) | gate 标签、阈值和回退测试 |
+
+## 数据与失败证据
+
+- [Teacher/代码映射](research/cg_tdr/artifacts/code_map.md)
+- [Residual 学习诊断](research/cg_tdr/artifacts/eval/residual_learning_diagnostics.md)
+- [逐结构 residual 统计](research/cg_tdr/artifacts/eval/residual_learning_per_structure.csv)
+- [V1 报告](research/cg_tdr/artifacts/eval/v1/v1_report.md)
+- [V2 报告](research/cg_tdr/artifacts/eval/v2/v2_report.md)
+- [最终报告](research/cg_tdr/artifacts/eval/cg_tdr_eval_final.md)
+
+## 复现入口
+
+```bash
+bash research/cg_tdr/scripts/status_eval.sh
+python -m pytest research/cg_tdr/tests/test_model.py research/cg_tdr/tests/test_gate_v2.py -q
+```
+
+完整评估 runner 为 `research/cg_tdr/scripts/run_eval.sh`。V2P 的安全 flat output 与 V2C 的 RMSD 恶化均保留在逐结构表中，因此 No-Go 可被独立复核。
