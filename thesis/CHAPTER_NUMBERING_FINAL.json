@@ -1,0 +1,40 @@
+{
+  "status": "FROZEN",
+  "chapters": [
+    {"number": 1, "title_zh": "绪论", "title_en": "Introduction"},
+    {"number": 2, "title_zh": "深度学习材料生成相关理论与研究现状", "title_en": "Theoretical Foundations and Related Work on Deep Learning-Based Material Generation"},
+    {"number": 3, "title_zh": "条件扩散晶体生成基线与评价体系", "title_en": "Conditional Diffusion Baseline for Crystal Generation and Evaluation Protocol"},
+    {"number": 4, "title_zh": "多字段残差驱动的在线自适应条件引导方法", "title_en": "Multi-field Residual-driven Online Adaptive Guidance"},
+    {"number": 5, "title_zh": "学习门控的晶体生成后质量优化方法", "title_en": "Learned-Gated Post-generation Quality Optimization"},
+    {"number": 6, "title_zh": "组合验证、消融实验与结果讨论", "title_en": "Combined Validation, Ablation Studies, and Discussion"},
+    {"number": 7, "title_zh": "总结与展望", "title_en": "Conclusions and Future Work"}
+  ],
+  "chapter3_sections": [
+    "3.1 材料逆向生成任务定义",
+    "3.2 条件扩散晶体生成方法",
+    "3.3 MatterGen基线模型与实验配置",
+    "3.4 目标属性条件任务",
+    "3.5 数据划分与实验协议",
+    "3.6 MatterSim代理评价体系",
+    "3.7 评价指标与统计方法",
+    "3.8 数据独立性和真实性控制",
+    "3.9 本章小结"
+  ],
+  "figure_numbers": {
+    "3": ["图3-1", "图3-2", "图3-3"],
+    "4": ["图4-1", "图4-2"],
+    "5": ["图5-1", "图5-2", "图5-3", "图5-4"],
+    "6": ["图6-1", "图6-2", "图6-3", "图6-4", "图6-5"]
+  },
+  "table_numbers": {
+    "3": ["表3-1", "表3-2", "表3-3", "表3-4"],
+    "4": ["表4-1", "表4-2"],
+    "5": ["表5-1", "表5-2", "表5-3"],
+    "6": ["表6-1", "表6-2", "表6-3", "表6-4"]
+  },
+  "formula_ranges": {
+    "4": "式（4-1）至式（4-8）",
+    "5": "式（5-1）至式（5-7）"
+  },
+  "rename_generated_files": false
+}

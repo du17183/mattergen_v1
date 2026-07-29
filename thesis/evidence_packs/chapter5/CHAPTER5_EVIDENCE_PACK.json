@@ -1,6 +1,6 @@
 {
   "chapter": 5,
-  "title": "Learned-Gated E3-PCR后生成精修方法",
+  "title": "学习门控的晶体生成后质量优化方法",
   "evidence_pack_version": "v1",
   "base_commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
   "sections": {
@@ -26,6 +26,7 @@
     ],
     "4_relationship": "第3章定义C0与评价；本章建立可连接C0或A0的独立后生成模块；第6章验证与A0组合。",
     "5_source_facts": [
+      "C0是由预训练MatterGen实现的条件晶体扩散生成基线，不是本文提出的方法；本章只讨论本文在该基线上的扩展。",
       "14特征依次为num_atoms、volume_per_atom、mass_density、minimum_distance、atomic_number_mean/std、cell_condition、CHGNet energy/atom、force RMS/max/mean、stress RMS/maxabs和mag density。",
       "Gate为StandardScaler+MLPClassifier，14→8→1，tanh隐藏层，129个神经网络参数，阈值0.5。",
       "训练样本为A0 seeds 20000–20063；标签为5步位置精修后最大力是否低于基线；8折OOF只作开发诊断。",
@@ -72,14 +73,15 @@
       "Random Gate frozen64五次平均相对变化-21.42%，范围[-30.00%,-13.05%]；Learned Gate frozen64为-33.56%，但该比较不是formal256主结论。"
     ],
     "10_figures": [
-      "Figure 3",
-      "Figure 6",
-      "Figure 7",
-      "Figure 8"
+      "图5-1",
+      "图5-2",
+      "图5-3",
+      "图5-4"
     ],
     "11_tables": [
-      "Table 03",
-      "Table 04"
+      "表5-1",
+      "表5-2",
+      "表5-3"
     ],
     "12_allowed_claims": [
       "独立formal256支持显著预松弛最大力下降。",

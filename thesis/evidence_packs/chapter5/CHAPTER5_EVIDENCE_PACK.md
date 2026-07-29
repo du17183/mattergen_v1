@@ -1,4 +1,4 @@
-# 第5章证据包：Learned-Gated E3-PCR后生成精修方法
+# 第5章证据包：学习门控的晶体生成后质量优化方法
 
 > 本文件是写作证据，不是完整论文正文。任何项目事实必须回指 source_id；未支持内容不得由通用知识补齐。
 
@@ -32,6 +32,8 @@
 第3章定义C0与评价；本章建立可连接C0或A0的独立后生成模块；第6章验证与A0组合。
 
 ## 5. 可使用的源码事实
+
+- C0是由预训练MatterGen实现的条件晶体扩散生成基线，不是本文提出的方法；本章只讨论本文在该基线上的扩展。
 
 - 14特征依次为num_atoms、volume_per_atom、mass_density、minimum_distance、atomic_number_mean/std、cell_condition、CHGNet energy/atom、force RMS/max/mean、stress RMS/maxabs和mag density。
 - Gate为StandardScaler+MLPClassifier，14→8→1，tanh隐藏层，129个神经网络参数，阈值0.5。
@@ -88,15 +90,15 @@
 
 ## 10. 对应图表
 
-- Figure 3
-- Figure 6
-- Figure 7
-- Figure 8
+- 图5-1
+- 图5-2
+- 图5-3
+- 图5-4
 
 ## 11. 对应表格
 
-- Table 03
-- Table 04
+- 表5-2
+- 表5-3
 
 ## 12. 允许写入正文的结论
 

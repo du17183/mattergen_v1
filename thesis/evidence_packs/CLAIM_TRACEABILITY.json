@@ -11,8 +11,8 @@
       "S06_ADAPTIVE_CONTROLLER",
       "S07_ADAPTIVE_CFG"
     ],
-    "figure": "Figure 5",
-    "table": "Table 02_innovation1",
+    "figure": "图4-2",
+    "table": "表4-2",
     "seed_range": "20000–20255",
     "n": 256,
     "statistical_evidence": "E-hull CI [-0.017926,0.011030], raw p=.357; Stable CI [-1.5625,13.2813] pp, p=.146; NUS CI [-2.7344,9.7656] pp, p=.342.",
@@ -33,8 +33,8 @@
       "S14_E3_FROZEN_CORE",
       "S15_E3_FORMAL_RUNNER"
     ],
-    "figure": "Figure 6",
-    "table": "Table 03_innovation2",
+    "figure": "图5-2",
+    "table": "表5-2",
     "seed_range": "40000–40255",
     "n": 256,
     "statistical_evidence": "20,000 paired bootstrap; Wilcoxon Pratt; Holm family size 2; raw W/T/L=163/0/93.",
@@ -55,8 +55,8 @@
       "S14_E3_FROZEN_CORE",
       "S15_E3_FORMAL_RUNNER"
     ],
-    "figure": "Figure 7",
-    "table": "Table 04_gate_ablation",
+    "figure": "图5-3",
+    "table": "表5-3",
     "seed_range": "40000–40255",
     "n": 256,
     "statistical_evidence": "paired exact McNemar; E3-A-only harm=22, E3-G-only harm=4.",
@@ -76,8 +76,8 @@
       "S06_ADAPTIVE_CONTROLLER",
       "S13_E3_REFINER"
     ],
-    "figure": "Figure 9",
-    "table": "Table 05_compatibility_cohort1",
+    "figure": "图6-2",
+    "table": "表6-1",
     "seed_range": "41000–41063",
     "n": 64,
     "statistical_evidence": "raw W/T/L=45/0/19; algorithmic 1e-6 W/T/L=34/19/11.",
@@ -97,8 +97,8 @@
       "S06_ADAPTIVE_CONTROLLER",
       "S13_E3_REFINER"
     ],
-    "figure": "Figure 9 and Figure 10",
-    "table": "Table 06_compatibility_cohort2",
+    "figure": "图6-2、图6-3",
+    "table": "表6-1",
     "seed_range": "50000–50063",
     "n": 64,
     "statistical_evidence": "raw numeric W/T/L=46/0/18; Gate-off exact structure ties=18.",
@@ -117,8 +117,8 @@
     "source_code": [
       "S15_E3_FORMAL_RUNNER"
     ],
-    "figure": "Figure 11",
-    "table": "Table 08_leakage_diagnostic",
+    "figure": "图6-4",
+    "table": "表6-2",
     "seed_range": "20000–20255",
     "n": 256,
     "statistical_evidence": "2x2 one-sided Fisher exact; held-out is supplementary only.",
@@ -129,7 +129,7 @@
   {
     "claim_id": "C7_MATTERSIM_SURROGATE",
     "chapter": 3,
-    "section": "3.5",
+    "section": "3.6",
     "exact_wording": "力、RMSD、E-hull、Stable与NUS均来自MatterSim-5M代理评价，可用于统一相对比较。",
     "source_data": [
       "S03_DATA_DICTIONARY",
@@ -139,8 +139,8 @@
       "S28_EVAL_ENERGY",
       "S29_EVAL_RMSD"
     ],
-    "figure": "Figure 4",
-    "table": "Table 01_experiment_manifest",
+    "figure": "图3-3",
+    "table": "表3-2",
     "seed_range": "all reported cohorts",
     "n": 0,
     "statistical_evidence": "not an effect claim",
@@ -151,7 +151,7 @@
   {
     "claim_id": "C8_NO_DFT_OR_PROPERTY",
     "chapter": 3,
-    "section": "3.3 and 3.8",
+    "section": "3.4 and 3.8",
     "exact_wording": "DFT_VERIFIED=False且PROPERTY_TARGET_VERIFIED=False；dft_mag_density=0.1是条件输入，不是已验证命中结果。",
     "source_data": [
       "S01_MANIFEST",
@@ -159,13 +159,54 @@
       "S31_BASE_CONDITION_CONFIG"
     ],
     "source_code": [],
-    "figure": "Figure 4",
-    "table": "Table 01_experiment_manifest",
+    "figure": "图3-3",
+    "table": "表3-2",
     "seed_range": "all reported cohorts",
     "n": 0,
     "statistical_evidence": "explicit negative evidence status",
     "limitation": "不能证明真实磁性、热力学稳定性或可合成性。",
     "forbidden_variant": "生成结构真实达到目标磁密度并通过DFT验证。",
+    "evidence_complete": true
+  },
+  {
+    "claim_id": "P1_REGISTERED_TITLE_AND_SCOPE",
+    "chapter": 3,
+    "section": "1.1 and 3.1",
+    "exact_wording": "学校正式中文题目为‘基于深度学习的材料逆向生成’；本文实际研究对象为目标属性条件下的周期晶体候选生成。",
+    "source_data": [
+      "S33_TITLE",
+      "S34_POSITIONING"
+    ],
+    "source_code": [],
+    "figure": "图3-1",
+    "table": "表3-1",
+    "seed_range": "not applicable",
+    "n": 0,
+    "statistical_evidence": "not an effect claim",
+    "limitation": "英文题目仍为PROVISIONAL；题目范围宽于当前实验范围。",
+    "forbidden_variant": "用内部方法题目替代学校登记中文题目。",
+    "evidence_complete": true
+  },
+  {
+    "claim_id": "P2_MATTERGEN_BASELINE_ATTRIBUTION",
+    "chapter": 3,
+    "section": "3.3",
+    "exact_wording": "MatterGen是本文采用的预训练条件晶体扩散生成基线、实验框架和实现载体，不是本文提出的方法。",
+    "source_data": [
+      "S34_POSITIONING",
+      "S35_NAMING_POLICY",
+      "S36_NUMBERING"
+    ],
+    "source_code": [
+      "S08_PC_SAMPLER"
+    ],
+    "figure": "图3-1、图3-2",
+    "table": "表3-1",
+    "seed_range": "not applicable",
+    "n": 0,
+    "statistical_evidence": "not an effect claim",
+    "limitation": "本文没有从零训练MatterGen主干；贡献限于Adaptive CFG和Learned-Gated E3-PCR。",
+    "forbidden_variant": "本文提出或完整训练了MatterGen。",
     "evidence_complete": true
   }
 ]

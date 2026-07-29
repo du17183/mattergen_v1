@@ -443,5 +443,88 @@
       "representative and supplementary No-Go routes"
     ],
     "qualification": "archive-level synthesis; some original server reports not in GitHub"
+  },
+  {
+    "source_id": "S33_TITLE",
+    "type": "writing authority",
+    "relative_path": "thesis/THESIS_TITLE_FINAL.md",
+    "commit": "this documentation branch",
+    "chapters": [
+      1,
+      3,
+      7
+    ],
+    "claims": [
+      "registered Chinese title and provisional English title"
+    ],
+    "qualification": "school-title authority; no experimental claim"
+  },
+  {
+    "source_id": "S34_POSITIONING",
+    "type": "writing authority",
+    "relative_path": "thesis/THESIS_POSITIONING_FINAL.md",
+    "commit": "this documentation branch",
+    "chapters": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "claims": [
+      "research scope, baseline attribution and contribution boundary"
+    ],
+    "qualification": "final thesis positioning"
+  },
+  {
+    "source_id": "S35_NAMING_POLICY",
+    "type": "writing policy",
+    "relative_path": "thesis/MATTERGEN_NAMING_POLICY.md",
+    "commit": "this documentation branch",
+    "chapters": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "claims": [
+      "chapter-specific MatterGen naming and attribution"
+    ],
+    "qualification": "mandatory writing policy"
+  },
+  {
+    "source_id": "S36_NUMBERING",
+    "type": "writing authority",
+    "relative_path": "thesis/CHAPTER_NUMBERING_FINAL.md",
+    "commit": "this documentation branch",
+    "chapters": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "claims": [
+      "final chapter, figure, table and formula numbering"
+    ],
+    "qualification": "final numbering authority"
+  },
+  {
+    "source_id": "S37_CH3_PROMPT",
+    "type": "writing prompt",
+    "relative_path": "thesis/evidence_packs/chapter3/chatgpt_input_final.md",
+    "commit": "this documentation branch",
+    "chapters": [
+      3
+    ],
+    "claims": [
+      "traceable 3.1–3.3 web-ChatGPT input"
+    ],
+    "qualification": "writing aid; not scientific evidence"
   }
 ]

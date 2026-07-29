@@ -1,6 +1,6 @@
 {
   "chapter": 6,
-  "title": "组合验证、消融、负面结果与讨论",
+  "title": "组合验证、消融实验与结果讨论",
   "evidence_pack_version": "v1",
   "base_commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
   "sections": {
@@ -25,6 +25,7 @@
     ],
     "4_relationship": "综合第4章采样模块与第5章后生成模块；为总结章节提供可重复性、失败边界和限制。",
     "5_source_facts": [
+      "C0是由预训练MatterGen实现的条件晶体扩散生成基线，不是本文提出的方法；本章只讨论本文在该基线上的扩展。",
       "Adaptive CFG是完整组合方法的共享上游采样模块；E3-PCR是可接C0或A0的独立后生成模块。",
       "两个64-seed cohort分别预留并独立报告；不得事后pool为单个预注册128。",
       "Gate-off为结构级exact fallback；评价数值可能有<1e-6微差，因此报告需区分raw numeric与algorithmic counts。",
@@ -60,20 +61,19 @@
       "CG-TDR Gate可学但Teacher residual方向未可靠泛化，收益接近零或RMSD恶化。"
     ],
     "10_figures": [
-      "Figure 1",
-      "Figure 4",
-      "Figure 7",
-      "Figure 9",
-      "Figure 10",
-      "Figure 11",
-      "Figure 12"
+      "图6-1",
+      "图3-3（跨章引用）",
+      "图5-3（跨章引用）",
+      "图6-2",
+      "图6-3",
+      "图6-4",
+      "图6-5"
     ],
     "11_tables": [
-      "Table 05",
-      "Table 06",
-      "Table 07",
-      "Table 08",
-      "Table 09"
+      "表6-1",
+      "表6-2",
+      "表6-3",
+      "表6-4（待汇总冻结运行记录）"
     ],
     "12_allowed_claims": [
       "两个完全独立cohort均复现正向降力方向。",

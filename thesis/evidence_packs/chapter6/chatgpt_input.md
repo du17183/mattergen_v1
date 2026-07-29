@@ -1,10 +1,10 @@
 # 网页ChatGPT写作输入：第6章
 
-你将撰写毕业论文第6章《组合验证、消融、负面结果与讨论》。只能依据以下证据，不得补造项目事实；通用理论若需加入，必须标成待补参考文献，不能冒充项目实现。
+你将撰写毕业论文第6章《组合验证、消融实验与结果讨论》。只能依据以下证据，不得补造项目事实；通用理论若需加入，必须标成待补参考文献，不能冒充项目实现。
 
 ## 项目术语
 
-C0=原始dft_mag_density MatterGen；A0=C0+Adaptive CFG；E3-A=Always-on E3-PCR；E3-G=Learned-Gated E3-PCR；完整方法=A0+E3-G。MatterGen是生成模型，MatterSim-5M是评价代理，CHGNet是E3-PCR辅助代理。
+C0=原始条件晶体扩散生成基线，由预训练dft_mag_density MatterGen实现；A0=C0+Adaptive CFG；E3-A=C0生成结构+Always-on E3-PCR；E3-G=C0生成结构+Learned-Gated E3-PCR；完整方法=A0+E3-G。MatterGen是预训练基线而非本文贡献，MatterSim-5M是评价代理，CHGNet是E3-PCR辅助代理。
 
 ## 章节结构
 
@@ -54,9 +54,9 @@ C0=原始dft_mag_density MatterGen；A0=C0+Adaptive CFG；E3-A=Always-on E3-PCR�
 
 ## 图表
 
-图：Figure 1, Figure 4, Figure 7, Figure 9, Figure 10, Figure 11, Figure 12。
+图：图6-1, 图3-3, 图5-3, 图6-2, 图6-10, 图6-11, 图6-12。
 
-表：Table 05, Table 06, Table 07, Table 08, Table 09。
+表：表6-1, 表6-1, 表6-1, 表6-2, 表6-3。
 
 ## 允许结论
 
