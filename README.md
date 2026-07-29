@@ -37,3 +37,29 @@ MPS 不改变科学输出，但也没有释放额外吞吐，因此只能作为�
 
 - [最终报告](research/mps_fastgate/artifacts/final_report.md)
 - [论文归档分支](https://github.com/du17183/mattergen_v1/tree/archive/thesis-analysis-package-v1)
+
+## 实现方式
+
+MPS 测试不改 MatterGen 代码路径。`mps_control.sh` 为当前用户建立独立 pipe/log 目录并安全启停 MPS server；`runtime.py` 启动两个持久化 B1 worker，并通过 `CUDA_MPS_ACTIVE_THREAD_PERCENTAGE=50` 分配 active threads。
+
+S0 与 S1 使用相同 16 seeds，每种配置预热后重复 3 轮。科学输出只记录一次；性能以总 wall-clock 计算，不依赖 MPS 下单进程 GPU 利用率归因。
+
+## 代码与数据
+
+| 文件 | 内容 |
+|---|---|
+| [`mps_control.sh`](research/mps_fastgate/mps_control.sh) | 用户态 MPS server 启停和归属检查 |
+| [`runtime.py`](research/mps_fastgate/runtime.py) | OFF/ON worker 运行时 |
+| [`benchmark.py`](research/mps_fastgate/benchmark.py) | 重复计时、吞吐和延迟统计 |
+| [`tests/test_mps_fastgate.py`](tests/test_mps_fastgate.py) | 配置、清理和判定规则测试 |
+| [`single_gpu_results.csv`](research/mps_fastgate/artifacts/single_gpu_results.csv) | 三轮原始性能结果 |
+| [`bitwise_audit.json`](research/mps_fastgate/artifacts/bitwise_audit.json) | 48/48 逐 seed 位级检查 |
+
+## 复现入口
+
+```bash
+bash research/mps_fastgate/scripts/status.sh
+python -m pytest tests/test_mps_fastgate.py -q
+```
+
+完整 runner 为 `research/mps_fastgate/scripts/run.sh`。它会检查其他用户 MPS 服务并在退出时清理本项目 server；不能使用 sudo、GPU reset 或干扰其他进程。
