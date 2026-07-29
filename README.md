@@ -37,3 +37,42 @@ Native Batch 的高吞吐是真实的，但它改变了随机数消费和生成�
 - [Fast-Gate 最终报告](research/spg_fastgate/artifacts/reports/final_report.md)
 - 实测 MVP：`feature/spg-static-periodic-graph-mvp`
 - [论文归档分支](https://github.com/du17183/mattergen_v1/tree/archive/thesis-analysis-package-v1)
+
+## 验证路线
+
+所有候选先在 B1 FP32 完整 Predictor/Corrector 上建立性能和输出基线：
+
+1. Native Batch：B4/B8 一次处理多条轨迹。
+2. BF16：模型与关键张量降低精度。
+3. Partial compile：只编译可隔离子模块。
+4. Static Periodic Graph：按图形状分桶并复用邻接。
+
+性能提升只有在 generation success、composition、目标命中、结构与 relaxation 指标共同通过时才算 GO。
+
+## 实现位置
+
+| 文件 | 内容 |
+|---|---|
+| [`run_performance_baseline.py`](research/spg_fastgate/run_performance_baseline.py) | B1/B4/B8 性能基线 |
+| [`run_quality_generation.py`](research/spg_fastgate/run_quality_generation.py) | 质量配对生成 |
+| [`bf16_probe.py`](research/spg_fastgate/bf16_probe.py) | BF16 正确性与速度 probe |
+| [`compile_audit.py`](research/spg_fastgate/compile_audit.py) | compile 可行性审计 |
+| [`profiler_probe.py`](research/spg_fastgate/profiler_probe.py) | 热点占比与静态图收益估计 |
+| [`finalize_fastgate.py`](research/spg_fastgate/finalize_fastgate.py) | 统一 gate 判定 |
+
+## 数据索引
+
+- [性能基线](research/spg_fastgate/artifacts/reports/performance_baseline.md)
+- [Profiler 分解](research/spg_fastgate/artifacts/reports/profiler_breakdown.md)
+- [Native B4 质量报告](research/spg_fastgate/artifacts/reports/b4_quality_report.md)
+- [BF16 报告](research/spg_fastgate/artifacts/reports/bf16_report.md)
+- [Compile 报告](research/spg_fastgate/artifacts/reports/compile_report.md)
+- [最终 Fast-Gate 报告](research/spg_fastgate/artifacts/reports/final_report.md)
+
+## 复现入口
+
+```bash
+bash research/spg_fastgate/scripts/status_fastgate.sh
+```
+
+完整 runner 为 `research/spg_fastgate/scripts/run_fastgate.sh`。Native Batch 的吞吐提升不能被表述为“质量不变”，因为逐 seed 科学输出没有通过等价门槛。
