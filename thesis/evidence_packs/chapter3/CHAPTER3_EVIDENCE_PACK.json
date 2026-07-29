@@ -1,0 +1,140 @@
+{
+  "chapter": 3,
+  "title": "MatterGen基线、数据与评价体系",
+  "evidence_pack_version": "v1",
+  "base_commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
+  "sections": {
+    "1_research_goal": "定义条件晶体生成任务、C0基线、数据资格、代理评价和配对统计口径。",
+    "2_core_questions": [
+      "C0、A0、E3-A、E3-G和完整方法分别是什么？",
+      "dft_mag_density=0.1是何种输入，当前是否有独立属性真值？",
+      "MatterSim-5M指标可以支持哪些相对结论，不能支持哪些结论？",
+      "各正式、补充、诊断seed如何隔离？"
+    ],
+    "3_section_outline": [
+      "3.1 条件晶体生成任务定义",
+      "3.2 MatterGen基线模型",
+      "3.3 dft_mag_density条件生成设置",
+      "3.4 实验数据与seed划分",
+      "3.5 MatterSim-5M代理评价流程",
+      "3.6 评价指标定义",
+      "3.7 配对统计方法",
+      "3.8 数据独立性与真实性控制"
+    ],
+    "4_relationship": "承接理论章节，为第4章Adaptive CFG、第5章E3-PCR及第6章组合/审计提供统一基线和评价口径。",
+    "5_source_facts": [
+      "C0为原始dft_mag_density MatterGen，constant CFG scale=2.0；完整Predictor/Corrector、FP32、batch_size=1。",
+      "A0=C0+Multi-field Residual-driven Online Adaptive CFG。",
+      "E3-A/E3-G从同一个C0结构分别执行Always-on或Learned-Gated位置精修。",
+      "MatterGen是生成模型，MatterSim-5M是论文评价代理，CHGNet只用于Gate特征与E3-PCR局部更新；三者不得混同。",
+      "条件目标为dft_mag_density=0.1，但PROPERTY_TARGET_VERIFIED=False。",
+      "STABILITY_SOURCE=MatterSim-5M surrogate；DFT_VERIFIED=False。"
+    ],
+    "6_parameters": [
+      "C0 guidance_scale=2.0",
+      "Predictor/Corrector=full",
+      "precision=FP32",
+      "batch_size=1",
+      "dft_mag_density target=0.1",
+      "MatterSim stability threshold=0.1 eV/atom"
+    ],
+    "7_formula_ids": [
+      "F3_MAX_FORCE",
+      "F3_RMSD",
+      "F3_STABLE",
+      "F3_NUS",
+      "F3_HARM"
+    ],
+    "8_experiment_design": [
+      "Gate training: 20000–20063。",
+      "Adaptive CFG formal: 20000–20255，n=256；与Gate训练重叠不影响创新点一，因为A0不使用Q3 Gate。",
+      "E3-PCR formal: 40000–40255，n=256，和Gate训练交集为0。",
+      "组合cohort 1: 41000–41063，n=64，独立。",
+      "组合cohort 2: 50000–50063，n=64，完全独立。",
+      "Leakage overlap 20000–20063仅诊断；held-out 20064–20255仅补充；Mixed 256不得用于独立结论。"
+    ],
+    "9_formal_results": [
+      "本章不主张方法效果；只冻结实验身份、评价和证据资格。"
+    ],
+    "10_figures": [
+      "Figure 4"
+    ],
+    "11_tables": [
+      "Table 01"
+    ],
+    "12_allowed_claims": [
+      "MatterSim用于相同流程下的方法间代理相对比较。",
+      "预松弛最大力、RMSD、E-hull、Stable和NUS可按统一代理口径报告。",
+      "两个64-seed cohort是两次独立证据。"
+    ],
+    "13_forbidden_claims": [
+      "MatterSim等价于DFT。",
+      "条件输入0.1证明输出真实磁密度命中。",
+      "代理Stable证明可合成。",
+      "把Mixed 256或training overlap写成独立验证。"
+    ],
+    "14_mandatory_limitations": [
+      "无DFT、无实验合成验证、无目标属性独立验证。",
+      "同一项目数据域、单一条件checkpoint和统一代理评价器。",
+      "精确原始生成CLI未作为可移植归档的一部分；可使用冻结配置和manifest，不得编造命令。"
+    ],
+    "15_code_symbols": [
+      "MetricsStructureSummary.rmsd_from_relaxation",
+      "compute_rmsd_angstrom",
+      "EnergyCapability.is_stable",
+      "FracNovelUniqueStableStructures",
+      "structure_validity"
+    ],
+    "16_data_sources": [
+      "S01_MANIFEST",
+      "S03_DATA_DICTIONARY",
+      "S09_ADAPTIVE_CONFIG",
+      "S10_I1_DATA",
+      "S17_I2_DATA",
+      "S21_COHORT1_DATA",
+      "S23_COHORT2_DATA",
+      "S25_LEAK_DATA"
+    ],
+    "17_commits": [
+      "5de00419eea2d8a9be303638f2db8ece15a22366",
+      "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483"
+    ],
+    "18_not_supported": [
+      "真实dft_mag_density命中率：NOT_SUPPORTED_BY_CURRENT_REPOSITORY",
+      "DFT能量/力/声子/动力学稳定性：NOT_SUPPORTED_BY_CURRENT_REPOSITORY",
+      "实验可合成性：NOT_SUPPORTED_BY_CURRENT_REPOSITORY"
+    ],
+    "19_chatgpt_notes": "先建立证据等级，再介绍指标；所有Stable/E-hull/RMSD旁保留surrogate限定。不要把现有旧提纲的章节编号自动带入本证据包。",
+    "20_codex_audit": [
+      "术语C0/A0/E3-A/E3-G一致",
+      "每个seed范围和n一致",
+      "代理/DFT/属性边界显式",
+      "Mixed 256资格正确"
+    ]
+  },
+  "claims": [
+    "C7_MATTERSIM_SURROGATE",
+    "C8_NO_DFT_OR_PROPERTY"
+  ],
+  "sources": [
+    "S01_MANIFEST",
+    "S02_CLAIMS",
+    "S03_DATA_DICTIONARY",
+    "S04_LINEAGE",
+    "S05_LIMITATIONS",
+    "S08_PC_SAMPLER",
+    "S09_ADAPTIVE_CONFIG",
+    "S10_I1_DATA",
+    "S14_E3_FROZEN_CORE",
+    "S15_E3_FORMAL_RUNNER",
+    "S17_I2_DATA",
+    "S21_COHORT1_DATA",
+    "S23_COHORT2_DATA",
+    "S25_LEAK_DATA",
+    "S27_EVAL_STRUCTURE",
+    "S28_EVAL_ENERGY",
+    "S29_EVAL_RMSD",
+    "S30_RMSD_UTIL",
+    "S31_BASE_CONDITION_CONFIG"
+  ]
+}

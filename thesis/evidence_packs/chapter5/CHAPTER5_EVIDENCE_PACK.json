@@ -1,0 +1,160 @@
+{
+  "chapter": 5,
+  "title": "Learned-Gated E3-PCR后生成精修方法",
+  "evidence_pack_version": "v1",
+  "base_commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
+  "sections": {
+    "1_research_goal": "恢复选择Gate、安全有界等变位置精修、正式三臂实验和Always-on/Random Gate消融证据。",
+    "2_core_questions": [
+      "14维风险特征和129参数Gate如何构造？",
+      "Gate、Refiner和Fallback各自承担什么功能？",
+      "如何限制位置更新并拒绝不安全/升能proposal？",
+      "平均降力和harm控制之间如何权衡？"
+    ],
+    "3_section_outline": [
+      "5.1 生成后局部物理不一致问题",
+      "5.2 方法总体框架",
+      "5.3 14维风险特征",
+      "5.4 129参数Learned Gate",
+      "5.5 等变位置更新",
+      "5.6 Trust region与位移限制",
+      "5.7 Backtracking与安全检查",
+      "5.8 Exact fallback",
+      "5.9 正式256-seed实验",
+      "5.10 Always-on与Random Gate消融",
+      "5.11 机制分析与局限"
+    ],
+    "4_relationship": "第3章定义C0与评价；本章建立可连接C0或A0的独立后生成模块；第6章验证与A0组合。",
+    "5_source_facts": [
+      "14特征依次为num_atoms、volume_per_atom、mass_density、minimum_distance、atomic_number_mean/std、cell_condition、CHGNet energy/atom、force RMS/max/mean、stress RMS/maxabs和mag density。",
+      "Gate为StandardScaler+MLPClassifier，14→8→1，tanh隐藏层，129个神经网络参数，阈值0.5。",
+      "训练样本为A0 seeds 20000–20063；标签为5步位置精修后最大力是否低于基线；8折OOF只作开发诊断。",
+      "Gate只判断是否执行；E3-PCR用CHGNet force-vector方向执行最多5步；Fallback返回原始结构。",
+      "每步eta=.01、每原子0.02 Å cap，回溯scale为1、1/2、1/4；候选需finite、volume>0.1、min distance>=0.5 Å且CHGNet energy不升。",
+      "原子种类和晶格不变；最终wrapped累计最大位移检查<=0.10 Å；Gate-off和全拒绝exact fallback。",
+      "推理不训练MatterGen或CHGNet，且不改变原始MatterGen采样轨迹。"
+    ],
+    "6_parameters": [
+      "features=14",
+      "hidden=8",
+      "output=1",
+      "parameters=129",
+      "threshold=.5",
+      "steps=5",
+      "eta=.01",
+      "step cap=.02 Å",
+      "cumulative cap=.10 Å",
+      "backtracks=3",
+      "min distance=.5 Å"
+    ],
+    "7_formula_ids": [
+      "F5_STANDARDIZE",
+      "F5_GATE_NETWORK",
+      "F5_PARAMETER_COUNT",
+      "F5_GATE_RULE",
+      "F5_POSITION_PROPOSAL",
+      "F5_ACCEPTANCE",
+      "F5_TRUST_BOUND",
+      "F3_HARM"
+    ],
+    "8_experiment_design": [
+      "正式C0/E3-A/E3-G三臂严格配对：40000–40255，n=256，和Gate训练交集为0。",
+      "C0每seed只生成一次；E3-A和E3-G从同一C0派生；MatterSim 768/768。",
+      "正式主端点为预松弛最大力；20,000 paired bootstrap；Wilcoxon Pratt；两主臂Holm校正。",
+      "Random Gate仅为frozen64补充消融：5个随机重复，每次42/64开启（65.625%），不是formal256。"
+    ],
+    "9_formal_results": [
+      "E3-G最大力0.342964→0.263107 eV/Å，-23.28%；CI [-0.144966,-0.032453]；Holm p=4.19e-10；raw W/T/L=163/0/93。",
+      "RMSD 0.049390→0.045937 Å；E-hull基本不变；Stable/NUS/Novel/Unique保持。",
+      "E3-A平均最大力-28.87%，大于E3-G的-23.28%。",
+      "E3-G coverage 66.406%，harm 18.359%，low-force harm 17.969%；E3-A分别100%、25.391%、29.688%。",
+      "E3-G保留80.657% Always-on平均降力收益；harm McNemar p=.000534。",
+      "Random Gate frozen64五次平均相对变化-21.42%，范围[-30.00%,-13.05%]；Learned Gate frozen64为-33.56%，但该比较不是formal256主结论。"
+    ],
+    "10_figures": [
+      "Figure 3",
+      "Figure 6",
+      "Figure 7",
+      "Figure 8"
+    ],
+    "11_tables": [
+      "Table 03",
+      "Table 04"
+    ],
+    "12_allowed_claims": [
+      "独立formal256支持显著预松弛最大力下降。",
+      "Learned Gate以较少覆盖降低总体和低力harm。",
+      "位置更新安全有界且元素/晶胞保持。"
+    ],
+    "13_forbidden_claims": [
+      "Learned Gate平均降力优于Always-on。",
+      "Gate保证所有结构改善。",
+      "E3-PCR是完整晶格/组成松弛器。",
+      "CHGNet输出是真实磁性或DFT验证。"
+    ],
+    "14_mandatory_limitations": [
+      "E3-G仍存在harm样本。",
+      "Gate仅64个训练结构、129参数，对训练重叠敏感。",
+      "只更新位置，不能修复组成或晶格错误。",
+      "CHGNet是辅助代理，正式评价仍为MatterSim。",
+      "Random Gate来自frozen64而非formal256。"
+    ],
+    "15_code_symbols": [
+      "FEATURE_COLUMNS",
+      "build_network",
+      "historical_training_data",
+      "train_gate",
+      "position_proposal",
+      "finite_safe",
+      "advance",
+      "run_refinement_subset",
+      "refine",
+      "force_robustness"
+    ],
+    "16_data_sources": [
+      "S16_E3_CONFIG",
+      "S17_I2_DATA",
+      "S18_I2_REPORT",
+      "S19_GATE_MECHANISM",
+      "S20_RANDOM_GATE"
+    ],
+    "17_commits": [
+      "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+      "b65f42a8792004c7c820e59fa4413e1310e06143",
+      "5293b4b71be88b6663bbe349f3b57694a916835f"
+    ],
+    "18_not_supported": [
+      "外部材料体系泛化：NOT_SUPPORTED_BY_CURRENT_REPOSITORY",
+      "真实DFT力下降：NOT_SUPPORTED_BY_CURRENT_REPOSITORY",
+      "Gate概率严格校准：NOT_SUPPORTED_BY_CURRENT_REPOSITORY"
+    ],
+    "19_chatgpt_notes": "把Gate和Refiner分开写；先报告E3-G主效果，再诚实报告Always-on更强平均降力和Gate的risk–coverage价值。",
+    "20_codex_audit": [
+      "14特征顺序完整",
+      "129参数计算正确",
+      "CHGNet与MatterSim角色区分",
+      "raw与algorithmic W/T/L不混用",
+      "Random Gate标注frozen64"
+    ]
+  },
+  "claims": [
+    "C2_E3PCR_FORCE",
+    "C3_GATE_HARM"
+  ],
+  "sources": [
+    "S01_MANIFEST",
+    "S02_CLAIMS",
+    "S03_DATA_DICTIONARY",
+    "S04_LINEAGE",
+    "S05_LIMITATIONS",
+    "S13_E3_REFINER",
+    "S14_E3_FROZEN_CORE",
+    "S15_E3_FORMAL_RUNNER",
+    "S16_E3_CONFIG",
+    "S17_I2_DATA",
+    "S18_I2_REPORT",
+    "S19_GATE_MECHANISM",
+    "S20_RANDOM_GATE",
+    "S31_BASE_CONDITION_CONFIG"
+  ]
+}

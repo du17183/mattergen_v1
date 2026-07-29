@@ -1,0 +1,291 @@
+[
+  {
+    "formula_id": "F3_MAX_FORCE",
+    "chapter": 3,
+    "formula_latex": "F_{\\max}=\\max_i\\lVert\\mathbf F_i\\rVert_2",
+    "variables": {
+      "F_i": "MatterSim/CHGNet force vector for atom i"
+    },
+    "source_file": "research/q3_frozen64.py",
+    "source_symbol": "relax worker pre_relax_max_force_ev_ang",
+    "source_commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+    "exact_or_interpreted": "exact",
+    "manual_confirmation_required": false,
+    "notes": "For thesis results the force values are from MatterSim-5M; CHGNet is used only inside E3-PCR."
+  },
+  {
+    "formula_id": "F3_RMSD",
+    "chapter": 3,
+    "formula_latex": "\\operatorname{RMSD}=\\operatorname{MatcherRMSD}(X_{\\mathrm{relaxed}},X_{\\mathrm{initial}})\\;[\\AA]",
+    "variables": {
+      "X_initial": "pre-relax structure",
+      "X_relaxed": "MatterSim-relaxed structure"
+    },
+    "source_file": "mattergen/evaluation/utils/utils.py",
+    "source_symbol": "compute_rmsd_angstrom",
+    "source_commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
+    "exact_or_interpreted": "interpreted",
+    "manual_confirmation_required": false,
+    "notes": "Uses RMSDStructureMatcher and converts the normalized match distance to angstrom."
+  },
+  {
+    "formula_id": "F3_STABLE",
+    "chapter": 3,
+    "formula_latex": "\\mathrm{Stable}=\\mathbb 1[E_{\\mathrm{hull}}\\le 0.1\\;\\mathrm{eV/atom}]",
+    "variables": {
+      "E_hull": "MatterSim-derived energy above the TRI2024correction hull"
+    },
+    "source_file": "mattergen/evaluation/metrics/energy.py",
+    "source_symbol": "EnergyCapability.is_stable",
+    "source_commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
+    "exact_or_interpreted": "exact",
+    "manual_confirmation_required": false,
+    "notes": "Proxy stability only."
+  },
+  {
+    "formula_id": "F3_NUS",
+    "chapter": 3,
+    "formula_latex": "\\mathrm{NUS}=\\mathrm{Novel}\\land\\mathrm{Unique}\\land\\mathrm{Stable}",
+    "variables": {
+      "Novel": "no reference match",
+      "Unique": "unique within generated set"
+    },
+    "source_file": "mattergen/evaluation/metrics/energy.py",
+    "source_symbol": "FracNovelUniqueStableStructures.compute_pre_aggregation_values",
+    "source_commit": "a7d778265103cd5b547ddc07c1db4083c75513fc",
+    "exact_or_interpreted": "exact",
+    "manual_confirmation_required": false,
+    "notes": "Stable component remains a MatterSim surrogate."
+  },
+  {
+    "formula_id": "F3_HARM",
+    "chapter": 3,
+    "formula_latex": "\\mathrm{Harm}=\\mathbb 1[F_{\\max}^{selected}-F_{\\max}^{base}>10^{-6}]",
+    "variables": {
+      "F_max": "pre-relaxation maximum force in eV/angstrom"
+    },
+    "source_file": "research/q3_formal256.py",
+    "source_symbol": "FORCE_HARM_EPSILON and gate mechanism analysis",
+    "source_commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+    "exact_or_interpreted": "exact",
+    "manual_confirmation_required": false,
+    "notes": "The 1e-6 tolerance defines algorithmic harm/tie counts."
+  },
+  {
+    "formula_id": "F4_RESIDUAL",
+    "chapter": 4,
+    "formula_latex": "r_{t,k}=s^{cond}_{t,k}-s^{uncond}_{t,k}",
+    "variables": {
+      "k": "cell, pos, or atomic_numbers",
+      "t": "sampling call"
+    },
+    "source_file": "mattergen/diffusion/sampling/classifier_free_guidance.py",
+    "source_symbol": "score_residual_rms",
+    "source_commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+    "exact_or_interpreted": "exact",
+    "manual_confirmation_required": false,
+    "notes": "Residual remains field-specific until scalar RMS reduction."
+  },
+  {
+    "formula_id": "F4_FIELD_RMS",
+    "chapter": 4,
+    "formula_latex": "\\delta_{t,k}=\\sqrt{\\operatorname{mean}(r_{t,k}^{\\,2})}",
+    "variables": {
+      "delta_tk": "scalar RMS for field k"
+    },
+    "source_file": "mattergen/diffusion/sampling/classifier_free_guidance.py",
+    "source_symbol": "score_residual_rms",
+    "source_commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+    "exact_or_interpreted": "exact",
+    "manual_confirmation_required": false,
+    "notes": "Residual is cast to float before square/mean."
+  },
+  {
+    "formula_id": "F4_FIELD_MEAN",
+    "chapter": 4,
+    "formula_latex": "\\delta_t=\\frac{1}{|\\mathcal K_t|}\\sum_{k\\in\\mathcal K_t}\\delta_{t,k}",
+    "variables": {
+      "K_t": "fields with finite valid RMS values"
+    },
+    "source_file": "mattergen/diffusion/sampling/guidance_schedule.py",
+    "source_symbol": "_mean_valid_deltas",
+    "source_commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+    "exact_or_interpreted": "exact",
+    "manual_confirmation_required": false,
+    "notes": "One scalar controls the common guidance scale; there are not three field scales."
+  },
+  {
+    "formula_id": "F4_EMA",
+    "chapter": 4,
+    "formula_latex": "m_{t,p}=\\begin{cases}\\delta_t,&m_{t-1,p}\\ \\mathrm{unset}\\\\ \\beta m_{t-1,p}+(1-\\beta)\\delta_t,&\\mathrm{otherwise}\\end{cases}",
+    "variables": {
+      "p": "predictor or corrector",
+      "beta": "0.95"
+    },
+    "source_file": "mattergen/diffusion/sampling/guidance_schedule.py",
+    "source_symbol": "GuidanceController.evaluate",
+    "source_commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+    "exact_or_interpreted": "exact",
+    "manual_confirmation_required": false,
+    "notes": "Predictor and corrector maintain independent EMA states."
+  },
+  {
+    "formula_id": "F4_RATIO",
+    "chapter": 4,
+    "formula_latex": "q_t=\\frac{\\delta_t}{m_{t,p}+\\epsilon}",
+    "variables": {
+      "epsilon": "1e-6"
+    },
+    "source_file": "mattergen/diffusion/sampling/guidance_schedule.py",
+    "source_symbol": "GuidanceController.evaluate",
+    "source_commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+    "exact_or_interpreted": "exact",
+    "manual_confirmation_required": false,
+    "notes": "Ratio is scalar."
+  },
+  {
+    "formula_id": "F4_MULTIPLIER",
+    "chapter": 4,
+    "formula_latex": "u_t=\\operatorname{clip}\\!\\left(1+\\alpha(q_t-1),0.25,4\\right)",
+    "variables": {
+      "alpha": "0.50"
+    },
+    "source_file": "mattergen/diffusion/sampling/guidance_schedule.py",
+    "source_symbol": "GuidanceController.evaluate",
+    "source_commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+    "exact_or_interpreted": "exact",
+    "manual_confirmation_required": false,
+    "notes": "Adaptive multiplier limit is distinct from final guidance limit."
+  },
+  {
+    "formula_id": "F4_GUIDANCE",
+    "chapter": 4,
+    "formula_latex": "g_t=\\operatorname{clip}(g_0u_t,g_{\\min},g_{\\max})",
+    "variables": {
+      "g0": "2.0",
+      "g_min": "0.0",
+      "g_max": "5.0"
+    },
+    "source_file": "mattergen/diffusion/sampling/guidance_schedule.py",
+    "source_symbol": "GuidanceController.evaluate",
+    "source_commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+    "exact_or_interpreted": "exact",
+    "manual_confirmation_required": false,
+    "notes": "For schedule=adaptive, stage guidance equals base guidance g0."
+  },
+  {
+    "formula_id": "F4_CFG_FUSION",
+    "chapter": 4,
+    "formula_latex": "s_t^{CFG}=s_t^{uncond}+g_t(s_t^{cond}-s_t^{uncond})",
+    "variables": {
+      "g_t": "one scalar used for all corrupted fields"
+    },
+    "source_file": "mattergen/diffusion/sampling/classifier_free_guidance.py",
+    "source_symbol": "GuidedPredictorCorrector._score_fn_unaccelerated",
+    "source_commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+    "exact_or_interpreted": "exact",
+    "manual_confirmation_required": false,
+    "notes": "Implemented through torch.lerp(unconditional, conditional, g_t)."
+  },
+  {
+    "formula_id": "F5_STANDARDIZE",
+    "chapter": 5,
+    "formula_latex": "z_j=(x_j-\\mu_j)/\\sigma_j",
+    "variables": {
+      "x": "14-dimensional invariant feature vector"
+    },
+    "source_file": "research/postgen_fastgate/refiner_eval.py",
+    "source_symbol": "build_network / StandardScaler",
+    "source_commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+    "exact_or_interpreted": "interpreted",
+    "manual_confirmation_required": false,
+    "notes": "Mathematical summary of scikit-learn StandardScaler."
+  },
+  {
+    "formula_id": "F5_GATE_NETWORK",
+    "chapter": 5,
+    "formula_latex": "h=\\tanh(W_1z+b_1),\\qquad c=\\sigma(W_2h+b_2)",
+    "variables": {
+      "z": "14 inputs",
+      "h": "8 hidden units",
+      "c": "positive-class probability"
+    },
+    "source_file": "research/postgen_fastgate/refiner_eval.py",
+    "source_symbol": "build_network / MLPClassifier",
+    "source_commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+    "exact_or_interpreted": "interpreted",
+    "manual_confirmation_required": false,
+    "notes": "Library-level mathematical interpretation; inference calls predict_proba."
+  },
+  {
+    "formula_id": "F5_PARAMETER_COUNT",
+    "chapter": 5,
+    "formula_latex": "14\\times8+8+8\\times1+1=129",
+    "variables": {},
+    "source_file": "research/postgen_fastgate/refiner_eval.py",
+    "source_symbol": "train_gate network trainable_parameters",
+    "source_commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+    "exact_or_interpreted": "exact",
+    "manual_confirmation_required": false,
+    "notes": "StandardScaler has no trainable neural-network parameters."
+  },
+  {
+    "formula_id": "F5_GATE_RULE",
+    "chapter": 5,
+    "formula_latex": "a=\\mathbb 1[c\\ge 0.5]",
+    "variables": {
+      "a": "refinement activation flag"
+    },
+    "source_file": "research/q3_frozen64.py",
+    "source_symbol": "refine",
+    "source_commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+    "exact_or_interpreted": "exact",
+    "manual_confirmation_required": false,
+    "notes": "Gate-off returns the original structure."
+  },
+  {
+    "formula_id": "F5_POSITION_PROPOSAL",
+    "chapter": 5,
+    "formula_latex": "\\Delta x_i^{(b)}=\\operatorname{clipnorm}(\\eta\\,2^{-b}F_i,\\ R_{step}2^{-b})",
+    "variables": {
+      "eta": "0.01",
+      "b": "backtrack index 0,1,2",
+      "R_step": "0.02 angstrom"
+    },
+    "source_file": "research/postgen_fastgate/refiner_eval.py",
+    "source_symbol": "position_proposal and advance",
+    "source_commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+    "exact_or_interpreted": "exact",
+    "manual_confirmation_required": false,
+    "notes": "Positions are updated and wrapped; atomic numbers and cell are not updated."
+  },
+  {
+    "formula_id": "F5_ACCEPTANCE",
+    "chapter": 5,
+    "formula_latex": "\\mathrm{accept}\\iff \\mathrm{finite\\_safe}(X')\\land E_{\\mathrm{CHGNet}}(X')\\le E_{\\mathrm{CHGNet}}(X)+10^{-7}",
+    "variables": {
+      "X": "current structure",
+      "X_prime": "position proposal"
+    },
+    "source_file": "research/postgen_fastgate/refiner_eval.py",
+    "source_symbol": "finite_safe and advance",
+    "source_commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+    "exact_or_interpreted": "exact",
+    "manual_confirmation_required": false,
+    "notes": "finite_safe also requires volume >0.1 and minimum distance >=0.5 angstrom."
+  },
+  {
+    "formula_id": "F5_TRUST_BOUND",
+    "chapter": 5,
+    "formula_latex": "\\max_i\\lVert x_i^{final}-x_i^{input}\\rVert_{MIC}\\le 5\\times0.02=0.10\\;\\AA",
+    "variables": {
+      "MIC": "minimum-image wrapped displacement"
+    },
+    "source_file": "research/q3_frozen64.py",
+    "source_symbol": "run_refinement_subset and refine postcondition",
+    "source_commit": "0275cbf08ed3c6321cea7d06f7a3a8edb83b7483",
+    "exact_or_interpreted": "interpreted",
+    "manual_confirmation_required": false,
+    "notes": "Bound follows per-step caps and is explicitly checked after refinement; it is not a lattice optimization."
+  }
+]
