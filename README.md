@@ -57,3 +57,38 @@ PROPERTY_TARGET_VERIFIED=False
 - 查看某项实验：点击对应分支名称，再阅读该分支根目录的 `README.md`。
 - 固定复现版本：使用报告中记录的 commit，而不是把所有分支合并到 `main`。
 - 权重、环境、数据集和大型缓存不在 GitHub 中，需在服务器按报告路径准备。
+
+## 核心实现位置
+
+| 文件 | 作用 |
+|---|---|
+| [`mattergen/diffusion/sampling/guidance_schedule.py`](mattergen/diffusion/sampling/guidance_schedule.py) | `GuidanceController`、EMA 状态、分阶段/自适应倍率、上下界和异常回退 |
+| [`mattergen/diffusion/sampling/classifier_free_guidance.py`](mattergen/diffusion/sampling/classifier_free_guidance.py) | 三字段 residual RMS、conditional/unconditional score 融合、trace |
+| [`mattergen/diffusion/sampling/pc_sampler.py`](mattergen/diffusion/sampling/pc_sampler.py) | Predictor/Corrector 采样主循环 |
+| [`mattergen/diffusion/tests/test_guidance_schedule.py`](mattergen/diffusion/tests/test_guidance_schedule.py) | EMA、phase reset、clamp、无效 residual fallback 和 CLI 参数测试 |
+
+Adaptive CFG 每一步执行：
+
+```text
+conditional score + unconditional score
+→ 分别计算 cell / position / atomic residual RMS
+→ 更新当前采样阶段的 residual EMA
+→ 计算 adaptive multiplier
+→ clamp 到冻结 guidance 范围
+→ 进入原 Predictor/Corrector 更新
+```
+
+## 最小代码验证
+
+```bash
+python -m pytest mattergen/diffusion/tests/test_guidance_schedule.py -q
+```
+
+正式科学数字不要从 `main` 重新推断，应进入对应冻结分支读取 `final_report`、逐 seed CSV 和 frozen manifest。服务器运行还需要未上传的 MatterGen/MatterSim 权重及项目环境。
+
+## 数据与版本管理规则
+
+- `main` 保存共享实现，不保存所有实验的大型生成与松弛缓存。
+- 每个实验分支的根 README 是该实验入口；报告和小型 CSV/JSON 与分支一起版本化。
+- 正式结果以 frozen commit、seed audit 和 paired statistics 为准。
+- 旧 No-Go 分支不合并回 `main`，用于保留工作过程和负面证据。
