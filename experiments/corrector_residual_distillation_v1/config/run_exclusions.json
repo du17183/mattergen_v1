@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "excluded_run_sets": [
+    {
+      "method": "Skip",
+      "seeds": [63000, 63031],
+      "path": "generation/_invalid/Skip_wrong_empty_dict_override",
+      "reason": "OmegaConf recursively merged corrector_partials={} instead of deleting the configured position and cell Correctors.",
+      "detection": {
+        "observed_mattergen_score_calls_per_sample": 2000,
+        "required_mattergen_score_calls_per_sample": 1000
+      },
+      "included_in_aggregation": false,
+      "disposition": "Quarantined recoverably; corrected with Hydra deletion overrides and rerun on the same fixed seeds."
+    }
+  ]
+}

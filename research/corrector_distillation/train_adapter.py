@@ -488,6 +488,17 @@ def main() -> None:
         device=device,
         target_scales=target_scales,
     )
+    training_hyperparameters = {
+        "epochs": args.epochs,
+        "batch_records": args.batch_records,
+        "learning_rate": args.learning_rate,
+        "weight_decay": args.weight_decay,
+        "hidden_dim": args.hidden_dim,
+        "context_dim": args.context_dim,
+        "atomic_rank": args.atomic_rank,
+        "seed": args.seed,
+        "device": args.device,
+    }
     checkpoint_path = save_adapter_checkpoint(
         output_dir / "residual_adapter.pt",
         model=model,
@@ -502,6 +513,7 @@ def main() -> None:
             "parameter_count": model.parameter_count,
             "target_residual_rms": target_scales,
             "linear_baseline_coefficients": linear_coefficients,
+            "training_hyperparameters": training_hyperparameters,
         },
     )
     with (output_dir / "training_metrics.csv").open("x", newline="", encoding="utf-8") as stream:
@@ -520,6 +532,7 @@ def main() -> None:
         "selected_epoch": best_epoch,
         "selected_validation_normalized_mse": best_validation_objective,
         "selected_validation": selected_validation,
+        "training_hyperparameters": training_hyperparameters,
     }
     with (output_dir / "training_summary.json").open("x", encoding="utf-8") as stream:
         json.dump(summary, stream, indent=2, sort_keys=True)

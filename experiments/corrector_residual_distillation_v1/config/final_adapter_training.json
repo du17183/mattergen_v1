@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "command_module": "research.corrector_distillation.train_adapter",
+  "cuda_visible_devices": "0",
+  "train_root": "experiments/corrector_residual_distillation_v1/teacher_data/train",
+  "validation_root": "experiments/corrector_residual_distillation_v1/teacher_data/validation",
+  "output_dir": "experiments/corrector_residual_distillation_v1/adapter_final",
+  "epochs": 20,
+  "batch_records": 64,
+  "learning_rate": 0.0005,
+  "weight_decay": 0.00001,
+  "hidden_dim": 32,
+  "context_dim": 16,
+  "atomic_rank": 8,
+  "training_seed": 20260904,
+  "device": "cuda",
+  "selection_metric": "validation_normalized_mse",
+  "selected_epoch": 16,
+  "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4"
+}

@@ -33,6 +33,6 @@ source experiments/corrector_residual_distillation_v1/activate.sh
 | MatterGen `dft_mag_density` | `checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt` | 511,777,278 | `01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e` |
 | MatterSim 5M | `checkpoints/official/mattersim/mattersim-v1.0.0-5M.pth` | 91,176,875 | `e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5` |
 | Alex-MP reference | `data-release/alex-mp/reference_MP2020correction.gz` | 873,410,170 | `c722f72c7d0cd398fc382870f0b731425b54bd4492b089ca36e3119e49f469b5` |
-| Adapter | `experiments/corrector_residual_distillation_v1/adapter_final/residual_adapter.pt` | 本地生成 | 见 benchmark CSV |
+| Adapter | `experiments/corrector_residual_distillation_v1/adapter_final/residual_adapter.pt` | 17,684 | `fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4` |
 
 参考数据已在项目内解压为 LMDB，并完成 845,997 条记录的全量顺序审计：首条含 `material_id`，`is_ordered=True`。权重、LMDB、teacher shard、生成结构和松弛轨迹均由 `.gitignore` 排除。
