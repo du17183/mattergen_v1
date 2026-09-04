@@ -400,6 +400,9 @@ FodyWeavers.xsd
 # Virtual environment
 .venv/
 
+# Project-local third-party command-line tools
+.tools/
+
 # Local model weights and checkpoints (never upload)
 *.ckpt
 *.pth
