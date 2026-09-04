@@ -13,6 +13,10 @@ from mattergen.diffusion.data.batched_data import BatchedData
 from mattergen.diffusion.diffusion_module import DiffusionModule
 from mattergen.diffusion.lightning_module import DiffusionLightningModule
 from mattergen.diffusion.sampling.pc_partials import CorrectorPartial, PredictorPartial
+from mattergen.diffusion.sampling.residual_distillation import (
+    ResidualDistillationController,
+    build_residual_controller,
+)
 
 Diffusable = TypeVar(
     "Diffusable", bound=BatchedData
@@ -36,6 +40,7 @@ class PredictorCorrector(Generic[Diffusable]):
         N: int,
         eps_t: float = 1e-3,
         max_t: float | None = None,
+        corrector_residual_adapter: Mapping[str, Any] | None = None,
     ):
         """
         Args:
@@ -83,6 +88,10 @@ class PredictorCorrector(Generic[Diffusable]):
         self._device = device
         self._sampling_context: dict[str, Any] = {}
         self._score_call_index = 0
+        self._exact_score_call_count = 0
+        self._residual_controller: ResidualDistillationController | None = (
+            build_residual_controller(corrector_residual_adapter, device=device)
+        )
 
     @property
     def diffusion_module(self) -> DiffusionModule:
@@ -95,17 +104,53 @@ class PredictorCorrector(Generic[Diffusable]):
     def _score_fn(self, x: Diffusable, t: torch.Tensor) -> Diffusable:
         return self._diffusion_module.score_fn(x, t)
 
+    def _evaluate_exact_score(self, x: Diffusable, t: torch.Tensor) -> Diffusable:
+        """Evaluate the expensive score model and count logical GemNet calls."""
+
+        self._exact_score_call_count += 1
+        return self._score_fn(x, t)
+
     @property
     def sampling_context(self) -> Mapping[str, Any]:
         """Context for the score call currently being evaluated."""
 
         return self._sampling_context
 
+    @property
+    def sampling_metrics(self) -> Mapping[str, float | int]:
+        """Counters for the most recent sampled batch."""
+
+        metrics: dict[str, float | int] = {
+            "mattergen_score_calls": self._exact_score_call_count,
+            "theoretical_baseline_score_calls": self.N * (self._n_steps_corrector + 1),
+        }
+        if self._residual_controller is None:
+            metrics.update(
+                {
+                    "score_opportunities": self.N if self._correctors else 0,
+                    "adapter_calls": 0,
+                    "fallback_calls": 0,
+                    "saved_score_calls": 0,
+                    "adapter_coverage": 0.0,
+                    "adapter_seconds": 0.0,
+                    "exact_fallback_seconds": 0.0,
+                }
+            )
+        else:
+            metrics.update(self._residual_controller.metrics)
+        metrics["forward_reduction"] = metrics["saved_score_calls"] / max(
+            int(metrics["theoretical_baseline_score_calls"]), 1
+        )
+        return metrics
+
     def _on_sampling_start(self) -> None:
         """Reset batch-local sampling context before drawing a new prior."""
 
         self._sampling_context = {}
         self._score_call_index = 0
+        self._exact_score_call_count = 0
+        if self._residual_controller is not None:
+            self._residual_controller.reset()
 
     def _on_before_sample_prior(self, conditioning_data: Diffusable) -> None:
         """Hook for read-only audit tooling immediately before prior sampling."""
@@ -198,6 +243,8 @@ class PredictorCorrector(Generic[Diffusable]):
             raise
         finally:
             self._on_sampling_end(error)
+            if self._residual_controller is not None:
+                self._residual_controller.close(error=error)
 
     @torch.no_grad()
     def _denoise(
@@ -225,10 +272,14 @@ class PredictorCorrector(Generic[Diffusable]):
             t = torch.full((batch.get_batch_size(),), timesteps[i], device=self._device)
 
             # Corrector updates.
+            x_before_last_corrector = None
+            score_before_last_corrector = None
             if self._correctors:
                 for _ in range(self._n_steps_corrector):
                     self._set_sampling_context(sampling_step=i, phase="corrector")
-                    score = self._score_fn(batch, t)
+                    x_before_last_corrector = batch
+                    score = self._evaluate_exact_score(batch, t)
+                    score_before_last_corrector = score
                     fns = {
                         k: corrector.step_given_score for k, corrector in self._correctors.items()
                     }
@@ -247,7 +298,22 @@ class PredictorCorrector(Generic[Diffusable]):
 
             # Predictor updates
             self._set_sampling_context(sampling_step=i, phase="predictor")
-            score = self._score_fn(batch, t)
+            if (
+                self._residual_controller is not None
+                and x_before_last_corrector is not None
+                and score_before_last_corrector is not None
+            ):
+                score = self._residual_controller.score_after_corrector(
+                    exact_score_fn=self._evaluate_exact_score,
+                    x_before=x_before_last_corrector,
+                    score_before=score_before_last_corrector,
+                    x_after=batch,
+                    t=t,
+                    sampling_step=i,
+                    progress=i / max(self.N - 1, 1),
+                )
+            else:
+                score = self._evaluate_exact_score(batch, t)
             predictor_fns = {
                 k: predictor.update_given_score for k, predictor in self._predictors.items()
             }

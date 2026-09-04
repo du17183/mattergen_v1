@@ -5,6 +5,18 @@ sampler_partial:
   
   _partial_: true
   guidance_scale: 0.0
+  corrector_residual_adapter:
+    enabled: false
+    mode: adapter
+    checkpoint_path: null
+    coverage_target: 1.0
+    force_fallback: false
+    trace_path: null
+    teacher_output_dir: null
+    teacher_split: unspecified
+    teacher_shard_size: 64
+    teacher_storage_dtype: bfloat16
+    sample_seed: null
   remove_conditioning_fn:
     _target_: mattergen.property_embeddings.SetUnconditionalEmbeddingType
   keep_conditioning_fn:

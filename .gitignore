@@ -415,3 +415,8 @@ results/
 logs/
 wandb/
 lightning_logs/
+checkpoints/official/
+experiments/corrector_residual_distillation_v1/teacher_data/
+experiments/corrector_residual_distillation_v1/teacher_runs/
+experiments/corrector_residual_distillation_v1/generation/
+experiments/corrector_residual_distillation_v1/relaxation/
