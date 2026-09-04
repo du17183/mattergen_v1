@@ -71,38 +71,71 @@ def main() -> None:
         tempfile.tempdir = str(temporary_dir)
     output_dir = args.output_dir.expanduser().resolve()
     output_dir.mkdir(parents=True, exist_ok=False)
-    atoms = read(args.structures_path.expanduser().resolve(), index=":")
-    if not atoms:
+    # ASE otherwise treats ``@25`` in coverage-labelled filenames as an index
+    # suffix and silently truncates the actual path.
+    input_atoms = read(
+        args.structures_path.expanduser().resolve(),
+        index=":",
+        do_not_split_by_at_sign=True,
+    )
+    if not input_atoms:
         raise ValueError("no generated structures")
     potential = Potential.from_checkpoint(
         device=args.device,
         load_path=str(args.potential_path.expanduser().resolve()),
         load_training_state=False,
     )
-    relaxer = BatchRelaxer(
-        potential=potential,
-        filter="EXPCELLFILTER",
-        fmax=args.fmax,
-        max_natoms_per_batch=args.max_natoms_per_batch,
-    )
-    started = time.perf_counter()
-    trajectories = relaxer.relax(atoms)
-    elapsed = time.perf_counter() - started
-    if sorted(trajectories) != list(range(len(atoms))):
-        raise RuntimeError("MatterSim did not return every input structure")
+    def make_relaxer() -> BatchRelaxer:
+        return BatchRelaxer(
+            potential=potential,
+            filter="EXPCELLFILTER",
+            fmax=args.fmax,
+            max_natoms_per_batch=args.max_natoms_per_batch,
+        )
 
-    relaxed_atoms = [trajectories[index][-1] for index in range(len(atoms))]
-    first_atoms = [trajectories[index][0] for index in range(len(atoms))]
+    started = time.perf_counter()
+    relaxation_mode = "batch"
+    batch_error = None
+    relaxation_failures = []
+    try:
+        trajectories = make_relaxer().relax([item.copy() for item in input_atoms])
+        if sorted(trajectories) != list(range(len(input_atoms))):
+            raise RuntimeError("MatterSim did not return every input structure")
+    except Exception as error:
+        # A single singular/NaN structure can abort MatterSim's entire batch.
+        # Retry pristine inputs independently so valid structures remain
+        # measurable and every invalid index is explicitly reported.
+        relaxation_mode = "individual_fallback"
+        batch_error = f"{type(error).__name__}: {error}"
+        trajectories = {}
+        for index, item in enumerate(input_atoms):
+            try:
+                result = make_relaxer().relax([item.copy()])
+                trajectories[index] = result[0]
+            except Exception as item_error:
+                relaxation_failures.append(
+                    {
+                        "index": index,
+                        "error": f"{type(item_error).__name__}: {item_error}",
+                    }
+                )
+    elapsed = time.perf_counter() - started
+    successful_indices = sorted(trajectories)
+    if not successful_indices:
+        raise RuntimeError("MatterSim could not relax any input structure")
+
+    relaxed_atoms = [trajectories[index][-1] for index in successful_indices]
+    first_atoms = [trajectories[index][0] for index in successful_indices]
     energies = [float(item.info["total_energy"]) for item in relaxed_atoms]
     max_forces = [
         float(np.linalg.norm(item.arrays["forces"], axis=1).max()) for item in first_atoms
     ]
-    steps = [len(trajectories[index]) for index in range(len(atoms))]
+    steps = [len(trajectories[index]) for index in successful_indices]
     write(output_dir / "relaxed.extxyz", relaxed_atoms)
     np.save(output_dir / "energies.npy", np.asarray(energies))
 
     adaptor = AseAtomsAdaptor()
-    original_structures = [adaptor.get_structure(item) for item in atoms]
+    original_structures = [adaptor.get_structure(input_atoms[index]) for index in successful_indices]
     relaxed_structures = [adaptor.get_structure(item) for item in relaxed_atoms]
     if args.reference_lmdb_path is not None:
         reference = ReferenceDataset(
@@ -134,9 +167,14 @@ def main() -> None:
     force_array = np.asarray(max_forces)
     summary = {
         "method": args.method,
-        "n": len(atoms),
+        "n": len(relaxed_atoms),
+        "n_input": len(input_atoms),
+        "relaxation_success_rate": len(relaxed_atoms) / len(input_atoms),
+        "relaxation_mode": relaxation_mode,
+        "relaxation_batch_error": batch_error,
+        "relaxation_failures": relaxation_failures,
         "relaxation_seconds": elapsed,
-        "relaxation_seconds_per_structure": elapsed / len(atoms),
+        "relaxation_seconds_per_structure": elapsed / len(relaxed_atoms),
         "pre_relaxation_max_force_mean": float(force_array.mean()),
         "pre_relaxation_max_force_median": float(np.median(force_array)),
         "pre_relaxation_max_force_p95": float(np.quantile(force_array, 0.95)),
@@ -161,8 +199,8 @@ def main() -> None:
             ),
         )
         writer.writeheader()
-        for index, (item, max_force, step_count, energy) in enumerate(
-            zip(relaxed_atoms, max_forces, steps, energies)
+        for index, item, max_force, step_count, energy in zip(
+            successful_indices, relaxed_atoms, max_forces, steps, energies
         ):
             writer.writerow(
                 {
