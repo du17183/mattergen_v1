@@ -67,7 +67,15 @@ def main() -> None:
     overrides = []
     schedule = "adaptive" if args.method in ("A0", "A0+Adapter+Fallback") else "constant"
     if args.method == "Skip":
-        overrides.append("sampler_partial.corrector_partials={}")
+        # OmegaConf recursively merges dictionaries, so assigning ``{}`` does
+        # not remove the configured position/cell Correctors. Hydra's deletion
+        # override is required to produce an actually empty mapping.
+        overrides.extend(
+            (
+                "~sampler_partial.corrector_partials.pos",
+                "~sampler_partial.corrector_partials.cell",
+            )
+        )
     if args.method in ("Reuse", "Adapter", "Adapter+Fallback", "A0+Adapter+Fallback"):
         mode = "reuse" if args.method == "Reuse" else "adapter"
         coverage = 1.0 if args.method in ("Reuse", "Adapter") else args.coverage
