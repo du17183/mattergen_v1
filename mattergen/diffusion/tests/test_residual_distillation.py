@@ -156,6 +156,31 @@ def test_adapter_off_is_numerically_identical_to_baseline():
             assert torch.equal(baseline_batch[field], disabled_batch[field])
 
 
+def test_sampler_metrics_count_scores_saved_by_removing_corrector():
+    fields = ["pos", "cell", "atomic_numbers"]
+    corruption = MultiCorruption(sdes={field: VPSDE() for field in fields})
+    diffusion = get_diffusion_module(
+        x0_mean=torch.tensor(0.0), x0_std=torch.tensor(1.0), multi_corruption=corruption
+    )
+    sampler = PredictorCorrector(
+        diffusion_module=diffusion,
+        device=torch.device("cpu"),
+        predictor_partials={field: AncestralSamplingPredictor for field in fields},
+        corrector_partials={},
+        n_steps_corrector=1,
+        N=4,
+    )
+    conditioning = SimpleBatchedData(
+        data={field: torch.randn(3, 2) for field in fields},
+        batch_idx={field: None for field in fields},
+    )
+    sampler.sample(conditioning)
+    assert sampler.sampling_metrics["mattergen_score_calls"] == 4
+    assert sampler.sampling_metrics["theoretical_baseline_score_calls"] == 8
+    assert sampler.sampling_metrics["saved_score_calls"] == 4
+    assert sampler.sampling_metrics["forward_reduction"] == 0.5
+
+
 def test_force_fallback_returns_exact_score(tmp_path: Path):
     x_before, x_after, score_before, score_after = make_adapter_batches()
     checkpoint = save_adapter_checkpoint(

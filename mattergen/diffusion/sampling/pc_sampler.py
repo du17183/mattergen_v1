@@ -138,6 +138,13 @@ class PredictorCorrector(Generic[Diffusable]):
             )
         else:
             metrics.update(self._residual_controller.metrics)
+        # This also covers explicit Corrector-removal baselines, which save
+        # exact score calls without going through the residual controller.
+        metrics["saved_score_calls"] = max(
+            int(metrics["theoretical_baseline_score_calls"])
+            - self._exact_score_call_count,
+            0,
+        )
         metrics["forward_reduction"] = metrics["saved_score_calls"] / max(
             int(metrics["theoretical_baseline_score_calls"]), 1
         )
