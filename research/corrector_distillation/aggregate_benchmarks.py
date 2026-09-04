@@ -16,6 +16,7 @@ from ase.io import read, write
 
 NUMERIC_FIELDS = (
     "elapsed_seconds",
+    "time_per_sample",
     "samples_per_hour",
     "mattergen_score_calls",
     "saved_score_calls",
@@ -62,7 +63,8 @@ def _load_run(summary_path: Path, method: str) -> dict[str, Any]:
         "structure_path": str(structure_path.resolve()),
     }
     for field in NUMERIC_FIELDS:
-        row[field] = float(summary.get(field, 0.0))
+        default = summary["elapsed_seconds"] if field == "time_per_sample" else 0.0
+        row[field] = float(summary.get(field, default))
     return row
 
 
@@ -116,6 +118,12 @@ def main() -> None:
             "n": len(method_rows),
             "seed_start": min(row["seed"] for row in method_rows),
             "seed_end": max(row["seed"] for row in method_rows),
+            "generation_success_rate": statistics.fmean(
+                float(row["success"]) for row in method_rows
+            ),
+            "elapsed_seconds_total": sum(
+                float(row["elapsed_seconds"]) for row in method_rows
+            ),
         }
         for field in NUMERIC_FIELDS:
             mean, std = mean_std([float(row[field]) for row in method_rows])
