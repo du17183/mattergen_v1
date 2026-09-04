@@ -4,6 +4,10 @@
 
 本分支没有修改冻结的 Adaptive CFG 实现或其 formal256 结果。新功能默认关闭，只有显式设置 `sampler_partial.corrector_residual_adapter.enabled=true` 才启用。
 
+## 第一轮结论
+
+32 个独立 Stage-C seeds 中，`Adapter+Fallback@50` 是最值得复验的候选：实际 coverage 53.99%、MatterGen forward 减少 27.00%、配对 speedup 1.267×。其 E-hull/Stable/NUS 的描述性结果优于 C0，但 RMSD 和 pre-relaxation force 变差，因此尚不能宣称质量不下降，也不建议直接进入 formal256。完整正负结果、10 方法表格和下一步决策见 `final_report.md`。
+
 ## 固定实验设计
 
 - 任务：`dft_mag_density=0.1`
@@ -34,8 +38,12 @@
 ```bash
 cd /mnt/lis-wam-data/dxl/mattergen_v1
 source experiments/corrector_residual_distillation_v1/activate.sh
-python -m pytest mattergen/diffusion/tests/test_residual_distillation.py \
+PYTHONDONTWRITEBYTECODE=1 python -m pytest -s \
+  mattergen/diffusion/tests/test_residual_distillation.py \
   mattergen/diffusion/tests/test_guidance_schedule.py -q
+
+PYTHONDONTWRITEBYTECODE=1 \
+  python research/corrector_distillation/audit_results.py
 ```
 
-主要脚本位于 `research/corrector_distillation/`；完整命令、结果表和结论见 `final_report.md`。大型权重、teacher tensor、生成结构和松弛轨迹只保存在项目目录，不进入 Git。
+`-s` 用于规避本服务器项目盘禁止 pytest 临时捕获文件 unlink 的限制。主要脚本位于 `research/corrector_distillation/`；最终训练参数见 `config/final_adapter_training.json`。大型权重、teacher tensor、生成结构、日志和松弛轨迹只保存在项目目录，不进入 Git。
