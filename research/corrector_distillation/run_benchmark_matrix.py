@@ -13,6 +13,7 @@ from pathlib import Path
 
 
 MATRIX = (
+    ("C0", "C0", None),
     ("A0", "A0", None),
     ("Skip", "Skip", None),
     ("Reuse", "Reuse", None),

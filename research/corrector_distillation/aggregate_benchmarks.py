@@ -57,6 +57,7 @@ def _load_run(summary_path: Path, method: str) -> dict[str, Any]:
         "coverage_target": float(summary.get("coverage_target", 0.0)),
         "checkpoint_sha256": summary["checkpoint_sha256"],
         "adapter_checkpoint_sha256": summary.get("adapter_checkpoint_sha256"),
+        "timing_includes_teacher_recording": False,
         "run_summary_path": str(summary_path.resolve()),
         "structure_path": str(structure_path.resolve()),
     }
@@ -73,15 +74,15 @@ def collect_runs(root: Path, seed_start: int, seed_end: int) -> list[dict[str, A
         row = _load_run(summary_path, method)
         if seed_start <= row["seed"] <= seed_end:
             selected[(method, row["seed"])] = row
-    # Exact teacher test runs are also the C0 arm. Reusing them avoids a second
-    # identical 2,000-forward generation for the same deterministic seed.
+    # Teacher test runs are an exact structural C0 fallback, but their timing
+    # includes recorder I/O and must never replace a dedicated pure C0 run.
     for summary_path in sorted((root / "teacher_runs" / "test").glob("*/run_summary.json")):
         row = _load_run(summary_path, "C0")
         if seed_start <= row["seed"] <= seed_end:
             key = ("C0", row["seed"])
-            if key in selected:
-                raise ValueError(f"duplicate C0 seed {row['seed']}")
-            selected[key] = row
+            if key not in selected:
+                row["timing_includes_teacher_recording"] = True
+                selected[key] = row
     if not selected:
         raise FileNotFoundError(f"no runs in seed range {seed_start}-{seed_end}")
     return [selected[key] for key in sorted(selected)]
