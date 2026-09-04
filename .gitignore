@@ -402,6 +402,7 @@ FodyWeavers.xsd
 
 # Project-local third-party command-line tools
 .tools/
+.cache/
 
 # Local model weights and checkpoints (never upload)
 *.ckpt
