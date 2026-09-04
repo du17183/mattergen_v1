@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "target": {
+    "dft_mag_density": 0.1
+  },
+  "base_guidance": 2.0,
+  "sampling_steps": 1000,
+  "n_steps_corrector": 1,
+  "seed_splits": {
+    "baseline_recovery": [60000, 60007],
+    "stage_a_train": [61000, 61007],
+    "stage_b_train": [61000, 61015],
+    "validation": [62000, 62007],
+    "stage_c_test": [63000, 63031]
+  },
+  "excluded_historical_seed_ranges": [
+    [14000, 14031],
+    [20000, 20255],
+    [32000, 32063],
+    [33000, 33127],
+    [40000, 40255],
+    [41000, 41063],
+    [50000, 50063]
+  ],
+  "coverage_targets": [0.25, 0.5, 0.75, 0.9],
+  "methods": [
+    "C0",
+    "A0",
+    "Skip",
+    "Reuse",
+    "Adapter",
+    "Adapter+Fallback",
+    "A0+Adapter+Fallback"
+  ]
+}
