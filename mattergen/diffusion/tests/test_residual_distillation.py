@@ -98,6 +98,35 @@ def test_adapter_shapes_and_masked_logits_with_variable_atom_counts():
     assert prediction.risk_features.shape == (2, 13)
 
 
+def test_adapter_forward_is_reproducible_for_fixed_seed():
+    x_before, x_after, score_before, _ = make_adapter_batches()
+
+    def initialized_model():
+        torch.manual_seed(20260904)
+        model = FieldwiseResidualAdapter()
+        for parameter in model.parameters():
+            torch.nn.init.uniform_(parameter, -0.05, 0.05)
+        return model
+
+    first = initialized_model()(
+        x_before=x_before,
+        x_after=x_after,
+        score_before=score_before,
+        t=torch.tensor([0.4, 0.4]),
+        progress=0.6,
+    )
+    second = initialized_model()(
+        x_before=x_before,
+        x_after=x_after,
+        score_before=score_before,
+        t=torch.tensor([0.4, 0.4]),
+        progress=0.6,
+    )
+    for field in ("pos", "cell", "atomic_numbers"):
+        assert torch.equal(first.score[field], second.score[field])
+    assert torch.equal(first.risk_features, second.risk_features)
+
+
 def test_adapter_off_is_numerically_identical_to_baseline():
     fields = ["pos", "cell", "atomic_numbers"]
     corruption = MultiCorruption(sdes={field: VPSDE() for field in fields})
