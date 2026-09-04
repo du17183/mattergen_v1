@@ -59,12 +59,39 @@ def _load_run(summary_path: Path, method: str) -> dict[str, Any]:
         "checkpoint_sha256": summary["checkpoint_sha256"],
         "adapter_checkpoint_sha256": summary.get("adapter_checkpoint_sha256"),
         "timing_includes_teacher_recording": False,
+        "failure_return_code": 0,
+        "failure_log_path": "",
         "run_summary_path": str(summary_path.resolve()),
         "structure_path": str(structure_path.resolve()),
     }
     for field in NUMERIC_FIELDS:
         default = summary["elapsed_seconds"] if field == "time_per_sample" else 0.0
         row[field] = float(summary.get(field, default))
+    return row
+
+
+def _load_failure(summary_path: Path, method: str) -> dict[str, Any]:
+    with summary_path.open(encoding="utf-8") as stream:
+        summary = json.load(stream)
+    elapsed = float(summary.get("process_elapsed_seconds", 0.0))
+    row = {
+        "method": method,
+        "seed": int(summary["seed"]),
+        "success": False,
+        "formula": "",
+        "num_atoms": 0,
+        "guidance_schedule": "",
+        "coverage_target": float(summary.get("coverage") or 0.0),
+        "checkpoint_sha256": "",
+        "adapter_checkpoint_sha256": "",
+        "timing_includes_teacher_recording": False,
+        "failure_return_code": int(summary["return_code"]),
+        "failure_log_path": str(summary.get("log_path", "")),
+        "run_summary_path": str(summary_path.resolve()),
+        "structure_path": "",
+    }
+    for field in NUMERIC_FIELDS:
+        row[field] = elapsed if field == "elapsed_seconds" else 0.0
     return row
 
 
@@ -76,6 +103,14 @@ def collect_runs(root: Path, seed_start: int, seed_end: int) -> list[dict[str, A
         row = _load_run(summary_path, method)
         if seed_start <= row["seed"] <= seed_end:
             selected[(method, row["seed"])] = row
+    for summary_path in sorted(generation_root.glob("*/*/failure_summary.json")):
+        method = summary_path.parent.parent.name
+        row = _load_failure(summary_path, method)
+        if seed_start <= row["seed"] <= seed_end:
+            key = (method, row["seed"])
+            if key in selected:
+                raise ValueError(f"both success and failure summaries exist for {key}")
+            selected[key] = row
     # Teacher test runs are an exact structural C0 fallback, but their timing
     # includes recorder I/O and must never replace a dedicated pure C0 run.
     for summary_path in sorted((root / "teacher_runs" / "test").glob("*/run_summary.json")):
@@ -113,24 +148,29 @@ def main() -> None:
         grouped[row["method"]].append(row)
     ablation_rows = []
     for method, method_rows in sorted(grouped.items()):
+        successful_rows = [row for row in method_rows if row["success"]]
         aggregate: dict[str, Any] = {
             "method": method,
             "n": len(method_rows),
+            "successful_n": len(successful_rows),
             "seed_start": min(row["seed"] for row in method_rows),
             "seed_end": max(row["seed"] for row in method_rows),
             "generation_success_rate": statistics.fmean(
                 float(row["success"]) for row in method_rows
             ),
             "elapsed_seconds_total": sum(
+                float(row["elapsed_seconds"]) for row in successful_rows
+            ),
+            "attempted_elapsed_seconds_total": sum(
                 float(row["elapsed_seconds"]) for row in method_rows
             ),
         }
         for field in NUMERIC_FIELDS:
-            mean, std = mean_std([float(row[field]) for row in method_rows])
+            mean, std = mean_std([float(row[field]) for row in successful_rows])
             aggregate[f"{field}_mean"] = mean
             aggregate[f"{field}_std"] = std
         paired_speedups = []
-        for row in method_rows:
+        for row in successful_rows:
             baseline = by_key.get(("C0", row["seed"]))
             if baseline is not None:
                 paired_speedups.append(
@@ -152,7 +192,10 @@ def main() -> None:
     structures_dir.mkdir(parents=True, exist_ok=True)
     for method, method_rows in sorted(grouped.items()):
         atoms = []
-        for row in sorted(method_rows, key=lambda item: item["seed"]):
+        for row in sorted(
+            (item for item in method_rows if item["success"]),
+            key=lambda item: item["seed"],
+        ):
             atoms.extend(read(row["structure_path"], index=":"))
         write(structures_dir / f"{method.replace('+', '_plus_')}_generated.extxyz", atoms)
     print(

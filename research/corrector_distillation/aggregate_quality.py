@@ -53,7 +53,7 @@ def main() -> None:
             quality_row = quality_by_method.get(ablation_row["method"])
             if quality_row is None:
                 raise ValueError(f"missing quality row for {ablation_row['method']}")
-            if int(ablation_row["n"]) != int(quality_row["n"]):
+            if int(ablation_row["successful_n"]) != int(quality_row["n"]):
                 raise ValueError(f"sample count mismatch for {ablation_row['method']}")
             ablation_row.update({key: quality_row[key] for key in quality_fields})
         fieldnames = list(ablation_rows[0])

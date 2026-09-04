@@ -49,7 +49,8 @@ def main() -> None:
     for method, label, coverage in MATRIX:
         for seed in range(args.seed_start, args.seed_end + 1):
             summary = output_root / "generation" / label / str(seed) / "run_summary.json"
-            if summary.is_file():
+            failure_summary = summary.with_name("failure_summary.json")
+            if summary.is_file() or failure_summary.is_file():
                 continue
             run_dir = summary.parent
             if run_dir.exists():
@@ -62,7 +63,10 @@ def main() -> None:
                 shutil.move(run_dir, destination)
             jobs.append((method, label, coverage, seed))
     print(json.dumps({"jobs": len(jobs), "matrix": MATRIX}), flush=True)
-    running: dict[int, tuple[subprocess.Popen, object, tuple[str, str, float | None, int]]] = {}
+    running: dict[
+        int,
+        tuple[subprocess.Popen, object, tuple[str, str, float | None, int], float, Path],
+    ] = {}
     failures = []
     started = time.perf_counter()
     while jobs or running:
@@ -106,9 +110,15 @@ def main() -> None:
                 stdout=log_stream,
                 stderr=subprocess.STDOUT,
             )
-            running[gpu] = (process, log_stream, (method, label, coverage, seed))
+            running[gpu] = (
+                process,
+                log_stream,
+                (method, label, coverage, seed),
+                time.perf_counter(),
+                log_path,
+            )
         time.sleep(1.0)
-        for gpu, (process, log_stream, job) in list(running.items()):
+        for gpu, (process, log_stream, job, job_started, log_path) in list(running.items()):
             return_code = process.poll()
             if return_code is None:
                 continue
@@ -126,15 +136,27 @@ def main() -> None:
             }
             print(json.dumps(event, sort_keys=True), flush=True)
             if return_code != 0:
-                failures.append(event)
-        if failures:
-            for process, log_stream, _job in running.values():
-                process.terminate()
-                log_stream.close()
-            raise RuntimeError(f"Stage-C benchmark failures: {failures}")
+                failure = {
+                    **event,
+                    "success": False,
+                    "process_elapsed_seconds": time.perf_counter() - job_started,
+                    "log_path": str(log_path.resolve()),
+                }
+                failure_path = (
+                    output_root / "generation" / label / str(seed) / "failure_summary.json"
+                )
+                failure_path.parent.mkdir(parents=True, exist_ok=True)
+                with failure_path.open("w", encoding="utf-8") as stream:
+                    json.dump(failure, stream, indent=2, sort_keys=True)
+                    stream.write("\n")
+                failures.append(failure)
     print(
         json.dumps(
-            {"completed": True, "elapsed_seconds": time.perf_counter() - started},
+            {
+                "completed": True,
+                "elapsed_seconds": time.perf_counter() - started,
+                "failed_jobs": failures,
+            },
             sort_keys=True,
         ),
         flush=True,
