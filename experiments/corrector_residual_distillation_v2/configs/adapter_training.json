@@ -1,0 +1,18 @@
+{
+  "train_root": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v1/teacher_data/train",
+  "extra_train_root": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/dagger_data/train",
+  "validation_root": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/teacher_data/validation",
+  "epochs": 20,
+  "batch_records": 64,
+  "learning_rate": 0.0005,
+  "weight_decay": 0.00001,
+  "hidden_dim": 32,
+  "context_dim": 16,
+  "atomic_rank": 8,
+  "seed": 20260905,
+  "early_weight": 0.5,
+  "middle_weight": 1.0,
+  "late_weight": 2.0,
+  "early_end": 0.2,
+  "late_start": 0.7
+}

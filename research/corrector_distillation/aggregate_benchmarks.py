@@ -27,6 +27,11 @@ NUMERIC_FIELDS = (
     "peak_allocated_bytes",
     "adapter_seconds",
     "exact_fallback_seconds",
+    "dagger_teacher_seconds",
+    "dagger_teacher_calls",
+    "late_exact_calls",
+    "early_reuse_calls",
+    "field_risk_fallback_calls",
 )
 
 
@@ -196,7 +201,12 @@ def main() -> None:
             (item for item in method_rows if item["success"]),
             key=lambda item: item["seed"],
         ):
-            atoms.extend(read(row["structure_path"], index=":"))
+            run_atoms = read(row["structure_path"], index=":")
+            for atom_index, item in enumerate(run_atoms):
+                item.info["sample_seed"] = int(row["seed"])
+                item.info["sample_index_within_seed"] = atom_index
+                item.info["benchmark_method"] = method
+            atoms.extend(run_atoms)
         write(structures_dir / f"{method.replace('+', '_plus_')}_generated.extxyz", atoms)
     print(
         json.dumps(

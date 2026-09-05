@@ -33,6 +33,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-root", type=Path, required=True)
     parser.add_argument("--logs-dir", type=Path, required=True)
     parser.add_argument("--num-gpus", type=int, default=8)
+    parser.add_argument(
+        "--labels",
+        nargs="+",
+        default=list(METHOD_LABELS),
+        help="Explicit benchmark labels to relax; defaults to the legacy V1 matrix.",
+    )
     return parser.parse_args()
 
 
@@ -46,7 +52,7 @@ def main() -> None:
     logs_dir.mkdir(parents=True, exist_ok=True)
     runtime_tmp.mkdir(parents=True, exist_ok=True)
     jobs = []
-    for label in METHOD_LABELS:
+    for label in args.labels:
         filename = f"{label.replace('+', '_plus_')}_generated.extxyz"
         structures_path = structures_dir / filename
         if not structures_path.is_file():

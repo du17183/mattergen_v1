@@ -191,6 +191,8 @@ def main() -> None:
             stream,
             fieldnames=(
                 "index",
+                "sample_seed",
+                "sample_index_within_seed",
                 "formula",
                 "num_atoms",
                 "pre_relaxation_max_force",
@@ -205,6 +207,10 @@ def main() -> None:
             writer.writerow(
                 {
                     "index": index,
+                    "sample_seed": input_atoms[index].info.get("sample_seed", ""),
+                    "sample_index_within_seed": input_atoms[index].info.get(
+                        "sample_index_within_seed", ""
+                    ),
                     "formula": item.get_chemical_formula(),
                     "num_atoms": len(item),
                     "pre_relaxation_max_force": max_force,

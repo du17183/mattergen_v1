@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "description": "Finite, predeclared 16-seed V2 screen; JSON is valid YAML.",
+  "methods": [
+    {
+      "label": "B0_C0",
+      "method": "C0"
+    },
+    {
+      "label": "B1_V1_Global50",
+      "method": "Adapter+Fallback",
+      "adapter_checkpoint": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v1/adapter_final/residual_adapter.pt",
+      "coverage": 0.5,
+      "risk_mode": "global"
+    },
+    {
+      "label": "B2_V2_Global50",
+      "method": "Adapter+Fallback",
+      "adapter_checkpoint": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/adapter_v2_field_calibrated/residual_adapter.pt",
+      "coverage": 0.5,
+      "risk_mode": "global"
+    },
+    {
+      "label": "B3_V2_Global75_Late20",
+      "method": "Adapter+Fallback",
+      "adapter_checkpoint": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/adapter_v2_field_calibrated/residual_adapter.pt",
+      "coverage": 0.75,
+      "risk_mode": "global",
+      "late_exact_start": 0.8
+    },
+    {
+      "label": "B3_V2_Global75_Late30",
+      "method": "Adapter+Fallback",
+      "adapter_checkpoint": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/adapter_v2_field_calibrated/residual_adapter.pt",
+      "coverage": 0.75,
+      "risk_mode": "global",
+      "late_exact_start": 0.7
+    },
+    {
+      "label": "B3_V2_Global75_Late40",
+      "method": "Adapter+Fallback",
+      "adapter_checkpoint": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/adapter_v2_field_calibrated/residual_adapter.pt",
+      "coverage": 0.75,
+      "risk_mode": "global",
+      "late_exact_start": 0.6
+    },
+    {
+      "label": "B4_V2_Field75_Late30",
+      "method": "Adapter+Fallback",
+      "adapter_checkpoint": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/adapter_v2_field_calibrated/residual_adapter.pt",
+      "coverage": 0.75,
+      "risk_mode": "field",
+      "risk_fields": ["pos", "cell", "atomic_numbers"],
+      "late_exact_start": 0.7
+    },
+    {
+      "label": "B4a_V2_Atomic75_Late30",
+      "method": "Adapter+Fallback",
+      "adapter_checkpoint": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/adapter_v2_field_calibrated/residual_adapter.pt",
+      "coverage": 0.75,
+      "risk_mode": "field",
+      "risk_fields": ["atomic_numbers"],
+      "late_exact_start": 0.7
+    },
+    {
+      "label": "B5_V2_EarlyReuse20_Field75_Late30",
+      "method": "Adapter+Fallback",
+      "adapter_checkpoint": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/adapter_v2_field_calibrated/residual_adapter.pt",
+      "coverage": 0.75,
+      "risk_mode": "field",
+      "risk_fields": ["pos", "cell", "atomic_numbers"],
+      "early_reuse_end": 0.2,
+      "late_exact_start": 0.7
+    }
+  ]
+}

@@ -50,6 +50,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--target", type=float, default=0.1)
     parser.add_argument("--guidance-scale", type=float, default=2.0)
     parser.add_argument("--cpu-threads", type=int, default=2)
+    parser.add_argument("--risk-mode", choices=("global", "field"), default="global")
+    parser.add_argument(
+        "--risk-fields",
+        default="pos,cell,atomic_numbers",
+        help="Comma-separated fields used by field-aware fallback.",
+    )
+    parser.add_argument("--early-reuse-end", type=float)
+    parser.add_argument("--late-exact-start", type=float)
     return parser.parse_args()
 
 
@@ -65,6 +73,9 @@ def main() -> None:
     run_dir = args.output_root.expanduser().resolve() / "generation" / run_label / str(args.seed)
     run_dir.mkdir(parents=True, exist_ok=False)
     overrides = []
+    risk_fields = tuple(field.strip() for field in args.risk_fields.split(",") if field.strip())
+    if not risk_fields or not set(risk_fields) <= {"pos", "cell", "atomic_numbers"}:
+        raise ValueError("--risk-fields must be a non-empty subset of pos,cell,atomic_numbers")
     schedule = "adaptive" if args.method in ("A0", "A0+Adapter+Fallback") else "constant"
     if args.method == "Skip":
         # OmegaConf recursively merges dictionaries, so assigning ``{}`` does
@@ -85,9 +96,22 @@ def main() -> None:
                 "sampler_partial.corrector_residual_adapter.enabled=true",
                 f"sampler_partial.corrector_residual_adapter.mode={mode}",
                 f"sampler_partial.corrector_residual_adapter.coverage_target={coverage}",
+                f"sampler_partial.corrector_residual_adapter.risk_mode={args.risk_mode}",
+                "sampler_partial.corrector_residual_adapter.risk_fields="
+                f"[{','.join(risk_fields)}]",
                 f"sampler_partial.corrector_residual_adapter.trace_path={trace_path}",
             )
         )
+        if args.early_reuse_end is not None:
+            overrides.append(
+                "sampler_partial.corrector_residual_adapter.early_reuse_end="
+                f"{args.early_reuse_end}"
+            )
+        if args.late_exact_start is not None:
+            overrides.append(
+                "sampler_partial.corrector_residual_adapter.late_exact_start="
+                f"{args.late_exact_start}"
+            )
         if mode == "adapter":
             if args.adapter_checkpoint is None:
                 raise ValueError(f"{args.method} requires --adapter-checkpoint")
@@ -146,6 +170,10 @@ def main() -> None:
         ),
         "target": {"dft_mag_density": args.target},
         "guidance_scale": args.guidance_scale,
+        "risk_mode": args.risk_mode,
+        "risk_fields": list(risk_fields),
+        "early_reuse_end": args.early_reuse_end,
+        "late_exact_start": args.late_exact_start,
         "elapsed_seconds": elapsed,
         "time_per_sample": elapsed,
         "samples_per_hour": 3600.0 / elapsed,

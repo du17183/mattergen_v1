@@ -11,7 +11,6 @@ from pathlib import Path
 from typing import Any, Iterable, Iterator, Mapping
 
 import torch
-import torch.nn.functional as F
 
 from mattergen.diffusion.data.batched_data import SimpleBatchedData
 from mattergen.diffusion.sampling.residual_adapter import (
@@ -35,6 +34,7 @@ FIELDS = ("pos", "cell", "atomic_numbers")
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--train-root", type=Path, required=True)
+    parser.add_argument("--extra-train-root", type=Path, action="append", default=[])
     parser.add_argument("--validation-root", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--epochs", type=int, default=12)
@@ -46,6 +46,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--atomic-rank", type=int, default=8)
     parser.add_argument("--seed", type=int, default=20260904)
     parser.add_argument("--device", default="cuda")
+    parser.add_argument("--early-weight", type=float, default=1.0)
+    parser.add_argument("--middle-weight", type=float, default=1.0)
+    parser.add_argument("--late-weight", type=float, default=1.0)
+    parser.add_argument("--early-end", type=float, default=0.2)
+    parser.add_argument("--late-start", type=float, default=0.7)
     return parser.parse_args()
 
 
@@ -166,15 +171,62 @@ def to_device(batch: dict[str, Any], device: torch.device) -> dict[str, Any]:
     return batch
 
 
-def field_loss(
-    predicted: torch.Tensor, target: torch.Tensor, field: str, score_before: torch.Tensor
+def timestep_weights(
+    progress: torch.Tensor,
+    *,
+    early_weight: float,
+    middle_weight: float,
+    late_weight: float,
+    early_end: float,
+    late_start: float,
 ) -> torch.Tensor:
+    if min(early_weight, middle_weight, late_weight) <= 0.0:
+        raise ValueError("all timestep weights must be positive")
+    if not 0.0 <= early_end <= late_start <= 1.0:
+        raise ValueError("timestep boundaries must satisfy 0 <= early_end <= late_start <= 1")
+    return torch.where(
+        progress < early_end,
+        torch.full_like(progress, early_weight),
+        torch.where(
+            progress < late_start,
+            torch.full_like(progress, middle_weight),
+            torch.full_like(progress, late_weight),
+        ),
+    )
+
+
+def field_row_weights(
+    sample_weights: torch.Tensor,
+    batch_index: torch.Tensor | None,
+    row_count: int,
+) -> torch.Tensor:
+    if batch_index is None:
+        if row_count != sample_weights.numel():
+            raise ValueError("field rows do not match unbatched sample weights")
+        return sample_weights
+    return sample_weights[batch_index.long()]
+
+
+def field_loss(
+    predicted: torch.Tensor,
+    target: torch.Tensor,
+    field: str,
+    score_before: torch.Tensor,
+    row_weights: torch.Tensor | None = None,
+) -> torch.Tensor:
+    squared_error = (predicted - target).square()
+    if row_weights is None:
+        weights = torch.ones_like(squared_error)
+    else:
+        shape = (row_weights.shape[0],) + (1,) * (squared_error.ndim - 1)
+        weights = row_weights.reshape(shape).expand_as(squared_error)
     if field == "atomic_numbers":
         active = score_before.abs() < MASKED_LOGIT_ABS_THRESHOLD
         if not bool(active.any().item()):
             return predicted.sum() * 0.0
-        return F.mse_loss(predicted[active], target[active])
-    return F.mse_loss(predicted, target)
+        squared_error = squared_error[active]
+        weights = weights[active]
+    return (squared_error * weights).sum() / weights.sum().clamp_min(1.0e-12)
 
 
 @torch.no_grad()
@@ -257,6 +309,7 @@ def evaluate(
     *,
     batch_records: int,
     device: torch.device,
+    stage_weights: tuple[float, float, float, float, float] | None = None,
 ) -> dict[str, float]:
     sums = {f"{field}_squared_error": 0.0 for field in FIELDS}
     counts = {field: 0 for field in FIELDS}
@@ -273,19 +326,40 @@ def evaluate(
             t=teacher_batch["t"],
             progress=teacher_batch["progress"],
         )
+        sample_weights = (
+            torch.ones_like(teacher_batch["progress"])
+            if stage_weights is None
+            else timestep_weights(
+                teacher_batch["progress"],
+                early_weight=stage_weights[0],
+                middle_weight=stage_weights[1],
+                late_weight=stage_weights[2],
+                early_end=stage_weights[3],
+                late_start=stage_weights[4],
+            )
+        )
         for field in FIELDS:
             pred = prediction.residuals[field].float()
             target = teacher_batch["score_residual"][field].float()
             valid = torch.ones_like(target, dtype=torch.bool)
             if field == "atomic_numbers":
                 valid = teacher_batch["score_before"][field].abs() < MASKED_LOGIT_ABS_THRESHOLD
+            row_weights = field_row_weights(
+                sample_weights,
+                teacher_batch["score_before"].get_batch_idx(field),
+                target.shape[0],
+            )
+            weight_shape = (row_weights.shape[0],) + (1,) * (target.ndim - 1)
+            weights = row_weights.reshape(weight_shape).expand_as(target)[valid]
             pred = pred[valid]
             target = target[valid]
-            sums[f"{field}_squared_error"] += float((pred - target).square().sum().item())
-            counts[field] += target.numel()
-            dots[field] += float((pred * target).sum().item())
-            pred_squares[field] += float(pred.square().sum().item())
-            target_squares[field] += float(target.square().sum().item())
+            sums[f"{field}_squared_error"] += float(
+                ((pred - target).square() * weights).sum().item()
+            )
+            counts[field] += float(weights.sum().item())
+            dots[field] += float((pred * target * weights).sum().item())
+            pred_squares[field] += float((pred.square() * weights).sum().item())
+            target_squares[field] += float((target.square() * weights).sum().item())
     result = {}
     for field in FIELDS:
         result[f"{field}_mse"] = sums[f"{field}_squared_error"] / max(counts[field], 1)
@@ -305,6 +379,7 @@ def calibrate_uncertainty(
 ) -> dict[str, Any]:
     all_features = []
     all_targets = []
+    all_field_targets: dict[str, list[torch.Tensor]] = {field: [] for field in FIELDS}
     all_progress = []
     model.eval()
     for teacher_batch in batches(paths, batch_records=batch_records):
@@ -326,10 +401,12 @@ def calibrate_uncertainty(
             if field == "atomic_numbers":
                 valid = teacher_batch["score_before"][field].abs() < MASKED_LOGIT_ABS_THRESHOLD
             error = prediction.residuals[field] - teacher_batch["score_residual"][field]
-            errors.append(
+            normalized_field_error = (
                 _per_sample_rms(error, index, batch_size, valid=valid)
                 / float(target_scales[field])
             )
+            errors.append(normalized_field_error)
+            all_field_targets[field].append(torch.log1p(normalized_field_error).cpu())
         normalized_error = torch.stack(errors, dim=1).mean(dim=1)
         all_targets.append(torch.log1p(normalized_error).cpu())
         all_features.append(prediction.risk_features.cpu())
@@ -361,6 +438,76 @@ def calibrate_uncertainty(
             selected = (progress >= bin_edges[index]) & (progress < bin_edges[index + 1])
         bin_errors.append(float(targets[selected].mean().item()) if selected.any() else math.nan)
     correlation = torch.corrcoef(torch.stack((predicted_risk, targets)))[0, 1]
+    field_models = {}
+    field_predictions = {}
+    for field in FIELDS:
+        field_target = torch.cat(all_field_targets[field]).double()
+        field_bias = field_target.mean()
+        field_weights = torch.linalg.solve(
+            normalized.T @ normalized + ridge,
+            normalized.T @ (field_target - field_bias),
+        )
+        field_prediction = normalized @ field_weights + field_bias
+        field_predictions[field] = field_prediction
+        correlations = {}
+        stage_masks = {
+            "overall": torch.ones_like(progress, dtype=torch.bool),
+            "early": progress < (1.0 / 3.0),
+            "middle": (progress >= (1.0 / 3.0)) & (progress < (2.0 / 3.0)),
+            "late": progress >= (2.0 / 3.0),
+        }
+        for stage, selected in stage_masks.items():
+            selected_prediction = field_prediction[selected]
+            selected_target = field_target[selected]
+            if selected_target.numel() < 2 or float(selected_target.std().item()) == 0.0:
+                correlations[stage] = math.nan
+            else:
+                correlations[stage] = float(
+                    torch.corrcoef(
+                        torch.stack((selected_prediction, selected_target))
+                    )[0, 1].item()
+                )
+        field_models[field] = {
+            "feature_mean": mean.tolist(),
+            "feature_std": std.tolist(),
+            "linear_weights": field_weights.tolist(),
+            "linear_bias": float(field_bias.item()),
+            "target": f"log1p({field}-normalized residual RMSE)",
+            "correlations": correlations,
+        }
+
+    field_thresholds = {}
+    field_coverage_calibration = {}
+    for coverage in coverages:
+        low, high = 0.0, 1.0
+        for _ in range(40):
+            quantile = (low + high) / 2.0
+            trial = {
+                field: torch.quantile(values, quantile)
+                for field, values in field_predictions.items()
+            }
+            accepted = torch.ones_like(progress, dtype=torch.bool)
+            for field in FIELDS:
+                accepted &= field_predictions[field] <= trial[field]
+            if float(accepted.double().mean().item()) < coverage:
+                low = quantile
+            else:
+                high = quantile
+        quantile = high
+        thresholds_for_coverage = {
+            field: float(torch.quantile(values, quantile).item())
+            for field, values in field_predictions.items()
+        }
+        accepted = torch.ones_like(progress, dtype=torch.bool)
+        for field in FIELDS:
+            accepted &= field_predictions[field] <= thresholds_for_coverage[field]
+        key = str(coverage)
+        field_thresholds[key] = thresholds_for_coverage
+        field_coverage_calibration[key] = {
+            "marginal_quantile": quantile,
+            "joint_coverage": float(accepted.double().mean().item()),
+        }
+
     return {
         "risk_feature_names": list(RISK_FEATURE_NAMES),
         "risk_feature_mean": mean.tolist(),
@@ -369,6 +516,14 @@ def calibrate_uncertainty(
         "risk_linear_bias": float(bias.item()),
         "risk_target": "log1p(mean field-normalized residual RMSE)",
         "risk_validation_correlation": float(correlation.item()),
+        "field_risk_models": field_models,
+        "field_coverage_thresholds": field_thresholds,
+        "field_coverage_calibration": field_coverage_calibration,
+        "field_risk_stage_definition": {
+            "early": "progress < 1/3",
+            "middle": "1/3 <= progress < 2/3",
+            "late": "progress >= 2/3",
+        },
         "coverage_thresholds": thresholds,
         "timestep_bin_edges": bin_edges.tolist(),
         "timestep_bin_mean_log_error": bin_errors,
@@ -382,12 +537,28 @@ def main() -> None:
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(args.seed)
     device = torch.device(args.device if torch.cuda.is_available() else "cpu")
-    train_paths = manifests(args.train_root)
+    train_roots = [args.train_root, *args.extra_train_root]
+    train_paths = [path for root in train_roots for path in manifests(root)]
     validation_paths = manifests(args.validation_root)
     train_seeds = manifest_seeds(train_paths)
     validation_seeds = manifest_seeds(validation_paths)
     if set(train_seeds) & set(validation_seeds):
         raise ValueError("teacher train/validation seed leakage")
+    stage_weight_config = (
+        args.early_weight,
+        args.middle_weight,
+        args.late_weight,
+        args.early_end,
+        args.late_start,
+    )
+    timestep_weights(
+        torch.tensor([0.0, 0.5, 1.0]),
+        early_weight=args.early_weight,
+        middle_weight=args.middle_weight,
+        late_weight=args.late_weight,
+        early_end=args.early_end,
+        late_start=args.late_start,
+    )
     output_dir = args.output_dir.expanduser().resolve()
     output_dir.mkdir(parents=True, exist_ok=False)
 
@@ -429,12 +600,25 @@ def main() -> None:
                 t=teacher_batch["t"],
                 progress=teacher_batch["progress"],
             )
+            sample_weights = timestep_weights(
+                teacher_batch["progress"],
+                early_weight=args.early_weight,
+                middle_weight=args.middle_weight,
+                late_weight=args.late_weight,
+                early_end=args.early_end,
+                late_start=args.late_start,
+            )
             losses = {
                 field: field_loss(
                     prediction.residuals[field],
                     teacher_batch["score_residual"][field],
                     field,
                     teacher_batch["score_before"][field],
+                    field_row_weights(
+                        sample_weights,
+                        teacher_batch["score_before"].get_batch_idx(field),
+                        teacher_batch["score_residual"][field].shape[0],
+                    ),
                 )
                 / (target_scales[field] ** 2)
                 for field in FIELDS
@@ -452,8 +636,15 @@ def main() -> None:
             batch_records=args.batch_records,
             device=device,
         )
+        weighted_validation = evaluate(
+            model,
+            validation_paths,
+            batch_records=args.batch_records,
+            device=device,
+            stage_weights=stage_weight_config,
+        )
         validation_objective = sum(
-            validation[f"{field}_mse"] / (target_scales[field] ** 2)
+            weighted_validation[f"{field}_mse"] / (target_scales[field] ** 2)
             for field in FIELDS
         ) / len(FIELDS)
         row = {
@@ -461,6 +652,10 @@ def main() -> None:
             "train_normalized_loss": loss_sum / max(batches_seen, 1),
             "validation_normalized_mse": validation_objective,
             **validation,
+            **{
+                f"weighted_{key}": value
+                for key, value in weighted_validation.items()
+            },
         }
         rows.append(row)
         if validation_objective < best_validation_objective:
@@ -481,6 +676,13 @@ def main() -> None:
         batch_records=args.batch_records,
         device=device,
     )
+    selected_weighted_validation = evaluate(
+        model,
+        validation_paths,
+        batch_records=args.batch_records,
+        device=device,
+        stage_weights=stage_weight_config,
+    )
     calibration = calibrate_uncertainty(
         model,
         validation_paths,
@@ -498,6 +700,12 @@ def main() -> None:
         "atomic_rank": args.atomic_rank,
         "seed": args.seed,
         "device": args.device,
+        "early_weight": args.early_weight,
+        "middle_weight": args.middle_weight,
+        "late_weight": args.late_weight,
+        "early_end": args.early_end,
+        "late_start": args.late_start,
+        "train_roots": [str(root.expanduser().resolve()) for root in train_roots],
     }
     checkpoint_path = save_adapter_checkpoint(
         output_dir / "residual_adapter.pt",
@@ -532,6 +740,7 @@ def main() -> None:
         "selected_epoch": best_epoch,
         "selected_validation_normalized_mse": best_validation_objective,
         "selected_validation": selected_validation,
+        "selected_weighted_validation": selected_weighted_validation,
         "training_hyperparameters": training_hyperparameters,
     }
     with (output_dir / "training_summary.json").open("x", encoding="utf-8") as stream:
