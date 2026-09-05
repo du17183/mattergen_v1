@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "frozen_at_utc": "2026-09-05T04:08:22Z",
+  "branch": "experiment/corrector-residual-distillation-v2",
+  "v1_base_commit": "d2736e01bf7ef9f1072e2760622c603403516403",
+  "stage_b_selection_commit": "b6a74b293736d04b4f0459d5caf6ce3f3b4a93a8",
+  "freeze_git_commit": "b577f8c7324625ab295eb07aca9be8082435e5d4",
+  "selected_method": "B4a_V2_Atomic75_Late30",
+  "artifacts": {
+    "adapter_checkpoint": {
+      "path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/frozen/residual_adapter.pt",
+      "sha256": "a2fd0f17c27b760958b60c1d1386577883635a34fb2101eb08e38fd8472702c7",
+      "bytes": 21204,
+      "git_policy": "local binary; excluded from Git"
+    },
+    "risk_calibration": {
+      "path": "experiments/corrector_residual_distillation_v2/frozen/risk_calibration.json",
+      "file_sha256": "dff93d12d3637e260a3cfe0b9f418b39e809a39e13deb6d185ea0b4c31d3fd9f",
+      "canonical_model_sha256": "43d47bdb9a23f4f3eba40ca670ef1bbd4d9204a194e0b668a1a57ceb6728fbfc"
+    },
+    "frozen_config": {
+      "path": "experiments/corrector_residual_distillation_v2/v2_frozen_config.yaml",
+      "sha256": "be8fdfa9a1f754c4a3bded1a4a583c042cfce3c72a7152f55b2e2f799a546464"
+    },
+    "stage_c_matrix": {
+      "path": "experiments/corrector_residual_distillation_v2/configs/stage_c_matrix.yaml",
+      "sha256": "e2600b0157d110a7c86434978138e977fe9b0161c28ebca462478fb55ce19a17"
+    }
+  },
+  "adapter": {
+    "parameter_count": 2661,
+    "selected_epoch": 18,
+    "weighted_validation_objective": 1.3172586675755802,
+    "training_teacher_seeds": [61000, 61015],
+    "dagger_training_seeds": [64000, 64015],
+    "risk_calibration_seeds": [65000, 65015]
+  },
+  "thresholds": {
+    "coverage_target": 0.75,
+    "risk_mode": "field",
+    "risk_fields": ["atomic_numbers"],
+    "atomic_numbers": 0.8289545722625317,
+    "calibration_joint_coverage_all_fields": 0.7500625,
+    "note": "The selected runtime rule consults only the atomic_numbers risk and threshold."
+  },
+  "schedule": {
+    "early_reuse_end": null,
+    "late_exact_start": 0.7,
+    "late_exact_steps": 300,
+    "eligible_steps": 700,
+    "progress_direction": "0 is the high-noise start; 1 is the low-noise final stage"
+  },
+  "seed_ranges": {
+    "v1_permanently_frozen_test": [63000, 63031],
+    "dagger_train": [64000, 64015],
+    "validation_and_calibration": [65000, 65015],
+    "final_independent_test": [66000, 66063]
+  },
+  "pre_freeze_final_seed_audit": {
+    "scanned_root": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2",
+    "numeric_path_hits_66000_to_66063": [],
+    "run_summary_seed_hits_66000_to_66063": [],
+    "passed": true,
+    "final_test_seeds_consulted_for_training_validation_or_selection": false
+  },
+  "stage_b_selection_snapshot": {
+    "validation_seeds": [65000, 65015],
+    "paired_speedup": 1.3419655190068271,
+    "rmsd": 0.05443177344907782,
+    "mean_force": 0.41700264252722263,
+    "max_force": 1.6166821718215942,
+    "e_hull": 0.12668823337332918,
+    "stable": 0.5625,
+    "nus": 0.375,
+    "adapter_acceptance_overall": 0.585375,
+    "second_forward_avoidance": 0.585375,
+    "forward_reduction": 0.2926875
+  },
+  "constraints": {
+    "a0_combination_prohibited": true,
+    "mattergen_backbone_frozen": true,
+    "teacher_target": "frozen original MatterGen exact score_after",
+    "post_freeze_tuning_on_final_seeds_prohibited": true,
+    "validation_backup_not_scheduled_for_final_test": true
+  }
+}
