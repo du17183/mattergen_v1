@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "formal_protocol_module": "research.corrector_distillation.formal256_protocol",
+  "v2_config_source": "experiments/corrector_residual_distillation_v2/v2_frozen_config.yaml",
+  "v2_config_policy": "read exact frozen source at runtime; do not duplicate or override",
+  "methods": ["C0", "V2_Frozen_Atomic75_Late30"],
+  "formal_seed_range": [67000, 67255],
+  "single_h20_seed_range": [67000, 67015],
+  "execution_order": "paired global waves, C0 then V2 for the same fixed-GPU seed",
+  "parallelism": "seed-level only",
+  "tensor_parallel": false,
+  "gpu_shards": {
+    "0": [67000, 67031],
+    "1": [67032, 67063],
+    "2": [67064, 67095],
+    "3": [67096, 67127],
+    "4": [67128, 67159],
+    "5": [67160, 67191],
+    "6": [67192, 67223],
+    "7": [67224, 67255]
+  },
+  "quality": {
+    "evaluator": "MatterSim-5M surrogate",
+    "dft_verified": false,
+    "filter": "EXPCELLFILTER",
+    "fmax_ev_per_angstrom": 0.05,
+    "max_natoms_per_batch": 512,
+    "protocol": "one structure per BatchRelaxer call; persistent potential",
+    "cuda_3x3_det_workaround": true
+  },
+  "statistics": {
+    "paired_bootstrap_samples": 20000,
+    "bootstrap_seed": 20260905,
+    "confidence_interval": "two-sided percentile 95%",
+    "wilcoxon_zero_method": "Pratt",
+    "binary_secondary_test": "exact McNemar/binomial",
+    "p_value_equivalence_claim_prohibited": true
+  }
+}

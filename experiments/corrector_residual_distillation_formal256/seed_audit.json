@@ -1,0 +1,52 @@
+{
+  "all_intersections_empty": true,
+  "fixed_gpu_shards": {
+    "0": [67000, 67031],
+    "1": [67032, 67063],
+    "2": [67064, 67095],
+    "3": [67096, 67127],
+    "4": [67128, 67159],
+    "5": [67160, 67191],
+    "6": [67192, 67223],
+    "7": [67224, 67255]
+  },
+  "formal_seed_count": 256,
+  "formal_seed_range": [67000, 67255],
+  "formal_seed_sha256": "7c81a658cb71ceb91213258f1324863fc6188ec2d469bf1eeaf9e24293fc65f5",
+  "historical_seed_ranges": {
+    "adaptive_cfg_formal256": [[20000, 20255]],
+    "e3_pcr_formal256": [[40000, 40255]],
+    "e3_pcr_training": [[20000, 20063]],
+    "historical_misc_formal": [[14000, 14031], [32000, 32063], [33000, 33127], [41000, 41063], [50000, 50063]],
+    "v1_baseline_recovery": [[60000, 60007]],
+    "v1_stage_c": [[63000, 63031]],
+    "v1_train": [[61000, 61015]],
+    "v1_validation": [[62000, 62007]],
+    "v2_dagger_train": [[64000, 64015]],
+    "v2_stage_c": [[66000, 66063]],
+    "v2_validation_calibration": [[65000, 65015]]
+  },
+  "intersections": {
+    "adaptive_cfg_formal256": [],
+    "e3_pcr_formal256": [],
+    "e3_pcr_training": [],
+    "historical_misc_formal": [],
+    "v1_baseline_recovery": [],
+    "v1_stage_c": [],
+    "v1_train": [],
+    "v1_validation": [],
+    "v2_dagger_train": [],
+    "v2_stage_c": [],
+    "v2_validation_calibration": []
+  },
+  "passed": true,
+  "policy": "If any overlap exists, replace the entire contiguous 256-seed interval; never replace a subset.",
+  "schema_version": 1,
+  "shard_assignment_exact": true,
+  "sources": {
+    "adaptive_cfg": "origin/feature/a0-e3g-formal256:reports/a0_e3g_formal256/frozen_manifest.json",
+    "e3_pcr": "origin/feature/q3-e3-pcr-formal256:reports/q3_e3_pcr/formal256/formal_seed_audit.json",
+    "v1": "experiments/corrector_residual_distillation_v1/config/experiment.json",
+    "v2": "experiments/corrector_residual_distillation_v2/v2_frozen_config.yaml"
+  }
+}

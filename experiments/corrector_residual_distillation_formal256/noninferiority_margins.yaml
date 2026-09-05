@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "status": "PREREGISTERED_BEFORE_FORMAL_GENERATION",
+  "frozen_at_utc": "2026-09-05T08:36:06Z",
+  "formal_code_commit": "9ea6551b7ff8473fde7da92862e8d467d1351cf8",
+  "comparison": "V2_Frozen_Atomic75_Late30 minus C0, paired by seed",
+  "inference": "Two-sided 95% paired-bootstrap bounds are used as conservative non-inferiority bounds; 20000 resamples, seed 20260905.",
+  "historical_basis": {
+    "c0_e_hull_sd_ev_per_atom": [0.08412931238205806, 0.0903695756439275],
+    "c0_rmsd_sd_angstrom": [0.025943713343854456, 0.19949959705202053],
+    "c0_structure_max_force_sd_ev_per_angstrom": [0.3025422109851322, 0.3865104524937453],
+    "sources": [
+      "V1 C0 independent Stage-C seeds 63000-63031",
+      "V2 C0 independent Stage-C seeds 66000-66063"
+    ],
+    "rationale": "Margins are round, materially smaller than the observed single-seed dispersion, interpretable at n=256, and strict enough to reject the approximately twofold geometry degradation seen during V1 development. They were not selected from formal seeds."
+  },
+  "primary_endpoints": [
+    {
+      "metric": "e_hull",
+      "direction": "lower",
+      "scale": "absolute",
+      "maximum_harm": 0.025,
+      "unit": "eV/atom",
+      "rationale": "25 meV/atom is 0.28-0.30 historical C0 SD and a conservative, physically interpretable mean-degradation ceiling."
+    },
+    {
+      "metric": "stable",
+      "direction": "higher",
+      "scale": "absolute",
+      "maximum_harm": 0.10,
+      "unit": "proportion",
+      "rationale": "A loss larger than 10 percentage points is not acceptable for the primary stability endpoint."
+    },
+    {
+      "metric": "nus",
+      "direction": "higher",
+      "scale": "absolute",
+      "maximum_harm": 0.10,
+      "unit": "proportion",
+      "rationale": "A loss larger than 10 percentage points is not acceptable for novel-unique-stable yield."
+    },
+    {
+      "metric": "rmsd",
+      "direction": "lower",
+      "scale": "absolute",
+      "maximum_harm": 0.02,
+      "unit": "angstrom",
+      "rationale": "0.02 angstrom is below the historical heavy-tail SD and disallows a return to the V1 approximately twofold mean degradation."
+    },
+    {
+      "metric": "force_max",
+      "direction": "lower",
+      "scale": "ratio",
+      "maximum_ratio": 1.20,
+      "unit": "mean of per-structure pre-relaxation maximum force",
+      "rationale": "The candidate mean structure-max force may be at most 20% above C0; this directly targets the V2 development risk."
+    }
+  ],
+  "force_tail_guardrails": [
+    {"statistic": "p95", "scale": "ratio", "maximum_ratio": 1.30},
+    {"statistic": "p99", "scale": "ratio", "maximum_ratio": 1.50},
+    {"statistic": "gt_1", "scale": "absolute", "maximum_harm": 0.05},
+    {"statistic": "gt_2", "scale": "absolute", "maximum_harm": 0.02}
+  ],
+  "force_thresholds_ev_per_angstrom": [1.0, 2.0],
+  "classification_rule": {
+    "PASS": "single-H20 paired mean speedup >= 1.20; all five primary non-inferiority endpoints pass; all four force-tail guardrails pass",
+    "BORDERLINE": "speed passes but PASS is not established and FAIL conditions are absent",
+    "FAIL": "speedup < 1.20, or at least two primary endpoint 95% CIs exclude zero in the harmful direction, or any primary endpoint both clearly degrades and exceeds its margin, or multiple force-tail guardrails clearly exceed their margins",
+    "no_equivalence_from_nonsignificance": true
+  }
+}

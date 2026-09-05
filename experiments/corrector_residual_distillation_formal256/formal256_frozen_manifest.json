@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "frozen_at_utc": "2026-09-05T08:36:06Z",
+  "formal_branch": "experiment/corrector-residual-distillation-formal256",
+  "v2_frozen_head": "1b8b62284f694b08d778895da345c708204ec2db",
+  "formal_code_commit": "9ea6551b7ff8473fde7da92862e8d467d1351cf8",
+  "formal_method": "V2_Frozen_Atomic75_Late30",
+  "baseline": "C0",
+  "confirmatory_no_tuning": true,
+  "formal_seed_range": [67000, 67255],
+  "formal_seed_count": 256,
+  "single_h20_seed_range": [67000, 67015],
+  "v2_runtime_config_policy": "read exact V2 frozen config at runtime; no formal duplicate",
+  "artifacts": {
+    "v2_frozen_config": {
+      "path": "experiments/corrector_residual_distillation_v2/v2_frozen_config.yaml",
+      "sha256": "be8fdfa9a1f754c4a3bded1a4a583c042cfce3c72a7152f55b2e2f799a546464"
+    },
+    "v2_upstream_manifest": {
+      "path": "experiments/corrector_residual_distillation_v2/v2_frozen_manifest.json",
+      "sha256": "6fe473e5154d9f1130910fadc7f91b5bebe6dd8a5d58b7c39d12cd62029a5dba"
+    },
+    "v2_stage_c_matrix": {
+      "path": "experiments/corrector_residual_distillation_v2/configs/stage_c_matrix.yaml",
+      "sha256": "e2600b0157d110a7c86434978138e977fe9b0161c28ebca462478fb55ce19a17"
+    },
+    "adapter_checkpoint": {
+      "path": "experiments/corrector_residual_distillation_v2/frozen/residual_adapter.pt",
+      "sha256": "a2fd0f17c27b760958b60c1d1386577883635a34fb2101eb08e38fd8472702c7",
+      "parameter_count": 2661,
+      "selected_epoch": 18
+    },
+    "risk_calibration": {
+      "path": "experiments/corrector_residual_distillation_v2/frozen/risk_calibration.json",
+      "file_sha256": "dff93d12d3637e260a3cfe0b9f418b39e809a39e13deb6d185ea0b4c31d3fd9f",
+      "canonical_model_sha256": "43d47bdb9a23f4f3eba40ca670ef1bbd4d9204a194e0b668a1a57ceb6728fbfc"
+    },
+    "mattergen_checkpoint": {
+      "path": "checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt",
+      "sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e"
+    },
+    "mattersim_checkpoint": {
+      "path": "checkpoints/official/mattersim/mattersim-v1.0.0-5M.pth",
+      "sha256": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5"
+    },
+    "alex_mp_reference": {
+      "path": "data-release/alex-mp/reference_MP2020correction.gz",
+      "sha256": "c722f72c7d0cd398fc382870f0b731425b54bd4492b089ca36e3119e49f469b5",
+      "records": 845997
+    }
+  },
+  "frozen_method_values": {
+    "target": {"dft_mag_density": 0.1},
+    "guidance_schedule": "constant",
+    "guidance_scale": 2.0,
+    "diffusion_steps": 1000,
+    "corrector_steps_per_timestep": 1,
+    "batch_size": 1,
+    "deterministic": true,
+    "precision": "repository default",
+    "coverage_target": 0.75,
+    "risk_mode": "field",
+    "risk_fields": ["atomic_numbers"],
+    "atomic_threshold": 0.8289545722625317,
+    "early_reuse_end": null,
+    "late_exact_start": 0.7,
+    "late_exact_steps": 300,
+    "eligible_steps": 700,
+    "c0_expected_logical_score_calls": 2000
+  },
+  "source_sha256": {
+    "benchmark_sampler.py": "22ae4297c75690b7c8f1c3b59b3eb3ee8a5cfd00e31f776aa1ae47983a88ca13",
+    "residual_distillation.py": "288657ff4149a4759d9bf29906950446f0f727b552ac401a6a528d4d9d6bcd13",
+    "pc_sampler.py": "1fc3276a80235f3df3d6a813c1643c2f04e776f363e15ea4e410d5af8822358b",
+    "relax_many_individual.py": "ae152056723f1fffc3a1020d46e83e322e48d8836f5cd57b676e9b722ad95dab",
+    "evaluate_quality.py": "4b5c95deecb1e9149ecf354885c59d82387ec323b11a0434a4aeec4a71d55f08",
+    "formal256_protocol.py": "1d47b22fb4263e6aca34ab0440b3098bf07acd6340af1caf81bc839bf174febe",
+    "run_formal256_generation.py": "1fbb3cdb1288e5b92016fc720c02254441ac9d3acc7c0414715827510e055dfe",
+    "aggregate_formal256_generation.py": "b58fd1e46c0a7eaa6a5ed80151e318b7b3e6178a6fb93992237c00c2a7cd161e",
+    "formal256_statistics.py": "13f908198edf9c92129c595fd8094430c84f739e5474b82ca6014d59e05746f6",
+    "formal256_speed_statistics.py": "60532cf92d395f45483f5d4b4ffa612549dc8a0088c7cf45feb1a14b303a68bd"
+  },
+  "preregistration": {
+    "execution_config_path": "experiments/corrector_residual_distillation_formal256/configs/execution.json",
+    "execution_config_sha256": "d519ad3631ed7790a83ce6be243b7c7872b1fc98159c11788fe4d99fad2decb4",
+    "seed_audit_path": "experiments/corrector_residual_distillation_formal256/seed_audit.json",
+    "seed_audit_sha256": "5e912864c824c4b8796ebd51ff83eea73f52762d22639c54611868c6540b1c9c",
+    "noninferiority_margins_path": "experiments/corrector_residual_distillation_formal256/noninferiority_margins.yaml",
+    "noninferiority_margins_sha256": "ef05dc85e69ab8f36490f8b45bf14d620b025a8e98bcb29c0ed3a0db01908604",
+    "paired_bootstrap_samples": 20000,
+    "bootstrap_seed": 20260905,
+    "force_thresholds_ev_per_angstrom": [1.0, 2.0]
+  },
+  "quality_claims": {
+    "evaluator": "MatterSim-5M surrogate",
+    "dft_verified": false,
+    "property_target_verified": false
+  },
+  "prohibited": [
+    "adapter, checkpoint, weight, epoch, training, loss, risk, threshold, schedule, CFG, checkpoint, batch, precision, or sampler tuning",
+    "partial replacement of formal seed interval",
+    "V1, Skip, Reuse, A0, A0+V2, or any alternative candidate in the formal comparison",
+    "equivalence claims based only on p > 0.05"
+  ]
+}
