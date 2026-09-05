@@ -129,9 +129,13 @@ class PredictorCorrector(Generic[Diffusable]):
                 {
                     "score_opportunities": self.N if self._correctors else 0,
                     "adapter_calls": 0,
+                    "adapter_accept_calls": 0,
+                    "adapter_acceptance_overall": 0.0,
+                    "adapter_acceptance_eligible": 0.0,
                     "fallback_calls": 0,
                     "saved_score_calls": 0,
                     "adapter_coverage": 0.0,
+                    "second_forward_avoidance": 0.0,
                     "adapter_seconds": 0.0,
                     "exact_fallback_seconds": 0.0,
                 }

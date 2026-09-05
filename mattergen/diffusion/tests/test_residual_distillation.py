@@ -291,6 +291,7 @@ def test_dagger_target_is_exact_teacher_and_state_is_aligned(tmp_path: Path):
     assert exact_calls == 1
     assert controller.metrics["dagger_teacher_calls"] == 1
     assert controller.metrics["fallback_calls"] == 0
+    assert controller.metrics["adapter_accept_calls"] == 1
     assert torch.equal(rollout_score["pos"], score_before["pos"])
     record = next(iter_teacher_records([dagger_dir / "manifest.json"]))
     assert record["seed"] == 64000

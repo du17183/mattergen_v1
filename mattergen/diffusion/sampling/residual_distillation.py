@@ -513,6 +513,7 @@ class ResidualDistillationController:
     def reset(self) -> None:
         self.score_opportunities = 0
         self.adapter_calls = 0
+        self.adapter_accept_calls = 0
         self.fallback_calls = 0
         self.saved_score_calls = 0
         self.adapter_seconds = 0.0
@@ -527,12 +528,22 @@ class ResidualDistillationController:
     @property
     def metrics(self) -> dict[str, float | int]:
         coverage = self.saved_score_calls / max(self.score_opportunities, 1)
+        adapter_acceptance_overall = self.adapter_accept_calls / max(
+            self.score_opportunities, 1
+        )
+        adapter_acceptance_eligible = self.adapter_accept_calls / max(
+            self.adapter_calls, 1
+        )
         return {
             "score_opportunities": self.score_opportunities,
             "adapter_calls": self.adapter_calls,
+            "adapter_accept_calls": self.adapter_accept_calls,
+            "adapter_acceptance_overall": adapter_acceptance_overall,
+            "adapter_acceptance_eligible": adapter_acceptance_eligible,
             "fallback_calls": self.fallback_calls,
             "saved_score_calls": self.saved_score_calls,
             "adapter_coverage": coverage,
+            "second_forward_avoidance": coverage,
             "adapter_seconds": self.adapter_seconds,
             "exact_fallback_seconds": self.exact_fallback_seconds,
             "dagger_teacher_seconds": self.dagger_teacher_seconds,
@@ -703,6 +714,7 @@ class ResidualDistillationController:
             if fallback_reason is None:
                 score_after = prediction.score
                 self.saved_score_calls += 1
+                self.adapter_accept_calls += 1
             else:
                 self.fallback_calls += 1
                 score_after = self._exact(exact_score_fn, x_after, t)

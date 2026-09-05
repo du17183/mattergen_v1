@@ -21,8 +21,12 @@ NUMERIC_FIELDS = (
     "mattergen_score_calls",
     "saved_score_calls",
     "adapter_calls",
+    "adapter_accept_calls",
+    "adapter_acceptance_overall",
+    "adapter_acceptance_eligible",
     "fallback_calls",
     "adapter_coverage",
+    "second_forward_avoidance",
     "forward_reduction",
     "peak_allocated_bytes",
     "adapter_seconds",
@@ -43,6 +47,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-benchmark", type=Path, required=True)
     parser.add_argument("--output-ablation", type=Path, required=True)
     parser.add_argument("--structures-dir", type=Path, required=True)
+    parser.add_argument(
+        "--baseline-method",
+        default="C0",
+        help="Method label used for paired speedups.",
+    )
     return parser.parse_args()
 
 
@@ -72,6 +81,22 @@ def _load_run(summary_path: Path, method: str) -> dict[str, Any]:
     for field in NUMERIC_FIELDS:
         default = summary["elapsed_seconds"] if field == "time_per_sample" else 0.0
         row[field] = float(summary.get(field, default))
+    if "adapter_accept_calls" not in summary:
+        row["adapter_accept_calls"] = (
+            max(row["saved_score_calls"] - row["early_reuse_calls"], 0.0)
+            if row["adapter_calls"] > 0
+            else 0.0
+        )
+        row["adapter_acceptance_overall"] = row["adapter_accept_calls"] / max(
+            float(summary.get("score_opportunities", 1000)), 1.0
+        )
+        row["adapter_acceptance_eligible"] = row["adapter_accept_calls"] / max(
+            row["adapter_calls"], 1.0
+        )
+    if "second_forward_avoidance" not in summary:
+        row["second_forward_avoidance"] = row["saved_score_calls"] / max(
+            float(summary.get("score_opportunities", 1000)), 1.0
+        )
     return row
 
 
@@ -176,7 +201,7 @@ def main() -> None:
             aggregate[f"{field}_std"] = std
         paired_speedups = []
         for row in successful_rows:
-            baseline = by_key.get(("C0", row["seed"]))
+            baseline = by_key.get((args.baseline_method, row["seed"]))
             if baseline is not None:
                 paired_speedups.append(
                     float(baseline["elapsed_seconds"]) / float(row["elapsed_seconds"])

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "selection_seeds": [65000, 65015],
+  "selection_priority": [
+    "no severe structural anomaly or max-force outlier",
+    "RMSD",
+    "mean force",
+    "E-hull / Stable / NUS",
+    "speedup"
+  ],
+  "baseline": {
+    "method": "B0_C0",
+    "rmsd": 0.08891314160902569,
+    "mean_force": 0.49401790311094373,
+    "max_force": 3.366518974304199,
+    "e_hull": 0.12366424429291395,
+    "stable": 0.5,
+    "nus": 0.1875
+  },
+  "primary": {
+    "method": "B4a_V2_Atomic75_Late30",
+    "risk_mode": "field",
+    "risk_fields": ["atomic_numbers"],
+    "coverage_target": 0.75,
+    "late_exact_start": 0.7,
+    "early_reuse_end": null,
+    "adapter_acceptance_overall": 0.585375,
+    "adapter_acceptance_eligible": 0.83625,
+    "second_forward_avoidance": 0.585375,
+    "forward_reduction": 0.2926875,
+    "paired_speedup": 1.3419655190068271,
+    "rmsd": 0.05443177344907782,
+    "mean_force": 0.41700264252722263,
+    "max_force": 1.6166821718215942,
+    "e_hull": 0.12668823337332918,
+    "stable": 0.5625,
+    "nus": 0.375,
+    "paired_deltas_bootstrap95": {
+      "rmsd": [-0.13026122694070397, 0.044827831324635706],
+      "mean_force": [-0.5681795676006004, 0.27959790697350395],
+      "e_hull": [-0.053641114754539955, 0.06324126444030352],
+      "stable": [-0.25, 0.375],
+      "nus": [-0.125, 0.5]
+    },
+    "reason": "Best RMSD among candidates without the full-field force outlier; mean/max force improved versus validation C0, Stable/NUS improved, E-hull delta was small with CI crossing zero, and speed exceeded the gate."
+  },
+  "backup": {
+    "method": "B5_V2_EarlyReuse20_Field75_Late30",
+    "risk_mode": "field",
+    "risk_fields": ["pos", "cell", "atomic_numbers"],
+    "coverage_target": 0.75,
+    "early_reuse_end": 0.2,
+    "late_exact_start": 0.7,
+    "adapter_acceptance_overall": 0.4140625,
+    "adapter_acceptance_eligible": 0.828125,
+    "second_forward_avoidance": 0.6140625,
+    "forward_reduction": 0.30703125,
+    "paired_speedup": 1.370718401069522,
+    "rmsd": 0.058715692652254584,
+    "mean_force": 0.3716603868815582,
+    "max_force": 0.9796831011772156,
+    "e_hull": 0.11729129437574753,
+    "stable": 0.4375,
+    "nus": 0.25,
+    "reason": "Lowest max force and better mean force than the primary, retained only as the single allowed backup because Stable was one structure below C0 and RMSD was slightly worse than the primary."
+  },
+  "rejected_for_force": {
+    "method": "B4_V2_Field75_Late30",
+    "mean_force": 0.5000520346220583,
+    "max_force": 2.800969123840332,
+    "reason": "The full-field rule produced a clear force tail despite favorable RMSD."
+  },
+  "quality_backend": "MatterSim-5M surrogate, not DFT",
+  "final_test_seeds_consulted": false
+}

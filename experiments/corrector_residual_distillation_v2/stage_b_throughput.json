@@ -1,0 +1,120 @@
+{
+  "checkpoint_root": "/mnt/lis-wam-data/dxl/mattergen_v1/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density",
+  "elapsed_seconds": 3114.296684306115,
+  "failures": [],
+  "matrix": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/configs/stage_b_matrix.yaml",
+  "methods": [
+    {
+      "completed_runs": 16,
+      "failed_runs": 0,
+      "label": "B0_C0",
+      "method": "C0",
+      "new_samples_per_hour_8gpu": 143.25507040709064,
+      "newly_completed_runs": 16,
+      "preexisting_runs": 0,
+      "seed_end": 65015,
+      "seed_start": 65000,
+      "wall_seconds_for_new_runs": 402.0800090099219
+    },
+    {
+      "completed_runs": 16,
+      "failed_runs": 0,
+      "label": "B1_V1_Global50",
+      "method": "Adapter+Fallback",
+      "new_samples_per_hour_8gpu": 164.91275789605308,
+      "newly_completed_runs": 16,
+      "preexisting_runs": 0,
+      "seed_end": 65015,
+      "seed_start": 65000,
+      "wall_seconds_for_new_runs": 349.27558507211506
+    },
+    {
+      "completed_runs": 16,
+      "failed_runs": 0,
+      "label": "B2_V2_Global50",
+      "method": "Adapter+Fallback",
+      "new_samples_per_hour_8gpu": 164.35709655175808,
+      "newly_completed_runs": 16,
+      "preexisting_runs": 0,
+      "seed_end": 65015,
+      "seed_start": 65000,
+      "wall_seconds_for_new_runs": 350.4564220739994
+    },
+    {
+      "completed_runs": 16,
+      "failed_runs": 0,
+      "label": "B3_V2_Global75_Late20",
+      "method": "Adapter+Fallback",
+      "new_samples_per_hour_8gpu": 177.64843672664628,
+      "newly_completed_runs": 16,
+      "preexisting_runs": 0,
+      "seed_end": 65015,
+      "seed_start": 65000,
+      "wall_seconds_for_new_runs": 324.2358956900425
+    },
+    {
+      "completed_runs": 16,
+      "failed_runs": 0,
+      "label": "B3_V2_Global75_Late30",
+      "method": "Adapter+Fallback",
+      "new_samples_per_hour_8gpu": 171.7628639091444,
+      "newly_completed_runs": 16,
+      "preexisting_runs": 0,
+      "seed_end": 65015,
+      "seed_start": 65000,
+      "wall_seconds_for_new_runs": 335.3460619430989
+    },
+    {
+      "completed_runs": 16,
+      "failed_runs": 0,
+      "label": "B3_V2_Global75_Late40",
+      "method": "Adapter+Fallback",
+      "new_samples_per_hour_8gpu": 168.7088135686005,
+      "newly_completed_runs": 16,
+      "preexisting_runs": 0,
+      "seed_end": 65015,
+      "seed_start": 65000,
+      "wall_seconds_for_new_runs": 341.4166621270124
+    },
+    {
+      "completed_runs": 16,
+      "failed_runs": 0,
+      "label": "B4_V2_Field75_Late30",
+      "method": "Adapter+Fallback",
+      "new_samples_per_hour_8gpu": 169.64709361763497,
+      "newly_completed_runs": 16,
+      "preexisting_runs": 0,
+      "seed_end": 65015,
+      "seed_start": 65000,
+      "wall_seconds_for_new_runs": 339.5283630960621
+    },
+    {
+      "completed_runs": 16,
+      "failed_runs": 0,
+      "label": "B4a_V2_Atomic75_Late30",
+      "method": "Adapter+Fallback",
+      "new_samples_per_hour_8gpu": 168.35809018422682,
+      "newly_completed_runs": 16,
+      "preexisting_runs": 0,
+      "seed_end": 65015,
+      "seed_start": 65000,
+      "wall_seconds_for_new_runs": 342.12790093407966
+    },
+    {
+      "completed_runs": 16,
+      "failed_runs": 0,
+      "label": "B5_V2_EarlyReuse20_Field75_Late30",
+      "method": "Adapter+Fallback",
+      "new_samples_per_hour_8gpu": 175.87215281821696,
+      "newly_completed_runs": 16,
+      "preexisting_runs": 0,
+      "seed_end": 65015,
+      "seed_start": 65000,
+      "wall_seconds_for_new_runs": 327.5106324509252
+    }
+  ],
+  "num_gpus": 8,
+  "schema_version": 1,
+  "seed_end": 65015,
+  "seed_start": 65000
+}
