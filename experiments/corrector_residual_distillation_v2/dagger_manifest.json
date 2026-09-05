@@ -1,0 +1,733 @@
+{
+  "cross_split_overlap": [],
+  "excluded_seed_overlap": [],
+  "expected_split_seeds": {
+    "train": [
+      64000,
+      64001,
+      64002,
+      64003,
+      64004,
+      64005,
+      64006,
+      64007,
+      64008,
+      64009,
+      64010,
+      64011,
+      64012,
+      64013,
+      64014,
+      64015
+    ],
+    "validation": [
+      65000,
+      65001,
+      65002,
+      65003,
+      65004,
+      65005,
+      65006,
+      65007,
+      65008,
+      65009,
+      65010,
+      65011,
+      65012,
+      65013,
+      65014,
+      65015
+    ]
+  },
+  "missing_split_seeds": {
+    "train": [],
+    "validation": []
+  },
+  "runs": [
+    {
+      "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+      "bytes": 5547776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/train/64000/manifest.json",
+      "manifest_sha256": "b3a8af26a0222c3bcbc02ae14cb83fd4f960b9d54669dbdbfe8521f45fc7f13f",
+      "records": 1000,
+      "seed": 64000,
+      "split": "train",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+      "bytes": 10683776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/train/64001/manifest.json",
+      "manifest_sha256": "62a19e3c8286d34ceaebab91ba7780cdb04aaadca19bd5d93369b90aa3cd2cec",
+      "records": 1000,
+      "seed": 64001,
+      "split": "train",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+      "bytes": 15819776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/train/64002/manifest.json",
+      "manifest_sha256": "14d75d3846f4ebd9caf110a9347dc1f112eded2860e567bd4fba7e3af1410977",
+      "records": 1000,
+      "seed": 64002,
+      "split": "train",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+      "bytes": 13251328,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/train/64003/manifest.json",
+      "manifest_sha256": "d15db6c7bcd76234ef9875f849968c3b593f14444980b7de203de7cb6f0a3aa7",
+      "records": 1000,
+      "seed": 64003,
+      "split": "train",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+      "bytes": 15819776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/train/64004/manifest.json",
+      "manifest_sha256": "c46b29c5a5626acc12e05d1d30f2d296d257dfe851c8341f731c5204c4e43bc8",
+      "records": 1000,
+      "seed": 64004,
+      "split": "train",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+      "bytes": 11967296,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/train/64005/manifest.json",
+      "manifest_sha256": "61c57f0dd618a367ccee49546161e3e8bf02a5cc66ff354c89e5962458652d01",
+      "records": 1000,
+      "seed": 64005,
+      "split": "train",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+      "bytes": 23523328,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/train/64006/manifest.json",
+      "manifest_sha256": "dd42c6abb03dffa3e439329f38c5f5c8a765526c0db9538f27a2a7c94b85a895",
+      "records": 1000,
+      "seed": 64006,
+      "split": "train",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+      "bytes": 19671360,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/train/64007/manifest.json",
+      "manifest_sha256": "c5eee05952739c6cd53fd45229d6b8903433d5654cd580c89f8ef475392cf305",
+      "records": 1000,
+      "seed": 64007,
+      "split": "train",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+      "bytes": 19671360,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/train/64008/manifest.json",
+      "manifest_sha256": "d58c71770528c269c2ed8a8b695c1c1e609c56d0eb161a589f3b543f38b862b8",
+      "records": 1000,
+      "seed": 64008,
+      "split": "train",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+      "bytes": 10683776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/train/64009/manifest.json",
+      "manifest_sha256": "f7d789094d1a429f85c32d4018853695bfcca8128a9143699bb1a5a321147029",
+      "records": 1000,
+      "seed": 64009,
+      "split": "train",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+      "bytes": 15819776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/train/64010/manifest.json",
+      "manifest_sha256": "136916de80083401f4845c1d47ef6bf01470b40454fade266cc95df6e618432d",
+      "records": 1000,
+      "seed": 64010,
+      "split": "train",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+      "bytes": 14535360,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/train/64011/manifest.json",
+      "manifest_sha256": "d7887e5adc3474d5314b5fb406bc9810736802cc81572eb171fe23da92b2eb03",
+      "records": 1000,
+      "seed": 64011,
+      "split": "train",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+      "bytes": 11967296,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/train/64012/manifest.json",
+      "manifest_sha256": "aee53b5dcd8511b1ad18f8c8676231082d4ee1e598e90e62a158a993ae6f361d",
+      "records": 1000,
+      "seed": 64012,
+      "split": "train",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+      "bytes": 10683776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/train/64013/manifest.json",
+      "manifest_sha256": "671ac2791e9ad3fa0aa390ce8cec22570c5f8ae131c12202b5130e8d97efaf8c",
+      "records": 1000,
+      "seed": 64013,
+      "split": "train",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+      "bytes": 9399360,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/train/64014/manifest.json",
+      "manifest_sha256": "6666225d6277423413b2a6977a5d9e29fc6bd31a41fd612550c9115dd4794c6a",
+      "records": 1000,
+      "seed": 64014,
+      "split": "train",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+      "bytes": 15819776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/train/64015/manifest.json",
+      "manifest_sha256": "30b98f26a3b068f3dc1af248bc0466917fa92b81cb08747b536b1c6072b71c15",
+      "records": 1000,
+      "seed": 64015,
+      "split": "train",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "efa61485bb0e063dff14e91394f503a135375715159612b4ac57859f276adfb3",
+      "bytes": 10683776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/validation/65000/manifest.json",
+      "manifest_sha256": "a2f95d4395b287c3149660d0c15cd1d47043b565458deb8c726dcb27edbd15c4",
+      "records": 1000,
+      "seed": 65000,
+      "split": "validation",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "efa61485bb0e063dff14e91394f503a135375715159612b4ac57859f276adfb3",
+      "bytes": 23523328,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/validation/65001/manifest.json",
+      "manifest_sha256": "b388ed28e6e48dc616705db77e15dd76c2ea8796dd18374c01a3be659757ca33",
+      "records": 1000,
+      "seed": 65001,
+      "split": "validation",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "efa61485bb0e063dff14e91394f503a135375715159612b4ac57859f276adfb3",
+      "bytes": 5547776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/validation/65002/manifest.json",
+      "manifest_sha256": "8e77231c464b451395620a21b24a645649b63f6c1fedea19c2a2fe41ad0f149c",
+      "records": 1000,
+      "seed": 65002,
+      "split": "validation",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "efa61485bb0e063dff14e91394f503a135375715159612b4ac57859f276adfb3",
+      "bytes": 17103296,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/validation/65003/manifest.json",
+      "manifest_sha256": "aa4636b26bdf99561dd69fa044d846ef21790a701c91cad88fef4422a055d778",
+      "records": 1000,
+      "seed": 65003,
+      "split": "validation",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "efa61485bb0e063dff14e91394f503a135375715159612b4ac57859f276adfb3",
+      "bytes": 19671360,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/validation/65004/manifest.json",
+      "manifest_sha256": "187e6074ca87f374793713b66628dc0c40230b448d4769a4207752c63c943323",
+      "records": 1000,
+      "seed": 65004,
+      "split": "validation",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "efa61485bb0e063dff14e91394f503a135375715159612b4ac57859f276adfb3",
+      "bytes": 10683776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/validation/65005/manifest.json",
+      "manifest_sha256": "19ead0e84d67d04c916d4ab23af6022faab7bb4fde6619d1ea918c11836d1692",
+      "records": 1000,
+      "seed": 65005,
+      "split": "validation",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "efa61485bb0e063dff14e91394f503a135375715159612b4ac57859f276adfb3",
+      "bytes": 6831296,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/validation/65006/manifest.json",
+      "manifest_sha256": "62a36585940be360aa93b8195cf5cfcf095605d8d9725efd28d77a4f5db1142a",
+      "records": 1000,
+      "seed": 65006,
+      "split": "validation",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "efa61485bb0e063dff14e91394f503a135375715159612b4ac57859f276adfb3",
+      "bytes": 26091776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/validation/65007/manifest.json",
+      "manifest_sha256": "7ad8c4ed2ec5c45dc0b757548c98d75e9b6bd12263ac6953c1d866d2c1468231",
+      "records": 1000,
+      "seed": 65007,
+      "split": "validation",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "efa61485bb0e063dff14e91394f503a135375715159612b4ac57859f276adfb3",
+      "bytes": 14535360,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/validation/65008/manifest.json",
+      "manifest_sha256": "cb12586bb2506f26fc7b0692c388158b87968806033ae68e8922df35f292e46d",
+      "records": 1000,
+      "seed": 65008,
+      "split": "validation",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "efa61485bb0e063dff14e91394f503a135375715159612b4ac57859f276adfb3",
+      "bytes": 20955776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/validation/65009/manifest.json",
+      "manifest_sha256": "d4f016cd1f65737dcaca254d634a8c943c98c1c2aaa0130d05b7f49f3da5a3ca",
+      "records": 1000,
+      "seed": 65009,
+      "split": "validation",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "efa61485bb0e063dff14e91394f503a135375715159612b4ac57859f276adfb3",
+      "bytes": 15819776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/validation/65010/manifest.json",
+      "manifest_sha256": "d066d6050c18a79cbdb4c91e90115004b27041166ce5961b881dbe5538199a06",
+      "records": 1000,
+      "seed": 65010,
+      "split": "validation",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "efa61485bb0e063dff14e91394f503a135375715159612b4ac57859f276adfb3",
+      "bytes": 13251328,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/validation/65011/manifest.json",
+      "manifest_sha256": "cf152889cb8165b8feca2d64dbd9be4a9d5383c1191d539bc6b4072778f50bb5",
+      "records": 1000,
+      "seed": 65011,
+      "split": "validation",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "efa61485bb0e063dff14e91394f503a135375715159612b4ac57859f276adfb3",
+      "bytes": 15819776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/validation/65012/manifest.json",
+      "manifest_sha256": "bd1fadcb26595b279ad8a2588317c4f7a6a543fd47b5380296e0d063631c051b",
+      "records": 1000,
+      "seed": 65012,
+      "split": "validation",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "efa61485bb0e063dff14e91394f503a135375715159612b4ac57859f276adfb3",
+      "bytes": 5547776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/validation/65013/manifest.json",
+      "manifest_sha256": "6d998b1b82b1bc77751ba74318021d680fbb5cc04984e63e10c78d7f78c0d751",
+      "records": 1000,
+      "seed": 65013,
+      "split": "validation",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "efa61485bb0e063dff14e91394f503a135375715159612b4ac57859f276adfb3",
+      "bytes": 5547776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/validation/65014/manifest.json",
+      "manifest_sha256": "6dd64f7cfcd6929a293d72a1cc7f0588e789d525aa01f8cddae9753a1fe7775c",
+      "records": 1000,
+      "seed": 65014,
+      "split": "validation",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    },
+    {
+      "adapter_checkpoint_sha256": "efa61485bb0e063dff14e91394f503a135375715159612b4ac57859f276adfb3",
+      "bytes": 5547776,
+      "decision_codes": {
+        "adapter": 0,
+        "early_reuse_schedule": 7,
+        "forced_exact_fallback": 2,
+        "late_exact_schedule": 6,
+        "missing_or_invalid_calibration": 5,
+        "non_finite_adapter_output": 3,
+        "non_finite_uncertainty": 4,
+        "risk_above_threshold": 1
+      },
+      "manifest": "dagger_data/validation/65015/manifest.json",
+      "manifest_sha256": "049660411941d5b4680c81bde25de8f07e6d5913cd795bc6e8cdb814a6caca4f",
+      "records": 1000,
+      "seed": 65015,
+      "split": "validation",
+      "teacher_target": "frozen original MatterGen exact score_after"
+    }
+  ],
+  "schema_version": 1,
+  "source_experiment_config": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/configs/experiment.json",
+  "source_experiment_config_sha256": "ce7616ca9341d396c6318bfdac87d08444ba1d2b05e4942f5c76877b8890397e",
+  "split_seeds": {
+    "train": [
+      64000,
+      64001,
+      64002,
+      64003,
+      64004,
+      64005,
+      64006,
+      64007,
+      64008,
+      64009,
+      64010,
+      64011,
+      64012,
+      64013,
+      64014,
+      64015
+    ],
+    "validation": [
+      65000,
+      65001,
+      65002,
+      65003,
+      65004,
+      65005,
+      65006,
+      65007,
+      65008,
+      65009,
+      65010,
+      65011,
+      65012,
+      65013,
+      65014,
+      65015
+    ]
+  },
+  "total_bytes": 442026624,
+  "total_records": 32000,
+  "trajectory_kind": "dagger",
+  "trajectory_schema_version": 1
+}

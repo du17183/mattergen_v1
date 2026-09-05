@@ -1,0 +1,45 @@
+{
+  "calibration_seeds": [
+    65000,
+    65001,
+    65002,
+    65003,
+    65004,
+    65005,
+    65006,
+    65007,
+    65008,
+    65009,
+    65010,
+    65011,
+    65012,
+    65013,
+    65014,
+    65015
+  ],
+  "checkpoint": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/adapter_v2_field_calibrated/residual_adapter.pt",
+  "checkpoint_sha256": "a2fd0f17c27b760958b60c1d1386577883635a34fb2101eb08e38fd8472702c7",
+  "field_correlations": {
+    "atomic_numbers": {
+      "early": 0.5392314574574201,
+      "late": 0.70197863397247,
+      "middle": 0.467855431599384,
+      "overall": 0.8116337692895415
+    },
+    "cell": {
+      "early": 0.25262555474687187,
+      "late": 0.787942596713932,
+      "middle": 0.243774428638665,
+      "overall": 0.798670087626488
+    },
+    "pos": {
+      "early": 0.6084931406379505,
+      "late": 0.906722153372335,
+      "middle": 0.8268729111066262,
+      "overall": 0.9579096564042858
+    }
+  },
+  "global_risk_correlation": 0.7806085750147114,
+  "risk_analysis": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/risk_analysis.csv",
+  "risk_model_sha256": "43d47bdb9a23f4f3eba40ca670ef1bbd4d9204a194e0b668a1a57ceb6728fbfc"
+}
