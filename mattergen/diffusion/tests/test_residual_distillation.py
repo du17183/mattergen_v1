@@ -340,6 +340,185 @@ def test_late_exact_schedule_forces_full_teacher(tmp_path: Path):
     assert controller.metrics["fallback_calls"] == 1
 
 
+
+def test_periodic_exact_anchor_every_k_adapter_steps_and_resets(tmp_path: Path):
+    x_before, x_after, score_before, score_after = make_adapter_batches()
+    checkpoint = save_adapter_checkpoint(
+        tmp_path / "periodic_adapter.pt", model=FieldwiseResidualAdapter()
+    )
+    controller = ResidualDistillationController(
+        {
+            "enabled": True,
+            "mode": "adapter",
+            "checkpoint_path": str(checkpoint),
+            "coverage_target": 1.0,
+            "periodic_exact_anchor_k": 4,
+        },
+        device=torch.device("cpu"),
+    )
+    exact_calls = 0
+
+    def exact(_x, _t):
+        nonlocal exact_calls
+        exact_calls += 1
+        return score_after
+
+    outputs = []
+    for step in range(10):
+        outputs.append(
+            controller.score_after_corrector(
+                exact_score_fn=exact,
+                x_before=x_before,
+                score_before=score_before,
+                x_after=x_after,
+                t=torch.tensor([0.5, 0.5]),
+                sampling_step=step,
+                progress=step / 20,
+            )
+        )
+    assert exact_calls == 2
+    assert torch.equal(outputs[4]["pos"], score_after["pos"])
+    assert torch.equal(outputs[9]["pos"], score_after["pos"])
+    assert controller.metrics["periodic_exact_calls"] == 2
+    assert controller.metrics["saved_score_calls"] == 8
+    assert controller.metrics["adapter_streak_max"] == 4
+    assert controller.metrics["eligible_adapter_count_since_last_exact"] == 0
+
+
+def test_late_exact_takes_priority_over_periodic_anchor(tmp_path: Path):
+    x_before, x_after, score_before, score_after = make_adapter_batches()
+    checkpoint = save_adapter_checkpoint(
+        tmp_path / "late_periodic_adapter.pt", model=FieldwiseResidualAdapter()
+    )
+    controller = ResidualDistillationController(
+        {
+            "enabled": True,
+            "mode": "adapter",
+            "checkpoint_path": str(checkpoint),
+            "coverage_target": 1.0,
+            "late_exact_start": 0.7,
+            "periodic_exact_anchor_k": 4,
+        },
+        device=torch.device("cpu"),
+    )
+    for step in range(4):
+        controller.score_after_corrector(
+            exact_score_fn=lambda _x, _t: score_after,
+            x_before=x_before,
+            score_before=score_before,
+            x_after=x_after,
+            t=torch.tensor([0.5, 0.5]),
+            sampling_step=step,
+            progress=0.1 * step,
+        )
+    actual = controller.score_after_corrector(
+        exact_score_fn=lambda _x, _t: score_after,
+        x_before=x_before,
+        score_before=score_before,
+        x_after=x_after,
+        t=torch.tensor([0.1, 0.1]),
+        sampling_step=800,
+        progress=0.8,
+    )
+    assert torch.equal(actual["pos"], score_after["pos"])
+    assert controller.metrics["late_exact_calls"] == 1
+    assert controller.metrics["periodic_exact_calls"] == 0
+    assert controller.metrics["eligible_adapter_count_since_last_exact"] == 0
+
+
+def test_atomic_risk_takes_priority_over_periodic_anchor(tmp_path: Path):
+    x_before, x_after, score_before, score_after = make_adapter_batches()
+    checkpoint = save_adapter_checkpoint(
+        tmp_path / "risk_periodic_adapter.pt",
+        model=FieldwiseResidualAdapter(),
+        calibration=field_calibration(),
+    )
+    controller = ResidualDistillationController(
+        {
+            "enabled": True,
+            "mode": "adapter",
+            "checkpoint_path": str(checkpoint),
+            "coverage_target": 0.5,
+            "risk_mode": "field",
+            "risk_fields": ["atomic_numbers"],
+            "periodic_exact_anchor_k": 4,
+        },
+        device=torch.device("cpu"),
+    )
+    for step in range(4):
+        controller.score_after_corrector(
+            exact_score_fn=lambda _x, _t: score_after,
+            x_before=x_before,
+            score_before=score_before,
+            x_after=x_after,
+            t=torch.tensor([0.5, 0.5]),
+            sampling_step=step,
+            progress=0.1 * step,
+        )
+    controller.calibration["field_coverage_thresholds"]["0.5"][
+        "atomic_numbers"
+    ] = -1.0
+    actual = controller.score_after_corrector(
+        exact_score_fn=lambda _x, _t: score_after,
+        x_before=x_before,
+        score_before=score_before,
+        x_after=x_after,
+        t=torch.tensor([0.5, 0.5]),
+        sampling_step=4,
+        progress=0.4,
+    )
+    assert torch.equal(actual["pos"], score_after["pos"])
+    assert controller.metrics["field_risk_fallback_calls"] == 1
+    assert controller.metrics["periodic_exact_calls"] == 0
+    assert controller.metrics["eligible_adapter_count_since_last_exact"] == 0
+
+
+def test_disabled_periodic_anchor_is_equivalent_to_v2(tmp_path: Path):
+    x_before, x_after, score_before, score_after = make_adapter_batches()
+    checkpoint = save_adapter_checkpoint(
+        tmp_path / "disabled_periodic_adapter.pt", model=FieldwiseResidualAdapter()
+    )
+    base_config = {
+        "enabled": True,
+        "mode": "adapter",
+        "checkpoint_path": str(checkpoint),
+        "coverage_target": 1.0,
+        "late_exact_start": 0.7,
+    }
+    v2 = ResidualDistillationController(base_config, device=torch.device("cpu"))
+    disabled = ResidualDistillationController(
+        {**base_config, "periodic_exact_anchor_k": None}, device=torch.device("cpu")
+    )
+    for step, progress in enumerate((0.1, 0.2, 0.6, 0.7, 0.9)):
+        arguments = {
+            "exact_score_fn": lambda _x, _t: score_after,
+            "x_before": x_before,
+            "score_before": score_before,
+            "x_after": x_after,
+            "t": torch.tensor([0.5, 0.5]),
+            "sampling_step": step,
+            "progress": progress,
+        }
+        expected = v2.score_after_corrector(**arguments)
+        actual = disabled.score_after_corrector(**arguments)
+        for field in ("pos", "cell", "atomic_numbers"):
+            assert torch.equal(actual[field], expected[field])
+    nondeterministic_timing_metrics = {
+        "adapter_seconds",
+        "exact_fallback_seconds",
+        "dagger_teacher_seconds",
+    }
+    assert {
+        key: value
+        for key, value in disabled.metrics.items()
+        if key not in nondeterministic_timing_metrics
+    } == {
+        key: value
+        for key, value in v2.metrics.items()
+        if key not in nondeterministic_timing_metrics
+    }
+
+
 def field_calibration(*, nan_weights: bool = False, include_thresholds: bool = True):
     dimension = len(RISK_FEATURE_NAMES)
     weights = [0.0] * dimension

@@ -29,6 +29,7 @@ sampler_partial:
     risk_fields: [pos, cell, atomic_numbers]
     early_reuse_end: null
     late_exact_start: null
+    periodic_exact_anchor_k: null
     trace_path: null
     teacher_output_dir: null
     teacher_split: unspecified

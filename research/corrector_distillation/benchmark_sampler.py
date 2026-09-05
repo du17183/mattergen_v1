@@ -58,6 +58,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--early-reuse-end", type=float)
     parser.add_argument("--late-exact-start", type=float)
+    parser.add_argument("--periodic-exact-anchor-k", type=int, choices=(4, 8, 16))
     return parser.parse_args()
 
 
@@ -111,6 +112,11 @@ def main() -> None:
             overrides.append(
                 "sampler_partial.corrector_residual_adapter.late_exact_start="
                 f"{args.late_exact_start}"
+            )
+        if args.periodic_exact_anchor_k is not None:
+            overrides.append(
+                "sampler_partial.corrector_residual_adapter.periodic_exact_anchor_k="
+                f"{args.periodic_exact_anchor_k}"
             )
         if mode == "adapter":
             if args.adapter_checkpoint is None:
@@ -174,6 +180,7 @@ def main() -> None:
         "risk_fields": list(risk_fields),
         "early_reuse_end": args.early_reuse_end,
         "late_exact_start": args.late_exact_start,
+        "periodic_exact_anchor_k": args.periodic_exact_anchor_k,
         "elapsed_seconds": elapsed,
         "time_per_sample": elapsed,
         "samples_per_hour": 3600.0 / elapsed,

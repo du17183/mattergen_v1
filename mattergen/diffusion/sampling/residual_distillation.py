@@ -39,6 +39,7 @@ DECISION_CODES = {
     "missing_or_invalid_calibration": 5,
     "late_exact_schedule": 6,
     "early_reuse_schedule": 7,
+    "periodic_exact_anchor": 8,
 }
 
 
@@ -440,6 +441,10 @@ class ResidualDistillationController:
             raise ValueError("risk_fields must be a non-empty subset of pos/cell/atomic_numbers")
         self.late_exact_start = self.config.get("late_exact_start")
         self.early_reuse_end = self.config.get("early_reuse_end")
+        anchor_k = self.config.get("periodic_exact_anchor_k")
+        self.periodic_exact_anchor_k = None if anchor_k is None else int(anchor_k)
+        if self.periodic_exact_anchor_k is not None and self.periodic_exact_anchor_k <= 0:
+            raise ValueError("periodic_exact_anchor_k must be positive when enabled")
         if self.late_exact_start is not None:
             self.late_exact_start = float(self.late_exact_start)
             if not 0.0 <= self.late_exact_start <= 1.0:
@@ -487,7 +492,11 @@ class ResidualDistillationController:
                 raise ValueError("DAgger collection requires adapter mode")
             if self.config.get("sample_seed") is None:
                 raise ValueError("DAgger collection requires sample_seed")
-            if self.late_exact_start is not None or self.early_reuse_end is not None:
+            if (
+                self.late_exact_start is not None
+                or self.early_reuse_end is not None
+                or self.periodic_exact_anchor_k is not None
+            ):
                 raise ValueError("DAgger collection must record an unscheduled Adapter rollout")
             self.dagger_writer = TeacherShardWriter(
                 output_dir=self.config["dagger_output_dir"],
@@ -523,6 +532,10 @@ class ResidualDistillationController:
         self.late_exact_calls = 0
         self.early_reuse_calls = 0
         self.field_risk_fallback_calls = 0
+        self.periodic_exact_calls = 0
+        self._eligible_adapter_count_since_last_exact = 0
+        self._current_adapter_streak = 0
+        self._completed_adapter_streaks: list[int] = []
         self._trace_rows: list[dict[str, Any]] = []
 
     @property
@@ -533,6 +546,15 @@ class ResidualDistillationController:
         )
         adapter_acceptance_eligible = self.adapter_accept_calls / max(
             self.adapter_calls, 1
+        )
+        streaks = list(self._completed_adapter_streaks)
+        if self._current_adapter_streak:
+            streaks.append(self._current_adapter_streak)
+        sorted_streaks = sorted(streaks)
+        streak_p95 = (
+            sorted_streaks[math.ceil(0.95 * len(sorted_streaks)) - 1]
+            if sorted_streaks
+            else 0
         )
         return {
             "score_opportunities": self.score_opportunities,
@@ -551,7 +573,22 @@ class ResidualDistillationController:
             "late_exact_calls": self.late_exact_calls,
             "early_reuse_calls": self.early_reuse_calls,
             "field_risk_fallback_calls": self.field_risk_fallback_calls,
+            "periodic_exact_calls": self.periodic_exact_calls,
+            "periodic_exact_anchor_k": self.periodic_exact_anchor_k or 0,
+            "eligible_adapter_count_since_last_exact": (
+                self._eligible_adapter_count_since_last_exact
+            ),
+            "adapter_streak_count": len(streaks),
+            "adapter_streak_mean": sum(streaks) / len(streaks) if streaks else 0.0,
+            "adapter_streak_p95": streak_p95,
+            "adapter_streak_max": max(streaks, default=0),
         }
+
+    def _finish_adapter_streak(self) -> None:
+        if self._current_adapter_streak:
+            self._completed_adapter_streaks.append(self._current_adapter_streak)
+        self._current_adapter_streak = 0
+        self._eligible_adapter_count_since_last_exact = 0
 
     def _coverage_threshold(self) -> float | None:
         if self.coverage_target >= 1.0:
@@ -623,9 +660,11 @@ class ResidualDistillationController:
         prediction: AdapterPrediction | None = None
         exact_teacher_score: BatchedData | None = None
         schedule_region = "eligible"
+        streak_before_decision = self._current_adapter_streak
 
         if self.mode == "teacher":
             score_after = self._exact(exact_score_fn, x_after, t)
+            self._finish_adapter_streak()
             assert self.writer is not None
             self.writer.add(
                 sampling_step=sampling_step,
@@ -642,6 +681,7 @@ class ResidualDistillationController:
             score_after = self._exact(exact_score_fn, x_after, t)
             exact_teacher_score = score_after
             fallback_reason = "forced_exact_fallback"
+            self._finish_adapter_streak()
         elif self.mode == "reuse":
             score_after = score_before
             self.saved_score_calls += 1
@@ -652,6 +692,7 @@ class ResidualDistillationController:
             exact_teacher_score = score_after
             fallback_reason = "late_exact_schedule"
             schedule_region = "late_exact"
+            self._finish_adapter_streak()
         elif self.early_reuse_end is not None and progress < self.early_reuse_end:
             self.saved_score_calls += 1
             self.early_reuse_calls += 1
@@ -711,14 +752,25 @@ class ResidualDistillationController:
                         risk_value = None if risks is None else float(risks.max().item())
                         if threshold is not None and risk_value is not None and risk_value > threshold:
                             fallback_reason = "risk_above_threshold"
+            if (
+                fallback_reason is None
+                and self.periodic_exact_anchor_k is not None
+                and self._eligible_adapter_count_since_last_exact
+                >= self.periodic_exact_anchor_k
+            ):
+                fallback_reason = "periodic_exact_anchor"
+                self.periodic_exact_calls += 1
             if fallback_reason is None:
                 score_after = prediction.score
                 self.saved_score_calls += 1
                 self.adapter_accept_calls += 1
+                self._eligible_adapter_count_since_last_exact += 1
+                self._current_adapter_streak += 1
             else:
                 self.fallback_calls += 1
                 score_after = self._exact(exact_score_fn, x_after, t)
                 exact_teacher_score = score_after
+                self._finish_adapter_streak()
 
             if self.dagger_writer is not None:
                 if exact_teacher_score is None:
@@ -757,6 +809,9 @@ class ResidualDistillationController:
                 "used_adapter": fallback_reason is None and self.mode == "adapter",
                 "used_reuse": self.mode == "reuse" or fallback_reason == "early_reuse_schedule",
                 "fallback_reason": fallback_reason,
+                "periodic_exact_anchor_k": self.periodic_exact_anchor_k,
+                "adapter_streak_before_decision": streak_before_decision,
+                "adapter_streak_after_decision": self._current_adapter_streak,
             }
         )
         return score_after
@@ -791,6 +846,9 @@ class ResidualDistillationController:
                 "used_adapter",
                 "used_reuse",
                 "fallback_reason",
+                "periodic_exact_anchor_k",
+                "adapter_streak_before_decision",
+                "adapter_streak_after_decision",
             )
             writer = csv.DictWriter(stream, fieldnames=field_names)
             writer.writeheader()
