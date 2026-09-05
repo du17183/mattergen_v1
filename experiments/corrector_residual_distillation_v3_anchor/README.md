@@ -39,3 +39,20 @@ The V2 longest-streak/force correlation is negative in Stage-B (Spearman
 rho=-0.6560). Thus these data do not support a simple longer-streak-causes-higher-
 force explanation, even though the anchor limits streaks and K16 improves tail
 point estimates. Reference results remain MatterSim-5M surrogate evaluations.
+
+Stage-C is complete: 192/192 independent generation and official MatterSim
+evaluations, plus 48/48 single-GPU runs on the registered 16 paired seeds.
+K16 speedup is 1.299246 (95% paired bootstrap CI 1.251428-1.349452), but its
+force P95/P99 worsen to 1.176992/1.828578 from V2's 0.871651/1.309170.
+Force>2 rises from 0/64 to 1/64; maximum-force mean rises from 0.261336 to
+0.339003 eV/angstrom. K16 Stable/NUS are 54.6875%/26.5625%, versus C0's
+64.0625%/34.3750%; RMSD is 0.076131 versus C0 0.042636 angstrom.
+Primary-quality and rare-event intervals remain wide; this is failure of the
+registered advancement criterion, not a claim that every difference is
+statistically significant. Full paired intervals are in stage_c/paired_statistics.csv.
+
+Final decision: FAIL. Do not advance to a new formal256 or retune K/thresholds.
+No further training, generation, or formal256 has been started. The supervisor
+exited normally after stage_complete. See final_report.md for full Stage-B/C
+tables, timing boundaries, streak analysis, failure cases, and the recommendation
+to stop this acceleration route and separately consider a quality-first adapter.
