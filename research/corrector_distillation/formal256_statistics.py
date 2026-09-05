@@ -106,7 +106,7 @@ def load_method(method: str) -> dict[int, dict[str, float | int | str | bool]]:
         seed = int(row["sample_seed"])
         if seed in result:
             raise ValueError(f"duplicate {method} seed {seed}")
-        force_norms = np.linalg.norm(np.asarray(atoms.arrays["forces"], dtype=float), axis=1)
+        force_norms = np.linalg.norm(np.asarray(atoms.get_forces(), dtype=float), axis=1)
         record: dict[str, float | int | str | bool] = {
             "method": method,
             "seed": seed,

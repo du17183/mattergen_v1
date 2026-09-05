@@ -1,0 +1,21 @@
+{
+  "dft_verified": false,
+  "expected_per_method": 256,
+  "methods": {
+    "C0": {
+      "quality_summary_sha256": "09ab4bf98ee0a9489bc561976fbecb94e842d26a5198d60a476d40d46a222859",
+      "relaxation_summary_sha256": "84957dd28108f18b9d118d35684c01d96391a887b9433bf557431c1795463ff0",
+      "seed_set_exact": true,
+      "success": 256
+    },
+    "V2_Frozen_Atomic75_Late30": {
+      "quality_summary_sha256": "22b000510b9a5f15addd4185f43846b790d77f2d3a92585975e2c693d2a91f3f",
+      "relaxation_summary_sha256": "59440917d91332a659fce94ee18359782fe887edc7e006b8a36b3da3ddfd46a8",
+      "seed_set_exact": true,
+      "success": 256
+    }
+  },
+  "passed": true,
+  "schema_version": 1,
+  "surrogate": "MatterSim-5M"
+}
