@@ -1,0 +1,89 @@
+{
+  "selected_method": "V3_AnchorK16",
+  "periodic_exact_anchor_k": 16,
+  "implementation_and_stage_b_commit": "17894b82c07a6c91419887f6fa7f19f537ac407a",
+  "adapter": {
+    "checkpoint": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/frozen/residual_adapter.pt",
+    "sha256": "a2fd0f17c27b760958b60c1d1386577883635a34fb2101eb08e38fd8472702c7",
+    "parameter_count": 2661,
+    "risk_calibration": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/frozen/risk_calibration.json",
+    "risk_calibration_file_sha256": "dff93d12d3637e260a3cfe0b9f418b39e809a39e13deb6d185ea0b4c31d3fd9f",
+    "risk_model_canonical_sha256": "43d47bdb9a23f4f3eba40ca670ef1bbd4d9204a194e0b668a1a57ceb6728fbfc"
+  },
+  "sampling": {
+    "target": {
+      "dft_mag_density": 0.1
+    },
+    "guidance_schedule": "constant",
+    "guidance_scale": 2,
+    "diffusion_steps": 1000,
+    "corrector_steps_per_timestep": 1,
+    "batch_size": 1,
+    "deterministic": true,
+    "precision": "repository default"
+  },
+  "decision_rule": {
+    "coverage_target": 0.75,
+    "risk_mode": "field",
+    "risk_fields": [
+      "atomic_numbers"
+    ],
+    "threshold_atomic_numbers": 0.8289545722625317,
+    "early_reuse_end": null,
+    "late_exact_start": 0.7,
+    "late_exact_condition": "progress >= 0.7",
+    "eligible_exact_conditions": [
+      "adapter output is non-finite",
+      "risk calibration or selected threshold is missing/invalid",
+      "atomic risk is non-finite",
+      "risk_atomic_numbers > 0.8289545722625317"
+    ],
+    "eligible_accept_condition": "all fail-closed checks pass and atomic risk is at or below threshold",
+    "periodic_exact_anchor_k": 16,
+    "priority": [
+      "late_exact",
+      "atomic_risk_or_nonfinite_fallback",
+      "periodic_exact_anchor",
+      "adapter"
+    ],
+    "reset": "Any exact second forward resets the consecutive eligible Adapter count."
+  },
+  "assets": {
+    "mattergen_checkpoint": {
+      "path": "/mnt/lis-wam-data/dxl/mattergen_v1/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt",
+      "sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e"
+    },
+    "mattersim_checkpoint": {
+      "path": "/mnt/lis-wam-data/dxl/mattergen_v1/checkpoints/official/mattersim/mattersim-v1.0.0-5M.pth",
+      "sha256": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5"
+    },
+    "alex_mp_reference": {
+      "path": "/mnt/lis-wam-data/dxl/mattergen_v1/data-release/alex-mp/reference_MP2020correction.gz",
+      "sha256": "c722f72c7d0cd398fc382870f0b731425b54bd4492b089ca36e3119e49f469b5"
+    }
+  },
+  "stage_b_seed_range": [
+    68000,
+    68031
+  ],
+  "stage_c_seed_range": [
+    69000,
+    69063
+  ],
+  "stage_c_methods": [
+    "C0",
+    "V2_Frozen_Atomic75_Late30",
+    "V3_AnchorK16"
+  ],
+  "stage_c_single_h20_seed_range": [
+    69000,
+    69015
+  ],
+  "historical_formal_seeds_do_not_use": [
+    67000,
+    67255
+  ],
+  "retraining_or_recalibration_prohibited": true,
+  "stage_c_tuning_prohibited": true,
+  "automatic_formal256_prohibited": true
+}
