@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "format_note": "JSON is valid YAML; this file is immutable after the freeze commit.",
+  "selected_from_stage_b_commit": "b6a74b293736d04b4f0459d5caf6ce3f3b4a93a8",
+  "selected_method": "B4a_V2_Atomic75_Late30",
+  "adapter": {
+    "checkpoint": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/frozen/residual_adapter.pt",
+    "sha256": "a2fd0f17c27b760958b60c1d1386577883635a34fb2101eb08e38fd8472702c7",
+    "parameter_count": 2661,
+    "risk_calibration": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/frozen/risk_calibration.json",
+    "risk_calibration_file_sha256": "dff93d12d3637e260a3cfe0b9f418b39e809a39e13deb6d185ea0b4c31d3fd9f",
+    "risk_model_canonical_sha256": "43d47bdb9a23f4f3eba40ca670ef1bbd4d9204a194e0b668a1a57ceb6728fbfc"
+  },
+  "sampling": {
+    "target": {"dft_mag_density": 0.1},
+    "guidance_schedule": "constant",
+    "guidance_scale": 2.0,
+    "diffusion_steps": 1000,
+    "corrector_steps_per_timestep": 1,
+    "batch_size": 1,
+    "deterministic": true,
+    "precision": "repository default"
+  },
+  "decision_rule": {
+    "coverage_target": 0.75,
+    "risk_mode": "field",
+    "risk_fields": ["atomic_numbers"],
+    "threshold_atomic_numbers": 0.8289545722625317,
+    "early_reuse_end": null,
+    "late_exact_start": 0.7,
+    "late_exact_condition": "progress >= 0.7",
+    "eligible_exact_conditions": [
+      "adapter output is non-finite",
+      "risk calibration or selected threshold is missing/invalid",
+      "atomic risk is non-finite",
+      "risk_atomic_numbers > 0.8289545722625317"
+    ],
+    "eligible_accept_condition": "all fail-closed checks pass and atomic risk is at or below threshold"
+  },
+  "progress_semantics": {
+    "definition": "sampling_step / (num_steps - 1)",
+    "progress_0": "high-noise generation start (t approximately T)",
+    "progress_1": "low-noise final generation stage (t approximately epsilon)"
+  },
+  "validation_only_backup": {
+    "method": "B5_V2_EarlyReuse20_Field75_Late30",
+    "risk_fields": ["pos", "cell", "atomic_numbers"],
+    "coverage_target": 0.75,
+    "early_reuse_end": 0.2,
+    "late_exact_start": 0.7,
+    "run_on_final_seeds": false
+  },
+  "seed_ranges": {
+    "dagger_train": [64000, 64015],
+    "validation": [65000, 65015],
+    "final_test": [66000, 66063],
+    "v1_frozen_test_do_not_tune": [63000, 63031]
+  },
+  "a0_combination_prohibited": true,
+  "final_test_tuning_prohibited": true
+}
