@@ -1,0 +1,57 @@
+{
+  "errors": [],
+  "fixed_gpu_shards": {
+    "0": [
+      67000,
+      67031
+    ],
+    "1": [
+      67032,
+      67063
+    ],
+    "2": [
+      67064,
+      67095
+    ],
+    "3": [
+      67096,
+      67127
+    ],
+    "4": [
+      67128,
+      67159
+    ],
+    "5": [
+      67160,
+      67191
+    ],
+    "6": [
+      67192,
+      67223
+    ],
+    "7": [
+      67224,
+      67255
+    ]
+  },
+  "methods": {
+    "C0": {
+      "expected": 256,
+      "seed_set_exact": true,
+      "success": 256
+    },
+    "V2_Frozen_Atomic75_Late30": {
+      "expected": 256,
+      "seed_set_exact": true,
+      "success": 256
+    }
+  },
+  "mode": "main",
+  "only_allowed_methods": true,
+  "passed": true,
+  "schema_version": 1,
+  "structure_hashes_unique_within_method": {
+    "C0": true,
+    "V2_Frozen_Atomic75_Late30": true
+  }
+}
