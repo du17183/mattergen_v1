@@ -15,6 +15,7 @@ from mattergen.diffusion.sampling.predictors_correctors import LangevinCorrector
 from mattergen.diffusion.sampling.residual_adapter import (
     AdapterPrediction,
     FieldwiseResidualAdapter,
+    RISK_FEATURE_NAMES,
 )
 from mattergen.diffusion.sampling.residual_distillation import (
     ResidualDistillationController,
@@ -24,6 +25,7 @@ from mattergen.diffusion.sampling.residual_distillation import (
     save_adapter_checkpoint,
 )
 from mattergen.diffusion.tests.test_reverse_sampling import get_diffusion_module
+from research.corrector_distillation.train_adapter import timestep_weights
 
 
 def make_adapter_batches():
@@ -211,6 +213,197 @@ def test_force_fallback_returns_exact_score(tmp_path: Path):
     assert controller.metrics["saved_score_calls"] == 0
 
 
+def test_forced_exact_full_sampler_is_identical_to_c0(tmp_path: Path):
+    fields = ["pos", "cell", "atomic_numbers"]
+    corruption = MultiCorruption(sdes={field: VPSDE() for field in fields})
+    diffusion = get_diffusion_module(
+        x0_mean=torch.tensor(0.0), x0_std=torch.tensor(1.0), multi_corruption=corruption
+    )
+    kwargs = dict(
+        diffusion_module=diffusion,
+        device=torch.device("cpu"),
+        predictor_partials={field: AncestralSamplingPredictor for field in fields},
+        corrector_partials={field: LangevinCorrector for field in fields},
+        n_steps_corrector=1,
+        N=4,
+    )
+    conditioning = SimpleBatchedData(
+        data={field: torch.randn(3, 2) for field in fields},
+        batch_idx={field: None for field in fields},
+    )
+    checkpoint = save_adapter_checkpoint(
+        tmp_path / "forced_exact_adapter.pt", model=FieldwiseResidualAdapter()
+    )
+    torch.manual_seed(9123)
+    baseline = PredictorCorrector(**kwargs).sample(conditioning.clone())
+    torch.manual_seed(9123)
+    forced = PredictorCorrector(
+        **kwargs,
+        corrector_residual_adapter={
+            "enabled": True,
+            "mode": "adapter",
+            "checkpoint_path": str(checkpoint),
+            "coverage_target": 1.0,
+            "force_fallback": True,
+        },
+    ).sample(conditioning.clone())
+    for baseline_batch, forced_batch in zip(baseline, forced):
+        for field in fields:
+            assert torch.equal(baseline_batch[field], forced_batch[field])
+
+
+def test_dagger_target_is_exact_teacher_and_state_is_aligned(tmp_path: Path):
+    x_before, x_after, score_before, score_after = make_adapter_batches()
+    checkpoint = save_adapter_checkpoint(
+        tmp_path / "dagger_adapter.pt", model=FieldwiseResidualAdapter()
+    )
+    dagger_dir = tmp_path / "dagger"
+    controller = ResidualDistillationController(
+        {
+            "enabled": True,
+            "mode": "adapter",
+            "checkpoint_path": str(checkpoint),
+            "coverage_target": 1.0,
+            "sample_seed": 64000,
+            "dagger_output_dir": str(dagger_dir),
+            "dagger_split": "train",
+        },
+        device=torch.device("cpu"),
+    )
+    exact_calls = 0
+
+    def exact(_x, _t):
+        nonlocal exact_calls
+        exact_calls += 1
+        assert _x is x_after
+        return score_after
+
+    rollout_score = controller.score_after_corrector(
+        exact_score_fn=exact,
+        x_before=x_before,
+        score_before=score_before,
+        x_after=x_after,
+        t=torch.tensor([0.5, 0.5]),
+        sampling_step=17,
+        progress=0.25,
+    )
+    controller.close()
+    assert exact_calls == 1
+    assert controller.metrics["dagger_teacher_calls"] == 1
+    assert controller.metrics["fallback_calls"] == 0
+    assert torch.equal(rollout_score["pos"], score_before["pos"])
+    record = next(iter_teacher_records([dagger_dir / "manifest.json"]))
+    assert record["seed"] == 64000
+    assert record["sampling_step"] == 17
+    # DAgger shards intentionally use bfloat16 storage, so alignment is checked
+    # to the storage precision rather than with bitwise float32 equality.
+    assert torch.allclose(record["x_after"]["pos"], x_after["pos"], atol=2e-3)
+    assert torch.allclose(record["score_after"]["pos"], score_after["pos"], atol=5e-3)
+    assert torch.allclose(
+        record["adapter_score_after"]["pos"], score_before["pos"], atol=5e-3
+    )
+    assert torch.allclose(
+        record["prediction_error"]["pos"],
+        score_before["pos"] - score_after["pos"],
+        atol=5e-3,
+    )
+    assert bool(record["used_adapter"].all().item())
+
+
+def test_late_exact_schedule_forces_full_teacher(tmp_path: Path):
+    x_before, x_after, score_before, score_after = make_adapter_batches()
+    checkpoint = save_adapter_checkpoint(
+        tmp_path / "late_adapter.pt", model=FieldwiseResidualAdapter()
+    )
+    controller = ResidualDistillationController(
+        {
+            "enabled": True,
+            "mode": "adapter",
+            "checkpoint_path": str(checkpoint),
+            "coverage_target": 1.0,
+            "late_exact_start": 0.7,
+        },
+        device=torch.device("cpu"),
+    )
+    actual = controller.score_after_corrector(
+        exact_score_fn=lambda _x, _t: score_after,
+        x_before=x_before,
+        score_before=score_before,
+        x_after=x_after,
+        t=torch.tensor([0.1, 0.1]),
+        sampling_step=800,
+        progress=0.8,
+    )
+    assert torch.equal(actual["pos"], score_after["pos"])
+    assert controller.metrics["late_exact_calls"] == 1
+    assert controller.metrics["fallback_calls"] == 1
+
+
+def field_calibration(*, nan_weights: bool = False, include_thresholds: bool = True):
+    dimension = len(RISK_FEATURE_NAMES)
+    weights = [0.0] * dimension
+    if nan_weights:
+        weights[0] = float("nan")
+    model = {
+        "feature_mean": [0.0] * dimension,
+        "feature_std": [1.0] * dimension,
+        "linear_weights": weights,
+        "linear_bias": 0.0,
+    }
+    calibration = {
+        "field_risk_models": {
+            field: dict(model) for field in ("pos", "cell", "atomic_numbers")
+        }
+    }
+    if include_thresholds:
+        calibration["field_coverage_thresholds"] = {
+            "0.5": {
+                field: 1.0 for field in ("pos", "cell", "atomic_numbers")
+            }
+        }
+    return calibration
+
+
+@pytest.mark.parametrize(
+    "calibration",
+    (
+        field_calibration(nan_weights=True),
+        field_calibration(include_thresholds=False),
+    ),
+    ids=("field-risk-nan", "field-threshold-missing"),
+)
+def test_invalid_field_risk_or_threshold_falls_back(
+    tmp_path: Path, calibration: dict
+):
+    x_before, x_after, score_before, score_after = make_adapter_batches()
+    checkpoint = save_adapter_checkpoint(
+        tmp_path / f"field_adapter_{len(list(tmp_path.iterdir()))}.pt",
+        model=FieldwiseResidualAdapter(),
+        calibration=calibration,
+    )
+    controller = ResidualDistillationController(
+        {
+            "enabled": True,
+            "mode": "adapter",
+            "checkpoint_path": str(checkpoint),
+            "coverage_target": 0.5,
+            "risk_mode": "field",
+        },
+        device=torch.device("cpu"),
+    )
+    actual = controller.score_after_corrector(
+        exact_score_fn=lambda _x, _t: score_after,
+        x_before=x_before,
+        score_before=score_before,
+        x_after=x_after,
+        t=torch.tensor([0.5, 0.5]),
+        sampling_step=1,
+        progress=0.5,
+    )
+    assert torch.equal(actual["pos"], score_after["pos"])
+    assert controller.metrics["fallback_calls"] == 1
+
+
 def test_nonfinite_adapter_output_falls_back(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
     x_before, x_after, score_before, score_after = make_adapter_batches()
     checkpoint = save_adapter_checkpoint(
@@ -299,6 +492,43 @@ def test_seed_plan_has_no_train_validation_test_or_historical_overlap():
     for start, end in config["excluded_historical_seed_ranges"]:
         historical |= set(range(start, end + 1))
     assert not set.union(*(split_sets[name] for name in independent)) & historical
+
+
+def test_v2_seed_plan_freezes_v1_and_holds_final_test_until_freeze():
+    config_path = (
+        Path(__file__).parents[3]
+        / "experiments"
+        / "corrector_residual_distillation_v2"
+        / "configs"
+        / "experiment.json"
+    )
+    with config_path.open(encoding="utf-8") as stream:
+        config = json.load(stream)
+    split_sets = {
+        name: set(range(bounds[0], bounds[1] + 1))
+        for name, bounds in config["seed_splits"].items()
+    }
+    names = list(split_sets)
+    for index, left in enumerate(names):
+        for right in names[index + 1 :]:
+            assert not split_sets[left] & split_sets[right]
+    v1_test = set(range(63000, 63032))
+    assert not (split_sets["dagger_train"] | split_sets["validation"]) & v1_test
+    assert config["final_test_used_before_freeze"] is False
+    assert config["final_test_pre_freeze_audit"]["status"] == "not used"
+
+
+def test_v2_timestep_weights_match_predeclared_schedule():
+    progress = torch.tensor([0.0, 0.1999, 0.2, 0.6999, 0.7, 1.0])
+    actual = timestep_weights(
+        progress,
+        early_weight=0.5,
+        middle_weight=1.0,
+        late_weight=2.0,
+        early_end=0.2,
+        late_start=0.7,
+    )
+    assert torch.equal(actual, torch.tensor([0.5, 0.5, 1.0, 1.0, 2.0, 2.0]))
 
 
 def test_disabled_controller_is_not_constructed():

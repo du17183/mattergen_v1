@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "v1_base_commit": "d2736e0",
+  "branch": "experiment/corrector-residual-distillation-v2",
+  "target": {
+    "dft_mag_density": 0.1
+  },
+  "base_guidance": 2.0,
+  "sampling_steps": 1000,
+  "n_steps_corrector": 1,
+  "batch_size": 1,
+  "deterministic": true,
+  "trajectory_seed_splits": {
+    "train": [64000, 64015],
+    "validation": [65000, 65015]
+  },
+  "seed_splits": {
+    "dagger_train": [64000, 64015],
+    "validation": [65000, 65015],
+    "final_test": [66000, 66063]
+  },
+  "excluded_seed_ranges": [
+    [14000, 14031],
+    [20000, 20255],
+    [32000, 32063],
+    [33000, 33127],
+    [40000, 40255],
+    [41000, 41063],
+    [50000, 50063],
+    [60000, 63031]
+  ],
+  "v1_frozen_test_seeds": [63000, 63031],
+  "final_test_used_before_freeze": false,
+  "final_test_pre_freeze_audit": {
+    "filesystem_seed_directories_found": [],
+    "configuration_occurrences_before_this_file": [],
+    "status": "not used"
+  },
+  "training_weights": {
+    "progress_lt_0.2": 0.5,
+    "progress_0.2_to_0.7": 1.0,
+    "progress_ge_0.7": 2.0
+  },
+  "coverage_targets": [0.5, 0.75],
+  "late_exact_starts": [0.8, 0.7, 0.6],
+  "selection_minimum_speedup": 1.15,
+  "selection_preferred_speedup": 1.2,
+  "bootstrap_seed": 20260905,
+  "bootstrap_samples": 10000,
+  "a0_combination_prohibited": true
+}

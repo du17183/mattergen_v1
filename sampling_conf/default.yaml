@@ -25,11 +25,17 @@ sampler_partial:
     checkpoint_path: null
     coverage_target: 1.0
     force_fallback: false
+    risk_mode: global
+    risk_fields: [pos, cell, atomic_numbers]
+    early_reuse_end: null
+    late_exact_start: null
     trace_path: null
     teacher_output_dir: null
     teacher_split: unspecified
     teacher_shard_size: 64
     teacher_storage_dtype: bfloat16
+    dagger_output_dir: null
+    dagger_split: unspecified
     sample_seed: null
   remove_conditioning_fn:
     _target_: mattergen.property_embeddings.SetUnconditionalEmbeddingType
