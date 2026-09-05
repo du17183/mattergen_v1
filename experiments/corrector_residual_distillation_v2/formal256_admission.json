@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "decision": "minimum gate passed; formal256 recommended only as a frozen confirmatory run",
+  "candidate": "V2_Frozen_Atomic75_Late30",
+  "baseline": "C0",
+  "n_paired": 64,
+  "efficiency": {
+    "single_h20_paired_speedup_mean": 1.3622674879994858,
+    "single_h20_paired_speedup_bootstrap95": [1.3214937150726664, 1.406289647245179],
+    "required_speedup": 1.2,
+    "forward_reduction": 0.3070625,
+    "preferred_forward_reduction": 0.2,
+    "passed": true
+  },
+  "quality_relative_to_c0": {
+    "e_hull_delta": {"mean": 0.020001901889038005, "bootstrap95": [-0.01256923597819806, 0.051707464635061956], "clear_degradation": false},
+    "stable_delta": {"mean": -0.0625, "bootstrap95": [-0.21875, 0.09375], "clear_degradation": false},
+    "nus_delta": {"mean": -0.046875, "bootstrap95": [-0.203125, 0.109375], "clear_degradation": false},
+    "rmsd": {"c0": 0.06802688040595395, "v2": 0.08092776567426505, "ratio": 1.1896439347405672, "delta_mean": 0.012900885268311086, "bootstrap95": [-0.05744853206789501, 0.08622666758219633], "approximately_twofold_degradation": false},
+    "pre_relaxation_max_force_mean": {"c0": 0.3105029794460279, "v2": 0.34518277030292666, "ratio": 1.1116890759591789, "delta_mean": 0.03467979085689876, "bootstrap95": [-0.09818482625323667, 0.1716242688557029]},
+    "pre_relaxation_max_force_tail": {"c0_p95": 1.0037099212408065, "v2_p95": 1.221705931425094, "c0_max": 2.1948370933532715, "v2_max": 2.6163277626037598, "extreme_outlier_detected": false}
+  },
+  "interpretation": {
+    "passed": true,
+    "confidence": "borderline",
+    "reason": "All efficiency gates pass. Main-quality and geometry/force paired 95% intervals cross zero; RMSD and mean-force point estimates are 1.19x and 1.11x C0 rather than the approximately 2x V1 geometry failure. The elevated E-hull and force-tail point estimates remain the primary confirmatory risk.",
+    "no_equivalence_claim": "No equivalence margin was prespecified, so crossing zero is not proof of equivalence.",
+    "constraints_for_formal256": [
+      "do not tune checkpoint, thresholds, schedule, or risk model",
+      "use new seeds disjoint from all V1/V2 train, validation, and test ranges",
+      "retain C0 paired controls",
+      "predeclare force-tail and E-hull stopping criteria"
+    ]
+  }
+}

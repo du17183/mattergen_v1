@@ -1,0 +1,48 @@
+{
+  "checkpoint_root": "/mnt/lis-wam-data/dxl/mattergen_v1/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density",
+  "elapsed_seconds": 3514.0951984759886,
+  "failures": [],
+  "matrix": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/configs/stage_c_matrix.yaml",
+  "methods": [
+    {
+      "completed_runs": 8,
+      "failed_runs": 0,
+      "label": "C0",
+      "method": "C0",
+      "new_samples_per_hour_8gpu": 21.85737266194925,
+      "newly_completed_runs": 8,
+      "preexisting_runs": 0,
+      "seed_end": 66007,
+      "seed_start": 66000,
+      "wall_seconds_for_new_runs": 1317.6332052999642
+    },
+    {
+      "completed_runs": 8,
+      "failed_runs": 0,
+      "label": "V1_Fallback50",
+      "method": "Adapter+Fallback",
+      "new_samples_per_hour_8gpu": 25.816205421170885,
+      "newly_completed_runs": 8,
+      "preexisting_runs": 0,
+      "seed_end": 66007,
+      "seed_start": 66000,
+      "wall_seconds_for_new_runs": 1115.578355926089
+    },
+    {
+      "completed_runs": 8,
+      "failed_runs": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "method": "Adapter+Fallback",
+      "new_samples_per_hour_8gpu": 26.65647192201142,
+      "newly_completed_runs": 8,
+      "preexisting_runs": 0,
+      "seed_end": 66007,
+      "seed_start": 66000,
+      "wall_seconds_for_new_runs": 1080.4130450668745
+    }
+  ],
+  "num_gpus": 1,
+  "schema_version": 1,
+  "seed_end": 66007,
+  "seed_start": 66000
+}

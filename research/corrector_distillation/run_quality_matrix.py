@@ -34,6 +34,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--logs-dir", type=Path, required=True)
     parser.add_argument("--num-gpus", type=int, default=8)
     parser.add_argument(
+        "--isolate-relaxation",
+        action="store_true",
+        help="Run each structure in a fresh MatterSim subprocess.",
+    )
+    parser.add_argument("--isolated-retries", type=int, default=2)
+    parser.add_argument(
         "--labels",
         nargs="+",
         default=list(METHOD_LABELS),
@@ -96,6 +102,14 @@ def main() -> None:
                 "--device",
                 "cuda",
             ]
+            if args.isolate_relaxation:
+                command.extend(
+                    (
+                        "--isolate-relaxation",
+                        "--isolated-retries",
+                        str(args.isolated_retries),
+                    )
+                )
             log_path = logs_dir / f"{label.replace('+', '_plus_')}.log"
             log_stream = log_path.open("w", encoding="utf-8")
             environment = dict(os.environ)

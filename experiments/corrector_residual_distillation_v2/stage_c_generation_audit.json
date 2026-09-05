@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "branch": "experiment/corrector-residual-distillation-v2",
+  "freeze_artifact_manifest_commit": "7292d3a",
+  "freeze_candidate_commit": "b577f8c7324625ab295eb07aca9be8082435e5d4",
+  "post_freeze_tuning": false,
+  "seed_start": 66000,
+  "seed_end": 66063,
+  "seeds_per_method": 64,
+  "methods": 3,
+  "successful_runs": 192,
+  "failed_runs": 0,
+  "mattergen_checkpoint_sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+  "v1_adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+  "v2_adapter_checkpoint_sha256": "a2fd0f17c27b760958b60c1d1386577883635a34fb2101eb08e38fd8472702c7",
+  "sampling": {
+    "diffusion_steps": 1000,
+    "corrector_steps_per_timestep": 1,
+    "batch_size": 1,
+    "guidance_scale": 2.0,
+    "target": {"dft_mag_density": 0.1},
+    "deterministic": true
+  },
+  "v2_frozen_runtime": {
+    "adapter_calls_per_sample": 700.0,
+    "late_exact_calls_per_sample": 300.0,
+    "fallback_calls_mean": 394.140625,
+    "logical_score_calls_mean": 1394.140625,
+    "adapter_acceptance_overall": 0.605859375,
+    "second_forward_avoidance": 0.605859375,
+    "forward_reduction": 0.3029296875
+  },
+  "eight_h20_throughput": {
+    "C0": {"wall_seconds": 1514.1390614518896, "samples_per_hour": 152.1656800657875},
+    "V1_Fallback50": {"wall_seconds": 1348.051051212009, "samples_per_hour": 170.91340850396682},
+    "V2_Frozen_Atomic75_Late30": {"wall_seconds": 1292.240032472182, "samples_per_hour": 178.2950490701191}
+  },
+  "single_h20_sampling_segment": {
+    "paired_seeds": [66000, 66007],
+    "C0_seconds_per_sample": 118.74889459117549,
+    "C0_samples_per_hour": 30.31607167707921,
+    "V2_seconds_per_sample": 87.38371089810971,
+    "V2_samples_per_hour": 41.19760952012711,
+    "V2_paired_speedup_mean": 1.3622674879994858,
+    "V2_paired_speedup_bootstrap95": [1.3214937150726664, 1.406289647245179],
+    "V2_peak_allocated_bytes_mean": 295794432.0
+  },
+  "source_artifacts": {
+    "benchmark": "benchmark.csv",
+    "stage_c_per_seed": "stage_c_64seed.csv",
+    "stage_c_speed_summary": "stage_c_speed_metrics.csv",
+    "single_h20_summary": "single_h20_metrics.csv"
+  }
+}

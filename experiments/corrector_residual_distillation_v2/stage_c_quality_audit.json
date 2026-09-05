@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "quality_backend": "MatterSim-5M surrogate relaxation, not DFT",
+  "matter_sim_checkpoint": "checkpoints/official/mattersim/mattersim-v1.0.0-5M.pth",
+  "matter_sim_checkpoint_sha256": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5",
+  "reference_archive": "data-release/alex-mp/reference_MP2020correction.gz",
+  "reference_archive_sha256": "c722f72c7d0cd398fc382870f0b731425b54bd4492b089ca36e3119e49f469b5",
+  "reference_entries_audited": 845997,
+  "reference_lmdb_is_ordered": true,
+  "relaxation": {
+    "filter": "EXPCELLFILTER",
+    "fmax_ev_per_angstrom": 0.05,
+    "device": "one NVIDIA H20, methods run sequentially",
+    "protocol": "one structure per BatchRelaxer call with one persistent MatterSim potential",
+    "cuda_3x3_det_workaround": {
+      "enabled": true,
+      "scope": "CUDA tensors with final dimensions 3x3 only",
+      "operation": "differentiable analytic determinant equivalent to torch.linalg.det",
+      "reason": "torch.linalg.det batched-cell path intermittently returned CUDA driver error: invalid argument on H20/CUDA 12.1",
+      "numerical_validation": {
+        "random_float64_matrices": 64,
+        "seed": 20260905,
+        "max_absolute_error_vs_cpu_torch_linalg_det": 8.881784197001252e-16,
+        "max_relative_error": 3.806100615039572e-15,
+        "all_autograd_gradients_finite": true
+      }
+    }
+  },
+  "seeds": [66000, 66063],
+  "methods": {
+    "C0": {
+      "n_input": 64,
+      "n_relaxed": 64,
+      "failures": 0,
+      "generated_structures_sha256": "c5a434a42eb2fca52e733a166c64c9de62c432d5f7abc5a4b6b9bd31e3a7ca72",
+      "relaxation_summary_sha256": "e4d2aa5e1a796113a3dd550e4032233f8f85873f01ca644cd32cb3caa8e628ad",
+      "quality_summary_sha256": "4eee7e494a772485c5c842016079afcc3682ee1a7288dba83768d4e8e5c8d24d"
+    },
+    "V1_Fallback50": {
+      "n_input": 64,
+      "n_relaxed": 64,
+      "failures": 0,
+      "generated_structures_sha256": "6289b9cc944f9fc6733958c1f48080fd4fa1371f1d35f9fa3fc31d43cd9a15ab",
+      "relaxation_summary_sha256": "6f0785e27744221400c5011541a7e41e81b019940b24c417083a628d40763410",
+      "quality_summary_sha256": "bcea9567543219a1c31224c753f754a7309894d187b631b9c7b4214751241e29"
+    },
+    "V2_Frozen_Atomic75_Late30": {
+      "n_input": 64,
+      "n_relaxed": 64,
+      "failures": 0,
+      "generated_structures_sha256": "daafc12e4989fbd622a022646824be55ea41b85ebd409ac387510453540a673f",
+      "relaxation_summary_sha256": "41932781de4a743f39c21a0c4f07a9b78aa83aad56d0f0c6c27a8e5aeb939165",
+      "quality_summary_sha256": "d58469c34966dd14f18a4d17f2344babbaea0b36624a9a8790c266b38a391164"
+    }
+  },
+  "paired_analysis": {
+    "n_paired": 64,
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 20260905,
+    "per_seed_saved": true
+  }
+}
