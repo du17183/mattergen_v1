@@ -1,0 +1,196 @@
+{
+  "algorithmic_speedup_warning": "Only single-h20 stages estimate algorithmic speedup.",
+  "batch_size": 1,
+  "events": [
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/smoke/logs/V2_Frozen_Atomic75_Late30__67900.log",
+      "preexisting": false,
+      "process_wall_seconds": 138.4494401800912,
+      "return_code": 0,
+      "seed": 67900,
+      "wave_index": 0
+    },
+    {
+      "gpu": 1,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/smoke/logs/V2_Frozen_Atomic75_Late30__67901.log",
+      "preexisting": false,
+      "process_wall_seconds": 150.35785374301486,
+      "return_code": 0,
+      "seed": 67901,
+      "wave_index": 0
+    },
+    {
+      "gpu": 2,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/smoke/logs/V2_Frozen_Atomic75_Late30__67902.log",
+      "preexisting": false,
+      "process_wall_seconds": 150.45100541599095,
+      "return_code": 0,
+      "seed": 67902,
+      "wave_index": 0
+    },
+    {
+      "gpu": 3,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/smoke/logs/V2_Frozen_Atomic75_Late30__67903.log",
+      "preexisting": false,
+      "process_wall_seconds": 155.87205903511494,
+      "return_code": 0,
+      "seed": 67903,
+      "wave_index": 0
+    },
+    {
+      "gpu": 0,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/smoke/logs/V3_AnchorK4__67900.log",
+      "preexisting": false,
+      "process_wall_seconds": 162.6862030250486,
+      "return_code": 0,
+      "seed": 67900,
+      "wave_index": 0
+    },
+    {
+      "gpu": 1,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/smoke/logs/V3_AnchorK4__67901.log",
+      "preexisting": false,
+      "process_wall_seconds": 162.6008158652112,
+      "return_code": 0,
+      "seed": 67901,
+      "wave_index": 0
+    },
+    {
+      "gpu": 2,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/smoke/logs/V3_AnchorK4__67902.log",
+      "preexisting": false,
+      "process_wall_seconds": 162.5607538272161,
+      "return_code": 0,
+      "seed": 67902,
+      "wave_index": 0
+    },
+    {
+      "gpu": 3,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/smoke/logs/V3_AnchorK4__67903.log",
+      "preexisting": false,
+      "process_wall_seconds": 162.67391539015807,
+      "return_code": 0,
+      "seed": 67903,
+      "wave_index": 0
+    },
+    {
+      "gpu": 0,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/smoke/logs/V3_AnchorK8__67900.log",
+      "preexisting": false,
+      "process_wall_seconds": 158.92412391584367,
+      "return_code": 0,
+      "seed": 67900,
+      "wave_index": 0
+    },
+    {
+      "gpu": 1,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/smoke/logs/V3_AnchorK8__67901.log",
+      "preexisting": false,
+      "process_wall_seconds": 158.83267454407178,
+      "return_code": 0,
+      "seed": 67901,
+      "wave_index": 0
+    },
+    {
+      "gpu": 2,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/smoke/logs/V3_AnchorK8__67902.log",
+      "preexisting": false,
+      "process_wall_seconds": 158.78395652701147,
+      "return_code": 0,
+      "seed": 67902,
+      "wave_index": 0
+    },
+    {
+      "gpu": 3,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/smoke/logs/V3_AnchorK8__67903.log",
+      "preexisting": false,
+      "process_wall_seconds": 158.7210685980972,
+      "return_code": 0,
+      "seed": 67903,
+      "wave_index": 0
+    },
+    {
+      "gpu": 0,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/smoke/logs/V3_AnchorK16__67900.log",
+      "preexisting": false,
+      "process_wall_seconds": 138.8790497200098,
+      "return_code": 0,
+      "seed": 67900,
+      "wave_index": 0
+    },
+    {
+      "gpu": 1,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/smoke/logs/V3_AnchorK16__67901.log",
+      "preexisting": false,
+      "process_wall_seconds": 153.41205850592814,
+      "return_code": 0,
+      "seed": 67901,
+      "wave_index": 0
+    },
+    {
+      "gpu": 2,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/smoke/logs/V3_AnchorK16__67902.log",
+      "preexisting": false,
+      "process_wall_seconds": 160.98985741008073,
+      "return_code": 0,
+      "seed": 67902,
+      "wave_index": 0
+    },
+    {
+      "gpu": 3,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/smoke/logs/V3_AnchorK16__67903.log",
+      "preexisting": false,
+      "process_wall_seconds": 160.8849915470928,
+      "return_code": 0,
+      "seed": 67903,
+      "wave_index": 0
+    }
+  ],
+  "gpu_count": 4,
+  "methods": [
+    "V2_Frozen_Atomic75_Late30",
+    "V3_AnchorK4",
+    "V3_AnchorK8",
+    "V3_AnchorK16"
+  ],
+  "per_method_active_wall_seconds": {
+    "V2_Frozen_Atomic75_Late30": 156.08227624604478,
+    "V3_AnchorK16": 161.16313830786385,
+    "V3_AnchorK4": 162.90091366693377,
+    "V3_AnchorK8": 158.98413744498976
+  },
+  "per_method_samples_per_hour": {
+    "V2_Frozen_Atomic75_Late30": 92.259033801507,
+    "V3_AnchorK16": 89.35045663166613,
+    "V3_AnchorK4": 88.3972942560786,
+    "V3_AnchorK8": 90.57507391253141
+  },
+  "protocol": "paired global waves; methods run consecutively for each seed wave",
+  "schema_version": 1,
+  "seed_count_per_method": 4,
+  "seeds": [
+    67900,
+    67901,
+    67902,
+    67903
+  ],
+  "stage": "smoke",
+  "total_wall_seconds": 639.1308389150072
+}

@@ -1,0 +1,25 @@
+{
+  "errors": [],
+  "expected_per_method": 4,
+  "methods": {
+    "V2_Frozen_Atomic75_Late30": {
+      "seed_set_exact": true,
+      "success": 4
+    },
+    "V3_AnchorK16": {
+      "seed_set_exact": true,
+      "success": 4
+    },
+    "V3_AnchorK4": {
+      "seed_set_exact": true,
+      "success": 4
+    },
+    "V3_AnchorK8": {
+      "seed_set_exact": true,
+      "success": 4
+    }
+  },
+  "passed": true,
+  "schema_version": 1,
+  "stage": "smoke"
+}
