@@ -1,0 +1,10 @@
+endpoint,scale,direction,estimate,bootstrap95_low,bootstrap95_high,margin,noninferiority_pass,two_sided_95_interval_used_conservatively,bootstrap_samples
+e_hull,absolute,lower,0.0037382080461051716,-0.011487357550033087,0.01979759483119358,0.025,True,True,20000
+stable,absolute,higher,0.00390625,-0.07421875,0.08203125,0.1,True,True,20000
+nus,absolute,higher,0.015625,-0.0546875,0.08984375,0.1,True,True,20000
+rmsd,absolute,lower,-0.02735929135712841,-0.06064783785341091,0.004556905379283621,0.02,True,True,20000
+force_max,ratio,lower,1.0213592031409215,0.7733558012992318,1.3528963785590322,1.2,False,True,20000
+force_tail_p95,ratio,lower,1.0534259507445527,0.6550339266621479,1.3897766348037424,1.3,False,True,20000
+force_tail_p99,ratio,lower,1.2368572176241086,0.33629219777303854,2.8184404286735556,1.5,False,True,20000
+force_tail_gt_1,absolute,lower,-0.00390625,-0.0390625,0.03125,0.05,True,True,20000
+force_tail_gt_2,absolute,lower,0.00390625,-0.01171875,0.01953125,0.02,True,True,20000
