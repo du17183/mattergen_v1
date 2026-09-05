@@ -14,5 +14,6 @@
   "middle_weight": 1.0,
   "late_weight": 2.0,
   "early_end": 0.2,
-  "late_start": 0.7
+  "late_start": 0.7,
+  "cache_data_on_device": true
 }

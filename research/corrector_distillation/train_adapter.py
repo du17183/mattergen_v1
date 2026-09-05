@@ -51,6 +51,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--late-weight", type=float, default=1.0)
     parser.add_argument("--early-end", type=float, default=0.2)
     parser.add_argument("--late-start", type=float, default=0.7)
+    parser.add_argument(
+        "--cache-data-on-device",
+        action="store_true",
+        help="Load verified combined batches once and retain them on the training device.",
+    )
     return parser.parse_args()
 
 
@@ -236,6 +241,7 @@ def fit_input_statistics_and_linear_baseline(
     *,
     batch_records: int,
     device: torch.device,
+    cached_batches: list[dict[str, Any]] | None = None,
 ) -> tuple[torch.Tensor, torch.Tensor, dict[str, float], dict[str, list[float]]]:
     feature_sum = torch.zeros(len(CONTEXT_FEATURE_NAMES), device=device)
     feature_square_sum = torch.zeros_like(feature_sum)
@@ -244,7 +250,12 @@ def fit_input_statistics_and_linear_baseline(
     target_count = {field: 0 for field in FIELDS}
     normal_xx = {field: torch.zeros(2, 2, dtype=torch.float64) for field in FIELDS}
     normal_xy = {field: torch.zeros(2, dtype=torch.float64) for field in FIELDS}
-    for teacher_batch in batches(paths, batch_records=batch_records):
+    source = (
+        cached_batches
+        if cached_batches is not None
+        else batches(paths, batch_records=batch_records)
+    )
+    for teacher_batch in source:
         teacher_batch = to_device(teacher_batch, device)
         prediction = model(
             x_before=teacher_batch["x_before"],
@@ -310,6 +321,7 @@ def evaluate(
     batch_records: int,
     device: torch.device,
     stage_weights: tuple[float, float, float, float, float] | None = None,
+    cached_batches: list[dict[str, Any]] | None = None,
 ) -> dict[str, float]:
     sums = {f"{field}_squared_error": 0.0 for field in FIELDS}
     counts = {field: 0 for field in FIELDS}
@@ -317,7 +329,12 @@ def evaluate(
     pred_squares = {field: 0.0 for field in FIELDS}
     target_squares = {field: 0.0 for field in FIELDS}
     model.eval()
-    for teacher_batch in batches(paths, batch_records=batch_records):
+    source = (
+        cached_batches
+        if cached_batches is not None
+        else batches(paths, batch_records=batch_records)
+    )
+    for teacher_batch in source:
         teacher_batch = to_device(teacher_batch, device)
         prediction = model(
             x_before=teacher_batch["x_before"],
@@ -376,13 +393,19 @@ def calibrate_uncertainty(
     batch_records: int,
     device: torch.device,
     target_scales: Mapping[str, float],
+    cached_batches: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     all_features = []
     all_targets = []
     all_field_targets: dict[str, list[torch.Tensor]] = {field: [] for field in FIELDS}
     all_progress = []
     model.eval()
-    for teacher_batch in batches(paths, batch_records=batch_records):
+    source = (
+        cached_batches
+        if cached_batches is not None
+        else batches(paths, batch_records=batch_records)
+    )
+    for teacher_batch in source:
         teacher_batch = to_device(teacher_batch, device)
         prediction = model(
             x_before=teacher_batch["x_before"],
@@ -562,6 +585,41 @@ def main() -> None:
     output_dir = args.output_dir.expanduser().resolve()
     output_dir.mkdir(parents=True, exist_ok=False)
 
+    train_cache = None
+    validation_cache = None
+    if args.cache_data_on_device:
+        print(
+            json.dumps(
+                {
+                    "event": "cache_start",
+                    "device": str(device),
+                    "train_manifests": len(train_paths),
+                    "validation_manifests": len(validation_paths),
+                },
+                sort_keys=True,
+            ),
+            flush=True,
+        )
+        train_cache = [
+            to_device(batch, device)
+            for batch in batches(train_paths, batch_records=args.batch_records)
+        ]
+        validation_cache = [
+            to_device(batch, device)
+            for batch in batches(validation_paths, batch_records=args.batch_records)
+        ]
+        print(
+            json.dumps(
+                {
+                    "event": "cache_complete",
+                    "train_batches": len(train_cache),
+                    "validation_batches": len(validation_cache),
+                },
+                sort_keys=True,
+            ),
+            flush=True,
+        )
+
     model = FieldwiseResidualAdapter(
         ResidualAdapterArchitecture(
             hidden_dim=args.hidden_dim,
@@ -574,6 +632,7 @@ def main() -> None:
         train_paths,
         batch_records=args.batch_records,
         device=device,
+        cached_batches=train_cache,
     )
     model.set_feature_statistics(mean, std)
     optimizer = torch.optim.AdamW(
@@ -587,11 +646,17 @@ def main() -> None:
         model.train()
         loss_sum = 0.0
         batches_seen = 0
-        for teacher_batch in batches(
-            train_paths,
-            batch_records=args.batch_records,
-            shuffle_seed=args.seed + epoch,
-        ):
+        if train_cache is None:
+            epoch_batches = batches(
+                train_paths,
+                batch_records=args.batch_records,
+                shuffle_seed=args.seed + epoch,
+            )
+        else:
+            shuffled_cache = list(train_cache)
+            random.Random(args.seed + epoch).shuffle(shuffled_cache)
+            epoch_batches = iter(shuffled_cache)
+        for teacher_batch in epoch_batches:
             teacher_batch = to_device(teacher_batch, device)
             prediction = model(
                 x_before=teacher_batch["x_before"],
@@ -635,6 +700,7 @@ def main() -> None:
             validation_paths,
             batch_records=args.batch_records,
             device=device,
+            cached_batches=validation_cache,
         )
         weighted_validation = evaluate(
             model,
@@ -642,6 +708,7 @@ def main() -> None:
             batch_records=args.batch_records,
             device=device,
             stage_weights=stage_weight_config,
+            cached_batches=validation_cache,
         )
         validation_objective = sum(
             weighted_validation[f"{field}_mse"] / (target_scales[field] ** 2)
@@ -675,6 +742,7 @@ def main() -> None:
         validation_paths,
         batch_records=args.batch_records,
         device=device,
+        cached_batches=validation_cache,
     )
     selected_weighted_validation = evaluate(
         model,
@@ -682,6 +750,7 @@ def main() -> None:
         batch_records=args.batch_records,
         device=device,
         stage_weights=stage_weight_config,
+        cached_batches=validation_cache,
     )
     calibration = calibrate_uncertainty(
         model,
@@ -689,6 +758,7 @@ def main() -> None:
         batch_records=args.batch_records,
         device=device,
         target_scales=target_scales,
+        cached_batches=validation_cache,
     )
     training_hyperparameters = {
         "epochs": args.epochs,
@@ -706,6 +776,7 @@ def main() -> None:
         "early_end": args.early_end,
         "late_start": args.late_start,
         "train_roots": [str(root.expanduser().resolve()) for root in train_roots],
+        "cache_data_on_device": args.cache_data_on_device,
     }
     checkpoint_path = save_adapter_checkpoint(
         output_dir / "residual_adapter.pt",
