@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "seeds": [64000, 64001, 64002, 64003],
+  "records_per_seed": 1000,
+  "total_records": 4000,
+  "trajectory_kind": "dagger",
+  "teacher_target": "frozen original MatterGen exact score_after on rollout x_after",
+  "adapter_checkpoint_sha256": "fae136412448be0b82267dd1a40d0168cf4847130d41cfa4295c8def715108c4",
+  "all_shard_sha256_verified": true,
+  "all_manifests_completed": true,
+  "stored_risk_feature_shape_per_record": [1, 13],
+  "progress_direction_checks": [
+    {"sampling_step": 0, "progress": 0.0, "t": 1.0},
+    {"sampling_step": 199, "progress": 0.19919919967651367, "t": 0.8009999990463257},
+    {"sampling_step": 699, "progress": 0.6996996998786926, "t": 0.30100002884864807},
+    {"sampling_step": 999, "progress": 1.0, "t": 0.0010000000474974513}
+  ],
+  "policy_counterfactuals": [
+    {"seed": 64000, "policy_logical_score_calls": 1296, "policy_saved_score_calls": 704},
+    {"seed": 64001, "policy_logical_score_calls": 1359, "policy_saved_score_calls": 641},
+    {"seed": 64002, "policy_logical_score_calls": 1498, "policy_saved_score_calls": 502},
+    {"seed": 64003, "policy_logical_score_calls": 1463, "policy_saved_score_calls": 537}
+  ],
+  "collection_wall_seconds_4gpu": 199.3193551870063,
+  "collection_throughput_samples_per_hour_4gpu": 72.24586887956549,
+  "pytest": {
+    "tests": [
+      "mattergen/diffusion/tests/test_residual_distillation.py",
+      "mattergen/diffusion/tests/test_guidance_schedule.py"
+    ],
+    "passed": 29,
+    "failed": 0
+  }
+}
