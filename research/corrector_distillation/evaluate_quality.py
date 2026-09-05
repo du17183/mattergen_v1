@@ -53,6 +53,8 @@ def parse_args() -> argparse.Namespace:
     reference = parser.add_mutually_exclusive_group(required=True)
     reference.add_argument("--reference-path", type=Path)
     reference.add_argument("--reference-lmdb-path", type=Path)
+    reference.add_argument("--reference-memory-fd", type=int,
+                           help="Inherited read-only LMDB stored in anonymous RAM.")
     parser.add_argument(
         "--reference-is-ordered",
         action="store_true",
@@ -335,7 +337,14 @@ def main() -> None:
     adaptor = AseAtomsAdaptor()
     original_structures = [adaptor.get_structure(input_atoms[index]) for index in successful_indices]
     relaxed_structures = [adaptor.get_structure(item) for item in relaxed_atoms]
-    if args.reference_lmdb_path is not None:
+    if args.reference_memory_fd is not None:
+        reference = ReferenceDataset(
+            name="alex-mp MP2020 correction",
+            impl=LMDBBackedReferenceDatasetImpl(
+                Path(f"/proc/self/fd/{args.reference_memory_fd}"), cleanup_dir=False
+            ),
+        )
+    elif args.reference_lmdb_path is not None:
         reference = ReferenceDataset(
             name="alex-mp MP2020 correction",
             impl=LMDBBackedReferenceDatasetImpl(

@@ -1,0 +1,1546 @@
+{
+  "algorithmic_speedup_warning": "Only single-h20 stages estimate algorithmic speedup.",
+  "batch_size": 1,
+  "events": [
+    {
+      "gpu": 0,
+      "label": "C0",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68000,
+      "wave_index": 0
+    },
+    {
+      "gpu": 1,
+      "label": "C0",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68004,
+      "wave_index": 0
+    },
+    {
+      "gpu": 2,
+      "label": "C0",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68008,
+      "wave_index": 0
+    },
+    {
+      "gpu": 3,
+      "label": "C0",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68012,
+      "wave_index": 0
+    },
+    {
+      "gpu": 4,
+      "label": "C0",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68016,
+      "wave_index": 0
+    },
+    {
+      "gpu": 5,
+      "label": "C0",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68020,
+      "wave_index": 0
+    },
+    {
+      "gpu": 6,
+      "label": "C0",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68024,
+      "wave_index": 0
+    },
+    {
+      "gpu": 7,
+      "label": "C0",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68028,
+      "wave_index": 0
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68000,
+      "wave_index": 0
+    },
+    {
+      "gpu": 1,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68004,
+      "wave_index": 0
+    },
+    {
+      "gpu": 2,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68008,
+      "wave_index": 0
+    },
+    {
+      "gpu": 3,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68012,
+      "wave_index": 0
+    },
+    {
+      "gpu": 4,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68016,
+      "wave_index": 0
+    },
+    {
+      "gpu": 5,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68020,
+      "wave_index": 0
+    },
+    {
+      "gpu": 6,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68024,
+      "wave_index": 0
+    },
+    {
+      "gpu": 7,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68028,
+      "wave_index": 0
+    },
+    {
+      "gpu": 0,
+      "label": "V3_AnchorK4",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68000,
+      "wave_index": 0
+    },
+    {
+      "gpu": 1,
+      "label": "V3_AnchorK4",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68004,
+      "wave_index": 0
+    },
+    {
+      "gpu": 2,
+      "label": "V3_AnchorK4",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68008,
+      "wave_index": 0
+    },
+    {
+      "gpu": 3,
+      "label": "V3_AnchorK4",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68012,
+      "wave_index": 0
+    },
+    {
+      "gpu": 4,
+      "label": "V3_AnchorK4",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68016,
+      "wave_index": 0
+    },
+    {
+      "gpu": 5,
+      "label": "V3_AnchorK4",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68020,
+      "wave_index": 0
+    },
+    {
+      "gpu": 6,
+      "label": "V3_AnchorK4",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68024,
+      "wave_index": 0
+    },
+    {
+      "gpu": 7,
+      "label": "V3_AnchorK4",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68028,
+      "wave_index": 0
+    },
+    {
+      "gpu": 0,
+      "label": "V3_AnchorK8",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68000,
+      "wave_index": 0
+    },
+    {
+      "gpu": 1,
+      "label": "V3_AnchorK8",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68004,
+      "wave_index": 0
+    },
+    {
+      "gpu": 2,
+      "label": "V3_AnchorK8",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68008,
+      "wave_index": 0
+    },
+    {
+      "gpu": 3,
+      "label": "V3_AnchorK8",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68012,
+      "wave_index": 0
+    },
+    {
+      "gpu": 4,
+      "label": "V3_AnchorK8",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68016,
+      "wave_index": 0
+    },
+    {
+      "gpu": 5,
+      "label": "V3_AnchorK8",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68020,
+      "wave_index": 0
+    },
+    {
+      "gpu": 6,
+      "label": "V3_AnchorK8",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68024,
+      "wave_index": 0
+    },
+    {
+      "gpu": 7,
+      "label": "V3_AnchorK8",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68028,
+      "wave_index": 0
+    },
+    {
+      "gpu": 0,
+      "label": "V3_AnchorK16",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68000,
+      "wave_index": 0
+    },
+    {
+      "gpu": 1,
+      "label": "V3_AnchorK16",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68004,
+      "wave_index": 0
+    },
+    {
+      "gpu": 2,
+      "label": "V3_AnchorK16",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68008,
+      "wave_index": 0
+    },
+    {
+      "gpu": 3,
+      "label": "V3_AnchorK16",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68012,
+      "wave_index": 0
+    },
+    {
+      "gpu": 4,
+      "label": "V3_AnchorK16",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68016,
+      "wave_index": 0
+    },
+    {
+      "gpu": 5,
+      "label": "V3_AnchorK16",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68020,
+      "wave_index": 0
+    },
+    {
+      "gpu": 6,
+      "label": "V3_AnchorK16",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68024,
+      "wave_index": 0
+    },
+    {
+      "gpu": 7,
+      "label": "V3_AnchorK16",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68028,
+      "wave_index": 0
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68001,
+      "wave_index": 1
+    },
+    {
+      "gpu": 1,
+      "label": "C0",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68005,
+      "wave_index": 1
+    },
+    {
+      "gpu": 2,
+      "label": "C0",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68009,
+      "wave_index": 1
+    },
+    {
+      "gpu": 3,
+      "label": "C0",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68013,
+      "wave_index": 1
+    },
+    {
+      "gpu": 4,
+      "label": "C0",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68017,
+      "wave_index": 1
+    },
+    {
+      "gpu": 5,
+      "label": "C0",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68021,
+      "wave_index": 1
+    },
+    {
+      "gpu": 6,
+      "label": "C0",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68025,
+      "wave_index": 1
+    },
+    {
+      "gpu": 7,
+      "label": "C0",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68029,
+      "wave_index": 1
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68001,
+      "wave_index": 1
+    },
+    {
+      "gpu": 1,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68005,
+      "wave_index": 1
+    },
+    {
+      "gpu": 2,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68009,
+      "wave_index": 1
+    },
+    {
+      "gpu": 3,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68013,
+      "wave_index": 1
+    },
+    {
+      "gpu": 4,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68017,
+      "wave_index": 1
+    },
+    {
+      "gpu": 5,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68021,
+      "wave_index": 1
+    },
+    {
+      "gpu": 6,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68025,
+      "wave_index": 1
+    },
+    {
+      "gpu": 7,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68029,
+      "wave_index": 1
+    },
+    {
+      "gpu": 0,
+      "label": "V3_AnchorK4",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68001,
+      "wave_index": 1
+    },
+    {
+      "gpu": 1,
+      "label": "V3_AnchorK4",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68005,
+      "wave_index": 1
+    },
+    {
+      "gpu": 2,
+      "label": "V3_AnchorK4",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68009,
+      "wave_index": 1
+    },
+    {
+      "gpu": 3,
+      "label": "V3_AnchorK4",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68013,
+      "wave_index": 1
+    },
+    {
+      "gpu": 4,
+      "label": "V3_AnchorK4",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68017,
+      "wave_index": 1
+    },
+    {
+      "gpu": 5,
+      "label": "V3_AnchorK4",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68021,
+      "wave_index": 1
+    },
+    {
+      "gpu": 6,
+      "label": "V3_AnchorK4",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68025,
+      "wave_index": 1
+    },
+    {
+      "gpu": 7,
+      "label": "V3_AnchorK4",
+      "preexisting": true,
+      "return_code": 0,
+      "seed": 68029,
+      "wave_index": 1
+    },
+    {
+      "gpu": 0,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68001.log",
+      "preexisting": false,
+      "process_wall_seconds": 137.85990642313845,
+      "return_code": 0,
+      "seed": 68001,
+      "wave_index": 1
+    },
+    {
+      "gpu": 1,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68005.log",
+      "preexisting": false,
+      "process_wall_seconds": 164.19227693392895,
+      "return_code": 0,
+      "seed": 68005,
+      "wave_index": 1
+    },
+    {
+      "gpu": 2,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68009.log",
+      "preexisting": false,
+      "process_wall_seconds": 164.13617946999148,
+      "return_code": 0,
+      "seed": 68009,
+      "wave_index": 1
+    },
+    {
+      "gpu": 3,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68013.log",
+      "preexisting": false,
+      "process_wall_seconds": 175.169141524937,
+      "return_code": 0,
+      "seed": 68013,
+      "wave_index": 1
+    },
+    {
+      "gpu": 4,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68017.log",
+      "preexisting": false,
+      "process_wall_seconds": 175.12669386179186,
+      "return_code": 0,
+      "seed": 68017,
+      "wave_index": 1
+    },
+    {
+      "gpu": 5,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68021.log",
+      "preexisting": false,
+      "process_wall_seconds": 174.67229916900396,
+      "return_code": 0,
+      "seed": 68021,
+      "wave_index": 1
+    },
+    {
+      "gpu": 6,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68025.log",
+      "preexisting": false,
+      "process_wall_seconds": 174.55059910193086,
+      "return_code": 0,
+      "seed": 68025,
+      "wave_index": 1
+    },
+    {
+      "gpu": 7,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68029.log",
+      "preexisting": false,
+      "process_wall_seconds": 174.4933483400382,
+      "return_code": 0,
+      "seed": 68029,
+      "wave_index": 1
+    },
+    {
+      "gpu": 0,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68001.log",
+      "preexisting": false,
+      "process_wall_seconds": 162.34181656315923,
+      "return_code": 0,
+      "seed": 68001,
+      "wave_index": 1
+    },
+    {
+      "gpu": 1,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68005.log",
+      "preexisting": false,
+      "process_wall_seconds": 162.23575990600511,
+      "return_code": 0,
+      "seed": 68005,
+      "wave_index": 1
+    },
+    {
+      "gpu": 2,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68009.log",
+      "preexisting": false,
+      "process_wall_seconds": 162.18521029804833,
+      "return_code": 0,
+      "seed": 68009,
+      "wave_index": 1
+    },
+    {
+      "gpu": 3,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68013.log",
+      "preexisting": false,
+      "process_wall_seconds": 167.60616653808393,
+      "return_code": 0,
+      "seed": 68013,
+      "wave_index": 1
+    },
+    {
+      "gpu": 4,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68017.log",
+      "preexisting": false,
+      "process_wall_seconds": 167.20238429307938,
+      "return_code": 0,
+      "seed": 68017,
+      "wave_index": 1
+    },
+    {
+      "gpu": 5,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68021.log",
+      "preexisting": false,
+      "process_wall_seconds": 167.1616999360267,
+      "return_code": 0,
+      "seed": 68021,
+      "wave_index": 1
+    },
+    {
+      "gpu": 6,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68025.log",
+      "preexisting": false,
+      "process_wall_seconds": 167.1202333169058,
+      "return_code": 0,
+      "seed": 68025,
+      "wave_index": 1
+    },
+    {
+      "gpu": 7,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68029.log",
+      "preexisting": false,
+      "process_wall_seconds": 166.657822587993,
+      "return_code": 0,
+      "seed": 68029,
+      "wave_index": 1
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/C0__68002.log",
+      "preexisting": false,
+      "process_wall_seconds": 196.55127493897453,
+      "return_code": 0,
+      "seed": 68002,
+      "wave_index": 2
+    },
+    {
+      "gpu": 1,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/C0__68006.log",
+      "preexisting": false,
+      "process_wall_seconds": 196.4972266710829,
+      "return_code": 0,
+      "seed": 68006,
+      "wave_index": 2
+    },
+    {
+      "gpu": 2,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/C0__68010.log",
+      "preexisting": false,
+      "process_wall_seconds": 196.46290876786225,
+      "return_code": 0,
+      "seed": 68010,
+      "wave_index": 2
+    },
+    {
+      "gpu": 3,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/C0__68014.log",
+      "preexisting": false,
+      "process_wall_seconds": 199.23698284989223,
+      "return_code": 0,
+      "seed": 68014,
+      "wave_index": 2
+    },
+    {
+      "gpu": 4,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/C0__68018.log",
+      "preexisting": false,
+      "process_wall_seconds": 199.20488366205245,
+      "return_code": 0,
+      "seed": 68018,
+      "wave_index": 2
+    },
+    {
+      "gpu": 5,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/C0__68022.log",
+      "preexisting": false,
+      "process_wall_seconds": 199.17306981189176,
+      "return_code": 0,
+      "seed": 68022,
+      "wave_index": 2
+    },
+    {
+      "gpu": 6,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/C0__68026.log",
+      "preexisting": false,
+      "process_wall_seconds": 199.1425205830019,
+      "return_code": 0,
+      "seed": 68026,
+      "wave_index": 2
+    },
+    {
+      "gpu": 7,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/C0__68030.log",
+      "preexisting": false,
+      "process_wall_seconds": 199.06614805804566,
+      "return_code": 0,
+      "seed": 68030,
+      "wave_index": 2
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V2_Frozen_Atomic75_Late30__68002.log",
+      "preexisting": false,
+      "process_wall_seconds": 132.51832538400777,
+      "return_code": 0,
+      "seed": 68002,
+      "wave_index": 2
+    },
+    {
+      "gpu": 1,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V2_Frozen_Atomic75_Late30__68006.log",
+      "preexisting": false,
+      "process_wall_seconds": 159.46006416692398,
+      "return_code": 0,
+      "seed": 68006,
+      "wave_index": 2
+    },
+    {
+      "gpu": 2,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V2_Frozen_Atomic75_Late30__68010.log",
+      "preexisting": false,
+      "process_wall_seconds": 159.40192419989035,
+      "return_code": 0,
+      "seed": 68010,
+      "wave_index": 2
+    },
+    {
+      "gpu": 3,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V2_Frozen_Atomic75_Late30__68014.log",
+      "preexisting": false,
+      "process_wall_seconds": 178.3129801771138,
+      "return_code": 0,
+      "seed": 68014,
+      "wave_index": 2
+    },
+    {
+      "gpu": 4,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V2_Frozen_Atomic75_Late30__68018.log",
+      "preexisting": false,
+      "process_wall_seconds": 178.26898901793174,
+      "return_code": 0,
+      "seed": 68018,
+      "wave_index": 2
+    },
+    {
+      "gpu": 5,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V2_Frozen_Atomic75_Late30__68022.log",
+      "preexisting": false,
+      "process_wall_seconds": 178.16634194203652,
+      "return_code": 0,
+      "seed": 68022,
+      "wave_index": 2
+    },
+    {
+      "gpu": 6,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V2_Frozen_Atomic75_Late30__68026.log",
+      "preexisting": false,
+      "process_wall_seconds": 178.06603057379834,
+      "return_code": 0,
+      "seed": 68026,
+      "wave_index": 2
+    },
+    {
+      "gpu": 7,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V2_Frozen_Atomic75_Late30__68030.log",
+      "preexisting": false,
+      "process_wall_seconds": 178.02059613494202,
+      "return_code": 0,
+      "seed": 68030,
+      "wave_index": 2
+    },
+    {
+      "gpu": 0,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK4__68002.log",
+      "preexisting": false,
+      "process_wall_seconds": 165.87844372307882,
+      "return_code": 0,
+      "seed": 68002,
+      "wave_index": 2
+    },
+    {
+      "gpu": 1,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK4__68006.log",
+      "preexisting": false,
+      "process_wall_seconds": 166.19582171016373,
+      "return_code": 0,
+      "seed": 68006,
+      "wave_index": 2
+    },
+    {
+      "gpu": 2,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK4__68010.log",
+      "preexisting": false,
+      "process_wall_seconds": 166.0947874269914,
+      "return_code": 0,
+      "seed": 68010,
+      "wave_index": 2
+    },
+    {
+      "gpu": 3,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK4__68014.log",
+      "preexisting": false,
+      "process_wall_seconds": 171.17894636793062,
+      "return_code": 0,
+      "seed": 68014,
+      "wave_index": 2
+    },
+    {
+      "gpu": 4,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK4__68018.log",
+      "preexisting": false,
+      "process_wall_seconds": 171.1356782859657,
+      "return_code": 0,
+      "seed": 68018,
+      "wave_index": 2
+    },
+    {
+      "gpu": 5,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK4__68022.log",
+      "preexisting": false,
+      "process_wall_seconds": 175.17262016795576,
+      "return_code": 0,
+      "seed": 68022,
+      "wave_index": 2
+    },
+    {
+      "gpu": 6,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK4__68026.log",
+      "preexisting": false,
+      "process_wall_seconds": 175.12056273710914,
+      "return_code": 0,
+      "seed": 68026,
+      "wave_index": 2
+    },
+    {
+      "gpu": 7,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK4__68030.log",
+      "preexisting": false,
+      "process_wall_seconds": 175.07343437708914,
+      "return_code": 0,
+      "seed": 68030,
+      "wave_index": 2
+    },
+    {
+      "gpu": 0,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68002.log",
+      "preexisting": false,
+      "process_wall_seconds": 152.0860728819389,
+      "return_code": 0,
+      "seed": 68002,
+      "wave_index": 2
+    },
+    {
+      "gpu": 1,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68006.log",
+      "preexisting": false,
+      "process_wall_seconds": 167.47754506603815,
+      "return_code": 0,
+      "seed": 68006,
+      "wave_index": 2
+    },
+    {
+      "gpu": 2,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68010.log",
+      "preexisting": false,
+      "process_wall_seconds": 167.42327366000973,
+      "return_code": 0,
+      "seed": 68010,
+      "wave_index": 2
+    },
+    {
+      "gpu": 3,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68014.log",
+      "preexisting": false,
+      "process_wall_seconds": 183.26515449001454,
+      "return_code": 0,
+      "seed": 68014,
+      "wave_index": 2
+    },
+    {
+      "gpu": 4,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68018.log",
+      "preexisting": false,
+      "process_wall_seconds": 183.18183421506546,
+      "return_code": 0,
+      "seed": 68018,
+      "wave_index": 2
+    },
+    {
+      "gpu": 5,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68022.log",
+      "preexisting": false,
+      "process_wall_seconds": 183.12566941604018,
+      "return_code": 0,
+      "seed": 68022,
+      "wave_index": 2
+    },
+    {
+      "gpu": 6,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68026.log",
+      "preexisting": false,
+      "process_wall_seconds": 182.80087362602353,
+      "return_code": 0,
+      "seed": 68026,
+      "wave_index": 2
+    },
+    {
+      "gpu": 7,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68030.log",
+      "preexisting": false,
+      "process_wall_seconds": 182.57488060602918,
+      "return_code": 0,
+      "seed": 68030,
+      "wave_index": 2
+    },
+    {
+      "gpu": 0,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68002.log",
+      "preexisting": false,
+      "process_wall_seconds": 160.94930341886356,
+      "return_code": 0,
+      "seed": 68002,
+      "wave_index": 2
+    },
+    {
+      "gpu": 1,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68006.log",
+      "preexisting": false,
+      "process_wall_seconds": 160.9105505628977,
+      "return_code": 0,
+      "seed": 68006,
+      "wave_index": 2
+    },
+    {
+      "gpu": 2,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68010.log",
+      "preexisting": false,
+      "process_wall_seconds": 160.8486826820299,
+      "return_code": 0,
+      "seed": 68010,
+      "wave_index": 2
+    },
+    {
+      "gpu": 3,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68014.log",
+      "preexisting": false,
+      "process_wall_seconds": 172.00360416807234,
+      "return_code": 0,
+      "seed": 68014,
+      "wave_index": 2
+    },
+    {
+      "gpu": 4,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68018.log",
+      "preexisting": false,
+      "process_wall_seconds": 171.9283038370777,
+      "return_code": 0,
+      "seed": 68018,
+      "wave_index": 2
+    },
+    {
+      "gpu": 5,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68022.log",
+      "preexisting": false,
+      "process_wall_seconds": 171.8650149148889,
+      "return_code": 0,
+      "seed": 68022,
+      "wave_index": 2
+    },
+    {
+      "gpu": 6,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68026.log",
+      "preexisting": false,
+      "process_wall_seconds": 171.78964207088575,
+      "return_code": 0,
+      "seed": 68026,
+      "wave_index": 2
+    },
+    {
+      "gpu": 7,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68030.log",
+      "preexisting": false,
+      "process_wall_seconds": 171.4261814339552,
+      "return_code": 0,
+      "seed": 68030,
+      "wave_index": 2
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/C0__68003.log",
+      "preexisting": false,
+      "process_wall_seconds": 192.72936749015935,
+      "return_code": 0,
+      "seed": 68003,
+      "wave_index": 3
+    },
+    {
+      "gpu": 1,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/C0__68007.log",
+      "preexisting": false,
+      "process_wall_seconds": 192.63097922410816,
+      "return_code": 0,
+      "seed": 68007,
+      "wave_index": 3
+    },
+    {
+      "gpu": 2,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/C0__68011.log",
+      "preexisting": false,
+      "process_wall_seconds": 192.58802364696749,
+      "return_code": 0,
+      "seed": 68011,
+      "wave_index": 3
+    },
+    {
+      "gpu": 3,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/C0__68015.log",
+      "preexisting": false,
+      "process_wall_seconds": 192.55197414499708,
+      "return_code": 0,
+      "seed": 68015,
+      "wave_index": 3
+    },
+    {
+      "gpu": 4,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/C0__68019.log",
+      "preexisting": false,
+      "process_wall_seconds": 192.5188431518618,
+      "return_code": 0,
+      "seed": 68019,
+      "wave_index": 3
+    },
+    {
+      "gpu": 5,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/C0__68023.log",
+      "preexisting": false,
+      "process_wall_seconds": 192.46525844791904,
+      "return_code": 0,
+      "seed": 68023,
+      "wave_index": 3
+    },
+    {
+      "gpu": 6,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/C0__68027.log",
+      "preexisting": false,
+      "process_wall_seconds": 197.7436404840555,
+      "return_code": 0,
+      "seed": 68027,
+      "wave_index": 3
+    },
+    {
+      "gpu": 7,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/C0__68031.log",
+      "preexisting": false,
+      "process_wall_seconds": 197.70054369210266,
+      "return_code": 0,
+      "seed": 68031,
+      "wave_index": 3
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V2_Frozen_Atomic75_Late30__68003.log",
+      "preexisting": false,
+      "process_wall_seconds": 157.75230730208568,
+      "return_code": 0,
+      "seed": 68003,
+      "wave_index": 3
+    },
+    {
+      "gpu": 1,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V2_Frozen_Atomic75_Late30__68007.log",
+      "preexisting": false,
+      "process_wall_seconds": 157.71441683010198,
+      "return_code": 0,
+      "seed": 68007,
+      "wave_index": 3
+    },
+    {
+      "gpu": 2,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V2_Frozen_Atomic75_Late30__68011.log",
+      "preexisting": false,
+      "process_wall_seconds": 162.89616612996906,
+      "return_code": 0,
+      "seed": 68011,
+      "wave_index": 3
+    },
+    {
+      "gpu": 3,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V2_Frozen_Atomic75_Late30__68015.log",
+      "preexisting": false,
+      "process_wall_seconds": 162.85040621599182,
+      "return_code": 0,
+      "seed": 68015,
+      "wave_index": 3
+    },
+    {
+      "gpu": 4,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V2_Frozen_Atomic75_Late30__68019.log",
+      "preexisting": false,
+      "process_wall_seconds": 162.7990331191104,
+      "return_code": 0,
+      "seed": 68019,
+      "wave_index": 3
+    },
+    {
+      "gpu": 5,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V2_Frozen_Atomic75_Late30__68023.log",
+      "preexisting": false,
+      "process_wall_seconds": 168.95492448005825,
+      "return_code": 0,
+      "seed": 68023,
+      "wave_index": 3
+    },
+    {
+      "gpu": 6,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V2_Frozen_Atomic75_Late30__68027.log",
+      "preexisting": false,
+      "process_wall_seconds": 168.99805811303668,
+      "return_code": 0,
+      "seed": 68027,
+      "wave_index": 3
+    },
+    {
+      "gpu": 7,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V2_Frozen_Atomic75_Late30__68031.log",
+      "preexisting": false,
+      "process_wall_seconds": 168.76989363809116,
+      "return_code": 0,
+      "seed": 68031,
+      "wave_index": 3
+    },
+    {
+      "gpu": 0,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK4__68003.log",
+      "preexisting": false,
+      "process_wall_seconds": 169.377245756099,
+      "return_code": 0,
+      "seed": 68003,
+      "wave_index": 3
+    },
+    {
+      "gpu": 1,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK4__68007.log",
+      "preexisting": false,
+      "process_wall_seconds": 169.29716258286498,
+      "return_code": 0,
+      "seed": 68007,
+      "wave_index": 3
+    },
+    {
+      "gpu": 2,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK4__68011.log",
+      "preexisting": false,
+      "process_wall_seconds": 169.2592949620448,
+      "return_code": 0,
+      "seed": 68011,
+      "wave_index": 3
+    },
+    {
+      "gpu": 3,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK4__68015.log",
+      "preexisting": false,
+      "process_wall_seconds": 169.21573922992684,
+      "return_code": 0,
+      "seed": 68015,
+      "wave_index": 3
+    },
+    {
+      "gpu": 4,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK4__68019.log",
+      "preexisting": false,
+      "process_wall_seconds": 169.1548229039181,
+      "return_code": 0,
+      "seed": 68019,
+      "wave_index": 3
+    },
+    {
+      "gpu": 5,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK4__68023.log",
+      "preexisting": false,
+      "process_wall_seconds": 178.36726835090667,
+      "return_code": 0,
+      "seed": 68023,
+      "wave_index": 3
+    },
+    {
+      "gpu": 6,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK4__68027.log",
+      "preexisting": false,
+      "process_wall_seconds": 178.31764968298376,
+      "return_code": 0,
+      "seed": 68027,
+      "wave_index": 3
+    },
+    {
+      "gpu": 7,
+      "label": "V3_AnchorK4",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK4__68031.log",
+      "preexisting": false,
+      "process_wall_seconds": 177.8644922010135,
+      "return_code": 0,
+      "seed": 68031,
+      "wave_index": 3
+    },
+    {
+      "gpu": 0,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68003.log",
+      "preexisting": false,
+      "process_wall_seconds": 163.14152337890118,
+      "return_code": 0,
+      "seed": 68003,
+      "wave_index": 3
+    },
+    {
+      "gpu": 1,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68007.log",
+      "preexisting": false,
+      "process_wall_seconds": 169.63363499497063,
+      "return_code": 0,
+      "seed": 68007,
+      "wave_index": 3
+    },
+    {
+      "gpu": 2,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68011.log",
+      "preexisting": false,
+      "process_wall_seconds": 169.59232901781797,
+      "return_code": 0,
+      "seed": 68011,
+      "wave_index": 3
+    },
+    {
+      "gpu": 3,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68015.log",
+      "preexisting": false,
+      "process_wall_seconds": 169.54937630402856,
+      "return_code": 0,
+      "seed": 68015,
+      "wave_index": 3
+    },
+    {
+      "gpu": 4,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68019.log",
+      "preexisting": false,
+      "process_wall_seconds": 169.51536117098294,
+      "return_code": 0,
+      "seed": 68019,
+      "wave_index": 3
+    },
+    {
+      "gpu": 5,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68023.log",
+      "preexisting": false,
+      "process_wall_seconds": 169.47725888108835,
+      "return_code": 0,
+      "seed": 68023,
+      "wave_index": 3
+    },
+    {
+      "gpu": 6,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68027.log",
+      "preexisting": false,
+      "process_wall_seconds": 168.96118610305712,
+      "return_code": 0,
+      "seed": 68027,
+      "wave_index": 3
+    },
+    {
+      "gpu": 7,
+      "label": "V3_AnchorK8",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK8__68031.log",
+      "preexisting": false,
+      "process_wall_seconds": 168.91713621094823,
+      "return_code": 0,
+      "seed": 68031,
+      "wave_index": 3
+    },
+    {
+      "gpu": 0,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68003.log",
+      "preexisting": false,
+      "process_wall_seconds": 135.07637324300595,
+      "return_code": 0,
+      "seed": 68003,
+      "wave_index": 3
+    },
+    {
+      "gpu": 1,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68007.log",
+      "preexisting": false,
+      "process_wall_seconds": 160.6651914960239,
+      "return_code": 0,
+      "seed": 68007,
+      "wave_index": 3
+    },
+    {
+      "gpu": 2,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68011.log",
+      "preexisting": false,
+      "process_wall_seconds": 160.70095904101618,
+      "return_code": 0,
+      "seed": 68011,
+      "wave_index": 3
+    },
+    {
+      "gpu": 3,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68015.log",
+      "preexisting": false,
+      "process_wall_seconds": 171.32838129997253,
+      "return_code": 0,
+      "seed": 68015,
+      "wave_index": 3
+    },
+    {
+      "gpu": 4,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68019.log",
+      "preexisting": false,
+      "process_wall_seconds": 171.28641051007435,
+      "return_code": 0,
+      "seed": 68019,
+      "wave_index": 3
+    },
+    {
+      "gpu": 5,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68023.log",
+      "preexisting": false,
+      "process_wall_seconds": 174.1813136038836,
+      "return_code": 0,
+      "seed": 68023,
+      "wave_index": 3
+    },
+    {
+      "gpu": 6,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68027.log",
+      "preexisting": false,
+      "process_wall_seconds": 174.11956111900508,
+      "return_code": 0,
+      "seed": 68027,
+      "wave_index": 3
+    },
+    {
+      "gpu": 7,
+      "label": "V3_AnchorK16",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/logs/V3_AnchorK16__68031.log",
+      "preexisting": false,
+      "process_wall_seconds": 173.77706581284292,
+      "return_code": 0,
+      "seed": 68031,
+      "wave_index": 3
+    }
+  ],
+  "gpu_count": 8,
+  "methods": [
+    "C0",
+    "V2_Frozen_Atomic75_Late30",
+    "V3_AnchorK4",
+    "V3_AnchorK8",
+    "V3_AnchorK16"
+  ],
+  "per_method_active_wall_seconds_new_work": {
+    "C0": 398.1663895503152,
+    "V2_Frozen_Atomic75_Late30": 348.18622503825463,
+    "V3_AnchorK16": 515.3621927879285,
+    "V3_AnchorK4": 354.4164157360792,
+    "V3_AnchorK8": 528.8081789189018
+  },
+  "per_method_new_samples": {
+    "C0": 16,
+    "V2_Frozen_Atomic75_Late30": 16,
+    "V3_AnchorK16": 24,
+    "V3_AnchorK4": 16,
+    "V3_AnchorK8": 24
+  },
+  "per_method_samples_per_hour_on_new_work": {
+    "C0": 144.6631396111882,
+    "V2_Frozen_Atomic75_Late30": 165.42871560663144,
+    "V3_AnchorK16": 167.64908487486505,
+    "V3_AnchorK4": 162.5206887789661,
+    "V3_AnchorK8": 163.38627775507672
+  },
+  "protocol": "paired global waves; methods run consecutively for each seed wave",
+  "schema_version": 1,
+  "seed_count_per_method": 32,
+  "seeds": [
+    68000,
+    68001,
+    68002,
+    68003,
+    68004,
+    68005,
+    68006,
+    68007,
+    68008,
+    68009,
+    68010,
+    68011,
+    68012,
+    68013,
+    68014,
+    68015,
+    68016,
+    68017,
+    68018,
+    68019,
+    68020,
+    68021,
+    68022,
+    68023,
+    68024,
+    68025,
+    68026,
+    68027,
+    68028,
+    68029,
+    68030,
+    68031
+  ],
+  "stage": "stage-b",
+  "total_wall_seconds": 2144.9412814630195
+}

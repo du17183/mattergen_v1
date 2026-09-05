@@ -147,6 +147,13 @@ def main() -> None:
             events.extend(
                 {"wave_index": wave_index, **event} for event in wave_events
             )
+    new_counts = {
+        method: sum(
+            event["label"] == method and not event["preexisting"]
+            for event in events
+        )
+        for method in methods
+    }
     summary = {
         "schema_version": 1,
         "stage": args.stage,
@@ -157,9 +164,13 @@ def main() -> None:
         "methods": list(methods),
         "seed_count_per_method": len(seeds),
         "total_wall_seconds": time.perf_counter() - started,
-        "per_method_active_wall_seconds": method_wall,
-        "per_method_samples_per_hour": {
-            method: 3600.0 * len(seeds) / method_wall[method]
+        "per_method_active_wall_seconds_new_work": method_wall,
+        "per_method_new_samples": new_counts,
+        "per_method_samples_per_hour_on_new_work": {
+            method: (
+                3600.0 * new_counts[method] / method_wall[method]
+                if new_counts[method] else None
+            )
             for method in methods
         },
         "algorithmic_speedup_warning": (
