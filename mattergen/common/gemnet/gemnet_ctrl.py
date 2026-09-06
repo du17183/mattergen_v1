@@ -250,6 +250,21 @@ class GemNetTCtrl(GemNetT):
                     block_index=i,
                 )
 
+            # Optional P0 cross-field feature interaction hook. The module acts
+            # only after block index 1 and is absent from ordinary checkpoints.
+            cross_field_adapter = getattr(self, "cross_field_adapter", None)
+            if cross_field_adapter is not None:
+                h = cross_field_adapter(
+                    h=h,
+                    time_embedding=z,
+                    batch=batch,
+                    num_atoms=num_atoms,
+                    lattice=distorted_lattice,
+                    edge_index=edge_index,
+                    edge_distances=D_st,
+                    block_index=i,
+                )
+
             # Optional experiment-local residual hook. The module is attached only
             # by the quality-adapter P0 loader; ordinary checkpoints have no such
             # attribute and preserve the original path exactly. Applying it after

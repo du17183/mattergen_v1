@@ -518,3 +518,12 @@ experiments/global_transformer_adapter_p0/generation/
 experiments/global_transformer_adapter_p0/structures/
 experiments/global_transformer_adapter_p0/relaxation/
 experiments/global_transformer_adapter_p0/quality/
+
+# Cross-field Interaction P0 runtime artifacts
+experiments/cross_field_interaction_p0/checkpoints/
+experiments/cross_field_interaction_p0/logs/
+experiments/cross_field_interaction_p0/runtime_tmp/
+experiments/cross_field_interaction_p0/generation/
+experiments/cross_field_interaction_p0/structures/
+experiments/cross_field_interaction_p0/relaxation/
+experiments/cross_field_interaction_p0/quality/

@@ -1,0 +1,49 @@
+{
+  "architecture": {
+    "block_index": 1,
+    "cell_descriptor_dim": 9,
+    "cutoff_angstrom": 7.0,
+    "field_dim": 128,
+    "fusion_dim": 256,
+    "hidden_dim": 512,
+    "interaction": "single pairwise gated bidirectional exchange",
+    "num_rbf": 32,
+    "output_projection": "zero initialized 256 to 512"
+  },
+  "checkpoints": {
+    "CFI_sha256": "5573b71a6bd6a8b57beb36ff27ce309f81bc3f82fb7b4759c3a7aa1b248b5d1b",
+    "MLP_sha256": "f21bcd702a81fff04e48a6f79507dbdce97bebaedb19e7f72868c3743861ee78",
+    "base": "checkpoints/official/hf_mattergen/checkpoints/dft_mag_density"
+  },
+  "data": {
+    "origin": "reused exact Global Transformer P0 Alex-MP split",
+    "selection_seed": 20260907,
+    "source": "official MatterGen alex_mp_20/train.csv",
+    "train": 1024,
+    "validation": 128
+  },
+  "evaluation": {
+    "dft_verified": false,
+    "fmax": 0.05,
+    "potential": "MatterSim-5M"
+  },
+  "generation": {
+    "batch_size": 1,
+    "corrector_steps_per_time": 1,
+    "dft_mag_density": 0.1,
+    "guidance_scale": 2.0,
+    "guidance_schedule": "constant",
+    "methods": ["C0", "MLP", "CFI"],
+    "sampling_steps": 1000,
+    "seeds": [77000, 77001, 77002, 77003, 77004, 77005, 77006, 77007]
+  },
+  "training": {
+    "batch_size": 16,
+    "learning_rate": 0.0001,
+    "objective": "original MatterGen mixed-field diffusion loss",
+    "optimizer": "AdamW",
+    "seed": 20260907,
+    "steps": 1000,
+    "weight_decay": 0.0001
+  }
+}
