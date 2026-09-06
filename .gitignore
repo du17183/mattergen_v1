@@ -535,3 +535,12 @@ experiments/cross_field_interaction_p1/relaxation/
 experiments/cross_field_interaction_p1/quality/
 experiments/cross_field_interaction_p1/logs/
 experiments/cross_field_interaction_p1/runtime_tmp/
+
+# TCL / DML P0 runtime artifacts
+experiments/tcl_dml_p0/checkpoints/
+experiments/tcl_dml_p0/logs/
+experiments/tcl_dml_p0/generation/
+experiments/tcl_dml_p0/structures/
+experiments/tcl_dml_p0/relaxation/
+experiments/tcl_dml_p0/quality/
+experiments/tcl_dml_p0/runtime_tmp/

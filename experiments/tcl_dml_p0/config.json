@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "experiment": "independent TCL and DML P0",
+  "branch": "experiment/tcl-dml-p0",
+  "parent_commit": "70a85b70b2b06f63a7965a07d1520331f3e3e215",
+  "base_checkpoint": "checkpoints/official/hf_mattergen/checkpoints/dft_mag_density",
+  "historical_modules_disabled": [
+    "global_adapter",
+    "cross_field_adapter",
+    "quality_adapter"
+  ],
+  "methods": ["C0", "FT0", "TCL", "DML"],
+  "combination_used": false,
+  "data": {
+    "cache": "experiments/global_transformer_adapter_p0/data/cache",
+    "train_count": 1024,
+    "validation_count": 128,
+    "selection_seed": 20260907
+  },
+  "training": {
+    "seed": 20260908,
+    "steps": 1000,
+    "effective_batch_size": 16,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "scope": "full MatterGen finetuning plus an identical 83-parameter scheduler namespace in all three arms; scheduler is active only for DML",
+    "two_views_per_clean_structure": 2,
+    "minimum_normalized_timestep_gap": 0.2,
+    "continuous_noise": "coupled Gaussian noise for position and cell",
+    "atomic_noise": "independent D3PM marginal draws",
+    "original_field_weights": {
+      "atomic_numbers": 1.0,
+      "pos": 0.1,
+      "cell": 1.0
+    }
+  },
+  "FT0": {
+    "objective": "mean of original fixed-weight MatterGen losses over the two views"
+  },
+  "TCL": {
+    "objective": "FT0 objective plus lambda_cons times mean atomic/position/cell clean-prediction consistency",
+    "teacher": "lower-timestep prediction with stop-gradient",
+    "atomic_consistency": "KL(p_low(x0|xt) || p_high(x0|xt))",
+    "position_consistency": "periodic minimum-image squared difference between recovered fractional clean positions",
+    "cell_consistency": "squared difference between recovered clean cells in standardized limit-distribution coordinates",
+    "lambda_cons_max": 0.1,
+    "lambda_cons_warmup_steps": 100,
+    "warmup_definition": "linear from 0.0 at step 1 to 0.1 at step 100"
+  },
+  "DML": {
+    "scheduler_input": "normalized diffusion timestep",
+    "scheduler_architecture": "Linear(1,16)-SiLU-Linear(16,3)",
+    "multiplier": "1 + 0.5*tanh(logit)",
+    "multiplier_range": [0.5, 1.5],
+    "loss_scale_normalization": "w_k = S0 * (base_k*r_k) / sum_j(base_j*r_j), S0=sum_j(base_j)",
+    "application": "per structure before batch reduction, independently for each view",
+    "anchor_coefficient": 0.01,
+    "consistency_used": false
+  },
+  "offline_validation": {
+    "seed": 20260929,
+    "count": 128,
+    "metric": "original fixed-weight MatterGen diffusion loss only"
+  },
+  "generation": {
+    "seeds": [80000, 80001, 80002, 80003, 80004, 80005, 80006, 80007],
+    "samples_per_method": 8,
+    "target_dft_mag_density": 0.1,
+    "cfg_scale": 2.0,
+    "cfg_schedule": "constant",
+    "sampling_steps": 1000,
+    "corrector_steps_per_time": 1,
+    "batch_size": 1
+  },
+  "evaluation": {
+    "potential": "checkpoints/official/mattersim/mattersim-v1.0.0-5M.pth",
+    "fmax_ev_per_angstrom": 0.05,
+    "reference": "data-release/alex-mp/reference_MP2020correction.gz",
+    "dft_verified": false
+  }
+}
