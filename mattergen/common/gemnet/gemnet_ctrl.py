@@ -234,6 +234,16 @@ class GemNetTCtrl(GemNetT):
                 normalize_score=True,
             )
 
+            # Optional experiment-local residual hook. The module is attached only
+            # by the quality-adapter P0 loader; ordinary checkpoints have no such
+            # attribute and preserve the original path exactly. Applying it after
+            # this block's heads makes block 1/2 adapters affect subsequent heads.
+            quality_adapter = getattr(self, "quality_adapter", None)
+            if quality_adapter is not None:
+                h = quality_adapter(
+                    h=h, time_embedding=z, batch=batch, block_index=i
+                )
+
         nMolecules = torch.max(batch) + 1
 
         # always use sum aggregation

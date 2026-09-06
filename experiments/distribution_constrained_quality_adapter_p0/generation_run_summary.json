@@ -1,0 +1,209 @@
+{
+  "methods": [
+    "C0",
+    "M1",
+    "M2"
+  ],
+  "protocol": "paired methods; one fresh seed per GPU; 1000-step PC; CFG=2.0; target=0.1",
+  "seeds": [
+    78000,
+    78001,
+    78002,
+    78003,
+    78004,
+    78005,
+    78006,
+    78007
+  ],
+  "waves": [
+    {
+      "events": [
+        {
+          "gpu": 0,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_C0_78000.log",
+          "return_code": 0,
+          "seed": 78000,
+          "wall_seconds": 167.27696778182872
+        },
+        {
+          "gpu": 1,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_C0_78001.log",
+          "return_code": 0,
+          "seed": 78001,
+          "wall_seconds": 196.66747584799305
+        },
+        {
+          "gpu": 2,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_C0_78002.log",
+          "return_code": 0,
+          "seed": 78002,
+          "wall_seconds": 198.58204116299748
+        },
+        {
+          "gpu": 3,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_C0_78003.log",
+          "return_code": 0,
+          "seed": 78003,
+          "wall_seconds": 198.55208547203802
+        },
+        {
+          "gpu": 4,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_C0_78004.log",
+          "return_code": 0,
+          "seed": 78004,
+          "wall_seconds": 198.0531142379623
+        },
+        {
+          "gpu": 5,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_C0_78005.log",
+          "return_code": 0,
+          "seed": 78005,
+          "wall_seconds": 197.9782548530493
+        },
+        {
+          "gpu": 6,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_C0_78006.log",
+          "return_code": 0,
+          "seed": 78006,
+          "wall_seconds": 210.38407891988754
+        },
+        {
+          "gpu": 7,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_C0_78007.log",
+          "return_code": 0,
+          "seed": 78007,
+          "wall_seconds": 210.3437269430142
+        }
+      ],
+      "failures": [],
+      "method": "C0",
+      "wave_wall_seconds": 211.40996794006787
+    },
+    {
+      "events": [
+        {
+          "gpu": 0,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_M1_78000.log",
+          "return_code": 0,
+          "seed": 78000,
+          "wall_seconds": 173.32646087091416
+        },
+        {
+          "gpu": 1,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_M1_78001.log",
+          "return_code": 0,
+          "seed": 78001,
+          "wall_seconds": 193.67932497290894
+        },
+        {
+          "gpu": 2,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_M1_78002.log",
+          "return_code": 0,
+          "seed": 78002,
+          "wall_seconds": 193.6412634209264
+        },
+        {
+          "gpu": 3,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_M1_78003.log",
+          "return_code": 0,
+          "seed": 78003,
+          "wall_seconds": 198.1070924499072
+        },
+        {
+          "gpu": 4,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_M1_78004.log",
+          "return_code": 0,
+          "seed": 78004,
+          "wall_seconds": 198.06528238998726
+        },
+        {
+          "gpu": 5,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_M1_78005.log",
+          "return_code": 0,
+          "seed": 78005,
+          "wall_seconds": 198.03213786915876
+        },
+        {
+          "gpu": 6,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_M1_78006.log",
+          "return_code": 0,
+          "seed": 78006,
+          "wall_seconds": 203.3064590350259
+        },
+        {
+          "gpu": 7,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_M1_78007.log",
+          "return_code": 0,
+          "seed": 78007,
+          "wall_seconds": 202.83155469293706
+        }
+      ],
+      "failures": [],
+      "method": "M1",
+      "wave_wall_seconds": 203.57222980307415
+    },
+    {
+      "events": [
+        {
+          "gpu": 0,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_M2_78000.log",
+          "return_code": 0,
+          "seed": 78000,
+          "wall_seconds": 168.4005165831186
+        },
+        {
+          "gpu": 1,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_M2_78001.log",
+          "return_code": 0,
+          "seed": 78001,
+          "wall_seconds": 196.86504230787978
+        },
+        {
+          "gpu": 2,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_M2_78002.log",
+          "return_code": 0,
+          "seed": 78002,
+          "wall_seconds": 196.82789974706247
+        },
+        {
+          "gpu": 3,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_M2_78003.log",
+          "return_code": 0,
+          "seed": 78003,
+          "wall_seconds": 196.78745016409084
+        },
+        {
+          "gpu": 4,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_M2_78004.log",
+          "return_code": 0,
+          "seed": 78004,
+          "wall_seconds": 196.75361437397078
+        },
+        {
+          "gpu": 5,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_M2_78005.log",
+          "return_code": 0,
+          "seed": 78005,
+          "wall_seconds": 202.8863407270983
+        },
+        {
+          "gpu": 6,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_M2_78006.log",
+          "return_code": 0,
+          "seed": 78006,
+          "wall_seconds": 202.83554101618938
+        },
+        {
+          "gpu": 7,
+          "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/logs/generation_M2_78007.log",
+          "return_code": 0,
+          "seed": 78007,
+          "wall_seconds": 202.79579778504558
+        }
+      ],
+      "failures": [],
+      "method": "M2",
+      "wave_wall_seconds": 203.16574495099485
+    }
+  ]
+}
