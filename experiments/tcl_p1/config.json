@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "experiment": "frozen TCL P1 independent 32-paired-seed validation",
+  "branch": "experiment/tcl-p1",
+  "parent_commit": "2f95aa0c361cc539f13a9184ddb94f2a04d2efa0",
+  "methods": ["C0", "FT0", "TCL"],
+  "training_steps": 0,
+  "checkpoints": {
+    "C0": "checkpoints/official/hf_mattergen/checkpoints/dft_mag_density",
+    "FT0": "experiments/tcl_dml_p0/checkpoints/FT0/model.pt",
+    "TCL": "experiments/tcl_dml_p0/checkpoints/TCL/model.pt"
+  },
+  "checkpoint_sha256": {
+    "C0_base": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+    "FT0": "1cd254568463ae4d7774193fa0a0e97925cdad3b6c505c1e5f5dd4e7968f6960",
+    "TCL": "8dd9879f11edea7f25f587ae72f928a6f3ab2e5c81fc9400c13642364ad90443"
+  },
+  "frozen_tcl_source": {
+    "config": "experiments/tcl_dml_p0/config.json",
+    "report": "experiments/tcl_dml_p0/final_report.md",
+    "implementation": "mattergen/diffusion/training/cross_timestep_consistency.py",
+    "generator": "experiments/tcl_dml_p0/generate_one.py"
+  },
+  "generation": {
+    "seeds": {"start": 81000, "stop_inclusive": 81031, "count": 32},
+    "historically_independent": true,
+    "independence_check": "project-wide exact textual seed scan plus directory-name scan before creating any P1 output",
+    "target_dft_mag_density": 0.1,
+    "cfg_scale": 2.0,
+    "cfg_schedule": "constant",
+    "diffusion_steps": 1000,
+    "predictor": "original MatterGen",
+    "corrector": "original MatterGen",
+    "corrector_steps_per_time": 1,
+    "batch_size": 1,
+    "seed_level_parallelism": 8
+  },
+  "evaluation": {
+    "potential": "checkpoints/official/mattersim/mattersim-v1.0.0-5M.pth",
+    "fmax_ev_per_angstrom": 0.05,
+    "reference": "data-release/alex-mp/reference_MP2020correction.gz",
+    "paired_bootstrap_resamples": 20000,
+    "paired_bootstrap_seed": 20260910,
+    "dft_verified": false
+  },
+  "forbidden_and_unused": [
+    "DML",
+    "TCL+DML",
+    "Adaptive CFG",
+    "Q3",
+    "CFI",
+    "Transformer",
+    "new sampling tricks",
+    "TCL retraining",
+    "TCL modification"
+  ]
+}

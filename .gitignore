@@ -544,3 +544,11 @@ experiments/tcl_dml_p0/structures/
 experiments/tcl_dml_p0/relaxation/
 experiments/tcl_dml_p0/quality/
 experiments/tcl_dml_p0/runtime_tmp/
+
+# Frozen TCL P1 runtime artifacts
+experiments/tcl_p1/logs/
+experiments/tcl_p1/generation/
+experiments/tcl_p1/structures/
+experiments/tcl_p1/relaxation/
+experiments/tcl_p1/quality/
+experiments/tcl_p1/runtime_tmp/
