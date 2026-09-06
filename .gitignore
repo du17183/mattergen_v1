@@ -527,3 +527,11 @@ experiments/cross_field_interaction_p0/generation/
 experiments/cross_field_interaction_p0/structures/
 experiments/cross_field_interaction_p0/relaxation/
 experiments/cross_field_interaction_p0/quality/
+
+# Cross-field Interaction P1 runtime artifacts
+experiments/cross_field_interaction_p1/generation/
+experiments/cross_field_interaction_p1/structures/
+experiments/cross_field_interaction_p1/relaxation/
+experiments/cross_field_interaction_p1/quality/
+experiments/cross_field_interaction_p1/logs/
+experiments/cross_field_interaction_p1/runtime_tmp/

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "experiment": "cross_field_interaction_p1",
+  "branch": "experiment/cross-field-interaction-p1",
+  "parent_head": "7bc228247c255e69ee24fe19e261c37a60ad09bb",
+  "p0_config": "experiments/cross_field_interaction_p0/config.json",
+  "model_and_architecture_frozen": true,
+  "training_performed": false,
+  "requested_seed_range": [78000, 78031],
+  "requested_range_conflict": "78000-78007 were used by distribution_constrained_quality_adapter_p0",
+  "actual_seed_range": [79000, 79031],
+  "historical_seed_overlap": false,
+  "n_paired_seeds": 32,
+  "methods": ["C0", "MLP", "CFI"],
+  "frozen_adapters": {
+    "MLP": {
+      "path": "experiments/global_transformer_adapter_p0/checkpoints/MLP/adapter.pt",
+      "trainable_params": 1090936,
+      "sha256": "f21bcd702a81fff04e48a6f79507dbdce97bebaedb19e7f72868c3743861ee78"
+    },
+    "CFI": {
+      "path": "experiments/cross_field_interaction_p0/checkpoints/CFI/adapter.pt",
+      "trainable_params": 995986,
+      "sha256": "5573b71a6bd6a8b57beb36ff27ce309f81bc3f82fb7b4759c3a7aa1b248b5d1b"
+    }
+  },
+  "sampling": {
+    "condition": "dft_mag_density",
+    "target": 0.1,
+    "guidance_schedule": "constant",
+    "guidance_scale": 2.0,
+    "diffusion_steps": 1000,
+    "corrector_steps_per_time": 1,
+    "batch_size": 1,
+    "seed_level_parallelism": true
+  },
+  "evaluation": {
+    "potential": "MatterSim-5M",
+    "fmax": 0.05,
+    "dft_verified": false
+  },
+  "paired_bootstrap": {
+    "resamples": 20000,
+    "seed": 20260906,
+    "confidence_interval": 0.95
+  }
+}
