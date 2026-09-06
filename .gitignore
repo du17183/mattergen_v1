@@ -508,3 +508,13 @@ experiments/distribution_balanced_quality_adapter/confirm32/relaxation/
 experiments/distribution_balanced_quality_adapter/confirm32/quality/
 experiments/distribution_balanced_quality_adapter/confirm32/logs/
 experiments/distribution_balanced_quality_adapter/confirm32/runtime_tmp/
+
+# Global Transformer Adapter P0 runtime artifacts
+experiments/global_transformer_adapter_p0/data/
+experiments/global_transformer_adapter_p0/checkpoints/
+experiments/global_transformer_adapter_p0/logs/
+experiments/global_transformer_adapter_p0/runtime_tmp/
+experiments/global_transformer_adapter_p0/generation/
+experiments/global_transformer_adapter_p0/structures/
+experiments/global_transformer_adapter_p0/relaxation/
+experiments/global_transformer_adapter_p0/quality/

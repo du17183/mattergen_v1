@@ -234,6 +234,22 @@ class GemNetTCtrl(GemNetT):
                 normalize_score=True,
             )
 
+            # Optional single-site P0 global/MLP residual hook. It is attached
+            # only by experiment loaders. The adapter itself accepts only block
+            # index 1, i.e. after IntBlock 2 and before IntBlock 3 (zero-based).
+            global_adapter = getattr(self, "global_adapter", None)
+            if global_adapter is not None:
+                h = global_adapter(
+                    h=h,
+                    time_embedding=z,
+                    batch=batch,
+                    num_atoms=num_atoms,
+                    lattice=distorted_lattice,
+                    edge_index=edge_index,
+                    edge_distances=D_st,
+                    block_index=i,
+                )
+
             # Optional experiment-local residual hook. The module is attached only
             # by the quality-adapter P0 loader; ordinary checkpoints have no such
             # attribute and preserve the original path exactly. Applying it after
