@@ -5,8 +5,10 @@ import json
 import math
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 import torch
+from ase.io import read
 
 
 ROOT = Path(__file__).resolve().parent
@@ -83,6 +85,12 @@ def write_quality_results() -> None:
     rows = []
     for method in METHODS:
         summary = summaries[method]
+        initial_atoms = read(
+            ROOT / "relaxation" / method / "initial_with_properties.extxyz", index=":"
+        )
+        atomic_force_norms = np.concatenate(
+            [np.linalg.norm(item.get_forces(), axis=1) for item in initial_atoms]
+        )
         official = summary["official_metrics"]
         base_official = baseline["official_metrics"]
         rows.append(
@@ -97,6 +105,9 @@ def write_quality_results() -> None:
                 "frac_novel": official["frac_novel_structures"],
                 "frac_unique": official["frac_unique_structures"],
                 "avg_rmsd_from_relaxation": official["avg_rmsd_from_relaxation"],
+                "pre_relaxation_atomic_force_norm_mean_ev_per_a": float(atomic_force_norms.mean()),
+                "pre_relaxation_atomic_force_norm_p95_ev_per_a": float(np.quantile(atomic_force_norms, 0.95)),
+                "pre_relaxation_atomic_force_norm_max_ev_per_a": float(atomic_force_norms.max()),
                 "pre_relaxation_max_force_mean_ev_per_a": summary["pre_relaxation_max_force_mean"],
                 "pre_relaxation_max_force_median_ev_per_a": summary["pre_relaxation_max_force_median"],
                 "pre_relaxation_max_force_p95_ev_per_a": summary["pre_relaxation_max_force_p95"],
@@ -114,7 +125,7 @@ def write_quality_results() -> None:
                 - base_official["frac_novel_unique_stable_structures"],
                 "delta_rmsd_vs_c0": official["avg_rmsd_from_relaxation"]
                 - base_official["avg_rmsd_from_relaxation"],
-                "delta_force_mean_vs_c0": summary["pre_relaxation_max_force_mean"]
+                "delta_structure_max_force_mean_vs_c0": summary["pre_relaxation_max_force_mean"]
                 - baseline["pre_relaxation_max_force_mean"],
             }
         )
