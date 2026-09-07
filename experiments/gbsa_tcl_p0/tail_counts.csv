@@ -1,0 +1,4 @@
+method,n,rmsd_gt_0p5_count,max_force_gt_1_count,max_force_gt_2_count,steps_gt_200_count,steps_gt_400_count
+C0,8,0,0,0,0,0
+TCL,8,1,1,0,1,0
+GBSA-TCL,8,0,0,0,0,0

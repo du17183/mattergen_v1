@@ -113,7 +113,7 @@ def report(result_commit: str, per_seed: pd.DataFrame, tails: pd.DataFrame) -> s
         row = quality.loc[method]
         quality_lines.append(
             f"| {method} | {row.e_hull_mean_ev_per_atom:.6f} | {percent(row.stable)} | "
-            f"{percent(row.nus)} | {percent(row.novel)} | {percent(row.unique)} | "
+            f"{percent(row.nus)} | {percent(row.novel)} | {percent(row['unique'])} | "
             f"{row.rmsd_mean_a:.6f} | {row.atomic_force_mean_ev_per_a:.6f} | "
             f"{row.structure_max_force_mean_ev_per_a:.6f} | {row.relaxation_steps_mean:.3f} |"
         )
