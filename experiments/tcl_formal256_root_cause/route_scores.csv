@@ -1,0 +1,8 @@
+rank,route,failure_match,geometry_improvement,retain_tcl_benefit,implementation_ease,training_stability,low_engineering_cost,c0_prior_protection,interpretability,thesis_novelty,low_failure_risk,total
+1,A_C0_score_anchored_TCL,5,4,4,4,4,4,5,5,4,4,43
+2,B_field_selective_TCL,5,5,3,3,5,3,5,5,4,4,42
+3,C_stage_aware_geometry_anchor,4,5,4,3,3,3,5,4,5,3,39
+4,D_physics_geometry_constrained_TCL,3,4,3,2,2,2,3,3,4,2,28
+4,E_DML_alone,1,2,2,5,4,5,2,4,2,1,28
+6,G_stop_TCL_new_architecture,2,3,1,1,3,1,4,2,4,2,23
+7,F_TCL_plus_DML,2,2,3,2,2,2,2,2,3,1,21
