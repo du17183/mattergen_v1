@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "experiment": "TCL Formal256 frozen confirmatory evaluation",
+  "branch": "experiment/tcl-formal256",
+  "parent_commit": "b9fd99019657df7c605976255ef07d774b61f4f9",
+  "methods": ["C0", "FT0", "TCL"],
+  "formal_training_steps": 0,
+  "checkpoints": {
+    "C0": "checkpoints/official/hf_mattergen/checkpoints/dft_mag_density",
+    "FT0": "experiments/tcl_dml_p0/checkpoints/FT0/model.pt",
+    "TCL": "experiments/tcl_dml_p0/checkpoints/TCL/model.pt"
+  },
+  "checkpoint_sha256": {
+    "C0_base": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+    "FT0": "1cd254568463ae4d7774193fa0a0e97925cdad3b6c505c1e5f5dd4e7968f6960",
+    "TCL": "8dd9879f11edea7f25f587ae72f928a6f3ab2e5c81fc9400c13642364ad90443"
+  },
+  "frozen_pipeline": {
+    "generator": "experiments/tcl_dml_p0/generate_one.py",
+    "generation_orchestration": "experiments/tcl_p1/run_generation.py",
+    "relaxation": "experiments/tcl_p1/run_relaxation.py",
+    "quality": "experiments/tcl_p1/run_quality_metrics.py"
+  },
+  "generation": {
+    "seeds": {"start": 83000, "stop_inclusive": 83255, "count": 256},
+    "historical_overlap": "none",
+    "target_dft_mag_density": 0.1,
+    "cfg_scale": 2.0,
+    "cfg_schedule": "constant",
+    "diffusion_steps": 1000,
+    "predictor": "original MatterGen",
+    "corrector": "original MatterGen",
+    "corrector_steps_per_time": 1,
+    "batch_size": 1,
+    "numerical_precision": "unchanged from P1/P2",
+    "seed_level_parallelism": 8,
+    "schedule": "8 paired seeds per block; C0 then FT0 then TCL within each block"
+  },
+  "evaluation": {
+    "potential": "checkpoints/official/mattersim/mattersim-v1.0.0-5M.pth",
+    "fmax_ev_per_angstrom": 0.05,
+    "reference": "data-release/alex-mp/reference_MP2020correction.gz",
+    "paired_bootstrap_resamples": 20000,
+    "paired_bootstrap_seed": 20260912,
+    "holm_alpha": 0.05,
+    "dft_verified": false
+  },
+  "primary_superiority_endpoints": {
+    "e_hull": "lower",
+    "nus": "higher",
+    "rmsd": "lower",
+    "atomic_force_mean": "lower",
+    "structure_max_force": "lower"
+  },
+  "noninferiority_margins": {
+    "e_hull_mean_delta_ev_per_atom": {"margin": 0.025, "pass_rule": "upper_ci_less_than_margin"},
+    "stable_delta_percentage_points": {"margin": -10.0, "pass_rule": "lower_ci_greater_than_margin"},
+    "nus_delta_percentage_points": {"margin": -10.0, "pass_rule": "lower_ci_greater_than_margin"},
+    "rmsd_mean_delta_angstrom": {"margin": 0.020, "pass_rule": "upper_ci_less_than_margin"},
+    "atomic_force_mean_ratio": {"margin": 1.20, "pass_rule": "upper_ci_less_than_margin"},
+    "structure_max_force_mean_ratio": {"margin": 1.20, "pass_rule": "upper_ci_less_than_margin"},
+    "structure_max_force_p95_ratio": {"margin": 1.30, "pass_rule": "upper_ci_less_than_margin"},
+    "structure_max_force_p99_ratio": {"margin": 1.50, "pass_rule": "upper_ci_less_than_margin"},
+    "force_gt1_delta_percentage_points": {"margin": 5.0, "pass_rule": "upper_ci_less_than_margin"},
+    "force_gt2_delta_percentage_points": {"margin": 2.0, "pass_rule": "upper_ci_less_than_margin"}
+  },
+  "tail_thresholds": {
+    "rmsd_angstrom": 0.5,
+    "structure_max_force_ev_per_angstrom": [1.0, 2.0],
+    "relaxation_steps": [200, 300, 400]
+  },
+  "margin_statement": "These margins were frozen before inspecting the formal256 outcomes; they are study-specific engineering/scientific tolerances, not universal materials standards.",
+  "forbidden_and_unused": [
+    "retraining", "TCL modification", "threshold tuning", "checkpoint modification",
+    "DML", "TCL+DML", "new modules", "formal-aware tuning", "outlier deletion"
+  ]
+}

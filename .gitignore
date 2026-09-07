@@ -560,3 +560,11 @@ experiments/tcl_p2/structures/
 experiments/tcl_p2/relaxation/
 experiments/tcl_p2/quality/
 experiments/tcl_p2/runtime_tmp/
+
+# Frozen TCL Formal256 runtime artifacts
+experiments/tcl_formal256/logs/
+experiments/tcl_formal256/generation/
+experiments/tcl_formal256/structures/
+experiments/tcl_formal256/relaxation/
+experiments/tcl_formal256/quality/
+experiments/tcl_formal256/runtime_tmp/
