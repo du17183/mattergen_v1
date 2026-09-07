@@ -1,0 +1,11 @@
+endpoint,estimand,unit,tcl_observed,c0_observed,observed_delta_or_ratio,bootstrap_ci95_low,bootstrap_ci95_high,frozen_margin,pass_rule,result
+e_hull_mean,mean_delta_TCL_minus_C0,eV/atom,0.11444269896574509,0.11233169987359322,0.0021109990921518787,-0.01789433525519036,0.021308949431452104,0.025,upper_ci_less_than_margin,PASS
+stable,mean_delta_TCL_minus_C0,percentage_points,51.171875,55.46875,-4.296875,-12.5,3.90625,-10.0,lower_ci_greater_than_margin,NOT_ESTABLISHED
+nus,mean_delta_TCL_minus_C0,percentage_points,28.515625,32.03125,-3.515625,-11.71875,4.296875,-10.0,lower_ci_greater_than_margin,NOT_ESTABLISHED
+rmsd_mean,mean_delta_TCL_minus_C0,angstrom,0.08288153394088565,0.04930017174609214,0.03358136219479352,0.007844467808301434,0.060115379520991094,0.02,upper_ci_less_than_margin,NOT_ESTABLISHED
+atomic_force_mean,ratio_TCL_over_C0,ratio,0.18240249661470045,0.148647962448829,1.2270770053608453,1.0263051152093199,1.4689956623779128,1.2,upper_ci_less_than_margin,NOT_ESTABLISHED
+structure_max_force_mean,ratio_TCL_over_C0,ratio,0.38790677446395255,0.3372120836042153,1.150334739840573,0.9170179732650237,1.4458932747703805,1.2,upper_ci_less_than_margin,NOT_ESTABLISHED
+structure_max_force_p95,ratio_TCL_over_C0,ratio,1.4065242827605766,1.048537763934761,1.3414149982375734,0.894936754023485,1.6666621256634835,1.3,upper_ci_less_than_margin,NOT_ESTABLISHED
+structure_max_force_p99,ratio_TCL_over_C0,ratio,2.4133641085393083,2.200286130593083,1.0968410312565986,0.4833722153613871,2.419155258356196,1.5,upper_ci_less_than_margin,NOT_ESTABLISHED
+force_gt1,mean_delta_TCL_minus_C0,percentage_points,9.375,6.25,3.125,-1.171875,7.421875,5.0,upper_ci_less_than_margin,NOT_ESTABLISHED
+force_gt2,mean_delta_TCL_minus_C0,percentage_points,1.953125,1.171875,0.78125,-1.171875,3.125,2.0,upper_ci_less_than_margin,NOT_ESTABLISHED

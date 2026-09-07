@@ -1,0 +1,14 @@
+metric,endpoint_class,estimand,preferred_direction,unit,observed_delta,bootstrap_ci95_low,bootstrap_ci95_high,raw_one_sided_pvalue,raw_superiority_supported,holm_adjusted_pvalue,holm_result,wins,ties,losses
+e_hull,primary,paired_mean_delta,lower,eV/atom,-0.03657621970485929,-0.0531096252805184,-0.020384002157595855,4.999750012499375e-05,True,0.00024998750062496874,SUPPORTED,155.0,0.0,101.0
+stable,secondary,paired_mean_delta,higher,percentage_points,16.40625,8.59375,24.21875,4.999750012499375e-05,True,,NOT_APPLICABLE_SECONDARY,76.0,146.0,34.0
+nus,primary,paired_mean_delta,higher,percentage_points,16.015625,9.375,22.65625,4.999750012499375e-05,True,0.00024998750062496874,SUPPORTED,63.0,171.0,22.0
+novel,secondary,paired_mean_delta,higher,percentage_points,1.5625,-5.46875,8.59375,0.3527823608819559,False,,NOT_APPLICABLE_SECONDARY,46.0,168.0,42.0
+unique,secondary,paired_mean_delta,higher,percentage_points,9.765625,5.859375,13.671875,4.999750012499375e-05,True,,NOT_APPLICABLE_SECONDARY,27.0,227.0,2.0
+rmsd,primary,paired_mean_delta,lower,angstrom,-0.0327768352964387,-0.06741056399353461,0.0006529377472996038,0.0327983600819959,True,0.0327983600819959,SUPPORTED,150.0,0.0,106.0
+atomic_force_mean,primary,paired_mean_delta,lower,eV/angstrom,-0.11945632330177783,-0.17223876590428747,-0.07332742050154296,0.000199990000499975,True,0.000599970001499925,SUPPORTED,183.0,0.0,73.0
+structure_max_force,primary,paired_mean_delta,lower,eV/angstrom,-0.21253949342088474,-0.33381506342422307,-0.10062446575693253,0.0006499675016249188,True,0.0012999350032498376,SUPPORTED,171.0,0.0,85.0
+force_gt1,secondary,paired_mean_delta,lower,percentage_points,-2.34375,-7.8125,2.734375,0.2127393630318484,False,,NOT_APPLICABLE_SECONDARY,27.0,208.0,21.0
+force_gt2,secondary,paired_mean_delta,lower,percentage_points,-1.953125,-5.078125,0.78125,0.1216439178041098,False,,NOT_APPLICABLE_SECONDARY,10.0,241.0,5.0
+relaxation_steps,secondary,paired_mean_delta,lower,steps,-19.13671875,-38.15244140625,0.08994140624999147,0.02424878756062197,True,,NOT_APPLICABLE_SECONDARY,164.0,3.0,89.0
+structure_max_force_p95,secondary,distribution_quantile_delta,lower,eV/angstrom,-0.1322292694212226,-0.9113806867710853,0.25041677497100023,,False,,NOT_APPLICABLE_SECONDARY,,,
+structure_max_force_p99,secondary,distribution_quantile_delta,lower,eV/angstrom,-1.5319678212037124,-5.182175145089763,1.062370159795225,,False,,NOT_APPLICABLE_SECONDARY,,,
