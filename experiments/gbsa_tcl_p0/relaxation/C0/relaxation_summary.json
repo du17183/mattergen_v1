@@ -1,0 +1,63 @@
+{
+  "cuda_3x3_det_workaround": true,
+  "device": "cuda",
+  "energies": [
+    -50.86202621459961,
+    -63.861419677734375,
+    -136.88963317871094,
+    -79.22577667236328,
+    -42.49705505371094,
+    -23.604381561279297,
+    -85.56977081298828,
+    -107.98646545410156
+  ],
+  "fmax": 0.05,
+  "formulas": [
+    "Fe3LiO4",
+    "Co3Fe5",
+    "Eu3Fe3O9Ti",
+    "HEu2NO6",
+    "GeMn2S4",
+    "Eu2HgSr",
+    "C2Mn6Si2",
+    "Eu2Gd2O6"
+  ],
+  "max_natoms_per_batch": 512,
+  "n": 8,
+  "n_input": 8,
+  "potential_path": "/mnt/lis-wam-data/dxl/mattergen_v1/checkpoints/official/mattersim/mattersim-v1.0.0-5M.pth",
+  "pre_relaxation_max_forces": [
+    0.1757729947566986,
+    0.11569345742464066,
+    0.8973248600959778,
+    0.9022340178489685,
+    0.06172160804271698,
+    0.01738535612821579,
+    0.30189818143844604,
+    0.3139147460460663
+  ],
+  "protocol": "one structure per BatchRelaxer call; one persistent potential",
+  "relaxation_seconds": 11.78863638616167,
+  "relaxation_steps": [
+    22,
+    16,
+    122,
+    68,
+    29,
+    1,
+    40,
+    38
+  ],
+  "sample_seeds": [
+    84000,
+    84001,
+    84002,
+    84003,
+    84004,
+    84005,
+    84006,
+    84007
+  ],
+  "schema_version": 1,
+  "success": true
+}

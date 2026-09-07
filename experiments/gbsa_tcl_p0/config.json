@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "experiment": "Gradient-Balanced Stage-Aware C0-Anchored TCL P0",
+  "short_name": "GBSA-TCL",
+  "branch": "experiment/gbsa-tcl-p0",
+  "parent_commit": "eaf269258ae73f3d24f10b1416a0f50652b6169a",
+  "base_checkpoint": "checkpoints/official/hf_mattergen/checkpoints/dft_mag_density",
+  "frozen_tcl_checkpoint": "experiments/tcl_dml_p0/checkpoints/TCL/model.pt",
+  "data": {
+    "cache": "experiments/global_transformer_adapter_p0/data/cache",
+    "train_count": 1024,
+    "validation_count": 128,
+    "selection_seed": 20260907
+  },
+  "training": {
+    "seed": 20260917,
+    "short_diagnostic_steps": 50,
+    "main_steps": 1000,
+    "effective_batch_size": 16,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "global_gradient_clip_l2": 1.0,
+    "two_views_per_clean_structure": 2,
+    "minimum_normalized_timestep_gap": 0.2,
+    "trainable": [
+      "condition adapter/mixin",
+      "atomic head"
+    ],
+    "frozen": [
+      "input embedding",
+      "noise/time encoder",
+      "GemNet blocks 1-4",
+      "position/output heads",
+      "cell/lattice heads",
+      "property embeddings",
+      "all remaining pretrained parameters"
+    ]
+  },
+  "objective": {
+    "base": "mean of original fixed-weight MatterGen loss over two views",
+    "atomic_tcl": {
+      "definition": "KL(stopgrad low-noise atomic distribution || high-noise atomic distribution)",
+      "maximum_weight": 0.03333333333333333,
+      "warmup_steps": 100
+    },
+    "position_tcl": {
+      "definition": "periodic minimum-image clean-position consistency, reduced per atom and per structure, normalized by paired corruption variance plus floor",
+      "maximum_weight": 0.03333333333333333,
+      "normalization_floor": 0.01,
+      "warmup_steps": 100
+    },
+    "old_clean_cell_tcl": false,
+    "atomic_c0_anchor": false,
+    "position_c0_score_anchor": {
+      "denominator_floor": 0.01,
+      "reverse_progress_weights": {
+        "0.0_to_0.3": 0.01,
+        "0.3_to_0.7": 0.05,
+        "0.7_to_1.0": 0.1
+      },
+      "warmup_steps": 100
+    },
+    "cell_c0_score_anchor": {
+      "denominator_floor": 0.01,
+      "reverse_progress_weights": {
+        "0.0_to_0.3": 0.01,
+        "0.3_to_0.7": 0.025,
+        "0.7_to_1.0": 0.05
+      },
+      "warmup_steps": 100
+    },
+    "gradient_balancing": {
+      "diagnostic_interval_steps": 25,
+      "target_max_auxiliary_over_base_l2": 1.0,
+      "hard_guardrail_auxiliary_over_base_l2": 3.0,
+      "rule": "at each diagnostic step multiply each configured weighted auxiliary objective by min(1, target*base_grad_l2/aux_grad_l2); retain that scale until the next diagnostic"
+    }
+  },
+  "generation": {
+    "seeds": [84000, 84001, 84002, 84003, 84004, 84005, 84006, 84007],
+    "methods": ["C0", "TCL", "GBSA-TCL"],
+    "target_dft_mag_density": 0.1,
+    "cfg_scale": 2.0,
+    "cfg_schedule": "constant",
+    "sampling_steps": 1000,
+    "corrector_steps_per_time": 1,
+    "batch_size": 1
+  },
+  "evaluation": {
+    "potential": "checkpoints/official/mattersim/mattersim-v1.0.0-5M.pth",
+    "fmax_ev_per_angstrom": 0.05,
+    "reference": "data-release/alex-mp/reference_MP2020correction.gz",
+    "dft_verified": false
+  },
+  "forbidden_seed_ranges": [
+    [81000, 81031],
+    [82000, 82063],
+    [83000, 83255]
+  ],
+  "automatic_escalation_beyond_p0": false
+}
