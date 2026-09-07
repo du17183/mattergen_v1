@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "experiment": "frozen TCL P2 independent 64-paired-seed validation",
+  "branch": "experiment/tcl-p2",
+  "parent_commit": "56efbaaf7f005b058887b69088913ccbf4d3cde5",
+  "methods": ["C0", "FT0", "TCL"],
+  "training_steps": 0,
+  "checkpoints": {
+    "C0": "checkpoints/official/hf_mattergen/checkpoints/dft_mag_density",
+    "FT0": "experiments/tcl_dml_p0/checkpoints/FT0/model.pt",
+    "TCL": "experiments/tcl_dml_p0/checkpoints/TCL/model.pt"
+  },
+  "checkpoint_sha256": {
+    "C0_base": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+    "FT0": "1cd254568463ae4d7774193fa0a0e97925cdad3b6c505c1e5f5dd4e7968f6960",
+    "TCL": "8dd9879f11edea7f25f587ae72f928a6f3ab2e5c81fc9400c13642364ad90443"
+  },
+  "frozen_pipeline": {
+    "generator": "experiments/tcl_dml_p0/generate_one.py",
+    "p1_generation_orchestration": "experiments/tcl_p1/run_generation.py",
+    "p1_relaxation": "experiments/tcl_p1/run_relaxation.py",
+    "p1_quality": "experiments/tcl_p1/run_quality_metrics.py"
+  },
+  "generation": {
+    "seeds": {"start": 82000, "stop_inclusive": 82063, "count": 64},
+    "historical_overlap": "none",
+    "independence_check": "project-wide exact scan excluding decimal/SHA substrings plus directory-name scan before P2 outputs",
+    "target_dft_mag_density": 0.1,
+    "cfg_scale": 2.0,
+    "cfg_schedule": "constant",
+    "diffusion_steps": 1000,
+    "predictor": "original MatterGen",
+    "corrector": "original MatterGen",
+    "corrector_steps_per_time": 1,
+    "batch_size": 1,
+    "seed_level_parallelism": 8
+  },
+  "evaluation": {
+    "potential": "checkpoints/official/mattersim/mattersim-v1.0.0-5M.pth",
+    "fmax_ev_per_angstrom": 0.05,
+    "reference": "data-release/alex-mp/reference_MP2020correction.gz",
+    "paired_bootstrap_resamples": 20000,
+    "paired_bootstrap_seed": 20260911,
+    "dft_verified": false
+  },
+  "forbidden_and_unused": [
+    "retraining", "TCL modification", "threshold tuning", "DML", "TCL+DML",
+    "Adaptive CFG", "new modules", "new reward/loss", "formal256"
+  ]
+}

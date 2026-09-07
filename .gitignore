@@ -552,3 +552,11 @@ experiments/tcl_p1/structures/
 experiments/tcl_p1/relaxation/
 experiments/tcl_p1/quality/
 experiments/tcl_p1/runtime_tmp/
+
+# Frozen TCL P2 runtime artifacts
+experiments/tcl_p2/logs/
+experiments/tcl_p2/generation/
+experiments/tcl_p2/structures/
+experiments/tcl_p2/relaxation/
+experiments/tcl_p2/quality/
+experiments/tcl_p2/runtime_tmp/
