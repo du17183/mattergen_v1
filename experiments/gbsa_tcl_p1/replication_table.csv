@@ -1,0 +1,11 @@
+metric,preferred_direction,p0_gbsa_minus_tcl_direction,p1_gbsa_minus_tcl_direction,p1_delta,p1_ci95_low,p1_ci95_high,replicated
+e_hull,lower,favorable,unfavorable,0.0156125775470372,-0.0191340456754449,0.0551693863432236,False
+stable,higher,favorable,favorable,9.375,-15.625,31.25,True
+nus,higher,favorable,favorable,15.625,-3.125,34.375,True
+rmsd,lower,favorable,favorable,-0.022518455795855,-0.0667765880138498,0.0158831892518119,True
+atomic_force_mean,lower,favorable,unfavorable,0.0139770127360507,-0.110941890432503,0.2078644877073783,False
+structure_max_force,lower,favorable,unfavorable,0.0364772621537293,-0.2327772185253988,0.4347879444828047,False
+relaxation_steps,lower,favorable,favorable,-21.71875,-46.96875,2.125,True
+novel,higher,tie,favorable,6.25,-12.5,25.0,False
+unique,higher,tie,tie,0.0,0.0,0.0,True
+late_position_drift,lower,favorable,favorable,-0.15123172660842282,-0.17432235114721903,-0.12883958821858185,True

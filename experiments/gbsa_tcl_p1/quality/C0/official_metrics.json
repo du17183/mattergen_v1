@@ -1,0 +1,26 @@
+{
+    "avg_energy_above_hull_per_atom": {
+        "value": 0.13957895281241792,
+        "description": "Average energy above hull per atom (eV/atom) of structures in sampled data."
+    },
+    "frac_stable_structures": {
+        "value": 0.4375,
+        "description": "Fraction of stable structures in sampled data within 0.1 (eV/atom) above convex hull of alex-mp MP2020 correction."
+    },
+    "frac_novel_unique_stable_structures": {
+        "value": 0.21875,
+        "description": "Fraction of novel unique stable structures in sampled data within 0.1 (eV/atom) above convex hull of alex-mp MP2020 correction."
+    },
+    "frac_novel_structures": {
+        "value": 0.75,
+        "description": "Fraction of novel structures in sampled data."
+    },
+    "frac_unique_structures": {
+        "value": 1.0,
+        "description": "Fraction of unique structures in sampled data."
+    },
+    "avg_rmsd_from_relaxation": {
+        "value": 0.08799352581280293,
+        "description": "root mean square displacements of atoms (Angstrom) from initial to final DFT relaxation steps in sampled data."
+    }
+}

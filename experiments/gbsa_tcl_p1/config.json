@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "experiment": "GBSA-TCL P1 frozen 32-paired-seed independent validation",
+  "branch": "experiment/gbsa-tcl-p1",
+  "parent_commit": "5a72cfde92bec7145105b4deef38f5fa7f2da8b5",
+  "p1_training_steps": 0,
+  "methods": ["C0", "FT0", "TCL", "GBSA-TCL"],
+  "checkpoints": {
+    "C0": "checkpoints/official/hf_mattergen/checkpoints/dft_mag_density",
+    "FT0": "experiments/tcl_dml_p0/checkpoints/FT0/model.pt",
+    "TCL": "experiments/tcl_dml_p0/checkpoints/TCL/model.pt",
+    "GBSA-TCL": "experiments/gbsa_tcl_p0/checkpoints/GBSA-TCL/model.pt"
+  },
+  "checkpoint_sha256": {
+    "C0": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+    "FT0": "1cd254568463ae4d7774193fa0a0e97925cdad3b6c505c1e5f5dd4e7968f6960",
+    "TCL": "8dd9879f11edea7f25f587ae72f928a6f3ab2e5c81fc9400c13642364ad90443",
+    "GBSA-TCL": "1edc1c0c7848e9edaff9d73b135642fcfaa36e23591e4e2f336c39b3df3dcf0f"
+  },
+  "generation": {
+    "seed_start": 85000,
+    "seed_stop_inclusive": 85031,
+    "seed_count": 32,
+    "historical_overlap": false,
+    "target_dft_mag_density": 0.1,
+    "cfg_scale": 2.0,
+    "cfg_schedule": "constant",
+    "diffusion_steps": 1000,
+    "corrector_steps_per_time": 1,
+    "batch_size": 1,
+    "seed_level_parallelism": 8
+  },
+  "evaluation": {
+    "potential": "checkpoints/official/mattersim/mattersim-v1.0.0-5M.pth",
+    "reference": "data-release/alex-mp/reference_MP2020correction.gz",
+    "fmax_ev_per_angstrom": 0.05,
+    "paired_bootstrap_resamples": 20000,
+    "paired_bootstrap_seed": 20260920,
+    "dft_verified": false
+  },
+  "score_drift": {
+    "probe_structures": "all 32 C0 plus all 32 TCL P1 initial structures",
+    "probe_count": 64,
+    "progress_bins": 10,
+    "cfg_scale": 2.0,
+    "noise_seed": 20260921
+  },
+  "forbidden_seed_ranges": [
+    [81000, 81031],
+    [82000, 82063],
+    [83000, 83255],
+    [84000, 84007]
+  ],
+  "automatic_p2": false
+}

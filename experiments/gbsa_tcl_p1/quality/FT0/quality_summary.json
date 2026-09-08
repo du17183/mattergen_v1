@@ -1,0 +1,27 @@
+{
+  "method": "FT0",
+  "n": 32,
+  "n_input": 32,
+  "official_metrics": {
+    "avg_energy_above_hull_per_atom": 0.14815414895341553,
+    "avg_rmsd_from_relaxation": 0.09892997660800593,
+    "frac_novel_structures": 0.78125,
+    "frac_novel_unique_stable_structures": 0.1875,
+    "frac_stable_structures": 0.375,
+    "frac_unique_structures": 1.0
+  },
+  "pre_relaxation_max_force_max": 1.4286614656448364,
+  "pre_relaxation_max_force_mean": 0.5216360769118182,
+  "pre_relaxation_max_force_median": 0.4371245503425598,
+  "pre_relaxation_max_force_p95": 1.0870427429676055,
+  "precomputed_relaxation_dir": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/gbsa_tcl_p1/relaxation/FT0",
+  "relaxation_batch_error": null,
+  "relaxation_device": "cuda",
+  "relaxation_failures": [],
+  "relaxation_mode": "precomputed_individual",
+  "relaxation_seconds": 328.9029487678781,
+  "relaxation_seconds_per_structure": 10.278217148996191,
+  "relaxation_steps_max": 706,
+  "relaxation_steps_mean": 86.75,
+  "relaxation_success_rate": 1.0
+}
