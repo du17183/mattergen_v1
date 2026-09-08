@@ -1,0 +1,115 @@
+study,candidate,baseline,metric,n,delta,ci95_low,ci95_high,wins,ties,losses,bootstrap_resamples,bootstrap_seed,interpretation
+Adaptive Formal256,Adaptive CFG,C0,e_hull,256,-0.0034349449371532522,-0.017933952924857933,0.0109980503098859,137,1,118,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+Adaptive Formal256,Adaptive CFG,C0,nus,256,3.515625,-3.125,10.15625,40,185,31,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+Adaptive Formal256,Adaptive CFG,C0,stable,256,5.859375,-1.5625,13.28125,54,163,39,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+Adaptive Formal256,Adaptive CFG,C0,novel,256,2.734375,-4.296875,9.765625,45,173,38,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+Adaptive Formal256,Adaptive CFG,C0,unique,256,2.34375,-0.390625,5.46875,10,242,4,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+Adaptive Formal256,Adaptive CFG,C0,rmsd,256,0.009247129225768454,-0.01926316182614801,0.037156732024183244,118,0,138,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+Adaptive Formal256,Adaptive CFG,C0,steps,256,5.94921875,-6.2697265625,18.406445312499983,110,10,136,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+Adaptive Formal256,Adaptive CFG,C0,post_relax_max_force,256,0.0026274443471265866,0.00014667127786652153,0.005330250732026797,126,0,130,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+E3-PCR Formal256,E3-A,C0,e_hull,256,4.3158785905263586e-05,-0.0009560541340969207,0.0010105720434052336,130,8,118,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+E3-PCR Formal256,E3-A,C0,nus,256,0.0,0.0,0.0,0,256,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+E3-PCR Formal256,E3-A,C0,stable,256,0.0,0.0,0.0,0,256,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+E3-PCR Formal256,E3-A,C0,novel,256,0.0,0.0,0.0,0,256,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+E3-PCR Formal256,E3-A,C0,unique,256,0.0,0.0,0.0,0,256,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+E3-PCR Formal256,E3-A,C0,rmsd,256,-0.004332012336038291,-0.012458781782477864,0.0019998593628445254,197,1,58,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+E3-PCR Formal256,E3-A,C0,max_force,256,-0.09900830302618673,-0.16409824688573318,-0.05045028338908236,191,0,65,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+E3-PCR Formal256,E3-A,C0,steps,256,0.16015625,-2.58203125,4.26953125,107,85,64,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+E3-PCR Formal256,E3-G,C0,e_hull,256,4.0994068548270176e-05,-0.0009591427317766583,0.0010098824731827492,98,63,95,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+E3-PCR Formal256,E3-G,C0,nus,256,0.0,0.0,0.0,0,256,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+E3-PCR Formal256,E3-G,C0,stable,256,0.0,0.0,0.0,0,256,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+E3-PCR Formal256,E3-G,C0,novel,256,0.0,0.0,0.0,0,256,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+E3-PCR Formal256,E3-G,C0,unique,256,0.0,0.0,0.0,0,256,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+E3-PCR Formal256,E3-G,C0,rmsd,256,-0.0034520694696317934,-0.011574684857333482,0.002930798648946096,172,1,83,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+E3-PCR Formal256,E3-G,C0,max_force,256,-0.07985724493999838,-0.1442389638435196,-0.032537759558750746,127,82,47,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+E3-PCR Formal256,E3-G,C0,steps,256,-0.08203125,-2.65625,3.671875,81,132,43,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+Corrector V2 Formal256,V2_Frozen_Atomic75_Late30,C0,e_hull,256,0.00373820804610517,-0.01174692547708833,0.01946886431887539,128,2,126,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+Corrector V2 Formal256,V2_Frozen_Atomic75_Late30,C0,nus,256,1.5625,-5.859375,8.984375,48,164,44,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+Corrector V2 Formal256,V2_Frozen_Atomic75_Late30,C0,stable,256,0.390625,-7.421875,8.203125,54,149,53,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+Corrector V2 Formal256,V2_Frozen_Atomic75_Late30,C0,novel,256,2.34375,-4.296875,8.984375,40,182,34,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+Corrector V2 Formal256,V2_Frozen_Atomic75_Late30,C0,unique,256,-1.171875,-3.515625,1.171875,3,247,6,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+Corrector V2 Formal256,V2_Frozen_Atomic75_Late30,C0,rmsd,256,-0.02735929135712841,-0.06089866847597006,0.004233369132452926,116,0,140,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+Corrector V2 Formal256,V2_Frozen_Atomic75_Late30,C0,atomic_force,256,-0.0046408753221292825,-0.035261376541846905,0.02444041812289907,130,2,124,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+Corrector V2 Formal256,V2_Frozen_Atomic75_Late30,C0,max_force,256,0.006071160878435746,-0.07643347683675442,0.08960758097987348,133,0,123,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+Corrector V2 Formal256,V2_Frozen_Atomic75_Late30,C0,steps,256,-10.99609375,-27.3126953125,4.0703125,119,11,126,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,FT0,C0,e_hull,256,0.038687218797011175,0.01946391033687427,0.057155249907791535,91,0,165,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,FT0,C0,nus,256,-19.53125,-26.171875,-12.890625,18,170,68,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,FT0,C0,stable,256,-20.703125,-28.90625,-12.5,35,133,88,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,FT0,C0,novel,256,-0.390625,-7.03125,6.25,36,183,37,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,FT0,C0,unique,256,-9.375,-13.671875,-5.46875,4,224,28,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,FT0,C0,rmsd,256,0.06635819749123222,0.03554637540174949,0.09942670191370008,87,0,169,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,FT0,C0,atomic_force,256,0.1532108574676493,0.11024178404559068,0.20483616695879753,54,0,202,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,FT0,C0,max_force,256,0.263234184280622,0.16066267995733047,0.37875972848730655,69,0,187,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,FT0,C0,steps,256,34.8046875,18.90625,51.98837890624999,72,3,181,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,TCL,C0,e_hull,256,0.002110999092151903,-0.01791835071927744,0.02145852979234483,129,0,127,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,TCL,C0,nus,256,-3.515625,-11.328125,4.6875,51,145,60,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,TCL,C0,stable,256,-4.296875,-12.5,3.90625,55,135,66,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,TCL,C0,novel,256,1.171875,-5.46875,7.8125,39,181,36,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,TCL,C0,unique,256,0.390625,-1.5625,2.34375,4,249,3,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,TCL,C0,rmsd,256,0.033581362194793504,0.007604759972517077,0.060328654862543664,114,0,142,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,TCL,C0,atomic_force,256,0.03375453416587146,0.0038169387547533707,0.06430009833420904,110,0,146,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,TCL,C0,max_force,256,0.05069469085973724,-0.032406029360499466,0.13546967662525117,112,0,144,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+TCL Formal256,TCL,C0,steps,256,15.66796875,1.14453125,32.03515625,101,4,151,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,TCL,C0,e_hull,8,0.02143880236016063,-0.013469956304393866,0.06895963779265613,3,0,5,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,TCL,C0,nus,8,12.5,-25.0,50.0,2,5,1,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,TCL,C0,stable,8,-12.5,-37.5,0.0,0,7,1,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,TCL,C0,novel,8,25.0,0.0,62.5,2,6,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,TCL,C0,unique,8,0.0,0.0,0.0,0,8,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,TCL,C0,rmsd,8,0.12019598697938902,0.0033690468013885012,0.2708365541247988,2,0,6,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,TCL,C0,atomic_force,8,0.01877177042568668,-0.07699660767057433,0.09393235446506165,1,0,7,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,TCL,C0,max_force,8,-0.02117025615911381,-0.23709287132688314,0.10741645993254698,1,0,7,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,TCL,C0,steps,8,28.0,-11.375,68.625,2,0,6,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,GBSA-TCL,C0,e_hull,8,-0.008675983480492498,-0.051524253277444254,0.03261007663185388,5,0,3,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,GBSA-TCL,C0,nus,8,50.0,12.5,87.5,4,4,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,GBSA-TCL,C0,stable,8,25.0,0.0,62.5,2,6,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,GBSA-TCL,C0,novel,8,25.0,0.0,62.5,2,6,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,GBSA-TCL,C0,unique,8,0.0,0.0,0.0,0,8,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,GBSA-TCL,C0,rmsd,8,0.005675075997493754,-0.039240944557046874,0.054872761107951126,5,0,3,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,GBSA-TCL,C0,atomic_force,8,-0.11204770367259655,-0.2390188224950404,-0.0038346616626899095,6,0,2,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,GBSA-TCL,C0,max_force,8,-0.2499179041416123,-0.5292646061878793,-0.01769220001804441,5,0,3,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P0,GBSA-TCL,C0,steps,8,-20.375,-47.625,1.375,5,1,2,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,FT0,C0,e_hull,32,0.008575196140997627,-0.05801629131791042,0.0642126885141138,12,0,20,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,FT0,C0,nus,32,-3.125,-21.875,18.75,5,21,6,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,FT0,C0,stable,32,-6.25,-28.125,15.625,6,18,8,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,FT0,C0,novel,32,3.125,-15.625,21.875,5,23,4,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,FT0,C0,unique,32,0.0,0.0,0.0,0,32,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,FT0,C0,rmsd,32,0.01093645079520303,-0.06979894766633545,0.08044237967668436,10,0,22,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,FT0,C0,atomic_force,32,0.14101234400879514,0.08802757650498252,0.1977070671361314,7,0,25,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,FT0,C0,max_force,32,0.27542869606697107,0.1660784499480615,0.3931772622417605,8,0,24,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,FT0,C0,steps,32,28.40625,-7.75,73.4375,8,0,24,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,TCL,C0,e_hull,32,-0.03653639826248499,-0.09526823502904232,0.023318471410916992,20,0,12,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,TCL,C0,nus,32,9.375,-9.375,28.125,6,23,3,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,TCL,C0,stable,32,6.25,-15.625,28.125,8,18,6,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,TCL,C0,novel,32,3.125,-15.625,21.875,5,23,4,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,TCL,C0,unique,32,0.0,0.0,0.0,0,32,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,TCL,C0,rmsd,32,-0.02136112274104062,-0.072581415332611,0.01897841683575403,15,0,17,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,TCL,C0,atomic_force,32,0.03814324924548597,-0.005110732475320819,0.08767129896270487,16,0,16,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,TCL,C0,max_force,32,0.10843216774670764,0.008534714696072478,0.24008998662002978,15,0,17,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,TCL,C0,steps,32,0.25,-28.0625,22.907031249999932,9,0,23,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,C0,e_hull,32,-0.02092382071544777,-0.07979033012360201,0.03822875553643456,20,0,12,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,C0,nus,32,25.0,6.25,43.75,10,20,2,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,C0,stable,32,15.625,-6.25,37.5,9,19,4,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,C0,novel,32,9.375,-9.375,28.125,6,23,3,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,C0,unique,32,0.0,0.0,0.0,0,32,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,C0,rmsd,32,-0.04387957853689563,-0.11569396002231178,0.01336009672609698,14,0,18,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,C0,atomic_force,32,0.05212026198153672,-0.055978464406827556,0.2352969321290476,18,0,14,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,C0,max_force,32,0.14490942990043698,-0.08637665192240278,0.5307645218057234,18,0,14,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,C0,steps,32,-21.46875,-56.971093749999994,6.594531249999932,15,0,17,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,TCL,e_hull,32,0.01561257754703722,-0.019244918328014383,0.05562583792578308,17,0,15,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,TCL,nus,32,15.625,-3.125,34.375,8,21,3,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,TCL,stable,32,9.375,-15.625,31.25,9,17,6,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,TCL,novel,32,6.25,-12.5,25.0,6,22,4,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,TCL,unique,32,0.0,0.0,0.0,0,32,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,TCL,rmsd,32,-0.022518455795855007,-0.06702809400283229,0.015318280086274002,17,0,15,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,TCL,atomic_force,32,0.013977012736050759,-0.11187690841321805,0.20968238894712304,18,0,14,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,TCL,max_force,32,0.036477262153729345,-0.23340106846386086,0.4415740654050423,15,0,17,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,TCL,steps,32,-21.71875,-47.21875,1.5625,22,0,10,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,FT0,e_hull,32,-0.029499016856445383,-0.0823961477640688,0.03147838994167105,22,0,10,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,FT0,nus,32,28.125,9.375,46.875,11,19,2,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,FT0,stable,32,21.875,-3.125,46.875,13,13,6,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,FT0,novel,32,6.25,-12.5,25.0,6,22,4,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,FT0,unique,32,0.0,0.0,0.0,0,32,0,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,FT0,rmsd,32,-0.05481602933209866,-0.10885613401803505,-0.005193243631565486,19,0,13,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,FT0,atomic_force,32,-0.08889208202725842,-0.21834705032722015,0.11855443865574301,27,0,5,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,FT0,max_force,32,-0.1305192661665341,-0.3881888568873328,0.28536436653183544,25,0,7,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI
+GBSA P1,GBSA-TCL,FT0,steps,32,-49.875,-99.5625,-11.749218750000068,23,1,8,20000,20260908,retrospective; fixed sample uniqueness labels; unadjusted CI

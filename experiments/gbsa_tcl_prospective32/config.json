@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "experiment": "Frozen GBSA-TCL prospective 32-paired-seed validation",
+  "branch": "experiment/gbsa-tcl-prospective32",
+  "parent_commit": "b12985130a7e7dfff490118d566fefd1e2b65af2",
+  "methods": ["C0", "GBSA-TCL"],
+  "seeds": {"start": 87000, "end": 87031, "count": 32},
+  "generation_count": 64,
+  "training_steps": 0,
+  "sampling": {
+    "target_dft_mag_density": 0.1,
+    "guidance_scale": 2.0,
+    "diffusion_steps": 1000,
+    "corrector_steps_per_time": 1,
+    "batch_size": 1,
+    "deterministic": true
+  },
+  "checkpoint_sha256": {
+    "C0": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+    "GBSA-TCL": "1edc1c0c7848e9edaff9d73b135642fcfaa36e23591e4e2f336c39b3df3dcf0f",
+    "MatterSim-5M": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5"
+  },
+  "statistics": {"paired_bootstrap_resamples": 20000, "bootstrap_seed": 20260908},
+  "criteria": {
+    "nus": {"minimum_point_delta_pp": 5.0, "ci95_lower_must_exceed_pp": 0.0},
+    "e_hull": {"noninferiority_margin_ev_per_atom": 0.01},
+    "rmsd": {"noninferiority_margin_angstrom": 0.02},
+    "atomic_force": {"noninferiority_mean_ratio": 1.2},
+    "max_force_gt1": {"threshold_ev_per_angstrom": 1.0, "rate_harm_margin_pp": 5.0},
+    "max_force_gt2": {"threshold_ev_per_angstrom": 2.0, "rate_harm_margin_pp": 2.0},
+    "novel_unique_clear_collapse": {
+      "minimum_point_drop_pp": 10.0,
+      "and_ci95_upper_below_pp": 0.0
+    },
+    "technical_invalid_structure_fail_count": 1
+  },
+  "severe_seed_diagnostics": {
+    "e_hull_gt_ev_per_atom": 0.5,
+    "rmsd_gt_angstrom": 0.5,
+    "atomic_force_gt_ev_per_angstrom": 1.0,
+    "max_force_gt_ev_per_angstrom": 1.0,
+    "relaxation_steps_gt": 200
+  },
+  "automatic_independent64": false,
+  "dft_verified": false
+}
