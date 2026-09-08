@@ -1,0 +1,5 @@
+guardrail,effect,candidate,baseline,estimate,ci95_low,ci95_high,margin,unit,status
+RMSD,mean_delta,,,0.08154822304163961,0.007344443863991536,0.18423231142508897,0.02,angstrom,BORDERLINE
+Atomic force,mean_ratio,0.12657961103979543,0.11759218915531398,1.0764287317809094,0.5847618469882784,1.8865996360179,1.2,ratio,BORDERLINE
+MaxF>1,paired_event_rate_delta,0.0625,0.03125,3.125,-6.25,15.625,5.0,percentage_points,BORDERLINE
+MaxF>2,paired_event_rate_delta,0.0,0.0,0.0,0.0,0.0,2.0,percentage_points,PASS

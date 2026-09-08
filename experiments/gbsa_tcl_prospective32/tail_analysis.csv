@@ -1,0 +1,5 @@
+threshold_ev_per_angstrom,method,count,rate,exact_ci95_low,exact_ci95_high,paired_delta_pp,paired_bootstrap_ci95_low_pp,paired_bootstrap_ci95_high_pp,margin_pp,status
+1.0,C0,1,0.03125,0.0007908685979525573,0.16217099418151154,3.125,-6.25,15.625,5.0,BORDERLINE
+1.0,GBSA-TCL,2,0.0625,0.007660736346456386,0.20806942989500743,3.125,-6.25,15.625,5.0,BORDERLINE
+2.0,C0,0,0.0,0.0,0.10888116067935288,0.0,0.0,0.0,2.0,PASS
+2.0,GBSA-TCL,0,0.0,0.0,0.10888116067935288,0.0,0.0,0.0,2.0,PASS

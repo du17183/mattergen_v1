@@ -1,0 +1,27 @@
+{
+  "method": "GBSA-TCL",
+  "n": 32,
+  "n_input": 32,
+  "official_metrics": {
+    "avg_energy_above_hull_per_atom": 0.10841914491566343,
+    "avg_rmsd_from_relaxation": 0.10726491366347904,
+    "frac_novel_structures": 0.8125,
+    "frac_novel_unique_stable_structures": 0.5625,
+    "frac_stable_structures": 0.75,
+    "frac_unique_structures": 1.0
+  },
+  "pre_relaxation_max_force_max": 1.9744333028793335,
+  "pre_relaxation_max_force_mean": 0.25180959006684134,
+  "pre_relaxation_max_force_median": 0.10791555792093277,
+  "pre_relaxation_max_force_p95": 0.967971485853195,
+  "precomputed_relaxation_dir": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/gbsa_tcl_prospective32/relaxation/GBSA-TCL",
+  "relaxation_batch_error": null,
+  "relaxation_device": "cuda",
+  "relaxation_failures": [],
+  "relaxation_mode": "precomputed_individual",
+  "relaxation_seconds": 59.36495287902653,
+  "relaxation_seconds_per_structure": 1.8551547774695791,
+  "relaxation_steps_max": 658,
+  "relaxation_steps_mean": 65.625,
+  "relaxation_success_rate": 1.0
+}
