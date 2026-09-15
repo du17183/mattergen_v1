@@ -1,0 +1,171 @@
+schema_version: 1
+frozen_before_generation: true
+experiment: calibrated_safe_selection_cfg
+method_name: Calibrated Safe-Selection Adaptive CFG
+claim_scope: empirical_harmful_adaptation_control_not_formal_safety
+git_parent_commit: a4fda8a573ee0e372d3b53064e235ae87f0e670c
+
+scientific_question: >-
+  Can independently calibrated treatment-effect intervals and an explicit
+  calibrated harmful-risk gate reduce false-positive one-shot CFG adaptations,
+  retain at least 15 percent coverage, and outperform CFG2 and a global
+  timestep-only policy on fresh cohorts?
+
+sampling:
+  checkpoint: /mnt/datasets-livsyn/dxl/mattergen_v1/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density
+  checkpoint_sha256: 01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e
+  property_target: 0.1
+  sampling_steps: 1000
+  corrector_steps_per_timestep: 1
+  deterministic: true
+  common_random_numbers: true
+  decision_index: 250
+  base_cfg: 2.0
+  actions: {DOWN: 1.75, KEEP: 2.0, UP: 2.25}
+  deployment: CFG2_through_step250_then_one_decision_and_hold_to_endpoint
+
+dataset:
+  trajectories: 128
+  full_outcome_branches: 384
+  split_unit: trajectory_seed
+  split_order: frozen_registration_order
+  train: 64
+  calibration: 26
+  validation: 19
+  test: 19
+  old_v4_data_use: hypothesis_and_step250_ridge_prior_only
+  future_p0_reservation: 32
+  future_formal256_reservation: 256
+
+objective:
+  primary: property_absolute_error
+  definition: abs(CHGNet_predicted_magnetic_density - 0.1)
+  paired_effect: action_property_error - cfg2_property_error
+  benefit: paired_effect < 0
+  lower_is_better: true
+  invalid_objective: 1.0
+  surrogate_property_eval: true
+  dft_verified: false
+
+harm:
+  primary: property
+  property: action_error > 1.05 * cfg2_error
+  gamma_property: 5_percent_of_paired_cfg2_error
+  ehull_secondary: action_ehull - cfg2_ehull > 0.02
+  stable_secondary: cfg2_stable_and_action_unstable
+
+features:
+  availability: decision_state_and_past_only
+  temporal_ema_beta: 0.9
+  recent_window: 5
+  residual_normalization: train_only_log_z_score
+  include:
+    - t_norm
+    - raw_field_residual_rms
+    - train_normalized_field_log_residual
+    - field_guidance_to_unconditional_score_ratio
+    - field_score_alignment
+    - cross_field_mean_median_std_range
+    - past_ema_slope_previous_recent_trend
+    - current_predicted_x0_structural_summaries
+  prohibited: [future_timestep, final_outcome, relaxation_features]
+
+models:
+  treatment_effect:
+    family: Ridge
+    separate_actions: [DOWN, UP]
+    shared_standard_scaler_fit: train_only
+    alpha_candidates: [0.01, 0.1, 1.0, 10.0, 100.0]
+    alpha_selection: five_fold_seed_level_inner_cv_on_train_minimum_mean_mse
+    alpha_tie_break: larger_alpha
+  harm:
+    family: LogisticRegression
+    C: 1.0
+    class_weight: balanced
+    max_iter: 5000
+    separate_actions: [DOWN, UP]
+    training_data: train_only
+  probability_calibration:
+    method: Platt
+    data: calibration_only
+    one_class_fallback: laplace_smoothed_constant_probability
+
+conformal:
+  method: split_conformal_absolute_residual
+  calibration_data: calibration_only
+  alpha_candidates: [0.10, 0.15, 0.20]
+  finite_sample_quantile: ceil((n_calibration+1)*(1-alpha))/n_calibration_higher
+  decision_bound: predicted_delta + q_alpha
+
+validation_selection:
+  alpha_candidates: [0.10, 0.15, 0.20]
+  delta_safe_candidates: [0.0, 0.0025, 0.005, 0.01]
+  eta_candidates: [0.05, 0.10, 0.15]
+  minimum_coverage: 0.15
+  maximum_selective_property_harm_rate: 0.10
+  ranking: >-
+    Feasible points only; maximize realized overall paired property gain, then
+    oracle recovery, then adaptive precision, then minimize selective harm,
+    then prefer lower coverage, lower eta, larger delta_safe, and lower alpha.
+  no_feasible_action: STOP_NO_TEST_NO_RETUNING
+
+controller:
+  benefit_gate: predicted_delta + conformal_q < -delta_safe
+  harm_gate: calibrated_harm_probability < eta
+  abstention: KEEP
+  both_actions_eligible: choose_more_negative_conformal_upper_bound
+  tie_order: [DOWN, UP]
+
+baselines:
+  C0: always_CFG2
+  T0: train_only_lowest_mean_property_error_global_action_at_step250
+  R0: choose_most_negative_Ridge_mean_prediction_if_below_zero_else_KEEP
+  S0: conformal_plus_calibrated_harm_gate
+
+offline_test_gate:
+  minimum_coverage: 0.15
+  maximum_selective_property_harm_rate: 0.10
+  adaptive_subset_mean_delta_strictly_negative: true
+  adaptive_wins_strictly_greater_than_losses: true
+  minimum_oracle_recovery: 0.20
+  minimum_adaptive_precision: 0.85
+  s0_property_mae_strictly_better_than_t0: true
+  failure_action: STOP_NO_P0_NO_RETUNING
+
+p0_gate:
+  trajectories: 32
+  primary_relative_property_mae_improvement_minimum: 0.05
+  minimum_coverage: 0.15
+  maximum_selective_property_harm_rate: 0.10
+  s0_property_mae_strictly_better_than_t0: true
+  maximum_stable_drop_fraction: 0.05
+  maximum_nus_drop_fraction: 0.05
+  maximum_validity_drop_fraction: 0.05
+  maximum_mean_ehull_worsening_ev_per_atom: 0.02
+  bootstrap_resamples: 20000
+  bootstrap_seed: 20261010
+  selective_harm_interval: clopper_pearson_95pct
+  failure_action: STOP_NO_FORMAL256_NO_RETUNING
+
+formal256_gate:
+  trajectories: 256
+  primary_paired_bootstrap_ci95_must_exclude_zero_favorably: true
+  minimum_coverage: 0.15
+  maximum_selective_property_harm_rate: 0.10
+  s0_property_mae_strictly_better_than_t0: true
+  secondary_metrics_no_clear_adverse_ci: [e_hull, stable, nus, validity]
+  bootstrap_resamples: 20000
+  bootstrap_seed: 20261011
+  selective_harm_interval: clopper_pearson_95pct
+
+prohibited_after_freeze:
+  - change_decision_timestep_or_CFG_actions
+  - change_feature_set_or_primary_metric_or_harm_definition
+  - change_model_family_or_Ridge_grid
+  - change_conformal_or_probability_calibration_rule
+  - expand_or_change_alpha_delta_eta_grid
+  - tune_on_test_P0_or_Formal256
+  - repeated_online_CFG_decisions
+  - EMA_slew_residual_threshold_tuning
+  - Transformer_Attention_GNN_RL_or_large_MLP
+  - rescue_tuning_or_V6

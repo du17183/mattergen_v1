@@ -1,0 +1,13 @@
+{
+  "FULL_OUTCOME_DATASET": "RUNNING",
+  "VALIDATION_SAFE_GATE": "NOT_RUN",
+  "OFFLINE_SAFE_SELECTION": "NOT_RUN",
+  "SAFE_SELECTION_P0": "NOT_RUN",
+  "SAFE_SELECTION_FORMAL256": "NOT_RUN",
+  "SAMPLE_ADAPTIVITY": "NOT_RUN",
+  "INNOVATION1_FINAL_STATUS": "MIXED",
+  "stage": "FROZEN_READY",
+  "cohort": "dataset",
+  "cohort_complete": 0,
+  "cohort_total": 128
+}
