@@ -1,0 +1,21 @@
+schema_version: 1
+frozen_before_generation: true
+source_evidence: counterfactual_adaptive_cfg_v3_full_outcomes
+selection_rule: >-
+  Retain the four V3 stages with substantial full-outcome oracle headroom and
+  non-degenerate action labels; no new-study outcomes were observed.
+sampling_indices: [100, 250, 400, 550]
+requested_model_times: [0.90, 0.75, 0.60, 0.45]
+v3_observed_state_counts: [8, 8, 8, 8]
+v3_mean_oracle_relative_gains: [0.457138, 0.444939, 0.365515, 0.404528]
+v3_oracle_action_fractions:
+  step_100: {DOWN: 0.500, KEEP: 0.375, UP: 0.125}
+  step_250: {DOWN: 0.625, KEEP: 0.250, UP: 0.125}
+  step_400: {DOWN: 0.250, KEEP: 0.375, UP: 0.375}
+  step_550: {DOWN: 0.125, KEEP: 0.375, UP: 0.500}
+excluded_late_indices: [700, 800, 900, 950]
+excluded_late_reason: >-
+  V3 mean full-oracle gains fell to 0.0581, 0.0082, 0, and 0 respectively;
+  the last three stages were overwhelmingly or entirely KEEP after deadband.
+final_timestep_selection: validation-only predictability, risk control, then headroom
+
