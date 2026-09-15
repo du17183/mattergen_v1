@@ -1,0 +1,19 @@
+schema_version: 1
+frozen_before_new_outcomes: true
+source: ../preregistered_schedule_grid.yaml
+method: Stage-Calibrated Bounded Adaptive CFG
+base_cfg: 2.0
+sampling_steps: 1000
+candidate_starts: [100, 250, 400]
+candidate_delta_g: [-0.10, 0.10]
+candidate_durations: [50, 100]
+constant_cfg_candidates: [1.8, 1.9, 2.1, 2.2]
+permanent_counterparts:
+  starts: [100, 250, 400]
+  delta_g: [-0.10, 0.10]
+counts:
+  bounded: 12
+  constants: 4
+  permanent: 6
+  non_c0_total: 22
+  including_c0: 23

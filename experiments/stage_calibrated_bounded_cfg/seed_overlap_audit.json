@@ -1,0 +1,2502 @@
+{
+  "historical_unique_seed_count": 3377,
+  "historical_files_with_seed_values": 621,
+  "historical_sources": [
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/generation_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/paired_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/quality_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/seed_audit.json",
+      "seed_count": 3
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/single_h20_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/paired_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/single_h20_per_seed.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/stage_b_paired_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/stage_c_64seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/stage_c_speed_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/smoke/generation_per_seed.csv",
+      "seed_count": 4
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/generation_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_b/quality_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_c/generation_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/stage_c/quality_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_innovation1_audit/minimal_ablation/generation_manifest.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_innovation1_audit/minimal_ablation/historical_seed_audit.json",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_innovation1_audit/minimal_ablation/seeds.json",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/all_per_seed_metrics.csv",
+      "seed_count": 984
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/a367f85efe8027bf8ef2db41cc48ec2fd3d60582/thesis_archive/data/innovation1/per_seed_metrics.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/a367f85efe8027bf8ef2db41cc48ec2fd3d60582/thesis_archive/data/innovation1/source/formal_per_seed_records.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/d91598b4b5bdca7dcb51de1be4c4d1d83cd26386/reports/q3_e3_pcr/formal256/formal_seed_audit.json",
+      "seed_count": 3
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/gbsa_tcl_p0/per_seed_results.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/gbsa_tcl_p1/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/gbsa_tcl_prospective32/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/gbsa_tcl_prospective32/severe_gbsa_seeds.csv",
+      "seed_count": 6
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/tcl_formal256_root_cause/score_hidden_drift_per_seed_bin.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/tcl_formal256_root_cause/tcl_bad_seed_case_studies.csv",
+      "seed_count": 30
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/adaptive_neighborhood_p0/band_sensitivity_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_formal256/generation_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_formal256/paired_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_formal256/quality_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_formal256/seed_audit.json",
+      "seed_count": 3
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_formal256/single_h20_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_v2/paired_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_v2/single_h20_per_seed.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_v2/stage_b_paired_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_v2/stage_c_64seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_v2/stage_c_speed_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_v3_anchor/smoke/generation_per_seed.csv",
+      "seed_count": 4
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_v3_anchor/stage_b/generation_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_v3_anchor/stage_b/quality_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_v3_anchor/stage_c/generation_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_v3_anchor/stage_c/quality_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/gbsa_tcl_p0/per_seed_results.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/gbsa_tcl_p1/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/gbsa_tcl_prospective32/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/gbsa_tcl_prospective32/severe_gbsa_seeds.csv",
+      "seed_count": 6
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/tcl_formal256_root_cause/score_hidden_drift_per_seed_bin.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/tcl_formal256_root_cause/tcl_bad_seed_case_studies.csv",
+      "seed_count": 30
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_formal256/generation_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_formal256/paired_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_formal256/quality_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_formal256/seed_audit.json",
+      "seed_count": 3
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_formal256/single_h20_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_v2/paired_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_v2/single_h20_per_seed.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_v2/stage_b_paired_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_v2/stage_c_64seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_v2/stage_c_speed_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_v3_anchor/smoke/generation_per_seed.csv",
+      "seed_count": 4
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_v3_anchor/stage_b/generation_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_v3_anchor/stage_b/quality_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_v3_anchor/stage_c/generation_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_v3_anchor/stage_c/quality_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/gbsa_tcl_p0/per_seed_results.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/gbsa_tcl_p1/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/gbsa_tcl_prospective32/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/gbsa_tcl_prospective32/severe_gbsa_seeds.csv",
+      "seed_count": 6
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/shared_field_dynamics/seeds.json",
+      "seed_count": 128
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/tcl_formal256_root_cause/score_hidden_drift_per_seed_bin.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/tcl_formal256_root_cause/tcl_bad_seed_case_studies.csv",
+      "seed_count": 30
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_formal256/generation_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_formal256/paired_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_formal256/quality_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_formal256/seed_audit.json",
+      "seed_count": 3
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_formal256/single_h20_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_v2/paired_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_v2/single_h20_per_seed.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_v2/stage_b_paired_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_v2/stage_c_64seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_v2/stage_c_speed_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_v3_anchor/smoke/generation_per_seed.csv",
+      "seed_count": 4
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_v3_anchor/stage_b/generation_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_v3_anchor/stage_b/quality_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_v3_anchor/stage_c/generation_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_v3_anchor/stage_c/quality_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/gbsa_tcl_p0/per_seed_results.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/gbsa_tcl_p1/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/gbsa_tcl_prospective32/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/gbsa_tcl_prospective32/severe_gbsa_seeds.csv",
+      "seed_count": 6
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/tcl_formal256_root_cause/score_hidden_drift_per_seed_bin.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/tcl_formal256_root_cause/tcl_bad_seed_case_studies.csv",
+      "seed_count": 30
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/corrector_residual_distillation_formal256/generation_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/corrector_residual_distillation_formal256/paired_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/corrector_residual_distillation_formal256/quality_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/corrector_residual_distillation_formal256/seed_audit.json",
+      "seed_count": 3
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/corrector_residual_distillation_formal256/single_h20_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/corrector_residual_distillation_v2/paired_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/corrector_residual_distillation_v2/single_h20_per_seed.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/corrector_residual_distillation_v2/stage_b_paired_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/corrector_residual_distillation_v2/stage_c_64seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/corrector_residual_distillation_v2/stage_c_speed_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/corrector_residual_distillation_v3_anchor/smoke/generation_per_seed.csv",
+      "seed_count": 4
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/corrector_residual_distillation_v3_anchor/stage_b/generation_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/corrector_residual_distillation_v3_anchor/stage_b/quality_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/corrector_residual_distillation_v3_anchor/stage_c/generation_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/corrector_residual_distillation_v3_anchor/stage_c/quality_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/fresh_seed_audit.json",
+      "seed_count": 320
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/fresh_seed_audit_attempt1.json",
+      "seed_count": 320
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/branch_manifest.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816000/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816001/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816002/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816003/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816004/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816005/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816006/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816007/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816008/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816009/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816010/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816011/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816012/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816013/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816014/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816015/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816016/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816017/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816018/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816019/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816020/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816021/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816022/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816023/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816024/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816025/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816026/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816027/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816028/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816029/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816030/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/generation/816031/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/oracle_dataset.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/oracle/oracle_seeds.json",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/counterfactual_adaptive_cfg_v3/preregistered_future_seeds.json",
+      "seed_count": 288
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/gbsa_tcl_p0/per_seed_results.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/gbsa_tcl_p1/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/gbsa_tcl_prospective32/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/gbsa_tcl_prospective32/severe_gbsa_seeds.csv",
+      "seed_count": 6
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/tcl_formal256_root_cause/score_hidden_drift_per_seed_bin.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle/experiments/tcl_formal256_root_cause/tcl_bad_seed_case_studies.csv",
+      "seed_count": 30
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/closed_loop_force_guidance_p0/generation_manifest.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/closed_loop_force_guidance_p0/seeds.json",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_formal256/generation_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_formal256/paired_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_formal256/quality_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_formal256/seed_audit.json",
+      "seed_count": 3
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_formal256/single_h20_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_v2/paired_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_v2/single_h20_per_seed.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_v2/stage_b_paired_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_v2/stage_c_64seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_v2/stage_c_speed_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_v3_anchor/smoke/generation_per_seed.csv",
+      "seed_count": 4
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_v3_anchor/stage_b/generation_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_v3_anchor/stage_b/quality_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_v3_anchor/stage_c/generation_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_v3_anchor/stage_c/quality_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/gbsa_tcl_p0/per_seed_results.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/gbsa_tcl_p1/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/gbsa_tcl_prospective32/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/gbsa_tcl_prospective32/severe_gbsa_seeds.csv",
+      "seed_count": 6
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/tcl_formal256_root_cause/score_hidden_drift_per_seed_bin.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/tcl_formal256_root_cause/tcl_bad_seed_case_studies.csv",
+      "seed_count": 30
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_formal256/generation_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_formal256/paired_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_formal256/quality_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_formal256/seed_audit.json",
+      "seed_count": 3
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_formal256/single_h20_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_v2/paired_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_v2/single_h20_per_seed.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_v2/stage_b_paired_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_v2/stage_c_64seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_v2/stage_c_speed_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_v3_anchor/smoke/generation_per_seed.csv",
+      "seed_count": 4
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_v3_anchor/stage_b/generation_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_v3_anchor/stage_b/quality_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_v3_anchor/stage_c/generation_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_v3_anchor/stage_c/quality_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/gbsa_tcl_p0/per_seed_results.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/gbsa_tcl_p1/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/gbsa_tcl_prospective32/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/gbsa_tcl_prospective32/severe_gbsa_seeds.csv",
+      "seed_count": 6
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/tcl_formal256_root_cause/score_hidden_drift_per_seed_bin.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/tcl_formal256_root_cause/tcl_bad_seed_case_studies.csv",
+      "seed_count": 30
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_formal256/generation_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_formal256/paired_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_formal256/quality_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_formal256/seed_audit.json",
+      "seed_count": 3
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_formal256/single_h20_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_v2/paired_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_v2/single_h20_per_seed.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_v2/stage_b_paired_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_v2/stage_c_64seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_v2/stage_c_speed_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_v3_anchor/smoke/generation_per_seed.csv",
+      "seed_count": 4
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_v3_anchor/stage_b/generation_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_v3_anchor/stage_b/quality_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_v3_anchor/stage_c/generation_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_v3_anchor/stage_c/quality_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/gbsa_tcl_p0/per_seed_results.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/gbsa_tcl_p1/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/gbsa_tcl_prospective32/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/gbsa_tcl_prospective32/severe_gbsa_seeds.csv",
+      "seed_count": 6
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/tcl_formal256_root_cause/score_hidden_drift_per_seed_bin.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/tcl_formal256_root_cause/tcl_bad_seed_case_studies.csv",
+      "seed_count": 30
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/adaptive_cfg_force_guidance_compatibility/generation_manifest.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/adaptive_cfg_force_guidance_compatibility/seeds.json",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_formal256/generation_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_formal256/paired_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_formal256/quality_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_formal256/seed_audit.json",
+      "seed_count": 3
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_formal256/single_h20_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_v2/paired_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_v2/single_h20_per_seed.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_v2/stage_b_paired_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_v2/stage_c_64seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_v2/stage_c_speed_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_v3_anchor/smoke/generation_per_seed.csv",
+      "seed_count": 4
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_v3_anchor/stage_b/generation_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_v3_anchor/stage_b/quality_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_v3_anchor/stage_c/generation_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_v3_anchor/stage_c/quality_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/gbsa_tcl_p0/per_seed_results.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/gbsa_tcl_p1/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/gbsa_tcl_prospective32/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/gbsa_tcl_prospective32/severe_gbsa_seeds.csv",
+      "seed_count": 6
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_equal_budget_post_generation/generation_manifest.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_equal_budget_post_generation/seeds.json",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_force_direction_ablation/generation_manifest.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_force_direction_ablation/seeds.json",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal256/formal256_seeds.json",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal256/generation_manifest.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/formal32_seeds.json",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/generation_manifest.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/p0_paired_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_trust_region_ablation/generation_manifest.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_trust_region_ablation/seeds.json",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/tcl_formal256_root_cause/score_hidden_drift_per_seed_bin.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/tcl_formal256_root_cause/tcl_bad_seed_case_studies.csv",
+      "seed_count": 30
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/corrector_residual_distillation_formal256/generation_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/corrector_residual_distillation_formal256/paired_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/corrector_residual_distillation_formal256/quality_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/corrector_residual_distillation_formal256/seed_audit.json",
+      "seed_count": 3
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/corrector_residual_distillation_formal256/single_h20_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/corrector_residual_distillation_v2/paired_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/corrector_residual_distillation_v2/single_h20_per_seed.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/corrector_residual_distillation_v2/stage_b_paired_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/corrector_residual_distillation_v2/stage_c_64seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/corrector_residual_distillation_v2/stage_c_speed_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/corrector_residual_distillation_v3_anchor/smoke/generation_per_seed.csv",
+      "seed_count": 4
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/corrector_residual_distillation_v3_anchor/stage_b/generation_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/corrector_residual_distillation_v3_anchor/stage_b/quality_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/corrector_residual_distillation_v3_anchor/stage_c/generation_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/corrector_residual_distillation_v3_anchor/stage_c/quality_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/gbsa_tcl_p0/per_seed_results.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/gbsa_tcl_p1/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/gbsa_tcl_prospective32/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/gbsa_tcl_prospective32/severe_gbsa_seeds.csv",
+      "seed_count": 6
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1005324889/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1035381833/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1041947670/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1053523156/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1087996375/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/109082242/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/113853813/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1142766742/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1155501844/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1208981552/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1221072509/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1233854684/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1249110070/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/126960050/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1270071446/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1276474642/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1296697044/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1297547924/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1318954338/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1329470844/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1393583763/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1421391230/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1423479236/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1485864154/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1516672514/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1542731308/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1548843459/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1555616037/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/155910276/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1583612298/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1597356697/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1598382625/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/160821572/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1613930223/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1644542264/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1651287497/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1665818091/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1688718973/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1712671732/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/174410081/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1747410652/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1747558664/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1790788560/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1831201724/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1841790523/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1852640768/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1856430612/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1861262823/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1863171880/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1868771310/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1911809894/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/193620773/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/1940568877/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/203764916/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/207212455/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/212796135/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/218304137/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/257065429/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/260907835/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/287853157/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/289561097/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/304043025/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/324263109/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/363216584/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/382006927/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/386188596/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/386445128/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/401698240/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/443898244/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/452692048/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/464259361/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/478909737/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/490275602/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/491429270/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/511257770/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/567592652/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/580675345/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/590931473/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/661952643/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/693885026/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/721276259/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/728065790/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/729504191/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/759460169/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/798435468/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/809152485/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/839102908/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/853598475/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/877876188/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/877906471/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/885178950/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/885478518/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/891955101/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/904442434/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/932363020/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation/934406064/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/generation_manifest.csv",
+      "seed_count": 96
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/seeds.json",
+      "seed_count": 97
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/fresh_seed_audit.json",
+      "seed_count": 35
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/risk_calibrated_adaptive_cfg/future_seed_reservations.json",
+      "seed_count": 288
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/tcl_formal256_root_cause/score_hidden_drift_per_seed_bin.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg/experiments/tcl_formal256_root_cause/tcl_bad_seed_case_studies.csv",
+      "seed_count": 30
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/corrector_residual_distillation_formal256/generation_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/corrector_residual_distillation_formal256/paired_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/corrector_residual_distillation_formal256/quality_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/corrector_residual_distillation_formal256/seed_audit.json",
+      "seed_count": 3
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/corrector_residual_distillation_formal256/single_h20_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/corrector_residual_distillation_v2/paired_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/corrector_residual_distillation_v2/single_h20_per_seed.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/corrector_residual_distillation_v2/stage_b_paired_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/corrector_residual_distillation_v2/stage_c_64seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/corrector_residual_distillation_v2/stage_c_speed_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/corrector_residual_distillation_v3_anchor/smoke/generation_per_seed.csv",
+      "seed_count": 4
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/corrector_residual_distillation_v3_anchor/stage_b/generation_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/corrector_residual_distillation_v3_anchor/stage_b/quality_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/corrector_residual_distillation_v3_anchor/stage_c/generation_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/corrector_residual_distillation_v3_anchor/stage_c/quality_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/gbsa_tcl_p0/per_seed_results.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/gbsa_tcl_p1/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/gbsa_tcl_prospective32/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/gbsa_tcl_prospective32/severe_gbsa_seeds.csv",
+      "seed_count": 6
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/robust_adaptive_cfg_v2/formal256/seeds.json",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/robust_adaptive_cfg_v2/fresh_seed_audit.json",
+      "seed_count": 288
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/robust_adaptive_cfg_v2/p0/generation_manifest.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/robust_adaptive_cfg_v2/p0/harm_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/robust_adaptive_cfg_v2/p0/seeds.json",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/tcl_formal256_root_cause/score_hidden_drift_per_seed_bin.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/tcl_formal256_root_cause/tcl_bad_seed_case_studies.csv",
+      "seed_count": 30
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1008802661/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1011903919/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1032252886/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1040725747/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1050323365/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1060268890/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1066810302/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1070679787/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1080727011/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1098027717/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1100785985/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1105927795/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1112566210/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1131590584/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1171244086/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1184082077/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1196191701/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1201187245/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1228428891/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1236112402/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1248647196/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1263202786/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1269301111/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1272067890/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1292009217/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1292213286/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1296112041/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1323055301/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1331552103/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1371438076/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1405698998/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1437626336/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/146948382/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1498985437/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1527198104/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1541501955/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1555622276/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1567233366/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1614121783/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1616139780/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1626858163/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1633026150/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1643483803/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1645465026/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1654683881/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1655188344/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/171924261/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1725775044/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/176036815/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1763781206/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1780077768/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1787643087/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1788303484/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1801097579/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1819421295/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1824874635/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1854330553/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1860580124/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1861142660/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1871969434/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1892915081/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1901369760/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1905137195/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1908602992/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1922130539/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1926675319/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1931465345/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/193196200/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/1957487114/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/208070397/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/210949024/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/226977955/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/247306632/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/329075602/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/339287199/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/349119991/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/356422253/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/370064325/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/372559708/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/394207600/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/406679862/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/407038022/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/420985272/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/485984019/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/488802358/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/489383313/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/498902457/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/538507155/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/575008366/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/578798667/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/581301694/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/592933186/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/614409663/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/618073506/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/638386764/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/644493088/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/655848584/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/661881342/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/664071405/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/668902302/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/696550929/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/703313762/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/756810399/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/765725715/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/774039034/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/775505398/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/779385489/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/791687238/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/794005645/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/798972868/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/822205943/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/849438317/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/854968189/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/866079983/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/877923450/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/893917591/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/900852431/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/902037397/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/910719144/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/913090697/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/931551379/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/936954973/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/941035185/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/945004929/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/952218939/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/977124379/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/995173371/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation/997454755/branch_manifest.csv",
+      "seed_count": 1
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/generation_manifest.csv",
+      "seed_count": 128
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/seed_overlap_audit.json",
+      "seed_count": 21
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/dataset/seeds.json",
+      "seed_count": 129
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/calibrated_safe_selection_cfg/future_seed_reservations.json",
+      "seed_count": 288
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/corrector_residual_distillation_formal256/generation_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/corrector_residual_distillation_formal256/paired_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/corrector_residual_distillation_formal256/quality_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/corrector_residual_distillation_formal256/seed_audit.json",
+      "seed_count": 3
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/corrector_residual_distillation_formal256/single_h20_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/corrector_residual_distillation_v2/paired_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/corrector_residual_distillation_v2/single_h20_per_seed.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/corrector_residual_distillation_v2/stage_b_paired_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/corrector_residual_distillation_v2/stage_c_64seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/corrector_residual_distillation_v2/stage_c_speed_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/corrector_residual_distillation_v3_anchor/smoke/generation_per_seed.csv",
+      "seed_count": 4
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/corrector_residual_distillation_v3_anchor/stage_b/generation_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/corrector_residual_distillation_v3_anchor/stage_b/quality_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/corrector_residual_distillation_v3_anchor/stage_c/generation_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/corrector_residual_distillation_v3_anchor/stage_c/quality_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/gbsa_tcl_p0/per_seed_results.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/gbsa_tcl_p1/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/gbsa_tcl_prospective32/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/gbsa_tcl_prospective32/severe_gbsa_seeds.csv",
+      "seed_count": 6
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/seeds.json",
+      "seed_count": 97
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/risk_calibrated_adaptive_cfg/fresh_seed_audit.json",
+      "seed_count": 35
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/risk_calibrated_adaptive_cfg/future_seed_reservations.json",
+      "seed_count": 288
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/tcl_formal256_root_cause/score_hidden_drift_per_seed_bin.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg/experiments/tcl_formal256_root_cause/tcl_bad_seed_case_studies.csv",
+      "seed_count": 30
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_formal256/generation_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_formal256/paired_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_formal256/quality_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_formal256/seed_audit.json",
+      "seed_count": 3
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_formal256/single_h20_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_v2/paired_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_v2/single_h20_per_seed.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_v2/stage_b_paired_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_v2/stage_c_64seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_v2/stage_c_speed_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_v3_anchor/smoke/generation_per_seed.csv",
+      "seed_count": 4
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_v3_anchor/stage_b/generation_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_v3_anchor/stage_b/quality_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_v3_anchor/stage_c/generation_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_v3_anchor/stage_c/quality_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/gbsa_tcl_p0/per_seed_results.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/gbsa_tcl_p1/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/gbsa_tcl_prospective32/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/gbsa_tcl_prospective32/severe_gbsa_seeds.csv",
+      "seed_count": 6
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/multifield_self_conditioning_p0/seeds.json",
+      "seed_count": 2
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/tcl_formal256_root_cause/score_hidden_drift_per_seed_bin.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/tcl_formal256_root_cause/tcl_bad_seed_case_studies.csv",
+      "seed_count": 30
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_formal256/generation_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_formal256/paired_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_formal256/quality_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_formal256/seed_audit.json",
+      "seed_count": 3
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_formal256/single_h20_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_v2/paired_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_v2/single_h20_per_seed.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_v2/stage_b_paired_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_v2/stage_c_64seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_v2/stage_c_speed_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_v3_anchor/smoke/generation_per_seed.csv",
+      "seed_count": 4
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_v3_anchor/stage_b/generation_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_v3_anchor/stage_b/quality_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_v3_anchor/stage_c/generation_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_v3_anchor/stage_c/quality_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/gbsa_tcl_p0/per_seed_results.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/gbsa_tcl_p1/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/gbsa_tcl_prospective32/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/gbsa_tcl_prospective32/severe_gbsa_seeds.csv",
+      "seed_count": 6
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/tcl_formal256_root_cause/score_hidden_drift_per_seed_bin.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/tcl_formal256_root_cause/tcl_bad_seed_case_studies.csv",
+      "seed_count": 30
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/corrector_residual_distillation_formal256/generation_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/corrector_residual_distillation_formal256/paired_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/corrector_residual_distillation_formal256/quality_per_seed.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/corrector_residual_distillation_formal256/seed_audit.json",
+      "seed_count": 3
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/corrector_residual_distillation_formal256/single_h20_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/corrector_residual_distillation_v2/paired_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/corrector_residual_distillation_v2/single_h20_per_seed.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/corrector_residual_distillation_v2/stage_b_paired_per_seed.csv",
+      "seed_count": 16
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/corrector_residual_distillation_v2/stage_c_64seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/corrector_residual_distillation_v2/stage_c_speed_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/corrector_residual_distillation_v3_anchor/smoke/generation_per_seed.csv",
+      "seed_count": 4
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/corrector_residual_distillation_v3_anchor/stage_b/generation_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/corrector_residual_distillation_v3_anchor/stage_b/quality_per_seed.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/corrector_residual_distillation_v3_anchor/stage_c/generation_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/corrector_residual_distillation_v3_anchor/stage_c/quality_per_seed.csv",
+      "seed_count": 64
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/gbsa_tcl_p0/per_seed_results.csv",
+      "seed_count": 8
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/gbsa_tcl_p1/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/gbsa_tcl_prospective32/per_seed_results.csv",
+      "seed_count": 32
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/gbsa_tcl_prospective32/severe_gbsa_seeds.csv",
+      "seed_count": 6
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/risk_calibrated_adaptive_cfg/dataset/seeds.json",
+      "seed_count": 97
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/risk_calibrated_adaptive_cfg/fresh_seed_audit.json",
+      "seed_count": 35
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/risk_calibrated_adaptive_cfg/future_seed_reservations.json",
+      "seed_count": 288
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/tcl_formal256_root_cause/score_hidden_drift_per_seed_bin.csv",
+      "seed_count": 256
+    },
+    {
+      "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg/experiments/tcl_formal256_root_cause/tcl_bad_seed_case_studies.csv",
+      "seed_count": 30
+    }
+  ],
+  "new_counts": {
+    "calibration": 32,
+    "p0": 32,
+    "formal256": 256
+  },
+  "new_unique_seed_count": 320,
+  "new_vs_historical_overlap": [],
+  "cross_cohort_overlap": {
+    "calibration_p0": [],
+    "calibration_formal256": [],
+    "p0_formal256": []
+  }
+}

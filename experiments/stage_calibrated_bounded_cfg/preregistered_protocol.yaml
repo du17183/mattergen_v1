@@ -1,0 +1,63 @@
+schema_version: 1
+frozen_before_new_outcomes: true
+scientific_question: >-
+  Can one globally calibrated, low-dimensional, bounded CFG pulse exploit diffusion-stage
+  differences while remaining more robust than permanent guidance modification?
+cohorts:
+  calibration: 32
+  p0: 32
+  formal256: 256
+  paired_by_seed: true
+  historical_overlap_required: 0
+primary:
+  metric: property_absolute_error
+  target_dft_mag_density: 0.1
+  invalid_objective: 1.0
+  lower_is_better: true
+  surrogate: CHGNet_0.3.0
+secondary: [e_hull, stable, nus, validity, novel, unique]
+harm:
+  property_definition: schedule_error > 1.05 * c0_error
+  e_hull_definition: schedule_e_hull - c0_e_hull > 0.02
+  stable_definition: c0_stable and not schedule_stable
+  positive_degradation: max(schedule_error - c0_error, 0)
+  tail_quantiles: [0.75, 0.90]
+selection:
+  lambda: 1.0
+  robust_score: median_property_gain - lambda * p90_positive_degradation
+  tie_order: [higher_robust_score, higher_mean_gain, lower_harm_rate, shorter_duration, smaller_abs_delta, earlier_start]
+  guardrails:
+    validity_drop_max_pp: 0.05
+    stable_drop_max_pp: 0.05
+    nus_drop_max_pp: 0.05
+    mean_e_hull_worsening_max: 0.02
+  calibration_go:
+    c0_relative_mean_or_median_gain_min: 0.05
+    wins_strictly_greater_than_losses: true
+    permanent_harm_relative_reduction_min: 0.25
+    permanent_tail_relative_reduction_fallback_min: 0.25
+    robust_score_must_beat_best_constant: true
+    robust_score_must_beat_permanent_counterpart: true
+  p0_go:
+    c0_relative_mean_or_median_gain_min: 0.05
+    wins_strictly_greater_than_losses: true
+    bounded_must_beat_permanent_on_harm_or_p90_tail: true
+    bounded_must_beat_constant_on_property_and_robustness_composite: true
+    guardrails_required: true
+  formal_confirmed:
+    paired_mean_gain_bootstrap_ci95_lower_strictly_positive: true
+    bounded_must_beat_permanent_on_harm_or_p90_tail: true
+    bounded_must_beat_constant_on_property_and_robustness_composite: true
+    no_adverse_secondary_bootstrap_ci: true
+bootstrap:
+  resamples: 20000
+  rng_seed_calibration: 2026091511
+  rng_seed_p0: 2026091512
+  rng_seed_formal256: 2026091513
+stopping:
+  calibration_fail: stop_before_p0
+  p0_fail: stop_before_formal256
+  formal_not_confirmed: stop
+  rescue_tuning: prohibited
+  grid_expansion: prohibited
+  two_pulse_before_confirmation: prohibited
