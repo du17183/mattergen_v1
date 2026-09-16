@@ -1,0 +1,19 @@
+schema_version: 1
+frozen_before_new_outcomes: true
+base_cfg: 2.0
+low_cfg: 1.9
+pulse_start: 400
+pulse_duration: 100
+policies:
+  - {policy_id: C0, kind: constant, scales: {atomic: 2.0, pos: 2.0, cell: 2.0}}
+  - {policy_id: G19, kind: constant, scales: {atomic: 1.9, pos: 1.9, cell: 1.9}}
+  - {policy_id: A19, kind: constant, scales: {atomic: 1.9, pos: 2.0, cell: 2.0}}
+  - {policy_id: P19, kind: constant, scales: {atomic: 2.0, pos: 1.9, cell: 2.0}}
+  - {policy_id: C19, kind: constant, scales: {atomic: 2.0, pos: 2.0, cell: 1.9}}
+  - {policy_id: AP19, kind: constant, scales: {atomic: 1.9, pos: 1.9, cell: 2.0}}
+  - {policy_id: AC19, kind: constant, scales: {atomic: 1.9, pos: 2.0, cell: 1.9}}
+  - {policy_id: PC19, kind: constant, scales: {atomic: 2.0, pos: 1.9, cell: 1.9}}
+  - {policy_id: GPulse, kind: pulse, start: 400, duration: 100, scales: {atomic: 1.9, pos: 1.9, cell: 1.9}}
+  - {policy_id: APulse, kind: pulse, start: 400, duration: 100, scales: {atomic: 1.9, pos: 2.0, cell: 2.0}}
+  - {policy_id: PPulse, kind: pulse, start: 400, duration: 100, scales: {atomic: 2.0, pos: 1.9, cell: 2.0}}
+  - {policy_id: CPulse, kind: pulse, start: 400, duration: 100, scales: {atomic: 2.0, pos: 2.0, cell: 1.9}}

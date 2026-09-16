@@ -1,0 +1,12 @@
+{
+  "atomic_numbers_identical": true,
+  "positions_max_abs_error": 0.0,
+  "cell_max_abs_error": 0.0,
+  "success": true,
+  "seed": 42,
+  "historical_seed_only": true,
+  "elapsed_seconds": 168.6531969110947,
+  "mattergen_score_calls": 4000,
+  "physical_gpu": "5",
+  "status": "PASS"
+}
