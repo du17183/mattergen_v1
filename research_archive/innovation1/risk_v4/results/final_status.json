@@ -1,0 +1,12 @@
+{
+  "FULL_OUTCOME_DATASET": "COMPLETE",
+  "OFFLINE_SELECTIVE_GATE": "FAIL",
+  "OFFLINE_PREDICTABILITY": "NOT_RUN",
+  "RISK_CALIBRATED_CFG_P0": "NOT_RUN",
+  "RISK_CALIBRATED_CFG_FORMAL256": "NOT_RUN",
+  "SAMPLE_ADAPTIVITY": "NOT_RUN",
+  "INNOVATION1_FINAL_STATUS": "MIXED",
+  "reason": "No validation operating point reached coverage >=15% and selective property harm <=10%.",
+  "next": "STOP",
+  "rescue_tuning": false
+}

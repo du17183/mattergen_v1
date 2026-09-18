@@ -1,0 +1,5 @@
+schedule_id,n,property_harm_count,property_harm_rate,e_hull_comparable_n,e_hull_harm_count,e_hull_harm_rate,stable_loss_count,stable_loss_rate,validity_loss_count,nus_loss_count
+C0,32,0,0.0,32,0,0.0,0,0.0,0,0
+C_G190,32,10,0.3125,32,20,0.625,10,0.3125,0,10
+P_T400_DM10,32,12,0.375,32,13,0.40625,10,0.3125,0,6
+S_T400_DM10_K100,32,11,0.34375,32,18,0.5625,13,0.40625,0,10

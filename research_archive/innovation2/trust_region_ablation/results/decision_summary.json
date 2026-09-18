@@ -1,0 +1,124 @@
+{
+  "DFT_VERIFIED": false,
+  "SURROGATE_PROPERTY_EVAL": true,
+  "audit": "PASS",
+  "bounded_guardrails": {
+    "all_pass": true,
+    "pass": {
+      "e_hull_increase_ev_atom": true,
+      "mag_mae_worsening_fraction": true,
+      "nus_drop_pp": true,
+      "runtime_ratio": true,
+      "validity_drop_pp": true
+    },
+    "values": {
+      "e_hull_increase_ev_atom": -2.1791754410166453e-05,
+      "mag_mae_worsening_fraction": 0.002849219196052132,
+      "nus_drop_pp": 0.0,
+      "runtime_ratio": 1.0096908339962045,
+      "validity_drop_pp": 0.0
+    }
+  },
+  "completed_utc": "2026-09-14T02:24:12.094651+00:00",
+  "conclusion": "TRUST_REGION_NOT_SUPPORTED",
+  "guardrails": {
+    "all_pass": true,
+    "pass": {
+      "e_hull_increase_ev_atom": true,
+      "mag_mae_worsening_fraction": true,
+      "nus_drop_pp": true,
+      "runtime_ratio": true,
+      "validity_drop_pp": true
+    },
+    "values": {
+      "e_hull_increase_ev_atom": -2.1791754410166453e-05,
+      "mag_mae_worsening_fraction": 0.002849219196052132,
+      "nus_drop_pp": 0.0,
+      "runtime_ratio": 1.0096908339962045,
+      "validity_drop_pp": 0.0
+    }
+  },
+  "independent_mlip": {
+    "DFT_VERIFIED": false,
+    "absolute_bootstrap_ci95": [
+      0.00023075750488216955,
+      0.012770494405770437
+    ],
+    "absolute_improvement": 0.0063451522851788985,
+    "baseline": "T0",
+    "baseline_mean": 0.14767950664294283,
+    "bootstrap_resamples": 20000,
+    "ci_excludes_zero_positive": true,
+    "cohort": "A4",
+    "coverage_fraction": 1.0,
+    "elapsed_seconds": 1.4269982519908808,
+    "elements_Z": [
+      1,
+      6,
+      7,
+      8,
+      9,
+      26,
+      27,
+      64
+    ],
+    "formal256_evaluation_trigger": true,
+    "losses": 10,
+    "mean_relative_reduction": 0.042965692596198264,
+    "method": "T1",
+    "method_mean": 0.14133435435776392,
+    "n": 32,
+    "relative_bootstrap_ci95": [
+      0.001630828510662514,
+      0.0931523948537848
+    ],
+    "status": "PASS",
+    "ties": 0,
+    "wins": 22
+  },
+  "interpretation": "Necessary refers only to this frozen linear unbounded comparator and these guardrails, not all uncapped algorithms.",
+  "n_paired": 32,
+  "primary": {
+    "absolute_ci95": [
+      0.034195606410041365,
+      0.06125353271818586
+    ],
+    "absolute_improvement": 0.04563625663437739,
+    "baseline": "T0",
+    "baseline_mean": 0.2771384390608932,
+    "bootstrap_resamples": 20000,
+    "bootstrap_seed": 20260915,
+    "losses": 0,
+    "method": "T1",
+    "method_mean": 0.23150218242651582,
+    "metric": "maxF_ev_per_a",
+    "n_pairs": 32,
+    "relative_ci95": [
+      0.10129894658544734,
+      0.3688559332814224
+    ],
+    "relative_improvement": 0.16466953046650493,
+    "ties": 0,
+    "win_binomial_one_sided_p": 2.3283064365386963e-10,
+    "wins": 32
+  },
+  "status": "NOT_SUPPORTED",
+  "track": "A4",
+  "unbounded_guardrails": {
+    "all_pass": true,
+    "pass": {
+      "e_hull_increase_ev_atom": true,
+      "mag_mae_worsening_fraction": true,
+      "nus_drop_pp": true,
+      "runtime_ratio": true,
+      "validity_drop_pp": true
+    },
+    "values": {
+      "e_hull_increase_ev_atom": -3.104212887602986e-05,
+      "mag_mae_worsening_fraction": 0.023674027780089788,
+      "nus_drop_pp": 0.0,
+      "runtime_ratio": 1.0026280336599995,
+      "validity_drop_pp": 0.0
+    }
+  }
+}

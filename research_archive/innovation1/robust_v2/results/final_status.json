@@ -1,0 +1,9 @@
+{
+  "ROBUST_ADAPTIVE_CFG_P0": "FAIL",
+  "ROBUST_ADAPTIVE_CFG_FORMAL256": "NOT_RUN",
+  "INNOVATION1_FINAL_STATUS": "MIXED",
+  "parameters_retuned_after_results": false,
+  "all_data_retained": true,
+  "SURROGATE_PROPERTY_EVAL": true,
+  "DFT_VERIFIED": false
+}

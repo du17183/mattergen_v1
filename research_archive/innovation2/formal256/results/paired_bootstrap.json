@@ -1,0 +1,247 @@
+{
+  "MaxF": [
+    {
+      "absolute_ci95": [
+        0.04662706147198513,
+        0.10505693295754244
+      ],
+      "absolute_improvement": 0.0674968787966558,
+      "baseline": "C0",
+      "baseline_mean": 0.22640836794160712,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 2,
+      "method": "F0",
+      "method_mean": 0.15891148914495132,
+      "metric": "maxF_ev_per_a",
+      "n_pairs": 256,
+      "relative_ci95": [
+        0.21416622087171452,
+        0.4087580889652716
+      ],
+      "relative_improvement": 0.2981200713131941,
+      "ties": 0,
+      "win_binomial_one_sided_p": 2.8410403695694194e-73,
+      "wins": 254
+    }
+  ],
+  "secondary": [
+    {
+      "absolute_ci95": [
+        0.023272666908710413,
+        0.039666712612372944
+      ],
+      "absolute_improvement": 0.029329513063368496,
+      "baseline": "C0",
+      "baseline_mean": 0.09870230579787798,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 1,
+      "method": "F0",
+      "method_mean": 0.06937279273450948,
+      "metric": "atomic_force_mean_ev_per_a",
+      "n_pairs": 256,
+      "relative_ci95": [
+        0.24012089456435182,
+        0.3696274300736683
+      ],
+      "relative_improvement": 0.2971512451130504,
+      "ties": 0,
+      "win_binomial_one_sided_p": 2.2194953186592723e-75,
+      "wins": 255
+    },
+    {
+      "absolute_ci95": [
+        0.002141731441471739,
+        0.01471992959062737
+      ],
+      "absolute_improvement": 0.007243722420342312,
+      "baseline": "C0",
+      "baseline_mean": 0.051136946776399364,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 19,
+      "method": "F0",
+      "method_mean": 0.04389322435605705,
+      "metric": "rmsd_a",
+      "n_pairs": 256,
+      "relative_ci95": [
+        0.045381773461353796,
+        0.2595297363793719
+      ],
+      "relative_improvement": 0.141653400857429,
+      "ties": 21,
+      "win_binomial_one_sided_p": 8.670851308614576e-44,
+      "wins": 216
+    },
+    {
+      "absolute_ci95": [
+        -0.0013237281158251968,
+        3.2753079255336346e-05
+      ],
+      "absolute_improvement": -0.0004694198432404831,
+      "baseline": "C0",
+      "baseline_mean": 0.09129777083951893,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 88,
+      "method": "F0",
+      "method_mean": 0.0917671906827594,
+      "metric": "e_hull_ev_per_atom",
+      "n_pairs": 256,
+      "relative_ci95": [
+        -0.015042142788530891,
+        0.000372668261957882
+      ],
+      "relative_improvement": -0.0051416353205995715,
+      "ties": 7,
+      "win_binomial_one_sided_p": 2.1737856668666173e-06,
+      "wins": 161
+    },
+    {
+      "absolute_ci95": [
+        -0.00023470259632169568,
+        -2.216404201083673e-05
+      ],
+      "absolute_improvement": -0.00011128024743968447,
+      "baseline": "C0",
+      "baseline_mean": 0.009756888912291078,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 161,
+      "method": "F0",
+      "method_mean": 0.009868169159730763,
+      "metric": "mag_absolute_error_a3",
+      "n_pairs": 256,
+      "relative_ci95": [
+        -0.024596998473795702,
+        -0.0022457392314144055
+      ],
+      "relative_improvement": -0.011405300238634642,
+      "ties": 0,
+      "win_binomial_one_sided_p": 0.9999872662870104,
+      "wins": 95
+    },
+    {
+      "absolute_ci95": [
+        0.0,
+        0.0
+      ],
+      "absolute_improvement": 0.0,
+      "baseline": "C0",
+      "baseline_mean": 0.80859375,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 0,
+      "method": "F0",
+      "method_mean": 0.80859375,
+      "metric": "stable",
+      "n_pairs": 256,
+      "relative_ci95": [
+        0.0,
+        0.0
+      ],
+      "relative_improvement": 0.0,
+      "ties": 256,
+      "win_binomial_one_sided_p": 1.0,
+      "wins": 0
+    },
+    {
+      "absolute_ci95": [
+        -0.01171875,
+        0.0
+      ],
+      "absolute_improvement": -0.00390625,
+      "baseline": "C0",
+      "baseline_mean": 0.2109375,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 1,
+      "method": "F0",
+      "method_mean": 0.21484375,
+      "metric": "nus",
+      "n_pairs": 256,
+      "relative_ci95": [
+        -0.0625,
+        0.0
+      ],
+      "relative_improvement": -0.018518518518518517,
+      "ties": 255,
+      "win_binomial_one_sided_p": 1.0,
+      "wins": 0
+    },
+    {
+      "absolute_ci95": [
+        0.0,
+        0.0
+      ],
+      "absolute_improvement": 0.0,
+      "baseline": "C0",
+      "baseline_mean": 1.0,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 0,
+      "method": "F0",
+      "method_mean": 1.0,
+      "metric": "valid",
+      "n_pairs": 256,
+      "relative_ci95": [
+        0.0,
+        0.0
+      ],
+      "relative_improvement": 0.0,
+      "ties": 256,
+      "win_binomial_one_sided_p": 1.0,
+      "wins": 0
+    },
+    {
+      "absolute_ci95": [
+        0.0,
+        0.0
+      ],
+      "absolute_improvement": 0.0,
+      "baseline": "C0",
+      "baseline_mean": 0.67578125,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 0,
+      "method": "F0",
+      "method_mean": 0.67578125,
+      "metric": "mag_hit",
+      "n_pairs": 256,
+      "relative_ci95": [
+        0.0,
+        0.0
+      ],
+      "relative_improvement": 0.0,
+      "ties": 256,
+      "win_binomial_one_sided_p": 1.0,
+      "wins": 0
+    },
+    {
+      "absolute_ci95": [
+        -3.730380564456442,
+        4.40070113071349
+      ],
+      "absolute_improvement": 0.1856510407562837,
+      "baseline": "C0",
+      "baseline_mean": 92.84878176247821,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 224,
+      "method": "F0",
+      "method_mean": 92.66313072172193,
+      "metric": "end_to_end_generation_seconds",
+      "n_pairs": 256,
+      "relative_ci95": [
+        -0.04037716277156946,
+        0.045768320768423465
+      ],
+      "relative_improvement": 0.0019994989404514565,
+      "ties": 0,
+      "win_binomial_one_sided_p": 1.0,
+      "wins": 32
+    }
+  ],
+  "secondary_sign_note": "All improvements are baseline minus candidate; for rates positive indicates rate decrease, not benefit."
+}

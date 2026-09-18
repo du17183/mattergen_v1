@@ -1,0 +1,17 @@
+{
+  "ensemble_size": 5,
+  "bootstrap_seeds": [
+    20260930,
+    20260931,
+    20260932,
+    20260933,
+    20260934
+  ],
+  "uncertainty": "sample standard deviation of five treatment-effect regressors",
+  "harm_probability": "mean probability from five harm classifiers",
+  "families": [
+    "ridge",
+    "tree"
+  ],
+  "fitted_timestep_family_pairs": 8
+}

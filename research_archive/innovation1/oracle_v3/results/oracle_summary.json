@@ -1,0 +1,70 @@
+{
+  "ORACLE_HEADROOM": "FAIL",
+  "next": "STOP_ADAPTIVE_CFG_RESEARCH",
+  "n_oracle_seeds": 32,
+  "n_short_states": 256,
+  "n_full_states": 64,
+  "n_short_candidate_outcomes": 768,
+  "n_full_candidate_outcomes": 192,
+  "short_property_objective_improvement_fraction": 0.5180950001655031,
+  "full_property_objective_improvement_fraction": 0.2722216574274152,
+  "short_selected_full_property_improvement_fraction": -0.06903365837579012,
+  "short_full_exact_label_agreement": 0.625,
+  "short_action_distribution": {
+    "DOWN": 0.17578125,
+    "KEEP": 0.6328125,
+    "UP": 0.19140625
+  },
+  "full_action_distribution": {
+    "DOWN": 0.234375,
+    "KEEP": 0.625,
+    "UP": 0.140625
+  },
+  "full_oracle_harm": {
+    "property_harm_rate": 0.0,
+    "ehull_harm_rate": 0.1875,
+    "stable_harm_rate": 0.09375,
+    "validity_harm_rate": 0.0
+  },
+  "short_selected_full_harm": {
+    "property_harm_rate": 0.15625,
+    "ehull_harm_rate": 0.15625,
+    "stable_harm_rate": 0.078125,
+    "validity_harm_rate": 0.0
+  },
+  "gate_checks": {
+    "short_property_improvement_ge_10pct": true,
+    "full_property_improvement_ge_10pct": true,
+    "short_non_keep_ge_20pct": true,
+    "full_non_keep_ge_20pct": true,
+    "full_max_action_share_le_80pct": true,
+    "full_down_share_ge_5pct": true,
+    "full_up_share_ge_5pct": true,
+    "short_full_label_agreement_ge_50pct": true,
+    "short_selected_full_improvement_ge_5pct": false,
+    "mean_ehull_worsening_le_0.02": true,
+    "stable_drop_le_5pp": true,
+    "nus_drop_le_5pp": true,
+    "validity_drop_le_5pp": true
+  },
+  "guardrails": {
+    "mean_ehull_worsening_le_0.02": true,
+    "stable_drop_le_5pp": true,
+    "nus_drop_le_5pp": true,
+    "validity_drop_le_5pp": true
+  },
+  "bootstrap": {
+    "metric": "selected_minus_cfg2_normalized_property_objective",
+    "cluster_unit": "seed",
+    "n_seeds": 32,
+    "n_states": 64,
+    "mean_delta": -0.08288022320638533,
+    "ci95_low": -0.11634964386378426,
+    "ci95_high": -0.05268447368295482,
+    "resamples": 20000,
+    "bootstrap_seed": 20260917
+  },
+  "parameters_retuned_after_results": false,
+  "surrogate_property_eval": true,
+  "dft_verified": false
+}

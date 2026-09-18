@@ -1,0 +1,12 @@
+{
+  "ORACLE_HEADROOM": "FAIL",
+  "ORACLE_PREDICTABILITY": "NOT_RUN",
+  "V3_P0": "NOT_RUN",
+  "V3_FORMAL256": "NOT_RUN",
+  "INNOVATION1_FINAL_STATUS": "MIXED",
+  "STOP_ADAPTIVE_CFG_RESEARCH": true,
+  "parameters_retuned_after_results": false,
+  "all_data_retained": true,
+  "surrogate_property_eval": true,
+  "dft_verified": false
+}

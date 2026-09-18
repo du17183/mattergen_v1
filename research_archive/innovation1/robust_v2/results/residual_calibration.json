@@ -1,0 +1,46 @@
+{
+  "version": "robust_adaptive_cfg_v2_calibration_v1",
+  "source": {
+    "purpose": "historical fixed-CFG=2 deterministic replay; calibration only",
+    "target_dft_mag_density": 0.2,
+    "seeds": [
+      744000,
+      744063
+    ],
+    "seed_count": 64,
+    "trace_rows": 128000,
+    "trace_sha256": "db79d2d0ee171bd7b828e0eaa0370281891db473ce27a7fd761dffa0768df0c1",
+    "all_archived_structures_matched": true
+  },
+  "transform": {
+    "name": "log_zscore_by_phase_field_time_bin",
+    "time_bins": 20,
+    "log_eps": 1e-12,
+    "sigma_floor": 1e-06,
+    "z_clip": 3.0,
+    "mu_estimator": "arithmetic mean of log residual",
+    "sigma_estimator": "sample standard deviation (ddof=1)"
+  },
+  "aggregation": "median(z_atomic,z_position,z_cell)",
+  "online_statistics": {
+    "phase_specific_ema": true,
+    "ema_beta": 0.95,
+    "first_observation": "initialize EMA to current z_median",
+    "control_signal": "phase-specific EMA of z_median"
+  },
+  "confidence": {
+    "signal_deadzone": 0.5967738602811492,
+    "signal_deadzone_rule": "baseline q0.75(|z_ema|)",
+    "signal_scale": 0.6069916812050751,
+    "signal_scale_rule": "max(q0.95(|z_ema|)-deadzone,0.25)",
+    "signal_confidence": "clip((abs(z_ema)-deadzone)/signal_scale,0,1)",
+    "median_field_disagreement": 0.6054115321142346,
+    "agreement_k": 1.1449190241542275,
+    "agreement_k_rule": "ln(2)/baseline_median(std(z_fields))",
+    "agreement_confidence": "exp(-agreement_k*std(z_fields))",
+    "final_confidence": "signal_confidence*agreement_confidence"
+  },
+  "calibration_table_sha256": "f4cbe9772049f5486384a9f05c966d9ca40828d4170a5d5f472f77d4fd0901bc",
+  "endpoint_quality_used": false,
+  "parameter_sweep_used": false
+}

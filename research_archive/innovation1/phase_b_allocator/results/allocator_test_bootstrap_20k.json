@@ -1,0 +1,16 @@
+{
+  "Linear_K2_property_gain_vs_Fixed_K2": {
+    "n": 16,
+    "mean": 0.0009631177398289687,
+    "ci95_low": -0.002618151676227706,
+    "ci95_high": 0.005213791196704975,
+    "resamples": 20000
+  },
+  "Linear_K2_property_gain_vs_Random_K2": {
+    "n": 16,
+    "mean": 0.001020988288322075,
+    "ci95_low": -0.0025602811277346,
+    "ci95_high": 0.005271661745198082,
+    "resamples": 20000
+  }
+}

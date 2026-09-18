@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "artifact_status": "RECONSTRUCTED_ARTIFACT",
+  "authorized_once": true,
+  "new_confirmatory_seeds_registered_before_reconstruction": false,
+  "phase_b_historical_decision_unchanged": true,
+  "phase_b_source_sha256": "1785f3199fd13894ea0f0cc30228cace90df01ec1991e0cabf9bffb0407659ee",
+  "phase_b_training_rows_sha256": "64026837ad8b714ab9e12bd8d94f4d6530e8d497b2fcb2171e2c1fac9f4f9331",
+  "phase_b_selection_sha256": "75cf875e76a3adc7082ff082a49c763e2e9fd78180caee644f6aa420ad63d750",
+  "feature_count_raw": 179,
+  "numeric_design_columns_after_interactions": 895,
+  "total_design_columns_after_policy_one_hot": 899,
+  "C": 1.0,
+  "train_seed_count": 32,
+  "top2_checks": {
+    "original_vs_reconstructed_validation": true,
+    "original_vs_reconstructed_test": true,
+    "reconstructed_vs_stored_test": true,
+    "test_seed_count": 16,
+    "test_exact_matches": 16
+  },
+  "validation_metric_checks": {
+    "property_mae": {
+      "actual": 0.017092612209458256,
+      "expected": 0.0170926122094582,
+      "abs_error": 5.551115123125783e-17,
+      "exact_within_tolerance": true
+    },
+    "recovered_oracle_headroom": {
+      "actual": 0.9737789114408729,
+      "expected": 0.9737789114408728,
+      "abs_error": 1.1102230246251565e-16,
+      "exact_within_tolerance": true
+    },
+    "safe_beneficial_coverage": {
+      "actual": 0.7,
+      "expected": 0.7,
+      "abs_error": 0.0,
+      "exact_within_tolerance": true
+    },
+    "candidate_hit_rate": {
+      "actual": 0.6875,
+      "expected": 0.6875,
+      "abs_error": 0.0,
+      "exact_within_tolerance": true
+    },
+    "top2_safe_oracle_recall": {
+      "actual": 0.8181818181818182,
+      "expected": 0.8181818181818182,
+      "abs_error": 0.0,
+      "exact_within_tolerance": true
+    },
+    "fallback_rate": {
+      "actual": 0.3125,
+      "expected": 0.3125,
+      "abs_error": 0.0,
+      "exact_within_tolerance": true
+    },
+    "e_hull": {
+      "actual": 0.054820788918856916,
+      "expected": 0.0548207889188569,
+      "abs_error": 1.3877787807814457e-17,
+      "exact_within_tolerance": true
+    },
+    "stable": {
+      "actual": 0.8125,
+      "expected": 0.8125,
+      "abs_error": 0.0,
+      "exact_within_tolerance": true
+    },
+    "novel": {
+      "actual": 0.75,
+      "expected": 0.75,
+      "abs_error": 0.0,
+      "exact_within_tolerance": true
+    },
+    "unique": {
+      "actual": 1.0,
+      "expected": 1.0,
+      "abs_error": 0.0,
+      "exact_within_tolerance": true
+    },
+    "nus": {
+      "actual": 0.5625,
+      "expected": 0.5625,
+      "abs_error": 0.0,
+      "exact_within_tolerance": true
+    },
+    "validity": {
+      "actual": 1.0,
+      "expected": 1.0,
+      "abs_error": 0.0,
+      "exact_within_tolerance": true
+    }
+  },
+  "test_metric_checks": {
+    "property_mae": {
+      "actual": 0.02363428801787834,
+      "expected": 0.0236342880178783,
+      "abs_error": 4.163336342344337e-17,
+      "exact_within_tolerance": true
+    },
+    "recovered_oracle_headroom": {
+      "actual": 0.8983785121011494,
+      "expected": 0.8983785121011494,
+      "abs_error": 0.0,
+      "exact_within_tolerance": true
+    },
+    "safe_beneficial_coverage": {
+      "actual": 0.7,
+      "expected": 0.7,
+      "abs_error": 0.0,
+      "exact_within_tolerance": true
+    },
+    "candidate_hit_rate": {
+      "actual": 0.375,
+      "expected": 0.375,
+      "abs_error": 0.0,
+      "exact_within_tolerance": true
+    },
+    "top2_safe_oracle_recall": {
+      "actual": 0.8571428571428571,
+      "expected": 0.8571428571428571,
+      "abs_error": 0.0,
+      "exact_within_tolerance": true
+    },
+    "fallback_rate": {
+      "actual": 0.625,
+      "expected": 0.625,
+      "abs_error": 0.0,
+      "exact_within_tolerance": true
+    }
+  },
+  "terminal_policy_exact": true,
+  "success": true,
+  "artifact_sha256": "bd3f5280957a6418e7d5275a3e7a576fc57872b3ad1bd19ae9ef7bef97d56d3a",
+  "parameters_sha256": "b316d1ff34fd0c6c48eb16919e43c0f374cf48712164c72ef36d7851d5358525",
+  "feature_list_sha256": "848f83f2fb4a7a93fb377ad5b2a7e860008998f22ce50402f437782003174732",
+  "normalization_sha256": "b62f4f7026834336ceff7b43ee235d62862285596565dcfa5619b59f6f855988",
+  "coefficient_sha256": "db937f775c3f4be873e99fa4e285ff05de3e31bf75179cf05000a18cae7dfa49"
+}
