@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#334155"/></marker>
+    <style>.t{font-family:'DejaVu Sans',sans-serif;fill:#0f172a}.h{font-size:30px;font-weight:700}.m{font-size:23px}.s{font-size:18px}.box{stroke-width:3}</style>
+  </defs>
+  <rect width="1200" height="620" fill="#fff"/><text x="600" y="48" text-anchor="middle" class="t h">Classifier-free guidance</text>
+  <rect x="55" y="125" width="245" height="120" rx="20" fill="#f1f5f9" stroke="#64748b" class="box"/>
+  <text x="178" y="175" text-anchor="middle" class="t m">null condition</text><text x="178" y="215" text-anchor="middle" class="t h">s_uncond</text>
+  <rect x="55" y="365" width="245" height="120" rx="20" fill="#dcfce7" stroke="#16a34a" class="box"/>
+  <text x="178" y="415" text-anchor="middle" class="t m">target condition c</text><text x="178" y="455" text-anchor="middle" class="t h">s_cond</text>
+  <line x1="305" y1="185" x2="435" y2="260" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="305" y1="425" x2="435" y2="345" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="445" y="235" width="300" height="140" rx="24" fill="#fef3c7" stroke="#d97706" class="box"/>
+  <text x="595" y="275" text-anchor="middle" class="t m">conditional direction</text>
+  <text x="595" y="315" text-anchor="middle" class="t m" fill="#b45309">delta =</text>
+  <text x="595" y="350" text-anchor="middle" class="t h" fill="#b45309">s_cond - s_uncond</text>
+  <line x1="750" y1="305" x2="855" y2="305" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="865" y="210" width="285" height="190" rx="24" fill="#dbeafe" stroke="#2563eb" class="box"/>
+  <text x="1008" y="260" text-anchor="middle" class="t m">guided score</text>
+  <text x="1008" y="310" text-anchor="middle" class="t h" fill="#1d4ed8">s_CFG</text>
+  <text x="1008" y="355" text-anchor="middle" class="t m">s_uncond + g delta</text>
+  <rect x="180" y="525" width="840" height="58" rx="18" fill="#faf5ff" stroke="#a855f7" stroke-width="2"/>
+  <text x="600" y="562" text-anchor="middle" class="t s">g = 0: unconditional  |  g = 1: conditional  |  g &gt; 1: extrapolate along the condition direction</text>
+</svg>

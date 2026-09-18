@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#334155"/></marker>
+    <style>.t{font-family:'DejaVu Sans',sans-serif;fill:#0f172a}.h{font-size:30px;font-weight:700}.m{font-size:24px}.s{font-size:19px}.box{fill:#f8fafc;stroke:#94a3b8;stroke-width:2}</style>
+  </defs>
+  <rect width="1200" height="620" fill="#ffffff"/>
+  <text x="600" y="48" text-anchor="middle" class="t h">Periodic crystal representation</text>
+  <g opacity="0.35" stroke="#94a3b8" stroke-width="2" fill="none">
+    <path d="M70 475 L270 475 L360 315 L160 315 Z"/><path d="M270 475 L470 475 L560 315 L360 315 Z"/>
+    <path d="M160 315 L360 315 L450 155 L250 155 Z"/><path d="M360 315 L560 315 L650 155 L450 155 Z"/>
+  </g>
+  <path d="M270 475 L470 475 L560 315 L360 315 Z" fill="#dbeafe" fill-opacity="0.65" stroke="#2563eb" stroke-width="4"/>
+  <g fill="#ef4444" stroke="#7f1d1d" stroke-width="2">
+    <circle cx="325" cy="415" r="15"/><circle cx="525" cy="415" r="15"/><circle cx="415" cy="255" r="15"/><circle cx="615" cy="255" r="15"/>
+  </g>
+  <g fill="#0ea5e9" stroke="#075985" stroke-width="2">
+    <circle cx="412" cy="385" r="13"/><circle cx="212" cy="385" r="13"/><circle cx="502" cy="225" r="13"/>
+  </g>
+  <line x1="270" y1="505" x2="468" y2="505" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="368" y="540" text-anchor="middle" class="t m">cell basis in H</text>
+  <line x1="253" y1="466" x2="344" y2="307" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="238" y="350" class="t m">cell basis</text>
+  <line x1="370" y1="465" x2="408" y2="399" stroke="#0f766e" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="350" y="430" class="t m" fill="#0f766e">f</text>
+  <rect x="720" y="105" width="400" height="390" rx="24" class="box"/>
+  <text x="920" y="155" text-anchor="middle" class="t h">Row-vector convention</text>
+  <text x="920" y="225" text-anchor="middle" class="t h" fill="#1d4ed8">r = f H</text>
+  <text x="920" y="285" text-anchor="middle" class="t m">fractional f: dimensionless</text>
+  <text x="920" y="330" text-anchor="middle" class="t m">Cartesian r: angstrom</text>
+  <line x1="770" y1="370" x2="1070" y2="370" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="920" y="420" text-anchor="middle" class="t h" fill="#7c3aed">f ~ f + n</text>
+  <text x="920" y="458" text-anchor="middle" class="t s">n in integer lattice; wrap to [0,1)</text>
+  <text x="600" y="590" text-anchor="middle" class="t s" fill="#64748b">Atomic species + fractional positions + cell matrix define the periodic structure.</text>
+</svg>

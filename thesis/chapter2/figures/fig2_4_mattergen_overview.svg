@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#334155"/></marker>
+    <style>.t{font-family:'DejaVu Sans',sans-serif;fill:#0f172a}.h{font-size:30px;font-weight:700}.m{font-size:22px}.s{font-size:18px}.b{stroke-width:3}</style>
+  </defs>
+  <rect width="1200" height="680" fill="#fff"/><text x="600" y="48" text-anchor="middle" class="t h">MatterGen conditional crystal generation</text>
+  <rect x="45" y="115" width="245" height="410" rx="24" fill="#f8fafc" stroke="#64748b" class="b"/>
+  <text x="168" y="160" text-anchor="middle" class="t h">Noisy state zt</text>
+  <rect x="82" y="200" width="170" height="68" rx="14" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/><text x="167" y="242" text-anchor="middle" class="t m">atomic_numbers</text>
+  <rect x="82" y="300" width="170" height="68" rx="14" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/><text x="167" y="342" text-anchor="middle" class="t m">pos</text>
+  <rect x="82" y="400" width="170" height="68" rx="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="167" y="442" text-anchor="middle" class="t m">cell H</text>
+  <rect x="360" y="90" width="465" height="475" rx="30" fill="#eef2ff" stroke="#4f46e5" class="b"/>
+  <text x="592" y="145" text-anchor="middle" class="t h">GemNetT denoiser</text>
+  <text x="592" y="183" text-anchor="middle" class="t s">periodic crystal graph + geometric message passing</text>
+  <rect x="430" y="225" width="325" height="75" rx="16" fill="#ffffff" stroke="#818cf8" stroke-width="2"/><text x="592" y="272" text-anchor="middle" class="t m">time embedding t</text>
+  <rect x="430" y="325" width="325" height="75" rx="16" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/><text x="592" y="372" text-anchor="middle" class="t m">property condition c / null</text>
+  <rect x="430" y="425" width="325" height="75" rx="16" fill="#fff7ed" stroke="#fb923c" stroke-width="2"/><text x="592" y="472" text-anchor="middle" class="t m">joint multi-field prediction</text>
+  <line x1="295" y1="320" x2="350" y2="320" stroke="#334155" class="b" marker-end="url(#a)"/>
+  <line x1="830" y1="320" x2="890" y2="320" stroke="#334155" class="b" marker-end="url(#a)"/>
+  <rect x="900" y="115" width="255" height="410" rx="24" fill="#f8fafc" stroke="#64748b" class="b"/>
+  <text x="1028" y="160" text-anchor="middle" class="t h">Field outputs</text>
+  <rect x="935" y="200" width="185" height="68" rx="14" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/><text x="1028" y="242" text-anchor="middle" class="t m">atomic logits</text>
+  <rect x="935" y="300" width="185" height="68" rx="14" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/><text x="1028" y="342" text-anchor="middle" class="t m">position score</text>
+  <rect x="935" y="400" width="185" height="68" rx="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="1028" y="442" text-anchor="middle" class="t m">cell score</text>
+  <path d="M1028 530 C1028 615, 170 615, 170 535" fill="none" stroke="#2563eb" class="b" marker-end="url(#a)"/>
+  <text x="600" y="650" text-anchor="middle" class="t m" fill="#1d4ed8">CFG combination + predictor/corrector update + repeated reverse steps</text>
+</svg>

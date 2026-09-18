@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#334155"/></marker>
+    <style>.t{font-family:'DejaVu Sans',sans-serif;fill:#0f172a}.h{font-size:30px;font-weight:700}.m{font-size:23px}.s{font-size:18px}.b{stroke-width:3}</style>
+  </defs>
+  <rect width="1200" height="620" fill="#fff"/><text x="600" y="48" text-anchor="middle" class="t h">Machine-learning interatomic potential</text>
+  <rect x="50" y="185" width="240" height="220" rx="24" fill="#eef2ff" stroke="#4f46e5" class="b"/>
+  <text x="170" y="235" text-anchor="middle" class="t h">Crystal</text><text x="170" y="275" text-anchor="middle" class="t m">(a, r, H)</text>
+  <g fill="#ef4444"><circle cx="112" cy="340" r="14"/><circle cx="170" cy="315" r="14"/><circle cx="225" cy="350" r="14"/></g>
+  <line x1="295" y1="295" x2="390" y2="295" stroke="#334155" class="b" marker-end="url(#a)"/>
+  <rect x="400" y="150" width="310" height="290" rx="28" fill="#dcfce7" stroke="#16a34a" class="b"/>
+  <text x="555" y="205" text-anchor="middle" class="t h">MLIP</text>
+  <text x="555" y="250" text-anchor="middle" class="t m">learned potential E</text>
+  <path d="M455 355 C500 265, 565 420, 655 310" fill="none" stroke="#16a34a" stroke-width="5"/>
+  <circle cx="552" cy="336" r="9" fill="#dc2626"/>
+  <text x="555" y="402" text-anchor="middle" class="t s">surrogate potential-energy surface</text>
+  <line x1="715" y1="230" x2="805" y2="175" stroke="#334155" class="b" marker-end="url(#a)"/>
+  <line x1="715" y1="360" x2="805" y2="420" stroke="#334155" class="b" marker-end="url(#a)"/>
+  <rect x="815" y="95" width="330" height="155" rx="22" fill="#fef3c7" stroke="#d97706" class="b"/>
+  <text x="980" y="145" text-anchor="middle" class="t h">Energy</text><text x="980" y="195" text-anchor="middle" class="t m">E(r, H, a)</text>
+  <rect x="815" y="350" width="330" height="155" rx="22" fill="#fee2e2" stroke="#dc2626" class="b"/>
+  <text x="980" y="405" text-anchor="middle" class="t h">Atomic forces</text><text x="980" y="455" text-anchor="middle" class="t m">Fi = - grad_ri E</text>
+  <rect x="180" y="535" width="840" height="58" rx="18" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="600" y="572" text-anchor="middle" class="t s">Lower surrogate force suggests smaller local residual; it does not prove thermodynamic stability or DFT validity.</text>
+</svg>
