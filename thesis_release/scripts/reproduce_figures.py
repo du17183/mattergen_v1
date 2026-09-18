@@ -33,6 +33,7 @@ plt.rcParams.update({
     "axes.spines.right": False,
     "figure.dpi": 120,
     "savefig.dpi": 300,
+    "svg.hashsalt": "mattergen-thesis-final-2026",
 })
 
 
@@ -45,7 +46,19 @@ def save(fig: plt.Figure, directory: Path, stem: str) -> None:
     directory.mkdir(parents=True, exist_ok=True)
     for suffix in ("png", "pdf", "svg"):
         target = directory / f"{stem}.{suffix}"
-        fig.savefig(target, bbox_inches="tight", dpi=300 if suffix == "png" else None)
+        metadata = {"Creator": "MatterGen thesis release"}
+        if suffix == "pdf":
+            metadata.update({"CreationDate": None, "ModDate": None})
+        elif suffix == "svg":
+            metadata.update({"Date": None})
+        elif suffix == "png":
+            metadata = {"Software": "MatterGen thesis release"}
+        fig.savefig(
+            target,
+            bbox_inches="tight",
+            dpi=300 if suffix == "png" else None,
+            metadata=metadata,
+        )
         # Matplotlib's SVG path formatter leaves insignificant spaces at EOL;
         # normalise them so the repository passes `git diff --check`.
         if suffix == "svg":
