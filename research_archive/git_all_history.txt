@@ -1,0 +1,186 @@
+5b572c6 (HEAD -> archive/thesis-exploration-2026, origin/release/thesis-final-2026, release/thesis-final-2026) docs: finalize thesis release README and audits
+13c2f87 fix: make thesis figure artifacts deterministic
+e5bd0d8 figures: add final thesis figures and generation script
+8c67d5d docs: add claims, limitations, and reproducibility notes
+997f619 data: add frozen thesis result summaries and manifests
+8ed57a3 chore: integrate thesis method implementations
+fca6b8d (experiment/field-decoupled-adaptive-cfg) Add preregistered field-decoupled CFG experiment
+f281462 (experiment/stage-calibrated-bounded-cfg) Add preregistered stage-bounded CFG experiment
+7c9d926 (experiment/calibrated-safe-selection-cfg) experiment: preregister calibrated safe-selection CFG
+a4fda8a (experiment/risk-calibrated-adaptive-cfg) experiment: preregister risk-calibrated adaptive CFG
+3be8249 (refs/stash) On raab-sc-p0: preserve-raab-sc-p0
+1cb53dc index on raab-sc-p0: 1af301c experiment: complete frozen GBSA prospective32
+5b72181 untracked files on raab-sc-p0: 1af301c experiment: complete frozen GBSA prospective32
+1af301c (experiment/self-correcting-search-p0, experiment/robust-adaptive-cfg-v2, experiment/raab-sc-p0, experiment/multifield-self-conditioning-p0, experiment/mattersim-late-force-guidance-p0, experiment/mattergen-rl-p0, experiment/mattergen-lora-p0, experiment/gbsa-tcl-prospective32, experiment/frozen-linear-k2-confirmation, experiment/fp-pc-p0, experiment/field-time-schedule-p0, experiment/field-async-freeze-p0, experiment/counterfactual-adaptive-cfg-v3, experiment/composable-property-adapter-p0, experiment/closed-loop-force-guidance-p0, experiment/cell-atom-fusion-p0, experiment/alm-gen-p0, experiment/adaptive-neighborhood-p0) experiment: complete frozen GBSA prospective32
+3540cb1 experiment: preregister frozen GBSA prospective32
+b129851 (experiment/gbsa-tcl-p1) experiment: complete frozen GBSA-TCL P1 validation
+5a72cfd (experiment/gbsa-tcl-p0) docs: finalize GBSA-TCL P0 results
+868f27b experiment: run GBSA-TCL P0
+eaf2692 (analysis/tcl-formal256-root-cause) analyze TCL Formal256 geometry degradation
+6ed463c (experiment/tcl-formal256) experiment: finalize TCL formal256 evaluation
+3b09c1a experiment: preregister frozen TCL formal256
+b9fd990 (experiment/tcl-p2) experiment: validate frozen TCL P2
+56efbaa (experiment/tcl-p1) experiment: validate frozen TCL P1
+2f95aa0 (experiment/tcl-dml-p0) experiment: evaluate TCL and DML P0
+70a85b7 (experiment/cross-field-interaction-p1) experiment: validate cross-field interaction P1
+7bc2282 (experiment/cross-field-interaction-p0) experiment: evaluate cross-field interaction P0
+499dba7 (experiment/global-transformer-adapter-p0) experiment: evaluate global transformer adapter P0
+d8f8014 (experiment/distribution-balanced-quality-adapter) Evaluate distribution-balanced quality adapter
+71f4619 (experiment/distribution-constrained-quality-adapter-p1b) experiment: evaluate reduced quality contrast P1b
+180acb6 (experiment/distribution-constrained-quality-adapter-p1) experiment: complete quality adapter P1 validation
+399488b (experiment/distribution-constrained-quality-adapter-p0) docs: report quality adapter P0 findings
+b0c22b5 experiment: validate quality-weighted MatterGen adapter P0
+f983e12 (experiment/corrector-residual-distillation-v3-anchor) experiment: complete V3 independent64 and record failed tail validation
+da01182 experiment: freeze V3 K16 for independent64
+17894b8 experiment: complete V3 anchor stage-b results
+c5456ad experiment: complete V3 real checkpoint smoke
+52bdcf8 experiment: register V3 anchor protocol
+64cb2db feat: add periodic exact anchor controller
+0a1a8e2 (experiment/corrector-residual-distillation-formal256) docs: finalize formal256 scientific report
+5a26ecb results: add formal256 paired quality statistics
+acdf0dd results: add formal256 MatterSim quality evaluation
+ff48d84 results: add formal256 single-H20 speed benchmark
+12faa18 results: complete formal256 paired generation
+e8b7a0c freeze: preregister formal256 manifest and seed audit
+9ea6551 test: add immutable formal256 protocol
+1b8b622 (experiment/corrector-residual-distillation-v2) docs: report v2 independent evaluation
+34ff467 results: complete v2 independent 64-seed evaluation
+7292d3a freeze: record v2 artifact manifest
+b577f8c freeze: lock v2 atomic-risk late30 candidate
+b6a74b2 results: complete v2 stage-b validation
+b9bb653 results: calibrate v2 field-aware risk on-policy
+44c0ed9 results: train v2 on-policy residual adapter
+d4b35c4 test: validate v2 DAgger collection on four seeds
+e89aa79 feat: add v2 on-policy training and evaluation workflow
+61373a3 feat: add v2 DAgger trajectory controls
+d2736e0 (experiment/corrector-residual-distillation-v1) results: publish Stage-C speed-quality screen
+77a3bc0 chore: audit residual experiment provenance
+5171eda fix: preserve partial relaxation quality evidence
+932709d fix: retain failed generation attempts in ablations
+1f0bcd6 feat: aggregate complete speed and quality ablations
+86c7eda fix: account for scores saved by corrector removal
+eca42b6 fix: remove corrector fields in Skip baseline
+bf9a858 results: publish final adapter metrics
+d16e071 docs: pin project-local experiment environment
+d020d90 fix: benchmark pure C0 without recorder overhead
+6163507 results: record teacher data and adapter learnability
+e600b73 feat: add residual distillation experiment pipeline
+137de16 fix: keep evaluation assets project-local
+38bdc7d test: verify residual adapter reproducibility
+cdb9a8e test: cover residual adapter safety paths
+9c93a23 feat: add corrector residual distillation sampler
+9242366 (grafted, upstream/main) Fix Linux PyPI installation dependencies (#252)
+6ce9abf (origin/feature/thesis-positioning-chapter3-v1) docs: align thesis positioning and chapter 3 with registered title
+48b9974 (origin/feature/chapter-evidence-packs-v1) docs: add traceable chapter evidence packs for thesis writing
+a7d7782 (origin/feature/thesis-planning-figures-v1) docs: complete thesis core chapters and redraw main figures
+9dd9238 docs: add per-figure and per-table redraw guides
+8a2690b fix: normalize vector exports for reproducible CPU generation
+e3e06eb fix: make thesis table exports portable and deterministic
+47e6d73 docs: add skill-guided thesis plan, reproducible figures, and result tables
+425bfdc (origin/feature/spg-static-periodic-graph-mvp) docs: expand branch implementation and evidence guide
+a6718d2 (origin/feature/spg-mattergen-fastgate) docs: expand branch implementation and evidence guide
+f413e4c (origin/feature/rp-qtfg) docs: expand branch implementation and evidence guide
+87853b0 (origin/feature/q3-e3-pcr-frozen64) docs: expand branch implementation and evidence guide
+9aa23f9 (origin/feature/postgen-quality-modules-fastgate) docs: expand branch implementation and evidence guide
+e2aef29 (origin/feature/mps-runtime-fastgate) docs: expand branch implementation and evidence guide
+83b468f (origin/feature/gemnet-fused-inference-fastgate) docs: expand branch implementation and evidence guide
+a620523 (origin/feature/fn-pra) docs: expand branch implementation and evidence guide
+5411a7d (origin/feature/crystalrepa-repro) docs: expand branch implementation and evidence guide
+cb67f1e (origin/feature/cg-tdr) docs: expand branch implementation and evidence guide
+7561f4e (origin/feature/budget-aware-corrector-gating) docs: expand branch implementation and evidence guide
+33f8a69 (origin/feature/a0-e3g-formal256) docs: expand branch implementation and evidence guide
+4efe6d5 (origin/experiment/a0-e3g-leakage-diagnostic256) docs: expand branch implementation and evidence guide
+3bafb64 (origin/feature/a0-e3g-independent64) docs: expand branch implementation and evidence guide
+447fa7e (origin/feature/a0-e3g-compatibility64) docs: expand branch implementation and evidence guide
+d91598b (origin/feature/q3-e3-pcr-formal256) docs: expand branch implementation and evidence guide
+9feb77f (origin/feature/convergence-aware-corrector-gating) docs: expand branch implementation and evidence guide
+a367f85 (origin/archive/thesis-analysis-package-v1) docs: expand branch implementation and evidence guide
+57d64d7 (origin/main, origin/HEAD, main) docs: expand branch implementation and evidence guide
+ff63707 docs: replace upstream README with branch record
+48a4bd2 docs: replace upstream README with branch record
+a9efe7d docs: replace upstream README with branch record
+22f91c4 docs: replace upstream README with branch record
+a1da8b5 docs: replace upstream README with branch record
+02d4397 docs: replace upstream README with branch record
+72335f6 docs: replace upstream README with branch record
+2a6ecc0 docs: replace upstream README with branch record
+1f91059 docs: replace upstream README with branch record
+7214243 docs: replace upstream README with branch record
+7b12e19 docs: replace upstream README with branch record
+e77864c docs: replace upstream README with branch record
+bb2b4ea docs: replace upstream README with branch record
+cf222c2 docs: replace upstream README with branch record
+83a73dd docs: replace upstream README with branch record
+373fe8a docs: replace upstream README with branch record
+1d93b59 docs: replace upstream README with branch record
+f53317f docs: replace upstream README with branch record
+4f9aa20 docs: remove upstream README section from archive
+b4b7d4a docs: add project progress, branch map, and negative results
+8f6cde9 Expand README with thesis project progress
+1233b1c Expand README with thesis project progress
+e93d7c6 Expand README with thesis project progress
+0f16382 Expand README with thesis project progress
+cf2971b Expand README with thesis project progress
+a1a57f8 Expand README with thesis project progress
+d724fe8 Add source audit warning to branch README
+a9ccdf8 Add leakage warning to branch README
+ec9dea3 Add replication branch overview to README
+6f17bc1 Add compatibility branch overview to README
+1b06a11 Add E3-PCR branch overview to README
+732f1fd Add Adaptive CFG branch overview to README
+2ef065d (tag: thesis-analysis-v1) Add reproducible thesis analysis archive
+e09858e Document source eligibility audit
+d5bf7d0 Document leakage diagnostic boundaries
+85485bc Document A0 E3-G independent replication
+e358ee3 Document A0 E3-G compatibility experiment
+4147901 Document E3-PCR formal experiment
+20255f1 Document Adaptive CFG formal experiment
+22e1db7 archive A0 E3-G independent validation
+57354c8 add frozen A0 E3-G independent validation
+01e9b2c archive A0 E3-G leakage diagnostic
+30ffd03 fix leakage pipeline module invocation
+804dc96 add contaminated A0 E3-G leakage diagnostic
+c1df24a record formal source audit archive state
+7af7a51 normalize formal audit artifacts
+db04646 archive A0 E3-G formal source audit
+353422f add frozen A0 E3-G formal source audit
+ba2303c archive compatibility audit artifacts
+07f877c archive A0 E3-G compatibility results
+d83464c use only idle GPUs for compatibility study
+dc3bede add frozen A0 E3-G compatibility validation
+0275cbf mark E3-PCR formal validation complete
+bef05db archive E3-PCR formal audit manifests
+6d5b73a archive E3-PCR formal 256 results
+5293b4b fix formal worker module entrypoints
+2ac493b prepare frozen E3-PCR formal validation
+87ec85c validate frozen Q3 on 64 seeds
+b65f42a validate learned equivariant post-generation refiner
+0f3178b Add NVIDIA MPS runtime fast-gate
+d70f703 Add GemNet fusion and persistent runtime fast-gate
+923a38a docs(spg): finalize the single-bucket no-go
+251213c perf(spg): benchmark the single-bucket static graph path
+1c5b446 feat(spg): add exact single-bucket static periodic graph builder
+be52354 Add SPG-MatterGen inference fast gate
+e31e4c1 Complete CG-TDR Phase 0 evaluation
+81796fd fix: stop only verified CG-TDR process groups
+f413abb fix: resume pipeline after completed teacher stage
+fee45ae fix: make generation progress writes thread safe
+1972f9d chore: report CG-TDR data and parameter statistics
+22431ed chore: orchestrate serial CG-TDR gates
+eb5ae87 feat: add CG-TDR gate evaluation pipeline
+0d55a43 feat: add confidence-gated terminal refiner
+85152b2 docs: record RP-QTFG archive status
+e457a43 feat: add RP-QTFG phase 0 validation
+1e51c76 chore: finalize CrystalREPA reproduction archive
+36ceecf feat: reproduce CrystalREPA on unconditional MatterGen
+42681f8 (tag: fn-pra-phase1-data-20260726) Add FN-PRA Phase-1 validation
+3f7cc79 Use frozen 256-seed G3 formal reference
+0d0f2e3 Record budget-aware archive locations
+f8ceae2 (tag: budget-aware-gating-data-20260724) Archive budget-aware gating validation
+f59ebad Add budget-aware corrector gating
+5de0041 (tag: mattergen-data-20260724) Add convergence-aware corrector gating
+48f0d87 Register CFG performance options in sampling config
+c2534bf Add low-overhead CFG performance summaries
+d8c5c35 Add convergence-aware CFG acceleration
+9bc6747 Document rebuild progress and complete research roadmap
+fc572f9 Initial MatterGen source snapshot without model weights
