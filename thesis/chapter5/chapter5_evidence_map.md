@@ -34,19 +34,19 @@
 | 5.3.3 | C2 未运行且未 rescue tuning | `thesis_release/innovation1/results/c1_continuation_decision.json` | — | — | 预注册停止规则 | VERIFIED | 停止不能解释为缺失正结果 |
 | 5.4.1 | Formal256 完成256/256，无样本替换 | `thesis_release/innovation2/results/mattersim_late_force_guidance_formal256/decision_summary.json`; `thesis_release/innovation2/results/mattersim_late_force_guidance_formal256/paired_results.csv` | 表5-3 | 图5-3 | 正式确认 | SUPPORTED | 当前注册 cohort |
 | 5.4.1 | MatterSim MaxF 0.226408→0.158911，改善29.81% | `thesis_release/innovation2/tables/formal256_main_results.csv` | 表5-3 | 图5-3 | 正式确认主终点 | SUPPORTED | 同源代理评价 |
-| 5.4.1 | MaxF相对CI[21.417%,40.876%]，W/T/L=254/0/2 | `thesis_release/innovation2/results/mattersim_late_force_guidance_formal256/paired_bootstrap.json` | 表5-3 | 图5-3 | 20k配对 bootstrap | SUPPORTED | 非DFT力 |
-| 5.4.1 | Mean Force降低29.72%，CI[24.012%,36.963%] | `thesis_release/innovation2/tables/formal256_main_results.csv` | 表5-3 | 图5-3 | 正式确认 | SUPPORTED | 同源代理评价 |
-| 5.4.1 | RMSD降低14.17%，CI[4.538%,25.953%] | `thesis_release/innovation2/tables/formal256_main_results.csv` | 表5-3 | 图5-3 | 正式确认 | SUPPORTED | 代理松弛协议 |
+| 5.4.1 | MaxF相对CI[21.42%,40.88%]，W/T/L=254/0/2 | `thesis_release/innovation2/results/mattersim_late_force_guidance_formal256/paired_bootstrap.json` | 表5-3 | 图5-3 | 20k配对 bootstrap | SUPPORTED | 非DFT力 |
+| 5.4.1 | Mean Force降低29.72%，CI[24.01%,36.96%] | `thesis_release/innovation2/tables/formal256_main_results.csv` | 表5-3 | 图5-3 | 正式确认 | SUPPORTED | 同源代理评价 |
+| 5.4.1 | RMSD降低14.17%，CI[4.54%,25.95%] | `thesis_release/innovation2/tables/formal256_main_results.csv` | 表5-3 | 图5-3 | 正式确认 | SUPPORTED | 代理松弛协议 |
 | 5.4.1 | MatterSim尾部P90/P95/最大值总体下降 | `thesis_release/innovation2/results/mattersim_late_force_guidance_formal256/final_report.md` | — | — | 描述性尾部 | OBSERVED | 非预注册主检验 |
 | 5.4.2 | P0/Formal32/Formal256 MaxF改善16.66%/26.57%/29.81% | `thesis_release/innovation2/tables/effect_scale_consistency.csv` | — | 图5-4 | 独立cohort一致性 | SUPPORTED | 不能解释为随n单调增长 |
 | 5.4.2 | 三阶段效应区间均在有利方向 | `thesis_release/innovation2/tables/effect_scale_consistency.csv` | — | 图5-4 | 跨cohort复现 | SUPPORTED | cohort绝对难度不同 |
-| 5.4.3 | Property MAE恶化1.14%，CI[-2.460%,-0.225%] | `thesis_release/innovation2/tables/formal256_main_results.csv` | 表5-3/5-7 | — | 正式护栏 | NOT_SUPPORTED（改善claim） | 必须报告属性代价 |
+| 5.4.3 | Property MAE恶化1.14%，CI[-2.46%,-0.22%] | `thesis_release/innovation2/tables/formal256_main_results.csv` | 表5-3/5-7 | — | 正式护栏 | NOT_SUPPORTED（改善claim） | 必须报告属性代价 |
 | 5.4.3 | Stable保持80.86%，Validity保持100% | `thesis_release/innovation2/tables/formal256_main_results.csv` | 表5-3 | — | 冻结护栏 | SUPPORTED_GUARDRAIL | 不能代表全部质量指标保持 |
-| 5.5 | CHGNet MaxF 0.193891→0.166057，相对改善14.36% | `thesis_release/innovation2/tables/chgnet_validation.csv` | 表5-4 | 图5-5 | 跨势代理确认 | SUPPORTED_INDEPENDENT_SURROGATE | 独立于引导，不是DFT独立 |
+| 5.5 | CHGNet MaxF 0.193891→0.166057，相对改善14.36% | `thesis_release/innovation2/tables/chgnet_validation.csv` | 表5-4 | 图5-5 | 独立代理评估 | SUPPORTED_INDEPENDENT_SURROGATE | 独立于引导，不是DFT独立 |
 | 5.5 | CHGNet MaxF绝对CI[0.007052,0.064868] | `thesis_release/innovation2/results/chgnet_formal256/paired_bootstrap.json` | 表5-4 | 图5-5 | 配对 bootstrap | SUPPORTED | 效应小于MatterSim |
-| 5.5 | CHGNet Mean Force改善9.59%，绝对CI[0.002384,0.019148] | `thesis_release/innovation2/tables/chgnet_validation.csv` | 表5-4 | 图5-5 | 跨势代理确认 | SUPPORTED_INDEPENDENT_SURROGATE | W/T/L含87个loss |
+| 5.5 | CHGNet Mean Force改善9.59%，绝对CI[0.002384,0.019148] | `thesis_release/innovation2/tables/chgnet_validation.csv` | 表5-4 | 图5-5 | 独立代理评估 | SUPPORTED_INDEPENDENT_SURROGATE | W/T/L含87个loss |
 | 5.5 | CHGNet MaxF P90/P95恶化且Mean Force中位数恶化 | `thesis/chapter4/chapter4_final_draft.md`第4.7.2节；`thesis_release/innovation2/results/chgnet_formal256/independent_summary.csv` | — | 图5-5 | 尾部边界 | MIXED | 不支持所有分位数改善；Mean Force尾部由已冻结第4章记录 |
-| 5.6 | 阶段诊断在t=0.02得到Spearman 0.9255865 | `thesis/chapter4/chapter4_final_draft.md`第4.2节；`thesis_release/innovation2/configs/frozen_method_definition.md` | 表5-5 | — | 机制/校准 | SUPPORTED | 相关性不等于因果最优 |
+| 5.6 | 阶段诊断在t=0.02得到Spearman 0.925587 | `thesis/chapter4/chapter4_final_draft.md`第4.2节；`thesis_release/innovation2/configs/frozen_method_definition.md` | 表5-5 | — | 机制/校准 | SUPPORTED | 相关性不等于因果最优 |
 | 5.6.1 | 方向消融G0/G1/G2/G3/G4均值为0.141690/0.098500/0.153744/0.151428/0.188137 | `thesis/chapter4/chapter4_final_draft.md`第4.8.1节；`thesis_release/innovation2/results/final_report.md` | 表5-5 | — | 方向消融 | SUPPORTED | 控制分支重放G1尺度，有路径依赖 |
 | 5.6.1 | G1相对G0改善30.48%，CI[24.66%,38.87%] | `thesis/chapter4/chapter4_final_draft.md`第4.8.1节；`thesis_release/innovation2/results/final_report.md` | 表5-5 | — | 32对配对消融 | SUPPORTED | 小于Formal256证据层级 |
 | 5.6.2 | T0/T1/T2 MaxF为0.277138/0.231502/0.060834 | `thesis/chapter4/chapter4_final_draft.md`第4.8.2节 | 表5-5 | — | bounded消融 | NOT_SUPPORTED（必要性） | T2同时移除两个限制，不能分开归因 |
@@ -65,7 +65,7 @@
 | 5.9.2 | 方法适用范围限于当前checkpoint/目标/代理 | `thesis_release/CLAIMS_AND_LIMITATIONS.md`; `thesis_release/innovation1/README.md`; `thesis_release/innovation2/README.md` | 表5-7 | — | 外部有效性边界 | LIMITED | 跨属性、模型、材料域需重新确认 |
 | 5.9.3 | Fixed-K2最终状态SUPPORTED | `thesis_release/innovation1/README.md`; `thesis_release/combined_summary/main_results.csv` | 表5-7 | 图5-1 | 最终确认 | SUPPORTED | surrogate-only，2.2×成本 |
 | 5.9.3 | Linear-K2最终状态NOT_SUPPORTED | `thesis_release/innovation1/results/c1_continuation_decision.json` | 表5-7 | — | 负确认 | NOT_SUPPORTED | 不否定未来不同学习器 |
-| 5.9.3 | RC-NFGD最终状态SUPPORTED | `thesis_release/innovation2/results/final_decision.json`; `thesis_release/innovation2/README.md` | 表5-7 | 图5-3/5-4/5-5 | 正式确认+跨势 | SUPPORTED | 属性代价、尾部混合、无DFT |
+| 5.9.3 | RC-NFGD最终状态SUPPORTED | `thesis_release/innovation2/results/final_decision.json`; `thesis_release/innovation2/README.md` | 表5-7 | 图5-3/5-4/5-5 | 正式确认+独立代理评估 | SUPPORTED | 属性代价、尾部混合、无DFT |
 | 5.9.3 | 联合协同NOT_SUPPORTED | `thesis_release/CLAIMS_AND_LIMITATIONS.md`; `thesis_release/innovation2/results/final_report.md` | 表5-7 | — | 兼容性负结果 | NOT_SUPPORTED | 未直接确认Fixed-K2×RC-NFGD |
 
 ## Evidence audit summary

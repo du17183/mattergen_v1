@@ -1,6 +1,6 @@
 # Chapter 3 论断—证据映射
 
-本文件用于审计《第3章 参考轨迹保留的预算约束多分支条件引导方法》。`thesis_release/`、`mattergen/` 和 `experiments/` 路径相对于最终 release worktree；`research_archive/` 路径相对于归档分支 `archive/thesis-exploration-2026` 的冻结 HEAD `848d5f03346b06e03df39f1f8bf258a394f15f7b`。SUPPORTED 表示论断受到对应冻结数据支持，但仅适用于记录的 cohort、指标和代理评价协议；MECHANISM_ONLY 表示机制或上界证据；NEGATIVE 表示预注册检验未支持相应假设；LIMITATION 表示必须保留的解释边界。
+本文件用于审计《第3章 参考轨迹保留的预算约束多分支条件引导与安全回退方法》。`thesis_release/`、`mattergen/` 和 `experiments/` 路径相对于最终 release worktree；`research_archive/` 路径相对于归档分支 `archive/thesis-exploration-2026` 的冻结 HEAD `848d5f03346b06e03df39f1f8bf258a394f15f7b`。SUPPORTED 表示论断受到对应冻结数据支持，但仅适用于记录的 cohort、指标和代理评价协议；MECHANISM_ONLY 表示机制或上界证据；NEGATIVE 表示预注册检验未支持相应假设；LIMITATION 表示必须保留的解释边界。
 
 | Section | Claim | Source file | Table/Figure | Evidence status |
 |---|---|---|---|---|
@@ -49,7 +49,7 @@
 | 3.9 | 未证明 Fixed-K2 优于所有等预算通用 best-of-N | thesis_release/CLAIMS_AND_LIMITATIONS.md | 局限性 | LIMITATION |
 | 3.9 | Adaptive CFG 稳定优于固定 CFG 的论断不受支持 | thesis_release/CLAIMS_AND_LIMITATIONS.md；thesis_release/combined_summary/experiment_status.csv | 讨论；图3-1 | NOT_SUPPORTED |
 | 3.9 | Linear-K2 优于 Fixed-K2 的论断不受支持 | thesis_release/CLAIMS_AND_LIMITATIONS.md；thesis_release/combined_summary/main_results.csv | 讨论；表3-5 | NOT_SUPPORTED |
-| 章首、3.9 | MatterSim 为代理评价器，需补齐论文总参考文献条目 | experiments/metric_framework_reassessment/final_report.md 中的 arXiv:2405.04967 链接 | 参考文献[3] | CITATION_NEEDED |
+| 章首、3.9 | MatterSim 为神经势模型，其结果属于代理评价 | 外部文献：Yang et al., arXiv:2405.04967；thesis_release/CLAIMS_AND_LIMITATIONS.md | 参考文献[3] | EXTERNAL_REFERENCE + LIMITATION |
 
 ## 图表来源清单
 
@@ -70,6 +70,6 @@
 ## 审计摘要
 
 - EVIDENCE_MAP = COMPLETE
-- CITATION_NEEDED_COUNT = 1
+- CITATION_NEEDED_COUNT = 0
 - UNRESOLVED_EVIDENCE_COUNT = 0
 - CLAIM_EVIDENCE_CONSISTENCY = PASS
