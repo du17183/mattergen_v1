@@ -1,0 +1,57 @@
+schema_version: 1
+experiment: reference_preserved_budgeted_cfg_phase_a
+phase: branch_compatible_oracle_audit
+new_generation: false
+new_structures: false
+gpu_sampling: false
+
+source_candidate_matrix: experiments/reference_preserved_budgeted_cfg/offline/candidate_matrix.csv
+source_split_manifest: experiments/reference_preserved_budgeted_cfg/offline/split_manifest.json
+field_policy_config: /mnt/datasets-livsyn/dxl/mattergen_v1_field_cfg/experiments/field_decoupled_adaptive_cfg/calibration/policies.yaml
+field_sampler_implementation: /mnt/datasets-livsyn/dxl/mattergen_v1_field_cfg/mattergen/diffusion/sampling/field_decoupled_cfg.py
+
+branch_compatibility:
+  required_prebranch_scales: {atomic: 2.0, pos: 2.0, cell: 2.0}
+  required_same_c0_dynamics: true
+  branch_point_source: frozen_pulse_start
+  expected_branch_point: 400
+  total_sampling_steps: 1000
+
+safe_rules:
+  inherited_from: experiments/reference_preserved_budgeted_cfg/offline_protocol.yaml
+  property_tolerance: 1.0e-6
+  safe_a_e_hull_worsening_maximum_ev_per_atom: 0.01
+  safe_b_preserves_novelty: true
+  uniqueness_recomputed_after_mixed_selection: true
+
+fixed_k:
+  k_values: [1, 2, 3]
+  discovery_split: offline_train
+  validation_split: offline_validation
+  final_split: offline_test
+  search: exhaustive
+
+random_k:
+  k_values: [1, 2, 3]
+  resamples: 20000
+  seed_base: 2026091900
+  sampling: uniform_without_replacement_per_seed
+  interval: deterministic_randomization_quantiles_2.5_97.5_percent
+
+compute:
+  shared_prefix_fraction: 0.4
+  formula: b_plus_K_plus_1_times_1_minus_b
+
+gates:
+  oracle_safe_a_relative_improvement_minimum: 0.10
+  oracle_k2_recovery_minimum: 0.60
+  alternative_oracle_k3_recovery_minimum: 0.75
+  fixed_k2_recovery_adaptive_not_needed_threshold: 0.90
+  k2_compute_target_maximum: 2.20
+  compute_borderline_above: 2.50
+  downstream_action: phase_b_only_if_headroom_GO_and_adaptive_selection_needed_YES
+
+claim_limits:
+  retrospective_oracle: true
+  surrogate_only: true
+  dft_verified: false

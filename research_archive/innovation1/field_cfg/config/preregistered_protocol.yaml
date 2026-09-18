@@ -1,0 +1,56 @@
+schema_version: 1
+frozen_before_new_outcomes: true
+method: Field-Decoupled Adaptive CFG
+hypothesis: shared CFG couples conditional-property benefit to physical-quality harm across atomic_numbers, pos, and cell score fields
+cohorts: {calibration: 48, p0: 32, formal256: 256}
+paired_by_seed: true
+historical_overlap_required: 0
+primary: {metric: property_absolute_error, target_dft_mag_density: 0.1, invalid_objective: 1.0, lower_is_better: true, surrogate: CHGNet_0.3.0}
+quality: [e_hull, stable, nus, validity]
+secondary: [novel, unique]
+thresholds:
+  property_relative_improvement_min: 0.05
+  benefit_retention_min: 0.70
+  stable_drop_max_pp: 0.05
+  nus_drop_max_pp: 0.05
+  validity_drop_max_pp: 0.05
+  e_hull_mean_worsening_max: 0.01
+  property_harm_multiplier: 1.05
+  e_hull_harm_delta: 0.02
+calibration_selection_order:
+  - maximum_guardrail_margin
+  - maximum_benefit_retention
+  - minimum_property_harm_rate
+  - minimum_policy_complexity
+guardrail_margin: minimum_of_each_normalized_remaining_guardrail_margin
+physical_improvement_rule: strictly_better_on_at_least_two_of_e_hull_stable_nus_validity
+policy_complexity: number_of_modified_fields_plus_one_if_pulse
+field_mechanism:
+  attribution: exact_three_field_binary_factorial_shapley_on_eight_constant_groups
+  single_field_label_threshold: positive_shapley_share_at_least_0.60
+  multi_label_rule: at_least_two_fields_have_positive_shapley_contribution_when_no_field_reaches_0.60
+p0_quality_improvement_vs_g19: paired_bootstrap_ci95_favorable_for_at_least_two_physical_indicators
+p0_tradeoff_vs_gpulse: retain_at_least_0.70_of_positive_gpulse_gain_and_point_improve_at_least_two_physical_indicators
+formal_quality_improvement: paired_bootstrap_ci95_favorable_for_at_least_two_physical_indicators
+calibration_go_requires:
+  - global_gain_strictly_positive
+  - all_physical_guardrails
+  - property_relative_improvement_at_least_0.05
+  - wins_strictly_greater_than_losses
+  - benefit_retention_at_least_0.70
+  - physical_quality_or_robustness_better_than_G19_or_GPulse
+p0_go_requires:
+  - property_relative_improvement_at_least_0.05
+  - wins_strictly_greater_than_losses
+  - fresh_benefit_retention_at_least_0.70
+  - all_physical_guardrails
+  - at_least_two_physical_quality_indicators_better_than_G19
+  - tradeoff_better_than_GPulse
+formal_confirmed_requires:
+  - property_gain_bootstrap_ci95_excludes_zero_favorable
+  - benefit_retention_at_least_0.70
+  - no_adverse_quality_ci
+  - quality_better_than_G19
+  - tradeoff_better_than_GPulse
+bootstrap: {resamples: 20000, calibration_seed: 2026091605, p0_seed: 2026091606, formal_seed: 2026091607}
+prohibited: [sample_wise_controller, cfg_amplitude_sweep, new_field_combination, new_timestep, new_duration, rescue_tuning, two_pulse]

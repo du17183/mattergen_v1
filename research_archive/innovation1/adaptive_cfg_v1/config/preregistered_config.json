@@ -1,0 +1,60 @@
+{
+  "registered_utc": "2026-09-14T12:21:31.775146+00:00",
+  "seeds": [
+    746000,
+    746001,
+    746002,
+    746003,
+    746004,
+    746005,
+    746006,
+    746007
+  ],
+  "methods": [
+    "C0",
+    "A0",
+    "POS_ONLY",
+    "NO_EMA",
+    "SHARED_EMA",
+    "NO_CLIP"
+  ],
+  "target": 0.1,
+  "tau": 0.01,
+  "guidance_scale": 2.0,
+  "alpha": 0.5,
+  "beta": 0.95,
+  "eps": 1e-06,
+  "clip": [
+    0.0,
+    5.0
+  ],
+  "multiplier_clip": [
+    0.25,
+    4.0
+  ],
+  "steps": 1000,
+  "corrector_steps": 1,
+  "batch_size": 1,
+  "source_sha256": {
+    "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_innovation1_audit/minimal_ablation.py": "f10f207dfa7b8e2ed5fd33ca0f0152a14ae79a77760153bd13ad3d29abd6afd9",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1/mattergen/diffusion/sampling/guidance_schedule.py": "3d7c270140ce24b4b52e559748b45c1e5759baba6275e22558d03e81052131e0",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1/mattergen/diffusion/sampling/classifier_free_guidance.py": "44b0018f49522c9154bf6926e98f16f3f01c109f84f5e25c6fd2364bb2ddcf85",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/evaluate_p0_properties.py": "9193441c5245a14622777097b414078be09f6a817dd9be42f52bca1c267063ac",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/run_p0_relaxation.py": "291f8dc38b9c5b0930fe9b2e593d81a72074fa49070717c6038e2933cda87f37",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/run_p0_quality.py": "de529b2cc924845e5494644f4a9bc3bbb623e5948429f58758d16a2bf0cfe11c",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/analyze_p0.py": "e620a4437764a48b165c6cdd2bb1b3361b0de0e4af1b1155c0a947ede51e379e"
+  },
+  "controls": {
+    "POS_ONLY": "Use only position RMS; same global scale still applied to every field.",
+    "NO_EMA": "beta=0, remove temporal smoothing, retain current residual and epsilon.",
+    "SHARED_EMA": "One EMA for alternating predictor/corrector observations.",
+    "NO_CLIP": "Remove multiplier and final-scale clipping only; retain finite fallback."
+  },
+  "endpoint": "Same Ehull, Stable and NUS as Innovation1; diagnostic no GO threshold, no retuning.",
+  "bootstrap": {
+    "resamples": 20000,
+    "seed": 20260915,
+    "method": "paired percentile, seed unit, all eight retained"
+  },
+  "limitations": "n=8 supplementary component diagnostics; cannot establish broad component superiority or replace Formal256."
+}

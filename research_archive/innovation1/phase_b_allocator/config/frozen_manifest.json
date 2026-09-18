@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "frozen_before_new_phase_b_outcomes": true,
+  "frozen_at": "2026-09-16T23:45:33+08:00",
+  "main_git_base_commit": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+  "field_sampler_git_base_commit": "fca6b8d90e869c8c9535d7e5910e606efd722fdf",
+  "runtime_cwd": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_cfg",
+  "experiment_root": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/reference_preserved_budgeted_cfg",
+  "sha256": {
+    "feature_study_protocol.yaml": "eb45d0e019f2e5be9b817767a0be8a3514f1b0b9a049250c7851db6d4380bb03",
+    "register_feature_study_seeds.py": "68530b30834b932abcc54c4be98f355f8578dcd46bd2ff8551c29737facd1bd6",
+    "phase_b_sampler.py": "c225960c985ba0e339b6850997f79bdb91daf8c561f4358210d5e98a2ac9274d",
+    "run_feature_generation.py": "65893d07def6728175bcd6e411563d01651642bd55b279f114af345b0141817b",
+    "prepare_feature_study.py": "dd9d26b2760b3d98d6035a77ac4dc2b895ba45f4d8a3a71d07d4fb9bf65d7630",
+    "run_feature_quality.py": "5aec4ffd166f65d00d082ee398d50c5b9bbf79d053490b3448ab7e6e2a73d59f",
+    "analyze_feature_study.py": "1785f3199fd13894ea0f0cc30228cace90df01ec1991e0cabf9bffb0407659ee",
+    "run_feature_pipeline.py": "106b3cd2cdeeb8fecf6a74b8859db0706a307f04b735a139481a79ff4e1993d1",
+    "feature_study/feature_study_seed_manifest.json": "29ef2f6204f2b12d59938fbade9dc660d71651ab229ca297df07b1eb75b156d9",
+    "feature_study/feature_study_seed_audit.json": "d0764bc2a6bb0ff45420a990fcbb2d913daeab41d6ec26936ce71e2139467cac"
+  },
+  "post_outcome_change_rule": "No feature, model, split, hyperparameter, gate, metric, or policy change is permitted after Phase-B outcomes begin."
+}

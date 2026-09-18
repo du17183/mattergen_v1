@@ -1,0 +1,143 @@
+schema_version: 1
+frozen_before_generation: true
+experiment: risk_calibrated_adaptive_cfg
+method_name: Long-horizon Risk-Calibrated Selective Adaptive CFG
+git_base_commit: 1af301c5e534ff6b9b9f96ea5dab48036d9c46af
+
+scientific_question: >-
+  Can full-outcome paired treatment-effect supervision identify beneficial
+  one-shot CFG deviations while controlling harmful adaptation and outperforming
+  a timestep-only global action on unseen trajectories?
+
+sampling:
+  checkpoint: /mnt/datasets-livsyn/dxl/mattergen_v1/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density
+  checkpoint_sha256: 01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e
+  property_target: 0.1
+  sampling_steps: 1000
+  corrector_steps_per_timestep: 1
+  deterministic: true
+  common_random_numbers: true
+  base_cfg: 2.0
+  actions: {DOWN: 1.75, KEEP: 2.0, UP: 2.25}
+  action_semantics: hold selected CFG from the one decision state to the final endpoint
+  candidate_decision_indices: [100, 250, 400, 550]
+
+dataset:
+  trajectories: 96
+  split_unit: trajectory_seed
+  split_seed: 20260921
+  train_trajectories: 58
+  validation_trajectories: 19
+  test_trajectories: 19
+  old_v3_data_use: motivation_and_timestep_preregistration_only
+  future_p0_reservation: 32
+  future_formal256_reservation: 256
+
+objective:
+  primary: property_absolute_error
+  definition: abs(CHGNet_predicted_magnetic_density - 0.1)
+  paired_effect: action_property_error - cfg2_property_error
+  lower_is_better: true
+  invalid_objective: 1.0
+  surrogate_property_eval: true
+  dft_verified: false
+
+harm:
+  property: action_error > 1.05 * cfg2_error
+  gamma_property: 5_percent_of_paired_cfg2_error
+  ehull: action_ehull - cfg2_ehull > 0.02
+  stable: cfg2_stable_and_action_unstable
+  primary: property
+
+features:
+  availability: decision_state_and_past_only
+  temporal_ema_beta: 0.9
+  recent_window: 5
+  residual_normalization: training-only log z-score separately per timestep
+  include:
+    - t_norm
+    - field_residual_rms
+    - field_log_residual_zscore
+    - field_guidance_to_unconditional_score_ratio
+    - field_score_alignment
+    - cross_field_mean_median_std_range
+    - past_ema_slope_previous_recent_trend
+    - current_predicted_x0_cell_volume_density_atom_and_element_summaries
+    - current_predicted_x0_periodic_distance_summaries
+  prohibited: [future_timestep, final_outcome, relaxation_features]
+
+models:
+  mean_baseline: M0
+  ridge: {alpha: 1.0}
+  gradient_boosted_tree:
+    implementation: sklearn.ensemble.GradientBoostingRegressor_and_Classifier
+    dependency_note: XGBoost_and_LightGBM_unavailable_in_frozen_environment
+    n_estimators: 100
+    max_depth: 2
+    learning_rate: 0.03
+    subsample: 0.8
+    min_samples_leaf: 5
+  tiny_mlp:
+    status: OPTIONAL_NOT_PLANNED
+    architecture: [32, 16]
+    maximum_parameters: 100000
+  uncertainty: five_model_trajectory_bootstrap_ensemble
+  ensemble_size: 5
+  conservative_k: 1.0
+  regression_targets: [delta_property_DOWN, delta_property_UP]
+  harm_targets: [harm_property_DOWN, harm_property_UP]
+
+validation_selection:
+  delta_min_candidates: [0.0, 0.0025, 0.005, 0.01]
+  delta_safe_candidates: [0.0, 0.0025, 0.005]
+  eta_candidates: [0.10, 0.20, 0.30, 0.40]
+  uncertainty_max_candidates: [validation_q25, validation_q50, validation_q75, validation_max]
+  minimum_coverage: 0.15
+  maximum_selective_property_harm_rate: 0.10
+  ranking: >-
+    Feasible configurations only; maximize realized validation controller gain,
+    then oracle recovery, then minimize harm, uncertainty allowance, and coverage.
+  failure_action: STOP
+
+timestep_only_baseline:
+  name: T0
+  selection_data: training_split_only
+  rule: globally lowest mean property error action at selected timestep
+  tie_order: [KEEP, DOWN, UP]
+
+offline_test_gate:
+  expected_gain_strictly_positive: true
+  minimum_coverage: 0.15
+  maximum_selective_property_harm_rate: 0.10
+  minimum_oracle_recovery: 0.20
+  a0_must_outperform_t0: true
+  failure_action: STOP_NO_FRESH_GENERATION
+
+p0_gate:
+  trajectories: 32
+  primary_property_mae_improvement_minimum: 0.10
+  maximum_property_harm_rate: 0.15
+  minimum_coverage: 0.15
+  a0_must_outperform_t0: true
+  maximum_stable_drop_fraction: 0.05
+  maximum_nus_drop_fraction: 0.05
+  maximum_validity_drop_fraction: 0.05
+  maximum_mean_ehull_worsening_ev_per_atom: 0.02
+  bootstrap_resamples: 20000
+  failure_action: STOP_NO_FORMAL256_NO_RETUNING
+
+formal256_gate:
+  trajectories: 256
+  primary_ci95_must_exclude_zero_favorably: true
+  a0_must_outperform_t0: true
+  minimum_coverage: 0.15
+  bootstrap_resamples: 20000
+
+prohibited:
+  - V1_or_V2_rescue_tuning
+  - short_horizon_feedback_or_horizon_tuning
+  - repeated_online_CFG_decisions
+  - threshold_or_timestep_or_model_changes_after_test_or_P0
+  - RL_PPO_DDPO
+  - Transformer_Attention_GNN_or_large_controller
+  - complex_online_search

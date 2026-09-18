@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "frozen_before_generation": true,
+  "git_base_commit": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+  "branch": "experiment/risk-calibrated-adaptive-cfg",
+  "sha256": {
+    "mattergen/diffusion/sampling/risk_calibrated_cfg.py": "1bd0a23feb3845301e3f7f11279f7f9d3509de1a192a0e50ae72950b50d9ed37",
+    "mattergen/diffusion/tests/test_risk_calibrated_cfg.py": "a2a75e16c19d71e0cd56edb8688c56d4d1c6444fa02c8e8da1fbd288955e0ad7",
+    "experiments/risk_calibrated_adaptive_cfg/preregistered_protocol.yaml": "0094393e86a39e39846269970a096de1886752a13916482a369fc3f5ac24f0ac",
+    "experiments/risk_calibrated_adaptive_cfg/dataset/candidate_timestep_config.yaml": "fd69d99f4b9047046d03cf0a35a2be3d1afd13f56200728b5b7511ec002e5b9b",
+    "experiments/risk_calibrated_adaptive_cfg/dataset/seeds.json": "86533b5526f3377c38d8fbe5bd1707e0e074e3e5c811cd6d0035b179c423f538",
+    "experiments/risk_calibrated_adaptive_cfg/future_seed_reservations.json": "90880827f932c66d43967c442b9296ac6a9fb3fbf4ddc3deb7ae066841218c78",
+    "experiments/risk_calibrated_adaptive_cfg/fresh_seed_audit.json": "d1f75d050761ea7ce9d34e143a0d6a4791834aa8ee183e6857d9ebad38882a56",
+    "experiments/risk_calibrated_adaptive_cfg/register_seeds.py": "0774ba25f3e83725d7d26f57ec926f55e99ed46a326eccf018c8e0ebcd1c3c4f",
+    "experiments/risk_calibrated_adaptive_cfg/run_dataset_generation.py": "3fb412b5a79a293abd87fde45243c861bcdffbb54b3dac298459847cc4ea3b39",
+    "experiments/risk_calibrated_adaptive_cfg/prepare_dataset.py": "361b97aae9bbd88eb42d3bea74d372392cee42c00e5e3d137c17c1b72da5d185",
+    "experiments/risk_calibrated_adaptive_cfg/run_quality.py": "a3b937d8286b545b23e401f8d1429d524f9c2f4d097102fccab9ee81e3c09c19",
+    "experiments/risk_calibrated_adaptive_cfg/run_offline_analysis.py": "821e6a904d4bf99acf135c2c79acdd100878f0b5292620df2ad736c78b839aab",
+    "experiments/risk_calibrated_adaptive_cfg/run_fresh_p0_generation.py": "c5f05c189b7b046415a2beba3a501aff3227ee62ca8e6ac72af8dfd8f8da1118"
+  },
+  "dataset_trajectories": 96,
+  "candidate_timesteps": [
+    100,
+    250,
+    400,
+    550
+  ],
+  "candidate_cfg": [
+    1.75,
+    2.0,
+    2.25
+  ],
+  "future_seed_cohorts_reserved_before_outcomes": true,
+  "allowed_after_outcomes": "execution, gate-prescribed P0/Formal evaluation, technical fixes that do not alter frozen decisions",
+  "forbidden_after_outcomes": "feature/model/threshold/timestep/action/harm/seed/metric/gate retuning",
+  "surrogate_property_eval": true,
+  "dft_verified": false
+}

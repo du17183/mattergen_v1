@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "frozen_before_generation": true,
+  "git_parent_commit": "a4fda8a573ee0e372d3b53064e235ae87f0e670c",
+  "branch": "experiment/calibrated-safe-selection-cfg",
+  "sha256": {
+    "mattergen/diffusion/sampling/risk_calibrated_cfg.py": "1bd0a23feb3845301e3f7f11279f7f9d3509de1a192a0e50ae72950b50d9ed37",
+    "mattergen/diffusion/sampling/safe_selection_cfg.py": "f59b98bed95ac41a4a8e1680e36b8daf96bf3a3bd8dffb2f5ec34cab129e3d75",
+    "experiments/calibrated_safe_selection_cfg/preregistered_protocol.yaml": "cc425f68489afb9afe50cabab0aa4ffbf229a2181a048d3ce4d1bb480abab2cd",
+    "experiments/calibrated_safe_selection_cfg/validation/preregistered_candidates.yaml": "35a50ded6fcc8d1da1488f83bea4b19e9837523eb0e991cfbfef3eefbdad110a",
+    "experiments/calibrated_safe_selection_cfg/dataset/seeds.json": "985647eb6223207b88c5154a0d3581f22abf965ae1773e08bdf36f301301ae8d",
+    "experiments/calibrated_safe_selection_cfg/dataset/seed_overlap_audit.json": "3047c15fe5f858b562d3e126605a66b24717d5fb451a11b09daf85c86c1e9a07",
+    "experiments/calibrated_safe_selection_cfg/future_seed_reservations.json": "03c0c96811ffc366e2d5c39a35766a744d38f947d6bbca3bbc8cc0fc04a5db8f",
+    "experiments/calibrated_safe_selection_cfg/splits/split_manifest.json": "b97864c23e8ea7729a81147325d24da1295c57c7bcf64d7caa9fcdde604baad7",
+    "experiments/calibrated_safe_selection_cfg/register_seeds.py": "b69153f1919d3043c9d6ba8851bcb76cbae9cf436576d665be0d0d36597b1640",
+    "experiments/calibrated_safe_selection_cfg/run_dataset_generation.py": "8f3189ff2c6fa914be2da418aa33e9e1bb523c7164fe5437cf9ffb83fe578530",
+    "experiments/calibrated_safe_selection_cfg/prepare_dataset.py": "d2a6aa0c9736a0e9c987cb913885027639b8f17b09d70929009108b2a4f26adc",
+    "experiments/calibrated_safe_selection_cfg/run_quality.py": "ecd8eae35f4491fd0b51f70e0a34aa23065cb14a0a361624608fad39013d8888",
+    "experiments/calibrated_safe_selection_cfg/run_offline_analysis.py": "cd9d933bbdc5397c7a4977e305f7c7589f9a071c6601096f9c5128981864e3ef",
+    "experiments/calibrated_safe_selection_cfg/run_fresh_generation.py": "a5b8f96d59b5b7ccc908bd9de2133d7a2fff4d8536f4e063915568a6c20d2154",
+    "experiments/calibrated_safe_selection_cfg/prepare_fresh.py": "4b456d6bb81943c593e95f291c5e37f4a61474833f14a259e55833f4088541db",
+    "experiments/calibrated_safe_selection_cfg/run_fresh_quality.py": "d6ccfce7d3fb6f2ad50931b91c6f76043b62b18dda089d803d109b6de413dff2",
+    "experiments/calibrated_safe_selection_cfg/analyze_fresh.py": "6d1cd2d2a5aaa176a615eae154b6aa6ab5e3dfb81a5a68d0e98279c7b4dbeffd",
+    "experiments/calibrated_safe_selection_cfg/run_pipeline.py": "7092d95cd4aeb89c3839043650b7ecd3eda58bae8e72bc5824b70e31066d267d",
+    "experiments/calibrated_safe_selection_cfg/initial_audit.md": "9c23967a3144c773932458495c1117ef8535a2ac611c90d5dee57424dbe946a1"
+  },
+  "dataset_trajectories": 128,
+  "split_counts": {
+    "train": 64,
+    "calibration": 26,
+    "validation": 19,
+    "test": 19
+  },
+  "decision_index": 250,
+  "candidate_cfg": [
+    1.75,
+    2.0,
+    2.25
+  ],
+  "future_seed_cohorts_reserved_before_outcomes": true,
+  "allowed_after_freeze": "execution and technical bug fixes that do not change any scientific decision",
+  "forbidden_after_freeze": "model feature calibration threshold action seed metric harm gate or cohort retuning",
+  "surrogate_property_eval": true,
+  "dft_verified": false
+}

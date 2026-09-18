@@ -1,0 +1,101 @@
+method: Robust Multi-field Residual-driven Online Adaptive CFG V2
+frozen: true
+freeze_boundary: before any fresh P0 generation
+git_head: 1af301c5e534ff6b9b9f96ea5dab48036d9c46af
+source_sha256:
+  guidance_schedule.py: 41409a0d19deded17c068545b1745ff8969b8870a70ddab7bf1975981abeff80
+  robust_guidance.py: ac5fbbb758ca337c02f916af4f0b0c33d6c8fbab25162b4b6a3081cc7120dae8
+  classifier_free_guidance.py: ef5a3b6ffe740a0ffd8ecbef91575f678d0e3431c9043fdaddaed92f2be48ff1
+  residual_calibration.json: 4461e1056c59bb61d99741a795780b9f23f61f197503fd8e529317f917e6981c
+  residual_calibration.csv: f4cbe9772049f5486384a9f05c966d9ca40828d4170a5d5f472f77d4fd0901bc
+  p0_seeds.json: 1a02e2b44745c358961a4f9a5dff5be58670082fc99d370a9382faebb6331720
+  formal256_seeds.json: 7afd7a1841449130bde928b7d167f7a272761023e79735cadb011cefc09922e0
+base_guidance: 2.0
+residual_calibration_json: /mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/robust_adaptive_cfg_v2/calibration/residual_calibration.json
+residual_calibration_csv: /mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg/experiments/robust_adaptive_cfg_v2/calibration/residual_calibration.csv
+residual_transform:
+  name: log_zscore_by_phase_field_time_bin
+  time_bins: 20
+  log_eps: 1.0e-12
+  sigma_floor: 1.0e-06
+  z_clip: 3.0
+  mu_estimator: arithmetic mean of log residual
+  sigma_estimator: sample standard deviation (ddof=1)
+aggregation: median(z_atomic,z_position,z_cell)
+online_statistics:
+  phase_specific_ema: true
+  ema_beta: 0.95
+  first_observation: initialize EMA to current z_median
+  control_signal: phase-specific EMA of z_median
+confidence:
+  signal_deadzone: 0.5967738602811492
+  signal_deadzone_rule: baseline q0.75(|z_ema|)
+  signal_scale: 0.6069916812050751
+  signal_scale_rule: max(q0.95(|z_ema|)-deadzone,0.25)
+  signal_confidence: clip((abs(z_ema)-deadzone)/signal_scale,0,1)
+  median_field_disagreement: 0.6054115321142346
+  agreement_k: 1.1449190241542275
+  agreement_k_rule: ln(2)/baseline_median(std(z_fields))
+  agreement_confidence: exp(-agreement_k*std(z_fields))
+  final_confidence: signal_confidence*agreement_confidence
+adaptation:
+  raw_delta: 0.5*tanh(z_ema)
+  target: g0 + confidence*raw_delta
+  amplitude: 0.5
+  cfg_min: 1.5
+  cfg_max: 2.5
+  slew_rate_cap_per_score_call: 0.05
+  fallback: CFG=2.0 exactly when signal confidence is zero or residual is invalid
+predictor_corrector_handling: separate z_median EMA; shared frozen calibration rule
+  with phase-specific bins
+stage_gating: 'OFF'
+p0:
+  methods:
+  - C0
+  - A_OLD
+  - A_NORM
+  - A_ROBUST
+  paired_seed_count: 32
+  target_dft_mag_density: 0.1
+  bootstrap_resamples: 20000
+  bootstrap_seed: 20260916
+  primary_robustness_comparison: A_ROBUST vs A_OLD
+  go_criteria:
+    harm_reduction: at least one of Ehull/Stable/Property has >=30% relative HarmRate
+      reduction vs A_OLD
+    other_harm_guardrail: no other HarmRate increases by >5 percentage points vs A_OLD
+    average_quality: vs C0 at least one of mean Ehull lower, Stable higher, or NUS
+      higher
+    mag_mae_worsening_max_fraction: 0.1
+    validity_drop_max_percentage_points: 5.0
+    nus_drop_max_percentage_points: 5.0
+    severe_stable_collapse_max_percentage_points: 20.0
+formal256:
+  allowed_only_if: ROBUST_ADAPTIVE_CFG_P0=GO
+  methods:
+  - C0
+  - A_OLD
+  - A_ROBUST
+  paired_seed_count: 256
+  target_dft_mag_density: 0.1
+  bootstrap_resamples: 20000
+  bootstrap_seed: 20260917
+  primary_comparison: C0 vs A_ROBUST
+  confirmation_criteria:
+    headline: at least one favorable E-hull/Stable/NUS paired bootstrap 95% CI excludes
+      zero
+    other_headlines: no other E-hull/Stable/NUS paired bootstrap 95% CI significantly
+      reverses
+    harm_reduction: at least one HarmRate has >=30% relative reduction vs fresh A_OLD
+      and no other increases >5pp
+    severe_stable_collapse_max_percentage_points: 20.0
+forbidden_after_freeze:
+- CFG range
+- confidence threshold/rule
+- residual calibration rule
+- aggregation method
+- slew cap
+- EMA
+- seed
+- primary metric
+- GO threshold

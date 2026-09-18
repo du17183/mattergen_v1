@@ -1,0 +1,181 @@
+schema_version: 1
+study_id: reference_preserved_budgeted_cfg_phase_b
+title: Pre-Branch Feature Acquisition Study
+preregistered_before_generation: true
+phase_a_prerequisites:
+  branchable_budgeted_headroom: GO
+  adaptive_selection_needed: YES
+scope:
+  objective: >-
+    Test whether features available strictly before the shared-prefix branch point
+    support an Adaptive-K2 allocator that improves over the best fixed branchable K2
+    on held-out fresh seeds.
+  surrogate_only: true
+  dft_verified: false
+  rescue_tuning: prohibited
+  phase_c_before_supported: prohibited
+sampling:
+  model_checkpoint: /mnt/datasets-livsyn/dxl/mattergen_v1/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density
+  model_checkpoint_sha256: 01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e
+  deterministic: true
+  target_dft_mag_density: 0.1
+  total_steps: 1000
+  corrector_steps: 1
+  base_cfg: 2.0
+  branch_point: 400
+  branch_point_semantics: state after steps 0-399 and before step 400
+  branch_fraction: 0.4
+  pulse_start: 400
+  pulse_duration: 100
+  pulse_scale: 1.9
+  suffix_after_pulse_cfg: 2.0
+  policies:
+    - {policy_id: C0, kind: constant, scales: {atomic: 2.0, pos: 2.0, cell: 2.0}}
+    - {policy_id: GPulse, kind: pulse, start: 400, duration: 100, scales: {atomic: 1.9, pos: 1.9, cell: 1.9}}
+    - {policy_id: APulse, kind: pulse, start: 400, duration: 100, scales: {atomic: 1.9, pos: 2.0, cell: 2.0}}
+    - {policy_id: PPulse, kind: pulse, start: 400, duration: 100, scales: {atomic: 2.0, pos: 1.9, cell: 2.0}}
+    - {policy_id: CPulse, kind: pulse, start: 400, duration: 100, scales: {atomic: 2.0, pos: 2.0, cell: 1.9}}
+cohort:
+  total: 64
+  split_counts: {train: 32, validation: 16, test: 16}
+  registration_salt: phase_b_reference_preserved_budgeted_cfg_seeds_v1
+  split_salt: phase_b_reference_preserved_budgeted_cfg_split_v1
+  zero_overlap_required_with_all_prior_and_reserved_seeds: true
+prebranch_capture:
+  strictly_allowed_sampling_steps: [0, 399]
+  phases: [corrector, predictor]
+  ema_beta: 0.95
+  ema_semantics: ratio uses the preceding phase-field EMA; first observation is 1.0; EMA is updated after recording
+  windows: [25, 50, 100]
+  persisted_state:
+    - full_sampler_batch_at_branch
+    - python_rng_state
+    - numpy_rng_state
+    - torch_cpu_rng_state
+    - torch_cuda_rng_state
+    - conditioning_metadata
+    - prefix_state_sha256
+  features:
+    per_field:
+      - residual_rms
+      - conditional_score_rms
+      - unconditional_score_rms
+      - residual_to_unconditional_ratio
+      - residual_alignment_with_unconditional
+      - residual_over_ema
+    temporal_per_phase_field:
+      - last
+      - mean
+      - std
+      - slope
+      - min
+      - max
+    disagreement:
+      - residual_max_over_min
+      - residual_std
+      - residual_cv
+      - atomic_over_pos
+      - atomic_over_cell
+      - pos_over_cell
+    state:
+      - num_atoms
+      - cell_volume
+      - density_g_cm3
+      - num_elements
+      - mean_atomic_number
+      - std_atomic_number
+      - max_element_fraction
+      - element_entropy
+      - min_periodic_distance
+      - mean_periodic_distance
+      - target_property
+  prohibited_inputs:
+    - candidate_final_property
+    - candidate_e_hull
+    - candidate_stability
+    - candidate_novelty
+    - candidate_terminal_state
+    - oracle_label_as_input
+labels:
+  property_tolerance: 1.0e-6
+  safe_definition: SAFE-A
+  safe_a:
+    property_better_than_c0: true
+    validity_not_worse_than_c0: true
+    stable_not_worse_than_c0: true
+    e_hull_max_worsening_ev_per_atom: 0.01
+  positive: SAFE-A and property improvement > property_tolerance
+  auxiliary_targets: [policy_rank, best_safe_policy]
+allocators:
+  k: 2
+  policy_bank: [GPulse, APulse, PPulse, CPulse]
+  m0_fixed:
+    subsets: all_2_policy_combinations
+    selection: rank all subsets on train; carry the top three; select one on validation
+    ranking_order: [recovered_oracle_headroom_desc, property_mae_asc, policy_ids_lexicographic]
+  m1_random:
+    salt: phase_b_random_k2_v1
+    deterministic_per_seed: true
+  m2_residual:
+    source: latest_predictor_residual_over_ema
+    policy_scores:
+      APulse: atomic_numbers
+      PPulse: pos
+      CPulse: cell
+      GPulse: mean_of_atomic_pos_cell
+  m3_linear:
+    estimator: logistic_regression
+    class_weight: balanced
+    C_grid: [0.1, 1.0, 10.0]
+    max_iter: 5000
+    features: standardized_seed_features_plus_policy_indicators_and_interactions
+  m4_gbdt:
+    estimator: gradient_boosting_classifier
+    max_depth_grid: [1, 2, 3]
+    n_estimators: 100
+    learning_rate: 0.05
+    features: seed_features_plus_policy_indicators
+  validation_objective_order:
+    - recovered_oracle_headroom
+    - property_mae
+    - top2_safe_oracle_recall
+  simple_model_preference:
+    recovered_headroom_tolerance_points: 3.0
+    property_mae_relative_tolerance: 0.01
+    rule: choose the simpler model only when both tolerances are satisfied on validation
+  test_once_after_validation: true
+evaluation:
+  property_model: CHGNet-0.3.0
+  quality_model: MatterSim-v1.0.0-5M
+  invalid_property_objective: 1.0
+  primary_metric: property_mae
+  comparisons: [C0, Fixed-K2, Random-K2, Residual-K2, Linear-K2, GBDT-K2, Oracle-K2, Oracle-All]
+  metrics:
+    - property_mae
+    - recovered_oracle_headroom
+    - safe_beneficial_coverage
+    - candidate_hit_rate
+    - top2_safe_oracle_recall
+    - fallback_rate
+    - e_hull
+    - stable
+    - novel
+    - unique
+    - nus
+    - validity
+go_gates:
+  B1:
+    any:
+      - adaptive_recovered_headroom_advantage_points_at_least: 15.0
+      - adaptive_property_mae_relative_improvement_at_least: 0.05
+  B2:
+    comparison: adaptive_quality_guardrails_not_worse_than_fixed
+    e_hull_max_worsening_ev_per_atom: 0.01
+    stable_rate_drop_max: 0.0
+    validity_rate_drop_max: 0.0
+  B3: adaptive_better_than_random
+  B4: top2_safe_oracle_recall_at_least_0.60
+stop_rule: >-
+  If no validation-selected adaptive allocator passes all frozen gates on the
+  one-shot held-out test, set ADAPTIVE_ALLOCATION_VALUE=NOT_SUPPORTED and stop.
+phase_c_rule: Create or run Phase C only when ADAPTIVE_ALLOCATION_VALUE=SUPPORTED.
