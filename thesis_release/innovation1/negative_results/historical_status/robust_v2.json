@@ -1,0 +1,36 @@
+{
+  "status": "COMPLETED",
+  "stage": "stopped_after_p0",
+  "decision": {
+    "ROBUST_ADAPTIVE_CFG_P0": "FAIL",
+    "formal256_allowed": false,
+    "next": "STOP_NO_RESCUE_TUNING",
+    "harm_relative_reduction_vs_A_OLD": {
+      "ehull": 0.0,
+      "stable": 0.0,
+      "property": 0.0
+    },
+    "at_least_one_harm_relative_reduction_ge_30pct": false,
+    "no_other_harm_increase_gt_5pp": true,
+    "mean_quality_changes_A_ROBUST_minus_C0": {
+      "ehull": 0.0061503838013679535,
+      "stable": 0.0,
+      "nus": 0.03125
+    },
+    "at_least_one_mean_quality_direction_favorable": true,
+    "guardrails": {
+      "mag_mae_worsening_le_10pct": false,
+      "validity_drop_le_5pp": true,
+      "nus_drop_le_5pp": true
+    },
+    "no_severe_stable_collapse_gt_20pp": true,
+    "cohort": "p0",
+    "n_paired": 32,
+    "all_registered_seeds_retained": true,
+    "bootstrap_resamples": 20000,
+    "bootstrap_seed": 20260916,
+    "SURROGATE_PROPERTY_EVAL": true,
+    "DFT_VERIFIED": false,
+    "parameters_retuned_after_results": false
+  }
+}

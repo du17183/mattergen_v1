@@ -1,0 +1,16 @@
+{
+  "FULL_OUTCOME_DATASET": "COMPLETE",
+  "VALIDATION_SAFE_GATE": "FAIL",
+  "OFFLINE_SAFE_SELECTION": "NOT_RUN",
+  "SAFE_SELECTION_P0": "NOT_RUN",
+  "SAFE_SELECTION_FORMAL256": "NOT_RUN",
+  "SAMPLE_ADAPTIVITY": "NOT_RUN",
+  "INNOVATION1_FINAL_STATUS": "MIXED",
+  "stage": "stopped_offline_gate",
+  "cohort": "dataset",
+  "cohort_complete": 128,
+  "cohort_total": 128,
+  "next": "STOP",
+  "reason": "No preregistered Validation operating point met coverage >=15% and selective property harm <=10%.",
+  "rescue_tuning": false
+}

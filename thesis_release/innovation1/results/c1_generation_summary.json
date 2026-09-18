@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "phase": "c1_128",
+  "seeds": 128,
+  "structures": 896,
+  "total_elapsed_gpu_hours": 16.779532858231136,
+  "acquisition_score_calls": 1433600,
+  "per_method_score_calls_per_seed": 4400,
+  "per_method_compute_multiplier": 2.2,
+  "reference_reproduction_passed": true,
+  "max_peak_allocated_bytes": 377290240
+}

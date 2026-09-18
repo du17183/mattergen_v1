@@ -1,0 +1,7 @@
+Innovation,Method,Role,MatterGen score calls/seed,Neural-potential selector calls/seed,Compute multiplier vs C0,Fallback rate,Note
+1,C0,deployment,2000,1,1.0,1.0,exact reference
+1,Fixed-K2,deployment,4400,3,2.2,0.5859375,final frozen method
+1,Linear-K2,negative confirmatory,4400,3,2.2,0.59375,not supported over Fixed-K2
+1,Phase B full candidate acquisition,dataset construction,,,3.4,,not deployment cost
+2,C0,Formal256 deployment,2000,0,1.0,0.0,mean end-to-end generation 92.848782 s
+2,RC-NFGD,Formal256 deployment,2000,20,0.9980005010595485,0.0,mean end-to-end generation 92.663131 s

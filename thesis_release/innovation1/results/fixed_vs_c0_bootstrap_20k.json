@@ -1,0 +1,14 @@
+{
+  "bootstrap_seed": 20260915,
+  "ci95_high": 0.011390991283968139,
+  "ci95_low": 0.005816517956931217,
+  "delta_definition": "baseline_minus_method",
+  "losses": 0,
+  "mean": 0.008464088518066255,
+  "median": 0.0,
+  "n": 128,
+  "relative_improvement": 0.24324578712833883,
+  "resamples": 20000,
+  "ties": 75,
+  "wins": 53
+}

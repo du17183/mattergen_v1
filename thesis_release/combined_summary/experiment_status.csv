@@ -1,0 +1,16 @@
+Experiment,Role,Dataset / N,Status,Main finding,Confirmatory?,Source
+Adaptive CFG V1,exploratory,Formal256 + fresh8,MIXED,initial directional result did not replicate robustly,No,innovation1/negative_results/historical_status/adaptive_v1_formal.json
+Robust V2,exploratory,P0=32,FAIL,bounded residual rule did not reduce harm,No,innovation1/negative_results/historical_status/robust_v2.json
+Counterfactual Oracle V3,mechanism,32 seeds; 64 full states,SUPPORTED_MECHANISM,27.22% oracle headroom; online short-horizon selection failed,No,innovation1/negative_results/historical_status/oracle_v3.json
+Risk-Calibrated V4,mechanism,96 trajectories,FAIL,selective harm remained above frozen gate,No,innovation1/negative_results/historical_status/risk_v4.json
+Safe Selection V5,mechanism,128 trajectories,FAIL,no validation point met coverage and harm gates,No,innovation1/negative_results/historical_status/safe_v5.json
+Stage-Calibrated CFG,mechanism,calibration32 + P0=32,MIXED,bounded pulse supported; fresh P0 quality gate failed,No,innovation1/negative_results/historical_status/stage_cfg.json
+Field-Decoupled CFG,mechanism,48,FAIL,no field policy passed all frozen gates,No,innovation1/negative_results/historical_status/field_cfg.json
+Branch-Compatible Oracle,mechanism,48 historical; test=12,SUPPORTED,30.41% branchable oracle headroom,No,innovation1/results/branch_oracle_status.json
+Phase B Linear-K2,model selection,64 (32/16/16),NOT_SUPPORTED,directional only; B1 failed,Held-out,innovation1/negative_results/phase_b_decision_summary.json
+C1 Fixed-K2,confirmatory comparator/final method,128,SUPPORTED,property MAE improved with safety fallback,Yes,innovation1/results/c1_metrics.csv
+C1 Linear-K2,confirmatory learned allocator,128,NOT_SUPPORTED,no advantage over frozen Fixed-K2,Yes,innovation1/results/c1_continuation_decision.json
+RC-NFGD P0,pilot,16,PASS,late force reduction,No,innovation2/results/mattersim_late_force_guidance_p0/decision_summary.json
+RC-NFGD Formal32,formal,32,PASS,effect replicated,Yes,innovation2/results/mattersim_late_force_guidance_formal32/decision_summary.json
+RC-NFGD Formal256,formal,256,SUPPORTED,strong MatterSim force reduction,Yes,innovation2/results/mattersim_late_force_guidance_formal256/decision_summary.json
+CHGNet evaluation,independent surrogate,256,POSITIVE,force direction agrees; not DFT,Yes,innovation2/results/chgnet_formal256/decision_summary.json

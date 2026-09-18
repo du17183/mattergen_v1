@@ -1,0 +1,5 @@
+method,candidate_count,mattergen_score_calls_per_seed,compute_multiplier,chgnet_calls_per_seed,mattersim_selector_calls_per_seed
+C0,0,2000,1.0,1,1
+Fixed_K2,2,4400,2.2,3,3
+Random_K2,2,4400,2.2,3,3
+Linear_K2,2,4400,2.2,3,3

@@ -1,0 +1,52 @@
+{
+  "Adaptive_CFG_used": "NO",
+  "C0_mean_maxF_ev_per_a": 0.18347236755422827,
+  "DFT_VERIFIED": false,
+  "F0_mean_maxF_ev_per_a": 0.1347278349827812,
+  "MATTERSIM_FORCE_GUIDANCE_FORMAL32": "STRONG_CONFIRMED",
+  "NEXT": "FORMAL256",
+  "Recommended_Innovation2": "MATTERSIM_FORCE_GUIDED_DIFFUSION",
+  "SURROGATE_PROPERTY_EVAL": true,
+  "absolute_maxF_improvement_ev_per_a": 0.04874453257144705,
+  "criteria": {
+    "all_guardrails_passed": true,
+    "confirmed_bootstrap_criterion_passed": true,
+    "confirmed_paired_criterion_passed": true,
+    "primary_maxF_criterion_passed": true,
+    "strong_bootstrap_criterion_passed": true,
+    "strong_paired_criterion_passed": true
+  },
+  "formal256_run": false,
+  "formal_primary_criterion": "relative reduction of paired-cohort mean MaxF",
+  "guardrails": {
+    "all_pass": true,
+    "pass": {
+      "e_hull_increase_le_0.01_ev_atom": true,
+      "mag_mae_worsening_le_10pct": true,
+      "nus_drop_le_5pp": true,
+      "runtime_ratio_le_1.5": true,
+      "validity_drop_le_5pp": true
+    },
+    "schema_version": 1,
+    "values": {
+      "e_hull_mean_increase_ev_per_atom": 0.00017979088283717748,
+      "mag_mae_worsening_fraction": 0.0032699545776396204,
+      "nus_drop_percentage_points": 0.0,
+      "runtime_ratio": 1.0033625735319407,
+      "validity_drop_percentage_points": 0.0
+    }
+  },
+  "maxF_wins_ties_losses": [
+    32,
+    0,
+    0
+  ],
+  "n_paired": 32,
+  "primary": "MatterSim MaxF on final generated structure before relaxation",
+  "relative_maxF_reduction": 0.26567778691273397,
+  "relative_maxF_reduction_bootstrap_ci95": [
+    0.1427416747473922,
+    0.5286057084634727
+  ],
+  "schema_version": 1
+}

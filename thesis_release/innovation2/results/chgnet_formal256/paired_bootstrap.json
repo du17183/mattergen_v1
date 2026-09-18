@@ -1,0 +1,26 @@
+[
+  {
+    "absolute_bootstrap_ci95": [
+      0.0070520603370439645,
+      0.06486799915701037
+    ],
+    "absolute_improvement": 0.027833333049582146,
+    "baseline": "C0",
+    "baseline_mean": 0.1938906372800398,
+    "bootstrap_resamples": 20000,
+    "ci_excludes_zero_positive": true,
+    "formal256_evaluation_trigger": true,
+    "losses": 84,
+    "mean_relative_reduction": 0.14355171265635672,
+    "method": "F0",
+    "method_mean": 0.16605730423045764,
+    "n": 256,
+    "relative_bootstrap_ci95": [
+      0.043186154812837114,
+      0.2772880938390704
+    ],
+    "status": "PASS",
+    "ties": 0,
+    "wins": 172
+  }
+]
