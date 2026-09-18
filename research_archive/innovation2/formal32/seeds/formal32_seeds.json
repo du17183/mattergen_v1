@@ -1,0 +1,159 @@
+{
+  "continuous_range": [
+    730000,
+    730031
+  ],
+  "excluded_output_directory": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32",
+  "historical_overlap_count": 0,
+  "paired_seeds": [
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730000
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730001
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730002
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730003
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730004
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730005
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730006
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730007
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730008
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730009
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730010
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730011
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730012
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730013
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730014
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730015
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730016
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730017
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730018
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730019
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730020
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730021
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730022
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730023
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730024
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730025
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730026
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730027
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730028
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730029
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730030
+    },
+    {
+      "historical_search_status": "NO_REFERENCE_FOUND_BEFORE_REGISTRATION",
+      "seed": 730031
+    }
+  ],
+  "schema_version": 1,
+  "searched_scopes": [
+    "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1/research",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/research",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/research",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/research",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/research",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/research",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/research",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/research",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/research"
+  ]
+}

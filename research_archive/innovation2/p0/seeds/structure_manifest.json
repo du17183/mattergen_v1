@@ -1,0 +1,29 @@
+{
+  "methods": [
+    "B0",
+    "F0"
+  ],
+  "n_per_method": 16,
+  "order": "method blocks; ascending seed within each file",
+  "paired_seeds": [
+    710032,
+    710033,
+    710034,
+    710035,
+    710036,
+    710037,
+    710038,
+    710039,
+    710040,
+    710041,
+    710042,
+    710043,
+    710044,
+    710045,
+    710046,
+    710047
+  ],
+  "pre_run_scan": "No 710000-710099 or 720000-720099 references in mattergen_v1* worktrees.",
+  "schema_version": 1,
+  "seed_namespace_audited_fresh_before_run": true
+}

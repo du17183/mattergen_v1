@@ -1,0 +1,143 @@
+experiment: mattersim_late_force_guidance_formal32
+frozen: true
+source:
+  p0_directory: /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0
+  files:
+    guidance_config: /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/guidance_config.yaml
+    decision_summary: /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/decision_summary.json
+    final_report: /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/final_report.md
+    guidance_implementation: /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/late_force_sampler.py
+  sha256:
+    guidance_config: 9955641afdf4d3f17ecb1ac5597e5bdaaf5cd493453e9a50fd03b270b3073f22
+    decision_summary: 70eeea13dff59c811ccc3d199e79bd45e885054876bd73d3fcc9581370cb6eba
+    final_report: feb7c4ab21b6f4e28a24cd9db652934196d9bbf12fa5660489809651e1760aca
+    guidance_implementation: 7a1598338e305986f03f232b719cdbb90687ba3388b8827ace8aa191bb8d9523
+  p0_decision: GO
+common:
+  target_dft_mag_density: 0.2
+  cfg: 2.0
+  guidance_schedule: constant
+  adaptive_cfg: false
+  diffusion_steps: 1000
+  corrector_steps_per_timestep: 1
+  batch_size: 1
+F0:
+  guidance_lambda: 1.0
+  guidance_lambda_sweep: false
+  guidance_lambda_interpretation: frozen_multiplier_on_the_single_position_force_correction
+  field: position_only
+  score_phase: predictor_only
+  clean_x0_physics: true
+  raw_xt_physics: false
+  stress_guidance: false
+  cell_guidance: false
+  atomic_guidance: false
+  guidance_t_max: 0.02
+  force_reference_ev_a: 0.07795149218357911
+  force_reference_source: calibration_seeds_710000_710015_t0.02_median_maxF
+  nominal_cartesian_step_a: 0.005
+  hard_cartesian_cap_a: 0.01
+  absolute_protocol_cap_a: 0.02
+  min_periodic_distance_floor_a: 0.5
+  coordinate_map: delta_fractional=delta_cartesian@inverse(clean_cell)
+  score_map: delta_score=delta_fractional/ancestral_predictor_score_coefficient
+actual_trigger_model_t:
+- 0.020000001415610313
+- 0.01900000125169754
+- 0.018000001087784767
+- 0.017000000923871994
+- 0.01600000075995922
+- 0.015000000596046448
+- 0.014000000432133675
+- 0.013000000268220901
+- 0.012000000104308128
+- 0.01100000087171793
+- 0.010000000707805157
+- 0.009000000543892384
+- 0.00800000037997961
+- 0.007000000216066837
+- 0.006000000052154064
+- 0.005000000353902578
+- 0.004000000189989805
+- 0.003000000026077032
+- 0.0020000000949949026
+- 0.0010000000474974513
+expected_guidance_events_per_sample: 20
+paired_seeds:
+- 730000
+- 730001
+- 730002
+- 730003
+- 730004
+- 730005
+- 730006
+- 730007
+- 730008
+- 730009
+- 730010
+- 730011
+- 730012
+- 730013
+- 730014
+- 730015
+- 730016
+- 730017
+- 730018
+- 730019
+- 730020
+- 730021
+- 730022
+- 730023
+- 730024
+- 730025
+- 730026
+- 730027
+- 730028
+- 730029
+- 730030
+- 730031
+primary: MatterSim-5M pre-relaxation mean MaxF
+statistics:
+  bootstrap_resamples: 20000
+  bootstrap_seed: 20260914
+  formal_relative_maxF_reduction: true
+  also_report_absolute_maxF_change: true
+decision:
+  strong_confirmed:
+    mean_relative_maxF_reduction_min: 0.15
+    bootstrap_relative_reduction_ci95_low_min: 0.1
+    paired_wins_min: 24
+  confirmed:
+    mean_relative_maxF_reduction_min: 0.15
+    bootstrap_relative_reduction_ci95_low_strictly_positive: true
+    paired_wins_min: 20
+  borderline:
+    mean_relative_maxF_reduction_interval:
+    - 0.08
+    - 0.15
+    paired_wins_interval:
+    - 17
+    - 19
+  fail:
+    mean_relative_maxF_reduction_below: 0.08
+    paired_wins_max: 16
+guardrails:
+  mag_mae_worsening_max_fraction: 0.1
+  nus_drop_max_percentage_points: 5.0
+  validity_drop_max_percentage_points: 5.0
+  e_hull_mean_increase_max_ev_per_atom: 0.01
+  runtime_ratio_max: 1.5
+prohibited:
+- parameter_changes
+- timestep_sweep
+- lambda_sweep
+- force_cap_sweep
+- stress_guidance
+- cell_guidance
+- energy_guidance
+- atomic_guidance
+- adaptive_cfg
+- A_plus_E3
+- formal256
+- weight_updates
+- training
