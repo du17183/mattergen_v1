@@ -49,7 +49,7 @@
 ```text
 CHINESE_ABSTRACT_CHARACTERS = 1159
   统计口径：去除标题和空白，保留标点、数字及英文术语；汉字数量为771。
-ENGLISH_ABSTRACT_WORDS = 450
+ENGLISH_ABSTRACT_WORDS = 455
   统计口径：去除标题，按空白分词。
 ```
 
