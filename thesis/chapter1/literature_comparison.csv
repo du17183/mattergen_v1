@@ -1,0 +1,11 @@
+method,paper,year,model_type,composition,position,lattice,conditioning,physical_feedback,source,notes
+CrystalGAN,CrystalGAN arXiv:1810.11203,2018,GAN,implicit_or_constrained,crystal_structure,implicit,latent_or_posthoc,none,https://arxiv.org/abs/1810.11203,early GAN-based crystal generation
+CDVAE,ICLR 2022 arXiv:2110.06197,2022,VAE_plus_diffusion,predicted_or_latent,periodic_coordinates,yes,property_optimization,learned_stability_prior,https://arxiv.org/abs/2110.06197,periodic graph and diffusion decoder
+DiffCSP,NeurIPS 2023 arXiv:2309.04475,2023,equivariant_diffusion,given_composition, fractional_coordinates,yes,composition_condition,none,https://arxiv.org/abs/2309.04475,mainly CSP with ab initio extension
+DiffCSP++,ICLR 2024 arXiv:2402.03992,2024,constrained_diffusion,given_or_conditioned, fractional_coordinates,yes,space_group_condition,none,https://arxiv.org/abs/2402.03992,space-group and Wyckoff constraints
+UniMat,ICLR 2024 arXiv:2311.09235,2024,scalable_diffusion,conditioned,crystal_structure,yes,conditional_generation,none,https://arxiv.org/abs/2311.09235,scalable materials generation
+SLICES,Nature Communications DOI:10.1038/s41467-023-42870-7,2023,autoregressive_RNN,encoded_in_string,decoded_structure,yes,property_focused,post_relaxation,https://doi.org/10.1038/s41467-023-42870-7,invertible invariant string representation
+CrystaLLM,Nature Communications DOI:10.1038/s41467-024-54639-7,2024,autoregressive_LLM,prompted_or_given, CIF_coordinates,yes,composition_or_space_group,post_evaluation,https://doi.org/10.1038/s41467-024-54639-7,CIF language model
+MatterGen,Nature DOI:10.1038/s41586-025-08628-5,2025,joint_diffusion,generated,periodic_fractional_coordinates,yes,chemical_symmetry_or_scalar_property,no_online_force,https://doi.org/10.1038/s41586-025-08628-5,frozen baseline in this thesis
+SCIGEN,Nature Materials DOI:10.1038/s41563-025-02355-y,2025,constrained_diffusion,conditioned,geometric_pattern,yes,structural_constraint,structural_prior,https://doi.org/10.1038/s41563-025-02355-y,geometry-constrained generation
+PODGen,npj Computational Materials DOI:10.1038/s41524-025-01930-w,2026,predictor_guided_MCMC,generated,crystal_structure,yes,multiple_property_predictors,predictor_guided_sampling,https://doi.org/10.1038/s41524-025-01930-w,targeted conditional workflow

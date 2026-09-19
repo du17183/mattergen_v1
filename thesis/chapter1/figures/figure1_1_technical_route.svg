@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#365c7d"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#19324d" flood-opacity="0.16"/>
+    </filter>
+    <style>
+      .title { font: 700 28px sans-serif; fill: #17324d; }
+      .head { font: 700 21px sans-serif; fill: #17324d; }
+      .label { font: 600 18px sans-serif; fill: #17324d; }
+      .small { font: 16px sans-serif; fill: #35546d; }
+      .box { stroke: #365c7d; stroke-width: 2; rx: 16; filter: url(#shadow); }
+      .arrow { stroke: #365c7d; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1400" height="800" fill="#f7fafc"/>
+  <text x="700" y="48" text-anchor="middle" class="title">MatterGen Thesis: Two Independent Inference-Time Routes</text>
+  <rect x="470" y="82" width="460" height="92" class="box" fill="#dbeaf4"/>
+  <text x="700" y="119" text-anchor="middle" class="head">Frozen MatterGen baseline</text>
+  <text x="700" y="150" text-anchor="middle" class="small">C0 · atomic species + positions + cell · CFG=2.0</text>
+  <path d="M700 174 L700 218" class="arrow"/>
+  <circle cx="700" cy="244" r="12" fill="#365c7d"/>
+  <path d="M700 256 L350 310" class="arrow"/>
+  <path d="M700 256 L1050 310" class="arrow"/>
+
+  <rect x="70" y="310" width="560" height="306" class="box" fill="#e6f4ef"/>
+  <text x="350" y="348" text-anchor="middle" class="head">Innovation 1: attribute control</text>
+  <text x="350" y="380" text-anchor="middle" class="small">Residual diagnostics and counterfactual oracle</text>
+  <rect x="110" y="408" width="480" height="62" rx="12" fill="#ffffff" stroke="#83b6a5" stroke-width="2"/>
+  <text x="350" y="447" text-anchor="middle" class="label">Reference-preserved shared prefix</text>
+  <path d="M350 470 L350 500" class="arrow"/>
+  <rect x="110" y="500" width="480" height="62" rx="12" fill="#ffffff" stroke="#83b6a5" stroke-width="2"/>
+  <text x="350" y="539" text-anchor="middle" class="label">Fixed-K2 candidate branches</text>
+  <path d="M350 562 L350 592" class="arrow"/>
+  <text x="350" y="609" text-anchor="middle" class="small">terminal constraints → accept or exact C0 fallback</text>
+
+  <rect x="770" y="310" width="560" height="306" class="box" fill="#fff1e5"/>
+  <text x="1050" y="348" text-anchor="middle" class="head">Innovation 2: local consistency</text>
+  <text x="1050" y="380" text-anchor="middle" class="small">Stage reliability calibration of predicted clean structure</text>
+  <rect x="810" y="408" width="480" height="62" rx="12" fill="#ffffff" stroke="#d39a63" stroke-width="2"/>
+  <text x="1050" y="447" text-anchor="middle" class="label">Late-stage MatterSim force feedback</text>
+  <path d="M1050 470 L1050 500" class="arrow"/>
+  <rect x="810" y="500" width="480" height="62" rx="12" fill="#ffffff" stroke="#d39a63" stroke-width="2"/>
+  <text x="1050" y="539" text-anchor="middle" class="label">Periodic mapping + bounded correction</text>
+  <path d="M1050 562 L1050 592" class="arrow"/>
+  <text x="1050" y="609" text-anchor="middle" class="small">position predictor injection → safety fallback</text>
+
+  <path d="M350 616 L350 675 L700 675" class="arrow"/>
+  <path d="M1050 616 L1050 675 L700 675" class="arrow"/>
+  <rect x="470" y="676" width="460" height="76" class="box" fill="#e7edf3"/>
+  <text x="700" y="710" text-anchor="middle" class="head">Unified frozen evaluation</text>
+  <text x="700" y="737" text-anchor="middle" class="small">paired seeds · MatterSim · CHGNet · surrogate boundaries</text>
+</svg>
