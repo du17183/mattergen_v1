@@ -48,12 +48,12 @@ $$
 
 ### 3.2.1 字段残差与共享控制量
 
-对于每个字段 \(f\)，V1 首先计算条件与无条件得分差的均方根残差：
+对于每个字段 \(j\in\{a,p,H\}\)，V1 首先计算条件与无条件得分差的均方根残差：
 
 $$
-\Delta_f(t)=
+\Delta_j(t)=
 \sqrt{\operatorname{mean}\left[
-\left(s_{\mathrm{cond},f}(t)-s_{\mathrm{uncond},f}(t)\right)^2
+\left(s_{\mathrm{cond},j}(t)-s_{\mathrm{uncond},j}(t)\right)^2
 \right]}.
 $$
 

@@ -43,5 +43,5 @@
 | CHGNet Nature Machine Intelligence 原文已核对 | PASS |
 | 三字段预测干净结构与本地实现逐项核对 | PASS |
 | 指标定义与冻结 evaluator/confirmation code 核对 | PASS |
-| `CITATION NEEDED` | 0 |
+| 待引用标记 | 0 |
 | `DFT_VERIFIED` | false |
