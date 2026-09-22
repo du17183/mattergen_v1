@@ -1,0 +1,25 @@
+\begin{ChineseAbstract}
+
+材料逆向设计旨在根据目标性能或约束条件反推出满足要求的候选晶体结构。生成式深度学习为在大规模结构空间中直接产生候选提供了新的技术路径，但条件属性控制精度有限，且满足属性条件的结构仍可能存在局部几何或代理受力问题。本文以冻结的 MatterGen 作为基础生成模型，围绕推理阶段的条件属性控制和局部结构代理物理一致性开展研究，不重新训练 MatterGen 主干权重，也不改变其三字段生成定义。
+
+针对条件引导在不同样本间难以稳定判断有利偏离的问题，本文提出参考轨迹保留的预算约束多分支条件引导与安全回退方法。该方法保存固定 CFG=2.0 的精确 C0 参考轨迹和共享采样前缀，在有限预算下展开两个冻结候选分支，并依据终点属性和冻结代理质量约束进行候选选择；当候选不满足接受条件时，回退到精确 C0。在 128 个全新配对种子组成的 C1-128 确认实验中，Fixed-K2 将 Property MAE 从 0.034796 降至 0.026332，相对降低 24.32\%，同时通过预定义的代理质量护栏，生成预算约为 C0 的 2.2 倍。学习型 Linear-K2 候选分配未表现出相对于 Fixed-K2 的稳定额外优势，因此本文不将在线 Adaptive CFG 或学习型分配器表述为已验证的普适改进。
+
+针对属性满足但局部结构仍可能具有较高代理受力的问题，本文提出基于阶段可靠性校准的后期神经力场引导扩散方法（Reliability-Calibrated Late-stage Neural Force-Guided Diffusion，RC-NFGD）。该方法依据预测干净结构在扩散后期的阶段可靠性构造介入窗口，调用 MatterSim 估计原子力，经笛卡尔坐标到周期分数坐标的映射后，将力反馈注入 position predictor，并实施有界位置修正和异常安全回退。在 Formal256 正式实验中，MatterSim 评估的最大原子力、平均原子力和 RMSD 分别降低 29.81\%、29.72\% 和 14.17\%；未参与在线引导的 CHGNet 独立机器学习原子间势评估中，最大原子力均值降低 14.36\%。与此同时，RC-NFGD 的 Property MAE 由 0.009757 增至 0.009868，误差约恶化 1.14\%，表明代理受力改善并未带来目标属性误差的同步改善。
+
+综上，本文形成了两条相互独立的 MatterGen 推理阶段增强路线：参考轨迹保留的 Fixed-K2 面向代理属性控制，RC-NFGD 面向代理局部结构一致性。两项方法分别在冻结的配对种子和代理评价协议下得到支持，但不据此声称存在已验证的联合协同，也不将在线方法表述为优于所有生成后处理策略。当前物理一致性证据仍来自 MatterSim 和 CHGNet 等机器学习原子间势代理，尚未完成 DFT 验证；因此，本文结论限定于所用模型、任务、预算和代理协议。
+
+\ChineseKeywords{材料逆向设计；晶体结构生成；扩散模型；条件引导；神经网络原子间势}
+\end{ChineseAbstract}
+
+\begin{EnglishAbstract}
+
+Inverse materials design aims to infer candidate crystal structures from target properties or structural constraints. Deep generative models provide a way to propose candidates directly in a large structural space, yet conditional property control can remain inaccurate, and a structure that satisfies a target property may still exhibit poor local geometry or large surrogate forces. This thesis uses frozen MatterGen as the foundation generative model and studies two inference-time problems: conditional property control and local structural consistency as measured by surrogate physical metrics. The MatterGen backbone and its three-field generation definition are kept unchanged.
+
+To address the difficulty of identifying beneficial deviations from conditional guidance consistently across samples, this thesis proposes Reference-Preserved Budget-Constrained Multi-Branch Guidance with Safety-Constrained Fallback. The method preserves the exact CFG=2.0 C0 reference trajectory and a shared sampling prefix, expands two frozen candidate suffixes under a fixed budget, and selects a candidate using terminal property and frozen surrogate-quality constraints; if the acceptance conditions are not met, it returns to the exact C0 trajectory. On C1-128, comprising 128 completely fresh paired seeds, Fixed-K2 reduced Property MAE from 0.034796 to 0.026332, a relative reduction of 24.32\%, while satisfying the predefined surrogate-quality guardrails. The generation budget was approximately 2.2 times that of C0. A learned Linear-K2 allocator did not show a stable additional advantage over Fixed-K2, so online Adaptive CFG and learned allocation are not presented as universally validated improvements.
+
+To address the possibility that property-satisfying structures still have large local surrogate forces, this thesis proposes Reliability-Calibrated Late-stage Neural Force-Guided Diffusion (RC-NFGD). The method identifies an intervention window from the stage-wise reliability of predicted clean structures, evaluates atomic forces with MatterSim in the late diffusion stage, maps Cartesian forces to periodic fractional coordinates, injects the feedback into the position predictor, and applies bounded position correction with anomalous-path fallback. On Formal256, RC-NFGD reduced the MatterSim-evaluated maximum atomic force, mean atomic force, and RMSD by 29.81\%, 29.72\%, and 14.17\%, respectively. In an independent CHGNet machine-learning interatomic-potential evaluation that was not used for online guidance, the mean maximum atomic force decreased by 14.36\%. However, Property MAE increased from 0.009757 to 0.009868, corresponding to an approximately 1.14\% deterioration; thus, improved surrogate force and structural metrics did not translate into simultaneous improvement in target-property error.
+
+Overall, the thesis develops two independent MatterGen inference-time enhancement routes: reference-preserved Fixed-K2 for surrogate property control and RC-NFGD for surrogate local structural consistency. Both methods are supported under their frozen paired-seed and surrogate-evaluation protocols, but the results do not establish validated joint synergy or superiority over all post-generation processing strategies. The current physical-consistency evidence is limited to machine-learning interatomic-potential surrogates such as MatterSim and CHGNet; DFT validation has not been performed. The conclusions are therefore restricted to the evaluated model, tasks, budgets, and surrogate protocols.
+
+\EnglishKeywords{inverse materials design; crystal structure generation; diffusion models; conditional guidance; machine-learning interatomic potentials}
+\end{EnglishAbstract}
