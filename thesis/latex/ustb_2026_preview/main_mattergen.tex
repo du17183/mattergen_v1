@@ -1,0 +1,105 @@
+% 北京科技大学研究生学位论文模板预览
+% 本文件只用于检查模板套版效果；作者、学号、导师等信息仍需补全。
+\documentclass{ustbthesis}
+
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{tabularx}
+\usepackage{amsmath,amssymb}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{fancyvrb}
+
+\newcommand{\figref}[1]{~\ref{#1}~}
+\newcommand{\tabref}[1]{~\ref{#1}~}
+\newcommand{\thickhline}{\noalign{\hrule height 0.9pt}}
+\renewcommand{\arraystretch}{1.25}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcounter{none} % Pandoc's unnumbered longtable caption marker
+\newenvironment{Shaded}{}{}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},fontsize=\scriptsize}
+\newcommand{\NormalTok}[1]{#1}
+
+% Pandoc body fragments use these helpers.
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*{\pandocbounded}[1]{%
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi%
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox\pandoc@box%
+  \fi%
+}
+\makeatother
+
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% 封面信息（待补全） %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Author{[待填]}
+\EnglishAuthor{[To be filled]}
+\Title{基于深度学习的材料逆向生成}
+\EnglishTitle{Deep Learning-Based Inverse Materials Design}
+\Subtitle{}
+\EnglishSubtitle{}
+\Date{2026年XX月}
+\EnglishDate{September, 2026}
+\College{[待填学院]}
+\EnglishCollege{[College to be filled]}
+\Address{海淀区学院路30号}
+\EnglishAddress{30 Xueyuan Road, Haidian District}
+\Affiliation{北京科技大学}
+\EnglishAffiliation{University of Science and Technology Beijing}
+\Postcode{100083}
+\City{北京}
+\EnglishCity{Beijing}
+\Country{中国}
+\EnglishCountry{P.R.CHINA}
+\StudentCode{[待填]}
+\Major{计算机技术}
+\EnglishMajor{Computer Technology}
+\Direction{材料逆向生成}
+\EnglishDirection{Inverse Materials Generation}
+\Supervisor{[待填]}
+\EnglishSupervisor{[To be filled]}
+\DegreeType{专业型硕士}
+\EnglishDegreeType{Master}
+\CLCNumber{}
+\UDCNumber{}
+\UniversityCode{10008}
+\UniversityLogoFile{images/ustb.png}
+\SecurityLevel{公开}
+\SubmissionDate{2026年XX月XX日}
+\EnglishSubmissionDate{September, 2026}
+%%%%%%%%%%%%%%%%%%%%%%%%%%% 封面信息 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\TitlePage
+\SecondPage
+\ThirdPage
+
+\pagestyle{fancy}
+\include{contents/abstract}
+\tableofcontents
+\include{contents/list}
+\include{contents/list-sym}
+
+\mainmatter
+\pagestyle{fancy}
+\include{contents/chap1}
+\include{contents/chap2}
+\include{contents/chap3}
+\include{contents/chap4}
+\include{contents/chap5}
+\include{contents/chap6}
+
+\include{contents/bib}
+\include{contents/thanks}
+\include{contents/mresume}
+\postDeclarations
+\include{contents/dataset}
+
+\end{document}
