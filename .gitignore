@@ -568,3 +568,29 @@ experiments/tcl_formal256/structures/
 experiments/tcl_formal256/relaxation/
 experiments/tcl_formal256/quality/
 experiments/tcl_formal256/runtime_tmp/
+
+# LaTeX build products and local tool installations
+.TinyTeX/
+.agents/
+*.aux
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+thesis_preview_latex.pdf
+thesis_preview_readable.pdf
+thesis_preview.tex
+
+# Keep the reviewed final thesis PDFs as explicit release artifacts.
+!thesis/latex/ustb_2026_preview/ustb_mattergen_preview.pdf
+!thesis/latex/ustb_2026_polished_preview/ustb_mattergen_polished.pdf
+thesis/latex/**/manual_now.pdf
+thesis/latex/ustb_2026_polished_preview/ustb_mattergen_preview.pdf
