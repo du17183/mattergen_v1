@@ -1,0 +1,17 @@
+{
+  "method": "descriptive C0-minus-method gain per additional C0-equivalent score-call unit",
+  "Independent_Best_of_2": 0.00952658646851038,
+  "Fixed_K2": 0.00676410598337742,
+  "warning": "Not an exact-cost, verifier-call, terminal-count, or wall-time matched causal comparison.",
+  "direct_paired_Best_of_2_minus_Fixed_K2": {
+    "n": 128,
+    "mean": -0.0014096592884574764,
+    "median": 0.0,
+    "ci95_low": -0.005038548972540099,
+    "ci95_high": 0.002167426297448382,
+    "wins": 41,
+    "ties": 59,
+    "losses": 28,
+    "resamples": 20000
+  }
+}

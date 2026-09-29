@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_BEFORE_NEW_PROPERTY_OR_QUALITY_RESULTS",
+  "date": "2026-09-28",
+  "historical_c1_unchanged": true,
+  "cohorts": {
+    "search_baseline": {"n": 128, "primary_start": 2100000000, "independent_second_start": 2100001000},
+    "budget_scaling": {"n": 128, "primary_start": 2100010000}
+  },
+  "seed_overlap": {
+    "earlier_full_audit_historical_maximum": 2026091913,
+    "current_historical_record_exact_seed_matches": 0,
+    "scan_note": "rg numeric-range scan of JSON/YAML/CSV historical experiment and research-archive records; trace files excluded because floating-point telemetry produces unrelated numeric substrings"
+  },
+  "branch_order": ["GPulse", "PPulse", "APulse", "CPulse"],
+  "fixed_k2_branches": ["GPulse", "PPulse"],
+  "selector": "historical SAFE-A, property improvement >1e-6, no validity/stability drop, finite E-hull <= C0+0.01 eV/atom, else exact C0",
+  "primary_metric": "paired CHGNet absolute magnetic-density error reduction, target=0.1",
+  "bootstrap": {"resamples": 20000, "seed": 2026092801, "ties_abs_gain_at_most": 1e-12},
+  "quality_guardrails_vs_c0": {"e_hull_worsening_max_eV_per_atom": 0.01, "stable_drop_max": 0.05, "nus_drop_max": 0.05, "validity_drop_max": 0.05},
+  "seed_manifest_sha256": "999e23bf3ff6d8b7f61e2494903f2bbedd1b55025fd16cc0bf96a490aec2e19e",
+  "new_source_sha256": {
+    "run_generation.py": "d4934b4f8589f900198accb9350973b26967258daf0a31dd3f6c9323f4686e5a",
+    "search_sampler.py": "70d5bf386568e86ef4c7831e6b140d90909a52b0961d48065d3d440770337de1",
+    "evaluate.py": "5733ba598f338b8621b01815060d7b16b3ea785646a708939aea5c936649c5d6",
+    "analyze.py": "d955e885998be99f71d2d3a4dda7afbf551e607ce7bfc2cd454adecba1a15462",
+    "plot_report.py": "ebd1ae1a09266e1d4d3801877d6cf394180cf10455656f30285f92896d29de88",
+    "run_pipeline.py": "0bca8b64dc61857a56f8eb8f2dcec1e7b6516fe8b2999925002a8fad0d7e2d30"
+  },
+  "model_checkpoint_sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+  "canary_implementation_amendment": "First canary failed before any terminal structure or proxy result: PyG ChemGraph has no .data mapping; checkpoint condition access changed to state[key]. No branch, budget, verifier, seed, or threshold was modified. Failed empty partial and log retained.",
+  "report_wording_amendment": "Before any new property/quality results, removed unsupported cost-efficiency language for the 2.0x-vs-2.2x comparison. No experiment method, metric, threshold, or seed changed.",
+  "orchestration_amendment_after_baseline_generation": "The first pipeline run stopped before property evaluation when GPU 5 reported 0 MiB memory and transient 2% utilization. Original stop audit preserved separately. Idle guard now requires <=1000 MiB and no active compute PID; utilization alone does not block. This operational correction does not alter generation, seeds, branch policy, verifier, selector, primary metric, bootstrap, or quality thresholds.",
+  "proxy_only": true,
+  "dft_verified": false
+}

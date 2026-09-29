@@ -1,4 +1,4 @@
-\chapter{基于阶段可靠性校准的后期神经力场引导扩散方法}
+\chapter{面向冻结材料扩散模型的神经力场反馈引导方法}
 
 MatterGen 通过联合去噪原子类型、周期分数坐标和晶胞，实现无机晶体的条件生成\citep{zeni2025}。第3章主要从条件引导角度改善目标属性生成精度，但属性条件满足并不等价于局部结构处于低受力状态。生成模型学习的是训练数据分布及条件属性之间的统计关系，其逆扩散更新并不显式要求当前结构沿局部势能下降方向移动，因此最终结构仍可能出现较大的代理原子力或较长的代理松弛位移。针对这一问题，本章提出基于阶段可靠性校准的后期神经力场引导扩散方法（Reliability-Calibrated Late-stage Neural Force-Guided Diffusion，RC-NFGD）。该方法先通过阶段诊断确定预测干净结构（predicted clean \(x_0\)）可以可靠预示最终受力排序的时间区间，再在逆扩散后期调用 Matter\allowbreak Sim 神经势模型，将其给出的笛卡尔原子力变换为有界的周期分数坐标修正，并通过预测器的实际 score 系数注入位置更新。
 
@@ -593,6 +593,75 @@ G1 相对 G0 的 Mean MaxF 降低 30.48\%，95\% CI 为 {[}24.66\%, 38.87\%{]}�
 \subsection{与 Adaptive CFG 的兼容性}
 
 兼容性实验在 64 个配对种子上比较 C0、Adaptive CFG（A0）、单独力引导（B0）和组合方法（AB）。Mean MaxF 分别为 0.218922、0.239629、0.171833 和 0.192794 eV/Å。组合 AB 保留 Adaptive CFG 属性改善的比例约为 0.9745，但只保留单独力引导 MaxF 改善的约 0.5549，低于冻结的 0.7 双保持阈值，最终状态为 FAIL。因而本论文将创新点1与创新点2作为独立贡献报告，不宣称存在稳定协同，也不把 AB 作为最终模型。
+
+\section{属性---代理受力的 Pareto 权衡}
+
+为避免仅报告单一受力指标，本节在历史 A6 同一组 32 对结构上，以冻结属性代理的 Property MAE 和预松弛 Matter\allowbreak Sim MaxF 构造二维方法均值比较；两项指标均以越低为好。该分析只重用已保存的 C0、RC-NFGD 与等 20 次力调用的 POST 结果，不引入新的选择规则。表~\ref{tab:4-pareto}与图~\ref{fig:4-pareto}只比较 A6 同 cohort 的方法均值，不将 Formal256 或后述 Timing 样本混入同一个前沿。
+
+\begin{table}[tbp]
+\centering\small
+\bicaption{历史 A6 配对 cohort 的属性---代理受力权衡（$n=32$，均值$\pm$样本标准差）}{Property--Surrogate-Force Trade-off in the Historical A6 Paired Cohort ($n=32$; Mean $\pm$ Sample Standard Deviation)}\label{tab:4-pareto}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc@{}}
+\toprule
+方法 & Property MAE & Matter\allowbreak Sim MaxF (eV/\AA) \\
+\midrule
+C0 & $0.007900\pm0.006690$ & $0.214179\pm0.239536$ \\
+RC-NFGD & $0.007886\pm0.006537$ & $0.163650\pm0.230165$ \\
+POST & $0.007933\pm0.006363$ & $0.043275\pm0.138975$ \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.88\linewidth]{../../../figures/rcnfgd/pareto_frontier.pdf}
+\bicaption{历史 A6 同组 32 对结构的 Property MAE--Matter\allowbreak Sim MaxF 方法均值及种子自助法 95\% 区间。虚线仅连接方法均值的描述性非支配点，不表示统计显著性或跨 cohort 前沿；POST 的终态代理力更低。}{Property MAE--MatterSim MaxF Method Means and Seed-Bootstrap 95\% Intervals for the Same 32 Paired A6 Structures. The Dashed Line Connects Descriptive Nondominated Mean Points Only; It Does Not Indicate Statistical Significance or a Cross-Cohort Frontier. POST Has Lower Terminal Surrogate Force.}\label{fig:4-pareto}
+\end{figure}
+
+在方法均值点估计上，RC-NFGD 与 POST 均位于描述性 Pareto 前沿：前者的属性代理误差略低，后者的同势 MaxF 明显更低。然而，RC-NFGD 减 POST 的 Property MAE 配对差为 $-0.000048$，20\,000 次配对自助法 95\% 区间为 $[-0.000349,0.000212]$，跨越零；不可把极小的点估计差异写成统计确认的属性优势。RC-NFGD 减 POST 的 MaxF 均值差为 $0.120375$ eV/\AA，95\% 区间为 $[0.076924,0.171350]$，表明在该 A6 协议中 POST 的终态代理受力更低。Formal256 的 Property MAE 则由 C0 的 0.009757 增至 RC-NFGD 的 0.009868，方向与 A6 点估计不同；两组样本应分别解释。本节前沿只是属性---代理力权衡的描述，既不证明统计支配，也不是 DFT 物理结论。
+
+\section{力反馈注入阶段的影响（Influence of Force Feedback Injection Stage）}
+
+在 ALM 环境通过历史种子复现门槛后，Timing Ablation 使用与历史 A6 和 Formal256 均不重合的 32 个全新配对种子（750000--750031）。四臂保持冻结的 MatterGen、MatterSim、引导公式、阈值、采样器和评价协议，只把力反馈开始时间设为无力 C0、Early（$t\leq1.0$）、Middle（$t\leq0.5$）与 Late（原始 RC-NFGD，$t\leq0.02$）。各臂均需每样本 2000 次 MatterGen score 调用；但开始时间同时改变了累计 Matter\allowbreak Sim 力调用，因此这不是等力计算预算下的纯时间因果对照。
+
+\begin{table}[tbp]
+\centering\small
+\bicaption{力反馈注入阶段消融：32 对新种子的均值$\pm$样本标准差；耗时为端到端 wall time}{Force-Feedback Timing Ablation: Mean $\pm$ Sample Standard Deviation over 32 Fresh Paired Seeds; Time Is End-to-End Wall Time}\label{tab:4-timing-main}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrrr@{}}
+\toprule
+方法 & 力调用/样本 & Wall time (s) & MaxF (eV/\AA) & Property MAE \\
+\midrule
+C0 & $0.0\pm0.0$ & $86.7\pm1.5$ & $0.18986\pm0.25256$ & $0.01515\pm0.02150$ \\
+Early & $931.5\pm26.0$ & $258.5\pm192.0$ & $0.16860\pm0.27755$ & $0.00838\pm0.00894$ \\
+Middle & $500.0\pm0.2$ & $106.5\pm3.0$ & $0.14072\pm0.17955$ & $0.01120\pm0.01044$ \\
+Late & $20.0\pm0.0$ & $88.3\pm2.6$ & $0.13864\pm0.21623$ & $0.01522\pm0.02151$ \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+\begin{table}[tbp]
+\centering\small
+\bicaption{Timing Ablation 的次要代理质量指标（$n=32$；力和 E-hull 为均值$\pm$样本标准差）}{Secondary Surrogate-Quality Metrics in the Timing Ablation ($n=32$; Force and E-hull Are Mean $\pm$ Sample Standard Deviation)}\label{tab:4-timing-quality}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrrrr@{}}
+\toprule
+方法 & Mean Force (eV/\AA) & Validity & Stable & E-hull (eV/atom) & NUS \\
+\midrule
+C0 & $0.08450\pm0.09846$ & 100\% & 78.13\% & $0.06549\pm0.06896$ & 31.25\% \\
+Early & $0.07294\pm0.09224$ & 100\% & 75.00\% & $0.07125\pm0.06907$ & 15.63\% \\
+Middle & $0.05816\pm0.05968$ & 100\% & 78.13\% & $0.07429\pm0.06711$ & 40.63\% \\
+Late & $0.06051\pm0.08720$ & 100\% & 78.13\% & $0.06548\pm0.06895$ & 31.25\% \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.86\linewidth]{../../../figures/thesis_integration/timing_paired_maxf.pdf}
+\bicaption{Timing Ablation 的配对 Matter\allowbreak Sim MaxF 差（候选减 C0），点为 32 对种子的均值差，横线为 20\,000 次配对百分位自助法 95\% 区间。负值表示较低代理力；Early 和 Middle 区间跨零。各臂力调用预算不同，不构成等预算时机最优证据。}{Paired MatterSim MaxF Differences in the Timing Ablation (Candidate Minus C0): Points Are Mean Differences over 32 Paired Seeds and Horizontal Bars Are 20,000-Resample Paired Percentile-Bootstrap 95\% Intervals. Negative Values Indicate Lower Surrogate Force; Force-Call Budgets Differ and Do Not Establish an Equal-Budget Optimal Stage.}\label{fig:4-timing}
+\end{figure}
+
+Late 相对同 cohort C0 的 MaxF 配对差为 $-0.05123$ eV/\AA，95\% 区间 $[-0.06834,-0.03770]$，32/32 对方向有利；Mean Force 配对差为 $-0.02399$ eV/\AA，区间 $[-0.02983,-0.01879]$。但 Late 的 Property MAE 亦高出 $0.000066$，其配对区间 $[0.000010,0.000149]$ 位于不利方向。Early 的属性 MAE 均值较低，NUS 点估计却更低且耗时更长；Middle 的受力均值下降，但 MaxF 的配对区间跨零。Late 减 Early 与 Late 减 Middle 的 MaxF 配对区间分别为 $[-0.13136,0.06633]$、$[-0.06685,0.07727]$，均跨零；这些未作多重比较校正的探索性结果不支持“Late 唯一最优”。不同阶段呈现代理力、属性保持与力调用成本的不同折中。CUDA event 记录包含 CPU 等待，不能解释为活跃 GPU 计算时间。
+
 
 \section{方法讨论与局限}
 

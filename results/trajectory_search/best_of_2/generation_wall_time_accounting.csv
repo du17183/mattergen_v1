@@ -1,0 +1,7 @@
+Measure,Mean seconds/sample,Median seconds/sample,P95 seconds/sample,Basis
+primary acquisition,278.06847086866946,274.0870209749555,300.45873905149057,"measured, includes C0 replay and two suffixes"
+independent second full sample,87.06397156887942,85.8611743048532,94.00763778428082,measured independent generation
+total study acquisition,365.1324424375489,359.6759136118926,393.69337620810836,"measured generation, all candidates plus replay"
+C0 deployment,86.89639714645921,85.6521940546736,93.8933559535908,score-proportional estimate only; excludes verifier
+Independent Best-of-2 deployment,173.96036871533863,171.6022409964644,187.1209702839289,score-proportional primary allocation plus measured second sample; excludes verifier
+Fixed-K2 deployment,191.17207372221026,188.43482692028192,206.56538309789974,score-proportional estimate only; excludes verifier
