@@ -1,14 +1,14 @@
-\chapter{参考轨迹保留的预算约束多分支条件引导与安全回退方法}
+\chapter{面向冻结扩散生成模型的预算约束验证选择推理增强方法}
 
-MatterGen 将晶体生成表示为原子类型、周期坐标与晶胞三个相互耦合字段上的扩散过程，并可通过属性条件实现材料逆向生成\citep{zeni2025}。在条件采样阶段，分类器无关引导（classifier-free guidance，CFG）利用条件得分与无条件得分之差增强条件响应\citep{ho2022}。引导强度过低可能削弱目标属性约束，过高则可能放大模型误差并损害结构质量。因此，如何在属性符合度与生成质量之间配置引导强度，是 MatterGen 推理阶段的重要控制问题。
+MatterGen 将晶体生成表示为原子类型、周期坐标与晶胞三个相互耦合字段上的扩散过程，并可通过属性条件实现材料逆向生成\citep{zeni2025}。在条件采样阶段，分类器无关引导（classifier-free guidance，CFG）利用条件得分与无条件得分之差增强条件响应\citep{ho2022}。引导强度过低可能削弱目标属性约束，过高则可能放大模型误差并损害结构质量。然而，模型冻结后仍能增加推理计算：独立重复采样、共享前缀分支与终点验证都可能改变输出。核心问题不只是选择 CFG 数值，而是在可核算预算下如何生成候选、控制代理选择风险并保留精确参考输出。
 
-本章围绕这一问题展开。研究最初从多字段残差驱动的在线自适应 CFG 出发，随后通过反事实 Oracle、风险校准、时间阶段与字段归因实验，逐步识别在线控制不稳定的原因。在这些证据基础上，本文将问题由``在生成过程中提前预测最优引导强度''重新表述为``在有限推理预算内保留基准轨迹、展开少量候选并在终点约束下选择''。最终形成参考轨迹保留的预算约束多分支条件引导与安全回退方法（Reference-Preserved Budget-Constrained Multi-Branch Guidance with Safety-Constrained Fallback），并以固定双候选分支策略（Fixed-K2）作为本章最终方法。
+本章以预算约束验证选择为主线。首先保留在线 Adaptive CFG、反事实 Oracle、风险校准、阶段与字段分析中的正反证据，说明单轨迹控制为何难以稳定识别有利偏离。随后定义状态、候选动作、MatterGen 转移、终点验证器、预算账本和参考回退；Fixed-K2 仅是共享前缀、固定双候选的实例。除历史 C1-128 确认与 Linear-K2 负结果外，本章还以两个独立的新 cohort 检验独立 Best-of-2 的竞争性及 K=0--4 的预算---性能关系。新实验不倒写为原 C1 的方法选型依据。
 
 需要预先说明，本章中的目标属性误差由冻结的 CHGNet 磁性密度代理模型计算\citep{deng2023}，能量高于凸包值（energy above hull，E-hull）与稳定性主要由 Matter\allowbreak Sim 代理评价器给出\citep{yang2024mattersim}。这些结果是冻结协议下的代理模型证据，不等同于密度泛函理论（DFT）或实验验证；本章所有实验的 \texttt{DFT\_VERIFIED} 均为 \texttt{false}。
 
-\section{问题定义与研究动机}
+\section{冻结扩散模型的推理预算问题}
 
-\subsection{MatterGen 中的固定条件引导}
+\subsection{冻结 MatterGen 与参考采样}
 
 设扩散采样第 \(t\) 步的无条件得分为 \(s_{\mathrm{uncond}}(x_t,t)\)，给定目标条件 \(c\) 后的条件得分为 \(s_{\mathrm{cond}}(x_t,t,c)\)。标准 CFG 按下式构造用于反向扩散的得分：
 
@@ -29,7 +29,7 @@ f\in\{a,p,H\},
 
 其中 \(a,p,H\) 分别表示原子类型、位置与晶胞字段，\(H\) 与第4章采用的晶胞矩阵记号一致。
 
-固定 \(g=2.0\) 的优点是实现简单、计算预算稳定且便于复现，但它对所有样本、所有反向扩散时刻以及三个字段采用同一强度。这隐含了一个较强假设：不同样本和状态对条件信号的需求基本一致。实际采样中，条件得分与无条件得分的差异随字段和时间明显变化，固定引导并未利用这些在线信息。由此形成本文最初的研究问题：是否存在随样本、采样阶段或字段变化的更优条件引导策略？
+固定 \(g=2.0\) 的优点是实现简单、计算预算稳定且便于复现，但它对所有样本、所有反向扩散时刻以及三个字段采用同一强度。这隐含了一个较强假设：不同样本和状态对条件信号的需求基本一致。实际采样中，条件得分与无条件得分的差异随字段和时间明显变化，固定引导并未利用这些在线信息。由此形成早期的单轨迹控制假设：是否存在随样本、阶段或字段变化的更优引导？本章最终研究问题更宽：给定冻结生成器与预算，参考 C0、独立采样和共享前缀候选分别带来什么，终点选择能否在预定义代理约束下避免不利输出？
 
 \subsection{研究假设与评价目标}
 
@@ -42,9 +42,9 @@ E_{\mathrm{prop}}=\frac{1}{n}\sum_{i=1}^{n}
 \left|\hat c_i-c_i^{\star}\right|,
 \]
 
-其中 \(\hat c_i\) 为冻结属性代理模型的预测值，\(c_i^{\star}\) 为目标条件。同时报告 E-hull、Stable、Novel、Unique、NUS（Novel、Unique 且 Stable）与 Validity 等质量指标。方法判断不只关注总体均值，还使用配对差异、20 000 次自助法置信区间、伤害率和尾部退化，以避免少数大幅改善掩盖大量轻微损害。
+其中 \(\hat c_i\) 为冻结属性代理模型的预测值，\(c_i^{\star}\) 为目标条件。同时报告 E-hull、Stable、Novel、Unique、NUS（Novel、Unique 且 Stable）与 Validity 等质量指标。方法判断不只关注总体均值，还使用配对差异、20 000 次自助法置信区间、伤害率和尾部退化，以避免少数大幅改善掩盖大量轻微损害。预算至少分别记录 MatterGen score 调用、终点属性与质量验证器调用、耗时和显存；本文可严格核算前两项，新增方法对照的部署耗时为估算而非独立实测。C1-128、Best-of-2 与 Budget Scaling 是分离的 cohort，只在各自 cohort 内作配对推断。
 
-\section{多字段残差驱动的在线自适应 CFG}
+\section{单轨迹控制探索及其失败边界}
 
 \subsection{字段残差与共享控制量}
 
@@ -100,9 +100,9 @@ V1 的历史 Formal256 在 256 对相同随机种子上表现出方向性质量�
 
 上述结果暴露了关键问题：在线残差规则能够改变生成结果，且在部分批次呈现有利方向，但收益对样本集合敏感。下一步需要区分两种可能性：一是控制规则没有正确识别有利偏离；二是固定 CFG=2.0 已经接近最优，根本不存在足够的样本级优化空间。为回答这一问题，本文进一步开展反事实 Oracle 实验。
 
-\section{反事实 Oracle 与引导优化空间}
+\subsection{反事实 Oracle 与引导优化空间}
 
-\subsection{实验设计}
+\subsubsection{实验设计}
 
 反事实 Oracle V3 在 32 条新种子轨迹的 8 个预注册决策时刻上，比较三种冻结候选动作：降低引导 \texttt{DOWN}（CFG=1.75）、保持基准 \texttt{KEEP}（CFG=2.0）和提高引导 \texttt{UP}（CFG=2.25）。每个候选均从相同扩散状态出发，并恢复相同的 CPU/CUDA 随机数状态，从而使差异只来自引导动作。
 
@@ -110,7 +110,7 @@ V1 的历史 Formal256 在 256 对相同随机种子上表现出方向性质量�
 
 在 256 个短视野状态中，完整展开其中 64 个状态，得到 192 个完整候选终点。所有完整 \texttt{KEEP} 分支与对应固定 CFG=2.0 终点实现了原子类型完全一致、坐标与晶胞最大绝对误差均为 0 的配对核验。
 
-\subsection{结果与机制解释}
+\subsubsection{结果与机制解释}
 
 完整终点 Oracle 将 CFG=2.0 的 Property MAE 从 0.030446 降至 0.022158，相对改善 27.22\%。其动作分布包含 23.44\% 的 \texttt{DOWN}、62.50\% 的 \texttt{KEEP} 和 14.06\% 的 \texttt{UP}，说明更优动作同时依赖样本与扩散时刻，而不是统一地增大或减小 CFG。这一结果回答了前述存在性问题：固定 CFG=2.0 并非所有状态的终点最优选择，样本级引导优化空间客观存在。
 
@@ -118,7 +118,7 @@ V1 的历史 Formal256 在 256 对相同随机种子上表现出方向性质量�
 
 该实验的结论不是``没有更好的 CFG''，而是``最终更好的 CFG 难以由当前中间状态和短视野结果稳定识别''。完整终点 Oracle 的 27.22\% 改善是机制上界，不能作为部署性能。该转折使研究重点由继续调整残差公式，转向分析错误动作的风险来源及更保守的选择机制。
 
-\section{在线自适应引导不稳定性的机制分析}
+\subsection{在线自适应引导不稳定性的机制分析}
 
 图3-1汇总了从 V1 到最终 Fixed-K2 的证据演化。各阶段不是相互独立的新算法，而是围绕残差信号、风险识别、时间阶段和字段解耦四类失败假设展开的连续机制实验。
 
@@ -184,19 +184,19 @@ Safe Selection V5 & 显式安全校准能否保留收益 & 128 trajectories & �
 Stage-Calibrated CFG & 有利偏离是否集中在特定阶段 & calibration32 + P0=32 & 脉冲改善属性但破坏质量，阶段特异性不成立 & MIXED & 支持使用有限脉冲作为候选，而非单轨控制 \\
 Field-Decoupled CFG & 不同字段能否独立控制 & calibration=48 & 属性与伤害均为多字段效应，无策略通过门槛 & FAIL & 为分支候选库提供字段归因 \\
 \end{longtable}
-\subsection{残差信号稳健性}
+\subsubsection{残差信号稳健性}
 
 Robust Adaptive CFG V2 针对 V1 的跨字段尺度和快速波动问题进行了预注册改造。首先使用 64 个历史 C0 样本进行确定性重放，将三个字段残差按预测器/校正器、字段以及 20 个时间区间分别转换为对数标准分数；随后以三个字段标准分数的中位数作为聚合量，并为预测器和校正器分别维护 \(\beta=0.95\) 的 EMA。控制器根据残差偏离基准死区的程度与字段一致性计算置信度，置信度为零或残差非法时精确回到 CFG=2.0。最终引导范围冻结为 \([1.5,2.5]\)，相邻得分调用的变化幅度不超过 0.05，且关闭阶段门控。
 
 在 32 个全新 P0 配对样本上，V2 的稳健版本 \texttt{A\_ROBUST} 相对 C0 的 E-hull、Stable 和属性伤害率分别为 43.75\%、18.75\% 和 53.13\%，与旧 V1 在该批次上的对应伤害率完全相同，未满足``至少一类伤害率相对下降 30\%''的预注册门槛。其 Property MAE 为 0.029870，高于 C0 的 0.023210，也违反了属性误差最多恶化 10\% 的护栏。该结果表明，时间归一化、中位数聚合、置信回退和限速改善了控制形式，但没有解决跨样本的错误动作识别问题；原始残差的幅值及其平滑变换仍不足以构成稳定的在线控制信号。
 
-\subsection{风险校准与安全选择}
+\subsubsection{风险校准与安全选择}
 
 Oracle 已证明有利偏离存在，因此 V4 不再直接预测最优动作，而是估计动作的收益与伤害风险，并仅在低风险区域内允许偏离。其冻结门槛要求所选操作点覆盖率不低于 15\%，且被选动作的属性伤害率不高于 10\%。在 96 条完整轨迹上，没有验证操作点同时满足二者，故实验在离线阶段停止，未进入新 P0 或 Formal256。
 
 V5 进一步采用保守的候选安全选择，将收益预测与经过校准的伤害概率联合约束。数据集包含 128 条轨迹，但预注册候选网格中仍没有验证操作点同时满足覆盖率与伤害率门槛，因此测试集、P0 和 Formal256 均未运行。V4 与 V5 共同说明：误报一个``有利偏离''的代价较高，而当前手工设计的分支前特征、样本规模和安全校准方法不能稳定筛出这类偏离。该结论只约束本研究中的特征与协议，不能外推为所有自适应控制器均不可能成功。
 
-\subsection{时间阶段与字段维度分析}
+\subsubsection{时间阶段与字段维度分析}
 
 Stage-Calibrated CFG 研究较低引导是否只在特定扩散阶段有效。冻结候选包括全程 CFG=1.9、从第 400 步起永久降至 1.9，以及从第 400 步起持续 100 步的有界脉冲。Fresh P0 的结果见表3-2。
 
@@ -258,11 +258,15 @@ Field-Decoupled CFG 则将三个字段的引导分别记为 \(g_a,g_p,g_H\)。�
 
 字段归因结果显示，属性收益的正向贡献约 40.24\% 来自原子类型字段、59.76\% 来自位置字段，晶胞字段未产生正向贡献；质量伤害的聚合归因约 54.72\% 来自位置、42.37\% 来自晶胞、2.91\% 来自原子类型。也就是说，属性改善不是单一原子字段效应，质量损害也不是单一晶胞字段效应。最终 12 个候选中没有策略同时通过属性保持、收益保留、物理质量和基准护栏，因而 P0 与 Formal256 均按协议停止。该结果说明，简单字段解耦不足以得到稳定增益，但它为后续候选分支的设计提供了可解释的字段级干预方式。
 
-\section{参考轨迹保留的预算约束多分支条件引导与安全回退}
+\section{预算约束验证选择推理框架}
 
-\subsection{问题重述与总体思路}
+\subsection{状态、动作与预算接口}
 
-前述实验表明，在线自适应引导的主要困难不是缺少可利用的优化空间，而是在终点结果未知时提前决定何时、以何种方式偏离 C0。错误偏离可能改变后续全部随机演化，仅在后续步骤将 CFG 恢复为 2.0 并不能恢复原始 C0 轨迹。基于这一认识，本文不再要求控制器在单条轨迹上一次性作出不可逆决策，而是保留完整参考轨迹，在固定预算内展开少量可比较候选，并将选择时机延迟到终点。本文将该方法称为``参考轨迹保留的预算约束多分支条件引导与安全回退方法''（Reference-Preserved Budget-Constrained Multi-Branch Guidance with Safety-Constrained Fallback），不另行创造缩写。
+前述实验表明，在线自适应引导的主要困难不是缺少可利用的优化空间，而是在终点结果未知时提前决定何时偏离 C0。错误偏离会改变后续随机演化；仅将 CFG 恢复为 2.0 并不能恢复原始参考轨迹。因此本文把推理阶段计算抽象为一个带参考输出的验证选择问题，而非提出新的去噪器或最优 CFG 调度器。
+
+给定参数冻结的生成器 $G_{\theta}$、目标条件 $c$、预算 $B$ 与终点验证器 $V$，状态定义为 $s_t=(z_t,t,\xi_t,c;\theta,\mathcal S)$。其中 $z_t$ 包含原子种类、周期位置和晶胞，$\xi_t$ 为 CPU/CUDA 随机数状态，$\mathcal S$ 是冻结的时间网格与采样调度。动作 $a_k$ 是预注册的候选后缀策略，包括基准 C0 continuation 或 GPulse、PPulse 等分支；转移 $T_{\theta}(s_t,a_k)$ 由 MatterGen sampler 执行。终点验证器 $V(y_k,y_0)$ 使用冻结的 CHGNet 代理 Property MAE、MatterSim 代理 E-hull/Stable 和 Validity 决定可接受性；Novel、Unique、NUS 为集合级报告指标，并非逐样本门槛。输出在合格候选中取最低代理属性误差，否则返回精确 $y_0$。
+
+预算 $B=(N_{\mathrm{score}},N_{\mathrm{property}},N_{\mathrm{quality}},t_{\mathrm{wall}},m_{\mathrm{peak}})$ 区分生成、验证、时间和显存，不能只用候选数代替。当前 1000 步采样每步调用得分网络两次，第 400 步分支时，固定 $K$ 个后缀需 $800+1200(K+1)=2000+1200K$ 次生成 score 调用，终点属性与质量选择各需 $K+1$ 次。K=2 因而是 4400 次 score 调用、3 个终点的固定预算实例。该公式不计 MatterSim/CHGNet 耗时，不能把 2.2 倍 score 调用写成 2.2 倍端到端时间。
 
 最终方法包含四个组成部分：精确保留 C0、共享分支前缀、固定候选预算以及带质量约束的参考回退。其逻辑流程为：
 
@@ -283,6 +287,13 @@ Field-Decoupled CFG 则将三个字段的引导分别记为 \(g_a,g_p,g_H\)。�
 \end{Highlighting}
 \end{Shaded}
 
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.94\linewidth]{../../../figures/thesis_integration/budget_verifier_framework.pdf}
+\bicaption{预算约束验证选择的 Fixed-K2 实例：共享前缀后保存采样状态与随机状态，扩展精确 C0 和两个固定后缀，由冻结终点验证器选择或回退。预算数字仅为 MatterGen score 调用与终点评价次数；机制示意不构成性能证据。}{Fixed-K2 as an Instance of Budget-Constrained Verifier-Guided Inference: A Shared Prefix, Saved Sampling and RNG States, the Exact C0 and Two Frozen Suffixes, Followed by Terminal Selection or Fallback. Budgets Count MatterGen Score Calls and Terminal Evaluations Only; This Mechanism Diagram Is Not Performance Evidence.}\label{fig:3-framework}
+\end{figure}
+
+
 这种设计将不确定的在线控制转化为保守的推理时选择：算法不必准确预测唯一最优动作，只需在有限候选中找到一个通过预定义终点约束且优于 C0 的结果；若没有这样的结果，原始基准仍可直接返回。
 
 \subsection{精确参考保留与共享前缀}
@@ -294,11 +305,11 @@ y_k=F_{P_k}\left(z_{t_b},\xi_{t_b};t_b,T\right),
 \qquad k\in\{0,1,\ldots,K\},
 \]
 
-其中 \(P_0\) 是始终保持 CFG=2.0 的 C0 后缀，\(P_k\) 是第 \(k\) 个候选策略。所有分支在 \(t_b\) 之前具有完全相同的张量与随机历史，在 \(t_b\) 之后也从同一 RNG 快照开始。C1 实验还额外运行独立的全程 C0，并逐样本检查其与共享前缀 C0 的原子类型、位置和晶胞；128 个确认样本全部通过精确复现检查。
+其中 \(P_0\) 是始终保持 CFG=2.0 的 C0 后缀，\(P_k\) 是第 \(k\) 个候选策略。所有分支在 \(t_b\) 之前具有完全相同的张量与随机历史，在 \(t_b\) 之后也从同一 RNG 快照开始。C1 实验还额外运行独立的全程 C0，并逐样本检查其与共享前缀 C0 的原子类型、位置和晶胞；128 个确认样本全部通过精确复现检查。运行时快照包含克隆的 batch 与 RNG，记录分支位置；历史 C1 artifact 未将条件值和数值 timestep 网格作为独立字段序列化，它们随冻结输入与采样配置恢复。上述状态定义是算法接口，不能误读为脱离版本和条件文件仍可独立重放的自包含 checkpoint。
 
 共享前缀避免从初始噪声重复运行 \(K+1\) 条完整轨迹。C0 每个样本需要 2 000 次 MatterGen 得分调用；Fixed-K2 需要前 400 步的 800 次共享调用，以及 C0 和两个候选在后 600 步的 \(3\times1\,200\) 次调用，共 4 400 次，即 C0 的 2.2 倍。该计算量是最终部署成本；Phase B 为收集全部候选监督数据产生的 3.4 倍成本不属于 Fixed-K2 部署成本。
 
-\subsection{冻结候选库与固定双分支}
+\subsection{有限候选后缀与 Fixed-K2 策略}
 
 只有在第 400 步之前与 C0 完全一致的策略才能合法复用共享前缀。最终候选库由表3-3中的四种 100 步脉冲组成。所有脉冲均在第 400--499 步将对应字段从 2.0 降至 1.9，第 500 步起恢复至 2.0。
 
@@ -324,9 +335,9 @@ APulse & 1.9 & 2.0 & 2.0 & 400--499 & 仅原子类型字段脉冲 \\
 PPulse & 2.0 & 1.9 & 2.0 & 400--499 & 仅位置字段脉冲 \\
 CPulse & 2.0 & 2.0 & 1.9 & 400--499 & 仅晶胞字段脉冲 \\
 \end{longtable}
-最终 Fixed-K2 冻结选择 \texttt{GPulse+PPulse}，即每个样本只生成两个候选，而不是进行无上限的多样本筛选。固定 \(K=2\) 同时限制推理成本和选择自由度，使方法的收益可以在明确的 2.2 倍预算下评价。
+最终 Fixed-K2 冻结选择 \texttt{GPulse+PPulse}，即每个样本只生成两个候选，而不是进行无上限的多样本筛选。固定 \(K=2\) 同时限制推理成本和选择自由度，使该实例可在明确的 2.2 倍生成预算下评价。它不是经新增预算扩展实验事后挑出的最优宽度。
 
-\subsection{终点约束选择与参考回退}
+\subsection{终点验证器与参考回退}
 
 记 \(e(y)=|\hat c(y)-c^{\star}|\) 为候选的属性绝对误差，\(v(y)\) 为有效性，\(s(y)\) 为稳定性二值指标，\(h(y)\) 为 E-hull。对分配给当前方法的候选集合 \(\mathcal P_K\)，冻结的逐样本可接受集合为
 
@@ -356,12 +367,12 @@ y_0, & \mathcal A=\varnothing.
 
 \subsection{算法描述}
 
-\textbf{算法3-1 参考轨迹保留的预算约束多分支条件引导与安全回退}
+\textbf{算法3-1 冻结生成器的预算约束验证选择（Fixed-K2 为 K=2 实例）}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{输入：条件 c；基准引导 g0=2.0；分支点 tb；}
-\NormalTok{      候选策略集合 P；分支预算 K；终点接受约束 Q}
+\NormalTok{输入：冻结生成器 G；条件 c；预算 B；终点验证器 V；}
+\NormalTok{      基准引导 g0=2.0；分支点 tb；策略 P；宽度 K；约束 Q}
 \NormalTok{输出：晶体 x*}
 
 \NormalTok{1:  初始化 MatterGen 采样状态 z0 与随机数生成器}
@@ -372,7 +383,7 @@ y_0, & \mathcal A=\varnothing.
 \NormalTok{6:      恢复同一 (ztb, ξtb) 并克隆采样状态}
 \NormalTok{7:      在冻结区间应用 Pk，其余步骤使用 g0}
 \NormalTok{8:      完成采样，得到候选 xk}
-\NormalTok{9:  使用冻结属性与质量评价器计算 x0 及全部 xk 的终点指标}
+\NormalTok{9:  用同一冻结验证器 V 评价 x0 及全部 xk}
 \NormalTok{10: 构造同时满足属性严格改善与质量约束 Q 的候选集合 A}
 \NormalTok{11: 若 A 非空，返回其中属性误差最小者}
 \NormalTok{12: 否则返回精确参考 x0}
@@ -381,13 +392,17 @@ y_0, & \mathcal A=\varnothing.
 
 算法的实现关键是第 3、4、6 步：完整采样状态与 RNG 状态必须同时保存和恢复。若只恢复 CFG 数值而不恢复状态，候选所经历的中间更新已不可逆，不能被称为 C0 回退。
 
-\section{分支兼容 Oracle 与候选预算分析}
+\section{Fixed-K2 固定预算实例与独立确认}
 
-\subsection{分支兼容性约束}
+本节保留历史选型、原 C1-128 确认和 Linear-K2 负结果。GPulse 与 PPulse 并非依据新增预算曲线事后选定；新对照不更改原有种子和结论。
+
+\subsection{分支兼容 Oracle 与候选预算分析}
+
+\subsubsection{分支兼容性约束}
 
 早期实验包含多种全程或更早阶段生效的策略，但它们无法从第 400 步的 C0 状态合法分叉。分支兼容性审计因此只保留 GPulse、APulse、PPulse 和 CPulse。审计检查表明，这些候选具有相同的分支点和共同前缀摘要；实现代码在第 400 步保存 RNG、克隆完整状态，并在每个分支执行前恢复 RNG。该约束保证候选比较来自同一起点，也使共享前缀的 2.2 倍计算估计成立。
 
-\subsection{Oracle 上界与 K=2 动机}
+\subsubsection{Oracle 上界与 K=2 动机}
 
 在历史数据的独立测试划分 \(n=12\) 上，C0 的 Property MAE 为 0.02879873，使用 SAFE-A 终点规则的分支兼容 Oracle-All 为 0.02004107，相对改善 30.41\%。Oracle-K2 恢复了 100\% 的 Oracle-All 优化空间，而训练划分选出的固定 \texttt{CPulse+GPulse} 在测试集恢复 72.56\%。结果见表3-4。
 
@@ -442,15 +457,15 @@ Oracle-K2 在定义上可事后知道每个样本的最佳策略身份，因此�
 
 还需区分两个阶段的固定双候选分支策略：Phase A 使用历史训练划分选出 \texttt{CPulse+GPulse}，最终 C1 的 \texttt{GPulse+PPulse} 则来自后续 Phase B 的独立候选分配流程。二者使用不同样本集合和选择程序，不能相互替换。本章最终方法以 C1 冻结清单中的 \texttt{GPulse+PPulse} 为准。
 
-\section{Fixed-K2 的独立确认结果}
+\subsection{Fixed-K2 的独立确认结果}
 
-\subsection{确认实验设置}
+\subsubsection{确认实验设置}
 
 C1 在所有结果产生前一次性注册了 256 个与历史样本零重叠的随机种子，其中前 128 个构成 C1，后 128 个仅在预注册继续门槛通过时用于 C2。每个 C1 样本均生成精确 C0，并以相同 2.2 倍部署预算比较 Fixed-K2、Random-\allowbreak K2 与 Linear-K2。所有 128 个样本的独立全程 C0 与共享前缀 C0 均通过精确复现检查。
 
-终点属性由冻结 CHGNet 代理模型评价，候选接受使用 3.5.4 节的逐样本规则；集合级 E-hull、Stable、NUS 与 Validity 用于确认质量护栏。Fixed-K2 的主要检验使用 20 000 次确定性配对自助法，差异定义为 C0 属性误差减去 Fixed-K2 属性误差，正值表示 Fixed-K2 更优。
+终点属性由冻结 CHGNet 代理模型评价，候选接受使用 3.3.4 节的逐样本规则；集合级 E-hull、Stable、NUS 与 Validity 用于确认质量护栏。Fixed-K2 的主要检验使用 20 000 次确定性配对自助法，差异定义为 C0 属性误差减去 Fixed-K2 属性误差，正值表示 Fixed-K2 更优。
 
-\subsection{属性误差与配对统计}
+\subsubsection{属性误差与配对统计}
 
 四种方法的 C1 结果见表3-5和图3-2。Fixed-K2 将 Property MAE 从 0.034796 降至 0.026332，绝对改善 0.008464，相对改善 24.32\%。20 000 次配对自助法得到绝对改善的 95\% 置信区间为 \([0.005817,0.011391]\)，全区间高于零。在 128 个样本中，53 个样本接受了属性更优且通过约束的候选，75 个样本持平或回退 C0，没有样本输出比 C0 更高的属性误差。
 
@@ -537,7 +552,7 @@ Random-\allowbreak K2 & 0.028533 & 0.089172 & 64.84\% & \textbf{39.06\%} & 100\%
 \bicaption{Fixed-K2 相对 C0 的 20 000 次配对自助法增益分布}{20,000 Paired-Bootstrap Gain Distribution of Fixed-K2 Relative to C0}\label{fig:3-4}
 \end{figure}
 
-\subsection{质量护栏与计算代价}
+\subsubsection{质量护栏与计算代价}
 
 Fixed-K2 的平均 E-hull 从 0.104296 降至 0.081135 eV/atom，Stable 从 58.59\% 增至 70.31\%，NUS 从 32.81\% 增至 37.50\%，Validity 保持 100\%，没有违反冻结的代理质量护栏。图3-5给出主要质量指标对比。
 
@@ -557,35 +572,104 @@ Fixed-K2 的平均 E-hull 从 0.104296 降至 0.081135 eV/atom，Stable 从 58.5
 \bicaption{C0、Fixed-K2 及 Phase B 数据构建的计算量比较}{Computational Cost Comparison of C0, Fixed-K2, and Phase B Data Construction}\label{fig:3-6}
 \end{figure}
 
-\section{学习型 Linear-K2 分配器的负消融}
+\subsection{学习型 Linear-K2 分配器的负消融}
 
-\subsection{Phase B 候选分配实验}
+\subsubsection{Phase B 候选分配实验}
 
 Fixed-K2 对所有样本分配相同的 GPulse 与 PPulse。为检验分支点特征能否支持样本级候选分配，Phase B 使用 64 个全新种子构建数据集，并按 32/16/16 划分训练集、验证集和测试集。每个样本在第 400 步提取 179 个无终点信息泄漏的分支前特征，包括三个字段在预测器/校正器阶段的残差、条件与无条件得分范数、对齐度、25/50/100 步窗口统计以及分支状态的结构描述量。加入策略交互后形成 895 个数值设计列，再加策略独热编码共 899 个设计列。
 
 验证集最终选择 \(C=1.0\)、类别平衡的线性逻辑分配器 Linear-K2。它为四个候选估计``安全且有益''的概率，并生成概率最高的两个后缀。Phase B 的 16 个留出测试样本上，Linear-K2 的 Property MAE 为 0.023634，Fixed-K2 为 0.024597，方向性相对改善 3.92\%；但两者配对增益的 20 000 次自助法 95\% 区间为 \([-0.002618,0.005214]\)，跨越零，未达到预注册的分配器优势门槛。因此 Phase B 的冻结结论为 \texttt{ADAPTIVE\_ALLOCATION\_VALUE=NOT\_SUP\allowbreak PORTED}，不能将该小样本方向性结果写为已验证的学习型优势。
 
-\subsection{模型重建与冻结}
+\subsubsection{模型重建与冻结}
 
 Phase B 当时未保存 scikit-learn 序列化模型。为进行独立确认，在注册任何新确认种子之前，使用原始训练集 32 个样本、原始冻结代码、原始 179 个特征和已确定的 \(C=1.0\) 进行了一次确定性重建。重建模型对 16 个历史测试种子的 Top-2 候选选择实现 16/16 完全一致，验证/测试指标的最大绝对误差为 \(1.11\times10^{-16}\)。通过后，模型被标记为 \texttt{RECONSTRUCTED\_ARTIFACT} 并以 SHA-256 \texttt{bd3f5280\allowbreak957a6418\allowbreak e7d5275a\allowbreak3e7a576f\allowbreak c57872b3\allowbreak ad1bd19ae\allowbreak e9ef7bef\allowbreak97d56d3a} 永久冻结。该过程只恢复缺失的序列化对象，不改变模型、特征、超参数或 Phase B 的历史负结论。
 
-\subsection{C1-128 独立确认}
+\subsubsection{C1-128 独立确认}
 
 在 C1 的 128 个完全新种子上，Linear-K2 的 Property MAE 为 0.027522，反而高于 Fixed-K2 的 0.026332。以 \(E_{\mathrm{Fixed}}-E_{\mathrm{Linear}}\) 定义 Linear-K2 的配对增益，其均值为 \(-0.001190\)，相对增益为 \(-4.52\%\)，20 000 次自助法 95\% 区间为 \([-0.003148,0.000740]\)。逐样本胜/平/负为 31/62/35。虽然 Linear-K2 相对 C0 仍因终点约束与回退获得较低误差，但本实验的主要问题是它能否在相同 2.2 倍预算下优于 Fixed-K2；对此，方向和置信区间均不支持肯定结论。
 
 C1 的继续门槛要求 Linear-K2 严格优于 Fixed-K2、相对改善至少 1\%、不劣于 Random-\allowbreak K2，并通过质量护栏。前两项失败，故冻结结论为 \texttt{FROZEN\_LINEAR\_K2\_CONFIRMATION=NOT\_SUP\allowbreak PORTED}，C2 按协议不运行，也未进行结果后的补救调参。该负结果说明，在当前特征表示、训练规模和候选库下，学习型样本分配没有独立确认优于 Fixed-K2。
 
-\section{讨论}
+\section{推理预算与候选来源分析}
 
-\subsection{科学结论}
+本节的 Best-of-2 和 Budget Scaling 各使用独立的全新 128 种子 cohort，均不与历史 C1-128 拼接为同一配对样本，也不修改已冻结的 Fixed-K2、SAFE-A、候选顺序或历史选型结论。所有均值均为各 cohort 的代理 Property MAE。
+
+\subsection{独立 Best-of-2 与共享前缀实例}
+
+Independent Best-of-2 保留第一个完整 C0 为参考，再以独立随机种子生成第二个完整 MatterGen 样本；Fixed-K2 则在同一参考的共享前缀后生成 GPulse、PPulse 两个候选后缀。两者使用相同的冻结 SAFE-A 终点接受与回退规则，但前者每样本有 4000 次 MatterGen score 调用、2 个终点评价，后者有 4400 次、3 个终点评价。因此，这不是严格等 score 调用或等终点数的对照；代理评价成本和端到端时间也不能视为相同。表~\ref{tab:3-bestof2}及图~\ref{fig:3-bestof2}均只使用该新 cohort。
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.94\linewidth]{../../../figures/thesis_integration/best2_vs_fixedk2_mechanism.pdf}
+\bicaption{独立 Best-of-2 与 Fixed-K2 的候选来源及生成预算示意。二者共享 SAFE-A 终点规则，但前者为两个完整独立采样（4000 次 score 调用、2 个终点），后者共享前缀并展开两个后缀（4400 次、3 个终点）。该图只描述机制与非等预算，不暗示任一方法性能更优。}{Candidate Sources and Generator Budgets of Independent Best-of-2 and Fixed-K2. Both Use the Same SAFE-A Terminal Rule, but the Former Uses Two Full Samples (4,000 Score Calls, Two Terminals) and the Latter Uses a Shared Prefix and Two Suffixes (4,400 Calls, Three Terminals). The Diagram Shows Mechanisms and Unequal Budgets, Not a Performance Ranking.}\label{fig:3-bestof2-mechanism}
+\end{figure}
+
+
+\begin{table}[htbp]
+\centering
+\small
+\bicaption{独立 Best-of-2 对照的生成预算与代理结果（全新配对种子，$n=128$）}{Generator Budget and Proxy Outcomes in the Independent Best-of-2 Comparison (128 Fresh Paired Seeds)}\label{tab:3-bestof2}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrrrr@{}}
+\toprule
+方法 & score 调用 & 终点数 & Property MAE $\downarrow$ & Stable $\uparrow$ & NUS $\uparrow$\\
+\midrule
+C0 & 2000 & 1 & 0.037623 & 51.56\% & 31.25\%\\
+Independent Best-of-2 & 4000 & 2 & 0.028097 & 62.50\% & 35.16\%\\
+Fixed-K2 & 4400 & 3 & 0.029506 & 61.72\% & 32.81\%\\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+相对同 cohort 的 C0，Best-of-2 与 Fixed-K2 的代理 MAE 配对改善分别为 0.009527（20 000 次 bootstrap 95\% 区间 $[0.006439,0.012891]$）与 0.008117（$[0.005533,0.011054]$）。直接对比定义为 $\mathrm{MAE}_{\mathrm{Best2}}-\mathrm{MAE}_{\mathrm{Fixed}}$，均值 $-0.001410$，配对 95\% 区间 $[-0.005039,0.002167]$，区间跨零；负的点估计表示独立 Best-of-2 的均值较低，不能声称 Fixed-K2 优于它。以 Fixed-K2 相对 Best-of-2 的逐样本胜/平/负计为 41/59/28。两方法平均 E-hull 分别为 0.096393 与 0.100629 eV/atom，Validity 均为 100\%；Novel 分别为 67.97\% 与 68.75\%，低于 C0 的 75.78\%。这些代理结果说明额外采样计算本身具有竞争力，而参考保持与约束回退是 Fixed-K2 的机制特征，不是已证明的采样效率优势。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.82\linewidth]{../../../figures/search_framework/method_comparison.pdf}
+\bicaption{独立 Best-of-2 与 Fixed-K2 的代理 Property MAE 对照：点为同一新 cohort 的方法均值，误差棒为 20 000 次种子自助法均值 95\% 区间；直接配对差异见正文。预算标签仅计 MatterGen score 调用，三方法分别为 1.0、2.0 和 2.2 倍 C0。}{Proxy Property MAE of Independent Best-of-2 and Fixed-K2 on the Same Fresh Cohort: Points Show Method Means and Bars Show 20,000-Resample Seed-Bootstrap 95\% Intervals of Means; the Direct Paired Contrast Is Reported in the Text. Budget Labels Count MatterGen Score Calls Only (1.0, 2.0, and 2.2 Times C0).}\label{fig:3-bestof2}
+\end{figure}
+
+\subsection{K=0--4 固定候选顺序的预算扩展}
+
+另一个独立的 128 种子 cohort 按预定顺序 GPulse、PPulse、APulse、CPulse 嵌套加入后缀，保持相同的 SAFE-A 验证器。K 表示额外候选后缀数，不是独立完整采样次数；K=0 即只输出 C0。表~\ref{tab:3-budget}与图~\ref{fig:3-budget}展示实际得分调用预算及代理误差。预算为 1.0/1.6/2.2/2.8/3.4 倍 C0，K=2 不是曲线上的最低误差点。
+
+\begin{table}[H]
+\centering
+\small
+\bicaption{固定候选顺序下的预算扩展结果（独立新 cohort，$n=128$）}{Budget-Scaling Outcomes with a Fixed Candidate Order (Separate Fresh Cohort, $n=128$)}\label{tab:3-budget}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrrrr@{}}
+\toprule
+宽度 & score 调用 & Property MAE $\downarrow$ & Stable $\uparrow$ & NUS $\uparrow$ & E-hull $\downarrow$\\
+\midrule
+K=0 & 2000 & 0.035141 & 62.50\% & 36.72\% & 0.094254\\
+K=1 & 3200 & 0.031636 & 67.97\% & 37.50\% & 0.081928\\
+K=2 & 4400 & 0.028454 & 68.75\% & 38.28\% & 0.080551\\
+K=3 & 5600 & 0.028419 & 68.75\% & 39.06\% & 0.080787\\
+K=4 & 6800 & 0.024669 & 71.09\% & 40.63\% & 0.078960\\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+相对 K=0 的配对 MAE 改善，K=1/2/3/4 的 20 000 次 bootstrap 95\% 区间依次为 $[0.002108,0.005062]$、$[0.004537,0.009102]$、$[0.004538,0.009140]$ 和 $[0.007774,0.013398]$；对应逐样本胜/平/负为 39/89/0、59/69/0、59/69/0 和 72/56/0。K=3 相对 K=2 的边际均值约为 0.000035，只有 1 个种子输出发生变化；K=4 继续降低均值。全部方法的 Validity 为 100\%，唯 K=4 的 Unique 为 99.22\%；Novel 从 K=0 的 68.75\% 变化至 K=4 的 64.84\%，不能说所有质量指标随预算单调改善。候选集合嵌套且 SAFE-A 只接受代理属性严格改进，因此同一样本选中代理 MAE 随 K 非增具有算法性；该曲线显示当前规则下的预算---代理误差权衡，不能被解释为独立证明普适推理扩展定律，也不能事后将 K=4 改写为历史 C1 的最优选型。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\linewidth]{../../../figures/search_framework/compute_performance_curve.pdf}
+\bicaption{K=0--4 的 MatterGen score 预算与选中代理 Property MAE。五点来自同一独立新 cohort 的 128 个配对种子；误差棒为 20 000 次种子自助法方法均值 95\% 区间，而非相邻 K 的配对增益区间。连线仅连接离散预算，不表示拟合的扩展定律；终点验证器调用与端到端时间未包含在横轴中。}{MatterGen Score Budget Versus Selected Proxy Property MAE at K=0--4. Points Use 128 Paired Seeds from a Separate Fresh Cohort; Bars Are 20,000-Resample Bootstrap 95\% Intervals of Method Means, Not Paired Marginal Gains. The Line Connects Discrete Budgets Only; Verifier Calls and End-to-End Time Are Excluded from the Horizontal Axis.}\label{fig:3-budget}
+\end{figure}
+
+\section{局限性与本章小结}
+
+\subsection{证据解释}
 
 第一，引导优化空间客观存在。V3 的完整终点 Oracle 在不同样本与时刻同时选择降低、保持和提高 CFG，并取得 27.22\% 的回顾性改善；分支兼容 Oracle 在合法共享前缀条件下仍显示 30.41\% 的测试集改善。这些结果排除了``固定 CFG=2.0 对所有样本均已最优''的解释。
 
 第二，在线识别是比优化空间本身更困难的问题。V1 的残差反馈缺乏跨批次稳定性；经过时间归一化、中位数聚合、置信回退和限速的 V2 仍未降低伤害率；V4/V5 的风险与安全模型不能同时满足覆盖率和伤害门槛；V3 的短视野标签也不能预测完整终点结果。这些相互独立的证据指向同一问题：中间状态中易于构造的局部统计量，与最终属性---质量结果之间存在不足以支持可靠控制的代理错配。
 
-第三，在当前证据下，简单固定预算分支比学习型分配更稳健。Fixed-K2 不需要由分支前特征决定候选身份，而是始终展开 GPulse 与 PPulse，再利用终点评价作出选择。它在全新 C1-128 上得到正的配对改善区间，并通过冻结质量护栏；Linear-K2 则未在相同预算下确认优于 Fixed-K2。这并不否定未来使用更强状态表征或更多训练数据的可能性，但说明当前没有必要以更复杂的学习型分配器替代固定策略。
+第三，在原 C1 的同预算候选分配比较中，简单固定预算分支比当前 Linear-K2 更稳健。Fixed-K2 不需要由分支前特征决定候选身份，而是始终展开 GPulse 与 PPulse，再利用终点评价作出选择。它在全新 C1-128 上得到正的配对改善区间，并通过冻结质量护栏；Linear-K2 则未在相同预算下确认优于 Fixed-K2。这并不否定未来使用更强状态表征或更多训练数据的可能性，但说明当前没有必要以更复杂的学习型分配器替代固定策略。
 
-第四，参考轨迹保留将不确定控制转化为保守选择。只要 C0 被精确保留，候选失败就不必被写入最终输出；终点选择能够利用完整结果，而不依赖短视野代理。该设计的实质贡献不在于宣称找到了普适最优 CFG，而在于改变风险承担方式：从单轨迹上的不可逆在线动作，转化为有限候选中的终点约束决策。
+第四，独立 Best-of-2 对照表明，额外完整采样同样能够改善代理属性误差；其均值低于 Fixed-K2，直接配对区间跨零。Fixed-K2 的贡献因此不能表述为超越 Best-of-N，而应限定为预算明确的参考保持、约束选择与回退。K=0--4 曲线进一步显示 K=2 是成本折中，非最低误差点。
+
+第五，参考轨迹保留将不确定控制转化为保守选择。只要 C0 被精确保留，候选失败就不必被写入最终输出；终点选择能够利用完整结果，而不依赖短视野代理。该设计的实质贡献不在于宣称找到了普适最优 CFG，而在于改变风险承担方式：从单轨迹上的不可逆在线动作，转化为有限候选中的终点约束决策。
 
 \subsection{局限性}
 
@@ -597,7 +681,7 @@ C1 的继续门槛要求 Linear-K2 严格优于 Fixed-K2、相对改善至少 1\
 \item
   Fixed-K2 的 MatterGen 得分调用约为 C0 的 2.2 倍，并额外需要候选终点评价。它以计算换取选择可靠性，不是推理加速方法。
 \item
-  方法依赖终点属性与质量评价器。若代理模型存在系统偏差，接受规则也可能继承该偏差。
+  方法依赖终点属性与质量评价器。若代理模型存在系统偏差，接受规则也可能继承该偏差。尤其 CHGNet 属性代理既参与终点选择又定义主要 Property MAE，存在选择器复用与 verifier hacking 风险；当前代理收益不等于独立 DFT 物性收益。
 \item
   Fixed-K2 不是纯在线、单轨迹的 Adaptive CFG。它需要保存状态、复制后缀并在生成完成后选择。
 \item
@@ -605,17 +689,17 @@ C1 的继续门槛要求 Linear-K2 严格优于 Fixed-K2、相对改善至少 1\
 \item
   当前属性、E-hull、稳定性及相关质量判断主要依赖 CHGNet 与 Matter\allowbreak Sim 代理模型，没有进行 DFT 或实验验证，不能据此证明材料的真实物理稳定性或可合成性。
 \item
-  本研究没有设置所有可能的等预算通用多样本筛选基线，因此没有证明 Fixed-K2 优于每一种 2.2 倍预算的通用 best-of-N 方法。
+  本研究已设置独立 Best-of-2 对照，其均值数值上优于 Fixed-K2，直接配对区间跨零；二者为 2.0 倍/2 终点与 2.2 倍/3 终点，尚缺严格等 score 调用、等候选数和等验证器成本的比较。因此没有证据证明 Fixed-K2 优于通用 Best-of-N。
 \item
-  候选库、分支点和终点阈值均在当前 MatterGen 条件任务上冻结，跨属性、跨材料域和跨生成模型的迁移性仍需独立研究。
+  候选库、分支点和终点阈值均在当前 MatterGen 单属性条件任务上冻结，跨属性、跨材料域和跨生成模型的迁移性仍需独立研究；K=0--4 的嵌套选择结果也不构成跨任务或独立物理验证。
 \end{enumerate}
 
 上述边界也限定了本章的创新表述：本文提出并验证的是面向当前 MatterGen 条件任务的参考轨迹保留、固定预算、终点约束选择框架，而不主张首次提出多分支扩散或验证器引导晶体生成，也不作普适最优或物理安全保证。
 
-\section{本章小结}
+\subsection{本章小结}
 
 本章从固定 CFG 的局限出发，首先提出多字段残差驱动的在线自适应引导。历史 Formal256 呈现方向性质量改善，但新样本没有稳定复现，说明直接残差控制存在跨批次稳定性问题。反事实 Oracle 随后证明，更优的样本级与时刻级引导客观存在；然而，短视野标签、稳健残差变换、风险校准、安全选择、阶段门控和字段解耦均未形成可靠的在线识别策略。
 
-基于这些证据，本文将研究问题由``提前预测最优引导''转化为``在有限预算内保留参考轨迹并验证少量候选''，形成参考轨迹保留的预算约束多分支条件引导与安全回退方法。该方法在第 400 步保存完整采样与 RNG 状态，保留精确 C0，并以固定预算展开 GPulse 和 PPulse 两个候选；只有候选同时实现属性改进并满足预定义质量约束时才被接受，否则执行参考回退并返回 C0。
+基于这些证据，本文将研究问题由``提前预测最优引导''转化为``在有限预算内保留参考轨迹并验证少量候选''，形成预算约束验证选择推理框架，并以 Fixed-K2 作为当前已确认的固定预算实例。该实例在第 400 步保存完整采样与 RNG 状态，保留精确 C0，并以固定预算展开 GPulse 和 PPulse 两个候选；只有候选同时实现属性改进并满足预定义质量约束时才被接受，否则执行参考回退并返回 C0。
 
-在 128 个完全独立确认样本上，Fixed-K2 将 Property MAE 从 0.034796 降至 0.026332，相对改善 24.32\%，20 000 次配对自助法的绝对改善区间为 \([0.005817,0.011391]\)，同时满足冻结的代理质量护栏。进一步的 Linear-K2 实验未能在相同预算下独立确认优于 Fixed-K2，因此最终选择固定双候选分支策略作为本章方法。完整证据支持``有限预算的参考保留与终点选择有效''，但不支持``在线 Adaptive CFG 已被稳定验证''或``学习型候选分配具有额外价值''。本章主要解决条件属性控制问题；属性条件满足并不等价于生成结构处于低受力状态，因此第4章进一步研究后期神经力场反馈对局部结构一致性的影响。
+在 128 个完全独立确认样本上，Fixed-K2 将 Property MAE 从 0.034796 降至 0.026332，相对改善 24.32\%，20 000 次配对自助法的绝对改善区间为 \([0.005817,0.011391]\)，同时满足冻结的代理质量护栏。进一步的 Linear-K2 实验未能在相同预算下独立确认优于 Fixed-K2，因此历史 C1 继续保留固定双候选策略作为本框架的已确认实例。新增 Best-of-2 对照提示独立采样同样有效，Fixed-K2 不具备已证实的相对优势；新增预算扩展显示 K=2 是成本折中而非最优宽度。完整证据支持``有限预算的参考保留与终点选择有效''，但不支持``在线 Adaptive CFG 已被稳定验证''或``学习型候选分配具有额外价值''。本章主要解决条件属性控制问题；属性条件满足并不等价于生成结构处于低受力状态，因此第4章进一步研究后期神经力场反馈对局部结构一致性的影响。

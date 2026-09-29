@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "registered_before_generation": "2026-09-28",
+  "baseline": {
+    "n": 128,
+    "primary_start": 2100000000,
+    "independent_second_start": 2100001000
+  },
+  "budget_scaling": {
+    "n": 128,
+    "primary_start": 2100010000
+  },
+  "seed_rule": "start + integer index from 0 through n-1; within-cohort arms share primary seeds",
+  "historical_overlap_status": "PASS: historical audit maximum 2026091913 and 2026-09-28 exact-range rg screen found zero collisions"
+}

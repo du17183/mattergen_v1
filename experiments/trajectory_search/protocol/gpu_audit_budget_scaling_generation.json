@@ -1,0 +1,67 @@
+{
+  "utc": "2026-09-28T12:05:12.008513+00:00",
+  "requested_gpus": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "snapshot": {
+    "0": {
+      "uuid": "GPU-69ed6e63-920c-198c-1901-5dc3783bb9ed",
+      "memory_used_mib": 54725,
+      "utilization_percent": 0,
+      "active_compute_pids": [
+        261157
+      ]
+    },
+    "1": {
+      "uuid": "GPU-9b99fa2d-bc96-4546-4cd4-afbd62e1250b",
+      "memory_used_mib": 5415,
+      "utilization_percent": 0,
+      "active_compute_pids": [
+        261157
+      ]
+    },
+    "2": {
+      "uuid": "GPU-13de3787-aaba-3287-8dfc-ddbe91199bf8",
+      "memory_used_mib": 0,
+      "utilization_percent": 0,
+      "active_compute_pids": []
+    },
+    "3": {
+      "uuid": "GPU-2039727b-863c-3e9b-1afd-e86dcf85faa3",
+      "memory_used_mib": 0,
+      "utilization_percent": 0,
+      "active_compute_pids": []
+    },
+    "4": {
+      "uuid": "GPU-c88dde9b-2dd9-d071-2dd7-adb5376e6946",
+      "memory_used_mib": 0,
+      "utilization_percent": 0,
+      "active_compute_pids": []
+    },
+    "5": {
+      "uuid": "GPU-b2614ac9-0289-4ad3-4c4d-559c59b29a3d",
+      "memory_used_mib": 0,
+      "utilization_percent": 0,
+      "active_compute_pids": []
+    },
+    "6": {
+      "uuid": "GPU-34005226-7d82-4fa8-9847-9db2229e2e73",
+      "memory_used_mib": 0,
+      "utilization_percent": 0,
+      "active_compute_pids": []
+    },
+    "7": {
+      "uuid": "GPU-a5b88b24-0b9c-3dec-394a-8a4ceb722496",
+      "memory_used_mib": 0,
+      "utilization_percent": 0,
+      "active_compute_pids": []
+    }
+  },
+  "problems": [],
+  "check_rule": "memory <= 1000 MiB and no active compute PID; utilization alone is not occupancy"
+}

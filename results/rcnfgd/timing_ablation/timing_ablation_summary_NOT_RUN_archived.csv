@@ -1,0 +1,5 @@
+method,seed_count,force_window_predictor_indices,planned_force_calls_per_sample,status,mattergen_score_calls,actual_force_calls,maxf_mean,maxf_std,maxf_paired_ci95_low,maxf_paired_ci95_high,mean_force_mean,mean_force_std,property_mae_mean,property_mae_std,validity,stable,e_hull,nus
+C0,32,none,0,NOT_RUN,,,,,,,,,,,,,,
+Early,32,0-999,1000,NOT_RUN,,,,,,,,,,,,,,
+Middle,32,500-999,500,NOT_RUN,,,,,,,,,,,,,,
+Late,32,980-999,20,NOT_RUN,,,,,,,,,,,,,,

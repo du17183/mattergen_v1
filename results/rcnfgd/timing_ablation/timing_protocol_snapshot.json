@@ -1,0 +1,44 @@
+{
+  "cfg": 2.0,
+  "corrector_steps_per_timestep": 1,
+  "expected_predictor_force_opportunities": {
+    "C0": 0,
+    "Early": 1000,
+    "Late": 20,
+    "Middle": 500
+  },
+  "experiment": "RC-NFGD cumulative force-injection timing ablation",
+  "guidance_t_max": {
+    "C0": null,
+    "Early": 1.0,
+    "Late": 0.02,
+    "Middle": 0.5
+  },
+  "interpretation_limit": "Thresholds alter both start time and cumulative force-call budget; not an equal-compute pure timing comparison",
+  "methods": [
+    "C0",
+    "Early",
+    "Middle",
+    "Late"
+  ],
+  "metric_semantics": "Reuse frozen A1 generation/property/MatterSim relaxation/quality definitions; no DFT verification",
+  "paired_bootstrap_resamples": 20000,
+  "paired_bootstrap_seed": 20260929,
+  "paired_seed_count": 32,
+  "python": "/mnt/datasets-livsyn/dxl/alm/.venv/bin/python",
+  "reproducibility_gate": "alm_replay_740000/gate.json",
+  "sampler_steps": 1000,
+  "secondary_metrics": [
+    "pre-relaxation MatterSim mean force",
+    "CHGNet property MAE",
+    "Validity",
+    "Stable",
+    "E-hull",
+    "NUS"
+  ],
+  "seed_start": 750000,
+  "seed_stop_exclusive": 750032,
+  "status": "FROZEN_BEFORE_NEW_SEED_GENERATION",
+  "target_dft_mag_density": 0.2,
+  "target_primary_metric": "pre-relaxation MatterSim MaxF (eV/A), lower is better"
+}
