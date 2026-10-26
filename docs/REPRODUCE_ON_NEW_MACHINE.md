@@ -2,6 +2,8 @@
 
 This repository archives the thesis source, figure sources and compact evidence; it does not contain model weights or the large raw generation directories. A clean checkout can rebuild the thesis PDF. Re-running MatterGen/RC-NFGD generation is a separate, GPU-backed reproduction and requires the excluded checkpoints and raw-data manifests.
 
+**2026-10-26 update:** the previously external non-weight research files now have an additive source snapshot and checksummed Release bundles. Start with [the non-weight archive and restore guide](NONWEIGHT_ARCHIVE_2026_10_26.md) to restore Timing/replay execution code and full per-seed outputs. Weights and runtime caches remain excluded. The historical environment and replay-gate requirements below still apply.
+
 ## Repository and environment
 
 - Source branch: `writing/thesis-draft-2026`; thesis-facing branch: `release/thesis-final-2026`. Use the exact commit recorded by `git rev-parse HEAD` after cloning, not the branch name alone.
