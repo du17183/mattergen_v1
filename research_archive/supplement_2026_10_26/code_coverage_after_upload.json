@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "code_config_paths_scanned": 219,
+  "modified_tracked_code_paths": 11,
+  "missing_from_origin_and_existing_archive": [],
+  "method": "Exact current Git blob identity against all known origin histories, or source SHA256 in the selected-artifact manifest; environments and runtime caches excluded."
+}

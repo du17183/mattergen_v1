@@ -1,6 +1,6 @@
 {
   "algorithm": "sha256",
-  "file_count": 2501,
+  "file_count": 2503,
   "files": [
     {
       "path": "research_archive/ARCHIVE_POLICY.md",
@@ -2649,7 +2649,7 @@
     },
     {
       "path": "research_archive/secret_audit_report.json",
-      "sha256": "a6b0d5f501369795a78547fd3dad5bf7e2b2ce515d5096662bd0e5598cfdf353",
+      "sha256": "78526cfd79fd22df360737c911259cab1defc5aefbeb3d1396655d04dfda1068",
       "size_bytes": 131
     },
     {
@@ -2676,6 +2676,11 @@
       "path": "research_archive/supplement_2026_10_26/build_snapshot.py",
       "sha256": "2fb4d746d6f808c5a38b2f7b6c66867b362d24e4b134fe604f68f8906493a2de",
       "size_bytes": 14358
+    },
+    {
+      "path": "research_archive/supplement_2026_10_26/code_coverage_after_upload.json",
+      "sha256": "7f7fab2156acb7a93c410f4d1580ea724e23ce76aa29225b818268dec90bba22",
+      "size_bytes": 323
     },
     {
       "path": "research_archive/supplement_2026_10_26/excluded.jsonl",
@@ -12446,6 +12451,11 @@
       "path": "research_archive/supplement_2026_10_26/upload_git_objects.py",
       "sha256": "6f0b440750a45d8e5bd253eb4e35561503294bba7e38193dd4c6eb8415102572",
       "size_bytes": 6914
+    },
+    {
+      "path": "research_archive/supplement_2026_10_26/upload_receipt.json",
+      "sha256": "c14529334faced301d70f70c14624da68efaa7a10b74a3e153f3d7a756c67915",
+      "size_bytes": 3505
     },
     {
       "path": "research_archive/supplement_2026_10_26/upload_release_assets.py",
