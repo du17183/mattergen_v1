@@ -1,0 +1,11 @@
+{
+  "acceptance_rate": 0.40625,
+  "fallback_rate": 0.59375,
+  "terminal_policy_rates": {
+    "C0": 0.59375,
+    "GPulse": 0.078125,
+    "APulse": 0.0,
+    "PPulse": 0.1171875,
+    "CPulse": 0.2109375
+  }
+}

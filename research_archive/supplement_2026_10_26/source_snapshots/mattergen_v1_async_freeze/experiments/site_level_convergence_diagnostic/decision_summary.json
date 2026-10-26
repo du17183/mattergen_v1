@@ -1,0 +1,50 @@
+{
+  "MEASUREMENT_NOISE_DRIVEN": false,
+  "NEXT": "STOP_ASYNC_FAMILY",
+  "REUSED_EXISTING_FINAL_QUALITY_AND_FORCES": true,
+  "REUSED_EXISTING_TRAJECTORIES": false,
+  "SITE_LEVEL_DIAGNOSTIC": "FAIL",
+  "SITE_LEVEL_HETEROGENEITY": false,
+  "SPECIES_DRIVEN_HETEROGENEITY": false,
+  "auxiliary_evidence": {
+    "early_and_late_fraction_pass": false,
+    "range_fraction_ge_0p15_pass": false,
+    "stable_environment_relation_pass": false
+  },
+  "dft_verified": false,
+  "fraction_contains_early_and_late": 0.09375,
+  "fraction_site_range_ge_0p15": 0.0,
+  "fraction_site_spread_ge_0p10": 0.0,
+  "measurement_noise_audit": {
+    "definition_frozen_before_validation_analysis": true,
+    "fraction_converged_validation_sites_transient": 0.09747292418772563,
+    "threshold_sensitivity": {
+      "0.9": {
+        "fraction_site_spread_ge_0p10": 0.03125,
+        "site_convergence_rate": 0.9133333333333333,
+        "threshold_Angstrom": 0.06890120435260359
+      },
+      "1.1": {
+        "fraction_site_spread_ge_0p10": 0.0,
+        "site_convergence_rate": 0.9233333333333333,
+        "threshold_Angstrom": 0.08421258309762661
+      }
+    },
+    "transient_definition": "less than 80% of later observations remain below threshold"
+  },
+  "species_confound_calibration": {
+    "eligible_species_count": 8,
+    "eta_squared_species": 0.11108474931605916,
+    "median_within_species_std": 0.033692689688579865,
+    "pooled_within_species_std": 0.04386276619056787
+  },
+  "species_confound_validation": {
+    "eligible_species_count": 5,
+    "eta_squared_species": 0.2076874594160144,
+    "median_within_species_std": 0.028214104790185948,
+    "pooled_within_species_std": 0.03668444171546358
+  },
+  "stable_environment_relations": [],
+  "surrogate_property_eval": true,
+  "validation_structure_count": 32
+}

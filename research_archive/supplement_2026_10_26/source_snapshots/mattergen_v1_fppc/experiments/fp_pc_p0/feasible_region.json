@@ -1,0 +1,54 @@
+{
+  "VN_high_angstrom3_per_atom": 57.98527210297675,
+  "VN_low_angstrom3_per_atom": 9.25793082239252,
+  "d_min_floor_angstrom": 1.3326659867404236,
+  "eligibility": "finite dft_mag_density, CIF present, 1-20 sites",
+  "eligible_source_rows": 597339,
+  "frozen": true,
+  "frozen_before_diagnostic_outcomes": true,
+  "heldout_generation_metrics_consulted": false,
+  "parse_failure_count": 0,
+  "parse_failures": [],
+  "periodic_distance_algorithm": "27 images (-1,0,1)^3; includes self images except zero",
+  "quantile_rule": {
+    "VN_high": "reference q0.995",
+    "VN_low": "reference q0.005",
+    "d_min_floor": "reference q0.005"
+  },
+  "reference_distributions": {
+    "minimum_periodic_distance_angstrom": {
+      "mean": 2.66819498044633,
+      "q0": 0.753957189679015,
+      "q0.005": 1.3326659867404236,
+      "q0.01": 1.4298488597606989,
+      "q0.05": 1.8519868414571021,
+      "q0.5": 2.6898569630505023,
+      "q0.95": 3.4266216374895553,
+      "q0.99": 3.6143557423162984,
+      "q0.995": 3.6764476974028506,
+      "q1": 4.225735166067291,
+      "std": 0.46309370049556053
+    },
+    "volume_per_atom_angstrom3": {
+      "mean": 24.56850867560238,
+      "q0": 6.056380022087348,
+      "q0.005": 9.25793082239252,
+      "q0.01": 10.39380773062735,
+      "q0.05": 12.646860776337265,
+      "q0.5": 23.775047806645563,
+      "q0.95": 39.42915461964788,
+      "q0.99": 52.79636154230839,
+      "q0.995": 57.98527210297675,
+      "q1": 87.63207299594528,
+      "std": 8.908383322972131
+    }
+  },
+  "reference_structures_used": 4096,
+  "reservoir_requested": 4096,
+  "reservoir_seed": 20260913,
+  "schema_version": 1,
+  "source": "official MatterGen Alex-MP training split",
+  "source_member": "alex_mp_20/train.csv",
+  "source_zip": "/mnt/datasets-livsyn/dxl/mattergen_v1/.cache/datasets/alex_mp_20.zip",
+  "source_zip_sha256": "6688e652e45fac4ac8b016dbc4a3280afde9ba687bdacfd8c676775ed19b6228"
+}

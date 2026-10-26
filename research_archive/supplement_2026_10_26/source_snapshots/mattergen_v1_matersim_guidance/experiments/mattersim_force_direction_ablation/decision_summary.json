@@ -1,0 +1,92 @@
+{
+  "DFT_VERIFIED": false,
+  "SURROGATE_PROPERTY_EVAL": true,
+  "audit": "PASS",
+  "completed_utc": "2026-09-13T13:04:07.421199+00:00",
+  "direction_reference": "G2/G3/G4 replay paired G1 trajectory magnitudes; G4 reverses paired G1 MatterSim direction, not its own current-state force. This limits the causal interpretation.",
+  "guardrails": {
+    "all_pass": true,
+    "pass": {
+      "e_hull_increase_ev_atom": true,
+      "mag_mae_worsening_fraction": true,
+      "nus_drop_pp": true,
+      "runtime_ratio": true,
+      "validity_drop_pp": true
+    },
+    "values": {
+      "e_hull_increase_ev_atom": 2.8439631244436825e-05,
+      "mag_mae_worsening_fraction": 0.0029270355304999345,
+      "nus_drop_pp": 0.0,
+      "runtime_ratio": 1.0157133881596863,
+      "validity_drop_pp": 0.0
+    }
+  },
+  "independent_mlip": {
+    "DFT_VERIFIED": false,
+    "absolute_bootstrap_ci95": [
+      0.002044636337982118,
+      0.018415200284925607
+    ],
+    "absolute_improvement": 0.010295576965296135,
+    "baseline": "G0",
+    "baseline_mean": 0.12862659032737078,
+    "bootstrap_resamples": 20000,
+    "ci_excludes_zero_positive": true,
+    "cohort": "A3",
+    "coverage_fraction": 1.0,
+    "elapsed_seconds": 2.026722051028628,
+    "elements_Z": [
+      1,
+      7,
+      8,
+      25,
+      26,
+      27,
+      28,
+      63,
+      64
+    ],
+    "formal256_evaluation_trigger": true,
+    "losses": 7,
+    "mean_relative_reduction": 0.08004236868203225,
+    "method": "G1",
+    "method_mean": 0.11833101336207465,
+    "n": 32,
+    "relative_bootstrap_ci95": [
+      0.01643113346090434,
+      0.13601545588130082
+    ],
+    "status": "PASS",
+    "ties": 0,
+    "wins": 25
+  },
+  "interpretation": "Descriptive prespecified ordering, not a requirement that every contrast be significant.",
+  "mechanism_trend": true,
+  "n_paired": 32,
+  "primary": {
+    "absolute_ci95": [
+      0.03332395194658162,
+      0.05316752924167372
+    ],
+    "absolute_improvement": 0.04318974561995051,
+    "baseline": "G0",
+    "baseline_mean": 0.14169022843555268,
+    "bootstrap_resamples": 20000,
+    "bootstrap_seed": 20260915,
+    "losses": 1,
+    "method": "G1",
+    "method_mean": 0.09850048281560217,
+    "metric": "maxF_ev_per_a",
+    "n_pairs": 32,
+    "relative_ci95": [
+      0.2465969373574472,
+      0.3886519509599739
+    ],
+    "relative_improvement": 0.3048180957630061,
+    "ties": 0,
+    "win_binomial_one_sided_p": 7.683411240577698e-09,
+    "wins": 31
+  },
+  "status": "SUPPORTED",
+  "track": "A3"
+}

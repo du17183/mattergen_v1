@@ -1,0 +1,26 @@
+diff --git a/mattergen/common/gemnet/gemnet_ctrl.py b/mattergen/common/gemnet/gemnet_ctrl.py
+index 1a1698d..e9d7ccb 100644
+--- a/mattergen/common/gemnet/gemnet_ctrl.py
++++ b/mattergen/common/gemnet/gemnet_ctrl.py
+@@ -219,6 +219,21 @@ class GemNetTCtrl(GemNetT):
+                 idx_t=idx_t,
+             )  # (nAtoms, emb_size_atom), (nEdges, emb_size_edge)
+ 
++            # Optional experiment-local Cell<->Atom fusion.  It is attached
++            # only after the official checkpoint has been loaded and acts
++            # exactly once: after IntBlock 3 (i == 2) and before IntBlock 4.
++            # Ordinary checkpoints do not have this attribute and therefore
++            # execute the original path bit-for-bit.
++            cell_atom_fusion = getattr(self, "cell_atom_fusion", None)
++            if cell_atom_fusion is not None and i == 2:
++                h = cell_atom_fusion(
++                    h=h,
++                    lattice=distorted_lattice,
++                    batch=batch,
++                    num_atoms=num_atoms,
++                    block_index=i,
++                )
++
+             E, F = self.out_blocks[i + 1](h, m, rbf_out, idx_t)
+             # (nAtoms, num_targets), (nEdges, num_targets)
+             F_st += F

@@ -1,0 +1,61 @@
+experiment: shared_field_dynamics_diagnostic
+frozen_at: '2026-09-12T20:00:00+08:00'
+canonical_worktree: /mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze
+consumer_worktrees:
+  async_freeze: /mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze
+  field_schedule: /mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule
+base:
+  model: official_dft_mag_density_full_ft
+  checkpoint: /mnt/datasets-livsyn/dxl/mattergen_v1/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt
+  checkpoint_sha256: 01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e
+  target_dft_mag_density: 0.2
+  cfg: 2.0
+  guidance_schedule: constant
+  adaptive_cfg: false
+  diffusion_steps: 1000
+  corrector_steps_per_timestep: 1
+diagnostic:
+  trajectories: 64
+  calibration_seeds: [99000, 99031]
+  validation_seeds: [99032, 99063]
+  split_unit: trajectory
+  observation_indices: every_20_global_steps_plus_requested_late_points
+  requested_late_timesteps: [0.50, 0.40, 0.30, 0.20, 0.15, 0.10, 0.08, 0.06, 0.05, 0.04, 0.03, 0.02, 0.01, 0.00]
+  expected_observation_count: 55
+  observation_phase: predictor_pre_update_after_official_corrector
+  stochastic_raw_state_used_for_residual: false
+atomic:
+  belief: softmax_of_cfg_combined_p_x0_given_xt_logits
+  entropy: mean_categorical_entropy_over_atoms
+  argmax_change: fraction_clean_argmax_changed_since_previous_observation
+  confidence: mean_max_clean_probability
+  state_commitment: fraction_current_atomic_state_equal_to_mask_token_101
+position:
+  estimate: wrapped_clean_x0_from_current_state_and_score_times_std
+  displacement: minimum_image_fractional_delta_mapped_by_current_clean_cell
+cell:
+  estimate: clean_x0_from_current_state_and_score_times_std
+  requested_metric: transpose_L_times_L
+  row_vector_physical_gram_audit: L_times_transpose_L
+threshold_calibration:
+  subset: first_32_trajectories_only
+  stable_tail_t_max: 0.05
+  upper_quantile: 0.90
+  lower_confidence_quantile: 0.10
+  consecutive_observations: 3
+gate:
+  subset: diagnostic_validation_32_only
+  median_pair_difference_min: 0.10
+  trajectory_early_gap_min: 0.10
+  trajectory_fraction_min: 0.60
+seeds:
+  diagnostic: [99000, 99063]
+  async_freeze_p0: [99100, 99131]
+  field_schedule_p0: [99200, 99231]
+evaluator:
+  chgnet_checkpoint: /mnt/datasets-livsyn/dxl/mattergen_v1/.cache/models/chgnet/0.3.0/chgnet_0.3.0_e29f68s314m37.pth.tar
+  chgnet_calibration_mae: 0.001449
+  chgnet_calibration_pearson: 0.9499
+  mattersim_checkpoint: /mnt/datasets-livsyn/dxl/mattergen_v1/checkpoints/official/mattersim/mattersim-v1.0.0-5M.pth
+  surrogate_property_eval: true
+  dft_verified: false

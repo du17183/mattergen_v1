@@ -1,0 +1,10 @@
+experiment: field_time_schedule_p0
+status: NOT_RUN_GATE_FAIL
+reason: FIELD_CONVERGENCE_HETEROGENEITY=False
+diagnostic_root: /mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/shared_field_dynamics
+would_have_compared:
+- B0
+- B-equal-sparse
+- B-field
+adaptive_cfg: false
+dft_verified: false

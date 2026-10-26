@@ -1,0 +1,23 @@
+{
+  "seed": 744043,
+  "purpose": "historical fixed-CFG calibration replay; NOT validation",
+  "target_dft_mag_density": 0.2,
+  "guidance_scale": 2.0,
+  "guidance_schedule": "constant",
+  "sampling_steps": 1000,
+  "corrector_steps": 1,
+  "trace_rows": 2000,
+  "elapsed_seconds": 86.75635439902544,
+  "physical_gpu": "1",
+  "checkpoint_sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+  "archived_structure": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/adaptive_cfg_force_guidance_compatibility/generation/C0/744043/generated_crystals.extxyz",
+  "archived_structure_sha256": "bf1193aa72ecb7dfd528ff7b8f727c70fd5efab4ddf8296c825195329e468289",
+  "replayed_structure_sha256": "bf1193aa72ecb7dfd528ff7b8f727c70fd5efab4ddf8296c825195329e468289",
+  "structure_numeric_match": {
+    "same_atomic_numbers": true,
+    "max_position_abs_error": 0.0,
+    "max_cell_abs_error": 0.0
+  },
+  "structure_match": true,
+  "formula": "Fe2Co"
+}

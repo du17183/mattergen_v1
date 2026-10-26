@@ -1,0 +1,25 @@
+# Final status
+
+```json
+{
+  "Innovation1": "FINAL",
+  "Innovation1 final name": "多字段残差驱动的在线自适应 CFG",
+  "Innovation1 evidence qualification": "Frozen method retained. Historical directional gate confirmed, Formal256 primary CIs cross zero; fresh minimal8 quality direction not replicated. Mixed, limited cross-cohort effect evidence.",
+  "Innovation2": "FINAL",
+  "Innovation2 final name": "Reliability-Calibrated Late-stage Neural Force-Guided Diffusion",
+  "E3-G role": "STRONG POST-GENERATION BASELINE",
+  "FP-PC": "CLOSED",
+  "F1": "NOT USED",
+  "Adaptive CFG + F0": "NOT_COMPATIBLE",
+  "Independent MLIP": "SUPPORTED",
+  "Equal-budget POST": "MIXED",
+  "Equal-budget primary MatterSim winner": "POST_BETTER",
+  "FORCE_DIRECTION_EFFECT": "SUPPORTED",
+  "BOUNDING": "BOUNDING_NOT_SUPPORTED_AS_CORE_MECHANISM",
+  "DFT_VERIFIED": false,
+  "SURROGATE_PROPERTY_EVAL": true,
+  "DFT_VERIFICATION": "NOT_RUN_ENVIRONMENT_UNAVAILABLE",
+  "THESIS_EXPERIMENTS_COMPLETE": "YES",
+  "completed_utc": "2026-09-14T13:04:30.725157+00:00"
+}
+```

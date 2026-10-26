@@ -1,0 +1,12 @@
+{
+  "FIELD_CONVERGENCE_HETEROGENEITY": false,
+  "FIELD_TIME_SCHEDULE_P0": "FAIL_DIAGNOSTIC",
+  "adaptive_cfg_used": false,
+  "candidate_verdict": "FAIL",
+  "dft_verified": false,
+  "generation_run": false,
+  "mattergen_score_calls": 0,
+  "next": "STOP",
+  "reason": "preregistered shared heterogeneity gate failed",
+  "surrogate_property_eval": true
+}

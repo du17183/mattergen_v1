@@ -1,0 +1,21 @@
+{
+  "dft_verified": false,
+  "methods": {
+    "A0": {
+      "mag_hit_rate": 0.65625,
+      "mag_hits": 21,
+      "mag_mae": 0.008989782520325774,
+      "mean_mag_density": 0.19951503956122935,
+      "n": 32,
+      "paired_not_worse_count": 15
+    },
+    "B0": {
+      "mag_hit_rate": 0.71875,
+      "mag_hits": 23,
+      "mag_mae": 0.010081350976187854,
+      "mean_mag_density": 0.20079950315295705,
+      "n": 32
+    }
+  },
+  "surrogate_property_eval": true
+}

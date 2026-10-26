@@ -1,0 +1,11 @@
+{
+  "total": 128,
+  "valid": 128,
+  "invalid": 0,
+  "device": "cuda",
+  "chgnet_version": "0.3.0",
+  "target": 0.1,
+  "invalid_objective": 1.0,
+  "surrogate_property_eval": true,
+  "dft_verified": false
+}

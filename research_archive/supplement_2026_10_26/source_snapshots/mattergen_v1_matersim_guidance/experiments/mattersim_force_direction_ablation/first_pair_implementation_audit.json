@@ -1,0 +1,11 @@
+{
+  "AUDIT": "PASS",
+  "actual_calls_each": 20,
+  "all_20_events_accepted": true,
+  "max_norm_and_timing_matched": true,
+  "no_resampling_or_tuning": true,
+  "per_atom_norm_multiset": "checked inside each experimental proposal using immutable assertion",
+  "reference_zero_net_translation": true,
+  "scientific_outcome_not_examined": true,
+  "seed": 741000
+}

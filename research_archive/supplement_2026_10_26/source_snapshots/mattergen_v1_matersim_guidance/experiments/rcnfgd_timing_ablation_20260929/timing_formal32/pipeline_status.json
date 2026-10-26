@@ -1,0 +1,12 @@
+{
+  "completed_stages": [
+    "prepare",
+    "properties",
+    "relax",
+    "quality",
+    "analysis"
+  ],
+  "generation_status": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/generation_status_attempt3.json",
+  "status": "COMPLETE",
+  "updated_epoch": 1790673238.2356758
+}

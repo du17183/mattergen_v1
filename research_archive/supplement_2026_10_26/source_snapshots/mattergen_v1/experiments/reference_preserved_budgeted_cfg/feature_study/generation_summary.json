@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "seeds": 64,
+  "policies": 5,
+  "structures": 320,
+  "total_elapsed_gpu_hours": 8.846655065047186,
+  "max_peak_allocated_bytes": 377140736,
+  "score_calls": 435200,
+  "mean_compute_multiplier": 3.3999999999999995
+}

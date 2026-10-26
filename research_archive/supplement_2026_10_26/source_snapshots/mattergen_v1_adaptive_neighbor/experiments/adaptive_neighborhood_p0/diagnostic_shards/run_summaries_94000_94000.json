@@ -1,0 +1,23 @@
+[
+  {
+    "adaptive_cfg_used": false,
+    "captured_timesteps": [
+      0.8,
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02
+    ],
+    "dft_verified": false,
+    "diagnostic_seconds": 3.1547740070091095,
+    "formula": "Fe5Co",
+    "generation_seconds": 88.23776693199761,
+    "num_atoms": 12,
+    "peak_allocated_bytes": 318789120,
+    "sampling_score_calls": 2000,
+    "seed": 94000,
+    "sensitivity_rows": 72,
+    "success": true
+  }
+]

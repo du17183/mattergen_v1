@@ -1,0 +1,19 @@
+{
+  "key": "innovation1_adaptive_cfg",
+  "data": "innovation1",
+  "title": "创新点一：Multi-field Residual-driven Online Adaptive CFG",
+  "branch": "feature/convergence-aware-corrector-gating",
+  "commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+  "pr": "https://github.com/du17183/mattergen_v1/pull/1",
+  "seeds": "20000–20255",
+  "n": 256,
+  "status": "FORMAL_INNOVATION1_CONFIRMED=True",
+  "independence": "独立正式评估；本方法不使用 Q3 Gate 训练数据",
+  "result": "相对 C0：E-hull -0.003435 eV/atom，Stable +5.859 pp，NUS +3.516 pp。",
+  "use": "可用于创新点一正式主结论。",
+  "forbid": "不得宣称 DFT 或目标属性验证。",
+  "stability_source": "MatterSim-5M surrogate",
+  "dft_verified": false,
+  "property_target_verified": false,
+  "documentation_commit": "20255f1a857cd763a7ef2bf2f24c1889c98c4d1c"
+}

@@ -1,0 +1,50 @@
+{
+  "Adaptive_CFG_used": "NO",
+  "DFT_VERIFIED": false,
+  "LATE_PHYSICS_SIGNAL_RELIABLE": "YES",
+  "MATTERSIM_FORCE_GUIDANCE_P0": "GO",
+  "NEXT": "FORMAL32",
+  "SURROGATE_PROPERTY_EVAL": true,
+  "all_guardrails_pass": true,
+  "formal256_run": false,
+  "formal32_run": false,
+  "guardrail_pass": {
+    "e_hull_increase_le_0.01_ev_atom": true,
+    "mag_mae_worsening_le_10pct": true,
+    "nus_drop_le_5pp": true,
+    "runtime_ratio_le_1.5": true,
+    "validity_drop_le_5pp": true
+  },
+  "guardrail_values": {
+    "e_hull_increase_ev_atom": 0.000809154925064004,
+    "mag_mae_worsening_fraction": -0.005193919798525611,
+    "nus_drop_pp": 0.0,
+    "runtime_ratio": 0.9997844956251735,
+    "validity_drop_pp": 0.0
+  },
+  "guidance": {
+    "absolute_protocol_cap_a": 0.02,
+    "accepted_calls": 320,
+    "eligible_calls": 320,
+    "fallback_calls": 0,
+    "guidance_lambda": 1.0,
+    "hard_cartesian_cap_a": 0.01,
+    "lambda_sweep": false,
+    "max_observed_cartesian_correction_a": 0.005000000000000001
+  },
+  "maxF_B0_mean_ev_per_a": 0.3040278919209802,
+  "maxF_F0_mean_ev_per_a": 0.25339196873973335,
+  "maxF_improvement_bootstrap_ci95_percent": [
+    10.170663138060133,
+    31.24142183105426
+  ],
+  "maxF_paired_wins_ties_losses": [
+    15,
+    0,
+    1
+  ],
+  "mean_maxF_improvement_fraction": 0.16655025583773608,
+  "mean_maxF_improvement_percent": 16.655025583773607,
+  "n_paired": 16,
+  "primary": "MatterSim pre-relaxation MaxF"
+}

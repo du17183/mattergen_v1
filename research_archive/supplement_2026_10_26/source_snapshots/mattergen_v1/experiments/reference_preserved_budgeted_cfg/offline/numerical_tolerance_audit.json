@@ -1,0 +1,8 @@
+{
+  "exact_structure_duplicate_groups": 159,
+  "exact_structure_duplicate_rows": 357,
+  "frozen_property_tolerance": 1e-06,
+  "maximum_property_error_range_within_exact_duplicates": 4.8987915793330394e-08,
+  "new_evaluator_calls": 0,
+  "tolerance_exceeds_observed_duplicate_range": true
+}

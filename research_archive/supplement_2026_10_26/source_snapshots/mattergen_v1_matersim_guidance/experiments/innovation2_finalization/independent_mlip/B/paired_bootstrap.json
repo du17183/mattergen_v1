@@ -1,0 +1,26 @@
+[
+  {
+    "absolute_bootstrap_ci95": [
+      -4.735386984161931e-05,
+      6.0498107520485105e-06
+    ],
+    "absolute_improvement": -1.3440424320576214e-05,
+    "baseline": "F0",
+    "baseline_mean": 0.09177261917390242,
+    "bootstrap_resamples": 20000,
+    "ci_excludes_zero_positive": false,
+    "formal256_evaluation_trigger": false,
+    "losses": 8,
+    "mean_relative_reduction": -0.00014645353310788154,
+    "method": "F1",
+    "method_mean": 0.091786059598223,
+    "n": 16,
+    "relative_bootstrap_ci95": [
+      -0.0006209485051095986,
+      6.490425930299187e-05
+    ],
+    "status": "INCONCLUSIVE",
+    "ties": 0,
+    "wins": 8
+  }
+]

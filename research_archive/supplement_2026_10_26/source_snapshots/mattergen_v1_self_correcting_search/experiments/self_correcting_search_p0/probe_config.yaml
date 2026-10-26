@@ -1,0 +1,72 @@
+experiment: hidden_state_probe_self_correcting_search_p0
+frozen_at: '2026-09-11T00:00:00+08:00'
+project_root: /mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search
+checkpoint_root: /mnt/datasets-livsyn/dxl/mattergen_v1/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density
+checkpoint_sha256: 01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e
+condition:
+  property: dft_mag_density
+  target_angstrom_minus3: 0.2
+  cfg: 2.0
+  guidance_schedule: constant
+  adaptive_cfg: false
+sampling:
+  diffusion_steps: 1000
+  corrector_steps_per_timestep: 1
+  batch_size: 1
+  deterministic: true
+probe_dataset:
+  trajectories: 192
+  train_seeds: [98000, 98127]
+  validation_seeds: [98128, 98159]
+  test_seeds: [98160, 98191]
+  heldout_search_seeds: [98200, 98207]
+  forbidden_range: [94000, 96031]
+  historical_seed_scan: exact_seed_context_scan_no_overlap
+  split_unit: trajectory
+  requested_timesteps: [0.50, 0.25, 0.10, 0.05, 0.02]
+  activation_phase: pre_corrector_current_state
+  activation_branch: conditional_cfg_branch
+  blocks: [0, 1, 2, 3]
+  atom_pooling: mean
+  hidden_dim: 512
+  append_normalized_timestep: true
+  label: frozen_CHGNet_final_clean_x0_absolute_moment_sum_per_volume
+chgnet:
+  version: 0.3.0
+  checkpoint: /mnt/datasets-livsyn/dxl/mattergen_v1/.cache/models/chgnet/0.3.0/chgnet_0.3.0_e29f68s314m37.pth.tar
+  calibration_mae: 0.001449
+  calibration_pearson: 0.9499
+  hit_tau: 0.01
+  surrogate_property_eval: true
+  dft_verified: false
+models:
+  linear: [513, 1]
+  tiny_mlp: [513, 64, 1]
+  loss: mse
+  optimizer: AdamW
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  max_epochs: 2000
+  early_stopping_patience: 150
+  training_seed: 20260911
+  feature_scaling: train_only_per_block_hidden_standardization
+selection:
+  model_rule: minimum_validation_mae_across_block_and_architecture
+  tie_breakers: [higher_validation_target_distance_spearman, fewer_parameters, lower_block_index]
+  reliable_window_rule: largest_contiguous_low_noise_window_starting_at_t_0.02_where_every_validation_timestep_passes_all_probe_thresholds
+  test_access: once_after_model_and_window_are_frozen
+probe_go:
+  test_pearson_min: 0.50
+  test_spearman_min: 0.50
+  mae_improvement_over_train_mean_min: 0.25
+  test_target_distance_spearman_min: 0.50
+  evaluation_scope: frozen_reliable_window
+prohibitions:
+  probe_gradient: true
+  hidden_state_steering: true
+  best_of_k: true
+  hard_floor_or_ceiling: true
+  lora: true
+  reinforcement_learning: true
+  adapter: true
+  mattergen_retraining: true

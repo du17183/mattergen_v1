@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_BEFORE_CONFIRMATORY_GENERATION",
+  "created_utc": "2026-09-17T05:41:20.272532+00:00",
+  "git_branch": "experiment/frozen-linear-k2-confirmation",
+  "git_base_head": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+  "execution_files_sha256": {
+    "confirmatory_sampler.py": "bf2e178e7295b6fca9cca11839e22fbd9076fbcb31b454473b2a5eb72a0931f7",
+    "run_generation.py": "6e7b8a66479803c71e14ddfaa5c98bce62f6a40897bf6938ef02d96d15ae7bc1",
+    "prepare_phase.py": "6caea6769bfbf2dc58aa7a8148d61a9b940bc7d9f57da8f54d31ef9bfb681545",
+    "run_quality.py": "1d7a45a3dc1a392339af5157419bcc59d003c5c42075c01bfe0a5ca79f8e29da",
+    "analyze_phase.py": "4e4e983d57421c4ec0a199b9d757bb02f731200491e1c4db012b5de76ef7209f",
+    "run_pipeline.py": "5e9d1854c75450193b4c536659f5eeee6c77b6fbf2aa17e93662a75b641a0752",
+    "protocol/frozen_method_manifest.json": "5575da5dd04e6d4eb6da882edee6df467276d8ef13d799c6bfc920f1c028fcb2",
+    "protocol/protocol.md": "a9a343084f11b58ab1a0c54ecbf3fbbf1542cb16cbf86d2953c8c1ce1b1edf54",
+    "protocol/protocol_amendment.md": "cc6a0dd1f7a9bdaa2901cc897f70bae523209b322ff08ad6750c9292c6cb7315",
+    "protocol/reconstruction_audit.json": "3c7cb8643f5d2a1417cf10427ac4e22c384e186f5828c9875d6ed43b88f42447",
+    "protocol/frozen_linear_k2_pipeline.joblib": "bd3f5280957a6418e7d5275a3e7a576fc57872b3ad1bd19ae9ef7bef97d56d3a",
+    "protocol/frozen_linear_k2_parameters.json": "b316d1ff34fd0c6c48eb16919e43c0f374cf48712164c72ef36d7851d5358525",
+    "protocol/seed_manifest_256.json": "6ee65748227ce0f550f9f2f6a49264039a206a5127c0e7b5f12559e74b70a182",
+    "protocol/seed_overlap_audit.json": "93313b42671ad69d0054ad6d08affe14abe1214f875d7a2921ded6750e3cda50"
+  },
+  "external_source_sha256": {
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_field_cfg/mattergen/diffusion/sampling/field_decoupled_cfg.py": "a9be95d598aa05c2563fe1900cffe28cdbebce5db9018352c7b958f3e92595a2",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/reference_preserved_budgeted_cfg/phase_b_sampler.py": "c225960c985ba0e339b6850997f79bdb91daf8c561f4358210d5e98a2ac9274d"
+  },
+  "reconstructed_artifact_sha256": "bd3f5280957a6418e7d5275a3e7a576fc57872b3ad1bd19ae9ef7bef97d56d3a",
+  "registered_seed_manifest_sha256": "6ee65748227ce0f550f9f2f6a49264039a206a5127c0e7b5f12559e74b70a182",
+  "registered_seed_count": 256,
+  "historical_seed_overlap_count": 0,
+  "c1_c2_seed_overlap_count": 0
+}

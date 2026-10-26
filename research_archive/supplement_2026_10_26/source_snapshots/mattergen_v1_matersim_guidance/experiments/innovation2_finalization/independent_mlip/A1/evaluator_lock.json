@@ -1,0 +1,7 @@
+{
+  "checkpoint": "/mnt/datasets-livsyn/dxl/mattergen_v1/.cache/models/chgnet/0.3.0/chgnet_0.3.0_e29f68s314m37.pth.tar",
+  "model_version": "0.3.0",
+  "selection_before_inference": true,
+  "selection_sha256": "844b57851a1b979ddd02d4596613de0e0f78d447ca92c9bc51f7ff160225881b",
+  "sha256": "d14ab7c0f093efe64b60a7bcd540bca10e74fb7f46c86108a079af60524659d1"
+}

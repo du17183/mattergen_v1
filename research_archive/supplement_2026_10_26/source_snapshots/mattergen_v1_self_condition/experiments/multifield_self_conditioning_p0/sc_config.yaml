@@ -1,0 +1,55 @@
+experiment: multifield_self_conditioning_p0
+independent_from_adaptive_neighborhood: true
+base:
+  checkpoint_root: /mnt/datasets-livsyn/dxl/mattergen_v1/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density
+  checkpoint_file: /mnt/datasets-livsyn/dxl/mattergen_v1/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt
+  checkpoint_sha256: 01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e
+  condition: dft_mag_density
+  target: 0.2
+  target_units: angstrom^-3
+sampling:
+  diffusion_steps: 1000
+  cfg_scale: 2.0
+  adaptive_cfg: false
+  cached_previous_prediction: true
+  extra_sampling_forwards: 0
+self_conditioning:
+  training_probability: 0.5
+  detached_previous_prediction: true
+  atomic_encoding: soft_probability_times_frozen_atom_embedding
+  position_encoding: periodic_wrapped_delta_sin_cos_mlp_6_64_512
+  cell_encoding: delta_div_num_atoms_cuberoot_mlp_9_64_512
+  field_gates: time_embedding_512_16_3_tanh_zero_initialized
+  injection: once_before_gemnet_block_stack
+training:
+  data_root: /mnt/datasets-livsyn/dxl/mattergen_v1/experiments/global_transformer_adapter_p0/data/cache
+  train_structures: 1024
+  validation_structures: 128
+  batch_size: 16
+  max_steps: 1000
+  validation_every: 100
+  sc_learning_rate: 0.001
+  block4_and_heads_learning_rate: 0.00001
+  weight_decay: 0.0001
+  gradient_clip: 1.0
+  early_stop_after: 500
+  early_stop_gate_tolerance: 0.001
+  trainable:
+    - self_conditioner
+    - gemnet_block_4
+    - gemnet_output_blocks
+    - gemnet_lattice_output_blocks
+    - atomic_output_head
+  frozen:
+    - atom_embedding
+    - gemnet_blocks_1_to_3
+    - property_embedding
+evaluation:
+  heldout_seed_first: 95000
+  heldout_seed_last: 95031
+  groups: [B0, S-off, S-on]
+  surrogate_property_eval: true
+  dft_verified: false
+  surrogate_heldout_mae: 0.001449
+  surrogate_pearson: 0.9499
+  property_tau: 0.01

@@ -1,0 +1,6 @@
+k_adaptive_branches,branch_point,total_steps,shared_prefix_fraction,suffix_fraction,compute_multiplier,formula
+0,400,1000,0.4,0.6,1.0,b + (K+1)*(1-b)
+1,400,1000,0.4,0.6,1.6,b + (K+1)*(1-b)
+2,400,1000,0.4,0.6,2.1999999999999997,b + (K+1)*(1-b)
+3,400,1000,0.4,0.6,2.8,b + (K+1)*(1-b)
+4,400,1000,0.4,0.6,3.4,b + (K+1)*(1-b)

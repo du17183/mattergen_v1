@@ -1,0 +1,28 @@
+{
+  "PREBRANCH_FEATURE_DATASET": "COMPLETE",
+  "ALLOCATOR_TEST": "COMPLETE",
+  "BEST_ALLOCATOR": "NONE",
+  "VALIDATION_SELECTED_ALLOCATOR": "Linear_K2",
+  "BEST_FIXED_K2": [
+    "GPulse",
+    "PPulse"
+  ],
+  "BEST_FIXED_K2_TEST_MAE": 0.0245974057577073,
+  "BEST_ADAPTIVE_K2_TEST_MAE": 0.0236342880178783,
+  "FIXED_K2_RECOVERED_HEADROOM": 0.797542678231027,
+  "ADAPTIVE_K2_RECOVERED_HEADROOM": 0.8983785121011494,
+  "TOP2_SAFE_ORACLE_RECALL": 0.8571428571428571,
+  "ADAPTIVE_ALLOCATION_VALUE": "NOT_SUPPORTED",
+  "PHASE_B_GATES": {
+    "B1_allocator_advantage": false,
+    "B2_quality": true,
+    "B3_random": true,
+    "B4_recall": true
+  },
+  "RECOVERY_ADVANTAGE_POINTS": 10.08358338701224,
+  "PROPERTY_MAE_RELATIVE_IMPROVEMENT": 0.039155256831392406,
+  "INNOVATION1_FINAL_STATUS": "MIXED",
+  "DFT_VERIFIED": false,
+  "NEXT": "STOP",
+  "STOP_REASON": "Branch-point state features did not provide enough held-out candidate-allocation value beyond fixed best-of-K under the frozen gates."
+}

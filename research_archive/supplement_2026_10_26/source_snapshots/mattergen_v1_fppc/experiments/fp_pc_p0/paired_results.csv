@@ -1,0 +1,2 @@
+status,reason,metric,n_pairs,mean_delta,median_delta,ci95_low,ci95_high,wins,ties,losses
+NOT_RUN_DIAGNOSTIC_FAIL,violation/no-violation outcome comparison is not estimable,NOT_RUN,0,,,,,,,

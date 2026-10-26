@@ -1,0 +1,29 @@
+{
+  "errors": [],
+  "fixed_gpu_shards": {
+    "0": [
+      67000,
+      67015
+    ]
+  },
+  "methods": {
+    "C0": {
+      "expected": 16,
+      "seed_set_exact": true,
+      "success": 16
+    },
+    "V2_Frozen_Atomic75_Late30": {
+      "expected": 16,
+      "seed_set_exact": true,
+      "success": 16
+    }
+  },
+  "mode": "single-h20",
+  "only_allowed_methods": true,
+  "passed": true,
+  "schema_version": 1,
+  "structure_hashes_unique_within_method": {
+    "C0": true,
+    "V2_Frozen_Atomic75_Late30": true
+  }
+}

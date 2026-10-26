@@ -1,0 +1,26 @@
+{
+  "FIELD_CONVERGENCE_HETEROGENEITY": false,
+  "evaluation_subset": "validation seeds 99032-99063 only",
+  "maximum_median_pair_difference": 0.0600000023841858,
+  "median_T": {
+    "A": 0.1200000047683715,
+    "L": 0.0600000023841857,
+    "X": 0.0600000023841857
+  },
+  "median_criterion_threshold": 0.1,
+  "median_pair_absolute_differences": {
+    "A-L": 0.0600000023841858,
+    "A-X": 0.0600000023841858,
+    "X-L": 0.0
+  },
+  "nonconverged_policy": "primary trajectory criterion assigns endpoint-censored nonconvergence T=0; strict all-three-finite sensitivity is also reported",
+  "passed_by_median_criterion": false,
+  "passed_by_trajectory_criterion": false,
+  "trajectory_fraction_threshold": 0.6,
+  "trajectory_pair_gap_fraction": 0.40625,
+  "trajectory_pair_gap_n": 13,
+  "trajectory_pair_gap_strict_all_finite_fraction": 0.21875,
+  "trajectory_pair_gap_strict_all_finite_n": 7,
+  "trajectory_pair_gap_threshold": 0.1,
+  "validation_n": 32
+}

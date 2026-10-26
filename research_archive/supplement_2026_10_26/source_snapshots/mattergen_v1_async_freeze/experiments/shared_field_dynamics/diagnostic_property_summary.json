@@ -1,0 +1,13 @@
+{
+  "device": "cuda",
+  "dft_verified": false,
+  "mag_hit_count": 39,
+  "mag_hit_rate": 0.609375,
+  "mag_mae": 0.01151348184693314,
+  "n": 64,
+  "surrogate_calibration_mae": 0.001449,
+  "surrogate_calibration_pearson": 0.9499,
+  "surrogate_property_eval": true,
+  "valid_count": 64,
+  "valid_fraction": 1.0
+}

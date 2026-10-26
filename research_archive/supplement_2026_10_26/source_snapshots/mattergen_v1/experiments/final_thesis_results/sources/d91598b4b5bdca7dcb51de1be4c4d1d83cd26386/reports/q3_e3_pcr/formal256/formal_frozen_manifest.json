@@ -1,0 +1,85 @@
+{
+  "base_branch": "feature/q3-e3-pcr-frozen64",
+  "base_commit": "87ec85c4ab353a362c8e2645cb0d14c3f6828672",
+  "c0_generated_once_per_seed": true,
+  "config": "/data/dxl/mattergen_v1/configs/q3_e3_pcr_frozen64.json",
+  "contract": {
+    "atomic_numbers_modified": false,
+    "backtrack_max": 3,
+    "cell_modified": false,
+    "checkpoint_sha256": "b2ce1800fa0fa448f57d58010c8586b5de1b6666c4f198737a2f8a4bfabcb90e",
+    "config_sha256": "50d10efdea1050a84de6b2872f78742c2468ff4bef45cd7544fb30cef31eb87a",
+    "frozen_source_sha256": "3d1d6e38066bb195c893ea8665f284e66261f74a055e1521ed4d6250d469895f",
+    "gate_hidden_dims": [
+      8
+    ],
+    "gate_input_dim": 14,
+    "gate_output_dim": 1,
+    "gate_threshold": 0.5,
+    "mattergen_checkpoint_sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+    "mattersim_checkpoint_sha256": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5",
+    "maximum_cumulative_displacement_angstrom": 0.1,
+    "minimum_distance_angstrom": 0.5,
+    "network_seed": 20260728,
+    "per_step_radius_angstrom": 0.02,
+    "position_eta": 0.01,
+    "refinement_steps": 5,
+    "trainable_parameters": 129,
+    "training_seed_range": [
+      20000,
+      20063
+    ]
+  },
+  "created_at": "2026-07-28T14:39:47+08:00",
+  "dft_verified": false,
+  "e3a_e3g_derive_from_same_c0": true,
+  "evaluation_script": "/data/dxl/mattergen_v1/research/q3_formal256.py",
+  "evaluation_script_sha256": "ee124ffb585ac8da8e0ab540773680e1268cd1b8c8865d07c0dfe1cab8ef1d03",
+  "formal_branch": "feature/q3-e3-pcr-formal256",
+  "formal_code_commit": "5293b4b71be88b6663bbe349f3b57694a916835f",
+  "formal_seed_count": 256,
+  "formal_seeds": [
+    40000,
+    40255
+  ],
+  "frozen_source": "/data/dxl/mattergen_v1/research/postgen_fastgate/refiner_eval.py",
+  "frozen_source_commit": "b65f42a8792004c7c820e59fa4413e1310e06143",
+  "mattergen_checkpoint": "/data/dxl/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt",
+  "mattersim_checkpoint": "/data/dxl/mattersim_weights/mattersim-v1.0.0-5M.pth",
+  "property_target_verified": false,
+  "q3_checkpoint": "/data/dxl/results/postgen_fastgate/q3_refiner/model/q3_gate.joblib",
+  "schema_version": 1,
+  "seed_audit": {
+    "created_at": "2026-07-28T14:39:47+08:00",
+    "formal_seed_count": 256,
+    "formal_seed_range": [
+      40000,
+      40255
+    ],
+    "gate_threshold_selection_intersection": [],
+    "historical_postgen_module_intersection": [],
+    "numeric_csv_false_positive_note": "Values in 40000\u201340255 found in SPG shape-statistics non-seed columns; the seed column is 245xx and has no intersection.",
+    "passed": true,
+    "path_matches": [],
+    "q3_32_development_intersection": [],
+    "q3_frozen64_intersection": [],
+    "random_gate_intersection": [],
+    "reserved_plan_reference": "/data/dxl/reports/innovation2_literature_search/minimum_validation_plan.md:39",
+    "schema_version": 1,
+    "structured_seed_field_matches": [],
+    "training_intersection": []
+  },
+  "stability_source": "MatterSim-5M surrogate",
+  "statistics": {
+    "bootstrap_samples": 20000,
+    "bootstrap_seed": 20260728,
+    "force_harm_epsilon_ev_angstrom": 1e-06,
+    "primary_arms": [
+      "E3-A vs C0",
+      "E3-G vs C0"
+    ],
+    "primary_endpoint": "pre-relaxation maximum force",
+    "wilcoxon_multiple_testing": "Holm, family size 2"
+  },
+  "tuning_after_freeze": false
+}

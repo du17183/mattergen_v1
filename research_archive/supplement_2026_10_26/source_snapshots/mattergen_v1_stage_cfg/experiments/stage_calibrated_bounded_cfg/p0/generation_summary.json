@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "phase": "p0",
+  "seeds": 32,
+  "schedules": 4,
+  "structures": 128,
+  "total_elapsed_gpu_hours": 2.3926165048763184,
+  "max_peak_allocated_bytes": 382523392,
+  "score_calls": 204800
+}

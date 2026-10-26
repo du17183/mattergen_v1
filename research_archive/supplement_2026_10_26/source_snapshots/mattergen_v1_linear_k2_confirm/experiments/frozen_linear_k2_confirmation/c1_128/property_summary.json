@@ -1,0 +1,9 @@
+{
+  "total": 896,
+  "valid": 896,
+  "invalid": 0,
+  "device": "cuda",
+  "chgnet_version": "0.3.0",
+  "surrogate_only": true,
+  "dft_verified": false
+}

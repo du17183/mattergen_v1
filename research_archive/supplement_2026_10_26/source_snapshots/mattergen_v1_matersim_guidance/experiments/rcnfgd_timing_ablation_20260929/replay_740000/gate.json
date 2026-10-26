@@ -1,0 +1,77 @@
+{
+  "cuda_runtime": "12.1",
+  "device": "cuda",
+  "geometry_tolerance_a": 1e-07,
+  "methods": {
+    "C0": {
+      "byte_hash_match": false,
+      "geometry": {
+        "max_abs_cell_a": 2.0786658676806837,
+        "max_abs_periodic_position_a": 2.3510316622717813,
+        "pass": false,
+        "same_atomic_numbers": false,
+        "same_pbc": true
+      },
+      "historical_sha256": "d4b2f381d3de5625e36af86e7355eb4e5e5079c4e1f0866a65b61405e1f56433",
+      "metrics": {
+        "mattersim_max_force": {
+          "abs_delta": 0.05106419971678439,
+          "historical": 0.05343878883037957,
+          "pass": false,
+          "replay": 0.0023745891135951804
+        },
+        "mattersim_mean_force": {
+          "abs_delta": 0.03323190103653216,
+          "historical": 0.035072523737054107,
+          "pass": false,
+          "replay": 0.0018406227005219444
+        },
+        "property_mae": {
+          "abs_delta": 0.008056042108876116,
+          "historical": 0.005590819280932802,
+          "pass": false,
+          "replay": 0.013646861389808917
+        }
+      },
+      "pass": false,
+      "replay_sha256": "68da1f698e17b0796154b0273126f692a3c2981f803b9ce8b5349ae649fd2a9b"
+    },
+    "F0": {
+      "byte_hash_match": false,
+      "geometry": {
+        "max_abs_cell_a": 2.078863517846912,
+        "max_abs_periodic_position_a": 2.346256489556009,
+        "pass": false,
+        "same_atomic_numbers": false,
+        "same_pbc": true
+      },
+      "historical_sha256": "765e297599299fda973a6d6651f40b88f39805401fb5b84eb0e5a6206a7d1407",
+      "metrics": {
+        "mattersim_max_force": {
+          "abs_delta": 0.036536691127898646,
+          "historical": 0.038746394713961456,
+          "pass": false,
+          "replay": 0.002209703586062811
+        },
+        "mattersim_mean_force": {
+          "abs_delta": 0.02423352808575249,
+          "historical": 0.025955640547024556,
+          "pass": false,
+          "replay": 0.0017221124612720657
+        },
+        "property_mae": {
+          "abs_delta": 0.007790454676989189,
+          "historical": 0.0058579596239093645,
+          "pass": false,
+          "replay": 0.013648414300898554
+        }
+      },
+      "pass": false,
+      "replay_sha256": "b7f17af2887a7968a28fe6adae61c0582427703336722e8395669bc24220e210"
+    }
+  },
+  "metric_abs_tolerance": 1e-06,
+  "seed": 740000,
+  "status": "FAIL",
+  "torch_version": "2.4.1+cu121"
+}

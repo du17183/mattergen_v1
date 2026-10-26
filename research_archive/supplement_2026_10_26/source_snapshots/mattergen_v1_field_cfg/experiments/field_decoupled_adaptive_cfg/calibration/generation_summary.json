@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "phase": "calibration",
+  "seeds": 48,
+  "policies": 12,
+  "structures": 576,
+  "total_elapsed_gpu_hours": 21.32536788983206,
+  "max_peak_allocated_bytes": 379544576,
+  "score_calls": 998400
+}

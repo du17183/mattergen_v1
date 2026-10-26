@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "A3_all_32_pairs_event_time_norm_acceptance_match": true,
+    "A6_same_C0_hash_equal_20_actual_calls_all_attempts_included": true,
+    "A1_A3_A4_A5_A6_preregistered_fresh_seeds": true,
+    "minimal_ablation_preregistered_source_unchanged": true,
+    "minimal8_fresh_seed_scan": true,
+    "all_final_study_cohorts_pairwise_disjoint": true,
+    "minimal8_all_48_generations_and_80000_control_decisions_reproduced": true,
+    "minimal8_nonconstant_arms_initial_residuals_identical": true,
+    "five_stashes_unchanged": true
+  },
+  "details": {
+    "A3_vector_scope": "Full G1 reference vectors available. All-arm per-atom norm matching relied on immutable runtime assertions; control vectors not all separately archived. G4 reverses reference trajectory, not own current gradient.",
+    "intentional_reuse": "C0 shared within paired methods, A6 POST derived from its C0, and I1 Formal256 overlaps later E3 gate training seeds 20000-20063. A0 does not use the gate; E3 formal40000-40255 excludes gate training. Not all historical projects are independent of each other."
+  },
+  "all_required_pass": true
+}

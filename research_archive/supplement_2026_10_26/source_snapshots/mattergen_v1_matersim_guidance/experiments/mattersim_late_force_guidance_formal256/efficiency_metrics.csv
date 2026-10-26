@@ -1,0 +1,3 @@
+method,generation_seconds_mean,end_to_end_seconds_mean,mattergen_score_calls_mean,actual_mattersim_calls_mean,actual_mattersim_calls_total,failed_mattersim_calls_total,peak_allocated_gib_max,fallback_total
+C0,92.84878176247821,92.84878176247821,2000.0,0.0,0,0,0.35881996154785156,0
+F0,92.33733477866417,92.66313072172193,2000.0,20.0,5120,0,0.4625077247619629,0

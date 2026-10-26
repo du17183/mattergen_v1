@@ -1,0 +1,81 @@
+schema_version: 1
+experiment: reference_preserved_budgeted_cfg
+method_name: Reference-Preserved Budgeted Adaptive CFG
+analysis_scope: offline_only_zero_new_generation
+source_root: /mnt/datasets-livsyn/dxl/mattergen_v1_field_cfg/experiments/field_decoupled_adaptive_cfg/calibration
+source_rows_expected: 576
+source_seeds_expected: 48
+source_policies_expected: 12
+
+split:
+  algorithm: sort_by_sha256
+  hash_payload: "rpb-a-cfg-offline-v1:{seed}"
+  offline_train: 24
+  offline_validation: 12
+  offline_test: 12
+
+selection:
+  c0_policy: C0
+  adaptive_policy_count: 11
+  numerical_property_tolerance: 1.0e-6
+  tolerance_basis: >-
+    Conservative floor used by the prior read-only diagnostic. Exact-structure
+    duplicate checks are reported, but no new evaluator call is made.
+  safe_a:
+    candidate_evaluation_valid_not_below_c0: true
+    candidate_stable_not_below_c0: true
+    maximum_e_hull_worsening_ev_per_atom: 0.01
+    property_error_improvement_strictly_above_tolerance: true
+  safe_b:
+    includes_safe_a: true
+    candidate_novel_not_below_c0: true
+  uniqueness_constraint_is_samplewise: false
+  mixed_batch_unique_and_nus_recomputed: true
+
+fixed_k:
+  k_values: [1, 2, 3, 4]
+  subset_search: exhaustive
+  discovery: minimum_train_property_mae
+  train_tie_breaks:
+    - higher_recovered_oracle_headroom
+    - lower_estimated_compute_multiplier
+    - lexicographic_policy_ids
+  validation_action: retain_only_if_property_mae_below_c0_and_quality_guardrails_pass
+  test_use: one_evaluation_of_train_selected_validation_retained_subset
+
+allocator:
+  target: safe_candidate_eligibility
+  prohibited_inputs:
+    - candidate_final_outcome
+    - future_trajectory_metric
+    - final_mattersim_score
+    - final_chgnet_property
+    - seed_identifier_or_hash_as_predictor
+  missing_feature_action: NOT_EVALUABLE_NO_IMPUTATION
+  random_k2_hash_payload: "rpb-a-cfg-random-k2-v1:{seed}:{policy_id}"
+
+compute_model:
+  c0_cost: 1.0
+  constant_adaptive_branch_increment: 1.0
+  pulse_adaptive_branch_increment: 0.6
+  pulse_start: 400
+  total_steps: 1000
+  note: >-
+    This is an offline score-call-equivalent estimate for the existing sampler.
+    Constant policies do not share the step-400 prefix in the source experiment.
+
+gates:
+  budgeted_headroom:
+    oracle_k2_recovered_headroom_minimum: 0.60
+    alternative_oracle_k3_recovered_headroom_minimum: 0.75
+  adaptive_allocation_value:
+    recovered_headroom_advantage_over_fixed_k2_minimum: 0.15
+    alternative_relative_property_mae_advantage_minimum: 0.05
+    quality_guardrails_not_worse: true
+  failure_action: STOP_NO_GPU_IMPLEMENTATION
+
+claim_limits:
+  surrogate_property_eval: true
+  dft_verified: false
+  oracle_is_retrospective: true
+  no_formal_safety_claim: true

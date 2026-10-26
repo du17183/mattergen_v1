@@ -1,0 +1,21 @@
+{
+  "cohort": "budget_scaling",
+  "n": 128,
+  "total_study_acquisition_score_calls": 1126400,
+  "total_study_gpu_hours": 13.245632062546987,
+  "max_peak_allocated_bytes": 376876544,
+  "per_method_deployment_multiplier": {
+    "K0": 1.0,
+    "K1": 1.6,
+    "K2": 2.2,
+    "K3": 2.8,
+    "K4": 3.4
+  },
+  "per_method_chgnet_and_mattersim_selector_calls": {
+    "K0": 1,
+    "K1": 2,
+    "K2": 3,
+    "K3": 4,
+    "K4": 5
+  }
+}

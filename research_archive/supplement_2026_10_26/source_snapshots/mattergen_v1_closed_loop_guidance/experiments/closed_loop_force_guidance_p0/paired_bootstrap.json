@@ -1,0 +1,244 @@
+{
+  "MaxF": [
+    {
+      "absolute_ci95": [
+        -1.4589469236158029e-05,
+        1.2319027055616755e-05
+      ],
+      "absolute_improvement": -1.0959488732979706e-06,
+      "baseline": "F0",
+      "baseline_mean": 0.0510362336733348,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 9,
+      "method": "F1",
+      "method_mean": 0.0510373296222081,
+      "metric": "maxF_ev_per_a",
+      "n_pairs": 16,
+      "relative_ci95": [
+        -0.00033345059650520667,
+        0.00025717068014646284
+      ],
+      "relative_improvement": -2.1473937130896737e-05,
+      "ties": 0,
+      "win_binomial_one_sided_p": 0.7727508544921875,
+      "wins": 7
+    }
+  ],
+  "secondary": [
+    {
+      "absolute_ci95": [
+        -9.931729627759336e-06,
+        5.606709499743786e-06
+      ],
+      "absolute_improvement": -1.1512556940897244e-06,
+      "baseline": "F0",
+      "baseline_mean": 0.02611975998597097,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 7,
+      "method": "F1",
+      "method_mean": 0.02612091124166506,
+      "metric": "atomic_force_mean_ev_per_a",
+      "n_pairs": 16,
+      "relative_ci95": [
+        -0.00044897334971865765,
+        0.00021640151580543338
+      ],
+      "relative_improvement": -4.4076044140799634e-05,
+      "ties": 0,
+      "win_binomial_one_sided_p": 0.4018096923828125,
+      "wins": 9
+    },
+    {
+      "absolute_ci95": [
+        -3.2726451921093914e-08,
+        1.793048775894111e-05
+      ],
+      "absolute_improvement": 6.1690203543903785e-06,
+      "baseline": "F0",
+      "baseline_mean": 0.0013821824945191592,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 3,
+      "method": "F1",
+      "method_mean": 0.0013760134741647688,
+      "metric": "rmsd_a",
+      "n_pairs": 16,
+      "relative_ci95": [
+        -2.9039097820535537e-05,
+        0.014450796074936934
+      ],
+      "relative_improvement": 0.004463245901936034,
+      "ties": 3,
+      "win_binomial_one_sided_p": 0.046142578125,
+      "wins": 10
+    },
+    {
+      "absolute_ci95": [
+        -4.0266248901854595e-07,
+        6.3578287856636e-08
+      ],
+      "absolute_improvement": -1.5629662403204847e-07,
+      "baseline": "F0",
+      "baseline_mean": 0.037330731970739994,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 3,
+      "method": "F1",
+      "method_mean": 0.037330888267364026,
+      "metric": "e_hull_ev_per_atom",
+      "n_pairs": 16,
+      "relative_ci95": [
+        -1.1895344807526243e-05,
+        1.5373764365849755e-06
+      ],
+      "relative_improvement": -4.186808449257157e-06,
+      "ties": 12,
+      "win_binomial_one_sided_p": 0.9375,
+      "wins": 1
+    },
+    {
+      "absolute_ci95": [
+        -2.2902162460300412e-07,
+        1.295597737383923e-06
+      ],
+      "absolute_improvement": 4.1191963135074616e-07,
+      "baseline": "F0",
+      "baseline_mean": 0.010931991164453016,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 9,
+      "method": "F1",
+      "method_mean": 0.010931579244821665,
+      "metric": "mag_absolute_error_a3",
+      "n_pairs": 16,
+      "relative_ci95": [
+        -2.670761843837646e-05,
+        0.00014171578604825388
+      ],
+      "relative_improvement": 3.768020163519375e-05,
+      "ties": 0,
+      "win_binomial_one_sided_p": 0.7727508544921875,
+      "wins": 7
+    },
+    {
+      "absolute_ci95": [
+        0.0,
+        0.0
+      ],
+      "absolute_improvement": 0.0,
+      "baseline": "F0",
+      "baseline_mean": 0.9375,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 0,
+      "method": "F1",
+      "method_mean": 0.9375,
+      "metric": "stable",
+      "n_pairs": 16,
+      "relative_ci95": [
+        0.0,
+        0.0
+      ],
+      "relative_improvement": 0.0,
+      "ties": 16,
+      "win_binomial_one_sided_p": 1.0,
+      "wins": 0
+    },
+    {
+      "absolute_ci95": [
+        0.0,
+        0.0
+      ],
+      "absolute_improvement": 0.0,
+      "baseline": "F0",
+      "baseline_mean": 0.1875,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 0,
+      "method": "F1",
+      "method_mean": 0.1875,
+      "metric": "nus",
+      "n_pairs": 16,
+      "relative_ci95": null,
+      "relative_improvement": 0.0,
+      "ties": 16,
+      "win_binomial_one_sided_p": 1.0,
+      "wins": 0
+    },
+    {
+      "absolute_ci95": [
+        0.0,
+        0.0
+      ],
+      "absolute_improvement": 0.0,
+      "baseline": "F0",
+      "baseline_mean": 1.0,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 0,
+      "method": "F1",
+      "method_mean": 1.0,
+      "metric": "valid",
+      "n_pairs": 16,
+      "relative_ci95": [
+        0.0,
+        0.0
+      ],
+      "relative_improvement": 0.0,
+      "ties": 16,
+      "win_binomial_one_sided_p": 1.0,
+      "wins": 0
+    },
+    {
+      "absolute_ci95": [
+        0.0,
+        0.0
+      ],
+      "absolute_improvement": 0.0,
+      "baseline": "F0",
+      "baseline_mean": 0.6875,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 0,
+      "method": "F1",
+      "method_mean": 0.6875,
+      "metric": "mag_hit",
+      "n_pairs": 16,
+      "relative_ci95": [
+        0.0,
+        0.0
+      ],
+      "relative_improvement": 0.0,
+      "ties": 16,
+      "win_binomial_one_sided_p": 1.0,
+      "wins": 0
+    },
+    {
+      "absolute_ci95": [
+        0.07271257221136694,
+        0.3953823495879987
+      ],
+      "absolute_improvement": 0.23583220006912597,
+      "baseline": "F0",
+      "baseline_mean": 85.72472079593717,
+      "bootstrap_resamples": 20000,
+      "bootstrap_seed": 20260915,
+      "losses": 4,
+      "method": "F1",
+      "method_mean": 85.48888859586805,
+      "metric": "end_to_end_generation_seconds",
+      "n_pairs": 16,
+      "relative_ci95": [
+        0.0008478569985659114,
+        0.004604205242377168
+      ],
+      "relative_improvement": 0.0027510407485666953,
+      "ties": 0,
+      "win_binomial_one_sided_p": 0.0384063720703125,
+      "wins": 12
+    }
+  ],
+  "secondary_sign_note": "All improvements are baseline minus candidate; for rates positive indicates rate decrease, not benefit."
+}

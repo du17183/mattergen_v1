@@ -1,0 +1,73 @@
+{
+  "study": "Frozen Allocator Confirmatory Study",
+  "status": "PROTOCOL_COMPLETE_C1_FAIL",
+  "started_utc": "2026-09-18T00:56:54.386819+00:00",
+  "execution_manifest_sha256": "dedc03a6e6b93bfdfd4a2ebda1d4fdbf877ca4bf2e82f1e76f4794a1f68edd10",
+  "execution_git_base": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+  "requested_gpus": [
+    2,
+    6
+  ],
+  "historical_phase_b_decision": "ADAPTIVE_ALLOCATION_VALUE=NOT_SUPPORTED",
+  "historical_phase_b_decision_immutable": true,
+  "repeated_c0": "NOT_APPLICABLE",
+  "dft_verified": false,
+  "updated_utc": "2026-09-18T02:02:29.879844+00:00",
+  "stage": "STOPPED_BEFORE_C2",
+  "phase": "c1_128",
+  "completed_seeds": 88,
+  "total_seeds": 128,
+  "active_gpus": [
+    2,
+    4
+  ],
+  "stage_elapsed_seconds": 20471.303075324045,
+  "estimated_remaining_seconds": 9647.395702164205,
+  "initial_started_utc": "2026-09-17T05:42:01.014496+00:00",
+  "recovered_failure": {
+    "error_type": "ValueError",
+    "error": "invalid literal for int() with base 10: '1336318572.partial'",
+    "failed_utc": "2026-09-17T11:33:13.458819+00:00"
+  },
+  "recovery_audit": "/mnt/datasets-livsyn/dxl/mattergen_v1_linear_k2_confirm/experiments/frozen_linear_k2_confirmation/confirmatory/recovery_audit.json",
+  "active_command": [
+    "/mnt/datasets-livsyn/dxl/alm/.venv/bin/python",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_linear_k2_confirm/experiments/frozen_linear_k2_confirmation/analyze_phase.py",
+    "--phase",
+    "c1_128",
+    "--stage",
+    "finalize"
+  ],
+  "active_log": "/mnt/datasets-livsyn/dxl/mattergen_v1_linear_k2_confirm/experiments/frozen_linear_k2_confirmation/logs/c1_128_finalize.log",
+  "error_type": "RuntimeError",
+  "error": "GPU 4 is not idle: {'uuid': 'GPU-c88dde9b-2dd9-d071-2dd7-adb5376e6946', 'memory_used_mib': 21857, 'memory_total_mib': 97871, 'utilization_percent': 0}",
+  "failed_utc": "2026-09-17T16:41:04.337571+00:00",
+  "c1_decision": {
+    "C1_CONFIRMATION": "FAIL",
+    "C2_RUN": "NO",
+    "N_CONFIRMATORY": 128,
+    "LINEAR_K2_MAE": 0.027522408495227565,
+    "FIXED_K2_MAE": 0.026332355926007578,
+    "RANDOM_K2_MAE": 0.02853336177875556,
+    "C0_MAE": 0.03479644444407384,
+    "LINEAR_VS_FIXED_RELATIVE_GAIN": -0.04519354715407796,
+    "LINEAR_VS_FIXED_BOOTSTRAP_CI": [
+      -0.003147703066264953,
+      0.0007398602378228189
+    ],
+    "QUALITY_GUARDRAILS": "PASS",
+    "COMPUTE_MULTIPLIER_LINEAR": 2.2,
+    "COMPUTE_MULTIPLIER_FIXED": 2.2,
+    "continuation_checks": {
+      "direction": false,
+      "effect_floor_1pct": false,
+      "random": true,
+      "quality": true
+    },
+    "FROZEN_LINEAR_K2_CONFIRMATION": "NOT_SUPPORTED",
+    "INNOVATION1_FINAL_STATUS": "MIXED",
+    "DFT_VERIFIED": false
+  },
+  "c2_started": false,
+  "completed_utc": "2026-09-18T02:02:29.879367+00:00"
+}

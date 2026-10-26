@@ -1,0 +1,23 @@
+{
+  "seed": 744017,
+  "purpose": "historical fixed-CFG calibration replay; NOT validation",
+  "target_dft_mag_density": 0.2,
+  "guidance_scale": 2.0,
+  "guidance_schedule": "constant",
+  "sampling_steps": 1000,
+  "corrector_steps": 1,
+  "trace_rows": 2000,
+  "elapsed_seconds": 83.15644391195383,
+  "physical_gpu": "4",
+  "checkpoint_sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+  "archived_structure": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/adaptive_cfg_force_guidance_compatibility/generation/C0/744017/generated_crystals.extxyz",
+  "archived_structure_sha256": "88c3ab1021d85588279808ba644f54ee5e5d45a51ce0eed2a2a780a4f6e01538",
+  "replayed_structure_sha256": "88c3ab1021d85588279808ba644f54ee5e5d45a51ce0eed2a2a780a4f6e01538",
+  "structure_numeric_match": {
+    "same_atomic_numbers": true,
+    "max_position_abs_error": 0.0,
+    "max_cell_abs_error": 0.0
+  },
+  "structure_match": true,
+  "formula": "Gd"
+}

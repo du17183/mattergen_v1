@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "scan_roots": ["experiments", "diagnostics", "research", "thesis"],
+  "scan_result": "No existing standalone five-digit seed in 94000-96031 was found on the frozen base worktree before cohort assignment.",
+  "explicitly_excluded_prefixes": [90000, 91000, 92000, 93000],
+  "adaptive_neighborhood_diagnostic": {
+    "start": 94000,
+    "end": 94031,
+    "count": 32
+  },
+  "adaptive_neighborhood_heldout_p0": {
+    "start": 96000,
+    "end": 96031,
+    "count": 32,
+    "fresh_from_diagnostic": true
+  },
+  "multifield_self_conditioning_p0": {
+    "start": 95000,
+    "end": 95031,
+    "count": 32
+  },
+  "overlap": false
+}

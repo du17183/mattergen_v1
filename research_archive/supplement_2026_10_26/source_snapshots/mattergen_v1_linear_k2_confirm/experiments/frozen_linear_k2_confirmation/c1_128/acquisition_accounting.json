@@ -1,0 +1,7 @@
+{
+  "total_gpu_seconds": 60406.318289632094,
+  "total_acquisition_score_calls": 1433600,
+  "mean_wall_seconds_per_seed": 471.92436163775074,
+  "study_acquisition_multiplier_per_seed": 5.6,
+  "reference_reproduction_all_pass": true
+}

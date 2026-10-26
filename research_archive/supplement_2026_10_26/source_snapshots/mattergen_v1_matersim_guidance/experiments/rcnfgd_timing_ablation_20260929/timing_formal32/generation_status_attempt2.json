@@ -1,0 +1,122 @@
+{
+  "completed_paired_seeds": [],
+  "expected_paired_seeds": [
+    750000,
+    750001,
+    750002,
+    750003,
+    750004,
+    750005,
+    750006,
+    750007,
+    750008,
+    750009,
+    750010,
+    750011,
+    750012,
+    750013,
+    750014,
+    750015,
+    750016,
+    750017,
+    750018,
+    750019,
+    750020,
+    750021,
+    750022,
+    750023,
+    750024,
+    750025,
+    750026,
+    750027,
+    750028,
+    750029,
+    750030,
+    750031
+  ],
+  "failures": [
+    {
+      "gpu": 2,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750000_gpu_2_attempt2.log",
+      "return_code": 1,
+      "seed": 750000
+    },
+    {
+      "gpu": 3,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750001_gpu_3_attempt2.log",
+      "return_code": 1,
+      "seed": 750001
+    },
+    {
+      "gpu": 4,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750002_gpu_4_attempt2.log",
+      "return_code": 1,
+      "seed": 750002
+    },
+    {
+      "gpu": 5,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750003_gpu_5_attempt2.log",
+      "return_code": 1,
+      "seed": 750003
+    },
+    {
+      "gpu": 6,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750004_gpu_6_attempt2.log",
+      "return_code": 1,
+      "seed": 750004
+    },
+    {
+      "gpu": 7,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750005_gpu_7_attempt2.log",
+      "return_code": 1,
+      "seed": 750005
+    },
+    {
+      "gpu": 2,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750006_gpu_2_attempt2.log",
+      "return_code": -2,
+      "seed": 750006
+    },
+    {
+      "gpu": 3,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750007_gpu_3_attempt2.log",
+      "return_code": -2,
+      "seed": 750007
+    },
+    {
+      "gpu": 4,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750008_gpu_4_attempt2.log",
+      "return_code": -2,
+      "seed": 750008
+    },
+    {
+      "gpu": 5,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750009_gpu_5_attempt2.log",
+      "return_code": -2,
+      "seed": 750009
+    },
+    {
+      "gpu": 6,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750010_gpu_6_attempt2.log",
+      "return_code": -2,
+      "seed": 750010
+    },
+    {
+      "gpu": 7,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750011_gpu_7_attempt2.log",
+      "return_code": -2,
+      "seed": 750011
+    }
+  ],
+  "gpus": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "started_epoch": 1790668771.2093804,
+  "status": "FAIL",
+  "updated_epoch": 1790668944.9606917
+}

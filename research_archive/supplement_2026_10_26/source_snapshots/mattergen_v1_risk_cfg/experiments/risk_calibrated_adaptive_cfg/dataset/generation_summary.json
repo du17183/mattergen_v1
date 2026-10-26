@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "trajectories": 96,
+  "decision_states": 384,
+  "full_branches": 1152,
+  "base_final_structures": 96,
+  "total_elapsed_gpu_hours": 20.706658207465015,
+  "maximum_peak_allocated_bytes": 363707392,
+  "all_keep_branches_exactly_paired": true
+}

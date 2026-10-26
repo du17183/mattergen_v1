@@ -1,0 +1,28 @@
+experiment: fp_pc_p0
+stage: P0
+status: NOT_RUN_DIAGNOSTIC_FAIL
+reason: violation/no-violation outcome comparison is not estimable
+executed: false
+baseline:
+  model: official_dft_mag_density_full_ft
+  target_dft_mag_density: 0.2
+  cfg: 2.0
+  guidance_schedule: constant
+  adaptive_cfg: false
+  diffusion_steps: 1000
+  corrector_steps_per_timestep: 1
+planned_method_not_implemented:
+  fields: [pos, cell]
+  atomic_numbers_changed: false
+  same_check_for_predictor_and_corrector: true
+  d_min_floor_angstrom: 1.3326659867404236
+  VN_low_angstrom3_per_atom: 9.25793082239252
+  VN_high_angstrom3_per_atom: 57.98527210297675
+  initial_alpha: 0.5
+  alpha_multiplier: 0.5
+  maximum_backtracks: 4
+  fallback_after_failure: current_state
+  feasible_proposal_behavior: accept_unmodified
+p0_seeds_reserved_but_not_used: [720000, 720015]
+formal32: prohibited
+formal256: prohibited

@@ -1,0 +1,1298 @@
+[
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/gbsa_tcl_prospective32/final_report.md",
+    "size": 8970
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/metric_framework_reassessment/final_report.md",
+    "size": 46221
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/tcl_dml_p0/final_report.md",
+    "size": 12544
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/tcl_formal256/final_report.md",
+    "size": 12871
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/tcl_p2/final_report.md",
+    "size": 11199
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/tcl_p1/final_report.md",
+    "size": 11076
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/gbsa_tcl_p0/final_report.md",
+    "size": 6538
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/global_transformer_adapter_p0/final_report.md",
+    "size": 11278
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/gbsa_tcl_p1/final_report.md",
+    "size": 13270
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/cross_field_interaction_p0/final_report.md",
+    "size": 12104
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/final_report.md",
+    "size": 14899
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_v3_anchor/final_report.md",
+    "size": 15563
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/quality_metrics.csv",
+    "size": 2159
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_v2/final_report.md",
+    "size": 15691
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p0/final_report.md",
+    "size": 9083
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p1b/final_report.md",
+    "size": 9636
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/cross_field_interaction_p1/final_report.md",
+    "size": 10482
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_v1/quality_metrics.csv",
+    "size": 4219
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/corrector_residual_distillation_v1/final_report.md",
+    "size": 19401
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/distribution_balanced_quality_adapter/final_report.md",
+    "size": 11837
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/distribution_constrained_quality_adapter_p1/final_report.md",
+    "size": 13176
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/tcl_p2/final_report.md",
+    "size": 11199
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/distribution_constrained_quality_adapter_p1b/final_report.md",
+    "size": 9636
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/adaptive_neighborhood_p0/final_report.md",
+    "size": 2623
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/adaptive_neighborhood_p0/decision_summary.json",
+    "size": 962
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/adaptive_neighborhood_p0/paired_results.csv",
+    "size": 1864
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/adaptive_neighborhood_p0/quality_metrics.csv",
+    "size": 1249
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/tcl_p1/final_report.md",
+    "size": 11076
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/tcl_dml_p0/final_report.md",
+    "size": 12544
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/tcl_formal256/final_report.md",
+    "size": 12871
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/metric_framework_reassessment/final_report.md",
+    "size": 46221
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/global_transformer_adapter_p0/final_report.md",
+    "size": 11278
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/distribution_balanced_quality_adapter/final_report.md",
+    "size": 11837
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/distribution_constrained_quality_adapter_p0/final_report.md",
+    "size": 9083
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/distribution_constrained_quality_adapter_p1/final_report.md",
+    "size": 13176
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/cross_field_interaction_p1/final_report.md",
+    "size": 10482
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/cross_field_interaction_p0/final_report.md",
+    "size": 12104
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/gbsa_tcl_p1/final_report.md",
+    "size": 13270
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_formal256/final_report.md",
+    "size": 14899
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_v3_anchor/final_report.md",
+    "size": 15563
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_v2/quality_metrics.csv",
+    "size": 2159
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_v2/final_report.md",
+    "size": 15691
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_v1/quality_metrics.csv",
+    "size": 4219
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/corrector_residual_distillation_v1/final_report.md",
+    "size": 19401
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/gbsa_tcl_p0/final_report.md",
+    "size": 6538
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments/gbsa_tcl_prospective32/final_report.md",
+    "size": 8970
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/tcl_p2/final_report.md",
+    "size": 11199
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/site_level_convergence_diagnostic/final_report.md",
+    "size": 2730
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/field_async_freeze_p0/final_report.md",
+    "size": 3154
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/field_async_freeze_p0/decision_summary.json",
+    "size": 351
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/field_async_freeze_p0/paired_results.csv",
+    "size": 27
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/field_async_freeze_p0/quality_metrics.csv",
+    "size": 19
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/site_level_convergence_diagnostic/decision_summary.json",
+    "size": 1797
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/shared_field_dynamics/config.yaml",
+    "size": 2607
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/gbsa_tcl_p1/final_report.md",
+    "size": 13270
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/site_level_convergence_diagnostic/config.yaml",
+    "size": 2276
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/tcl_formal256/final_report.md",
+    "size": 12871
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/tcl_p1/final_report.md",
+    "size": 11076
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/tcl_dml_p0/final_report.md",
+    "size": 12544
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/metric_framework_reassessment/final_report.md",
+    "size": 46221
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/distribution_constrained_quality_adapter_p1b/final_report.md",
+    "size": 9636
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/gbsa_tcl_p0/final_report.md",
+    "size": 6538
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/global_transformer_adapter_p0/final_report.md",
+    "size": 11278
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/distribution_constrained_quality_adapter_p0/final_report.md",
+    "size": 9083
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/cross_field_interaction_p1/final_report.md",
+    "size": 10482
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/distribution_constrained_quality_adapter_p1/final_report.md",
+    "size": 13176
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_v2/quality_metrics.csv",
+    "size": 2159
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_v2/final_report.md",
+    "size": 15691
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_v1/quality_metrics.csv",
+    "size": 4219
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_v1/final_report.md",
+    "size": 19401
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/cross_field_interaction_p0/final_report.md",
+    "size": 12104
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_v3_anchor/final_report.md",
+    "size": 15563
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/distribution_balanced_quality_adapter/final_report.md",
+    "size": 11837
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/gbsa_tcl_prospective32/final_report.md",
+    "size": 8970
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/corrector_residual_distillation_formal256/final_report.md",
+    "size": 14899
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/cell_atom_fusion_p0/final_report.md",
+    "size": 3648
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/tcl_p1/final_report.md",
+    "size": 11076
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/tcl_p2/final_report.md",
+    "size": 11199
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/cell_atom_fusion_p0/config.yaml",
+    "size": 1243
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/tcl_dml_p0/final_report.md",
+    "size": 12544
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/tcl_formal256/final_report.md",
+    "size": 12871
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/metric_framework_reassessment/final_report.md",
+    "size": 46221
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/distribution_constrained_quality_adapter_p1b/final_report.md",
+    "size": 9636
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/distribution_constrained_quality_adapter_p0/final_report.md",
+    "size": 9083
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/distribution_balanced_quality_adapter/final_report.md",
+    "size": 11837
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/gbsa_tcl_p1/final_report.md",
+    "size": 13270
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/cross_field_interaction_p1/final_report.md",
+    "size": 10482
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/cross_field_interaction_p0/final_report.md",
+    "size": 12104
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/distribution_constrained_quality_adapter_p1/final_report.md",
+    "size": 13176
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/gbsa_tcl_prospective32/final_report.md",
+    "size": 8970
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/gbsa_tcl_p0/final_report.md",
+    "size": 6538
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/global_transformer_adapter_p0/final_report.md",
+    "size": 11278
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_v2/quality_metrics.csv",
+    "size": 2159
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_v2/final_report.md",
+    "size": 15691
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_v1/quality_metrics.csv",
+    "size": 4219
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_v1/final_report.md",
+    "size": 19401
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_formal256/final_report.md",
+    "size": 14899
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/corrector_residual_distillation_v3_anchor/final_report.md",
+    "size": 15563
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/closed_loop_force_guidance_p0/decision_summary.json",
+    "size": 2575
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/closed_loop_force_guidance_p0/final_report.md",
+    "size": 3348
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/tcl_p1/final_report.md",
+    "size": 11076
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/tcl_p2/final_report.md",
+    "size": 11199
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/closed_loop_force_guidance_p0/audit_results.json",
+    "size": 671
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/closed_loop_force_guidance_p0/paired_results.csv",
+    "size": 10560
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/closed_loop_force_guidance_p0/paired_bootstrap.json",
+    "size": 6271
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/closed_loop_force_guidance_p0/quality_metrics.csv",
+    "size": 1324
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/closed_loop_force_guidance_p0/guidance_trace.csv",
+    "size": 173236
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/closed_loop_force_guidance_p0/config.yaml",
+    "size": 5057
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/distribution_constrained_quality_adapter_p0/final_report.md",
+    "size": 9083
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/tcl_formal256/final_report.md",
+    "size": 12871
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/metric_framework_reassessment/final_report.md",
+    "size": 46221
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/tcl_dml_p0/final_report.md",
+    "size": 12544
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/cross_field_interaction_p1/final_report.md",
+    "size": 10482
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/distribution_balanced_quality_adapter/final_report.md",
+    "size": 11837
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/cross_field_interaction_p0/final_report.md",
+    "size": 12104
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_v3_anchor/final_report.md",
+    "size": 15563
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/distribution_constrained_quality_adapter_p1/final_report.md",
+    "size": 13176
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/gbsa_tcl_p0/final_report.md",
+    "size": 6538
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/gbsa_tcl_p1/final_report.md",
+    "size": 13270
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/distribution_constrained_quality_adapter_p1b/final_report.md",
+    "size": 9636
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/gbsa_tcl_prospective32/final_report.md",
+    "size": 8970
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/global_transformer_adapter_p0/final_report.md",
+    "size": 11278
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_formal256/final_report.md",
+    "size": 14899
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_v1/quality_metrics.csv",
+    "size": 4219
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_v1/final_report.md",
+    "size": 19401
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_v2/quality_metrics.csv",
+    "size": 2159
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/corrector_residual_distillation_v2/final_report.md",
+    "size": 15691
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/tcl_p2/final_report.md",
+    "size": 11199
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/field_time_schedule_p0/final_report.md",
+    "size": 2433
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/field_time_schedule_p0/decision_summary.json",
+    "size": 352
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/field_time_schedule_p0/paired_results.csv",
+    "size": 27
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/field_time_schedule_p0/quality_metrics.csv",
+    "size": 19
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/gbsa_tcl_prospective32/final_report.md",
+    "size": 8970
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/tcl_p1/final_report.md",
+    "size": 11076
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/global_transformer_adapter_p0/final_report.md",
+    "size": 11278
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/metric_framework_reassessment/final_report.md",
+    "size": 46221
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/tcl_formal256/final_report.md",
+    "size": 12871
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/gbsa_tcl_p0/final_report.md",
+    "size": 6538
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/gbsa_tcl_p1/final_report.md",
+    "size": 13270
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/tcl_dml_p0/final_report.md",
+    "size": 12544
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/distribution_constrained_quality_adapter_p1b/final_report.md",
+    "size": 9636
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/distribution_balanced_quality_adapter/final_report.md",
+    "size": 11837
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/distribution_constrained_quality_adapter_p1/final_report.md",
+    "size": 13176
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/cross_field_interaction_p1/final_report.md",
+    "size": 10482
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_v2/quality_metrics.csv",
+    "size": 2159
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/cross_field_interaction_p0/final_report.md",
+    "size": 12104
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_v3_anchor/final_report.md",
+    "size": 15563
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_formal256/final_report.md",
+    "size": 14899
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_v1/quality_metrics.csv",
+    "size": 4219
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_v1/final_report.md",
+    "size": 19401
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/distribution_constrained_quality_adapter_p0/final_report.md",
+    "size": 9083
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments/corrector_residual_distillation_v2/final_report.md",
+    "size": 15691
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/cross_field_interaction_p0/final_report.md",
+    "size": 12104
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/fp_pc_p0/final_report.md",
+    "size": 4344
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/fp_pc_p0/decision_summary.json",
+    "size": 448
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/fp_pc_p0/paired_results.csv",
+    "size": 189
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/fp_pc_p0/quality_metrics.csv",
+    "size": 160
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/tcl_p2/final_report.md",
+    "size": 11199
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/tcl_p1/final_report.md",
+    "size": 11076
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/tcl_dml_p0/final_report.md",
+    "size": 12544
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/global_transformer_adapter_p0/final_report.md",
+    "size": 11278
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/tcl_formal256/final_report.md",
+    "size": 12871
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/metric_framework_reassessment/final_report.md",
+    "size": 46221
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/gbsa_tcl_prospective32/final_report.md",
+    "size": 8970
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/distribution_constrained_quality_adapter_p1b/final_report.md",
+    "size": 9636
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/distribution_constrained_quality_adapter_p0/final_report.md",
+    "size": 9083
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/cross_field_interaction_p1/final_report.md",
+    "size": 10482
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/distribution_balanced_quality_adapter/final_report.md",
+    "size": 11837
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/distribution_constrained_quality_adapter_p1/final_report.md",
+    "size": 13176
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/gbsa_tcl_p1/final_report.md",
+    "size": 13270
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/gbsa_tcl_p0/final_report.md",
+    "size": 6538
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_v3_anchor/final_report.md",
+    "size": 15563
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_formal256/final_report.md",
+    "size": 14899
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_v2/quality_metrics.csv",
+    "size": 2159
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_v1/quality_metrics.csv",
+    "size": 4219
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_v1/final_report.md",
+    "size": 19401
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments/corrector_residual_distillation_v2/final_report.md",
+    "size": 15691
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_equal_budget_post_generation/decision_summary.json",
+    "size": 3524
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_equal_budget_post_generation/final_report.md",
+    "size": 4386
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_equal_budget_post_generation/audit_results.json",
+    "size": 567
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_equal_budget_post_generation/paired_results.csv",
+    "size": 29169
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_equal_budget_post_generation/paired_bootstrap.json",
+    "size": 12880
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_equal_budget_post_generation/quality_metrics.csv",
+    "size": 1680
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_equal_budget_post_generation/guidance_trace.csv",
+    "size": 155043
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_equal_budget_post_generation/config.yaml",
+    "size": 4447
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/distribution_constrained_quality_adapter_p1/final_report.md",
+    "size": 13176
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_trust_region_ablation/decision_summary.json",
+    "size": 3308
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_trust_region_ablation/final_report.md",
+    "size": 4166
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_trust_region_ablation/audit_results.json",
+    "size": 491
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_trust_region_ablation/paired_results.csv",
+    "size": 29005
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_trust_region_ablation/paired_bootstrap.json",
+    "size": 12950
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_trust_region_ablation/quality_metrics.csv",
+    "size": 1679
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/adaptive_cfg_force_guidance_compatibility/final_report.md",
+    "size": 3978
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/adaptive_cfg_force_guidance_compatibility/decision_summary.json",
+    "size": 3041
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/adaptive_cfg_force_guidance_compatibility/audit_results.json",
+    "size": 491
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/adaptive_cfg_force_guidance_compatibility/paired_results.csv",
+    "size": 74046
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/adaptive_cfg_force_guidance_compatibility/paired_bootstrap.json",
+    "size": 20946
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/adaptive_cfg_force_guidance_compatibility/quality_metrics.csv",
+    "size": 2088
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/final_report.md",
+    "size": 2064
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal256/decision_summary.json",
+    "size": 2332
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal256/final_report.md",
+    "size": 3127
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal256/audit_results.json",
+    "size": 491
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal256/paired_results.csv",
+    "size": 145313
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal256/paired_bootstrap.json",
+    "size": 6336
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal256/quality_metrics.csv",
+    "size": 1377
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal256/guidance_trace.csv",
+    "size": 1234660
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal256/config.yaml",
+    "size": 6686
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/A5/final_report.md",
+    "size": 1074
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/A5/decision_summary.json",
+    "size": 835
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/A5/paired_bootstrap.json",
+    "size": 3736
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/A6/final_report.md",
+    "size": 1011
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/A6/decision_summary.json",
+    "size": 772
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/A6/paired_bootstrap.json",
+    "size": 1883
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/decision_summary.json",
+    "size": 860
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/A4/final_report.md",
+    "size": 1008
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/A4/decision_summary.json",
+    "size": 769
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/A4/paired_bootstrap.json",
+    "size": 1895
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/A1/final_report.md",
+    "size": 1099
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/A1/decision_summary.json",
+    "size": 860
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/A1/paired_bootstrap.json",
+    "size": 625
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/Formal32/final_report.md",
+    "size": 998
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/Formal32/decision_summary.json",
+    "size": 759
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/Formal32/paired_bootstrap.json",
+    "size": 625
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/A3/final_report.md",
+    "size": 1012
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/A3/decision_summary.json",
+    "size": 773
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/A3/paired_bootstrap.json",
+    "size": 6285
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/B/final_report.md",
+    "size": 1020
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/B/decision_summary.json",
+    "size": 781
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/independent_mlip/B/paired_bootstrap.json",
+    "size": 646
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_force_direction_ablation/decision_summary.json",
+    "size": 2494
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_force_direction_ablation/final_report.md",
+    "size": 3503
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_force_direction_ablation/audit_results.json",
+    "size": 632
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_force_direction_ablation/paired_results.csv",
+    "size": 48394
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_force_direction_ablation/paired_bootstrap.json",
+    "size": 28528
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_force_direction_ablation/quality_metrics.csv",
+    "size": 2426
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/adaptive_cfg_force_guidance_compatibility/guidance_trace.csv",
+    "size": 617224
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/adaptive_cfg_force_guidance_compatibility/config.yaml",
+    "size": 5207
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_force_direction_ablation/guidance_trace.csv",
+    "size": 679237
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_force_direction_ablation/config.yaml",
+    "size": 4651
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_trust_region_ablation/guidance_trace.csv",
+    "size": 325265
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_trust_region_ablation/config.yaml",
+    "size": 4613
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/audit_results.json",
+    "size": 1637
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/final_report.md",
+    "size": 5186
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/decision_summary.json",
+    "size": 1666
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/quality_metrics.csv",
+    "size": 886
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/physics_metrics.csv",
+    "size": 7260
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/paired_results.csv",
+    "size": 19286
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/bootstrap_results.json",
+    "size": 2664
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/guidance_trace.csv",
+    "size": 221147
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/tcl_p1/final_report.md",
+    "size": 11076
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/tcl_p2/final_report.md",
+    "size": 11199
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/tcl_formal256/final_report.md",
+    "size": 12871
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/tcl_dml_p0/final_report.md",
+    "size": 12544
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/metric_framework_reassessment/final_report.md",
+    "size": 46221
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/audit_results.json",
+    "size": 406
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/final_report.md",
+    "size": 3348
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/paired_results.csv",
+    "size": 8418
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/quality_metrics.csv",
+    "size": 743
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/guidance_trace.csv",
+    "size": 76177
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/decision_summary.json",
+    "size": 1437
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/global_transformer_adapter_p0/final_report.md",
+    "size": 11278
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/distribution_balanced_quality_adapter/final_report.md",
+    "size": 11837
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/cross_field_interaction_p1/final_report.md",
+    "size": 10482
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/gbsa_tcl_p0/final_report.md",
+    "size": 6538
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/distribution_constrained_quality_adapter_p0/final_report.md",
+    "size": 9083
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/gbsa_tcl_p1/final_report.md",
+    "size": 13270
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/distribution_constrained_quality_adapter_p1b/final_report.md",
+    "size": 9636
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/gbsa_tcl_prospective32/final_report.md",
+    "size": 8970
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/cross_field_interaction_p0/final_report.md",
+    "size": 12104
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_v2/quality_metrics.csv",
+    "size": 2159
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_v2/final_report.md",
+    "size": 15691
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_v3_anchor/final_report.md",
+    "size": 15563
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_formal256/final_report.md",
+    "size": 14899
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_v1/quality_metrics.csv",
+    "size": 4219
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/corrector_residual_distillation_v1/final_report.md",
+    "size": 19401
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/metric_framework_reassessment/final_report.md",
+    "size": 46221
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/tcl_p2/final_report.md",
+    "size": 11199
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/multifield_self_conditioning_p0/final_report.md",
+    "size": 2962
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/tcl_formal256/final_report.md",
+    "size": 12871
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/multifield_self_conditioning_p0/decision_summary.json",
+    "size": 1141
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/multifield_self_conditioning_p0/paired_results.csv",
+    "size": 5240
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/multifield_self_conditioning_p0/quality_metrics.csv",
+    "size": 1681
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/tcl_dml_p0/final_report.md",
+    "size": 12544
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/tcl_p1/final_report.md",
+    "size": 11076
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/distribution_constrained_quality_adapter_p0/final_report.md",
+    "size": 9083
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/global_transformer_adapter_p0/final_report.md",
+    "size": 11278
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/gbsa_tcl_p0/final_report.md",
+    "size": 6538
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/gbsa_tcl_p1/final_report.md",
+    "size": 13270
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/gbsa_tcl_prospective32/final_report.md",
+    "size": 8970
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/distribution_constrained_quality_adapter_p1b/final_report.md",
+    "size": 9636
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/distribution_constrained_quality_adapter_p1/final_report.md",
+    "size": 13176
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/distribution_balanced_quality_adapter/final_report.md",
+    "size": 11837
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/cross_field_interaction_p0/final_report.md",
+    "size": 12104
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/cross_field_interaction_p1/final_report.md",
+    "size": 10482
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_v3_anchor/final_report.md",
+    "size": 15563
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_v2/quality_metrics.csv",
+    "size": 2159
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_formal256/final_report.md",
+    "size": 14899
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_v1/quality_metrics.csv",
+    "size": 4219
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_v1/final_report.md",
+    "size": 19401
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments/corrector_residual_distillation_v2/final_report.md",
+    "size": 15691
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/global_transformer_adapter_p0/final_report.md",
+    "size": 11278
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/distribution_balanced_quality_adapter/final_report.md",
+    "size": 11837
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/self_correcting_search_p0/final_report.md",
+    "size": 5685
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/self_correcting_search_p0/quality_metrics.csv",
+    "size": 145
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/self_correcting_search_p0/decision_summary.json",
+    "size": 835
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/tcl_p1/final_report.md",
+    "size": 11076
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/tcl_p2/final_report.md",
+    "size": 11199
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/tcl_dml_p0/final_report.md",
+    "size": 12544
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/tcl_formal256/final_report.md",
+    "size": 12871
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/metric_framework_reassessment/final_report.md",
+    "size": 46221
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_v3_anchor/final_report.md",
+    "size": 15563
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/cross_field_interaction_p0/final_report.md",
+    "size": 12104
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/cross_field_interaction_p1/final_report.md",
+    "size": 10482
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/distribution_constrained_quality_adapter_p0/final_report.md",
+    "size": 9083
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/distribution_constrained_quality_adapter_p1b/final_report.md",
+    "size": 9636
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/gbsa_tcl_p1/final_report.md",
+    "size": 13270
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/distribution_constrained_quality_adapter_p1/final_report.md",
+    "size": 13176
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/gbsa_tcl_p0/final_report.md",
+    "size": 6538
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/gbsa_tcl_prospective32/final_report.md",
+    "size": 8970
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_formal256/final_report.md",
+    "size": 14899
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_v2/quality_metrics.csv",
+    "size": 2159
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_v2/final_report.md",
+    "size": 15691
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_v1/quality_metrics.csv",
+    "size": 4219
+  },
+  {
+    "path": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments/corrector_residual_distillation_v1/final_report.md",
+    "size": 19401
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "explicitly_forbidden_range": [
+    94000,
+    96031
+  ],
+  "historical_overlap": false,
+  "numeric_rule": "seed-key/assignment, --seed, range start, CSV seed column, or numeric path component; hashes and decimals excluded",
+  "scanned_roots": [
+    "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments"
+  ],
+  "selected_probe_range": [
+    98000,
+    98191
+  ],
+  "selected_search_range": [
+    98200,
+    98207
+  ],
+  "selected_seed_matches_in_historical_roots": [],
+  "text_files_scanned": 2125
+}

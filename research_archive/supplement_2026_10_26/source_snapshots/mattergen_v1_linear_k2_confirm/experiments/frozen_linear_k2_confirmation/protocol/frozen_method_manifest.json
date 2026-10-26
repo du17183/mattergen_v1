@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "study": "Frozen Allocator Confirmatory Study",
+  "artifact_status": "RECONSTRUCTED_ARTIFACT",
+  "reconstruction_authorized_before_seed_registration": true,
+  "historical_phase_b_decision": "ADAPTIVE_ALLOCATION_VALUE=NOT_SUPPORTED",
+  "historical_phase_b_decision_immutable": true,
+  "allocator": {
+    "method": "Linear_K2",
+    "C": 1.0,
+    "class_weight": "balanced",
+    "max_iter": 5000,
+    "random_state": 20260916,
+    "raw_prebranch_feature_count": 179,
+    "numeric_design_columns_after_interactions": 895,
+    "total_design_columns_after_policy_one_hot": 899,
+    "top_k": 2,
+    "artifact_path": "protocol/frozen_linear_k2_pipeline.joblib",
+    "artifact_sha256": "bd3f5280957a6418e7d5275a3e7a576fc57872b3ad1bd19ae9ef7bef97d56d3a",
+    "parameters_sha256": "b316d1ff34fd0c6c48eb16919e43c0f374cf48712164c72ef36d7851d5358525",
+    "feature_list_sha256": "848f83f2fb4a7a93fb377ad5b2a7e860008998f22ce50402f437782003174732",
+    "normalization_sha256": "b62f4f7026834336ceff7b43ee235d62862285596565dcfa5619b59f6f855988",
+    "coefficient_sha256": "db937f775c3f4be873e99fa4e285ff05de3e31bf75179cf05000a18cae7dfa49"
+  },
+  "sampling": {
+    "branch_point": 400,
+    "total_steps": 1000,
+    "base_cfg": 2.0,
+    "pulse_start": 400,
+    "pulse_duration": 100,
+    "pulse_scale": 1.9,
+    "candidate_bank": ["GPulse", "APulse", "PPulse", "CPulse"],
+    "fixed_k2": ["GPulse", "PPulse"],
+    "random_k2_salt": "frozen_linear_k2_confirm_random_v1",
+    "linear_k2": "frozen reconstructed artifact Top-2",
+    "per_method_deployment_compute_multiplier": 2.2,
+    "phase_b_supervision_compute_multiplier_not_used": 3.4
+  },
+  "terminal_selector": {
+    "property_tolerance": 1e-6,
+    "property_rule": "candidate error < C0 error by more than tolerance",
+    "validity_rule": "candidate evaluation_valid >= C0 evaluation_valid",
+    "stability_rule": "candidate stable >= C0 stable",
+    "e_hull_rule": "both finite and candidate <= C0 + 0.01 eV/atom",
+    "selection": "lowest property error among SAFE-A candidates allocated to that method",
+    "fallback": "exact C0 when no allocated candidate is SAFE-A"
+  },
+  "cohorts": {
+    "total_registered_before_generation": 256,
+    "c1": 128,
+    "c2": 128,
+    "c1_and_c2_are_not_tuning_stages": true
+  },
+  "c1_continuation": {
+    "linear_mae_strictly_less_than_fixed": true,
+    "relative_mae_improvement_floor": 0.01,
+    "linear_mae_not_greater_than_random": true,
+    "e_hull_worsening_max": 0.01,
+    "stable_drop_max": 0.05,
+    "nus_drop_max": 0.05,
+    "validity_drop_max": 0.05
+  },
+  "formal_success": {
+    "primary": "20k paired bootstrap lower 95% bound for FixedK2Error-LinearK2Error > 0",
+    "quality_guardrails_required": true,
+    "equal_compute_required": true,
+    "c1_c2_direction_consistency_required": true
+  },
+  "repeated_c0": {
+    "status": "NOT_APPLICABLE",
+    "reason": "all randomized paired methods use equal deployment compute and share the exact paired C0 reference",
+    "determinism_audit": "a standalone full C0 replay must exactly match the shared-prefix C0 for every generated seed"
+  },
+  "source_integrity": {
+    "phase_b_analysis_sha256": "1785f3199fd13894ea0f0cc30228cace90df01ec1991e0cabf9bffb0407659ee",
+    "phase_b_sampler_sha256": "c225960c985ba0e339b6850997f79bdb91daf8c561f4358210d5e98a2ac9274d",
+    "phase_b_protocol_sha256": "eb45d0e019f2e5be9b817767a0be8a3514f1b0b9a049250c7851db6d4380bb03",
+    "reconstruction_audit_sha256": "3c7cb8643f5d2a1417cf10427ac4e22c384e186f5828c9875d6ed43b88f42447",
+    "mattergen_checkpoint_sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+    "chgnet_checkpoint_sha256": "d14ab7c0f093efe64b60a7bcd540bca10e74fb7f46c86108a079af60524659d1",
+    "mattersim_checkpoint_sha256": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5",
+    "confirmation_git_base": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+    "field_sampler_git_base": "fca6b8d90e869c8c9535d7e5910e606efd722fdf"
+  },
+  "dft_verified": false
+}

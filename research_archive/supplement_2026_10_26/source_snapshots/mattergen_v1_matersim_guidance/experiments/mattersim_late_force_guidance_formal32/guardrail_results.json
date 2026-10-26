@@ -1,0 +1,18 @@
+{
+  "all_pass": true,
+  "pass": {
+    "e_hull_increase_le_0.01_ev_atom": true,
+    "mag_mae_worsening_le_10pct": true,
+    "nus_drop_le_5pp": true,
+    "runtime_ratio_le_1.5": true,
+    "validity_drop_le_5pp": true
+  },
+  "schema_version": 1,
+  "values": {
+    "e_hull_mean_increase_ev_per_atom": 0.00017979088283717748,
+    "mag_mae_worsening_fraction": 0.0032699545776396204,
+    "nus_drop_percentage_points": 0.0,
+    "runtime_ratio": 1.0033625735319407,
+    "validity_drop_percentage_points": 0.0
+  }
+}

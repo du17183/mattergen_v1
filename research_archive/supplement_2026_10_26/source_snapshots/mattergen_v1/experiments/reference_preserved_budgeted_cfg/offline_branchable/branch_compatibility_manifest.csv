@@ -1,0 +1,13 @@
+policy_id,is_branch_compatible,branch_point,reason,prebranch_cfg_atomic,prebranch_cfg_pos,prebranch_cfg_cell,postbranch_behavior,policy_kind,configured_g_atomic,configured_g_pos,configured_g_cell
+C0,True,400,exact CFG2 reference; unchanged before and after the common branch point,2.0,2.0,2.0,constant CFG2 reference continuation,constant,2.0,2.0,2.0
+G19,False,0,"constant policy changes atomic,pos,cell from sampling step 0",1.9,1.9,1.9,"full trajectory constant atomic=1.9, pos=1.9, cell=1.9",constant,1.9,1.9,1.9
+A19,False,0,constant policy changes atomic from sampling step 0,1.9,2.0,2.0,"full trajectory constant atomic=1.9, pos=2.0, cell=2.0",constant,1.9,2.0,2.0
+P19,False,0,constant policy changes pos from sampling step 0,2.0,1.9,2.0,"full trajectory constant atomic=2.0, pos=1.9, cell=2.0",constant,2.0,1.9,2.0
+C19,False,0,constant policy changes cell from sampling step 0,2.0,2.0,1.9,"full trajectory constant atomic=2.0, pos=2.0, cell=1.9",constant,2.0,2.0,1.9
+AP19,False,0,"constant policy changes atomic,pos from sampling step 0",1.9,1.9,2.0,"full trajectory constant atomic=1.9, pos=1.9, cell=2.0",constant,1.9,1.9,2.0
+AC19,False,0,"constant policy changes atomic,cell from sampling step 0",1.9,2.0,1.9,"full trajectory constant atomic=1.9, pos=2.0, cell=1.9",constant,1.9,2.0,1.9
+PC19,False,0,"constant policy changes pos,cell from sampling step 0",2.0,1.9,1.9,"full trajectory constant atomic=2.0, pos=1.9, cell=1.9",constant,2.0,1.9,1.9
+GPulse,True,400,"sampler advances the shared CFG2 base to step 400, snapshots full state and RNG, then clones the branch",2.0,2.0,2.0,"steps 400–499: atomic=1.9, pos=1.9, cell=1.9; steps 500–999: CFG2 continuation",pulse,1.9,1.9,1.9
+APulse,True,400,"sampler advances the shared CFG2 base to step 400, snapshots full state and RNG, then clones the branch",2.0,2.0,2.0,"steps 400–499: atomic=1.9, pos=2.0, cell=2.0; steps 500–999: CFG2 continuation",pulse,1.9,2.0,2.0
+PPulse,True,400,"sampler advances the shared CFG2 base to step 400, snapshots full state and RNG, then clones the branch",2.0,2.0,2.0,"steps 400–499: atomic=2.0, pos=1.9, cell=2.0; steps 500–999: CFG2 continuation",pulse,2.0,1.9,2.0
+CPulse,True,400,"sampler advances the shared CFG2 base to step 400, snapshots full state and RNG, then clones the branch",2.0,2.0,2.0,"steps 400–499: atomic=2.0, pos=2.0, cell=1.9; steps 500–999: CFG2 continuation",pulse,2.0,2.0,1.9

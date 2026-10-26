@@ -1,0 +1,122 @@
+diff --git a/mattergen/adapter.py b/mattergen/adapter.py
+index 5c544ad..6e0c008 100644
+--- a/mattergen/adapter.py
++++ b/mattergen/adapter.py
+@@ -103,6 +103,7 @@ class GemNetTAdapter(GemNetTDenoiser):
+             num_bonds=None,
+             cond_adapt=conditions_adapt_dict,
+             cond_adapt_mask=conditions_adapt_mask_dict,  # when True use unconditional embedding
++            diffusion_t=t,
+         )
+ 
+         pred_atom_types = self.fc_atom(output.node_embeddings)
+diff --git a/mattergen/common/gemnet/gemnet.py b/mattergen/common/gemnet/gemnet.py
+index 0e500ad..1ac92e7 100644
+--- a/mattergen/common/gemnet/gemnet.py
++++ b/mattergen/common/gemnet/gemnet.py
+@@ -613,6 +613,7 @@ class GemNetT(torch.nn.Module):
+         to_jimages: Optional[torch.Tensor] = None,
+         num_bonds: Optional[torch.Tensor] = None,
+         lattice: Optional[torch.Tensor] = None,
++        diffusion_t: Optional[torch.Tensor] = None,
+     ) -> ModelOutput:
+         """
+         args:
+@@ -667,6 +668,17 @@ class GemNetT(torch.nn.Module):
+         )
+         idx_s, idx_t = edge_index
+ 
++        radial_gate = getattr(self, "adaptive_radial_gate", None)
++        edge_gate = None
++        if radial_gate is not None:
++            if diffusion_t is None:
++                raise ValueError("diffusion_t is required by adaptive_radial_gate")
++            edge_gate = radial_gate(
++                timestep=diffusion_t,
++                edge_distances=D_st,
++                edge_batch=batch[idx_t],
++            )
++
+         # Calculate triplet angles
+         cosφ_cab = inner_product_normalized(V_st[id3_ca], V_st[id3_ba])
+         rad_cbf3, cbf3 = self.cbf_basis3(D_st, cosφ_cab, id3_ca)
+@@ -724,6 +736,7 @@ class GemNetT(torch.nn.Module):
+                 rbf_h=rbf_h,
+                 idx_s=idx_s,
+                 idx_t=idx_t,
++                edge_gate=edge_gate,
+             )  # (nAtoms, emb_size_atom), (nEdges, emb_size_edge)
+ 
+             E, F = self.out_blocks[i + 1](h, m, rbf_out, idx_t)
+diff --git a/mattergen/common/gemnet/gemnet_ctrl.py b/mattergen/common/gemnet/gemnet_ctrl.py
+index 1a1698d..137aa81 100644
+--- a/mattergen/common/gemnet/gemnet_ctrl.py
++++ b/mattergen/common/gemnet/gemnet_ctrl.py
+@@ -82,6 +82,7 @@ class GemNetTCtrl(GemNetT):
+         charges: Optional[torch.Tensor] = None,
+         cond_adapt: Optional[Dict[PropertySourceId, torch.Tensor]] = None,
+         cond_adapt_mask: Optional[Dict[PropertySourceId, torch.Tensor]] = None,
++        diffusion_t: Optional[torch.Tensor] = None,
+     ) -> ModelOutput:
+         """
+         args:
+@@ -138,6 +139,17 @@ class GemNetTCtrl(GemNetT):
+         )
+         idx_s, idx_t = edge_index
+ 
++        radial_gate = getattr(self, "adaptive_radial_gate", None)
++        edge_gate = None
++        if radial_gate is not None:
++            if diffusion_t is None:
++                raise ValueError("diffusion_t is required by adaptive_radial_gate")
++            edge_gate = radial_gate(
++                timestep=diffusion_t,
++                edge_distances=D_st,
++                edge_batch=batch[idx_t],
++            )
++
+         # Calculate triplet angles
+         cosφ_cab = inner_product_normalized(V_st[id3_ca], V_st[id3_ba])
+         rad_cbf3, cbf3 = self.cbf_basis3(D_st, cosφ_cab, id3_ca)
+@@ -217,6 +229,7 @@ class GemNetTCtrl(GemNetT):
+                 rbf_h=rbf_h,
+                 idx_s=idx_s,
+                 idx_t=idx_t,
++                edge_gate=edge_gate,
+             )  # (nAtoms, emb_size_atom), (nEdges, emb_size_edge)
+ 
+             E, F = self.out_blocks[i + 1](h, m, rbf_out, idx_t)
+diff --git a/mattergen/common/gemnet/layers/interaction_block.py b/mattergen/common/gemnet/layers/interaction_block.py
+index 47cf33d..0de2691 100644
+--- a/mattergen/common/gemnet/layers/interaction_block.py
++++ b/mattergen/common/gemnet/layers/interaction_block.py
+@@ -153,6 +153,7 @@ class InteractionBlockTripletsOnly(torch.nn.Module):
+         rbf_h,
+         idx_s,
+         idx_t,
++        edge_gate=None,
+     ):
+         """
+         Returns
+@@ -194,7 +195,8 @@ class InteractionBlockTripletsOnly(torch.nn.Module):
+             m = layer(m)  # (nEdges, emb_size_edge)
+ 
+         # ---------------------------------------- Update Atom Embeddings --------------------------------------- ##
+-        h2 = self.atom_update(h, m, rbf_h, idx_t)
++        atom_messages = m if edge_gate is None else m * edge_gate
++        h2 = self.atom_update(h, atom_messages, rbf_h, idx_t)
+ 
+         # Skip connection
+         h = h + h2  # (nAtoms, emb_size_atom)
+diff --git a/mattergen/denoiser.py b/mattergen/denoiser.py
+index bb01970..e950880 100644
+--- a/mattergen/denoiser.py
++++ b/mattergen/denoiser.py
+@@ -258,6 +258,7 @@ class GemNetTDenoiser(ScoreModel):
+             edge_index=None,
+             to_jimages=None,
+             num_bonds=None,
++            diffusion_t=t,
+         )
+         pred_atom_types = self.fc_atom(output.node_embeddings)
+ 

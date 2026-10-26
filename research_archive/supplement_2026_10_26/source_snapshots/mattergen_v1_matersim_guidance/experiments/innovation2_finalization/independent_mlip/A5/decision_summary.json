@@ -1,0 +1,47 @@
+{
+  "DFT_VERIFIED": false,
+  "absolute_bootstrap_ci95": [
+    -0.04159862133155402,
+    0.13019150234166127
+  ],
+  "absolute_improvement": 0.037940596123142316,
+  "baseline": "C0",
+  "baseline_mean": 0.2367597178280486,
+  "bootstrap_resamples": 20000,
+  "ci_excludes_zero_positive": false,
+  "cohort": "A5",
+  "coverage_fraction": 1.0,
+  "elapsed_seconds": 3.900191777967848,
+  "elements_Z": [
+    1,
+    3,
+    6,
+    7,
+    8,
+    14,
+    25,
+    26,
+    27,
+    28,
+    31,
+    62,
+    64,
+    74,
+    80,
+    81,
+    83
+  ],
+  "formal256_evaluation_trigger": true,
+  "losses": 26,
+  "mean_relative_reduction": 0.16024937211108436,
+  "method": "A0",
+  "method_mean": 0.19881912170490632,
+  "n": 64,
+  "relative_bootstrap_ci95": [
+    -0.2305870054132817,
+    0.43439812513962495
+  ],
+  "status": "PASS",
+  "ties": 0,
+  "wins": 38
+}

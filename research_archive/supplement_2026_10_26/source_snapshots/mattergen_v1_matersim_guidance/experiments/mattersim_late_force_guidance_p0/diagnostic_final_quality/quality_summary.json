@@ -1,0 +1,27 @@
+{
+  "method": "A0_diagnostic_B0",
+  "n": 32,
+  "n_input": 32,
+  "official_metrics": {
+    "avg_energy_above_hull_per_atom": 0.06362896229568932,
+    "avg_rmsd_from_relaxation": 0.030656203241381852,
+    "frac_novel_structures": 0.25,
+    "frac_novel_unique_stable_structures": 0.125,
+    "frac_stable_structures": 0.875,
+    "frac_unique_structures": 0.65625
+  },
+  "pre_relaxation_max_force_max": 0.8101329207420349,
+  "pre_relaxation_max_force_mean": 0.11306972118836711,
+  "pre_relaxation_max_force_median": 0.09178837388753891,
+  "pre_relaxation_max_force_p95": 0.24049973487853998,
+  "precomputed_relaxation_dir": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/diagnostic_final_relaxation",
+  "relaxation_batch_error": null,
+  "relaxation_device": "cuda",
+  "relaxation_failures": [],
+  "relaxation_mode": "precomputed_individual",
+  "relaxation_seconds": 41.77814030495938,
+  "relaxation_seconds_per_structure": 1.3055668845299806,
+  "relaxation_steps_max": 831,
+  "relaxation_steps_mean": 45.5625,
+  "relaxation_success_rate": 1.0
+}

@@ -1,0 +1,39 @@
+{
+  "MULTIFIELD_SELF_CONDITIONING_P0": "FAIL",
+  "S_on_clearly_better_than_S_off": {
+    "mag_mae": false,
+    "max_force": false,
+    "rmsd": false
+  },
+  "adaptive_cfg_used": false,
+  "dft_verified": false,
+  "extra_sampling_forwards_all_zero": true,
+  "gate_max_abs": 0.048978541046381,
+  "gate_time_spans": {
+    "g_atom": 1.877546310430009e-05,
+    "g_cell": 0.00018164142966279467,
+    "g_pos": 1.9332859665199646e-05
+  },
+  "gates_nonzero": true,
+  "mag_mae_guardrail_pass": false,
+  "nus_guardrail_pass": true,
+  "nus_rate_delta": 0.0625,
+  "property_paired_not_worse_count": 14,
+  "property_track_go": false,
+  "quality_track_go": false,
+  "quality_track_qualifying_metrics": [],
+  "relative_improvement_S_on_vs_S_off": {
+    "mag_mae": -0.10988988566945013,
+    "max_force": 0.033829290755722385,
+    "rmsd": -0.7793021356093406
+  },
+  "relative_improvement_vs_B0": {
+    "mag_mae": -0.10311869601719748,
+    "max_force": -0.26845543495185886,
+    "rmsd": 0.07509914851164567
+  },
+  "sampling_score_calls_all_2000": true,
+  "severe_ehull_degradation": true,
+  "structure_guardrail_pass": false,
+  "surrogate_property_eval": true
+}

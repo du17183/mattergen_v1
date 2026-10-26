@@ -1,0 +1,2 @@
+verdict,next,n_paired,B0_mean_maxF_ev_per_a,F0_mean_maxF_ev_per_a,mean_maxF_improvement_percent,F0_maxF_wins,ties,F0_maxF_losses,mag_mae_worsening_percent,nus_drop_pp,validity_drop_pp,e_hull_increase_ev_atom,runtime_ratio,all_guardrails_pass,surrogate_property_eval,dft_verified
+GO,FORMAL32,16,0.3040278919209802,0.25339196873973335,16.655025583773607,15,0,1,-0.5193919798525611,0.0,0.0,0.000809154925064004,0.9997844956251735,True,True,False

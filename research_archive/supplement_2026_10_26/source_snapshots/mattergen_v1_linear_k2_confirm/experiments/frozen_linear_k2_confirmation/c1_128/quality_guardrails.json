@@ -1,0 +1,13 @@
+{
+  "e_hull_worsening": 0.009392794511677363,
+  "stable_drop": 0.0234375,
+  "nus_drop": -0.015625,
+  "validity_drop": 0.0,
+  "thresholds": {
+    "e_hull": 0.01,
+    "stable": 0.05,
+    "nus": 0.05,
+    "validity": 0.05
+  },
+  "pass": true
+}

@@ -1,0 +1,52 @@
+experiment: mattersim_late_force_guidance_p0
+stage: A0_late_clean_estimate_physics_diagnostic
+frozen_before_generation: true
+mattergen:
+  git_head: 1af301c5e534ff6b9b9f96ea5dab48036d9c46af
+  checkpoint: /mnt/datasets-livsyn/dxl/mattergen_v1/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt
+  checkpoint_sha256: 01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e
+  target_dft_mag_density: 0.2
+  cfg: 2.0
+  guidance_schedule: constant
+  adaptive_cfg: false
+  diffusion_steps: 1000
+  corrector_steps_per_timestep: 1
+  batch_size: 1
+mattersim:
+  model: MatterSim-5M
+  package_version: 1.2.3
+  checkpoint: /mnt/datasets-livsyn/dxl/mattergen_v1/checkpoints/official/mattersim/mattersim-v1.0.0-5M.pth
+  checkpoint_sha256: e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5
+  evaluate_clean_estimate_only: true
+  raw_xt_evaluation: false
+property_evaluator:
+  model: CHGNet
+  package_version: 0.3.0
+  held_out_mae: 0.001449
+  held_out_pearson: 0.9499
+  hit_tolerance: 0.01
+  surrogate_property_eval: true
+  dft_verified: false
+diagnostic:
+  seeds: [710000, 710001, 710002, 710003, 710004, 710005, 710006, 710007,
+          710008, 710009, 710010, 710011, 710012, 710013, 710014, 710015,
+          710016, 710017, 710018, 710019, 710020, 710021, 710022, 710023,
+          710024, 710025, 710026, 710027, 710028, 710029, 710030, 710031]
+  calibration_seeds: [710000, 710001, 710002, 710003, 710004, 710005, 710006, 710007,
+                      710008, 710009, 710010, 710011, 710012, 710013, 710014, 710015]
+  validation_seeds: [710016, 710017, 710018, 710019, 710020, 710021, 710022, 710023,
+                     710024, 710025, 710026, 710027, 710028, 710029, 710030, 710031]
+  saved_t_norm: [0.10, 0.05, 0.02, 0.01, 0.00]
+  observation_phase: predictor_pre_update_after_official_corrector
+  atomic_clean_estimate: argmax_model_x0_logits
+  gpu_exclusion: [2]
+decision:
+  go:
+    late_t_max: 0.05
+    maxf_final_spearman_min: 0.50
+    finite_valid_fraction_min: 0.90
+  auxiliary_energy_ehull_spearman_min: 0.30
+  fail:
+    best_maxf_final_spearman_below: 0.30
+  borderline_interval: [0.30, 0.50]
+  borderline_default_action: STOP

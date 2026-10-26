@@ -1,0 +1,340 @@
+{
+  "algorithmic_speedup_warning": "Use paired per-seed time ratios for algorithmic speedup.",
+  "batch_size": 1,
+  "events": [
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/C0__67000.log",
+      "preexisting": false,
+      "process_wall_seconds": 176.23951911111362,
+      "return_code": 0,
+      "seed": 67000,
+      "wave_index": 0
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/V2_Frozen_Atomic75_Late30__67000.log",
+      "preexisting": false,
+      "process_wall_seconds": 137.3279328609351,
+      "return_code": 0,
+      "seed": 67000,
+      "wave_index": 0
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/C0__67001.log",
+      "preexisting": false,
+      "process_wall_seconds": 165.11281784204766,
+      "return_code": 0,
+      "seed": 67001,
+      "wave_index": 1
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/V2_Frozen_Atomic75_Late30__67001.log",
+      "preexisting": false,
+      "process_wall_seconds": 136.41434284718707,
+      "return_code": 0,
+      "seed": 67001,
+      "wave_index": 1
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/C0__67002.log",
+      "preexisting": false,
+      "process_wall_seconds": 158.315278215101,
+      "return_code": 0,
+      "seed": 67002,
+      "wave_index": 2
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/V2_Frozen_Atomic75_Late30__67002.log",
+      "preexisting": false,
+      "process_wall_seconds": 130.81262314110063,
+      "return_code": 0,
+      "seed": 67002,
+      "wave_index": 2
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/C0__67003.log",
+      "preexisting": false,
+      "process_wall_seconds": 161.60171653400175,
+      "return_code": 0,
+      "seed": 67003,
+      "wave_index": 3
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/V2_Frozen_Atomic75_Late30__67003.log",
+      "preexisting": false,
+      "process_wall_seconds": 127.29902648390271,
+      "return_code": 0,
+      "seed": 67003,
+      "wave_index": 3
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/C0__67004.log",
+      "preexisting": false,
+      "process_wall_seconds": 159.11642398196273,
+      "return_code": 0,
+      "seed": 67004,
+      "wave_index": 4
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/V2_Frozen_Atomic75_Late30__67004.log",
+      "preexisting": false,
+      "process_wall_seconds": 133.29204837791622,
+      "return_code": 0,
+      "seed": 67004,
+      "wave_index": 4
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/C0__67005.log",
+      "preexisting": false,
+      "process_wall_seconds": 163.0737539010588,
+      "return_code": 0,
+      "seed": 67005,
+      "wave_index": 5
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/V2_Frozen_Atomic75_Late30__67005.log",
+      "preexisting": false,
+      "process_wall_seconds": 122.14533899305388,
+      "return_code": 0,
+      "seed": 67005,
+      "wave_index": 5
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/C0__67006.log",
+      "preexisting": false,
+      "process_wall_seconds": 171.2832356931176,
+      "return_code": 0,
+      "seed": 67006,
+      "wave_index": 6
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/V2_Frozen_Atomic75_Late30__67006.log",
+      "preexisting": false,
+      "process_wall_seconds": 139.07925527682528,
+      "return_code": 0,
+      "seed": 67006,
+      "wave_index": 6
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/C0__67007.log",
+      "preexisting": false,
+      "process_wall_seconds": 157.3597020180896,
+      "return_code": 0,
+      "seed": 67007,
+      "wave_index": 7
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/V2_Frozen_Atomic75_Late30__67007.log",
+      "preexisting": false,
+      "process_wall_seconds": 128.92841405188665,
+      "return_code": 0,
+      "seed": 67007,
+      "wave_index": 7
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/C0__67008.log",
+      "preexisting": false,
+      "process_wall_seconds": 160.4675455240067,
+      "return_code": 0,
+      "seed": 67008,
+      "wave_index": 8
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/V2_Frozen_Atomic75_Late30__67008.log",
+      "preexisting": false,
+      "process_wall_seconds": 135.86903830687515,
+      "return_code": 0,
+      "seed": 67008,
+      "wave_index": 8
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/C0__67009.log",
+      "preexisting": false,
+      "process_wall_seconds": 157.33675251994282,
+      "return_code": 0,
+      "seed": 67009,
+      "wave_index": 9
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/V2_Frozen_Atomic75_Late30__67009.log",
+      "preexisting": false,
+      "process_wall_seconds": 153.6441276371479,
+      "return_code": 0,
+      "seed": 67009,
+      "wave_index": 9
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/C0__67010.log",
+      "preexisting": false,
+      "process_wall_seconds": 158.39262379705906,
+      "return_code": 0,
+      "seed": 67010,
+      "wave_index": 10
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/V2_Frozen_Atomic75_Late30__67010.log",
+      "preexisting": false,
+      "process_wall_seconds": 125.85341524914838,
+      "return_code": 0,
+      "seed": 67010,
+      "wave_index": 10
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/C0__67011.log",
+      "preexisting": false,
+      "process_wall_seconds": 158.52824597992003,
+      "return_code": 0,
+      "seed": 67011,
+      "wave_index": 11
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/V2_Frozen_Atomic75_Late30__67011.log",
+      "preexisting": false,
+      "process_wall_seconds": 137.2778796290513,
+      "return_code": 0,
+      "seed": 67011,
+      "wave_index": 11
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/C0__67012.log",
+      "preexisting": false,
+      "process_wall_seconds": 158.74766731308773,
+      "return_code": 0,
+      "seed": 67012,
+      "wave_index": 12
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/V2_Frozen_Atomic75_Late30__67012.log",
+      "preexisting": false,
+      "process_wall_seconds": 132.79255464603193,
+      "return_code": 0,
+      "seed": 67012,
+      "wave_index": 12
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/C0__67013.log",
+      "preexisting": false,
+      "process_wall_seconds": 164.03580382699147,
+      "return_code": 0,
+      "seed": 67013,
+      "wave_index": 13
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/V2_Frozen_Atomic75_Late30__67013.log",
+      "preexisting": false,
+      "process_wall_seconds": 129.09988657012582,
+      "return_code": 0,
+      "seed": 67013,
+      "wave_index": 13
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/C0__67014.log",
+      "preexisting": false,
+      "process_wall_seconds": 164.37832998507656,
+      "return_code": 0,
+      "seed": 67014,
+      "wave_index": 14
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/V2_Frozen_Atomic75_Late30__67014.log",
+      "preexisting": false,
+      "process_wall_seconds": 148.92484772810712,
+      "return_code": 0,
+      "seed": 67014,
+      "wave_index": 14
+    },
+    {
+      "gpu": 0,
+      "label": "C0",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/C0__67015.log",
+      "preexisting": false,
+      "process_wall_seconds": 171.14473004685715,
+      "return_code": 0,
+      "seed": 67015,
+      "wave_index": 15
+    },
+    {
+      "gpu": 0,
+      "label": "V2_Frozen_Atomic75_Late30",
+      "log_path": "/mnt/lis-wam-data/dxl/mattergen_v1/experiments/corrector_residual_distillation_formal256/logs/single_h20/V2_Frozen_Atomic75_Late30__67015.log",
+      "preexisting": false,
+      "process_wall_seconds": 134.7782917979639,
+      "return_code": 0,
+      "seed": 67015,
+      "wave_index": 15
+    }
+  ],
+  "gpu_count": 1,
+  "mode": "single-h20",
+  "per_method_active_wall_seconds": {
+    "C0": 2605.8906095998827,
+    "V2_Frozen_Atomic75_Late30": 2154.5524567805696
+  },
+  "per_method_samples_per_hour": {
+    "C0": 22.103767436670758,
+    "V2_Frozen_Atomic75_Late30": 26.734090329863
+  },
+  "protocol": "paired global waves: each fixed-GPU seed C0 then V2",
+  "schema_version": 1,
+  "seed_count_per_method": 16,
+  "total_wall_seconds": 4760.445766480872
+}

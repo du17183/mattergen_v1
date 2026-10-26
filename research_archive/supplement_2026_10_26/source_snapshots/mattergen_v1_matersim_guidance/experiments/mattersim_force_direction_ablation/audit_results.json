@@ -1,0 +1,21 @@
+{
+  "AUDIT": "PASS",
+  "DFT_VERIFIED": false,
+  "all_failures_retained": true,
+  "checks": {
+    "adaptive_only_A5": true,
+    "all_generation_success": true,
+    "all_registered_seeds": true,
+    "bounded_displacements": true,
+    "config_and_frozen_sources": true,
+    "direction_event_acceptance_matched": true,
+    "direction_internal_norm_assertions_pass": true,
+    "direction_norm_max_matched": true,
+    "exact_20_late_predictor_events": true,
+    "implementation_unchanged": true,
+    "no_partial_generation_directories": true,
+    "score_calls_2000": true,
+    "trigger_window_unchanged": true
+  },
+  "trace_rows": 2560
+}

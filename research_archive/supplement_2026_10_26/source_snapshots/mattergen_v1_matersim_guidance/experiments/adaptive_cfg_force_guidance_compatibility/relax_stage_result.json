@@ -1,0 +1,9 @@
+{
+  "end_epoch": 1789377520.2599258,
+  "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/adaptive_cfg_force_guidance_compatibility/logs/pipeline_relax.log",
+  "pid": 1150102,
+  "return_code": 0,
+  "stage": "relax",
+  "start_epoch": 1789377140.430611,
+  "track": "A5"
+}

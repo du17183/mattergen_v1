@@ -1,0 +1,18 @@
+{
+  "browseable_copies": 1944,
+  "date": "2026-10-26",
+  "directory_symlinks": 10,
+  "excluded_by_reason": {
+    "bytecode_or_build_cache": 369,
+    "model_weights_or_unclassified_torch_checkpoint": 28,
+    "runtime_cache_environment_or_directory_symlink": 384
+  },
+  "included_bytes_before_dedup": 1888827186,
+  "manifest_sha256": "747e240a83c2e4acfaafb91c7a49fd5498ca77a2ebf4ae7c375f3ec14d25c1a9",
+  "note": "Complete overlay on each recorded Git commit, with weights/caches/private configuration excluded. Raw tensors are included only for named generated datasets or diffusion/RNG states.",
+  "overlay_files": 33843,
+  "release_asset_bytes": 937185557,
+  "release_assets": 6,
+  "source_files_deleted": 0,
+  "source_worktrees": 18
+}

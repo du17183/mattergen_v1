@@ -1,0 +1,14 @@
+{
+  "A_DIAGNOSTIC": "GO",
+  "LATE_PHYSICS_SIGNAL_RELIABLE": true,
+  "auxiliary_energy_support": false,
+  "best_late_t_norm": 0.02,
+  "best_maxF_final_spearman": 0.9255865102639295,
+  "best_maxF_final_spearman_pvalue": 3.4223276529301574e-14,
+  "dft_verified": false,
+  "diagnostic_n": 32,
+  "energy_per_atom_final_Ehull_spearman_at_best_t": 0.2694281524926686,
+  "next": "RUN_16_PAIRED_P0",
+  "surrogate_property_eval": true,
+  "valid_fraction_at_best_t": 1.0
+}

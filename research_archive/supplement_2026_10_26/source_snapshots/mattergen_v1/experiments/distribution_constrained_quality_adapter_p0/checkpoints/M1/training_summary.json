@@ -1,0 +1,92 @@
+{
+  "all_losses_finite": true,
+  "anchor_lambda": 0.05,
+  "batch_size": 16,
+  "elapsed_seconds": 17.105993326054886,
+  "final_validation": {
+    "loss_anchor": 0.012959492858499289,
+    "loss_diffusion": 0.40974535048007965,
+    "loss_total": 0.4103933125734329
+  },
+  "first_20_train_loss_mean": 0.28003343269228936,
+  "first_step_gradient_check": {
+    "adapter_parameters_with_gradient": [
+      "diffusion_module.model.gemnet.quality_adapter.adapters.1.norm.weight",
+      "diffusion_module.model.gemnet.quality_adapter.adapters.1.norm.bias",
+      "diffusion_module.model.gemnet.quality_adapter.adapters.1.down.weight",
+      "diffusion_module.model.gemnet.quality_adapter.adapters.1.down.bias",
+      "diffusion_module.model.gemnet.quality_adapter.adapters.1.up.weight",
+      "diffusion_module.model.gemnet.quality_adapter.adapters.1.up.bias",
+      "diffusion_module.model.gemnet.quality_adapter.adapters.2.norm.weight",
+      "diffusion_module.model.gemnet.quality_adapter.adapters.2.norm.bias",
+      "diffusion_module.model.gemnet.quality_adapter.adapters.2.down.weight",
+      "diffusion_module.model.gemnet.quality_adapter.adapters.2.down.bias",
+      "diffusion_module.model.gemnet.quality_adapter.adapters.2.up.weight",
+      "diffusion_module.model.gemnet.quality_adapter.adapters.2.up.bias"
+    ],
+    "frozen_parameters_with_gradient": []
+  },
+  "frozen_parameter_digest_after": "01e439133f0c7ca98e0bcd7ca9217bca7978aa0b588806bacf6752f06580ac8a",
+  "frozen_parameter_digest_before": "01e439133f0c7ca98e0bcd7ca9217bca7978aa0b588806bacf6752f06580ac8a",
+  "frozen_parameters_unchanged": true,
+  "last_20_train_loss_mean": 0.28214708492159846,
+  "last_step_adapter_parameters_with_gradient": [
+    "diffusion_module.model.gemnet.quality_adapter.adapters.1.norm.weight",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.1.norm.bias",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.1.down.weight",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.1.down.bias",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.1.up.weight",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.1.up.bias",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.2.norm.weight",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.2.norm.bias",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.2.down.weight",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.2.down.bias",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.2.up.weight",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.2.up.bias"
+  ],
+  "learning_rate": 0.0003,
+  "method": "M1",
+  "peak_cuda_memory_mb": 1199.6474609375,
+  "replay_fraction": 0.5,
+  "steps": 200,
+  "total_params": 48894715,
+  "trainable_parameter_names": [
+    "diffusion_module.model.gemnet.quality_adapter.adapters.1.norm.weight",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.1.norm.bias",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.1.down.weight",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.1.down.bias",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.1.up.weight",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.1.up.bias",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.2.norm.weight",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.2.norm.bias",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.2.down.weight",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.2.down.bias",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.2.up.weight",
+    "diffusion_module.model.gemnet.quality_adapter.adapters.2.up.bias"
+  ],
+  "trainable_params": 134272,
+  "zero_init_check": {
+    "absolute_tolerances": {
+      "atomic_numbers": 0.02,
+      "cell": 0.001,
+      "pos": 0.005
+    },
+    "disabled_repeat_max_abs_difference": {
+      "atomic_numbers": 0.011613845825195312,
+      "cell": 0.00018608570098876953,
+      "pos": 0.0012204647064208984
+    },
+    "enabled_max_abs_difference": {
+      "atomic_numbers": 0.014950752258300781,
+      "cell": 0.00027942657470703125,
+      "pos": 0.0013456344604492188
+    },
+    "passed": true,
+    "projection_max_abs": {
+      "adapters.1.up.bias": 0.0,
+      "adapters.1.up.weight": 0.0,
+      "adapters.2.up.bias": 0.0,
+      "adapters.2.up.weight": 0.0
+    }
+  }
+}

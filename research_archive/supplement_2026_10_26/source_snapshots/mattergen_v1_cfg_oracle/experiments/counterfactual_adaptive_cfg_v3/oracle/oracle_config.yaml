@@ -1,0 +1,147 @@
+schema_version: 1
+frozen_before_oracle_generation: true
+experiment: counterfactual_adaptive_cfg_v3
+scientific_question: >-
+  Does locally optimal classifier-free guidance vary by sample and reverse
+  timestep, and is the available headroom large enough to justify adaptive CFG?
+
+source:
+  git_commit: 1af301c5e534ff6b9b9f96ea5dab48036d9c46af
+  branch: experiment/counterfactual-adaptive-cfg-v3
+  main_worktree_modified: false
+
+sampling:
+  checkpoint: checkpoints/official/hf_mattergen/checkpoints/dft_mag_density
+  checkpoint_sha256: 01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e
+  target_dft_mag_density: 0.1
+  batch_size: 1
+  sampling_steps: 1000
+  corrector_steps_per_timestep: 1
+  deterministic: true
+  base_cfg: 2.0
+  candidates:
+    DOWN: 1.75
+    KEEP: 2.0
+    UP: 2.25
+
+decision_states:
+  location: before_corrector
+  sampling_indices: [100, 250, 400, 550, 700, 800, 900, 950]
+  requested_model_times: [0.90, 0.75, 0.60, 0.45, 0.30, 0.20, 0.10, 0.05]
+  short_action_horizon_steps: 15
+  short_endpoint: clean_x0_estimate_after_horizon
+  full_rollout_fraction: 0.25
+  full_rollout_selection_rule: >-
+    (seed - first_oracle_seed) modulo 4 equals decision_ordinal modulo 4
+  full_rollout_action: hold candidate CFG from decision state through endpoint
+  non_full_base_trajectory: fixed CFG=2.0
+
+rng_pairing:
+  same_initial_state: true
+  restore_torch_cpu_rng_per_candidate: true
+  restore_torch_cuda_rng_per_candidate: true
+  same_predictor: true
+  same_corrector: true
+  same_condition: true
+  base_rng_restored_after_counterfactuals: true
+
+oracle_objective:
+  rationale: thesis Innovation 1 targets conditional controllability
+  property_evaluator: CHGNet-0.3.0 frozen magnetic-density surrogate
+  property_target: 0.1
+  normalized_property_error: abs(predicted_mag_density - target) / target
+  invalid_penalty: 10.0
+  scalar_objective: normalized_property_error + invalid_penalty * invalid
+  lower_is_better: true
+  deadband_relative_improvement_vs_cfg2: 0.05
+  deadband_rule: choose KEEP unless best valid candidate improves objective by at least 5 percent
+  deterministic_tie_order: [KEEP, DOWN, UP]
+  surrogate_property_eval: true
+  dft_verified: false
+
+headroom_gate:
+  primary_short_oracle_property_improvement_min_fraction: 0.10
+  primary_full_oracle_property_improvement_min_fraction: 0.10
+  non_keep_fraction_min_short: 0.20
+  non_keep_fraction_min_full: 0.20
+  maximum_single_action_fraction_full: 0.80
+  minimum_each_direction_fraction_full: 0.05
+  short_full_exact_label_agreement_min: 0.50
+  short_selected_full_property_improvement_min_fraction: 0.05
+  mean_ehull_worsening_max_ev_per_atom: 0.02
+  stable_drop_max_fraction: 0.05
+  nus_drop_max_fraction: 0.05
+  validity_drop_max_fraction: 0.05
+  failure_action: STOP_ADAPTIVE_CFG_RESEARCH
+
+harm_definitions:
+  property: selected error exceeds CFG2 error by more than 5 percent
+  ehull: selected E-hull exceeds CFG2 by more than 0.02 eV/atom
+  stable: CFG2 stable and selected unstable
+  validity: CFG2 valid and selected invalid
+
+predictability_gate:
+  only_if_oracle_headroom_go: true
+  split_unit: seed_trajectory
+  split_fractions: [0.60, 0.20, 0.20]
+  split_seed: 20260918
+  feature_normalization: training_seeds_only_per_decision_timestep
+  models: [majority, multinomial_logistic_regression, tiny_mlp_16x3_if_needed]
+  logistic:
+    penalty: l2
+    C: 1.0
+    solver: lbfgs
+    class_weight: balanced
+    max_iter: 2000
+  tiny_mlp:
+    hidden_units: 16
+    alpha: 0.001
+    max_iter: 1000
+    random_state: 20260918
+    maximum_parameters: 1000
+  confidence_threshold_candidates: [0.50, 0.60, 0.70, 0.80]
+  confidence_selection: minimize validation regret; ties choose higher threshold
+  counterfactual_regret_reduction_min_fraction: 0.30
+  balanced_accuracy_must_exceed_majority: true
+  wrong_non_keep_property_harm_rate_max: 0.10
+  failure_action: STOP
+
+features:
+  instantaneous:
+    - t_norm
+    - z_atomic
+    - z_pos
+    - z_cell
+    - r_atomic
+    - r_pos
+    - r_cell
+    - score_ratio_atomic
+    - score_ratio_pos
+    - score_ratio_cell
+    - score_alignment_atomic
+    - score_alignment_pos
+    - score_alignment_cell
+    - residual_std
+    - residual_range
+    - residual_median
+    - log_residual_std
+    - log_residual_range
+    - log_residual_median
+  temporal:
+    - previous_log_residual
+    - ema_log_residual
+    - ema_slope
+    - previous_cfg
+  temporal_ema_beta: 0.9
+
+prohibited:
+  - V1_or_V2_retuning
+  - CFG_candidate_sweep
+  - threshold_tuning_after_results
+  - direct_V3_before_gates
+  - RL
+  - PPO
+  - DDPO
+  - GNN_controller
+  - Transformer_controller
+  - Attention_controller

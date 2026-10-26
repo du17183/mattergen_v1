@@ -1,0 +1,7 @@
+{
+  "big_lane": "A1 existing GPUs 5,6 -> A5 GPUs 5,6",
+  "pid": 3544152,
+  "quality": "CPU jobs overlap next cohort generation; maximum two cohorts",
+  "small_lane": "A3 existing smoke then full -> A4 -> B -> A6, GPU 7",
+  "start_epoch": 1789355062.4735613
+}

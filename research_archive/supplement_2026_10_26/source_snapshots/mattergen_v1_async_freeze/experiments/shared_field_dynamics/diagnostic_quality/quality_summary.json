@@ -1,0 +1,27 @@
+{
+  "method": "diagnostic_B0",
+  "n": 64,
+  "n_input": 64,
+  "official_metrics": {
+    "avg_energy_above_hull_per_atom": 0.07896139885396797,
+    "avg_rmsd_from_relaxation": 0.03222878935618763,
+    "frac_novel_structures": 0.453125,
+    "frac_novel_unique_stable_structures": 0.1875,
+    "frac_stable_structures": 0.796875,
+    "frac_unique_structures": 0.671875
+  },
+  "pre_relaxation_max_force_max": 1.2846671342849731,
+  "pre_relaxation_max_force_mean": 0.15196987381386862,
+  "pre_relaxation_max_force_median": 0.08852919936180115,
+  "pre_relaxation_max_force_p95": 0.4287713050842284,
+  "precomputed_relaxation_dir": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/shared_field_dynamics/diagnostic_relaxation",
+  "relaxation_batch_error": null,
+  "relaxation_device": "cuda",
+  "relaxation_failures": [],
+  "relaxation_mode": "precomputed_individual",
+  "relaxation_seconds": 60.01494779001223,
+  "relaxation_seconds_per_structure": 0.9377335592189411,
+  "relaxation_steps_max": 561,
+  "relaxation_steps_mean": 32.828125,
+  "relaxation_success_rate": 1.0
+}

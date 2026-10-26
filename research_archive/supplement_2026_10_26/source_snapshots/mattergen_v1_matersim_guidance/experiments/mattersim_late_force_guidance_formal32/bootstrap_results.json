@@ -1,0 +1,95 @@
+{
+  "atomic_force_mean_ev_per_a": {
+    "C0_mean": 0.0732368633669861,
+    "F0_losses": 0,
+    "F0_mean": 0.04887880915462303,
+    "F0_wins": 32,
+    "mean_delta_F0_minus_C0": -0.024358054212363055,
+    "median_delta_F0_minus_C0": -0.027147212610367295,
+    "n_pairs": 32,
+    "paired_delta_bootstrap_ci95": [
+      -0.028300688746161706,
+      -0.020188337648488666
+    ],
+    "preferred_direction": "lower",
+    "ties": 0
+  },
+  "bootstrap": {
+    "resamples": 20000,
+    "seed": 20260914
+  },
+  "e_hull_ev_per_atom": {
+    "C0_mean": 0.03905237152582558,
+    "F0_losses": 10,
+    "F0_mean": 0.03923216240866276,
+    "F0_wins": 21,
+    "mean_delta_F0_minus_C0": 0.00017979088283717748,
+    "median_delta_F0_minus_C0": -3.1259324817511924e-06,
+    "n_pairs": 32,
+    "paired_delta_bootstrap_ci95": [
+      -1.469131026949691e-05,
+      0.0005619807730591709
+    ],
+    "preferred_direction": "lower",
+    "ties": 1
+  },
+  "formal_primary_maxF": {
+    "absolute_improvement_C0_minus_F0_ev_per_a": 0.04874453257144705,
+    "absolute_improvement_bootstrap_ci95_ev_per_a": [
+      0.039327501559600325,
+      0.05868520359963366
+    ],
+    "central_estimate_definition": "(mean(C0)-mean(F0))/mean(C0)",
+    "criterion": "relative reduction of paired-cohort mean MaxF",
+    "relative_reduction": 0.26567778691273397,
+    "relative_reduction_bootstrap_ci95": [
+      0.1427416747473922,
+      0.5286057084634727
+    ]
+  },
+  "mag_absolute_error_a3": {
+    "C0_mean": 0.0061277398869572,
+    "F0_losses": 18,
+    "F0_mean": 0.00614777731805114,
+    "F0_wins": 14,
+    "mean_delta_F0_minus_C0": 2.0037431093940586e-05,
+    "median_delta_F0_minus_C0": 4.590463718229243e-06,
+    "n_pairs": 32,
+    "paired_delta_bootstrap_ci95": [
+      -1.2851481762361913e-05,
+      5.283795751512895e-05
+    ],
+    "preferred_direction": "lower",
+    "ties": 0
+  },
+  "maxF_ev_per_a": {
+    "C0_mean": 0.18347236755422827,
+    "F0_losses": 0,
+    "F0_mean": 0.1347278349827812,
+    "F0_wins": 32,
+    "mean_delta_F0_minus_C0": -0.04874453257144705,
+    "median_delta_F0_minus_C0": -0.05110715237678823,
+    "n_pairs": 32,
+    "paired_delta_bootstrap_ci95": [
+      -0.05868520359963367,
+      -0.03932750155960033
+    ],
+    "preferred_direction": "lower",
+    "ties": 0
+  },
+  "rmsd_a": {
+    "C0_mean": 0.0521316271543507,
+    "F0_losses": 1,
+    "F0_mean": 0.04899051190125276,
+    "F0_wins": 27,
+    "mean_delta_F0_minus_C0": -0.0031411152530979305,
+    "median_delta_F0_minus_C0": -0.001935425167025307,
+    "n_pairs": 32,
+    "paired_delta_bootstrap_ci95": [
+      -0.005610665642031091,
+      -0.0016394557231287409
+    ],
+    "preferred_direction": "lower",
+    "ties": 4
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "helper_unit_tests",
+      "exit_code": 0
+    },
+    {
+      "name": "bundle_verify",
+      "exit_code": 0
+    },
+    {
+      "name": "restore_clone",
+      "exit_code": 0
+    },
+    {
+      "name": "restore_checkout",
+      "exit_code": 0
+    },
+    {
+      "name": "restore_rcnfgd",
+      "exit_code": 0
+    }
+  ],
+  "restored_worktree": "mattergen_v1_matersim_guidance",
+  "restored_base_commit": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+  "timing_scripts_verified": 9,
+  "overlay_entries": 33843,
+  "temporary_restore_directory": "/data1/chenzixin/tmp/mattergen-restore-check-cnua91_q/restored",
+  "new_model_experiments_run": false,
+  "source_worktrees_modified_by_test": false
+}

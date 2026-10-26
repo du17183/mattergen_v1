@@ -1,0 +1,37 @@
+{
+  "time": "2026-09-14T12:21:31.775146+00:00",
+  "scopes": [
+    "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1/research",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor/research",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/research",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/research",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/research",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule/research",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc/research",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/research",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition/research",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/experiments",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search/research"
+  ],
+  "files_enumerated": 38148,
+  "prior_hits": [],
+  "seeds": [
+    746000,
+    746001,
+    746002,
+    746003,
+    746004,
+    746005,
+    746006,
+    746007
+  ]
+}

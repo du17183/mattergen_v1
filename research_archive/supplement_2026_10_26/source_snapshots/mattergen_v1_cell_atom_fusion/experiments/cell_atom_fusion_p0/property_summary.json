@@ -1,0 +1,30 @@
+{
+  "device": "cuda",
+  "dft_verified": false,
+  "methods": {
+    "B0": {
+      "mag_density_mean": 0.19678894157099344,
+      "mag_hit_count": 12,
+      "mag_hit_rate": 0.75,
+      "mag_mae": 0.009398405696606459,
+      "n": 16,
+      "valid_count": 16,
+      "valid_fraction": 1.0
+    },
+    "C0": {
+      "mag_density_mean": 0.2013366055620308,
+      "mag_hit_count": 11,
+      "mag_hit_rate": 0.6875,
+      "mag_mae": 0.007051084387881887,
+      "n": 16,
+      "valid_count": 16,
+      "valid_fraction": 1.0
+    }
+  },
+  "surrogate_calibration_mae": 0.001449,
+  "surrogate_calibration_pearson": 0.9499,
+  "surrogate_model": "CHGNet 0.3.0",
+  "surrogate_property_eval": true,
+  "target": 0.2,
+  "tau": 0.01
+}

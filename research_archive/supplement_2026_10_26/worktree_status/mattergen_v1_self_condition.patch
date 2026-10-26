@@ -1,0 +1,101 @@
+diff --git a/mattergen/adapter.py b/mattergen/adapter.py
+index 5c544ad..b9e0876 100644
+--- a/mattergen/adapter.py
++++ b/mattergen/adapter.py
+@@ -44,11 +44,19 @@ class GemNetTAdapter(GemNetTDenoiser):
+             property_embedding.unconditional_embedding_module = ZerosEmbedding(
+                 hidden_dim=property_embedding.unconditional_embedding_module.hidden_dim,
+             )
++        self._self_condition_input = None
++
++    def set_self_condition(self, self_condition) -> None:
++        self._self_condition_input = self_condition
++
++    def clear_self_condition(self) -> None:
++        self._self_condition_input = None
+ 
+     def forward(
+         self,
+         x: ChemGraph,
+         t: torch.Tensor,
++        self_condition=None,
+     ) -> ChemGraph:
+         """
+         augment <z_per_crystal> with <self.condition_embs_adapt>.
+@@ -88,6 +96,22 @@ class GemNetTAdapter(GemNetTDenoiser):
+                     x["num_atoms"], dtype=torch.bool
+                 ).reshape(-1, 1)
+ 
++        selected_self_condition = (
++            self._self_condition_input if self_condition is None else self_condition
++        )
++        self_conditioner = getattr(self, "self_conditioner", None)
++        node_additive_embedding = None
++        if self_conditioner is not None:
++            node_additive_embedding = self_conditioner(
++                current_pos=frac_coords,
++                current_cell=lattice,
++                num_atoms=num_atoms,
++                batch=batch,
++                time_embedding=t_enc,
++                atom_embedding_weight=self.gemnet.atom_emb.embeddings.weight,
++                self_condition=selected_self_condition,
++            )
++
+         output = self.gemnet(
+             z=z_per_crystal,
+             frac_coords=frac_coords,
+@@ -103,6 +127,7 @@ class GemNetTAdapter(GemNetTDenoiser):
+             num_bonds=None,
+             cond_adapt=conditions_adapt_dict,
+             cond_adapt_mask=conditions_adapt_mask_dict,  # when True use unconditional embedding
++            node_additive_embedding=node_additive_embedding,
+         )
+ 
+         pred_atom_types = self.fc_atom(output.node_embeddings)
+diff --git a/mattergen/common/gemnet/gemnet.py b/mattergen/common/gemnet/gemnet.py
+index 0e500ad..85bab6c 100644
+--- a/mattergen/common/gemnet/gemnet.py
++++ b/mattergen/common/gemnet/gemnet.py
+@@ -613,6 +613,7 @@ class GemNetT(torch.nn.Module):
+         to_jimages: Optional[torch.Tensor] = None,
+         num_bonds: Optional[torch.Tensor] = None,
+         lattice: Optional[torch.Tensor] = None,
++        node_additive_embedding: Optional[torch.Tensor] = None,
+     ) -> ModelOutput:
+         """
+         args:
+@@ -681,6 +682,10 @@ class GemNetT(torch.nn.Module):
+             h = torch.cat([h, z_per_atom], dim=1)
+             # Combine all embeddings
+             h = self.atom_latent_emb(h)
++        if node_additive_embedding is not None:
++            if node_additive_embedding.shape != h.shape:
++                raise ValueError("node_additive_embedding shape mismatch")
++            h = h + node_additive_embedding
+         # (nAtoms, emb_size_atom)
+         m = self.edge_emb(h, rbf, idx_s, idx_t)  # (nEdges, emb_size_edge)
+         batch_edge = batch[edge_index[0]]
+diff --git a/mattergen/common/gemnet/gemnet_ctrl.py b/mattergen/common/gemnet/gemnet_ctrl.py
+index 1a1698d..68f1b0d 100644
+--- a/mattergen/common/gemnet/gemnet_ctrl.py
++++ b/mattergen/common/gemnet/gemnet_ctrl.py
+@@ -82,6 +82,7 @@ class GemNetTCtrl(GemNetT):
+         charges: Optional[torch.Tensor] = None,
+         cond_adapt: Optional[Dict[PropertySourceId, torch.Tensor]] = None,
+         cond_adapt_mask: Optional[Dict[PropertySourceId, torch.Tensor]] = None,
++        node_additive_embedding: Optional[torch.Tensor] = None,
+     ) -> ModelOutput:
+         """
+         args:
+@@ -151,6 +152,10 @@ class GemNetTCtrl(GemNetT):
+             z_per_atom = z[batch]
+             h = torch.cat([h, z_per_atom], dim=1)
+             h = self.atom_latent_emb(h)
++        if node_additive_embedding is not None:
++            if node_additive_embedding.shape != h.shape:
++                raise ValueError("node_additive_embedding shape mismatch")
++            h = h + node_additive_embedding
+         # (nAtoms, emb_size_atom)
+         m = self.edge_emb(h, rbf, idx_s, idx_t)  # (nEdges, emb_size_edge)
+         batch_edge = batch[edge_index[0]]

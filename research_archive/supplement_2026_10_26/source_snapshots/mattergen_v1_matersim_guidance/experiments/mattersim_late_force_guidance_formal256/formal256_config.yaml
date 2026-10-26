@@ -1,0 +1,351 @@
+experiment: mattersim_late_force_guidance_formal256
+track: A1
+frozen: true
+methods:
+- C0
+- F0
+seeds:
+- 740000
+- 740001
+- 740002
+- 740003
+- 740004
+- 740005
+- 740006
+- 740007
+- 740008
+- 740009
+- 740010
+- 740011
+- 740012
+- 740013
+- 740014
+- 740015
+- 740016
+- 740017
+- 740018
+- 740019
+- 740020
+- 740021
+- 740022
+- 740023
+- 740024
+- 740025
+- 740026
+- 740027
+- 740028
+- 740029
+- 740030
+- 740031
+- 740032
+- 740033
+- 740034
+- 740035
+- 740036
+- 740037
+- 740038
+- 740039
+- 740040
+- 740041
+- 740042
+- 740043
+- 740044
+- 740045
+- 740046
+- 740047
+- 740048
+- 740049
+- 740050
+- 740051
+- 740052
+- 740053
+- 740054
+- 740055
+- 740056
+- 740057
+- 740058
+- 740059
+- 740060
+- 740061
+- 740062
+- 740063
+- 740064
+- 740065
+- 740066
+- 740067
+- 740068
+- 740069
+- 740070
+- 740071
+- 740072
+- 740073
+- 740074
+- 740075
+- 740076
+- 740077
+- 740078
+- 740079
+- 740080
+- 740081
+- 740082
+- 740083
+- 740084
+- 740085
+- 740086
+- 740087
+- 740088
+- 740089
+- 740090
+- 740091
+- 740092
+- 740093
+- 740094
+- 740095
+- 740096
+- 740097
+- 740098
+- 740099
+- 740100
+- 740101
+- 740102
+- 740103
+- 740104
+- 740105
+- 740106
+- 740107
+- 740108
+- 740109
+- 740110
+- 740111
+- 740112
+- 740113
+- 740114
+- 740115
+- 740116
+- 740117
+- 740118
+- 740119
+- 740120
+- 740121
+- 740122
+- 740123
+- 740124
+- 740125
+- 740126
+- 740127
+- 740128
+- 740129
+- 740130
+- 740131
+- 740132
+- 740133
+- 740134
+- 740135
+- 740136
+- 740137
+- 740138
+- 740139
+- 740140
+- 740141
+- 740142
+- 740143
+- 740144
+- 740145
+- 740146
+- 740147
+- 740148
+- 740149
+- 740150
+- 740151
+- 740152
+- 740153
+- 740154
+- 740155
+- 740156
+- 740157
+- 740158
+- 740159
+- 740160
+- 740161
+- 740162
+- 740163
+- 740164
+- 740165
+- 740166
+- 740167
+- 740168
+- 740169
+- 740170
+- 740171
+- 740172
+- 740173
+- 740174
+- 740175
+- 740176
+- 740177
+- 740178
+- 740179
+- 740180
+- 740181
+- 740182
+- 740183
+- 740184
+- 740185
+- 740186
+- 740187
+- 740188
+- 740189
+- 740190
+- 740191
+- 740192
+- 740193
+- 740194
+- 740195
+- 740196
+- 740197
+- 740198
+- 740199
+- 740200
+- 740201
+- 740202
+- 740203
+- 740204
+- 740205
+- 740206
+- 740207
+- 740208
+- 740209
+- 740210
+- 740211
+- 740212
+- 740213
+- 740214
+- 740215
+- 740216
+- 740217
+- 740218
+- 740219
+- 740220
+- 740221
+- 740222
+- 740223
+- 740224
+- 740225
+- 740226
+- 740227
+- 740228
+- 740229
+- 740230
+- 740231
+- 740232
+- 740233
+- 740234
+- 740235
+- 740236
+- 740237
+- 740238
+- 740239
+- 740240
+- 740241
+- 740242
+- 740243
+- 740244
+- 740245
+- 740246
+- 740247
+- 740248
+- 740249
+- 740250
+- 740251
+- 740252
+- 740253
+- 740254
+- 740255
+common:
+  target_dft_mag_density: 0.2
+  cfg: 2.0
+  guidance_schedule: constant
+  adaptive_cfg: false
+  diffusion_steps: 1000
+  corrector_steps_per_timestep: 1
+  batch_size: 1
+F0:
+  guidance_lambda: 1.0
+  guidance_lambda_sweep: false
+  guidance_lambda_interpretation: frozen_multiplier_on_the_single_position_force_correction
+  field: position_only
+  score_phase: predictor_only
+  clean_x0_physics: true
+  raw_xt_physics: false
+  stress_guidance: false
+  cell_guidance: false
+  atomic_guidance: false
+  guidance_t_max: 0.02
+  force_reference_ev_a: 0.07795149218357911
+  force_reference_source: calibration_seeds_710000_710015_t0.02_median_maxF
+  nominal_cartesian_step_a: 0.005
+  hard_cartesian_cap_a: 0.01
+  absolute_protocol_cap_a: 0.02
+  min_periodic_distance_floor_a: 0.5
+  coordinate_map: delta_fractional=delta_cartesian@inverse(clean_cell)
+  score_map: delta_score=delta_fractional/ancestral_predictor_score_coefficient
+actual_trigger_model_t:
+- 0.020000001415610313
+- 0.01900000125169754
+- 0.018000001087784767
+- 0.017000000923871994
+- 0.01600000075995922
+- 0.015000000596046448
+- 0.014000000432133675
+- 0.013000000268220901
+- 0.012000000104308128
+- 0.01100000087171793
+- 0.010000000707805157
+- 0.009000000543892384
+- 0.00800000037997961
+- 0.007000000216066837
+- 0.006000000052154064
+- 0.005000000353902578
+- 0.004000000189989805
+- 0.003000000026077032
+- 0.0020000000949949026
+- 0.0010000000474974513
+immutable_source_sha256:
+  ? /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/formal32_config.yaml
+  : a1c70c70890d2ba88f269f56ccf953454e907292cf29a3f4cb41fd41f9843c8a
+  ? /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/decision_summary.json
+  : 6c310a60205515f105883f6a03303cfccddbff8e1d3ae169c7cc577cf27b0288
+  ? /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/audit_results.json
+  : ffd6355ba9da328a1ebcce841ef6cdc32785580e4279908fc541699577f75b05
+  ? /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/guidance_trace.csv
+  : 9e963d0f24322ac57549ace41769156c80e5b8eab4269ad370ba3c8d7e1a684f
+  ? /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/generate_formal32_pair.py
+  : 73d374d99cb515403a278a134129c7b3f64b27c787273300d20c033250161807
+  /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/late_force_sampler.py: 7a1598338e305986f03f232b719cdbb90687ba3388b8827ace8aa191bb8d9523
+  /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/guidance_config.yaml: 9955641afdf4d3f17ecb1ac5597e5bdaaf5cd493453e9a50fd03b270b3073f22
+  /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/analyze_p0.py: e620a4437764a48b165c6cdd2bb1b3361b0de0e4af1b1155c0a947ede51e379e
+  ? /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/evaluate_p0_properties.py
+  : 9193441c5245a14622777097b414078be09f6a817dd9be42f52bca1c267063ac
+  /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/run_p0_relaxation.py: 291f8dc38b9c5b0930fe9b2e593d81a72074fa49070717c6038e2933cda87f37
+  /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/run_p0_quality.py: de529b2cc924845e5494644f4a9bc3bbb623e5948429f58758d16a2bf0cfe11c
+bootstrap:
+  resamples: 20000
+  seed: 20260915
+guardrails:
+  mag_mae_worsening_max_fraction: 0.1
+  nus_drop_max_percentage_points: 5.0
+  validity_drop_max_percentage_points: 5.0
+  e_hull_mean_increase_max_ev_per_atom: 0.01
+  runtime_ratio_max: 1.5
+surrogate_property_eval: true
+dft_verified: false
+failure_policy: retain every registered seed; never replace failed seeds; incomplete
+  metrics block confirmatory verdict
+registered_utc: '2026-09-13T08:19:12.255673+00:00'
+decision:
+  mean_maxf_reduction_min: 0.15
+  ci_low_strict_positive: true
+  wins_clearly_exceed_losses: exact one-sided binomial p<0.05, ties omitted
+  strong_ci_low_min: 0.1
+  strong_wins_min: 192
+  all_guardrails_required: true

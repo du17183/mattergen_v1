@@ -1,0 +1,242 @@
+{
+  "completed_paired_seeds": [],
+  "expected_paired_seeds": [
+    750000,
+    750001,
+    750002,
+    750003,
+    750004,
+    750005,
+    750006,
+    750007,
+    750008,
+    750009,
+    750010,
+    750011,
+    750012,
+    750013,
+    750014,
+    750015,
+    750016,
+    750017,
+    750018,
+    750019,
+    750020,
+    750021,
+    750022,
+    750023,
+    750024,
+    750025,
+    750026,
+    750027,
+    750028,
+    750029,
+    750030,
+    750031
+  ],
+  "failures": [
+    {
+      "gpu": 2,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750000_gpu_2.log",
+      "return_code": 1,
+      "seed": 750000
+    },
+    {
+      "gpu": 3,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750001_gpu_3.log",
+      "return_code": 1,
+      "seed": 750001
+    },
+    {
+      "gpu": 4,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750002_gpu_4.log",
+      "return_code": 1,
+      "seed": 750002
+    },
+    {
+      "gpu": 5,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750003_gpu_5.log",
+      "return_code": 1,
+      "seed": 750003
+    },
+    {
+      "gpu": 6,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750004_gpu_6.log",
+      "return_code": 1,
+      "seed": 750004
+    },
+    {
+      "gpu": 7,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750005_gpu_7.log",
+      "return_code": 1,
+      "seed": 750005
+    },
+    {
+      "gpu": 2,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750006_gpu_2.log",
+      "return_code": 1,
+      "seed": 750006
+    },
+    {
+      "gpu": 3,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750007_gpu_3.log",
+      "return_code": 1,
+      "seed": 750007
+    },
+    {
+      "gpu": 4,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750008_gpu_4.log",
+      "return_code": 1,
+      "seed": 750008
+    },
+    {
+      "gpu": 5,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750009_gpu_5.log",
+      "return_code": 1,
+      "seed": 750009
+    },
+    {
+      "gpu": 6,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750010_gpu_6.log",
+      "return_code": 1,
+      "seed": 750010
+    },
+    {
+      "gpu": 7,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750011_gpu_7.log",
+      "return_code": 1,
+      "seed": 750011
+    },
+    {
+      "gpu": 2,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750012_gpu_2.log",
+      "return_code": 1,
+      "seed": 750012
+    },
+    {
+      "gpu": 3,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750013_gpu_3.log",
+      "return_code": 1,
+      "seed": 750013
+    },
+    {
+      "gpu": 4,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750014_gpu_4.log",
+      "return_code": 1,
+      "seed": 750014
+    },
+    {
+      "gpu": 5,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750015_gpu_5.log",
+      "return_code": 1,
+      "seed": 750015
+    },
+    {
+      "gpu": 6,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750016_gpu_6.log",
+      "return_code": 1,
+      "seed": 750016
+    },
+    {
+      "gpu": 7,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750017_gpu_7.log",
+      "return_code": 1,
+      "seed": 750017
+    },
+    {
+      "gpu": 2,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750018_gpu_2.log",
+      "return_code": 1,
+      "seed": 750018
+    },
+    {
+      "gpu": 3,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750019_gpu_3.log",
+      "return_code": 1,
+      "seed": 750019
+    },
+    {
+      "gpu": 4,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750020_gpu_4.log",
+      "return_code": 1,
+      "seed": 750020
+    },
+    {
+      "gpu": 5,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750021_gpu_5.log",
+      "return_code": 1,
+      "seed": 750021
+    },
+    {
+      "gpu": 6,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750022_gpu_6.log",
+      "return_code": 1,
+      "seed": 750022
+    },
+    {
+      "gpu": 7,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750023_gpu_7.log",
+      "return_code": 1,
+      "seed": 750023
+    },
+    {
+      "gpu": 2,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750024_gpu_2.log",
+      "return_code": -2,
+      "seed": 750024
+    },
+    {
+      "gpu": 3,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750025_gpu_3.log",
+      "return_code": -2,
+      "seed": 750025
+    },
+    {
+      "gpu": 4,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750026_gpu_4.log",
+      "return_code": -2,
+      "seed": 750026
+    },
+    {
+      "gpu": 5,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750027_gpu_5.log",
+      "return_code": -2,
+      "seed": 750027
+    },
+    {
+      "gpu": 6,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750028_gpu_6.log",
+      "return_code": -2,
+      "seed": 750028
+    },
+    {
+      "gpu": 7,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750029_gpu_7.log",
+      "return_code": -2,
+      "seed": 750029
+    },
+    {
+      "gpu": 2,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750030_gpu_2.log",
+      "return_code": 1,
+      "seed": 750030
+    },
+    {
+      "gpu": 3,
+      "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/timing_formal32/logs/seed_750031_gpu_3.log",
+      "return_code": 1,
+      "seed": 750031
+    }
+  ],
+  "gpus": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "started_epoch": 1790668430.560905,
+  "status": "FAIL",
+  "updated_epoch": 1790668498.1475742
+}

@@ -1,0 +1,11 @@
+{
+  "metric": "selected_minus_cfg2_normalized_property_objective",
+  "cluster_unit": "seed",
+  "n_seeds": 32,
+  "n_states": 64,
+  "mean_delta": -0.08288022320638533,
+  "ci95_low": -0.11634964386378426,
+  "ci95_high": -0.05268447368295482,
+  "resamples": 20000,
+  "bootstrap_seed": 20260917
+}

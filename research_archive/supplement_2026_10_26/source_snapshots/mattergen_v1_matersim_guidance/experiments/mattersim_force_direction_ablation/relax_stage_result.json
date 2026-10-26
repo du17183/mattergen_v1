@@ -1,0 +1,9 @@
+{
+  "end_epoch": 1789304092.8703036,
+  "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_force_direction_ablation/logs/pipeline_relax.log",
+  "pid": 1465957,
+  "return_code": 0,
+  "stage": "relax",
+  "start_epoch": 1789303923.1006465,
+  "track": "A3"
+}

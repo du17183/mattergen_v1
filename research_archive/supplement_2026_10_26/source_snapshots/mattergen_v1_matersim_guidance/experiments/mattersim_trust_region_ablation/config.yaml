@@ -1,0 +1,123 @@
+experiment: mattersim_trust_region_ablation
+track: A4
+frozen: true
+methods:
+- T0
+- T1
+- T2
+seeds:
+- 742000
+- 742001
+- 742002
+- 742003
+- 742004
+- 742005
+- 742006
+- 742007
+- 742008
+- 742009
+- 742010
+- 742011
+- 742012
+- 742013
+- 742014
+- 742015
+- 742016
+- 742017
+- 742018
+- 742019
+- 742020
+- 742021
+- 742022
+- 742023
+- 742024
+- 742025
+- 742026
+- 742027
+- 742028
+- 742029
+- 742030
+- 742031
+common:
+  target_dft_mag_density: 0.2
+  cfg: 2.0
+  guidance_schedule: constant
+  adaptive_cfg: false
+  diffusion_steps: 1000
+  corrector_steps_per_timestep: 1
+  batch_size: 1
+F0:
+  guidance_lambda: 1.0
+  guidance_lambda_sweep: false
+  guidance_lambda_interpretation: frozen_multiplier_on_the_single_position_force_correction
+  field: position_only
+  score_phase: predictor_only
+  clean_x0_physics: true
+  raw_xt_physics: false
+  stress_guidance: false
+  cell_guidance: false
+  atomic_guidance: false
+  guidance_t_max: 0.02
+  force_reference_ev_a: 0.07795149218357911
+  force_reference_source: calibration_seeds_710000_710015_t0.02_median_maxF
+  nominal_cartesian_step_a: 0.005
+  hard_cartesian_cap_a: 0.01
+  absolute_protocol_cap_a: 0.02
+  min_periodic_distance_floor_a: 0.5
+  coordinate_map: delta_fractional=delta_cartesian@inverse(clean_cell)
+  score_map: delta_score=delta_fractional/ancestral_predictor_score_coefficient
+actual_trigger_model_t:
+- 0.020000001415610313
+- 0.01900000125169754
+- 0.018000001087784767
+- 0.017000000923871994
+- 0.01600000075995922
+- 0.015000000596046448
+- 0.014000000432133675
+- 0.013000000268220901
+- 0.012000000104308128
+- 0.01100000087171793
+- 0.010000000707805157
+- 0.009000000543892384
+- 0.00800000037997961
+- 0.007000000216066837
+- 0.006000000052154064
+- 0.005000000353902578
+- 0.004000000189989805
+- 0.003000000026077032
+- 0.0020000000949949026
+- 0.0010000000474974513
+immutable_source_sha256:
+  ? /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/formal32_config.yaml
+  : a1c70c70890d2ba88f269f56ccf953454e907292cf29a3f4cb41fd41f9843c8a
+  ? /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/decision_summary.json
+  : 6c310a60205515f105883f6a03303cfccddbff8e1d3ae169c7cc577cf27b0288
+  ? /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/audit_results.json
+  : ffd6355ba9da328a1ebcce841ef6cdc32785580e4279908fc541699577f75b05
+  ? /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/guidance_trace.csv
+  : 9e963d0f24322ac57549ace41769156c80e5b8eab4269ad370ba3c8d7e1a684f
+  ? /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/generate_formal32_pair.py
+  : 73d374d99cb515403a278a134129c7b3f64b27c787273300d20c033250161807
+  /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/late_force_sampler.py: 7a1598338e305986f03f232b719cdbb90687ba3388b8827ace8aa191bb8d9523
+  /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/guidance_config.yaml: 9955641afdf4d3f17ecb1ac5597e5bdaaf5cd493453e9a50fd03b270b3073f22
+  /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/analyze_p0.py: e620a4437764a48b165c6cdd2bb1b3361b0de0e4af1b1155c0a947ede51e379e
+  ? /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/evaluate_p0_properties.py
+  : 9193441c5245a14622777097b414078be09f6a817dd9be42f52bca1c267063ac
+  /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/run_p0_relaxation.py: 291f8dc38b9c5b0930fe9b2e593d81a72074fa49070717c6038e2933cda87f37
+  /mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/run_p0_quality.py: de529b2cc924845e5494644f4a9bc3bbb623e5948429f58758d16a2bf0cfe11c
+bootstrap:
+  resamples: 20000
+  seed: 20260915
+guardrails:
+  mag_mae_worsening_max_fraction: 0.1
+  nus_drop_max_percentage_points: 5.0
+  validity_drop_max_percentage_points: 5.0
+  e_hull_mean_increase_max_ev_per_atom: 0.01
+  runtime_ratio_max: 1.5
+surrogate_property_eval: true
+dft_verified: false
+failure_policy: retain every registered seed; never replace failed seeds; incomplete
+  metrics block confirmatory verdict
+registered_utc: '2026-09-13T08:19:12.326308+00:00'
+unbounded_definition: 'remove norm-dependent saturation: delta=0.005*centered_force/force_reference;
+  retain safety and exact score map; no T3 unless numerical unrunability'

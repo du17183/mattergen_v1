@@ -1,0 +1,39 @@
+{
+  "atomic_safety_guard": "atomic_mask_fraction must equal 0",
+  "calibration_subset": {
+    "seed_end": 99031,
+    "seed_start": 99000,
+    "stable_tail_model_t_max": 0.05,
+    "trajectory_count": 32
+  },
+  "cell_primary_metric": "L^T L (requested); L L^T retained as row-lattice audit only",
+  "consecutive_observations": 3,
+  "frozen": true,
+  "minimum_active_horizon": {
+    "freeze_forbidden_while_model_t_gt": 0.5
+  },
+  "quantiles": {
+    "lower_confidence": 0.1,
+    "upper_residual": 0.9
+  },
+  "thresholds": {
+    "A": {
+      "atomic_argmax_change_rate": 0.0,
+      "atomic_entropy": 0.014992803707718806,
+      "atomic_mask_fraction": 0.0,
+      "atomic_mean_max_probability": 0.9973955512046814
+    },
+    "L": {
+      "cell_angle_max_change_deg": 0.5943072962542787,
+      "cell_angle_rms_change_deg": 0.42147894850893847,
+      "cell_length_max_relative_change": 0.00940039983422504,
+      "cell_length_rms_relative_change": 0.007568211551283561,
+      "cell_metric_ltl_relative_change": 0.016859863133989343,
+      "cell_volume_relative_change": 0.0152636937952408
+    },
+    "X": {
+      "position_max_cart_displacement": 0.09972141036038294,
+      "position_rms_cart_displacement": 0.07613865823182703
+    }
+  }
+}

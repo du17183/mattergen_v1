@@ -1,0 +1,130 @@
+{
+  "A1_observed_pair_interval_seconds": 187.45086812973022,
+  "estimate_note": "Projection only; adds official-evaluation margin, assumes GPU 5/6 big lane and GPU 7 small lane; failures and unusual structures can extend it.",
+  "estimated_remaining_hours_range": [
+    0.2,
+    1.0
+  ],
+  "median_sampling_seconds": 84.93862965647713,
+  "postprocess_only_structures": 32,
+  "registered_generation_draws": 1120,
+  "scientific_outcomes_not_examined": true,
+  "tracks": {
+    "A1": {
+      "active_stage": {
+        "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal256/logs/pipeline_analysis.log",
+        "pid": 3894028,
+        "stage": "analysis",
+        "start_epoch": 1789359467.120063,
+        "track": "A1"
+      },
+      "completed_by_method": {
+        "C0": 256,
+        "F0": 256
+      },
+      "completed_pairs": 256,
+      "decision": "STRONG_CONFIRMED",
+      "generation_failures": false,
+      "n": 256,
+      "pipeline_failure": false
+    },
+    "A3": {
+      "active_stage": {
+        "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_force_direction_ablation/logs/pipeline_generation.log",
+        "pid": 3573713,
+        "stage": "generation",
+        "start_epoch": 1789355062.577695,
+        "track": "A3"
+      },
+      "completed_by_method": {
+        "G0": 32,
+        "G1": 32,
+        "G2": 32,
+        "G3": 32,
+        "G4": 32
+      },
+      "completed_pairs": 32,
+      "decision": "SUPPORTED",
+      "generation_failures": false,
+      "n": 32,
+      "pipeline_failure": false
+    },
+    "A4": {
+      "active_stage": {
+        "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_trust_region_ablation/logs/pipeline_generation.log",
+        "pid": 3573718,
+        "stage": "generation",
+        "start_epoch": 1789355062.7407072,
+        "track": "A4"
+      },
+      "completed_by_method": {
+        "T0": 32,
+        "T1": 32,
+        "T2": 32
+      },
+      "completed_pairs": 32,
+      "decision": "NOT_SUPPORTED",
+      "generation_failures": false,
+      "n": 32,
+      "pipeline_failure": false
+    },
+    "A5": {
+      "active_stage": {
+        "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/adaptive_cfg_force_guidance_compatibility/logs/pipeline_analysis.log",
+        "pid": 1217755,
+        "stage": "analysis",
+        "start_epoch": 1789378088.1125941,
+        "track": "A5"
+      },
+      "completed_by_method": {
+        "A0": 64,
+        "AB": 64,
+        "B0": 64,
+        "C0": 64
+      },
+      "completed_pairs": 64,
+      "decision": "FAIL",
+      "generation_failures": false,
+      "n": 64,
+      "pipeline_failure": false
+    },
+    "A6": {
+      "active_stage": {
+        "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_equal_budget_post_generation/logs/pipeline_analysis.log",
+        "pid": 4136597,
+        "stage": "analysis",
+        "start_epoch": 1789362038.2483854,
+        "track": "A6"
+      },
+      "completed_by_method": {
+        "C0": 32,
+        "F0": 32,
+        "POST": 32
+      },
+      "completed_pairs": 32,
+      "decision": "COMPLETE",
+      "generation_failures": false,
+      "n": 32,
+      "pipeline_failure": false
+    },
+    "B": {
+      "active_stage": {
+        "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/closed_loop_force_guidance_p0/logs/pipeline_analysis.log",
+        "pid": 3612070,
+        "stage": "analysis",
+        "start_epoch": 1789355662.1479943,
+        "track": "B"
+      },
+      "completed_by_method": {
+        "F0": 16,
+        "F1": 16
+      },
+      "completed_pairs": 16,
+      "decision": "FAIL",
+      "generation_failures": false,
+      "n": 16,
+      "pipeline_failure": false
+    }
+  },
+  "updated_utc": "2026-09-14T09:57:40.722255+00:00"
+}

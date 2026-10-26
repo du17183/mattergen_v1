@@ -1,0 +1,31 @@
+{
+  "ADAPTIVE_NEIGHBORHOOD_MOTIVATED": true,
+  "ADAPTIVE_NEIGHBORHOOD_P0": "FAIL",
+  "adaptive_cfg_used": false,
+  "cutoff_angstrom": 7.0,
+  "dft_verified": false,
+  "e_hull_guardrail_pass": false,
+  "gate_max_identity_deviation": 0.020326733589172363,
+  "gate_time_spans": {
+    "g_far": 0.0016477108001708984,
+    "g_mid": 0.006889700889587069,
+    "g_near": 0.011007189750671387
+  },
+  "geometry_track_go": false,
+  "geometry_track_qualifying_metrics": [],
+  "graph_topology_modified": false,
+  "mag_mae_guardrail_pass": true,
+  "nus_guardrail_pass": false,
+  "nus_rate_delta": -0.125,
+  "property_paired_not_worse_count": 15,
+  "property_track_go": false,
+  "relative_improvement_vs_B0": {
+    "mag_mae": 0.10827600967770834,
+    "max_force": -0.19605023403851485,
+    "rmsd": -0.005191788100252337
+  },
+  "sampling_score_calls_all_2000": true,
+  "stage_dependent_gate_pattern": true,
+  "structure_guardrail_pass": false,
+  "surrogate_property_eval": true
+}

@@ -1,0 +1,26 @@
+{
+  "exclusive_first_field_counts": {
+    "A": 15,
+    "A=X=L": 1,
+    "L": 2,
+    "NC": 11,
+    "X": 3
+  },
+  "exclusive_first_field_fractions": {
+    "A": 0.46875,
+    "A=X=L": 0.03125,
+    "L": 0.0625,
+    "NC": 0.34375,
+    "X": 0.09375
+  },
+  "n": 32,
+  "ordering_counts": {
+    "A>L>X": 10,
+    "A>X>L": 6,
+    "L>X>A": 2,
+    "NC": 11,
+    "X>A>L": 3
+  },
+  "subset": "validation",
+  "tie_policy": "ties retained as a separate '=' category; NC means not all three T are finite"
+}

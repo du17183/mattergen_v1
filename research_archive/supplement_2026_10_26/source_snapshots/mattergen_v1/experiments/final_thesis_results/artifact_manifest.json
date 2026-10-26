@@ -1,0 +1,374 @@
+{
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/audit_environment.py": {
+    "bytes": 4429,
+    "sha256": "73ad740648e370b183ca4172cd89485634d0e9f265a6814014171ae0adefb207"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/resource_audit.json": {
+    "bytes": 89302,
+    "sha256": "097064a9827b171dce2bc3dca29c5b634248229138e01371fa98c290112ca2dc"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/resource_audit.md": {
+    "bytes": 79159,
+    "sha256": "8241dc777be344f55e93ec28d4864aae7adf60e6c9de3baa0d7b8e21e921d70d"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/existing_artifact_inventory.json": {
+    "bytes": 50161,
+    "sha256": "c5df5d69f430b2fd963e9b059508f62057b98816a2f43621928b6e923600953c"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/collect_results.py": {
+    "bytes": 26588,
+    "sha256": "52f99bb39e6c1891de7ca1ca7358dd3a41a7631177158a19e0681280e07be822"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/make_plots.py": {
+    "bytes": 9184,
+    "sha256": "4aa4844268518577dc3abf1bef0f8ea0edb73c74c6ff23993be8aaa9f630b286"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/main_results.csv": {
+    "bytes": 9172,
+    "sha256": "49a06d8b9a04fdcfcf2bfe50e55389652cf5119af5e5d064642e789c58eca260"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/main_results.md": {
+    "bytes": 13285,
+    "sha256": "399b432ea0903c67e9628cb5adbbf9a533d6a2456c9962f0e252c797b44434a7"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/ablation_results.csv": {
+    "bytes": 6229,
+    "sha256": "76c1617f82b064d058337b6557508d7158d248f4ed9ff081ff818e50a7d35262"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/ablation_results.md": {
+    "bytes": 7889,
+    "sha256": "5172f1251ef8066042d81f711b496f96b7c3e80010c9116679e3dc24bc11b0fa"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/all_per_seed_metrics.csv": {
+    "bytes": 711633,
+    "sha256": "7fd541a521004233929de3e6a03332b3923e128e27856a08b832d1c76a58cb80"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/paired_statistics.csv": {
+    "bytes": 142426,
+    "sha256": "dae0226d79f9be249d82122767e764134be41247fb791f579ccf00679dfc9a7c"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/distribution_statistics.csv": {
+    "bytes": 37265,
+    "sha256": "870a96cf4193341405a2fb1d77b58e0daf07ee1441775f2bc98aaef7ea70f665"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/source_audits.json": {
+    "bytes": 51197,
+    "sha256": "edc9265c88d73b9be6a8e72f2bcc67ea2f03f0a81d27339261f18cd89b492c5e"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/original_decisions.json": {
+    "bytes": 160395,
+    "sha256": "55c15c983c08e70dfe6859d274fe26ba202be40497d64114c0d20b94eb24cef0"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/relative_improvement_table.csv": {
+    "bytes": 2259,
+    "sha256": "2f8ef1c850c7a75307112b16338c37f0f29465b8f4cfd84d9daf382f6168b6a7"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/relative_improvement_table.md": {
+    "bytes": 3556,
+    "sha256": "e27ec33fceb026c7f34debec684877d79a9d8dfa9bf4e6429f564993ab90d33c"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/reproducibility_manifest.json": {
+    "bytes": 102771,
+    "sha256": "09ef34213d83c7e7ca5a681f29207eacaa21e8b9f5b3f9457363a6e09ff18237"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/verify_evidence.py": {
+    "bytes": 7224,
+    "sha256": "2b438ea9fd2891f93e6e73bf9816179db1cd59e03fd6ad84a4fa2cc11bcfed40"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/equal_budget_call_audit.csv": {
+    "bytes": 532,
+    "sha256": "1d3c770c13cc2fa20b0dfc6d69e648c7d8913d3a65e81a5014e94e786bfe4286"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/evidence_verification.json": {
+    "bytes": 1122,
+    "sha256": "a92e0f9dfdf48b7c4dabb7888d348fe363c3a0a4a052bf277b9d1f1d9290a6fa"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/make_reports.py": {
+    "bytes": 42091,
+    "sha256": "008c0b3708acd593845d61e40ea586918b4c6e1554b6efbb1002dafb09e94e80"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/statistical_results.md": {
+    "bytes": 8764,
+    "sha256": "9c6a239eff576f59947d9e95689324319a83b86b9d6c6d3e6decf1b23a98e177"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/efficiency_results.md": {
+    "bytes": 15288,
+    "sha256": "bbaf0129089437902f7361f5ac0b4133180bf1774a071cc64735ec7408ec09b4"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/refresh_status.py": {
+    "bytes": 4200,
+    "sha256": "03ee73b48225e6091b6525b4e8170661e1f3a8fcd38485ff688501354f52ad17"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/final_audit.py": {
+    "bytes": 9608,
+    "sha256": "6707f89a646e66d88cd14a15d85e818046ff12753d426ab56f7be1b8f58f4553"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/finish_pipeline.py": {
+    "bytes": 1673,
+    "sha256": "a4b22333638758cdb2aa4a95ae6ab5b1fa25f9cf291903194974c135aba7e377"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/test_final_statistics.py": {
+    "bytes": 1785,
+    "sha256": "cc624e5a0b4868551d829376c477dc628e1b5f718cbbaf02d50922ca0685088c"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/README.md": {
+    "bytes": 4247,
+    "sha256": "128d923e590b685dbb3b80d1d0b7536b3cfdb0981364eeb9d45fb8e8c9fc5223"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/test_execution_record.md": {
+    "bytes": 1078,
+    "sha256": "b07d3474a2ae3cd3f96b49814b91ab9a9a34b120b076197534b258d93d785677"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/efficiency_results.csv": {
+    "bytes": 2874,
+    "sha256": "949fee61a2259d9c3950195c9f29e3cdbb18f1e7da322e7f6aa164959939083b"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plot_captions.md": {
+    "bytes": 3540,
+    "sha256": "117b1d8b317b4e5707ca0043ac6ace670dea7b58950cd60f62f78ada832ba4e3"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/innovation1_trace_audit.csv": {
+    "bytes": 4618,
+    "sha256": "f2b51b332c7c9a96d0588ad878878824dde47d0e66c3b3e91eea552c5db752c0"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/final_report.md": {
+    "bytes": 36555,
+    "sha256": "4b5d4fe36e951b77ee30d3705508fda376d084c2db39cb373a3697612cabea34"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/final_experiment_audit.md": {
+    "bytes": 3255,
+    "sha256": "c4a8efa803f81731b74a777086a5bf0add942085c0eeac5b242e3ccc63f4a1e4"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/final_status.json": {
+    "bytes": 1027,
+    "sha256": "e8a80f8b3b742d2dcf185bb71b771c60da33a76c1872d3a81c7904adaf7dc823"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/final_status.md": {
+    "bytes": 1055,
+    "sha256": "dbe3d65ffd4d9dc85c53abf76bf90fe214e0ed22b5b96943cb9e7df0b0356bce"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/supervisor_completion.json": {
+    "bytes": 78,
+    "sha256": "72d09c43a027c96e6c016df902c4863e089e0c2ea6faf07d9e45633a86cc4cc1"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/overall_method_framework.png": {
+    "bytes": 109961,
+    "sha256": "3eb40ffa22e166feae5885452eccd13d0fd1bf015d277341000b9ad2bbd8e305"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/overall_method_framework.pdf": {
+    "bytes": 14443,
+    "sha256": "045f08912c6a16721d1d7760d52f29daa7e5a3401272bae93663dc37ba49e1a9"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/adaptive_cfg_pipeline.png": {
+    "bytes": 102528,
+    "sha256": "d295c41b1c506956447cdd6dadb19921f1fb8058d3b18c86aacc58eed4c5e592"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/adaptive_cfg_pipeline.pdf": {
+    "bytes": 12547,
+    "sha256": "e05118328400c190b79f072f6be2dd3c54a6bd3c324f14689786ca46b5bdf55b"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/rc_nfgd_pipeline.png": {
+    "bytes": 105453,
+    "sha256": "5b243d617b4817aebf343202ccfdfc85c333e8662eb20c3ab1615c917df38712"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/rc_nfgd_pipeline.pdf": {
+    "bytes": 13234,
+    "sha256": "73ac4ae07f659fcec1d6a707dfd2e752c8ceace0bbfa663bfe43fd96ec789823"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/innovation1_formal_results.png": {
+    "bytes": 138833,
+    "sha256": "bd2954f42e4aaf89d9585b891261ecaaf8f0088c4d4e418c1128cb531a744188"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/innovation1_formal_results.pdf": {
+    "bytes": 16479,
+    "sha256": "291e3dfa3d813a64dec80b54f71c65d3a49931ffe42bdeb643743a3a3f7bcd2d"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/formal256_maxf_paired.png": {
+    "bytes": 98144,
+    "sha256": "56c07d94f0f2a570e7b584a86cc98d991fa6d02c5e69c8bda8f2cd04c50e6220"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/formal256_maxf_paired.pdf": {
+    "bytes": 17675,
+    "sha256": "f71edd6aae648b0138a18a5e36ea0210b3f966d1a2d83cb9cee3f577ab16e049"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/formal256_maxf_distribution.png": {
+    "bytes": 69735,
+    "sha256": "d71e5e4bc495a1472c011e33c2b071b3e4e43e54f0d14d4ac02560d25b93aa8b"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/formal256_maxf_distribution.pdf": {
+    "bytes": 18348,
+    "sha256": "d81732a5b649d57daef47b839a2da73966c0aca84b967f126851b790e9fad4f5"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/formal256_tail_metrics.png": {
+    "bytes": 111323,
+    "sha256": "2f9eace0ed75a1de744c19d84da1ab8b07cd5287cef69cb9400573110be31e73"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/formal256_tail_metrics.pdf": {
+    "bytes": 13857,
+    "sha256": "9549fc9e77e3d2c9e5e85cad550b2c291fcbdd18b149c0e8d3ef94b27a704822"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/independent_mlip_validation.png": {
+    "bytes": 108392,
+    "sha256": "f730a1eb852bb390a0d62533d3c6f8d28e235dc5d31da272adf7ae73b4036111"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/independent_mlip_validation.pdf": {
+    "bytes": 14581,
+    "sha256": "93d262da9b0082ae4640112e640cac080b0a2b171afbb04d7eea3ed871bea0ee"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/force_direction_ablation.png": {
+    "bytes": 119725,
+    "sha256": "67baa2db9128701695d526579bfc8c6c4e2979da4ec9d1ff94d95e483a69694d"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/force_direction_ablation.pdf": {
+    "bytes": 15105,
+    "sha256": "503b7a09b51e3521895b75520324883b21753c1c38508eab54dd86992047e77c"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/bounded_correction_ablation.png": {
+    "bytes": 102781,
+    "sha256": "0d9c7f3226b9dd3dd6fd6b7d9fdf4e0e3e5390313348835f9ddea99014c24efc"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/bounded_correction_ablation.pdf": {
+    "bytes": 15467,
+    "sha256": "a37a38bad3863c58757c2e9fddca2b4f810549a6b39570620df284ec43032ea1"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/online_vs_post.png": {
+    "bytes": 115000,
+    "sha256": "5e3f5946acbf58dbda0a474364457dcfc373a41d1a4a32b091984b3c15047bab"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/online_vs_post.pdf": {
+    "bytes": 14663,
+    "sha256": "1f27777dd8df78ef8bbcab8c78fabbff7b7394ac6b870477fa4095ccb3083fd8"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/interaction_analysis.png": {
+    "bytes": 181715,
+    "sha256": "b7c17340bdb793359cd11e3c178d09f70061f091a9b7a1ec9033a52b4bd3d98a"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/interaction_analysis.pdf": {
+    "bytes": 18037,
+    "sha256": "8be997d9b71ff845772e7015268750514b33142324f15c2200f970e1b420f7d7"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/innovation1_minimal_ablation.png": {
+    "bytes": 119595,
+    "sha256": "de63b447c839b920fd7abd9aed1054d96ee0971bdaf934f24cce466dcd2f4a02"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/plots/innovation1_minimal_ablation.pdf": {
+    "bytes": 17184,
+    "sha256": "afb6cf1b4f7fafa739459e04962f46912cad74f65406cf4549c1ce753a8dbbee"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/a367f85efe8027bf8ef2db41cc48ec2fd3d60582/thesis_archive/data/innovation1/source_manifest.json": {
+    "bytes": 1634,
+    "sha256": "a586e7c805a2b9260bf04a2fb7029ade3b0340a502c8b39148a1f2a8accfe1e3"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/a367f85efe8027bf8ef2db41cc48ec2fd3d60582/thesis_archive/data/innovation1/per_seed_metrics.csv": {
+    "bytes": 61748,
+    "sha256": "7a8e9c6c835645e48b3d6734e10c5d6a958ce296142750af56584d318c64fd21"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/a367f85efe8027bf8ef2db41cc48ec2fd3d60582/thesis_archive/data/innovation1/source/formal_per_seed_records.csv": {
+    "bytes": 90378,
+    "sha256": "4efd49e7cf868769adc62da267e621ccaac70d6d62983ec3a9ff0d1785fcb259"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/a367f85efe8027bf8ef2db41cc48ec2fd3d60582/thesis_archive/data/innovation1/source/C0_official_metrics_per_structure.csv": {
+    "bytes": 100349,
+    "sha256": "57aa48fd04b2d0733a3c9ccb0c04b16844fe8e798c4487bca83ee5f27a08e579"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/a367f85efe8027bf8ef2db41cc48ec2fd3d60582/thesis_archive/data/innovation1/source/A0_official_metrics_per_structure.csv": {
+    "bytes": 100261,
+    "sha256": "67661edf112c8593b3cf55c854a0c993017bff8e438e7ca2ff71b84d999ae2e1"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/a367f85efe8027bf8ef2db41cc48ec2fd3d60582/thesis_archive/reports/innovation1/formal_final_report.json": {
+    "bytes": 5905,
+    "sha256": "becc028c5b1fbda9035be71345639da61d6e3eef96bb9968a0b3079d1c2f0b2b"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/a367f85efe8027bf8ef2db41cc48ec2fd3d60582/thesis_archive/reports/innovation1/formal_final_report.md": {
+    "bytes": 1499,
+    "sha256": "d9ccaa05679c5871f7bcc4d8ae0eb5615a45f7540a3f86b9867f17ea45ded7b0"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/a367f85efe8027bf8ef2db41cc48ec2fd3d60582/thesis_archive/configs/adaptive_cfg_final.yaml": {
+    "bytes": 298,
+    "sha256": "a5420d1a99d9ab557604a26b79cc429c6b1e6d018e11f6ce5372e3aef9b8676a"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/a367f85efe8027bf8ef2db41cc48ec2fd3d60582/thesis_archive/experiments/innovation1_adaptive_cfg/experiment_manifest.json": {
+    "bytes": 864,
+    "sha256": "dcb6d601d1d081b533ed807858a0629ee8486158f29c8b56934586140fd078cb"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/d91598b4b5bdca7dcb51de1be4c4d1d83cd26386/reports/q3_e3_pcr/formal256/formal_frozen_manifest.json": {
+    "bytes": 3406,
+    "sha256": "16d0cf1e7878e4d42faa6067e75090424c75f583c15d55e6bf064e52f3a5cd2f"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/d91598b4b5bdca7dcb51de1be4c4d1d83cd26386/reports/q3_e3_pcr/formal256/final_summary.json": {
+    "bytes": 22760,
+    "sha256": "79f53b07bb937e939358e16d29e786be63c49c573323dd888af4c782ff08eef1"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/d91598b4b5bdca7dcb51de1be4c4d1d83cd26386/reports/q3_e3_pcr/formal256/primary_statistics.json": {
+    "bytes": 2445,
+    "sha256": "97d789e1a751c349e2b3ffaa3e169dde578746a8bdb1f73c157b96b83cc460cb"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/d91598b4b5bdca7dcb51de1be4c4d1d83cd26386/reports/q3_e3_pcr/formal256/gate_mechanism_summary.json": {
+    "bytes": 3602,
+    "sha256": "82e9551bfedd11978957df63b2d52754d1f15662a239c9a5153a52c77a3a9132"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/d91598b4b5bdca7dcb51de1be4c4d1d83cd26386/reports/q3_e3_pcr/formal256/formal_seed_audit.json": {
+    "bytes": 738,
+    "sha256": "eb1406731bb2f67b58a47d6cad601704f1757a951c6bf5a53a8f134aa0c090ea"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/d91598b4b5bdca7dcb51de1be4c4d1d83cd26386/reports/q3_e3_pcr/formal256/quality_summary.json": {
+    "bytes": 8623,
+    "sha256": "9fe691e07072380f582ffbcc81c632585a2759fe99c951fcd2194bfc2b1496dc"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/d91598b4b5bdca7dcb51de1be4c4d1d83cd26386/reports/q3_e3_pcr/formal256/artifacts/results/refinement_manifest.csv": {
+    "bytes": 205649,
+    "sha256": "9662dd8f0828f3acc2fd9b9f878f3d40299514589a981a2fab70f67bbd182d3c"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/d91598b4b5bdca7dcb51de1be4c4d1d83cd26386/reports/q3_e3_pcr/formal256/artifacts/results/refinement_summary.json": {
+    "bytes": 1494,
+    "sha256": "f890e07e07c2e7ac2b3b6c3280c797b1274d859080cb23450a30766ac4ceb806"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/d91598b4b5bdca7dcb51de1be4c4d1d83cd26386/reports/q3_e3_pcr/formal256/C0/official_metrics_per_structure.csv": {
+    "bytes": 78040,
+    "sha256": "0bd3617f60c9b36f9e576b016d19d92a7b050993aceeaf718d537e2fb9e8bb61"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/d91598b4b5bdca7dcb51de1be4c4d1d83cd26386/reports/q3_e3_pcr/formal256/ALWAYS_ON/official_metrics_per_structure.csv": {
+    "bytes": 79927,
+    "sha256": "2a976ff9a3a9be72bdcc8618a434d505dc41dd0f912fd8ffa38241490ce2e815"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/sources/d91598b4b5bdca7dcb51de1be4c4d1d83cd26386/reports/q3_e3_pcr/formal256/Q3_E3_PCR/official_metrics_per_structure.csv": {
+    "bytes": 79835,
+    "sha256": "90ecf6ee2361f7c9dfacd4e0a1e5ee61028d104ac89f1de04ac06bbca6055e02"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/__pycache__/test_final_statistics.cpython-310-pytest-9.1.1.pyc": {
+    "bytes": 7257,
+    "sha256": "0222401058ae4f91258c01c4e28b63ac975d9669c92dc4a3f668f8d8c26d5052"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/__pycache__/collect_results.cpython-310.pyc": {
+    "bytes": 25579,
+    "sha256": "5f41d23d5328e6d5b2ef8a95ee9708321db696ac75362b56f08601ce714efc9d"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/__pycache__/make_plots.cpython-310.pyc": {
+    "bytes": 9843,
+    "sha256": "1435e5ff75743e103dc19d46bee13064631f00d44239260dcb070f159f2eeb27"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/__pycache__/make_reports.cpython-310.pyc": {
+    "bytes": 39721,
+    "sha256": "d69050a6fac31f756a91079d59726e69ae9aad643084f2eaac764884d7b39c73"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/__pycache__/final_audit.cpython-310.pyc": {
+    "bytes": 9805,
+    "sha256": "0a452e7592efa3aa66e91319001f1449986a4e9e5f12a010d75ad9b1553e9324"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/final_thesis_results/__pycache__/finish_pipeline.cpython-310.pyc": {
+    "bytes": 1978,
+    "sha256": "ea2834d75c8c4bbf8c8177e77e0d911971aea8044460860b3f97493554e677da"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/thesis/final_materials/chapter3_innovation1.md": {
+    "bytes": 20976,
+    "sha256": "a2e0951bec8dccb1774713dd4b115c437e3b46d0bac3ed0d56a4a8fa27fc8af6"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/thesis/final_materials/chapter4_innovation2.md": {
+    "bytes": 43390,
+    "sha256": "76f18915bd368f198f7a1c9f3df97e1a3a3b5d170f4b509b57df348f017e526c"
+  },
+  "/mnt/datasets-livsyn/dxl/mattergen_v1/thesis/final_materials/chapter5_experiments.md": {
+    "bytes": 52259,
+    "sha256": "860effd5abe9534e99032aad277b59d24f102523a779e41e3b4660ec2d720713"
+  }
+}

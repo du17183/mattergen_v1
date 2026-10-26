@@ -1,0 +1,384 @@
+{
+  "FP_PC_MOTIVATED": "NO",
+  "absolute_candidate_infeasibility": {
+    "not_used_for_gate": true,
+    "row_fraction": 0.6275703125,
+    "trajectory_fraction": 1.0
+  },
+  "adaptive_cfg_used": false,
+  "dft_verified": false,
+  "diagnostic": "FAIL",
+  "diagnostic_only_no_proposals_modified": true,
+  "gate": {
+    "Ehull_absolute_worse_required_ev_atom": 0.02,
+    "RMSD_relative_worse_required": 0.25,
+    "maxF_relative_worse_required": 0.25,
+    "quality_association_observed": false,
+    "quality_association_required": true,
+    "rate_observed": 1.0,
+    "rate_required": 0.2
+  },
+  "gate_reason": "violation/no-violation outcome comparison is not estimable",
+  "p0_status": "NOT_RUN_DIAGNOSTIC_FAIL",
+  "proposal_entry_events": {
+    "corrector": 3993,
+    "distance": 5264,
+    "predictor": 1931,
+    "total": 5924,
+    "volume": 966
+  },
+  "replay_equivalence": {
+    "all_numerically_equivalent": true,
+    "atomic_numbers_exact": true,
+    "formula_exact": true,
+    "max_abs_cartesian_position_difference_angstrom": 5.800000000277805e-07,
+    "max_abs_cell_difference_angstrom": 6.273692183533797e-07,
+    "max_abs_periodic_fractional_position_difference": 3.76183006967068e-09,
+    "numerical_equivalence_tolerance": {
+      "cell_angstrom": 1e-05,
+      "fractional_position": 1e-07
+    },
+    "trajectories": 64
+  },
+  "schema_version": 1,
+  "secondary_burden_correlations": {
+    "all": {
+      "corrector_violation_count": {
+        "final_Ehull": {
+          "gate_metric": false,
+          "n": 64,
+          "pearson": -0.21431370152991958,
+          "spearman": -0.07928819831640388
+        },
+        "final_RMSD": {
+          "gate_metric": false,
+          "n": 64,
+          "pearson": -0.14758536707861597,
+          "spearman": -0.28208684276501655
+        },
+        "final_maxF": {
+          "gate_metric": false,
+          "n": 64,
+          "pearson": -0.36810742270673746,
+          "spearman": -0.4888522799143965
+        }
+      },
+      "predictor_violation_count": {
+        "final_Ehull": {
+          "gate_metric": false,
+          "n": 64,
+          "pearson": -0.20916139806846,
+          "spearman": -0.040181903802723774
+        },
+        "final_RMSD": {
+          "gate_metric": false,
+          "n": 64,
+          "pearson": -0.11923280396214335,
+          "spearman": -0.2685937625538904
+        },
+        "final_maxF": {
+          "gate_metric": false,
+          "n": 64,
+          "pearson": -0.33383627925480375,
+          "spearman": -0.44410854453797216
+        }
+      },
+      "violation_count": {
+        "final_Ehull": {
+          "gate_metric": false,
+          "n": 64,
+          "pearson": -0.2183990152317426,
+          "spearman": -0.06420884070336529
+        },
+        "final_RMSD": {
+          "gate_metric": false,
+          "n": 64,
+          "pearson": -0.141244046625068,
+          "spearman": -0.28536733099512934
+        },
+        "final_maxF": {
+          "gate_metric": false,
+          "n": 64,
+          "pearson": -0.3657420358448026,
+          "spearman": -0.48573392617681327
+        }
+      }
+    },
+    "calibration": {
+      "corrector_violation_count": {
+        "final_Ehull": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": -0.306483638675112,
+          "spearman": -0.11497204838764712
+        },
+        "final_RMSD": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": -0.34189843405878706,
+          "spearman": -0.5377774064259931
+        },
+        "final_maxF": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": -0.4852355541396826,
+          "spearman": -0.6808472339128129
+        }
+      },
+      "predictor_violation_count": {
+        "final_Ehull": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": -0.3332590232880894,
+          "spearman": -0.14597471492082892
+        },
+        "final_RMSD": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": -0.33358331371318656,
+          "spearman": -0.5502980862711113
+        },
+        "final_maxF": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": -0.5148224328543063,
+          "spearman": -0.6913626573511621
+        }
+      },
+      "violation_count": {
+        "final_Ehull": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": -0.3252436176698643,
+          "spearman": -0.1265358709740854
+        },
+        "final_RMSD": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": -0.34832558272255926,
+          "spearman": -0.5619441214246576
+        },
+        "final_maxF": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": -0.5100743543867623,
+          "spearman": -0.7052999416903367
+        }
+      }
+    },
+    "validation": {
+      "corrector_violation_count": {
+        "final_Ehull": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": -0.10732695372270808,
+          "spearman": -0.059411393425195635
+        },
+        "final_RMSD": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": -0.10158949261863938,
+          "spearman": -0.09607798225545262
+        },
+        "final_maxF": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": -0.25366134985521505,
+          "spearman": -0.31777760742550626
+        }
+      },
+      "predictor_violation_count": {
+        "final_Ehull": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": 0.026286214763948476,
+          "spearman": 0.09602511623645865
+        },
+        "final_RMSD": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": -0.0559426102583202,
+          "spearman": -0.018946013140001956
+        },
+        "final_maxF": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": -0.1414186350971049,
+          "spearman": -0.19847638747918125
+        }
+      },
+      "violation_count": {
+        "final_Ehull": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": -0.06222215350033153,
+          "spearman": 0.0005499037691503541
+        },
+        "final_RMSD": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": -0.08791797622783804,
+          "spearman": -0.04646045083136396
+        },
+        "final_maxF": {
+          "gate_metric": false,
+          "n": 32,
+          "pearson": -0.22014728787057725,
+          "spearman": -0.26157089285918506
+        }
+      }
+    }
+  },
+  "surrogate_property_eval": true,
+  "thresholds": {
+    "VN_high_angstrom3_per_atom": 57.98527210297675,
+    "VN_low_angstrom3_per_atom": 9.25793082239252,
+    "d_min_floor_angstrom": 1.3326659867404236,
+    "frozen_before_outcomes": true
+  },
+  "timing": {
+    "corrector_early": {
+      "event_count": 1484,
+      "trajectory_count": 63
+    },
+    "corrector_late": {
+      "event_count": 663,
+      "trajectory_count": 61
+    },
+    "corrector_mid": {
+      "event_count": 1846,
+      "trajectory_count": 64
+    },
+    "predictor_early": {
+      "event_count": 1170,
+      "trajectory_count": 63
+    },
+    "predictor_late": {
+      "event_count": 297,
+      "trajectory_count": 53
+    },
+    "predictor_mid": {
+      "event_count": 464,
+      "trajectory_count": 64
+    }
+  },
+  "trajectory_results": {
+    "all": {
+      "any_violation_rate": 1.0,
+      "comparison": {
+        "comparison_estimable": false,
+        "metrics": {
+          "final_Ehull": {
+            "absolute_mean_difference": null,
+            "no_violation_mean": null,
+            "no_violation_median": null,
+            "relative_mean_worse": null,
+            "violation_mean": 0.07896139885396793,
+            "violation_median": 0.04949737156041095
+          },
+          "final_RMSD": {
+            "absolute_mean_difference": null,
+            "no_violation_mean": null,
+            "no_violation_median": null,
+            "relative_mean_worse": null,
+            "violation_mean": 0.03222878935618759,
+            "violation_median": 0.0035495026196235
+          },
+          "final_maxF": {
+            "absolute_mean_difference": null,
+            "no_violation_mean": null,
+            "no_violation_median": null,
+            "relative_mean_worse": null,
+            "violation_mean": 0.15196987381386862,
+            "violation_median": 0.08852919936180109
+          }
+        },
+        "no_violation_n": 0,
+        "violation_n": 64
+      },
+      "corrector_violation_rate": 1.0,
+      "n": 64,
+      "predictor_violation_rate": 1.0
+    },
+    "calibration": {
+      "any_violation_rate": 1.0,
+      "comparison": {
+        "comparison_estimable": false,
+        "metrics": {
+          "final_Ehull": {
+            "absolute_mean_difference": null,
+            "no_violation_mean": null,
+            "no_violation_median": null,
+            "relative_mean_worse": null,
+            "violation_mean": 0.10685078828052053,
+            "violation_median": 0.051846026975586906
+          },
+          "final_RMSD": {
+            "absolute_mean_difference": null,
+            "no_violation_mean": null,
+            "no_violation_median": null,
+            "relative_mean_worse": null,
+            "violation_mean": 0.022659675692745677,
+            "violation_median": 0.0035495026196235
+          },
+          "final_maxF": {
+            "absolute_mean_difference": null,
+            "no_violation_mean": null,
+            "no_violation_median": null,
+            "relative_mean_worse": null,
+            "violation_mean": 0.16915064847853495,
+            "violation_median": 0.08726934343576426
+          }
+        },
+        "no_violation_n": 0,
+        "violation_n": 32
+      },
+      "corrector_violation_rate": 1.0,
+      "n": 32,
+      "predictor_violation_rate": 1.0
+    },
+    "validation": {
+      "any_violation_rate": 1.0,
+      "comparison": {
+        "comparison_estimable": false,
+        "metrics": {
+          "final_Ehull": {
+            "absolute_mean_difference": null,
+            "no_violation_mean": null,
+            "no_violation_median": null,
+            "relative_mean_worse": null,
+            "violation_mean": 0.05107200942741532,
+            "violation_median": 0.0355072857588707
+          },
+          "final_RMSD": {
+            "absolute_mean_difference": null,
+            "no_violation_mean": null,
+            "no_violation_median": null,
+            "relative_mean_worse": null,
+            "violation_mean": 0.0417979030196295,
+            "violation_median": 0.00370810571408595
+          },
+          "final_maxF": {
+            "absolute_mean_difference": null,
+            "no_violation_mean": null,
+            "no_violation_median": null,
+            "relative_mean_worse": null,
+            "violation_mean": 0.1347890991492022,
+            "violation_median": 0.08982582762837404
+          }
+        },
+        "no_violation_n": 0,
+        "violation_n": 32
+      },
+      "corrector_violation_rate": 1.0,
+      "n": 32,
+      "predictor_violation_rate": 1.0
+    }
+  },
+  "violation_burden": {
+    "max": 175,
+    "mean": 92.5625,
+    "median": 82.0,
+    "min": 28
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "A0_commit": "5de00419eea2d8a9be303638f2db8ece15a22366",
+  "AUDIT": "PASS",
+  "adaptive_controller_byte_identical": true,
+  "historical_Formal32_metrics_reproduced": {
+    "absolute_ci95": [
+      0.03910137983718507,
+      0.05861850774347246
+    ],
+    "absolute_improvement": 0.04874453257144705,
+    "baseline": "C0",
+    "baseline_mean": 0.18347236755422827,
+    "bootstrap_resamples": 20000,
+    "bootstrap_seed": 20260915,
+    "losses": 0,
+    "method": "F0",
+    "method_mean": 0.1347278349827812,
+    "metric": "maxF_ev_per_a",
+    "n_pairs": 32,
+    "relative_ci95": [
+      0.14209062097059347,
+      0.5274921717370179
+    ],
+    "relative_improvement": 0.26567778691273397,
+    "ties": 0,
+    "win_binomial_one_sided_p": 2.3283064365386963e-10,
+    "wins": 32
+  },
+  "historical_analysis_sources_unchanged": true,
+  "multi_field_RMS_AST_identical": true,
+  "new_cohort_outcomes_not_used": true,
+  "unaccelerated_score_AST_identical_after_removing_disabled_gate": true
+}

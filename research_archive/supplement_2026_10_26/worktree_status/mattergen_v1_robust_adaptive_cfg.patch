@@ -1,0 +1,74 @@
+diff --git a/mattergen/diffusion/sampling/classifier_free_guidance.py b/mattergen/diffusion/sampling/classifier_free_guidance.py
+index 7a7d1bb..3c3af02 100644
+--- a/mattergen/diffusion/sampling/classifier_free_guidance.py
++++ b/mattergen/diffusion/sampling/classifier_free_guidance.py
+@@ -36,6 +36,21 @@ TRACE_FIELD_NAMES = (
+     "adaptive_multiplier",
+     "final_guidance",
+     "fallback_reason",
++    "aggregation",
++    "z_atomic",
++    "z_position",
++    "z_cell",
++    "z_mean",
++    "z_median",
++    "z_ema",
++    "field_std",
++    "field_range",
++    "signal_confidence",
++    "agreement_confidence",
++    "confidence",
++    "target_guidance",
++    "slew_limited",
++    "fallback_to_base",
+ )
+ 
+ 
+@@ -215,6 +230,21 @@ class GuidedPredictorCorrector(PredictorCorrector):
+                 "adaptive_multiplier": decision["adaptive_multiplier"],
+                 "final_guidance": decision["final_guidance"],
+                 "fallback_reason": decision["fallback_reason"],
++                "aggregation": decision.get("aggregation"),
++                "z_atomic": decision.get("z_atomic"),
++                "z_position": decision.get("z_position"),
++                "z_cell": decision.get("z_cell"),
++                "z_mean": decision.get("z_mean"),
++                "z_median": decision.get("z_median"),
++                "z_ema": decision.get("z_ema"),
++                "field_std": decision.get("field_std"),
++                "field_range": decision.get("field_range"),
++                "signal_confidence": decision.get("signal_confidence"),
++                "agreement_confidence": decision.get("agreement_confidence"),
++                "confidence": decision.get("confidence"),
++                "target_guidance": decision.get("target_guidance"),
++                "slew_limited": decision.get("slew_limited"),
++                "fallback_to_base": decision.get("fallback_to_base"),
+             }
+         )
+ 
+diff --git a/mattergen/diffusion/sampling/guidance_schedule.py b/mattergen/diffusion/sampling/guidance_schedule.py
+index 412d00f..f370074 100644
+--- a/mattergen/diffusion/sampling/guidance_schedule.py
++++ b/mattergen/diffusion/sampling/guidance_schedule.py
+@@ -67,6 +67,21 @@ class GuidanceDecision:
+     adaptive_multiplier: float
+     final_guidance: float
+     fallback_reason: str | None
++    aggregation: str | None = None
++    z_atomic: float | None = None
++    z_position: float | None = None
++    z_cell: float | None = None
++    z_mean: float | None = None
++    z_median: float | None = None
++    z_ema: float | None = None
++    field_std: float | None = None
++    field_range: float | None = None
++    signal_confidence: float | None = None
++    agreement_confidence: float | None = None
++    confidence: float | None = None
++    target_guidance: float | None = None
++    slew_limited: bool = False
++    fallback_to_base: bool = False
+ 
+     def as_dict(self) -> dict[str, float | str | None]:
+         return asdict(self)

@@ -1,0 +1,58 @@
+experiment: fp_pc_p0
+stage: B0_proposal_violation_diagnostic
+frozen_at: '2026-09-13T20:30:00+08:00'
+worktree: /mnt/datasets-livsyn/dxl/mattergen_v1_fppc
+branch: experiment/fp-pc-p0
+mattergen_head: 1af301c5e534ff6b9b9f96ea5dab48036d9c46af
+baseline:
+  model: official_dft_mag_density_full_ft
+  checkpoint: /mnt/datasets-livsyn/dxl/mattergen_v1/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt
+  checkpoint_sha256: 01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e
+  target_dft_mag_density: 0.2
+  cfg: 2.0
+  guidance_schedule: constant
+  adaptive_cfg: false
+  diffusion_steps: 1000
+  corrector_steps_per_timestep: 1
+reference_region:
+  source: official MatterGen Alex-MP training split
+  archive: /mnt/datasets-livsyn/dxl/mattergen_v1/.cache/datasets/alex_mp_20.zip
+  lfs_pointer_sha256: 6688e652e45fac4ac8b016dbc4a3280afde9ba687bdacfd8c676775ed19b6228
+  member: alex_mp_20/train.csv
+  reservoir_seed: 20260913
+  reservoir_size: 4096
+  eligibility: finite dft_mag_density and 1-20 sites
+  quantiles: {d_min_floor: 0.005, VN_low: 0.005, VN_high: 0.995}
+  heldout_outcomes_used: false
+diagnostic:
+  historical_seed_start: 99000
+  historical_seed_end: 99063
+  calibration: [99000, 99031]
+  validation: [99032, 99063]
+  replay_deterministic: true
+  trace_frequency: every_reverse_step
+  observations_per_trajectory: 2000
+  stages: [corrector, predictor]
+  proposal_violation_definition: before_feasible_and_candidate_infeasible
+  reason: actionable_by_backtracking_and_not_trivial_early_noisy_state
+gate:
+  minimum_trajectory_violation_rate: 0.20
+  outcomes:
+    maxF_relative_worse: 0.25
+    RMSD_relative_worse: 0.25
+    Ehull_absolute_worse_ev_atom: 0.02
+  fail_if_trajectory_violation_rate_below: 0.10
+  fail_if_no_quality_association: true
+p0_seeds_if_and_only_if_diagnostic_go: [720000, 720015]
+fresh_seed_scan: no_reference_found_in_any_mattergen_worktree_or_experiment_text
+prohibited: [training, adaptive_cfg, atomic_change, force_optimization, energy_optimization,
+  rescue_sweep, Formal32, Formal256, A_plus_B]
+environment:
+  mattersim_version: 1.2.3
+  mattersim_checkpoint: /mnt/datasets-livsyn/dxl/mattergen_v1/checkpoints/official/mattersim/mattersim-v1.0.0-5M.pth
+  mattersim_checkpoint_sha256: e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5
+  chgnet_version: 0.3.0
+  chgnet_checkpoint: /mnt/datasets-livsyn/dxl/mattergen_v1/.cache/models/chgnet/0.3.0/chgnet_0.3.0_e29f68s314m37.pth.tar
+  chgnet_checkpoint_sha256: d14ab7c0f093efe64b60a7bcd540bca10e74fb7f46c86108a079af60524659d1
+  torch_version: 2.9.0+cu128
+  numpy_version: 2.2.6

@@ -1,0 +1,11 @@
+{
+  "cuda_visible_devices": "2",
+  "historical_entry": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/generate_frozen_pair.py",
+  "interpreter": "/mnt/datasets-livsyn/dxl/alm/.venv/bin/python",
+  "purpose": "historical-seed reproducibility gate only; no Timing",
+  "python_version": "3.10.12 (main, Jul 15 2026, 23:40:17) [GCC 11.4.0]",
+  "pythonhashseed": null,
+  "seed": 740000,
+  "torch_cuda_runtime": "12.8",
+  "torch_version": "2.9.0+cu128"
+}

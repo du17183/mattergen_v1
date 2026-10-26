@@ -1,0 +1,185 @@
+{
+  "all_train_losses_finite": true,
+  "architecture": {
+    "alpha_zero_initialized": true,
+    "architecture": "cell_atom_bidirectional_fusion_v1",
+    "block_index_zero_based": 2,
+    "bottleneck_dim": 128,
+    "hidden_dim": 512,
+    "mean_pooling": true,
+    "row_lattice_metric": "L_times_L_transpose",
+    "time_gate": false
+  },
+  "base_checkpoint_sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+  "base_model": "Official dft_mag_density Full FT",
+  "base_model_root": "/mnt/datasets-livsyn/dxl/mattergen_v1/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density",
+  "base_params": 48760443,
+  "baseline_validation": {
+    "loss_atomic_numbers": 0.11181062925606966,
+    "loss_cell": 0.007232134958030656,
+    "loss_pos": 1.3925794661045074,
+    "loss_total": 0.25830071046948433
+  },
+  "batch_size": 16,
+  "best_checkpoint_recomputed_validation": {
+    "loss_atomic_numbers": 0.11181044857949018,
+    "loss_cell": 0.007231334981042892,
+    "loss_pos": 1.3925776332616806,
+    "loss_total": 0.2582995481789112
+  },
+  "best_mechanism": {
+    "alpha_a2c": 0.0,
+    "alpha_c2a": -0.0009998405585065484,
+    "cell_feature_abs_max": 2.8016114234924316,
+    "delta_atom_rms": 0.061984460800886154,
+    "delta_cell_rms": 0.10174445062875748,
+    "hidden_rms": 0.6334543824195862,
+    "residual_hidden_ratio": 0.00010021356865763664,
+    "residual_rms": 6.348072201944888e-05
+  },
+  "best_step": 1,
+  "best_validation": {
+    "loss_atomic_numbers": 0.11181044857949018,
+    "loss_cell": 0.007231334981042892,
+    "loss_pos": 1.3925776332616806,
+    "loss_total": 0.2582995481789112
+  },
+  "changed_trainable_parameter_count": 13,
+  "checkpoint_path": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion/experiments/cell_atom_fusion_p0/checkpoints/best_fusion.pt",
+  "checkpoint_sha256": "64a067e123e91848e9fc9019925882c4002023fdec1a702962bc62c1f730f7bb",
+  "data_root": "/mnt/datasets-livsyn/dxl/mattergen_v1/experiments/global_transformer_adapter_p0/data/cache",
+  "elapsed_seconds": 0.8450968579854816,
+  "first_50_train_loss_mean": 0.21746200323104858,
+  "first_gradient_check": {
+    "all_gradients_finite": true,
+    "expected_staged_zero_init": "only alpha_c2a receives a nonzero first-step gradient; downstream MLPs begin receiving signal after that scalar leaves zero",
+    "frozen_parameters_with_gradient": [],
+    "nonzero_gradient_parameters": [
+      "alpha_c2a"
+    ],
+    "parameters_with_gradient": [
+      "alpha_a2c",
+      "alpha_c2a",
+      "atom_to_cell.0.bias",
+      "atom_to_cell.0.weight",
+      "atom_to_cell.2.bias",
+      "atom_to_cell.2.weight",
+      "cell_encoder.0.bias",
+      "cell_encoder.0.weight",
+      "cell_encoder.2.bias",
+      "cell_encoder.2.weight",
+      "cell_to_atom.0.bias",
+      "cell_to_atom.0.weight",
+      "cell_to_atom.2.bias",
+      "cell_to_atom.2.weight"
+    ]
+  },
+  "fixed_validation_noise": true,
+  "frozen_digest_after": "491a1c2a7f6edf71579a38a4c8d6231d66c4207ee5b3072a7165fabcf0addda4",
+  "frozen_digest_before": "491a1c2a7f6edf71579a38a4c8d6231d66c4207ee5b3072a7165fabcf0addda4",
+  "frozen_parameters_unchanged": true,
+  "fusion_unused": true,
+  "generation_allowed": true,
+  "identity_check": {
+    "alpha_a2c": 0.0,
+    "alpha_c2a": 0.0,
+    "fusion_repeat_max_abs_difference": {
+      "atomic_numbers": 0.0,
+      "cell": 0.0,
+      "pos": 0.0
+    },
+    "fusion_vs_official_max_abs_difference": {
+      "atomic_numbers": 0.0,
+      "cell": 0.0,
+      "pos": 0.0
+    },
+    "module_max_abs_difference": 0.0,
+    "official_repeat_max_abs_difference": {
+      "atomic_numbers": 0.0,
+      "cell": 0.0,
+      "pos": 0.0
+    },
+    "passed": true,
+    "required_max_abs_difference": 1e-05
+  },
+  "last_50_train_loss_mean": 0.21746200323104858,
+  "learning_rate": 0.001,
+  "mean_step_seconds": 0.4552908060140908,
+  "new_params": 330370,
+  "normalization": {
+    "all_finite": true,
+    "mean": [
+      3.3434693813323975,
+      3.454965591430664,
+      3.7011356353759766,
+      0.07432279735803604,
+      0.16099461913108826,
+      -0.027083266526460648
+    ],
+    "normalized_abs_max": 3.53619384765625,
+    "raw_feature_max": [
+      4.665902614593506,
+      4.740478515625,
+      5.7405524253845215,
+      4.066799163818359,
+      4.109710216522217,
+      3.8932533264160156
+    ],
+    "raw_feature_min": [
+      1.6069767475128174,
+      2.0854737758636475,
+      1.6812330484390259,
+      -3.6834986209869385,
+      -3.802476644515991,
+      -3.8824095726013184
+    ],
+    "sample_count": 1024,
+    "std": [
+      0.49106264114379883,
+      0.4972008764743805,
+      0.5819090008735657,
+      2.1556284427642822,
+      2.191765546798706,
+      2.2840735912323
+    ]
+  },
+  "peak_cuda_memory_mb": 819.38720703125,
+  "steps": 1,
+  "train_samples": 1024,
+  "trainable_parameter_names": [
+    "diffusion_module.model.gemnet.cell_atom_fusion.alpha_a2c",
+    "diffusion_module.model.gemnet.cell_atom_fusion.alpha_c2a",
+    "diffusion_module.model.gemnet.cell_atom_fusion.cell_encoder.0.weight",
+    "diffusion_module.model.gemnet.cell_atom_fusion.cell_encoder.0.bias",
+    "diffusion_module.model.gemnet.cell_atom_fusion.cell_encoder.2.weight",
+    "diffusion_module.model.gemnet.cell_atom_fusion.cell_encoder.2.bias",
+    "diffusion_module.model.gemnet.cell_atom_fusion.atom_to_cell.0.weight",
+    "diffusion_module.model.gemnet.cell_atom_fusion.atom_to_cell.0.bias",
+    "diffusion_module.model.gemnet.cell_atom_fusion.atom_to_cell.2.weight",
+    "diffusion_module.model.gemnet.cell_atom_fusion.atom_to_cell.2.bias",
+    "diffusion_module.model.gemnet.cell_atom_fusion.cell_to_atom.0.weight",
+    "diffusion_module.model.gemnet.cell_atom_fusion.cell_to_atom.0.bias",
+    "diffusion_module.model.gemnet.cell_atom_fusion.cell_to_atom.2.weight",
+    "diffusion_module.model.gemnet.cell_atom_fusion.cell_to_atom.2.bias"
+  ],
+  "trainable_parameter_tensor_count": 14,
+  "trainable_params": 330370,
+  "trainable_percent_of_base": 0.6775369124517593,
+  "training_signal_weak": true,
+  "validation_clearly_worse": false,
+  "validation_every": 1,
+  "validation_samples": 128,
+  "validation_signal": {
+    "cell_gate": false,
+    "position_gate": false,
+    "relative_improvement": {
+      "atomic_numbers": 1.6159159525130279e-06,
+      "cell": 0.00011061422282723507,
+      "pos": 1.316149542237839e-06,
+      "total": 4.499757553928332e-06
+    },
+    "total_gate": false,
+    "validation_go_signal": false
+  },
+  "weight_decay": 0.0001
+}

@@ -1,0 +1,46 @@
+{
+  "AUDIT": "PASS",
+  "branch": "experiment/mattersim-late-force-guidance-p0",
+  "checks": {
+    "all_adaptive_cfg_false": true,
+    "all_checkpoint_hashes_exact": true,
+    "all_common_sampling_contract_exact": true,
+    "all_f0_guidance_accepted_or_fallback_accounted": true,
+    "all_f0_guidance_events_20": true,
+    "all_f0_position_only": true,
+    "all_f0_trace_grids_exact": true,
+    "all_generation_success": true,
+    "all_p0_source_hashes_unchanged": true,
+    "all_score_calls_2000": true,
+    "formal256_not_run": true,
+    "fresh_seed_registration_exact": true,
+    "generation_rows_64": true,
+    "guidance_rows_640": true,
+    "no_partial_generation_directories": true,
+    "paired_formula_and_atom_count_match": true,
+    "paired_rows_32": true,
+    "physics_rows_64": true,
+    "property_rows_64": true,
+    "required_files_present": true,
+    "stash_count_5": true,
+    "surrogate_true_dft_false": true
+  },
+  "mattergen_head": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+  "plot_count": 5,
+  "pre_scientific_import_preflight": {
+    "failed_attempt_produced_scientific_output": false,
+    "formal_worktree_import_confirmed": true,
+    "registered_seed_replaced": false,
+    "status": "CORRECTED_BEFORE_SAMPLING",
+    "wrong_environment_detected": true
+  },
+  "property_wrapper_preflight": {
+    "cause": "concurrent relaxation had already created the same p0_structures symlink",
+    "evaluator_or_data_changed": false,
+    "failed_attempt_produced_property_output": false,
+    "status": "CORRECTED_BEFORE_INFERENCE"
+  },
+  "required_file_count": 14,
+  "stash_count_preserved": 5,
+  "verdict": "STRONG_CONFIRMED"
+}

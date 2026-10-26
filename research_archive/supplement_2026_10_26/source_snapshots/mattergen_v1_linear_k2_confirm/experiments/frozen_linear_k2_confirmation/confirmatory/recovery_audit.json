@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "reason": "monitor parsed a transient numeric_seed.partial directory while run_generation atomically committed a complete seed",
+  "experimental_failure": false,
+  "protocol_or_method_change": false,
+  "frozen_files_verified": true,
+  "recovery_wrapper_sha256": "72268490b0621b3fc574ff95000061333f295dd779adfbc63139762170a0e338",
+  "detected_complete_seed_count": 88,
+  "unfinished_seed_count": 40,
+  "assignments": {
+    "2": [
+      1154755706,
+      1372644356,
+      585192397,
+      1740319744,
+      503561030,
+      1469037731,
+      400388087,
+      1088918043,
+      711497115,
+      1409970496,
+      903247262,
+      1387907762,
+      372025781,
+      1170841488,
+      1248501326,
+      1759982991,
+      1764992273,
+      1259787370,
+      1135120359,
+      263758771,
+      464317656
+    ],
+    "4": [
+      1034872534,
+      733619889,
+      569516899,
+      267591305,
+      744673581,
+      1466259263,
+      577873712,
+      772472880,
+      1241024422,
+      572557870,
+      559564425,
+      867123762,
+      1280059606,
+      920336258,
+      1184299433,
+      1087318453,
+      835106233,
+      1231984524,
+      1259401256
+    ]
+  },
+  "archived_empty_partials": [
+    "1034872534.partial",
+    "1154755706.partial"
+  ],
+  "gpu_snapshot_before_resume": {
+    "0": {
+      "memory_used_mib": 63830,
+      "utilization_percent": 100
+    },
+    "1": {
+      "memory_used_mib": 63889,
+      "utilization_percent": 100
+    },
+    "2": {
+      "memory_used_mib": 3,
+      "utilization_percent": 0
+    },
+    "3": {
+      "memory_used_mib": 64093,
+      "utilization_percent": 100
+    },
+    "4": {
+      "memory_used_mib": 3,
+      "utilization_percent": 0
+    },
+    "5": {
+      "memory_used_mib": 63889,
+      "utilization_percent": 100
+    },
+    "6": {
+      "memory_used_mib": 39829,
+      "utilization_percent": 0
+    },
+    "7": {
+      "memory_used_mib": 86921,
+      "utilization_percent": 0
+    }
+  },
+  "started_utc": "2026-09-17T13:44:18.755501+00:00",
+  "status": "FROZEN_PIPELINE_EXITED",
+  "completed_utc": "2026-09-17T16:37:21.466093+00:00",
+  "final_complete_seed_count": 128,
+  "pipeline_returncode": 1,
+  "pipeline_exit_utc": "2026-09-17T16:41:04.381605+00:00"
+}

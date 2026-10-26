@@ -1,0 +1,13 @@
+cohort,baseline,method,metric,relative_improvement,relative_ci95_low,relative_ci95_high,wins,ties,losses,CI interpretation
+A1,C0,F0,MaxF,0.29812007131319407,0.21416622087171452,0.4087580889652716,254,0,2,Supplementary 20k paired percentile CI; original formal tests preserved separately.
+A1,C0,F0,Independent MaxF,0.14355171265635666,0.043186154812837114,0.27728809383907038,172,0,84,Supplementary 20k paired percentile CI; original formal tests preserved separately.
+A6,C0,F0,MaxF,0.23592137587684178,0.1644270408678703,0.3423000963410307,32,0,0,Supplementary 20k paired percentile CI; original formal tests preserved separately.
+A6,C0,F0,Independent MaxF,0.051671120006300537,0.011862902541023913,0.10400341245055647,23,0,9,Supplementary 20k paired percentile CI; original formal tests preserved separately.
+A6,C0,POST,MaxF,0.79794911429721505,0.63473051350883292,0.94905603992790311,32,0,0,Supplementary 20k paired percentile CI; original formal tests preserved separately.
+A6,C0,POST,Independent MaxF,0.041907462445783361,-0.051572425637741934,0.14819594807609068,20,0,12,Supplementary 20k paired percentile CI; original formal tests preserved separately.
+A6,F0,POST,MaxF,0.73556270346568753,0.55148748781402501,0.92532054497968008,32,0,0,Supplementary 20k paired percentile CI; original formal tests preserved separately.
+A6,F0,POST,Independent MaxF,-0.01029564507260609,-0.086028791243040234,0.063926470147973161,17,0,15,Supplementary 20k paired percentile CI; original formal tests preserved separately.
+Innovation1 Formal256,C0,A0,E-hull,0.02390914821936245,-0.081166482988548241,0.11938511230131586,137,1,118,Supplementary 20k paired percentile CI; original formal tests preserved separately.
+Innovation1 Formal256,C0,A0,Stable,0.14285714285714285,-0.032793659395745828,0.35789473684210527,54,163,39,Supplementary 20k paired percentile CI; original formal tests preserved separately.
+Innovation1 Formal256,C0,A0,NUS,0.15789473684210525,-0.11666666666666667,0.52272727272727271,40,185,31,Supplementary 20k paired percentile CI; original formal tests preserved separately.
+E3 Formal256,C0,E3-G,MaxF,0.23284421610800163,0.11634201471613217,0.33982227299320156,163,0,93,Supplementary 20k paired percentile CI; original formal tests preserved separately.

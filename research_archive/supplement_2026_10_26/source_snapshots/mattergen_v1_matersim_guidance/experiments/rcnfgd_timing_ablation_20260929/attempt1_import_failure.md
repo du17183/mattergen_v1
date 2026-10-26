@@ -1,0 +1,5 @@
+# Timing generation attempt 1: pre-generation compatibility failure
+
+Date: 2026-09-29. The first six-GPU launch attempted registered seeds 750000–750031, but every worker raised `AttributeError: module 'numpy' has no attribute 'math'` during `generator.prepare()` while instantiating the frozen GemNet. No worker reached prior sampling or generated a crystal. `timing_formal32/generation/` contains no structure output from this attempt. All 32 original per-seed logs and `timing_formal32/generation_status.json` are retained as a failed execution record.
+
+The successful historical seed-740000 ALM replay already included the local compatibility alias `np.math = math` before loading the model. The new wrapper was corrected to use precisely this alias; no checkpoint, seed, force formula, time threshold, acceptance rule, sampler implementation, or evaluator was changed. The corrected attempt uses distinct `*_attempt2.log` and `generation_status_attempt2.json` files. A model-loading preflight is required before attempt 2 starts.

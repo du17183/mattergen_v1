@@ -1,0 +1,39 @@
+experiment: adaptive_neighborhood_p0
+diagnostic_gate_passed: true
+diagnostic_summary: experiments/adaptive_neighborhood_p0/diagnostic_summary.json
+module:
+  normalized_timestep_input: true
+  architecture: 1_to_16_to_3
+  parameter_count: 83
+  bands_angstrom:
+    near: [0.0, 3.5]
+    mid: [3.5, 5.5]
+    far: [5.5, 7.0]
+  transform: 1 + 0.5 * tanh(logit)
+  output_range: [0.5, 1.5]
+  zero_initialized_final_layer: true
+  graph_topology_modified: false
+  cutoff_angstrom: 7.0
+  injection: shared gate at each interaction block immediately before AtomUpdateBlock edge aggregation
+training:
+  data_root: /mnt/datasets-livsyn/dxl/mattergen_v1/experiments/global_transformer_adapter_p0/data/cache
+  train_structures: 1024
+  validation_structures: 128
+  batch_size: 16
+  max_steps: 1000
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  validation_every: 100
+  trainable: timestep_radial_gate_only
+  early_stop_after: 500
+  early_stop_gate_identity_tolerance: 0.001
+evaluation:
+  heldout_seed_first: 96000
+  heldout_seed_last: 96031
+  count: 32
+  target_dft_mag_density: 0.2
+  cfg_scale: 2.0
+  diffusion_steps: 1000
+  adaptive_cfg: false
+  surrogate_property_eval: true
+  dft_verified: false

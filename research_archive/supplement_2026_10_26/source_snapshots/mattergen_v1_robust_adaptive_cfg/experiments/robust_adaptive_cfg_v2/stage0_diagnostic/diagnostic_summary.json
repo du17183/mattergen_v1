@@ -1,0 +1,197 @@
+{
+  "status": "COMPLETE_NO_NEW_GENERATION",
+  "event_count": 144000,
+  "seed_count_with_trace": 72,
+  "cohorts": {
+    "A5_64": {
+      "n": 64,
+      "harm_rate_ehull": 0.28125,
+      "harm_rate_stable": 0.03125,
+      "harm_rate_property": 0.421875,
+      "harm_rate_any": 0.515625,
+      "ehull_degradation": {
+        "mean": -0.029488934512275,
+        "median": -0.004304442215332251,
+        "p75": 0.02224952935253955,
+        "p90": 0.06756979724932068,
+        "p95": 0.07566072762299757,
+        "max": 0.6733646626171891
+      },
+      "property_degradation": {
+        "mean": -0.0008556410434899437,
+        "median": -0.0001260145647397501,
+        "p75": 0.002991198902687624,
+        "p90": 0.010153301736678333,
+        "p95": 0.019443897560260538,
+        "max": 0.027139765356880098
+      },
+      "stable_degradation": {
+        "mean": 0.15625,
+        "median": 0.0,
+        "p75": 0.0,
+        "p90": 1.0,
+        "p95": 1.0,
+        "max": 1.0
+      },
+      "cfg": {
+        "minimum": 1.1570102990006852,
+        "maximum": 5.0,
+        "mean_max_excursion": 1.927580813929107,
+        "mean_extreme_rate": 0.006859375
+      }
+    },
+    "minimal8": {
+      "n": 8,
+      "harm_rate_ehull": 0.625,
+      "harm_rate_stable": 0.375,
+      "harm_rate_property": 0.125,
+      "harm_rate_any": 0.625,
+      "ehull_degradation": {
+        "mean": 0.042506228986099,
+        "median": 0.051167070786946496,
+        "p75": 0.07044324394517472,
+        "p90": 0.1004450208699337,
+        "p95": 0.1143617940245746,
+        "max": 0.1282785671792155
+      },
+      "property_degradation": {
+        "mean": -0.011651117646861225,
+        "median": -0.00772247994282515,
+        "p75": -0.0016148962895428257,
+        "p90": 0.008402788236584646,
+        "p95": 0.01793047685711356,
+        "max": 0.0274581654776425
+      },
+      "stable_degradation": {
+        "mean": -0.375,
+        "median": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "cfg": {
+        "minimum": 1.284239527675747,
+        "maximum": 5.0,
+        "mean_max_excursion": 2.4030217470304054,
+        "mean_extreme_rate": 0.009437500000000001
+      }
+    }
+  },
+  "formal256_endpoint_only": {
+    "n": 256,
+    "traces_available": false,
+    "harm_rate_ehull": 0.3671875,
+    "harm_rate_stable": 0.15234375,
+    "harm_rate_nus": 0.12109375,
+    "ehull_degradation": {
+      "mean": -0.0034349449371532475,
+      "median": -0.00550420862784265,
+      "p75": 0.05840781779900504,
+      "p90": 0.14942382441156526,
+      "p95": 0.18688241152749557,
+      "max": 0.3899802145966654
+    },
+    "note": "Formal256 endpoints are retained, but controller traces were not archived."
+  },
+  "harm_definitions": {
+    "Harm_Ehull": "Adaptive E-hull - Base E-hull > 0.02 eV/atom",
+    "Harm_Stable": "Base Stable=1 and Adaptive Stable=0",
+    "Harm_Property": "Adaptive property absolute error > 1.10 * Base error"
+  },
+  "questions": {
+    "Q1_extreme_cfg": {
+      "harm_mean_extreme_rate": 0.006736842105263159,
+      "safe_mean_extreme_rate": 0.007602941176470588,
+      "harm_mean_max_excursion": 1.8722945728947757,
+      "safe_mean_max_excursion": 2.1012397734619013
+    },
+    "Q2_field_disagreement": {
+      "harm_mean": 1.5923329827320383,
+      "safe_mean": 1.3880596096926379
+    },
+    "Q3_timestep_dependence": {
+      "max_over_min_median_residual_ratio_by_field_phase": {
+        "corrector_atomic": 9.167241475788572,
+        "corrector_position": 18698.51741994913,
+        "corrector_cell": 50.73296024577344,
+        "predictor_atomic": 9.25079367961286,
+        "predictor_position": 18306.46581795743,
+        "predictor_cell": 49.398259688428105
+      }
+    },
+    "Q4_cohort_scale_shift": [
+      {
+        "phase": "corrector",
+        "field": "atomic",
+        "mean_abs_log_shift": 0.9405754758396989,
+        "max_abs_log_shift": 1.1827005843845955
+      },
+      {
+        "phase": "corrector",
+        "field": "position",
+        "mean_abs_log_shift": 0.8953721102482801,
+        "max_abs_log_shift": 1.3689015649629475
+      },
+      {
+        "phase": "corrector",
+        "field": "cell",
+        "mean_abs_log_shift": 0.6735388033588612,
+        "max_abs_log_shift": 1.217046262354366
+      },
+      {
+        "phase": "predictor",
+        "field": "atomic",
+        "mean_abs_log_shift": 0.9407373133856314,
+        "max_abs_log_shift": 1.1832052899007128
+      },
+      {
+        "phase": "predictor",
+        "field": "position",
+        "mean_abs_log_shift": 0.8995317833658245,
+        "max_abs_log_shift": 1.3825665512734144
+      },
+      {
+        "phase": "predictor",
+        "field": "cell",
+        "mean_abs_log_shift": 0.6782597014973912,
+        "max_abs_log_shift": 1.2182161889849423
+      }
+    ],
+    "Q5_predictor_corrector": {
+      "corrector": {
+        "residual_mean": 1.3794632451458912,
+        "ema": 1.3142778223174425,
+        "final_guidance": 2.0201097057959383
+      },
+      "predictor": {
+        "residual_mean": 1.3813102422763976,
+        "ema": 1.3156927716847813,
+        "final_guidance": 2.0202853913259946
+      }
+    },
+    "Q6_harm_stage": {
+      "harm_minus_safe_mean_abs_cfg_delta": {
+        "early": 0.0015500375168189529,
+        "middle": 0.0005327888832185879,
+        "late": -0.006310305583961839
+      },
+      "stage_gate_decision": "OFF"
+    }
+  },
+  "stage0_frozen_design_choices": {
+    "cfg_bounds": [
+      1.5,
+      2.5
+    ],
+    "slew_rate_cap": 0.05,
+    "stage_gating": "OFF",
+    "reason": "Use protocol-default conservative bounds; enable a stage gate only if one stage has >=60% of positive excess and >=0.02 absolute excess mean |CFG-2|."
+  },
+  "limitations": [
+    "Formal256 controller trajectories were not archived; only its paired endpoints are included.",
+    "Trace-linked diagnosis uses two previously observed cohorts (64 + 8) and is calibration/design evidence only.",
+    "Association between controller behavior and final surrogate outcomes is not causal evidence.",
+    "All quality/property values are surrogate evaluations; DFT_VERIFIED=False."
+  ]
+}

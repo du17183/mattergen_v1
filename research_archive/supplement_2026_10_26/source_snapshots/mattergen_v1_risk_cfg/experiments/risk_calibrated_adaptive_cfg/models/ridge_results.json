@@ -1,0 +1,39 @@
+{
+  "model_family": "ridge",
+  "implementation": "Ridge+LogisticRegression",
+  "ensemble_members": 5,
+  "validation_by_timestep": [
+    {
+      "sampling_step": 100,
+      "model_family": "ridge",
+      "validation_oracle_headroom": 0.012760868178787218,
+      "validation_oracle_non_keep_fraction": 0.7894736842105263,
+      "t0_action_from_train": "DOWN",
+      "selective_gate_feasible": false
+    },
+    {
+      "sampling_step": 250,
+      "model_family": "ridge",
+      "validation_oracle_headroom": 0.012252576812996319,
+      "validation_oracle_non_keep_fraction": 0.7368421052631579,
+      "t0_action_from_train": "KEEP",
+      "selective_gate_feasible": false
+    },
+    {
+      "sampling_step": 400,
+      "model_family": "ridge",
+      "validation_oracle_headroom": 0.010239026305488431,
+      "validation_oracle_non_keep_fraction": 0.7894736842105263,
+      "t0_action_from_train": "UP",
+      "selective_gate_feasible": false
+    },
+    {
+      "sampling_step": 550,
+      "model_family": "ridge",
+      "validation_oracle_headroom": 0.009302505172710068,
+      "validation_oracle_non_keep_fraction": 0.8421052631578947,
+      "t0_action_from_train": "DOWN",
+      "selective_gate_feasible": false
+    }
+  ]
+}

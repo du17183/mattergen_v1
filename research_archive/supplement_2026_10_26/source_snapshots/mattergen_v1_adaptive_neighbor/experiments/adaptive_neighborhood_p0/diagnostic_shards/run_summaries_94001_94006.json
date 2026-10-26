@@ -1,0 +1,128 @@
+[
+  {
+    "adaptive_cfg_used": false,
+    "captured_timesteps": [
+      0.8,
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02
+    ],
+    "dft_verified": false,
+    "diagnostic_seconds": 3.134017734002555,
+    "formula": "Gd4H",
+    "generation_seconds": 87.51687529298943,
+    "num_atoms": 5,
+    "peak_allocated_bytes": 265400320,
+    "sampling_score_calls": 2000,
+    "seed": 94001,
+    "sensitivity_rows": 72,
+    "success": true
+  },
+  {
+    "adaptive_cfg_used": false,
+    "captured_timesteps": [
+      0.8,
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02
+    ],
+    "dft_verified": false,
+    "diagnostic_seconds": 3.117150339996442,
+    "formula": "Fe",
+    "generation_seconds": 85.76563767099287,
+    "num_atoms": 4,
+    "peak_allocated_bytes": 258585600,
+    "sampling_score_calls": 2000,
+    "seed": 94002,
+    "sensitivity_rows": 72,
+    "success": true
+  },
+  {
+    "adaptive_cfg_used": false,
+    "captured_timesteps": [
+      0.8,
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02
+    ],
+    "dft_verified": false,
+    "diagnostic_seconds": 3.1262507339997683,
+    "formula": "Eu4N",
+    "generation_seconds": 85.52067292499123,
+    "num_atoms": 5,
+    "peak_allocated_bytes": 266033664,
+    "sampling_score_calls": 2000,
+    "seed": 94003,
+    "sensitivity_rows": 72,
+    "success": true
+  },
+  {
+    "adaptive_cfg_used": false,
+    "captured_timesteps": [
+      0.8,
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02
+    ],
+    "dft_verified": false,
+    "diagnostic_seconds": 3.1682165269739926,
+    "formula": "Fe5Co3",
+    "generation_seconds": 86.29830636200495,
+    "num_atoms": 8,
+    "peak_allocated_bytes": 288364032,
+    "sampling_score_calls": 2000,
+    "seed": 94004,
+    "sensitivity_rows": 72,
+    "success": true
+  },
+  {
+    "adaptive_cfg_used": false,
+    "captured_timesteps": [
+      0.8,
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02
+    ],
+    "dft_verified": false,
+    "diagnostic_seconds": 3.1799363129830454,
+    "formula": "Fe5Co",
+    "generation_seconds": 86.0333147799829,
+    "num_atoms": 6,
+    "peak_allocated_bytes": 275045376,
+    "sampling_score_calls": 2000,
+    "seed": 94005,
+    "sensitivity_rows": 72,
+    "success": true
+  },
+  {
+    "adaptive_cfg_used": false,
+    "captured_timesteps": [
+      0.8,
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02
+    ],
+    "dft_verified": false,
+    "diagnostic_seconds": 3.1480231409950648,
+    "formula": "Fe4Co",
+    "generation_seconds": 86.29711669799872,
+    "num_atoms": 10,
+    "peak_allocated_bytes": 302260224,
+    "sampling_score_calls": 2000,
+    "seed": 94006,
+    "sensitivity_rows": 72,
+    "success": true
+  }
+]

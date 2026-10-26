@@ -1,0 +1,242 @@
+[
+  {
+    "absolute_bootstrap_ci95": [
+      0.002044636337982118,
+      0.018415200284925607
+    ],
+    "absolute_improvement": 0.010295576965296135,
+    "baseline": "G0",
+    "baseline_mean": 0.12862659032737078,
+    "bootstrap_resamples": 20000,
+    "ci_excludes_zero_positive": true,
+    "formal256_evaluation_trigger": true,
+    "losses": 7,
+    "mean_relative_reduction": 0.08004236868203225,
+    "method": "G1",
+    "method_mean": 0.11833101336207465,
+    "n": 32,
+    "relative_bootstrap_ci95": [
+      0.01643113346090434,
+      0.13601545588130082
+    ],
+    "status": "PASS",
+    "ties": 0,
+    "wins": 25
+  },
+  {
+    "absolute_bootstrap_ci95": [
+      -0.007836731983331529,
+      -0.001192279968812755
+    ],
+    "absolute_improvement": -0.004498268013097802,
+    "baseline": "G0",
+    "baseline_mean": 0.12862659032737078,
+    "bootstrap_resamples": 20000,
+    "ci_excludes_zero_positive": false,
+    "formal256_evaluation_trigger": false,
+    "losses": 23,
+    "mean_relative_reduction": -0.03497152495179375,
+    "method": "G2",
+    "method_mean": 0.13312485834046858,
+    "n": 32,
+    "relative_bootstrap_ci95": [
+      -0.0671042247875074,
+      -0.009185839482779613
+    ],
+    "status": "FAIL",
+    "ties": 0,
+    "wins": 9
+  },
+  {
+    "absolute_bootstrap_ci95": [
+      -0.006087739089273765,
+      -3.107177943650827e-05
+    ],
+    "absolute_improvement": -0.0030070319163053444,
+    "baseline": "G0",
+    "baseline_mean": 0.12862659032737078,
+    "bootstrap_resamples": 20000,
+    "ci_excludes_zero_positive": false,
+    "formal256_evaluation_trigger": false,
+    "losses": 21,
+    "mean_relative_reduction": -0.023377996016625005,
+    "method": "G3",
+    "method_mean": 0.1316336222436761,
+    "n": 32,
+    "relative_bootstrap_ci95": [
+      -0.05143116015659118,
+      -0.0002480823018608849
+    ],
+    "status": "FAIL",
+    "ties": 0,
+    "wins": 11
+  },
+  {
+    "absolute_bootstrap_ci95": [
+      -0.022828608731234785,
+      -0.0071685773278212074
+    ],
+    "absolute_improvement": -0.014616624540728537,
+    "baseline": "G0",
+    "baseline_mean": 0.12862659032737078,
+    "bootstrap_resamples": 20000,
+    "ci_excludes_zero_positive": false,
+    "formal256_evaluation_trigger": false,
+    "losses": 28,
+    "mean_relative_reduction": -0.11363610357335446,
+    "method": "G4",
+    "method_mean": 0.14324321486809932,
+    "n": 32,
+    "relative_bootstrap_ci95": [
+      -0.16752013470487567,
+      -0.05920094934198539
+    ],
+    "status": "FAIL",
+    "ties": 0,
+    "wins": 4
+  },
+  {
+    "absolute_bootstrap_ci95": [
+      -0.02357907915301151,
+      -0.006693883492325762
+    ],
+    "absolute_improvement": -0.014793844978393936,
+    "baseline": "G1",
+    "baseline_mean": 0.11833101336207465,
+    "bootstrap_resamples": 20000,
+    "ci_excludes_zero_positive": false,
+    "formal256_evaluation_trigger": false,
+    "losses": 25,
+    "mean_relative_reduction": -0.12502085935093832,
+    "method": "G2",
+    "method_mean": 0.13312485834046858,
+    "n": 32,
+    "relative_bootstrap_ci95": [
+      -0.20614511408205669,
+      -0.055331083431136706
+    ],
+    "status": "FAIL",
+    "ties": 0,
+    "wins": 7
+  },
+  {
+    "absolute_bootstrap_ci95": [
+      -0.022259209271387692,
+      -0.004384090975964568
+    ],
+    "absolute_improvement": -0.01330260888160148,
+    "baseline": "G1",
+    "baseline_mean": 0.11833101336207465,
+    "bootstrap_resamples": 20000,
+    "ci_excludes_zero_positive": false,
+    "formal256_evaluation_trigger": false,
+    "losses": 26,
+    "mean_relative_reduction": -0.1124186170948907,
+    "method": "G3",
+    "method_mean": 0.1316336222436761,
+    "n": 32,
+    "relative_bootstrap_ci95": [
+      -0.19678537373252494,
+      -0.037143620863461804
+    ],
+    "status": "FAIL",
+    "ties": 0,
+    "wins": 6
+  },
+  {
+    "absolute_bootstrap_ci95": [
+      -0.040906336270032276,
+      -0.009515351912528723
+    ],
+    "absolute_improvement": -0.02491220150602467,
+    "baseline": "G1",
+    "baseline_mean": 0.11833101336207465,
+    "bootstrap_resamples": 20000,
+    "ci_excludes_zero_positive": false,
+    "formal256_evaluation_trigger": false,
+    "losses": 26,
+    "mean_relative_reduction": -0.2105297740483062,
+    "method": "G4",
+    "method_mean": 0.14324321486809932,
+    "n": 32,
+    "relative_bootstrap_ci95": [
+      -0.34695040833902363,
+      -0.07916159295043838
+    ],
+    "status": "FAIL",
+    "ties": 0,
+    "wins": 6
+  },
+  {
+    "absolute_bootstrap_ci95": [
+      -0.003178786012668037,
+      0.005988106414974104
+    ],
+    "absolute_improvement": 0.0014912360967924583,
+    "baseline": "G2",
+    "baseline_mean": 0.13312485834046858,
+    "bootstrap_resamples": 20000,
+    "ci_excludes_zero_positive": false,
+    "formal256_evaluation_trigger": true,
+    "losses": 17,
+    "mean_relative_reduction": 0.011201785416955065,
+    "method": "G3",
+    "method_mean": 0.1316336222436761,
+    "n": 32,
+    "relative_bootstrap_ci95": [
+      -0.02469295663581728,
+      0.046514231303558744
+    ],
+    "status": "INCONCLUSIVE",
+    "ties": 0,
+    "wins": 15
+  },
+  {
+    "absolute_bootstrap_ci95": [
+      -0.018368332303091324,
+      -0.0017588126834207059
+    ],
+    "absolute_improvement": -0.010118356527630734,
+    "baseline": "G2",
+    "baseline_mean": 0.13312485834046858,
+    "bootstrap_resamples": 20000,
+    "ci_excludes_zero_positive": false,
+    "formal256_evaluation_trigger": false,
+    "losses": 24,
+    "mean_relative_reduction": -0.07600651488960018,
+    "method": "G4",
+    "method_mean": 0.14324321486809932,
+    "n": 32,
+    "relative_bootstrap_ci95": [
+      -0.1280922369848526,
+      -0.014422862111408684
+    ],
+    "status": "FAIL",
+    "ties": 0,
+    "wins": 8
+  },
+  {
+    "absolute_bootstrap_ci95": [
+      -0.020612273316282757,
+      -0.0037944049662504906
+    ],
+    "absolute_improvement": -0.011609592624423194,
+    "baseline": "G3",
+    "baseline_mean": 0.1316336222436761,
+    "bootstrap_resamples": 20000,
+    "ci_excludes_zero_positive": false,
+    "formal256_evaluation_trigger": false,
+    "losses": 26,
+    "mean_relative_reduction": -0.08819625583904307,
+    "method": "G4",
+    "method_mean": 0.14324321486809932,
+    "n": 32,
+    "relative_bootstrap_ci95": [
+      -0.14657563707632004,
+      -0.030914132853543552
+    ],
+    "status": "FAIL",
+    "ties": 0,
+    "wins": 6
+  }
+]

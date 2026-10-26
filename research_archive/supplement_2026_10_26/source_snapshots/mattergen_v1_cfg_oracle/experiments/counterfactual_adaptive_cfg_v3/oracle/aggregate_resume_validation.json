@@ -1,0 +1,17 @@
+{
+  "observed": {
+    "short_structures": 768,
+    "full_structures": 192,
+    "base_structures": 32,
+    "online_features": 256,
+    "branch_manifest": 768
+  },
+  "expected": {
+    "short_structures": 768,
+    "full_structures": 192,
+    "base_structures": 32,
+    "online_features": 256,
+    "branch_manifest": 768
+  },
+  "valid": true
+}

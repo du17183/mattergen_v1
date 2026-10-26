@@ -1,0 +1,7 @@
+{
+  "ORACLE_PREDICTABILITY": "NOT_RUN",
+  "V3_P0": "NOT_RUN",
+  "V3_FORMAL256": "NOT_RUN",
+  "reason": "ORACLE_HEADROOM=FAIL; frozen stop rule applied",
+  "rescue_tuning": false
+}

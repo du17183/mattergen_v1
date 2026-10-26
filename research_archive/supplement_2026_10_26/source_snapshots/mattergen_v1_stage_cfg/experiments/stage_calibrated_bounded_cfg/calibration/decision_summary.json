@@ -1,0 +1,15 @@
+{
+  "STAGE0_DIAGNOSTIC": "COMPLETE",
+  "STAGE_SCHEDULE_CALIBRATION": "GO",
+  "STAGE_CFG_P0": "NOT_RUN",
+  "STAGE_BOUNDED_CFG_FORMAL256": "NOT_RUN",
+  "STAGE_SPECIFIC_EFFECT": "NOT_RUN",
+  "BOUNDED_PULSE_EFFECT": "NOT_RUN",
+  "INNOVATION1_FINAL_STATUS": "MIXED",
+  "calibration_n": 32,
+  "eligible_bounded_schedules": 1,
+  "selected_schedule_id": "S_T400_DM10_K100",
+  "best_constant_id": "C_G190",
+  "permanent_counterpart_id": "P_T400_DM10",
+  "stop_reason": null
+}

@@ -1,0 +1,16 @@
+{
+  "FP_PC_MOTIVATED": "NO",
+  "FP_PC_P0": "NOT_RUN_DIAGNOSTIC_FAIL",
+  "adaptive_cfg_used": false,
+  "candidate": "FP-PC",
+  "dft_verified": false,
+  "diagnostic": "FAIL",
+  "formal256_run": false,
+  "formal32_run": false,
+  "fresh_p0_seeds_consumed": [],
+  "next": "STOP_FP_PC_NO_RESCUE",
+  "p0_executed": false,
+  "reason": "violation/no-violation outcome comparison is not estimable",
+  "schema_version": 1,
+  "surrogate_property_eval": true
+}

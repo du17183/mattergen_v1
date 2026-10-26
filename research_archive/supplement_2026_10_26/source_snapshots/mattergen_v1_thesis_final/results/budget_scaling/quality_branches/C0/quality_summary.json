@@ -1,0 +1,27 @@
+{
+  "method": "C0",
+  "n": 128,
+  "n_input": 128,
+  "official_metrics": {
+    "avg_energy_above_hull_per_atom": 0.09425374193867879,
+    "avg_rmsd_from_relaxation": 0.04570883930897576,
+    "frac_novel_structures": 0.6875,
+    "frac_novel_unique_stable_structures": 0.3671875,
+    "frac_stable_structures": 0.625,
+    "frac_unique_structures": 1.0
+  },
+  "pre_relaxation_max_force_max": 2.877121925354004,
+  "pre_relaxation_max_force_mean": 0.2926149274362615,
+  "pre_relaxation_max_force_median": 0.16057493537664413,
+  "pre_relaxation_max_force_p95": 0.8660974293947218,
+  "precomputed_relaxation_dir": null,
+  "relaxation_batch_error": null,
+  "relaxation_device": "cuda",
+  "relaxation_failures": [],
+  "relaxation_mode": "batch",
+  "relaxation_seconds": 41.47138994582929,
+  "relaxation_seconds_per_structure": 0.3239952339517913,
+  "relaxation_steps_max": 683,
+  "relaxation_steps_mean": 48.5859375,
+  "relaxation_success_rate": 1.0
+}

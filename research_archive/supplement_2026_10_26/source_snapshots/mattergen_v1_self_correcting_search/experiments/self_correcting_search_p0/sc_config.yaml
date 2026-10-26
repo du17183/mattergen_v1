@@ -1,0 +1,46 @@
+experiment: single_proposal_self_correcting_search_p0
+gate: run_only_if_probe_checkpoint_probe_go_is_true
+base_sampling:
+  checkpoint_sha256: 01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e
+  property: dft_mag_density
+  target: 0.2
+  cfg: 2.0
+  guidance_schedule: constant
+  adaptive_cfg: false
+  diffusion_steps: 1000
+  corrector_steps_per_timestep: 1
+self_correction:
+  proposal_count: 1
+  proposal: ordinary_official_corrector_candidate
+  hidden_source: validation_selected_GemNetT_block_conditional_branch_atom_mean
+  reliable_max_t: read_from_frozen_probe_checkpoint
+  energy: absolute_probe_distance_to_target
+  score_delta: proposal_distance_minus_current_distance
+  acceptance_probability: min(1, exp(-score_delta / 0.01))
+  temperature: 0.01
+  rng: separate_deterministic_numpy_stream
+  proposal_transition_density_correction: false
+  strict_mala_claim: false
+heldout:
+  seeds: [98200, 98207]
+  pairing: same_seed_common_torch_random_numbers_B0_vs_S0
+  test_size: 8
+property_go:
+  mean_mag_mae_reduction_min: 0.15
+  improved_seed_count_min: 6
+  extra_hits_min: 1
+  validity_no_meaningful_degradation: true
+strong_go:
+  mean_mag_mae_reduction_min: 0.25
+  extra_hits_min: 2
+fail:
+  improvement_below: 0.08
+  improved_seed_count_at_most: 4
+  mismatch: probe_improves_but_CHGNet_does_not
+prohibitions:
+  best_of_3: true
+  hard_floor_or_ceiling: true
+  adaptive_cfg: true
+  probe_gradient: true
+  hidden_state_steering: true
+  lora_rl_adapter_or_mattergen_retraining: true

@@ -1,0 +1,51 @@
+{
+  "reason": "GPU 0 became occupied by unrelated PID 3105853 after generation",
+  "property_gpu": 1,
+  "quality_gpus": [
+    1,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "excluded_gpus": [
+    0,
+    2
+  ],
+  "observed_before_resume": {
+    "0": {
+      "memory_used_mib": 72,
+      "utilization_percent": 0
+    },
+    "1": {
+      "memory_used_mib": 3,
+      "utilization_percent": 0
+    },
+    "2": {
+      "memory_used_mib": 83319,
+      "utilization_percent": 0
+    },
+    "3": {
+      "memory_used_mib": 208,
+      "utilization_percent": 0
+    },
+    "4": {
+      "memory_used_mib": 3,
+      "utilization_percent": 0
+    },
+    "5": {
+      "memory_used_mib": 3,
+      "utilization_percent": 0
+    },
+    "6": {
+      "memory_used_mib": 3,
+      "utilization_percent": 0
+    },
+    "7": {
+      "memory_used_mib": 3,
+      "utilization_percent": 0
+    }
+  },
+  "scientific_protocol_changed": false
+}

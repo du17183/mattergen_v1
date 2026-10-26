@@ -1,0 +1,29 @@
+{
+  "chgnet_version": "0.3.0",
+  "device": "cuda",
+  "dft_verified": false,
+  "methods": {
+    "C0": {
+      "mag_hit_count": 25,
+      "mag_hit_rate": 0.78125,
+      "mag_mae": 0.0061277398869572,
+      "n": 32,
+      "valid_count": 32,
+      "valid_fraction": 1.0
+    },
+    "F0": {
+      "mag_hit_count": 25,
+      "mag_hit_rate": 0.78125,
+      "mag_mae": 0.00614777731805114,
+      "n": 32,
+      "valid_count": 32,
+      "valid_fraction": 1.0
+    }
+  },
+  "schema_version": 1,
+  "surrogate_calibration_mae": 0.001449,
+  "surrogate_calibration_pearson": 0.9499,
+  "surrogate_property_eval": true,
+  "target": 0.2,
+  "tau": 0.01
+}

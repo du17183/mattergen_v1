@@ -1,0 +1,29 @@
+{
+  "dft_verified": false,
+  "methods": {
+    "B0": {
+      "mag_hit_rate": 0.59375,
+      "mag_hits": 19,
+      "mag_mae": 0.011462024743388718,
+      "mean_mag_density": 0.19654515198526556,
+      "n": 32
+    },
+    "S-off": {
+      "mag_hit_rate": 0.625,
+      "mag_hits": 20,
+      "mag_mae": 0.011392097497147088,
+      "mean_mag_density": 0.19646087009902827,
+      "n": 32,
+      "paired_not_worse_count": 16
+    },
+    "S-on": {
+      "mag_hit_rate": 0.53125,
+      "mag_hits": 17,
+      "mag_mae": 0.012643973788643816,
+      "mean_mag_density": 0.20142427591081213,
+      "n": 32,
+      "paired_not_worse_count": 14
+    }
+  },
+  "surrogate_property_eval": true
+}

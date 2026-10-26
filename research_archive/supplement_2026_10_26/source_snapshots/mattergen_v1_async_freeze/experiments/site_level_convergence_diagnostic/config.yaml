@@ -1,0 +1,53 @@
+experiment: site_level_position_convergence_diagnostic
+frozen_protocol_date: '2026-09-12'
+project_root: /mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze
+source_diagnostic: /mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze/experiments/shared_field_dynamics
+base:
+  checkpoint: /mnt/datasets-livsyn/dxl/mattergen_v1/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt
+  checkpoint_sha256: 01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e
+  target_dft_mag_density: 0.2
+  guidance_scale: 2.0
+  guidance_schedule: constant
+  adaptive_cfg: false
+  diffusion_steps: 1000
+  corrector_steps_per_timestep: 1
+data:
+  reused_existing_trajectories: false
+  reason_for_rerun: existing CSV contains only structure-aggregated position RMS/max, not per-site clean estimates
+  reused_seed_cohort: [99000, 99063]
+  calibration_seeds: [99000, 99031]
+  validation_seeds: [99032, 99063]
+  reused_existing_final_quality_and_forces: true
+  recorded_clean_estimate_count_per_trajectory: 1000
+  analysis_observation_count_per_trajectory: 55
+  analysis_observation_schedule: same frozen 55 steps as shared_field_dynamics
+  archived_smoke_observation_count: 55
+signal:
+  estimate: wrapped clean-x0 from predictor-phase guided score after official corrector
+  distance: offline ASE find_mic using previous clean cell, float64
+  consecutive_observations: 3
+  convergence_forbidden_while_model_t_gt: 0.5
+threshold:
+  primary_rule: trajectory-balanced calibration late-tail t<=0.05 site displacement q90
+  primary_admissible_convergence_rate_min: 0.4
+  primary_admissible_early_fraction_max: 0.9
+  fallback_quantiles: [0.70, 0.75, 0.80, 0.85, 0.90, 0.95]
+  fallback_target_early_fraction: 0.50
+gate:
+  primary_site_spread: 0.10
+  primary_validation_fraction: 0.60
+  borderline_fraction: [0.40, 0.60]
+  auxiliary_max_min: 0.15
+  auxiliary_fraction: 0.50
+  early_t_min: 0.10
+  late_t_max: 0.05
+  mechanism_spearman_abs: 0.30
+measurement_noise_audit:
+  frozen_before_validation_analysis: true
+  transient_site: post_K3_below_threshold_fraction_lt_0.80
+  threshold_sensitivity_factors: [0.9, 1.1]
+  noise_driven_if_transient_fraction_ge: 0.50
+  and_strict_threshold_spread_gate_fraction_lt: 0.40
+evaluator:
+  surrogate_property_eval: true
+  dft_verified: false

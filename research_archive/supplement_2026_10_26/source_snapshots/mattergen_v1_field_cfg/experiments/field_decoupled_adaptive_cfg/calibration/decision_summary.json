@@ -1,0 +1,15 @@
+{
+  "FIELD_ATTRIBUTION_DIAGNOSTIC": "COMPLETE",
+  "FIELD_DECOUPLING_CALIBRATION": "FAIL",
+  "PROPERTY_FIELD": "MULTI",
+  "QUALITY_HARM_FIELD": "MULTI",
+  "FIELD_CFG_P0": "NOT_RUN",
+  "FIELD_DECOUPLED_CFG_FORMAL256": "NOT_RUN",
+  "FIELD_DECOUPLING_EFFECT": "NOT_SUPPORTED",
+  "FIELD_STAGE_EFFECT": "NOT_RUN",
+  "INNOVATION1_FINAL_STATUS": "MIXED",
+  "calibration_n": 48,
+  "eligible_policy_count": 0,
+  "selected_policy_id": null,
+  "stop_reason": "No field policy passed every frozen property, retention, physical-quality, and baseline gate."
+}

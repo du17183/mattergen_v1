@@ -1,0 +1,18 @@
+{
+  "historical_scan_roots": [
+    "experiments",
+    "diagnostics",
+    "research",
+    "thesis"
+  ],
+  "historical_scan_completed_before_selection": true,
+  "excluded_prefix_ranges": [90000, 91000, 92000, 93000],
+  "heldout_p0": {
+    "first": 95000,
+    "last": 95031,
+    "count": 32,
+    "purpose": "fresh paired B0/S-off/S-on generation"
+  },
+  "training_seed": 20260921,
+  "validation_seed": 20260922
+}

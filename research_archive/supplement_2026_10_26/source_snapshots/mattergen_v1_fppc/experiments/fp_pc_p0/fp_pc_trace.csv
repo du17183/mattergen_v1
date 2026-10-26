@@ -1,0 +1,2 @@
+status,reason,seed,timestep,stage,min_distance_before,min_distance_candidate,min_distance_after,VN_before,VN_candidate,VN_after,violated_distance,violated_volume,alpha_final,num_backtracks,fallback
+NOT_RUN_DIAGNOSTIC_FAIL,violation/no-violation outcome comparison is not estimable,,,,,,,,,,,,,,

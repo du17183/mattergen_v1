@@ -1,0 +1,167 @@
+[
+  {
+    "branch": "experiment/raab-sc-p0",
+    "commit": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+    "name": "mattergen_v1",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1",
+    "status_before": "?? experiments/dft_verification/\n?? experiments/equal_budget_online_vs_post/\n?? experiments/final_bounded_correction_audit/\n?? experiments/final_e3g_baseline_audit/\n?? experiments/final_force_direction_audit/\n?? experiments/final_independent_mlip_validation/\n?? experiments/final_innovation1_audit/\n?? experiments/final_interaction_analysis/\n?? experiments/final_thesis_results/\n?? experiments/innovation2_research_v2/\n?? experiments/physics_sampling_candidates_summary.md\n?? experiments/reference_preserved_budgeted_cfg/\n?? thesis/\n",
+    "tracked_changes": []
+  },
+  {
+    "branch": "experiment/adaptive-neighborhood-p0",
+    "commit": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+    "name": "mattergen_v1_adaptive_neighbor",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1_adaptive_neighbor",
+    "status_before": " M mattergen/adapter.py\n M mattergen/common/gemnet/gemnet.py\n M mattergen/common/gemnet/gemnet_ctrl.py\n M mattergen/common/gemnet/layers/interaction_block.py\n M mattergen/denoiser.py\n?? experiments/adaptive_neighborhood_p0/\n?? mattergen/adaptive_neighborhood.py\n",
+    "tracked_changes": [
+      "mattergen/adapter.py",
+      "mattergen/common/gemnet/gemnet.py",
+      "mattergen/common/gemnet/gemnet_ctrl.py",
+      "mattergen/common/gemnet/layers/interaction_block.py",
+      "mattergen/denoiser.py"
+    ]
+  },
+  {
+    "branch": "experiment/field-async-freeze-p0",
+    "commit": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+    "name": "mattergen_v1_async_freeze",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1_async_freeze",
+    "status_before": "?? experiments/field_async_candidates_final_comparison.json\n?? experiments/field_async_candidates_final_comparison.md\n?? experiments/field_async_freeze_p0/\n?? experiments/shared_field_dynamics/\n?? experiments/site_level_convergence_diagnostic/\n",
+    "tracked_changes": []
+  },
+  {
+    "branch": "experiment/cell-atom-fusion-p0",
+    "commit": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+    "name": "mattergen_v1_cell_atom_fusion",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1_cell_atom_fusion",
+    "status_before": " M mattergen/common/gemnet/gemnet_ctrl.py\n?? experiments/cell_atom_fusion_p0/\n?? experiments/innovation2_next_round_summary.md\n?? mattergen/cell_atom_fusion.py\n",
+    "tracked_changes": [
+      "mattergen/common/gemnet/gemnet_ctrl.py"
+    ]
+  },
+  {
+    "branch": "experiment/counterfactual-adaptive-cfg-v3",
+    "commit": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+    "name": "mattergen_v1_cfg_oracle",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1_cfg_oracle",
+    "status_before": "?? experiments/counterfactual_adaptive_cfg_v3/\n?? mattergen/diffusion/sampling/counterfactual_oracle.py\n?? mattergen/diffusion/tests/test_counterfactual_oracle.py\n",
+    "tracked_changes": []
+  },
+  {
+    "branch": "experiment/closed-loop-force-guidance-p0",
+    "commit": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+    "name": "mattergen_v1_closed_loop_guidance",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance",
+    "status_before": "?? experiments/closed_loop_force_guidance_p0/\n",
+    "tracked_changes": []
+  },
+  {
+    "branch": "experiment/field-decoupled-adaptive-cfg",
+    "commit": "fca6b8d90e869c8c9535d7e5910e606efd722fdf",
+    "name": "mattergen_v1_field_cfg",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_cfg",
+    "status_before": " M experiments/field_decoupled_adaptive_cfg/pipeline_status.json\n?? experiments/field_decoupled_adaptive_cfg/.matplotlib/\n?? experiments/field_decoupled_adaptive_cfg/calibration/decision_summary.json\n?? experiments/field_decoupled_adaptive_cfg/calibration/evaluated_results.csv\n?? experiments/field_decoupled_adaptive_cfg/calibration/evaluation_structures/\n?? experiments/field_decoupled_adaptive_cfg/calibration/field_mechanism.csv\n?? experiments/field_decoupled_adaptive_cfg/calibration/field_policy_ranking.csv\n?? experiments/field_decoupled_adaptive_cfg/calibration/final_report.md\n?? experiments/field_decoupled_adaptive_cfg/calibration/generation/\n?? experiments/field_decoupled_adaptive_cfg/calibration/generation_manifest.csv\n?? experiments/field_decoupled_adaptive_cfg/calibration/generation_summary.json\n?? experiments/field_decoupled_adaptive_cfg/calibration/harm_metrics.csv\n?? experiments/field_decoupled_adaptive_cfg/calibration/paired_results.csv\n?? experiments/field_decoupled_adaptive_cfg/calibration/pareto_front.csv\n?? experiments/field_decoupled_adaptive_cfg/calibration/policy_final_all.extxyz\n?? experiments/field_decoupled_adaptive_cfg/calibration/property_metrics.csv\n?? experiments/field_decoupled_adaptive_cfg/calibration/property_metrics_raw.csv\n?? experiments/field_decoupled_adaptive_cfg/calibration/property_summary.json\n?? experiments/field_decoupled_adaptive_cfg/calibration/quality/\n?? experiments/field_decoupled_adaptive_cfg/calibration/quality_metrics.csv\n?? experiments/field_decoupled_adaptive_cfg/calibration/selected_policy.json\n?? experiments/field_decoupled_adaptive_cfg/launch_gpu_audit.json\n?? experiments/field_decoupled_adaptive_cfg/plots/constant_vs_field_pulse.png\n?? experiments/field_decoupled_adaptive_cfg/plots/field_ehull_change.png\n?? experiments/field_decoupled_adaptive_cfg/plots/field_nus_change.png\n?? experiments/field_decoupled_adaptive_cfg/plots/field_property_gain.png\n?? experiments/field_decoupled_adaptive_cfg/plots/field_stable_change.png\n?? experiments/field_decoupled_adaptive_cfg/plots/global_vs_field_decoupled.png\n?? experiments/field_decoupled_adaptive_cfg/plots/property_vs_ehull_pareto.png\n?? experiments/field_decoupled_adaptive_cfg/plots/property_vs_stable_pareto.png\n",
+    "tracked_changes": [
+      "experiments/field_decoupled_adaptive_cfg/pipeline_status.json"
+    ]
+  },
+  {
+    "branch": "experiment/field-time-schedule-p0",
+    "commit": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+    "name": "mattergen_v1_field_schedule",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1_field_schedule",
+    "status_before": "?? experiments/field_time_schedule_p0/\n",
+    "tracked_changes": []
+  },
+  {
+    "branch": "experiment/fp-pc-p0",
+    "commit": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+    "name": "mattergen_v1_fppc",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1_fppc",
+    "status_before": "?? experiments/fp_pc_p0/\n",
+    "tracked_changes": []
+  },
+  {
+    "branch": "experiment/frozen-linear-k2-confirmation",
+    "commit": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+    "name": "mattergen_v1_linear_k2_confirm",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1_linear_k2_confirm",
+    "status_before": "?? experiments/frozen_linear_k2_confirmation/\n",
+    "tracked_changes": []
+  },
+  {
+    "branch": "experiment/mattersim-late-force-guidance-p0",
+    "commit": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+    "name": "mattergen_v1_matersim_guidance",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance",
+    "status_before": "?? .envs/\n?? experiments/adaptive_cfg_force_guidance_compatibility/\n?? experiments/innovation2_finalization/\n?? experiments/mattersim_equal_budget_post_generation/\n?? experiments/mattersim_force_direction_ablation/\n?? experiments/mattersim_late_force_guidance_formal256/\n?? experiments/mattersim_late_force_guidance_formal32/\n?? experiments/mattersim_late_force_guidance_p0/\n?? experiments/mattersim_trust_region_ablation/\n?? experiments/rcnfgd_timing_ablation_20260929/\n",
+    "tracked_changes": []
+  },
+  {
+    "branch": "experiment/risk-calibrated-adaptive-cfg",
+    "commit": "a4fda8a573ee0e372d3b53064e235ae87f0e670c",
+    "name": "mattergen_v1_risk_cfg",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1_risk_cfg",
+    "status_before": "?? experiments/risk_calibrated_adaptive_cfg/.matplotlib/\n?? experiments/risk_calibrated_adaptive_cfg/dataset/base_cfg2_final_all.extxyz\n?? experiments/risk_calibrated_adaptive_cfg/dataset/counterfactual_dataset.csv\n?? experiments/risk_calibrated_adaptive_cfg/dataset/evaluation_structures/\n?? experiments/risk_calibrated_adaptive_cfg/dataset/full_horizon_final_all.extxyz\n?? experiments/risk_calibrated_adaptive_cfg/dataset/generation/\n?? experiments/risk_calibrated_adaptive_cfg/dataset/generation_manifest.csv\n?? experiments/risk_calibrated_adaptive_cfg/dataset/generation_summary.json\n?? experiments/risk_calibrated_adaptive_cfg/dataset/online_features_raw.csv\n?? experiments/risk_calibrated_adaptive_cfg/dataset/property_metrics.csv\n?? experiments/risk_calibrated_adaptive_cfg/dataset/property_summary.json\n?? experiments/risk_calibrated_adaptive_cfg/dataset/quality/\n?? experiments/risk_calibrated_adaptive_cfg/dataset/treatment_effect_dataset.csv\n?? experiments/risk_calibrated_adaptive_cfg/features/\n?? experiments/risk_calibrated_adaptive_cfg/final_report.md\n?? experiments/risk_calibrated_adaptive_cfg/final_status.json\n?? experiments/risk_calibrated_adaptive_cfg/models/\n?? experiments/risk_calibrated_adaptive_cfg/offline/\n?? experiments/risk_calibrated_adaptive_cfg/p0/\n?? experiments/risk_calibrated_adaptive_cfg/pipeline_status.json\n?? experiments/risk_calibrated_adaptive_cfg/plots/\n?? experiments/risk_calibrated_adaptive_cfg/splits/\n",
+    "tracked_changes": []
+  },
+  {
+    "branch": "experiment/robust-adaptive-cfg-v2",
+    "commit": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+    "name": "mattergen_v1_robust_adaptive_cfg",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1_robust_adaptive_cfg",
+    "status_before": " M mattergen/diffusion/sampling/classifier_free_guidance.py\n M mattergen/diffusion/sampling/guidance_schedule.py\n?? experiments/robust_adaptive_cfg_v2/\n?? mattergen/diffusion/sampling/robust_guidance.py\n?? mattergen/diffusion/tests/test_robust_guidance.py\n",
+    "tracked_changes": [
+      "mattergen/diffusion/sampling/classifier_free_guidance.py",
+      "mattergen/diffusion/sampling/guidance_schedule.py"
+    ]
+  },
+  {
+    "branch": "experiment/calibrated-safe-selection-cfg",
+    "commit": "7c9d9261d5064a37b8c4cd03a0ecf022621145a7",
+    "name": "mattergen_v1_safe_cfg",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1_safe_cfg",
+    "status_before": " M experiments/calibrated_safe_selection_cfg/pipeline_status.json\n?? experiments/calibrated_safe_selection_cfg/.matplotlib/\n?? experiments/calibrated_safe_selection_cfg/calibration/\n?? experiments/calibrated_safe_selection_cfg/dataset/base_cfg2_final_all.extxyz\n?? experiments/calibrated_safe_selection_cfg/dataset/counterfactual_dataset.csv\n?? experiments/calibrated_safe_selection_cfg/dataset/evaluation_structures/\n?? experiments/calibrated_safe_selection_cfg/dataset/full_horizon_final_all.extxyz\n?? experiments/calibrated_safe_selection_cfg/dataset/generation/\n?? experiments/calibrated_safe_selection_cfg/dataset/generation_manifest.csv\n?? experiments/calibrated_safe_selection_cfg/dataset/generation_summary.json\n?? experiments/calibrated_safe_selection_cfg/dataset/online_features_raw.csv\n?? experiments/calibrated_safe_selection_cfg/dataset/property_metrics.csv\n?? experiments/calibrated_safe_selection_cfg/dataset/property_summary.json\n?? experiments/calibrated_safe_selection_cfg/dataset/quality/\n?? experiments/calibrated_safe_selection_cfg/dataset/treatment_effect_dataset.csv\n?? experiments/calibrated_safe_selection_cfg/final_report.md\n?? experiments/calibrated_safe_selection_cfg/final_status.json\n?? experiments/calibrated_safe_selection_cfg/models/\n?? experiments/calibrated_safe_selection_cfg/plots/\n?? experiments/calibrated_safe_selection_cfg/test/\n?? experiments/calibrated_safe_selection_cfg/validation/decision_summary.json\n?? experiments/calibrated_safe_selection_cfg/validation/operating_point_results.csv\n?? experiments/calibrated_safe_selection_cfg/validation/selected_operating_point.json\n",
+    "tracked_changes": [
+      "experiments/calibrated_safe_selection_cfg/pipeline_status.json"
+    ]
+  },
+  {
+    "branch": "experiment/multifield-self-conditioning-p0",
+    "commit": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+    "name": "mattergen_v1_self_condition",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_condition",
+    "status_before": " M mattergen/adapter.py\n M mattergen/common/gemnet/gemnet.py\n M mattergen/common/gemnet/gemnet_ctrl.py\n?? experiments/multifield_self_conditioning_p0/\n?? mattergen/self_conditioning.py\n",
+    "tracked_changes": [
+      "mattergen/adapter.py",
+      "mattergen/common/gemnet/gemnet.py",
+      "mattergen/common/gemnet/gemnet_ctrl.py"
+    ]
+  },
+  {
+    "branch": "experiment/self-correcting-search-p0",
+    "commit": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+    "name": "mattergen_v1_self_correcting_search",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1_self_correcting_search",
+    "status_before": "?? experiments/self_correcting_search_p0/\n",
+    "tracked_changes": []
+  },
+  {
+    "branch": "experiment/stage-calibrated-bounded-cfg",
+    "commit": "f281462d8f690493f3bc3b78faffaea6abdeb2ae",
+    "name": "mattergen_v1_stage_cfg",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1_stage_cfg",
+    "status_before": " M experiments/stage_calibrated_bounded_cfg/pipeline_status.json\n?? experiments/stage_calibrated_bounded_cfg/.matplotlib/\n?? experiments/stage_calibrated_bounded_cfg/calibration/bootstrap_results.json\n?? experiments/stage_calibrated_bounded_cfg/calibration/decision_summary.json\n?? experiments/stage_calibrated_bounded_cfg/calibration/evaluated_results.csv\n?? experiments/stage_calibrated_bounded_cfg/calibration/evaluation_structures/\n?? experiments/stage_calibrated_bounded_cfg/calibration/final_report.md\n?? experiments/stage_calibrated_bounded_cfg/calibration/generation/\n?? experiments/stage_calibrated_bounded_cfg/calibration/generation_manifest.csv\n?? experiments/stage_calibrated_bounded_cfg/calibration/generation_summary.json\n?? experiments/stage_calibrated_bounded_cfg/calibration/harm_metrics.csv\n?? experiments/stage_calibrated_bounded_cfg/calibration/metrics.csv\n?? experiments/stage_calibrated_bounded_cfg/calibration/paired_results.csv\n?? experiments/stage_calibrated_bounded_cfg/calibration/property_metrics.csv\n?? experiments/stage_calibrated_bounded_cfg/calibration/property_summary.json\n?? experiments/stage_calibrated_bounded_cfg/calibration/quality/\n?? experiments/stage_calibrated_bounded_cfg/calibration/schedule_final_all.extxyz\n?? experiments/stage_calibrated_bounded_cfg/calibration/schedule_ranking.csv\n?? experiments/stage_calibrated_bounded_cfg/calibration/tail_metrics.csv\n?? experiments/stage_calibrated_bounded_cfg/implementation/\n?? experiments/stage_calibrated_bounded_cfg/launch_gpu_audit.json\n?? experiments/stage_calibrated_bounded_cfg/p0/\n?? experiments/stage_calibrated_bounded_cfg/plots/bounded_vs_permanent.png\n?? experiments/stage_calibrated_bounded_cfg/plots/p0_c0_b1_b2_s0.png\n?? experiments/stage_calibrated_bounded_cfg/plots/p0_harm_comparison.png\n?? experiments/stage_calibrated_bounded_cfg/plots/p0_property_paired.png\n?? experiments/stage_calibrated_bounded_cfg/plots/schedule_gain_vs_harm.png\n?? experiments/stage_calibrated_bounded_cfg/plots/schedule_harm_rate.png\n?? experiments/stage_calibrated_bounded_cfg/plots/schedule_mean_gain.png\n",
+    "tracked_changes": [
+      "experiments/stage_calibrated_bounded_cfg/pipeline_status.json"
+    ]
+  },
+  {
+    "branch": "release/thesis-final-2026",
+    "commit": "0e4ec844277734eb6d833f49bdfffeae26665ae5",
+    "name": "mattergen_v1_thesis_final",
+    "original_root": "/mnt/datasets-livsyn/dxl/mattergen_v1_thesis_final",
+    "status_before": "",
+    "tracked_changes": []
+  }
+]

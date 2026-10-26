@@ -1,0 +1,68 @@
+{
+  "features": [
+    "t_norm",
+    "z_atomic",
+    "z_pos",
+    "z_cell",
+    "r_atomic",
+    "r_pos",
+    "r_cell",
+    "score_ratio_atomic",
+    "score_ratio_pos",
+    "score_ratio_cell",
+    "score_alignment_atomic",
+    "score_alignment_pos",
+    "score_alignment_cell",
+    "residual_mean",
+    "residual_median",
+    "residual_std",
+    "residual_range",
+    "ratio_mean",
+    "ratio_median",
+    "ratio_std",
+    "ratio_range",
+    "alignment_mean",
+    "alignment_median",
+    "alignment_std",
+    "alignment_range",
+    "log_residual_mean",
+    "log_residual_median",
+    "log_residual_std",
+    "log_residual_range",
+    "previous_log_residual",
+    "ema_log_residual",
+    "ema_slope",
+    "recent_residual_trend",
+    "previous_cfg",
+    "x0_structural_valid",
+    "x0_cell_volume",
+    "x0_density_g_cm3",
+    "x0_num_atoms",
+    "x0_num_elements",
+    "x0_mean_atomic_number",
+    "x0_std_atomic_number",
+    "x0_max_element_fraction",
+    "x0_element_entropy",
+    "x0_min_periodic_distance",
+    "x0_mean_periodic_distance"
+  ],
+  "online_only": true,
+  "residual_normalization": "train-only log z-score",
+  "normalization_parameters": {
+    "r_atomic": {
+      "log_mean": -0.054749276357948934,
+      "log_std": 0.45181900632800853
+    },
+    "r_pos": {
+      "log_mean": -6.211942497458692,
+      "log_std": 0.545298275404251
+    },
+    "r_cell": {
+      "log_mean": -4.460610837586195,
+      "log_std": 0.7073747350502
+    }
+  },
+  "temporal_ema_beta": 0.9,
+  "recent_window": 5,
+  "future_information_prohibited": true
+}

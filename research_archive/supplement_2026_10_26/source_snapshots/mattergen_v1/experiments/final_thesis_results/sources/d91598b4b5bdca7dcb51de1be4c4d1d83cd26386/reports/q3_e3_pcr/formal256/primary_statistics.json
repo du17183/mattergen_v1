@@ -1,0 +1,68 @@
+{
+  "E3-A": {
+    "baseline_mean": 0.34296426286559617,
+    "baseline_median": 0.18274502903184903,
+    "bootstrap_95_ci": [
+      -0.16489407698758815,
+      -0.050201906937694905
+    ],
+    "bootstrap_ci_upper_below_zero": true,
+    "effect_reduction_ge_10_percent": true,
+    "holm_p_below_0_05": true,
+    "leave_one_out_mean_difference_range": [
+      -0.10017259935570337,
+      -0.07812874603841058
+    ],
+    "losses": 65,
+    "maximum_single_sample_absolute_contribution_rate": 0.18460208306173742,
+    "mean_difference": -0.09900830302618673,
+    "median_difference": -0.011617723587562988,
+    "primary_effect_pass": true,
+    "relative_change": -0.2886840226411198,
+    "remove_most_favorable_relative_change": -0.2499212871420684,
+    "remove_most_favorable_sample_index": 158,
+    "remove_most_favorable_sample_seed": 40158,
+    "remove_most_unfavorable_relative_change": -0.29177498551615466,
+    "remove_most_unfavorable_sample_index": 130,
+    "remove_most_unfavorable_sample_seed": 40130,
+    "selected_mean": 0.24395595983940943,
+    "selected_median": 0.15606544682105417,
+    "ties": 0,
+    "wilcoxon_p_holm": 2.6200030170029813e-14,
+    "wilcoxon_p_raw": 1.3100015085014907e-14,
+    "wins": 191
+  },
+  "E3-G": {
+    "baseline_mean": 0.34296426286559617,
+    "baseline_median": 0.18274502903184903,
+    "bootstrap_95_ci": [
+      -0.14496579962748402,
+      -0.032452653777908895
+    ],
+    "bootstrap_ci_upper_below_zero": true,
+    "effect_reduction_ge_10_percent": true,
+    "holm_p_below_0_05": true,
+    "leave_one_out_mean_difference_range": [
+      -0.08062860842342655,
+      -0.05890259553960769
+    ],
+    "losses": 93,
+    "maximum_single_sample_absolute_contribution_rate": 0.23683162880494965,
+    "mean_difference": -0.07985724493999838,
+    "median_difference": -8.604603615181006e-07,
+    "primary_effect_pass": true,
+    "relative_change": -0.23284421610800177,
+    "remove_most_favorable_relative_change": -0.18841992531187024,
+    "remove_most_favorable_sample_index": 158,
+    "remove_most_favorable_sample_seed": 40158,
+    "remove_most_unfavorable_relative_change": -0.23442996158948282,
+    "remove_most_unfavorable_sample_index": 191,
+    "remove_most_unfavorable_sample_seed": 40191,
+    "selected_mean": 0.26310701792559776,
+    "selected_median": 0.1694568552852036,
+    "ties": 0,
+    "wilcoxon_p_holm": 4.1880173230809353e-10,
+    "wilcoxon_p_raw": 4.1880173230809353e-10,
+    "wins": 163
+  }
+}

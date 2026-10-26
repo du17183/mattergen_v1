@@ -1,0 +1,107 @@
+[
+  {
+    "adaptive_cfg_used": false,
+    "captured_timesteps": [
+      0.8,
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02
+    ],
+    "dft_verified": false,
+    "diagnostic_seconds": 3.0918710810074117,
+    "formula": "Gd",
+    "generation_seconds": 86.86249535597744,
+    "num_atoms": 4,
+    "peak_allocated_bytes": 260243456,
+    "sampling_score_calls": 2000,
+    "seed": 94012,
+    "sensitivity_rows": 72,
+    "success": true
+  },
+  {
+    "adaptive_cfg_used": false,
+    "captured_timesteps": [
+      0.8,
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02
+    ],
+    "dft_verified": false,
+    "diagnostic_seconds": 3.1246114509995095,
+    "formula": "Fe3Co",
+    "generation_seconds": 85.5440766410029,
+    "num_atoms": 8,
+    "peak_allocated_bytes": 287410176,
+    "sampling_score_calls": 2000,
+    "seed": 94013,
+    "sensitivity_rows": 72,
+    "success": true
+  },
+  {
+    "adaptive_cfg_used": false,
+    "captured_timesteps": [
+      0.8,
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02
+    ],
+    "dft_verified": false,
+    "diagnostic_seconds": 3.1919285939948168,
+    "formula": "Fe5Co",
+    "generation_seconds": 85.37499208998634,
+    "num_atoms": 6,
+    "peak_allocated_bytes": 275352576,
+    "sampling_score_calls": 2000,
+    "seed": 94014,
+    "sensitivity_rows": 72,
+    "success": true
+  },
+  {
+    "adaptive_cfg_used": false,
+    "captured_timesteps": [
+      0.8,
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02
+    ],
+    "dft_verified": false,
+    "diagnostic_seconds": 3.1573958880035207,
+    "formula": "Fe5H",
+    "generation_seconds": 85.68262123301974,
+    "num_atoms": 6,
+    "peak_allocated_bytes": 274310144,
+    "sampling_score_calls": 2000,
+    "seed": 94015,
+    "sensitivity_rows": 72,
+    "success": true
+  },
+  {
+    "adaptive_cfg_used": false,
+    "captured_timesteps": [
+      0.8,
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02
+    ],
+    "dft_verified": false,
+    "diagnostic_seconds": 3.112556259991834,
+    "formula": "Gd3O2",
+    "generation_seconds": 85.69507761800196,
+    "num_atoms": 10,
+    "peak_allocated_bytes": 301838336,
+    "sampling_score_calls": 2000,
+    "seed": 94016,
+    "sensitivity_rows": 72,
+    "success": true
+  }
+]

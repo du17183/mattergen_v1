@@ -1,0 +1,206 @@
+{
+  "adaptive_cfg": false,
+  "baseline": "Official dft_mag_density Full FT",
+  "cell_atom_fusion_p0": "FAIL",
+  "corrector_steps": 1,
+  "dft_verified": false,
+  "experiment": "Global Cell-Atom Bidirectional Fusion 16-seed Smoke P0",
+  "fail_fast_checks": {
+    "e_hull_increase_gt_0p02": false,
+    "mag_mae_worsening_gt_15pct": false,
+    "max_force_worsening_gt_20pct": false,
+    "nus_drop_gt_10pp": false,
+    "validity_drop_gt_10pp": false
+  },
+  "formal32_eligible": false,
+  "fusion_unused": true,
+  "generation_expansion_signals": {
+    "geometry_max_force_improvement_ge_8pct": true,
+    "geometry_rmsd_improvement_ge_8pct": false,
+    "property_mag_mae_improvement_ge_8pct": true,
+    "quality_nus_gain_ge_5pp": false
+  },
+  "guidance_scale": 2.0,
+  "lower_is_better_relative_improvement": {
+    "atomic_force_mean_ev_a": 0.13938708309828604,
+    "e_hull_ev_atom": 0.4382522665891109,
+    "mag_absolute_error": 0.24975739338132102,
+    "max_force_ev_a": 0.12298562541581996,
+    "peak_vram_mb": -0.00373942651731508,
+    "rmsd_a": -0.4776792753697638,
+    "runtime_seconds": -0.051738097664606825,
+    "score_calls": 0.0
+  },
+  "n_per_method": 16,
+  "next": "STOP",
+  "paired_bootstrap": {
+    "atomic_force_mean_ev_a": {
+      "ci95": [
+        -0.2027313232534739,
+        0.4099621936344169
+      ],
+      "effect": 0.13938708309828604,
+      "n": 16,
+      "resamples": 20000
+    },
+    "e_hull_ev_atom": {
+      "ci95": [
+        -0.05982932343240269,
+        0.7211473080007083
+      ],
+      "effect": 0.4382522665891109,
+      "n": 16,
+      "resamples": 20000
+    },
+    "mag_absolute_error": {
+      "ci95": [
+        -0.17341002197815694,
+        0.5927219651622928
+      ],
+      "effect": 0.24975739338132102,
+      "n": 16,
+      "resamples": 20000
+    },
+    "mag_hit": {
+      "ci95": [
+        -0.25,
+        0.125
+      ],
+      "effect": -0.0625,
+      "n": 16,
+      "resamples": 20000
+    },
+    "max_force_ev_a": {
+      "ci95": [
+        -0.2444490526468251,
+        0.41821106563370414
+      ],
+      "effect": 0.12298562541581996,
+      "n": 16,
+      "resamples": 20000
+    },
+    "novel": {
+      "ci95": [
+        -0.4375,
+        0.0625
+      ],
+      "effect": -0.1875,
+      "n": 16,
+      "resamples": 20000
+    },
+    "nus": {
+      "ci95": [
+        -0.25,
+        0.125
+      ],
+      "effect": -0.0625,
+      "n": 16,
+      "resamples": 20000
+    },
+    "peak_vram_mb": {
+      "ci95": [
+        -0.006266451565032853,
+        -0.0010909430547278182
+      ],
+      "effect": -0.00373942651731508,
+      "n": 16,
+      "resamples": 20000
+    },
+    "rmsd_a": {
+      "ci95": [
+        -1.755529241111041,
+        0.5513608992870581
+      ],
+      "effect": -0.4776792753697638,
+      "n": 16,
+      "resamples": 20000
+    },
+    "runtime_seconds": {
+      "ci95": [
+        -0.06105360510974836,
+        -0.04213440488051055
+      ],
+      "effect": -0.051738097664606825,
+      "n": 16,
+      "resamples": 20000
+    },
+    "score_calls": {
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "effect": 0.0,
+      "n": 16,
+      "resamples": 20000
+    },
+    "stable": {
+      "ci95": [
+        0.0,
+        0.3125
+      ],
+      "effect": 0.125,
+      "n": 16,
+      "resamples": 20000
+    },
+    "unique": {
+      "ci95": [
+        -0.1875,
+        0.0
+      ],
+      "effect": -0.0625,
+      "n": 16,
+      "resamples": 20000
+    },
+    "valid": {
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "effect": 0.0,
+      "n": 16,
+      "resamples": 20000
+    }
+  },
+  "rate_absolute_delta": {
+    "mag_hit": -0.0625,
+    "novel": -0.1875,
+    "nus": -0.0625,
+    "stable": 0.125,
+    "unique": -0.0625,
+    "valid": 0.0
+  },
+  "sampling_steps": 1000,
+  "seeds": [
+    110000,
+    110001,
+    110002,
+    110003,
+    110004,
+    110005,
+    110006,
+    110007,
+    110008,
+    110009,
+    110010,
+    110011,
+    110012,
+    110013,
+    110014,
+    110015
+  ],
+  "surrogate_property_eval": true,
+  "target_dft_mag_density": 0.2,
+  "training_signal_weak": false,
+  "validation_signal": {
+    "cell_gate": false,
+    "position_gate": false,
+    "relative_improvement": {
+      "atomic_numbers": -2.1040225237360354e-05,
+      "cell": -0.0002240172424100009,
+      "pos": -3.0496147929901148e-05,
+      "total": -3.184443807395435e-05
+    },
+    "total_gate": false,
+    "validation_go_signal": false
+  }
+}

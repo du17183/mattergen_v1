@@ -1,0 +1,68 @@
+{
+  "selected_gpus": [
+    2,
+    6
+  ],
+  "idle_rule": "memory_used_mib <= 1024 and utilization_percent <= 10",
+  "snapshot": [
+    {
+      "index": 0,
+      "name": "NVIDIA H20",
+      "memory_total_mib": 97871,
+      "memory_used_mib": 58754,
+      "utilization_percent": 100
+    },
+    {
+      "index": 1,
+      "name": "NVIDIA H20",
+      "memory_total_mib": 97871,
+      "memory_used_mib": 58709,
+      "utilization_percent": 100
+    },
+    {
+      "index": 2,
+      "name": "NVIDIA H20",
+      "memory_total_mib": 97871,
+      "memory_used_mib": 3,
+      "utilization_percent": 0
+    },
+    {
+      "index": 3,
+      "name": "NVIDIA H20",
+      "memory_total_mib": 97871,
+      "memory_used_mib": 58913,
+      "utilization_percent": 100
+    },
+    {
+      "index": 4,
+      "name": "NVIDIA H20",
+      "memory_total_mib": 97871,
+      "memory_used_mib": 90183,
+      "utilization_percent": 100
+    },
+    {
+      "index": 5,
+      "name": "NVIDIA H20",
+      "memory_total_mib": 97871,
+      "memory_used_mib": 58709,
+      "utilization_percent": 100
+    },
+    {
+      "index": 6,
+      "name": "NVIDIA H20",
+      "memory_total_mib": 97871,
+      "memory_used_mib": 3,
+      "utilization_percent": 0
+    },
+    {
+      "index": 7,
+      "name": "NVIDIA H20",
+      "memory_total_mib": 97871,
+      "memory_used_mib": 86921,
+      "utilization_percent": 0
+    }
+  ],
+  "selected_missing": [],
+  "selected_busy": [],
+  "launch_allowed": true
+}

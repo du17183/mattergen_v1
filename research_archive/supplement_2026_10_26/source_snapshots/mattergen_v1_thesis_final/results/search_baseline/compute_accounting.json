@@ -1,0 +1,17 @@
+{
+  "cohort": "search_baseline",
+  "n": 128,
+  "total_study_acquisition_score_calls": 1075200,
+  "total_study_gpu_hours": 12.98248684222396,
+  "max_peak_allocated_bytes": 379476992,
+  "per_method_deployment_multiplier": {
+    "C0": 1.0,
+    "Independent_Best_of_2": 2.0,
+    "Fixed_K2": 2.2
+  },
+  "per_method_chgnet_and_mattersim_selector_calls": {
+    "C0": 1,
+    "Independent_Best_of_2": 2,
+    "Fixed_K2": 3
+  }
+}

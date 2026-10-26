@@ -1,0 +1,40 @@
+experiment: cell_atom_fusion_p0
+base_model: Official dft_mag_density Full FT
+model_root: /mnt/datasets-livsyn/dxl/mattergen_v1/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density
+data_root: /mnt/datasets-livsyn/dxl/mattergen_v1/experiments/global_transformer_adapter_p0/data/cache
+architecture:
+  insertion: after GemNet interaction Block3, before Block4
+  hidden_dim: 512
+  bottleneck_dim: 128
+  time_gate: false
+  pooling: per-structure mean
+  alpha_a2c_initial: 0.0
+  alpha_c2a_initial: 0.0
+  row_lattice_metric: L_times_L_transpose
+training:
+  seed: 20260912
+  train_samples: 1024
+  validation_samples: 128
+  batch_size: 16
+  steps: 1000
+  optimizer: AdamW
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  gradient_clip_norm: 1.0
+  validation_every_steps: 100
+  frozen_validation_corruption_seed: 20261013
+  normalization: signed_log1p_train_noisy_cell_mean_std
+validation_gate:
+  total_loss_improvement: 0.005
+  single_position_or_cell_improvement: 0.02
+  training_signal_weak_total_improvement: 0.002
+identity:
+  max_abs_difference: 1.0e-5
+generation:
+  target_dft_mag_density: 0.2
+  guidance_scale: 2.0
+  guidance_schedule: constant
+  diffusion_steps: 1000
+  n_steps_corrector: 1
+  adaptive_cfg: false
+  paired_smoke_seeds: 16

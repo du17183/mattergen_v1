@@ -1,0 +1,78 @@
+{
+  "cuda_runtime": "12.8",
+  "device": "cuda",
+  "geometry_tolerance_a": 1e-07,
+  "methods": {
+    "C0": {
+      "byte_hash_match": true,
+      "geometry": {
+        "max_abs_cell_a": 0.0,
+        "max_abs_periodic_position_a": 0.0,
+        "pass": true,
+        "same_atomic_numbers": true,
+        "same_pbc": true
+      },
+      "historical_sha256": "d4b2f381d3de5625e36af86e7355eb4e5e5079c4e1f0866a65b61405e1f56433",
+      "metrics": {
+        "mattersim_max_force": {
+          "abs_delta": 1.9544037214991317e-08,
+          "historical": 0.05343878883037957,
+          "pass": true,
+          "replay": 0.05343880837441679
+        },
+        "mattersim_mean_force": {
+          "abs_delta": 6.049026311100159e-08,
+          "historical": 0.035072523737054107,
+          "pass": true,
+          "replay": 0.035072463246790996
+        },
+        "property_mae": {
+          "abs_delta": 4.291443367332448e-09,
+          "historical": 0.005590819280932802,
+          "pass": true,
+          "replay": 0.005590814989489434
+        }
+      },
+      "pass": true,
+      "replay_sha256": "d4b2f381d3de5625e36af86e7355eb4e5e5079c4e1f0866a65b61405e1f56433"
+    },
+    "F0": {
+      "byte_hash_match": true,
+      "geometry": {
+        "max_abs_cell_a": 0.0,
+        "max_abs_periodic_position_a": 0.0,
+        "pass": true,
+        "same_atomic_numbers": true,
+        "same_pbc": true
+      },
+      "historical_sha256": "765e297599299fda973a6d6651f40b88f39805401fb5b84eb0e5a6206a7d1407",
+      "metrics": {
+        "mattersim_max_force": {
+          "abs_delta": 1.4740684366187917e-07,
+          "historical": 0.038746394713961456,
+          "pass": true,
+          "replay": 0.03874654212080512
+        },
+        "mattersim_mean_force": {
+          "abs_delta": 1.0306618075314744e-07,
+          "historical": 0.025955640547024556,
+          "pass": true,
+          "replay": 0.02595574361320531
+        },
+        "property_mae": {
+          "abs_delta": 0.0,
+          "historical": 0.0058579596239093645,
+          "pass": true,
+          "replay": 0.0058579596239093645
+        }
+      },
+      "pass": true,
+      "replay_sha256": "765e297599299fda973a6d6651f40b88f39805401fb5b84eb0e5a6206a7d1407"
+    }
+  },
+  "metric_abs_tolerance": 1e-06,
+  "replay_dir": "alm_replay_740000",
+  "seed": 740000,
+  "status": "PASS",
+  "torch_version": "2.9.0+cu128"
+}

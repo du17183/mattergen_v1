@@ -1,0 +1,102 @@
+{
+  "adaptive_cfg_used": false,
+  "best_validation_loss": 0.29068440571427345,
+  "changed_gate_state_entries": [
+    "network.0.weight",
+    "network.0.bias",
+    "network.2.weight",
+    "network.2.bias"
+  ],
+  "checkpoint_sha256": "91ec4a1f11710fd3b500624bffd092bd664d5c7bb31624f8a69e99e4b6eb6463",
+  "dft_verified": false,
+  "early_stopped": false,
+  "elapsed_seconds": 83.82963289500913,
+  "final_gate_grid": [
+    {
+      "g_far": 1.002081274986267,
+      "g_mid": 0.9984791278839111,
+      "g_near": 0.9796732664108276,
+      "timestep": 0.8
+    },
+    {
+      "g_far": 1.0028157234191895,
+      "g_mid": 1.0011862516403198,
+      "g_near": 0.9835347533226013,
+      "timestep": 0.5
+    },
+    {
+      "g_far": 1.0033310651779175,
+      "g_mid": 1.0033843517303467,
+      "g_near": 0.9870989322662354,
+      "timestep": 0.25
+    },
+    {
+      "g_far": 1.0035984516143799,
+      "g_mid": 1.0046823024749756,
+      "g_near": 0.9894027709960938,
+      "timestep": 0.1
+    },
+    {
+      "g_far": 1.0036801099777222,
+      "g_mid": 1.0051101446151733,
+      "g_near": 0.9901977777481079,
+      "timestep": 0.05
+    },
+    {
+      "g_far": 1.003728985786438,
+      "g_mid": 1.0053688287734985,
+      "g_near": 0.990680456161499,
+      "timestep": 0.02
+    }
+  ],
+  "final_validation": {
+    "loss_atomic_numbers": 0.10714295925572515,
+    "loss_cell": 0.012954136996995658,
+    "loss_pos": 1.7092586904764175,
+    "loss_total": 0.2910229731351137,
+    "split": "validation",
+    "step": 1000
+  },
+  "first_gradient_check": {
+    "frozen_with_gradient": [],
+    "gate_with_gradient": [
+      "diffusion_module.model.gemnet.adaptive_radial_gate.network.0.bias",
+      "diffusion_module.model.gemnet.adaptive_radial_gate.network.0.weight",
+      "diffusion_module.model.gemnet.adaptive_radial_gate.network.2.bias",
+      "diffusion_module.model.gemnet.adaptive_radial_gate.network.2.weight"
+    ]
+  },
+  "frozen_digest_after": "01e439133f0c7ca98e0bcd7ca9217bca7978aa0b588806bacf6752f06580ac8a",
+  "frozen_digest_before": "01e439133f0c7ca98e0bcd7ca9217bca7978aa0b588806bacf6752f06580ac8a",
+  "frozen_parameters_unchanged": true,
+  "identity_check": {
+    "field_max_abs_difference": {
+      "atomic_numbers": 0.0,
+      "cell": 0.0,
+      "pos": 0.0
+    },
+    "gate_parameter_count": 83,
+    "maximum_output_difference": 0.0,
+    "passed": true,
+    "same_batch_same_noise": true,
+    "tolerance": 1e-05
+  },
+  "initial_validation": {
+    "loss_atomic_numbers": 0.1070626825094223,
+    "loss_cell": 0.012939797772560269,
+    "loss_pos": 1.7090840190649033,
+    "loss_total": 0.29091089218854904
+  },
+  "mean_step_seconds": 0.07308485661941813,
+  "peak_cuda_memory_mb": 2400.453125,
+  "steps": 1000,
+  "total_params": 48760526,
+  "trainable_parameter_names": [
+    "diffusion_module.model.gemnet.adaptive_radial_gate.network.0.weight",
+    "diffusion_module.model.gemnet.adaptive_radial_gate.network.0.bias",
+    "diffusion_module.model.gemnet.adaptive_radial_gate.network.2.weight",
+    "diffusion_module.model.gemnet.adaptive_radial_gate.network.2.bias"
+  ],
+  "trainable_params": 83,
+  "trainable_ratio": 1.7021965677728743e-06
+}

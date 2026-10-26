@@ -1,0 +1,5 @@
+seed,requested_t_norm,actual_model_t,sampling_step,num_atoms,atomic_logits_shape,atomic_logits_num_classes,atomic_corruption_offset,clean_atomic_number_min,clean_atomic_number_max,clean_atomic_mean_confidence,clean_atomic_current_state_agreement,clean_cell_signed_volume,clean_estimate_finite
+710004,0.1,0.10000000149011612,900,4,4x101,101,1,64,64,0.9359614253044128,0.75,135.15477381662737,True
+710004,0.05,0.05000000074505806,950,4,4x101,101,1,64,64,0.9240292310714722,0.75,139.0851479168305,True
+710004,0.02,0.020000001415610313,980,4,4x101,101,1,64,64,0.9755253791809082,0.75,131.37792134219674,True
+710004,0.01,0.010000000707805157,990,4,4x101,101,1,64,64,0.9853307008743286,0.75,133.13391288543446,True

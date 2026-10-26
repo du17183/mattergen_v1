@@ -1,0 +1,45 @@
+{
+  "chgnet_version": "0.3.0",
+  "device": "cuda",
+  "dft_verified": false,
+  "methods": {
+    "C0": {
+      "mag_hit_count": 19,
+      "mag_hit_rate": 0.59375,
+      "mag_mae": 0.015151633548818322,
+      "n": 32,
+      "valid_count": 32,
+      "valid_fraction": 1.0
+    },
+    "Early": {
+      "mag_hit_count": 24,
+      "mag_hit_rate": 0.75,
+      "mag_mae": 0.008376979784261204,
+      "n": 32,
+      "valid_count": 32,
+      "valid_fraction": 1.0
+    },
+    "Late": {
+      "mag_hit_count": 19,
+      "mag_hit_rate": 0.59375,
+      "mag_mae": 0.015217618600006042,
+      "n": 32,
+      "valid_count": 32,
+      "valid_fraction": 1.0
+    },
+    "Middle": {
+      "mag_hit_count": 20,
+      "mag_hit_rate": 0.625,
+      "mag_mae": 0.011196840270270222,
+      "n": 32,
+      "valid_count": 32,
+      "valid_fraction": 1.0
+    }
+  },
+  "schema_version": 1,
+  "surrogate_calibration_mae": 0.001449,
+  "surrogate_calibration_pearson": 0.9499,
+  "surrogate_property_eval": true,
+  "target": 0.2,
+  "tau": 0.01
+}

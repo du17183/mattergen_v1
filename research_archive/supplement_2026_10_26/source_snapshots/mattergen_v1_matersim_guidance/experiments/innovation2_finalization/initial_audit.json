@@ -1,0 +1,28 @@
+{
+  "frozen_source_sha256": {
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/audit_results.json": "ffd6355ba9da328a1ebcce841ef6cdc32785580e4279908fc541699577f75b05",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/decision_summary.json": "6c310a60205515f105883f6a03303cfccddbff8e1d3ae169c7cc577cf27b0288",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/formal32_config.yaml": "a1c70c70890d2ba88f269f56ccf953454e907292cf29a3f4cb41fd41f9843c8a",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/generate_formal32_pair.py": "73d374d99cb515403a278a134129c7b3f64b27c787273300d20c033250161807",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_formal32/guidance_trace.csv": "9e963d0f24322ac57549ace41769156c80e5b8eab4269ad370ba3c8d7e1a684f",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/analyze_p0.py": "e620a4437764a48b165c6cdd2bb1b3361b0de0e4af1b1155c0a947ede51e379e",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/evaluate_p0_properties.py": "9193441c5245a14622777097b414078be09f6a817dd9be42f52bca1c267063ac",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/guidance_config.yaml": "9955641afdf4d3f17ecb1ac5597e5bdaaf5cd493453e9a50fd03b270b3073f22",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/late_force_sampler.py": "7a1598338e305986f03f232b719cdbb90687ba3388b8827ace8aa191bb8d9523",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/run_p0_quality.py": "de529b2cc924845e5494644f4a9bc3bbb623e5948429f58758d16a2bf0cfe11c",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/mattersim_late_force_guidance_p0/run_p0_relaxation.py": "291f8dc38b9c5b0930fe9b2e593d81a72074fa49070717c6038e2933cda87f37"
+  },
+  "head": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+  "resource_pool": [
+    5,
+    6,
+    7
+  ],
+  "stash_list": [
+    "stash@{0}: On raab-sc-p0: preserve-raab-sc-p0",
+    "stash@{1}: On mattergen-rl-p0: preserve-mattergen-rl-p0",
+    "stash@{2}: On alm-gen-p0: preserve-alm-gen-p0",
+    "stash@{3}: On mattergen-lora-p0: preserve-mattergen-lora-p0",
+    "stash@{4}: On composable-property-adapter-p0: preserve-gcpa-p0"
+  ]
+}

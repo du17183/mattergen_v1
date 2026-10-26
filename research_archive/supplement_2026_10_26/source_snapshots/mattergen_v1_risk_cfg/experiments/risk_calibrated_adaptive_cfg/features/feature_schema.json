@@ -1,0 +1,118 @@
+{
+  "features": [
+    "t_norm",
+    "z_atomic",
+    "z_pos",
+    "z_cell",
+    "r_atomic",
+    "r_pos",
+    "r_cell",
+    "score_ratio_atomic",
+    "score_ratio_pos",
+    "score_ratio_cell",
+    "score_alignment_atomic",
+    "score_alignment_pos",
+    "score_alignment_cell",
+    "residual_mean",
+    "residual_median",
+    "residual_std",
+    "residual_range",
+    "ratio_mean",
+    "ratio_median",
+    "ratio_std",
+    "ratio_range",
+    "alignment_mean",
+    "alignment_median",
+    "alignment_std",
+    "alignment_range",
+    "log_residual_mean",
+    "log_residual_median",
+    "log_residual_std",
+    "log_residual_range",
+    "previous_log_residual",
+    "ema_log_residual",
+    "ema_slope",
+    "recent_residual_trend",
+    "previous_cfg",
+    "x0_structural_valid",
+    "x0_cell_volume",
+    "x0_density_g_cm3",
+    "x0_num_atoms",
+    "x0_num_elements",
+    "x0_mean_atomic_number",
+    "x0_std_atomic_number",
+    "x0_max_element_fraction",
+    "x0_element_entropy",
+    "x0_min_periodic_distance",
+    "x0_mean_periodic_distance"
+  ],
+  "targets": [
+    "delta_property_DOWN",
+    "delta_property_UP",
+    "harm_property_DOWN",
+    "harm_property_UP"
+  ],
+  "online_only": true,
+  "normalization": "training-only log-residual z-score separately per timestep",
+  "normalization_parameters": {
+    "100": {
+      "r_atomic": {
+        "log_mean": 0.3580197283336382,
+        "log_std": 0.4986020054801004
+      },
+      "r_pos": {
+        "log_mean": -7.244200425677766,
+        "log_std": 0.5642244057028637
+      },
+      "r_cell": {
+        "log_mean": -4.552217950646499,
+        "log_std": 0.7227107727487001
+      }
+    },
+    "250": {
+      "r_atomic": {
+        "log_mean": -0.039581491756741256,
+        "log_std": 0.3168023668592816
+      },
+      "r_pos": {
+        "log_mean": -6.209442351997054,
+        "log_std": 0.5285835654001383
+      },
+      "r_cell": {
+        "log_mean": -4.505769815233226,
+        "log_std": 0.4769835013996175
+      }
+    },
+    "400": {
+      "r_atomic": {
+        "log_mean": -0.3088569743123132,
+        "log_std": 0.2903058071278966
+      },
+      "r_pos": {
+        "log_mean": -2.290733356625629,
+        "log_std": 0.8118755948613708
+      },
+      "r_cell": {
+        "log_mean": -4.079451608598317,
+        "log_std": 0.6822584289764291
+      }
+    },
+    "550": {
+      "r_atomic": {
+        "log_mean": -0.4727788075044483,
+        "log_std": 0.2714957976984481
+      },
+      "r_pos": {
+        "log_mean": -0.4553357179496521,
+        "log_std": 0.7645292699864548
+      },
+      "r_cell": {
+        "log_mean": -4.0222508218651845,
+        "log_std": 0.731982188490146
+      }
+    }
+  },
+  "temporal_ema_beta": 0.9,
+  "recent_window": 5,
+  "future_information_prohibited": true
+}

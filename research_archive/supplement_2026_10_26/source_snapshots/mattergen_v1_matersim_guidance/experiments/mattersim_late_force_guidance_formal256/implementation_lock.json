@@ -1,0 +1,17 @@
+{
+  "A1_note": "A1 was already launched using independently frozen unchanged Formal32 scientific generator",
+  "mechanism_tests": "5 CPU tests passed before new ablation sampling",
+  "no_outcome_tuning": true,
+  "sha256": {
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/closed_loop_force_guidance_p0/closed_loop_sampler.py": "98f6cbaf2ee19e96281a204907e85deaca87f1c8fda1d880a1520febbf045b44",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/experimental_sampler.py": "41ad29a1d8dee9d00652856af5949b98d7f15446ca3df1a75834412348ba7f81",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/generate_variant_pair.py": "bf141efd7b1fe559a96c3d7b2fb7ef0d006af9a5b059f60c719b3d1338af83b2",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/protocol.py": "be1f0a3f04aee53f383721ec5c1d6420eac283326bb4cf65ca57528dcbf36de0",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/recording_sampler.py": "cb0b193a5e28950e5bb910d24c4c91d50559b120bffcc35bab4f73f427d1c437",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/innovation2_finalization/test_mechanisms.py": "cdc4a5dc44978f6bf507b5d266a285b3366e450629b2bb492a65429c4094e2e6",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/mattergen/diffusion/sampling/classifier_free_guidance.py": "44b0018f49522c9154bf6926e98f16f3f01c109f84f5e25c6fd2364bb2ddcf85",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/mattergen/diffusion/sampling/guidance_schedule.py": "3d7c270140ce24b4b52e559748b45c1e5759baba6275e22558d03e81052131e0",
+    "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/mattergen/diffusion/sampling/pc_sampler.py": "1fc3276a80235f3df3d6a813c1643c2f04e776f363e15ea4e410d5af8822358b"
+  },
+  "utc": "2026-09-13T08:24:43.584955+00:00"
+}

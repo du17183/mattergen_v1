@@ -70,3 +70,16 @@ python3 research_archive/scripts/verify_hashes.py --external
 ```
 
 See [ARCHIVE_POLICY.md](ARCHIVE_POLICY.md) for inclusion, exclusion and preservation rules.
+
+## 2026-10-26 completeness supplement
+
+The original 2026-09-18 inventory above remains unchanged. The additive
+[non-weight source/output supplement](supplement_2026_10_26/README.md) records
+the previously uncommitted implementations, source modifications, Timing and
+seed-740000 execution code, and complete non-weight experiment overlays.
+Browseable code is included in this branch; generated structures, traces,
+diffusion/RNG states and generated training examples are distributed through
+content-addressed Release bundles with per-file SHA256 manifests and a restore
+helper. Publication and asset verification are recorded in the supplement's
+`upload_receipt.json` when complete. The thesis-facing conclusions and original
+server files are preserved.

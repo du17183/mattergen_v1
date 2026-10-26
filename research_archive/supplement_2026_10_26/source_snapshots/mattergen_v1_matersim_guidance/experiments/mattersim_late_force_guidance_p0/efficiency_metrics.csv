@@ -1,0 +1,3 @@
+method,n,generation_seconds_mean,end_to_end_generation_seconds_mean,runtime_ratio_vs_B0,mattergen_score_calls_mean,guidance_calls_total,guidance_accepted_total,guidance_fallbacks_total,guidance_seconds_mean
+B0,16,150.28391521199592,150.28391521199592,1.0,2000.0,0,0,0,0.0
+F0,16,149.8425222221813,150.25152837080168,0.9997844956251735,2000.0,320,320,0,1.119723929114116

@@ -1,0 +1,7 @@
+{
+  "Convergence-Aware Async Freeze": "FAIL",
+  "Field-wise Async Time Schedule": "FAIL",
+  "Recommended Innovation 2": "NEITHER",
+  "do_not_combine_failed_modules": true,
+  "reason": "Both candidates stopped at the shared preregistered heterogeneity gate."
+}

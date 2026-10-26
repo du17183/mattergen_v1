@@ -1,0 +1,57 @@
+experiment: Diffusion-Stage Adaptive Neighborhood GemNet-T P0
+phase: zero_training_band_mask_sensitivity
+branch: experiment/adaptive-neighborhood-p0
+base_head: 1af301c5e534ff6b9b9f96ea5dab48036d9c46af
+base_checkpoint: /mnt/datasets-livsyn/dxl/mattergen_v1/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt
+base_checkpoint_sha256: 01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e
+conditioning:
+  property: dft_mag_density
+  target: 0.2
+  units: angstrom^-3
+  cfg_scale: 2.0
+  adaptive_cfg: false
+sampling:
+  steps: 1000
+  corrector_steps_per_time: 1
+  seeds: [94000, 94031]
+  count: 32
+  batch_size: 1
+  deterministic: true
+  captured_phase: predictor_after_corrector
+timesteps:
+  requested_t_norm: [0.80, 0.50, 0.25, 0.10, 0.05, 0.02]
+  exact_sampling_indices: [200, 500, 750, 900, 950, 980]
+  stage_groups:
+    early: [0.80, 0.50]
+    mid: [0.25, 0.10]
+    late: [0.05, 0.02]
+neighborhood:
+  cutoff_angstrom: 7.0
+  max_neighbors: 50
+  graph_topology_modified: false
+  bands:
+    near: [0.0, 3.5]
+    mid: [3.5, 5.5]
+    far: [5.5, 7.0]
+mask_definition:
+  injection_point: selected GemNet block AtomUpdateBlock immediately before edge-message aggregation
+  action: multiply selected-band edge embeddings by zero for that block only
+  full_graph_reused: true
+  epsilon: 1.0e-12
+  sensitivity: RMS(score_full-score_mask_band)/(RMS(score_full)+epsilon)
+motivation_gate:
+  aggregation: mean over 32 independent seeds, then mean over the two timesteps in each stage
+  early_late_relative_change_minimum: 0.20
+  active_sensitivity_floor: 1.0e-6
+  ranking_separation_minimum: 0.05
+  far_spearman_abs_minimum: 0.80
+  far_spearman_blocks_required_per_field: 3
+  multifield_blocks_required: 2
+  rule: any one of the four preregistered conditions passes
+prohibitions:
+  training_before_diagnostic_go: true
+  cutoff_expansion: true
+  dynamic_graph_rebuild: true
+  adaptive_cfg: true
+  combine_with_self_conditioning: true
+  dft: true

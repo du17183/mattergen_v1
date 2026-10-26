@@ -1,0 +1,107 @@
+[
+  {
+    "adaptive_cfg_used": false,
+    "captured_timesteps": [
+      0.8,
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02
+    ],
+    "dft_verified": false,
+    "diagnostic_seconds": 3.111849612003425,
+    "formula": "Fe3Co4",
+    "generation_seconds": 86.65059584198752,
+    "num_atoms": 7,
+    "peak_allocated_bytes": 282574336,
+    "sampling_score_calls": 2000,
+    "seed": 94027,
+    "sensitivity_rows": 72,
+    "success": true
+  },
+  {
+    "adaptive_cfg_used": false,
+    "captured_timesteps": [
+      0.8,
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02
+    ],
+    "dft_verified": false,
+    "diagnostic_seconds": 3.9524205079942476,
+    "formula": "Gd",
+    "generation_seconds": 109.48805854399689,
+    "num_atoms": 4,
+    "peak_allocated_bytes": 259932160,
+    "sampling_score_calls": 2000,
+    "seed": 94028,
+    "sensitivity_rows": 72,
+    "success": true
+  },
+  {
+    "adaptive_cfg_used": false,
+    "captured_timesteps": [
+      0.8,
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02
+    ],
+    "dft_verified": false,
+    "diagnostic_seconds": 3.1549348359985743,
+    "formula": "Li2Gd8Co",
+    "generation_seconds": 94.73578758700751,
+    "num_atoms": 11,
+    "peak_allocated_bytes": 307872256,
+    "sampling_score_calls": 2000,
+    "seed": 94029,
+    "sensitivity_rows": 72,
+    "success": true
+  },
+  {
+    "adaptive_cfg_used": false,
+    "captured_timesteps": [
+      0.8,
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02
+    ],
+    "dft_verified": false,
+    "diagnostic_seconds": 21.209168211004,
+    "formula": "Fe5Co2",
+    "generation_seconds": 92.20370361401001,
+    "num_atoms": 7,
+    "peak_allocated_bytes": 282415616,
+    "sampling_score_calls": 2000,
+    "seed": 94030,
+    "sensitivity_rows": 72,
+    "success": true
+  },
+  {
+    "adaptive_cfg_used": false,
+    "captured_timesteps": [
+      0.8,
+      0.5,
+      0.25,
+      0.1,
+      0.05,
+      0.02
+    ],
+    "dft_verified": false,
+    "diagnostic_seconds": 3.1559365740104113,
+    "formula": "Fe5Co4",
+    "generation_seconds": 321.4058685050113,
+    "num_atoms": 9,
+    "peak_allocated_bytes": 296672768,
+    "sampling_score_calls": 2000,
+    "seed": 94031,
+    "sensitivity_rows": 72,
+    "success": true
+  }
+]

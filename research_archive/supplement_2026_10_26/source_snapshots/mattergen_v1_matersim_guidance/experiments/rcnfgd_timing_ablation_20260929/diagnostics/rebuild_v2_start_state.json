@@ -1,0 +1,157 @@
+{
+  "condition": {
+    "atomic_numbers": {
+      "dtype": "torch.int64",
+      "sha256": "af9613760f72635fbdb44a5a0a63c39f12af30f950a6ee5c971be188e89c4051",
+      "shape": [
+        4
+      ]
+    },
+    "cell": {
+      "dtype": "torch.float32",
+      "sha256": "48d758dd274f1ae77866916438acee15504df1b286825989b5769d3eaa9b1efc",
+      "shape": [
+        1,
+        3,
+        3
+      ]
+    },
+    "dft_mag_density": {
+      "dtype": "torch.float32",
+      "sha256": "5d96a77c55b4ac1eea2d77815396c4349292b85e3b07beaca6aff933e7ef8752",
+      "shape": [
+        1
+      ]
+    },
+    "num_atoms": {
+      "dtype": "torch.int64",
+      "sha256": "f0a0278e4372459cca6159cd5e71cfee638302a7b9ca9b05c34181ac0a65ac5d",
+      "shape": [
+        1
+      ]
+    },
+    "pos": {
+      "dtype": "torch.float32",
+      "sha256": "2cf196b3d5b5509c0ea746faf9344f200f231ee0a28eda6611c061be80bf4d50",
+      "shape": [
+        4,
+        3
+      ]
+    }
+  },
+  "entry": "historical",
+  "first_score": {
+    "atomic_numbers": {
+      "dtype": "torch.float32",
+      "sha256": "31d21626bd7057164d51a23fd2f2a276c818aedf16a5b330dff1c97af76aea80",
+      "shape": [
+        4,
+        101
+      ]
+    },
+    "cell": {
+      "dtype": "torch.float32",
+      "sha256": "af2b14fb65d2ebf97c2eef42ac3dfd9296baf0a23277c9de07b42652cb9a988c",
+      "shape": [
+        1,
+        3,
+        3
+      ]
+    },
+    "dft_mag_density": {
+      "dtype": "torch.float32",
+      "sha256": "5d96a77c55b4ac1eea2d77815396c4349292b85e3b07beaca6aff933e7ef8752",
+      "shape": [
+        1
+      ]
+    },
+    "num_atoms": {
+      "dtype": "torch.int64",
+      "sha256": "f0a0278e4372459cca6159cd5e71cfee638302a7b9ca9b05c34181ac0a65ac5d",
+      "shape": [
+        1
+      ]
+    },
+    "pos": {
+      "dtype": "torch.float32",
+      "sha256": "6be6d08aa1c2ec97fa105bf83c6b003ec57823a3b50543e2478592e0a760797e",
+      "shape": [
+        4,
+        3
+      ]
+    }
+  },
+  "first_score_npz": "/mnt/datasets-livsyn/dxl/mattergen_v1_matersim_guidance/experiments/rcnfgd_timing_ablation_20260929/diagnostics/rebuild_v2_first_score.npz",
+  "model_state": {
+    "sha256": "2d505e7fc6d1ae3102e4d8881dc493852f8690b4db7dafaf86901250d2d99520",
+    "tensor_count": 304
+  },
+  "omp_threads_env": "2",
+  "prior": {
+    "atomic_numbers": {
+      "dtype": "torch.int64",
+      "sha256": "6200f0da3363fb1a40d7169adfd279fd8e932a1656b7f74c689fb2bebd041442",
+      "shape": [
+        4
+      ]
+    },
+    "cell": {
+      "dtype": "torch.float32",
+      "sha256": "991da43e0dc55298286394ccefb270eb97e7390e0b86661783a168d4717e2e74",
+      "shape": [
+        1,
+        3,
+        3
+      ]
+    },
+    "dft_mag_density": {
+      "dtype": "torch.float32",
+      "sha256": "5d96a77c55b4ac1eea2d77815396c4349292b85e3b07beaca6aff933e7ef8752",
+      "shape": [
+        1
+      ]
+    },
+    "num_atoms": {
+      "dtype": "torch.int64",
+      "sha256": "f0a0278e4372459cca6159cd5e71cfee638302a7b9ca9b05c34181ac0a65ac5d",
+      "shape": [
+        1
+      ]
+    },
+    "pos": {
+      "dtype": "torch.float32",
+      "sha256": "e34aa172e68c08bd08b35e7bfa267a0e5c0b08bffa887bfb7d08600fe396eaa6",
+      "shape": [
+        4,
+        3
+      ]
+    }
+  },
+  "pythonhashseed_env": null,
+  "rng_after_condition": {
+    "numpy": "a30de427a6dfe94560d912850b936033faf2166c8c3092c35d28d65c47a5ab87",
+    "python": "f21fb8a02ccba5d559e3d3cbda3622a2f9583fd88c7bd57ac26330c3c4226ecd",
+    "torch_cpu": "31b93dfa6e907e55996fe7f0f4aa8101d4025636d46452a3e5ea8ed6a84227f9",
+    "torch_cuda_visible_0": "e62ce80b813ffc9051afe3b6c105d57008e5af5256fcf75a43d163ad532b8f9c"
+  },
+  "rng_after_first_score": {
+    "numpy": "a30de427a6dfe94560d912850b936033faf2166c8c3092c35d28d65c47a5ab87",
+    "python": "f21fb8a02ccba5d559e3d3cbda3622a2f9583fd88c7bd57ac26330c3c4226ecd",
+    "torch_cpu": "7c54df149b5798a37e838c1089bea8324384a5d45fe0641ea25445d72b45452d",
+    "torch_cuda_visible_0": "e62ce80b813ffc9051afe3b6c105d57008e5af5256fcf75a43d163ad532b8f9c"
+  },
+  "rng_after_prior": {
+    "numpy": "a30de427a6dfe94560d912850b936033faf2166c8c3092c35d28d65c47a5ab87",
+    "python": "f21fb8a02ccba5d559e3d3cbda3622a2f9583fd88c7bd57ac26330c3c4226ecd",
+    "torch_cpu": "7c54df149b5798a37e838c1089bea8324384a5d45fe0641ea25445d72b45452d",
+    "torch_cuda_visible_0": "e62ce80b813ffc9051afe3b6c105d57008e5af5256fcf75a43d163ad532b8f9c"
+  },
+  "rng_after_reseed": {
+    "numpy": "2b2554b505190d0459b8c78843d1da09ab2998670da32df7ac99beebfd025c17",
+    "python": "f21fb8a02ccba5d559e3d3cbda3622a2f9583fd88c7bd57ac26330c3c4226ecd",
+    "torch_cpu": "e51d7479a8090c55e7603ad8087b863e6cc33295e085a86f510f0e62a92e047c",
+    "torch_cuda_visible_0": "e62ce80b813ffc9051afe3b6c105d57008e5af5256fcf75a43d163ad532b8f9c"
+  },
+  "seed": 740000,
+  "torch_version": "2.4.1+cu121"
+}

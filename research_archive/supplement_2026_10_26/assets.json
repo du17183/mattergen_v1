@@ -1,0 +1,53 @@
+{
+  "assets": [
+    {
+      "blob_count": 5994,
+      "download_url": "https://github.com/du17183/mattergen_v1/releases/download/mattergen-nonweight-20261026/mattergen-nonweight-20261026-part01.tar.zst",
+      "name": "mattergen-nonweight-20261026-part01.tar.zst",
+      "sha256": "0324e5e668ff65f863ebaf53620f115050fd046d25a5bd9044b6adac27dff117",
+      "size_bytes": 163456476,
+      "uncompressed_bytes": 314295666
+    },
+    {
+      "blob_count": 5999,
+      "download_url": "https://github.com/du17183/mattergen_v1/releases/download/mattergen-nonweight-20261026/mattergen-nonweight-20261026-part02.tar.zst",
+      "name": "mattergen-nonweight-20261026-part02.tar.zst",
+      "sha256": "6c39a3b8eb2d4b06800c3a0ce9ffb8fd1db3ec901a810b5f253dc92713d461a5",
+      "size_bytes": 164412176,
+      "uncompressed_bytes": 314370334
+    },
+    {
+      "blob_count": 4467,
+      "download_url": "https://github.com/du17183/mattergen_v1/releases/download/mattergen-nonweight-20261026/mattergen-nonweight-20261026-part03.tar.zst",
+      "name": "mattergen-nonweight-20261026-part03.tar.zst",
+      "sha256": "12bd7b356aefb6748dc5a443ad136d42fe8283c63bbe8712cd8d00e61ba6dd38",
+      "size_bytes": 146047003,
+      "uncompressed_bytes": 314527608
+    },
+    {
+      "blob_count": 6291,
+      "download_url": "https://github.com/du17183/mattergen_v1/releases/download/mattergen-nonweight-20261026/mattergen-nonweight-20261026-part04.tar.zst",
+      "name": "mattergen-nonweight-20261026-part04.tar.zst",
+      "sha256": "7a59ab196f4a423be3f37afe01ab804a7f32ef1268b211d55ada9b0b26838514",
+      "size_bytes": 170149986,
+      "uncompressed_bytes": 314567495
+    },
+    {
+      "blob_count": 4405,
+      "download_url": "https://github.com/du17183/mattergen_v1/releases/download/mattergen-nonweight-20261026/mattergen-nonweight-20261026-part05.tar.zst",
+      "name": "mattergen-nonweight-20261026-part05.tar.zst",
+      "sha256": "ff567d8b00e22b9cfe368fdae55f74678d2afa24390b57dd8b7c2a276aeeb780",
+      "size_bytes": 144898168,
+      "uncompressed_bytes": 314564017
+    },
+    {
+      "blob_count": 5519,
+      "download_url": "https://github.com/du17183/mattergen_v1/releases/download/mattergen-nonweight-20261026/mattergen-nonweight-20261026-part06.tar.zst",
+      "name": "mattergen-nonweight-20261026-part06.tar.zst",
+      "sha256": "723b32da10e6adc3198c71b2cb498a28bb7a6a6ff30b6a0d87c7bd9d4dd3a928",
+      "size_bytes": 148221748,
+      "uncompressed_bytes": 298072515
+    }
+  ],
+  "release_tag": "mattergen-nonweight-20261026"
+}

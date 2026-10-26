@@ -1,0 +1,10 @@
+{
+  "absolute_protocol_cap_a": 0.02,
+  "cartesian_fractional_roundtrip_max_abs": 4.336808689942018e-19,
+  "frozen_hard_per_atom_cap_a": 0.01,
+  "max_per_atom_cartesian_correction_a": 0.005,
+  "unsafe_candidate_action": "unmodified_official_score_fallback",
+  "unsafe_candidate_min_distance_a": 0.3999999999999999,
+  "unsafe_candidate_original_min_distance_a": 0.6,
+  "unsafe_candidate_rejected": true
+}

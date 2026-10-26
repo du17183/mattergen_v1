@@ -1,0 +1,27 @@
+{
+  "adapter_calls": 0,
+  "adapter_coverage": 0.0,
+  "adapter_seconds": 0.0,
+  "checkpoint_path": "/mnt/lis-wam-data/dxl/mattergen_v1/checkpoints/official/hf_mattergen/checkpoints/dft_mag_density/checkpoints/last.ckpt",
+  "checkpoint_sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+  "elapsed_seconds": 120.12073731189594,
+  "exact_fallback_seconds": 55.23101680283435,
+  "fallback_calls": 0,
+  "formula": "CrFe6Co",
+  "forward_reduction": 0.0,
+  "guidance_scale": 2.0,
+  "guidance_schedule": "constant",
+  "mattergen_score_calls": 2000,
+  "num_atoms": 8,
+  "peak_allocated_bytes": 286952960,
+  "samples_per_hour": 29.969846011288848,
+  "saved_score_calls": 0,
+  "score_opportunities": 1000,
+  "seed": 63014,
+  "split": "test",
+  "success": true,
+  "target": {
+    "dft_mag_density": 0.1
+  },
+  "theoretical_baseline_score_calls": 2000
+}

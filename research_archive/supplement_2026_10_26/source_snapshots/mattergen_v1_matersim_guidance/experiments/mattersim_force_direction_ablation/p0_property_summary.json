@@ -1,0 +1,53 @@
+{
+  "chgnet_version": "0.3.0",
+  "device": "cuda",
+  "dft_verified": false,
+  "methods": {
+    "G0": {
+      "mag_hit_count": 17,
+      "mag_hit_rate": 0.53125,
+      "mag_mae": 0.010471202583487726,
+      "n": 32,
+      "valid_count": 32,
+      "valid_fraction": 1.0
+    },
+    "G1": {
+      "mag_hit_count": 17,
+      "mag_hit_rate": 0.53125,
+      "mag_mae": 0.010501852165496657,
+      "n": 32,
+      "valid_count": 32,
+      "valid_fraction": 1.0
+    },
+    "G2": {
+      "mag_hit_count": 18,
+      "mag_hit_rate": 0.5625,
+      "mag_mae": 0.010472692260431234,
+      "n": 32,
+      "valid_count": 32,
+      "valid_fraction": 1.0
+    },
+    "G3": {
+      "mag_hit_count": 17,
+      "mag_hit_rate": 0.53125,
+      "mag_mae": 0.010472090683329119,
+      "n": 32,
+      "valid_count": 32,
+      "valid_fraction": 1.0
+    },
+    "G4": {
+      "mag_hit_count": 18,
+      "mag_hit_rate": 0.5625,
+      "mag_mae": 0.010443995970304484,
+      "n": 32,
+      "valid_count": 32,
+      "valid_fraction": 1.0
+    }
+  },
+  "schema_version": 1,
+  "surrogate_calibration_mae": 0.001449,
+  "surrogate_calibration_pearson": 0.9499,
+  "surrogate_property_eval": true,
+  "target": 0.2,
+  "tau": 0.01
+}

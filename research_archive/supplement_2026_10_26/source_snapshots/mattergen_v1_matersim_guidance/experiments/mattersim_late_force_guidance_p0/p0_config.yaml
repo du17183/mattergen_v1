@@ -1,0 +1,55 @@
+experiment: mattersim_late_force_guidance_p0
+stage: 16_seed_paired_p0
+frozen_after_A0_go: true
+A0_gate:
+  verdict: GO
+  selected_t_norm: 0.02
+  maxF_final_spearman: 0.9255865102639295
+  finite_valid_fraction: 1.0
+paired_seeds: [710032, 710033, 710034, 710035, 710036, 710037, 710038, 710039,
+               710040, 710041, 710042, 710043, 710044, 710045, 710046, 710047]
+arms:
+  B0: official_mattergen
+  F0: late_mattersim_position_force_guidance
+common:
+  target_dft_mag_density: 0.2
+  cfg: 2.0
+  guidance_schedule: constant
+  adaptive_cfg: false
+  diffusion_steps: 1000
+  corrector_steps_per_timestep: 1
+  batch_size: 1
+F0:
+  guidance_lambda: 1.0
+  guidance_lambda_sweep: false
+  guidance_lambda_interpretation: frozen_multiplier_on_the_single_position_force_correction
+  field: position_only
+  score_phase: predictor_only
+  clean_x0_physics: true
+  noisy_xt_physics: false
+  stress_guidance: false
+  cell_guidance: false
+  atomic_guidance: false
+  guidance_t_max: 0.02
+  force_reference_ev_a: 0.07795149218357911
+  force_reference_source: calibration_seeds_710000_710015_t0.02_median_maxF
+  nominal_cartesian_step_a: 0.005
+  hard_cartesian_cap_a: 0.01
+  absolute_protocol_cap_a: 0.02
+  min_periodic_distance_floor_a: 0.5
+  coordinate_map: delta_fractional=delta_cartesian@inverse(clean_cell)
+  score_map: delta_score=delta_fractional/ancestral_predictor_score_coefficient
+primary: MaxF
+go:
+  mean_maxF_improvement_min_fraction: 0.15
+  paired_improved_min_count: 11
+  mag_mae_worsening_max_fraction: 0.10
+  nus_drop_max_pp: 5.0
+  validity_drop_max_pp: 5.0
+  ehull_increase_max_ev_atom: 0.01
+  runtime_ratio_max: 1.5
+borderline_maxF_improvement_interval_fraction: [0.08, 0.15]
+fail:
+  maxF_improvement_below_fraction: 0.08
+  paired_improved_max_count: 8
+formal32_auto_run: false

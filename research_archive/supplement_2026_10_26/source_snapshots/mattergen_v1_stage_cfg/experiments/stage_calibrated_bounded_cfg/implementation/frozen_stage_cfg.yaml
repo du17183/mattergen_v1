@@ -1,0 +1,12 @@
+schema_version: 1
+frozen_after_calibration_before_p0: true
+schedule_id: S_T400_DM10_K100
+start: 400
+delta_g: -0.1
+duration: 100
+active_cfg: 1.9
+b1_schedule_id: C_G190
+b1_constant_cfg: 1.9
+b2_schedule_id: P_T400_DM10
+selection_rule: guardrails then maximum median_gain - 1.0*p90_positive_degradation
+calibration_decision_sha256: 667f8ee2dc7b9044be07d9065d8b5bba02bddfce4b6a25ddc2368d348df9a986

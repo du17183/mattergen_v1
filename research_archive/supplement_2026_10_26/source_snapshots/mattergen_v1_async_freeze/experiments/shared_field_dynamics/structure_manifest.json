@@ -1,0 +1,450 @@
+[
+  {
+    "formula": "CeGd3",
+    "index": 0,
+    "num_atoms": 4,
+    "seed": 99000,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe3Co",
+    "index": 1,
+    "num_atoms": 8,
+    "seed": 99001,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe3Co4",
+    "index": 2,
+    "num_atoms": 7,
+    "seed": 99002,
+    "subset": "calibration"
+  },
+  {
+    "formula": "GdCoH2",
+    "index": 3,
+    "num_atoms": 4,
+    "seed": 99003,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe5Co2H",
+    "index": 4,
+    "num_atoms": 8,
+    "seed": 99004,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe7Co",
+    "index": 5,
+    "num_atoms": 8,
+    "seed": 99005,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe5Co",
+    "index": 6,
+    "num_atoms": 6,
+    "seed": 99006,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe4H",
+    "index": 7,
+    "num_atoms": 15,
+    "seed": 99007,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Gd3Co",
+    "index": 8,
+    "num_atoms": 4,
+    "seed": 99008,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe3Co",
+    "index": 9,
+    "num_atoms": 4,
+    "seed": 99009,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Gd",
+    "index": 10,
+    "num_atoms": 4,
+    "seed": 99010,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe3Co2",
+    "index": 11,
+    "num_atoms": 10,
+    "seed": 99011,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe2Co",
+    "index": 12,
+    "num_atoms": 6,
+    "seed": 99012,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe",
+    "index": 13,
+    "num_atoms": 6,
+    "seed": 99013,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe5O",
+    "index": 14,
+    "num_atoms": 18,
+    "seed": 99014,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe5H",
+    "index": 15,
+    "num_atoms": 12,
+    "seed": 99015,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Gd3YH",
+    "index": 16,
+    "num_atoms": 5,
+    "seed": 99016,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe5Co3",
+    "index": 17,
+    "num_atoms": 8,
+    "seed": 99017,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe7Co3",
+    "index": 18,
+    "num_atoms": 10,
+    "seed": 99018,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe7Co5",
+    "index": 19,
+    "num_atoms": 12,
+    "seed": 99019,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe4Co",
+    "index": 20,
+    "num_atoms": 10,
+    "seed": 99020,
+    "subset": "calibration"
+  },
+  {
+    "formula": "GdFe7",
+    "index": 21,
+    "num_atoms": 8,
+    "seed": 99021,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe3Co",
+    "index": 22,
+    "num_atoms": 16,
+    "seed": 99022,
+    "subset": "calibration"
+  },
+  {
+    "formula": "FeCo2",
+    "index": 23,
+    "num_atoms": 6,
+    "seed": 99023,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe5Co3",
+    "index": 24,
+    "num_atoms": 8,
+    "seed": 99024,
+    "subset": "calibration"
+  },
+  {
+    "formula": "GdFe",
+    "index": 25,
+    "num_atoms": 4,
+    "seed": 99025,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Gd7Fe4",
+    "index": 26,
+    "num_atoms": 11,
+    "seed": 99026,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe5Co2H",
+    "index": 27,
+    "num_atoms": 8,
+    "seed": 99027,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe4Ni",
+    "index": 28,
+    "num_atoms": 10,
+    "seed": 99028,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe7Co3",
+    "index": 29,
+    "num_atoms": 10,
+    "seed": 99029,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe4Rh",
+    "index": 30,
+    "num_atoms": 10,
+    "seed": 99030,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Fe7N",
+    "index": 31,
+    "num_atoms": 16,
+    "seed": 99031,
+    "subset": "calibration"
+  },
+  {
+    "formula": "Gd",
+    "index": 32,
+    "num_atoms": 4,
+    "seed": 99032,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe7Co5",
+    "index": 33,
+    "num_atoms": 12,
+    "seed": 99033,
+    "subset": "validation"
+  },
+  {
+    "formula": "Gd3FeO6",
+    "index": 34,
+    "num_atoms": 10,
+    "seed": 99034,
+    "subset": "validation"
+  },
+  {
+    "formula": "FeCo",
+    "index": 35,
+    "num_atoms": 12,
+    "seed": 99035,
+    "subset": "validation"
+  },
+  {
+    "formula": "Gd10Cl",
+    "index": 36,
+    "num_atoms": 11,
+    "seed": 99036,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe",
+    "index": 37,
+    "num_atoms": 18,
+    "seed": 99037,
+    "subset": "validation"
+  },
+  {
+    "formula": "Gd",
+    "index": 38,
+    "num_atoms": 4,
+    "seed": 99038,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe3Co",
+    "index": 39,
+    "num_atoms": 12,
+    "seed": 99039,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe3Co2",
+    "index": 40,
+    "num_atoms": 5,
+    "seed": 99040,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe7Co3",
+    "index": 41,
+    "num_atoms": 10,
+    "seed": 99041,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe2Co",
+    "index": 42,
+    "num_atoms": 9,
+    "seed": 99042,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe7Co2H",
+    "index": 43,
+    "num_atoms": 10,
+    "seed": 99043,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe7Co5",
+    "index": 44,
+    "num_atoms": 12,
+    "seed": 99044,
+    "subset": "validation"
+  },
+  {
+    "formula": "Gd",
+    "index": 45,
+    "num_atoms": 4,
+    "seed": 99045,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe3Co",
+    "index": 46,
+    "num_atoms": 8,
+    "seed": 99046,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe9Co",
+    "index": 47,
+    "num_atoms": 10,
+    "seed": 99047,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe3Co",
+    "index": 48,
+    "num_atoms": 12,
+    "seed": 99048,
+    "subset": "validation"
+  },
+  {
+    "formula": "FeCo3H2",
+    "index": 49,
+    "num_atoms": 6,
+    "seed": 99049,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe7Co4H",
+    "index": 50,
+    "num_atoms": 12,
+    "seed": 99050,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe5Co",
+    "index": 51,
+    "num_atoms": 12,
+    "seed": 99051,
+    "subset": "validation"
+  },
+  {
+    "formula": "FeH",
+    "index": 52,
+    "num_atoms": 4,
+    "seed": 99052,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe5Co",
+    "index": 53,
+    "num_atoms": 6,
+    "seed": 99053,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe4Co",
+    "index": 54,
+    "num_atoms": 5,
+    "seed": 99054,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe11Co",
+    "index": 55,
+    "num_atoms": 12,
+    "seed": 99055,
+    "subset": "validation"
+  },
+  {
+    "formula": "Gd",
+    "index": 56,
+    "num_atoms": 16,
+    "seed": 99056,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe13Co",
+    "index": 57,
+    "num_atoms": 14,
+    "seed": 99057,
+    "subset": "validation"
+  },
+  {
+    "formula": "Gd",
+    "index": 58,
+    "num_atoms": 4,
+    "seed": 99058,
+    "subset": "validation"
+  },
+  {
+    "formula": "Gd",
+    "index": 59,
+    "num_atoms": 4,
+    "seed": 99059,
+    "subset": "validation"
+  },
+  {
+    "formula": "FeCo5",
+    "index": 60,
+    "num_atoms": 6,
+    "seed": 99060,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe15H",
+    "index": 61,
+    "num_atoms": 16,
+    "seed": 99061,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe3Co",
+    "index": 62,
+    "num_atoms": 12,
+    "seed": 99062,
+    "subset": "validation"
+  },
+  {
+    "formula": "Fe5Co3",
+    "index": 63,
+    "num_atoms": 8,
+    "seed": 99063,
+    "subset": "validation"
+  }
+]

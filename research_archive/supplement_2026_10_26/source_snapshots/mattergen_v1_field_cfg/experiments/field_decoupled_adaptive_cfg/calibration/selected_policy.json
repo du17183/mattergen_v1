@@ -1,0 +1,15 @@
+{
+  "FIELD_DECOUPLING_CALIBRATION": "FAIL",
+  "global_gain": 0.002199004321970886,
+  "calibration_base_signal": "PASS",
+  "eligible_count": 0,
+  "selected_policy_id": null,
+  "PROPERTY_FIELD": "MULTI",
+  "QUALITY_HARM_FIELD": "MULTI",
+  "selection_order": [
+    "guardrail_margin",
+    "benefit_retention",
+    "property_harm_rate",
+    "policy_complexity"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "AUDIT": "PASS",
+  "diagnostic_verdict": "GO",
+  "formal256_run": false,
+  "formal32_run": false,
+  "guidance_fallbacks": 0,
+  "guidance_trace_rows": 320,
+  "maximum_cartesian_correction_a": 0.005000000000000001,
+  "minimum_accepted_candidate_distance_a": 1.762301677541131,
+  "n_heldout_rows": 32,
+  "n_paired": 16,
+  "p0_verdict": "GO",
+  "required_files_present": 18,
+  "stash_count_preserved": 5
+}

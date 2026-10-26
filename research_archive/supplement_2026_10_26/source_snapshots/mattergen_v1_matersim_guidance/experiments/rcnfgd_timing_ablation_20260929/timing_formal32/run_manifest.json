@@ -1,0 +1,25 @@
+{
+  "status": "RUNNING",
+  "interpretation": "Cumulative timing threshold and force-call budget vary together; no equal-compute claim",
+  "environment": {
+    "python": "/mnt/datasets-livsyn/dxl/alm/.venv/bin/python",
+    "python_version": "3.10.12",
+    "torch": "2.9.0+cu128",
+    "cuda_runtime": "12.8",
+    "gpu_model": "NVIDIA H20",
+    "physical_gpus": [2, 3, 4, 5, 6, 7]
+  },
+  "paired_seeds": "750000-750031",
+  "no_prior_generation_seed_collision_found": true,
+  "historical_replay_gate_status": "PASS",
+  "sha256": {
+    "timing_protocol.json": "a6b8e03762ee8ac8df9a1699b5df3db6e0972c0fefd3bdbd7cc9786c82a52e7f",
+    "generate_timing_seed.py": "ae37adcdd73c6b140534e93697325d39659700c431ef09369e1ed53a45382649",
+    "frozen_force_sampler.py": "7a1598338e305986f03f232b719cdbb90687ba3388b8827ace8aa191bb8d9523",
+    "formal256_config.yaml": "45ac31aeb45170b4495eedbcd149217f078bbb090aa4748acb73c592862bcf0f",
+    "alm_replay_740000/gate.json": "6dd9fd48c71819f9ec9683168badbc1d65c4858b6c92bb8ffc3d9d3a6a222e8c"
+  },
+  "failed_wrapper_attempts_preserved": ["attempt1_import_failure.md", "attempt2_key_lookup_failure.md"],
+  "active_generation_attempt": "attempt3",
+  "evaluation_policy": "Only after all 32 paired seeds and all 4 arms complete; no missing-pair filtering"
+}

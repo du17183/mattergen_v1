@@ -1,0 +1,47 @@
+{
+  "activation_branch": "conditional_cfg_branch",
+  "activation_phase": "pre_corrector_current_state",
+  "actual_timesteps": [
+    0.5,
+    0.25,
+    0.10000000149011612,
+    0.05000000074505806,
+    0.020000001415610313
+  ],
+  "adaptive_cfg_used": false,
+  "checkpoint_sha256": "01dd3e86805165412e0810e2a77a4756f8e1020f3ff2707c74af0a3f88a1bb8e",
+  "corrector_steps_per_timestep": 1,
+  "dft_verified": false,
+  "elapsed_seconds": 84.9984937570116,
+  "formula": "Gd2N",
+  "guidance_scale": 2.0,
+  "guidance_schedule": "constant",
+  "hidden_shape": [
+    5,
+    4,
+    512
+  ],
+  "mattergen_score_calls": 2000,
+  "num_atoms": 12,
+  "peak_allocated_bytes": 319038464,
+  "requested_timesteps": [
+    0.5,
+    0.25,
+    0.1,
+    0.05,
+    0.02
+  ],
+  "sampling_step_indices": [
+    500,
+    750,
+    900,
+    950,
+    980
+  ],
+  "sampling_steps": 1000,
+  "seed": 98147,
+  "split": "validation",
+  "success": true,
+  "surrogate_property_eval": true,
+  "target_dft_mag_density": 0.2
+}

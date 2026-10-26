@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "frozen_before_oracle_generation": true,
+  "git_commit": "1af301c5e534ff6b9b9f96ea5dab48036d9c46af",
+  "branch": "experiment/counterfactual-adaptive-cfg-v3",
+  "sha256": {
+    "mattergen/diffusion/sampling/counterfactual_oracle.py": "ea79646332941cdf456ef45b874d6c8297f69ea2ec176cdde3f644052d1bb3d9",
+    "mattergen/diffusion/tests/test_counterfactual_oracle.py": "ebabd8128cdeffebff342afc3e89d01c92ef6654b853e47a47d96bed7d2d088d",
+    "experiments/counterfactual_adaptive_cfg_v3/oracle/oracle_config.yaml": "d8347fd692421721013ed455d9ad3404497e0145498e32baa040c86328839099",
+    "experiments/counterfactual_adaptive_cfg_v3/oracle/oracle_seeds.json": "bffb3930954a15f2d765b7118c915d70bbfa0433fa98c703c6f92810f1457ded",
+    "experiments/counterfactual_adaptive_cfg_v3/preregistered_future_seeds.json": "21a164a1855b419538bffbc1213d747107fca0869eb847da46a909ec1296eadd",
+    "experiments/counterfactual_adaptive_cfg_v3/fresh_seed_audit.json": "1eaab062cd5c91c7104e642d9e484d791b4e859866bc69ab22fcd766d28b7e35",
+    "experiments/counterfactual_adaptive_cfg_v3/run_oracle_generation.py": "a6c8ddd2db3bade6e4599280eb886a040ede7c34f0ca5511be80b50c0d82dbc5",
+    "experiments/counterfactual_adaptive_cfg_v3/prepare_oracle_outputs.py": "199c96f3355ff3f12c38c5d1ae3597554b724405f4c2d02a3c0a900a5f3d89d6",
+    "experiments/counterfactual_adaptive_cfg_v3/run_oracle_quality.py": "3df0177198fd7d19633bee86d50adcf273323c7a83adc5e890326b709a410e21",
+    "experiments/counterfactual_adaptive_cfg_v3/analyze_oracle.py": "a9452e6d0336d0a9b487b5d85268e044de45a2d7af1e205c99bd6bee2dc4f662",
+    "experiments/counterfactual_adaptive_cfg_v3/run_predictability.py": "8e1c5cb9b7ea5518b95442533d322a6a2d9f47e530783a941b7b34cc06169811",
+    "experiments/counterfactual_adaptive_cfg_v3/run_frozen_pipeline.py": "4e1dc8af79c6a0e28447d886bc62b73f9352fd733a978303d4ffc4d651da9c1c"
+  },
+  "allowed_post_outcome_changes": "technical reporting only; no method, seed, feature, model, objective, or gate changes",
+  "surrogate_property_eval": true,
+  "dft_verified": false
+}

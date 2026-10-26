@@ -1,0 +1,9 @@
+{
+  "end_epoch": 1789355111.685564,
+  "log": "/mnt/datasets-livsyn/dxl/mattergen_v1_closed_loop_guidance/experiments/closed_loop_force_guidance_p0/logs/pipeline_relax.log",
+  "pid": 3574785,
+  "return_code": 0,
+  "stage": "relax",
+  "start_epoch": 1789355079.8544645,
+  "track": "B"
+}

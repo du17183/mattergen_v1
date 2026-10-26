@@ -1,0 +1,26 @@
+{
+  "NEXT": "STOP",
+  "PROBE_P0": "FAIL",
+  "SELF_CORRECTING_SEARCH_P0": "NOT_RUN_PROBE_FAIL",
+  "best_probe_architecture": "tiny_mlp",
+  "best_probe_block": 0,
+  "dft_verified": false,
+  "hidden_state_steering_used": false,
+  "probe_gradient_used": false,
+  "reliable_max_t": null,
+  "reliable_timesteps": [],
+  "selection_basis": "validation_only",
+  "surrogate_property_eval": true,
+  "test_metrics": {
+    "mae": 0.021496493369340897,
+    "mae_improvement_fraction": -1.3399244506900954,
+    "pearson": 0.18907292187213898,
+    "r2": -5.275888273556276,
+    "rmse": 0.03085123747587204,
+    "spearman": 0.1731299287597352,
+    "target_distance_spearman": 0.324378626364109,
+    "train_mean_baseline_mae": 0.00918683223426342
+  },
+  "test_n_rows": 160,
+  "test_scope": "all_preregistered_timesteps_descriptive_no_reliable_window"
+}

@@ -1,0 +1,2 @@
+status,reason,method,n,runtime_seconds,runtime_ratio,backtracking_count,fallback_count
+NOT_RUN_DIAGNOSTIC_FAIL,violation/no-violation outcome comparison is not estimable,P0,0,,,,
